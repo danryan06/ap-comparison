@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit AP Information &mdash; Wi-Fi AP Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Existing AP Information</h1>
+    <p class="subtitle">
+      Use this form to generate an updated JSON entry for an existing AP. You can copy the snippet or open a pre-filled GitHub issue requesting the change.
+    </p>
+
+    <div class="actions">
+      <a class="btn-link" href="index.html">&larr; Back to AP Table</a>
+    </div>
+
+    <div class="card">
+      <span class="badge">Edit AP</span>
+
+      <form id="edit-ap-form">
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="existing">Which AP are you editing? (Vendor + Model)</label>
+            <input id="existing" type="text" placeholder="e.g., Juniper AP45" />
+          </div>
+
+          <div class="form-row">
+            <label for="vendor">Vendor</label>
+            <input id="vendor" name="vendor" type="text" placeholder="Juniper, Cisco, Aruba, Ruckus, etc." required />
+          </div>
+
+          <div class="form-row">
+            <label for="model">Model</label>
+            <input id="model" name="model" type="text" placeholder="AP45, Catalyst 9166I, AP-655, etc." required />
+          </div>
+
+          <div class="form-row">
+            <label for="wifi_gen_radios">Wi-Fi Gen &amp; Radios</label>
+            <input id="wifi_gen_radios" name="wifi_gen_radios" type="text" placeholder="Wi-Fi 6E (2.4/5/6)" required />
+          </div>
+
+          <div class="form-row">
+            <label for="spatial_streams">Spatial Streams (2.4 / 5 / 6 GHz)</label>
+            <input id="spatial_streams" name="spatial_streams" type="text" placeholder="4x4 / 4x4 / 4x4" required />
+          </div>
+
+          <div class="form-row">
+            <label for="min_poe_class">Min PoE Class</label>
+            <input id="min_poe_class" name="min_poe_class" type="text" placeholder="802.3at (Class 4)" required />
+          </div>
+
+          <div class="form-row">
+            <label for="recommended_poe">Recommended PoE</label>
+            <input id="recommended_poe" name="recommended_poe" type="text" placeholder="802.3bt (Class 6) or 30 W, etc." required />
+          </div>
+
+          <div class="form-row">
+            <label for="behavior_min_power">Behavior at Min Power</label>
+            <textarea id="behavior_min_power" name="behavior_min_power" placeholder="1–2 sentences about what the AP does at minimum PoE (e.g., disables USB, reduces TX power, shuts off a band)." required></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="ethernet_ports_speed">Ethernet Ports &amp; Speed</label>
+            <input id="ethernet_ports_speed" name="ethernet_ports_speed" type="text" placeholder="1×2.5GbE, 2×5GbE, etc." required />
+          </div>
+
+          <div class="form-row">
+            <label for="radios_iot_features">Radios &amp; IoT Features (comma-separated)</label>
+            <input id="radios_iot_features" name="radios_iot_features" type="text" placeholder="BLE, Zigbee, GPS, vBLE array, sensor radio" />
+          </div>
+
+          <div class="form-row">
+            <label for="msrp">MSRP</label>
+            <input id="msrp" name="msrp" type="text" placeholder="~$2,195" required />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Generate Updated JSON Snippet</button>
+          <button type="button" class="btn-link" id="open-issue-btn">Open GitHub Issue with This Update</button>
+        </div>
+      </form>
+
+      <div class="output-box">
+        <label for="output">Updated JSON entry (replace the existing object in <code>ap_data.json</code>):</label>
+        <textarea id="output" readonly placeholder="Your updated JSON snippet will appear here after you generate it."></textarea>
+      </div>
+
+      <div class="footer">
+        In your issue or pull request, mention which existing AP entry this should replace (e.g., "Replace Juniper AP45 entry"). The maintainers will handle the merge.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // TODO: set these to your actual GitHub username and repo name
+    const GITHUB_USER = 'danryan06';
+    const GITHUB_REPO = 'ap-comparison';
+
+    function buildApObjectFromForm() {
+      const vendor = document.getElementById('vendor').value.trim();
+      const model = document.getElementById('model').value.trim();
+      const wifi_gen_radios = document.getElementById('wifi_gen_radios').value.trim();
+      const spatial_streams = document.getElementById('spatial_streams').value.trim();
+      const min_poe_class = document.getElementById('min_poe_class').value.trim();
+      const recommended_poe = document.getElementById('recommended_poe').value.trim();
+      const behavior_min_power = document.getElementById('behavior_min_power').value.trim();
+      const ethernet_ports_speed = document.getElementById('ethernet_ports_speed').value.trim();
+      const radios_iot_features_raw = document.getElementById('radios_iot_features').value.trim();
+      const msrp = document.getElementById('msrp').value.trim();
+
+      let radios_iot_features = [];
+      if (radios_iot_features_raw.length > 0) {
+        radios_iot_features = radios_iot_features_raw
+          .split(',')
+          .map(s => s.trim())
+          .filter(s => s.length > 0);
+      }
+
+      return {
+        vendor,
+        model,
+        wifi_gen_radios,
+        spatial_streams,
+        min_poe_class,
+        recommended_poe,
+        behavior_min_power,
+        ethernet_ports_speed,
+        radios_iot_features,
+        msrp
+      };
+    }
+
+    document.getElementById('edit-ap-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const obj = buildApObjectFromForm();
+      const jsonSnippet = JSON.stringify(obj, null, 2);
+      const output = document.getElementById('output');
+      output.value = jsonSnippet;
+      output.focus();
+      output.select();
+    });
+
+    document.getElementById('open-issue-btn').addEventListener('click', function () {
+      const obj = buildApObjectFromForm();
+      const existing = document.getElementById('existing').value.trim();
+
+      if (!obj.vendor || !obj.model) {
+        alert('Please fill in at least Vendor and Model before opening an issue.');
+        return;
+      }
+
+      const title = `Edit AP: ${obj.vendor} ${obj.model}`;
+
+      const bodyLines = [
+        existing ? `Requested edit for: ${existing}` : 'Requested edit for an existing AP.',
+        '',
+        'Updated AP JSON entry:',
+        '',
+        '```json',
+        JSON.stringify(obj, null, 2),
+        '```',
+        '',
+        '_Submitted via on-site edit form._'
+      ];
+
+      const body = bodyLines.join('\n');
+
+      const url = `https://github.com/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_REPO)}/issues/new` +
+                  `?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+
+      window.open(url, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
