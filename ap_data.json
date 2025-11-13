@@ -1,0 +1,48 @@
+[
+  {
+    "vendor": "Juniper",
+    "model": "AP45",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (~30 W)",
+    "behavior_min_power": "On 802.3at, the AP may disable the USB port and/or one Wi-Fi band and reduce transmit power to stay within the power budget.",
+    "ethernet_ports_speed": "1×2.5GbE",
+    "radios_iot_features": [
+      "vBLE array",
+      "dedicated sensor/spec-an radio"
+    ],
+    "msrp": "$2,100–$2,200"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "Catalyst 9166I",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt / UPOE+",
+    "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate but USB and PoE-out are disabled and some advanced features may be constrained.",
+    "ethernet_ports_speed": "1×mGig",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio"
+    ],
+    "msrp": "~$2,593"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-655",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6)",
+    "behavior_min_power": "On 802.3at (Class 4), the AP-655 operates in a power-restricted mode similar to an AP-635, potentially limiting bands, features, or transmit power.",
+    "ethernet_ports_speed": "2×5GbE",
+    "radios_iot_features": [
+      "BLE",
+      "Zigbee",
+      "GPS"
+    ],
+    "msrp": "~$2,195"
+  }
+]
