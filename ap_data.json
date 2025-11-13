@@ -23,7 +23,7 @@
       "GNSS L1/L5",
       "IoT sensors (pressure, temperature, accelerometer)"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -49,7 +49,7 @@
       "GNSS L1/L5",
       "IoT sensors (pressure, temperature, accelerometer)"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -75,7 +75,7 @@
       "GNSS L1/L5",
       "IoT sensors (pressure, temperature, accelerometer)"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -121,7 +121,7 @@
       "Bluetooth 5.1",
       "environmental sensors (temperature, accelerometer)"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -147,7 +147,7 @@
       "IoT sensors (pressure, temperature, accelerometer)",
       "GNSS L1/L5"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -172,7 +172,7 @@
       "IoT sensors (pressure, temperature, accelerometer)",
       "GNSS L1/L5"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -197,7 +197,7 @@
       "IoT sensors (pressure, temperature, accelerometer)",
       "GNSS L1/L5"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -209,7 +209,7 @@
     "behavior_min_power": "PoE PD via Eth0: on 802.3at the AP operates with full functionality; on 802.3af all radios are disabled and the AP provides only cloud connectivity.",
     "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
-    "form_factor": "Indoor/Outdoor",
+    "form_factor": "Outdoor",
     "dimensions": "232 × 232 × 71 mm",
     "weight": "2.0 kg",
     "antenna_connectors": "N/A (internal antennas)",
@@ -222,7 +222,7 @@
       "IoT sensors (temperature, accelerometer)",
       "GNSS L1/L5"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -234,7 +234,7 @@
     "behavior_min_power": "Same PoE behavior as AP66: full function on 802.3at; on 802.3af all radios are disabled for cloud connectivity only.",
     "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0)",
     "antenna_type": "Directional",
-    "form_factor": "Indoor/Outdoor",
+    "form_factor": "Outdoor",
     "dimensions": "232 × 232 × 88 mm",
     "weight": "2.1 kg",
     "antenna_connectors": "N/A (internal directional antennas)",
@@ -247,7 +247,7 @@
       "IoT sensors (temperature, accelerometer)",
       "GNSS L1/L5"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -269,7 +269,7 @@
       "IoT sensors (temperature, accelerometer)",
       "Bluetooth 5.1 or later"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -291,7 +291,7 @@
       "multi-personality IoT radio with BLE 5.3",
       "IoT sensors (temperature, accelerometer)"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
@@ -315,7 +315,7 @@
       "GNSS L1/L5",
       "IP67 / NEMA 4 enclosure"
     ],
-    "msrp": ""
+    "msrp": "unknown"
   },
   {
     "vendor": "Cisco",
@@ -357,7 +357,7 @@
     "datasheet_url": "https://www.hpe.com/psnow/doc/PSN1014382098CAEN",
     "radios_iot_features": [
       "BLE",
-      "Zigbee",
+      "ZigBee",
       "GPS"
     ],
     "msrp": "~$2,195"
@@ -384,5 +384,222 @@
       "GPS"
     ],
     "msrp": "$1,350"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-441K",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, client radios operate at reduced Tx power (~17 dBm) with 2x2 chains and USB disabled; 2.4/5/6 GHz radios and the fourth radio remain operational.",
+    "ethernet_ports_speed": "2× 1/2.5/5/10GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "9.84 x 9.84 x 2.26 inches (250 x 250 x 57.5 mm)",
+    "weight": "4.36 lbs (1.98 kg)",
+    "antenna_connectors": "10× RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee",
+      "GPS"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-443K",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, client radios operate at reduced Tx power (~17 dBm) with 4x4 chains but lower Tx power and USB disabled.",
+    "ethernet_ports_speed": "2× 1/2.5/5/10GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "9.84 x 9.84 x 2.26 inches (250 x 250 x 57.5 mm)",
+    "weight": "4.36 lbs (1.98 kg)",
+    "antenna_connectors": "10× RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee",
+      "GPS"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-241K",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3bt (Class 6) for full performance",
+    "behavior_min_power": "On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3at, 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
+    "ethernet_ports_speed": "1× 1/2.5/5/10GbE mGig (RJ45) + 1× 1GbE (RJ45) + 1× USB 2.0 + 1× RS-232",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "7.48 x 7.48 x 2.01 inches (190 x 190 x 51 mm)",
+    "weight": "2.4 lbs (1.09 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-243K",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3bt (Class 6) for full performance",
+    "behavior_min_power": "On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3at, 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
+    "ethernet_ports_speed": "1× 1/2.5/5/10GbE mGig (RJ45) + 1× 1GbE (RJ45) + 1× USB 2.0 + 1× RS-232",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "7.48 x 7.48 x 2.01 inches (190 x 190 x 51 mm)",
+    "weight": "2.6 lbs (1.18 kg)",
+    "antenna_connectors": "6× RP-SMA (2 dual-band, 2 6GHz, 2 tri-band)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-231K",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4); 802.3bt optional",
+    "behavior_min_power": "On 802.3at, all three Wi-Fi radios (2.4/5/6 GHz) operate at full Tx power with 2x2 MIMO. On 802.3af, radios still operate at full Tx power but are limited to 1x1 MIMO, reducing spatial stream capacity.",
+    "ethernet_ports_speed": "1× 1/2.5/5GbE mGig (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "6.88 x 6.88 x 2.2 inches (175 x 175 x 56 mm)",
+    "weight": "2.22 lbs (1.01 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee",
+      "GPS"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-23JK",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for full PoE-out capability",
+    "behavior_min_power": "On 802.3bt, 2.4/5/6 GHz radios operate and PoE-out (PSE) on LAN3 is available. On 802.3at, 2.4/5/6 GHz radios operate but PoE-out on LAN3 is disabled; USB and other features remain supported according to the datasheet.",
+    "ethernet_ports_speed": "1× 1/2.5/5/10GbE WAN (RJ45) + 3× 1GbE LAN (RJ45, one PoE-out) + 2× pass-through RJ45 + 1× RS-232",
+    "antenna_type": "Internal",
+    "form_factor": "Wallplate",
+    "dimensions": "7.08 x 4.72 x 1.57 inches (180 x 120 x 40 mm)",
+    "weight": "1.15 lbs (0.52 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 113°F (0°C to 45°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/Zigbee"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-431G",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "ethernet_ports_speed": "2× 1/2.5/5GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "8.85 x 8.85 x 2.12 inches (225.0 x 225.0 x 54.0 mm)",
+    "weight": "3.05 lbs (1.4 kg)",
+    "antenna_connectors": "4× RP-SMA (dual-band) + 4 permanently attached tri-band antennas",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee",
+      "GPS"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-433G",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "ethernet_ports_speed": "2× 1/2.5/5GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "8.85 x 8.85 x 2.12 inches (225.0 x 225.0 x 54.0 mm)",
+    "weight": "3.05 lbs (1.4 kg)",
+    "antenna_connectors": "4× RP-SMA (dual-band) + 4 external permanently attached tri-band antennas",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee",
+      "GPS"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-432G",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "unknown",
+    "recommended_poe": "unknown",
+    "behavior_min_power": "unknown",
+    "ethernet_ports_speed": "unknown",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "unknown",
+    "weight": "unknown",
+    "antenna_connectors": "External antennas (see datasheet)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee",
+      "GPS"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-234G",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4) or included passive PoE injector",
+    "recommended_poe": "802.3at (Class 4) or PIN060-54PR 60W passive PoE injector (included)",
+    "behavior_min_power": "With 802.3at or the included passive 60W injector, all radios operate at full Tx power with 2x2 MIMO. Lower PoE classes are not specified as supported for full operation.",
+    "ethernet_ports_speed": "1× 1/2.5GbE (RJ45) + 1× 1GbE (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Outdoor",
+    "dimensions": "10.15 x 8.50 x 2.26 inches (258 x 216 x 57.3 mm)",
+    "weight": "3.05 lbs (1.38 kg)",
+    "antenna_connectors": "None (internal ruggedized antennas)",
+    "operating_temp_range": "-40°F to 140°F (-40°C to 60°C) operating; -58°F to 158°F",
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "radios_iot_features": [
+      "BLE/ZigBee",
+      "GPS"
+    ],
+    "msrp": "unknown"
   }
 ]

@@ -303,6 +303,41 @@
       applyColumnVisibility();
     }
 
+    function valueIsUnknown(val) {
+      if (val == null) return true;
+      if (Array.isArray(val)) return val.length === 0 || val.some(v => valueIsUnknown(v));
+      const s = String(val).trim().toLowerCase();
+      return s.length === 0 || s === 'unknown';
+    }
+
+    function validateData(data) {
+      const keysToCheck = [
+        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
+        'behavior_min_power','ethernet_ports_speed','radios_iot_features','antenna_type','form_factor',
+        'dimensions','weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
+      ];
+      const problems = [];
+      data.forEach((entry, index) => {
+        const issues = [];
+        keysToCheck.forEach(k => {
+          if (!(k in entry) || valueIsUnknown(entry[k])) {
+            issues.push(`${k} is missing or unknown`);
+          }
+        });
+        if (issues.length) problems.push({ index, vendor: entry.vendor, model: entry.model, issues });
+      });
+      if (problems.length) {
+        console.groupCollapsed(`[ap_data.json] ${problems.length} issue(s) detected (click to expand)`);
+        problems.forEach(p => {
+          console.group(`Entry #${p.index} — ${p.vendor || '?'} ${p.model || '?'}`);
+          p.issues.forEach(i => console.warn(i));
+          console.groupEnd();
+        });
+        console.groupEnd();
+      }
+      return problems.length;
+    }
+
     function slugify(s) {
       return String(s || '')
         .toLowerCase()
@@ -406,9 +441,21 @@
         if (antennaEl) antennaEl.value = currentFilters.antenna || '';
         if (formEl) formEl.value = currentFilters.form || '';
         buildColumnsPanel();
+        // Validate data and notify if any issues
+        const issueCount = validateData(apData);
+        if (issueCount > 0) {
+          errorEl.style.display = 'block';
+          errorEl.textContent = `${issueCount} data issue(s) detected in ap_data.json. See console for details.`;
+        } else {
+          errorEl.style.display = 'none';
+          errorEl.textContent = '';
+        }
         renderTable();
-        errorEl.style.display = 'none';
-        errorEl.textContent = '';
+        // If fetch succeeded and no issues, ensure error hidden
+        if (issueCount === 0) {
+          errorEl.style.display = 'none';
+          errorEl.textContent = '';
+        }
       } catch (err) {
         console.error('Failed to load AP data:', err);
         errorEl.style.display = 'block';
