@@ -27,7 +27,13 @@
       <option>Outdoor</option>
       <option>Wallplate</option>
     </select>
+    <button id="toggle-columns" type="button" class="btn-link">Choose Columns</button>
   </div>
+
+    <div id="columns-panel" class="columns-panel">
+      <h3>Show/Hide Columns</h3>
+      <div id="columns-grid" class="columns-grid"></div>
+    </div>
 
     <div class="card">
       <span class="badge">Community-maintained</span>
@@ -62,6 +68,16 @@
     </div>
   </div>
 
+  <div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <header>
+        <h2 id="modal-title">AP Details</h2>
+        <button id="modal-close" class="modal-close" type="button">Close</button>
+      </header>
+      <div id="modal-body" class="kv-grid"></div>
+    </div>
+  </div>
+
   <script>
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
@@ -70,6 +86,7 @@
     let currentQuery = '';
     const currentFilters = { vendor: '', antenna: '', form: '' };
     let currentSort = { key: 'vendor', dir: 'asc' };
+    const hiddenColumns = new Set(); // keys to hide
 
     function normalizeString(value) {
       if (value == null) return '';
@@ -101,6 +118,58 @@
           th.removeAttribute('data-dir');
         }
       });
+    }
+
+    function getColumnsFromHeader() {
+      const ths = Array.from(document.querySelectorAll('thead th'));
+      return ths.map((th, idx) => ({
+        key: th.dataset.key || `col_${idx+1}`,
+        label: th.innerText.replace(/\\s+/g, ' ').trim(),
+        index: idx
+      }));
+    }
+
+    function buildColumnsPanel() {
+      const grid = document.getElementById('columns-grid');
+      grid.innerHTML = '';
+      const columns = getColumnsFromHeader();
+      columns.forEach(col => {
+        const lock = col.key === 'vendor' || col.key === 'model';
+        const id = `colchk_${col.key}`;
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = id;
+        input.checked = !hiddenColumns.has(col.key) || lock;
+        input.disabled = lock;
+        input.addEventListener('change', () => {
+          if (input.checked) hiddenColumns.delete(col.key);
+          else hiddenColumns.add(col.key);
+          applyColumnVisibility();
+          updateUrl();
+        });
+        const span = document.createElement('span');
+        span.textContent = col.label;
+        label.appendChild(input);
+        label.appendChild(span);
+        grid.appendChild(label);
+      });
+    }
+
+    function applyColumnVisibility() {
+      const columns = getColumnsFromHeader();
+      const table = document.querySelector('table');
+      const rows = Array.from(table.querySelectorAll('tr'));
+      columns.forEach((col, i) => {
+        const hide = hiddenColumns.has(col.key) && !(col.key === 'vendor' || col.key === 'model');
+        rows.forEach(row => {
+          const cells = row.children;
+          if (cells[i]) {
+            cells[i].style.display = hide ? 'none' : '';
+          }
+        });
+      });
+      updateSortIndicators();
     }
 
     function renderTable() {
@@ -192,6 +261,8 @@
         tr.appendChild(textCell(entry.form_factor));
         tr.appendChild(textCell(entry.msrp));
 
+        tr.addEventListener('click', () => openDetails(entry));
+
         tbody.appendChild(tr);
       });
 
@@ -207,6 +278,45 @@
       }
 
       updateSortIndicators();
+      applyColumnVisibility();
+    }
+
+    function openDetails(entry) {
+      const overlay = document.getElementById('modal');
+      const body = document.getElementById('modal-body');
+      const title = document.getElementById('modal-title');
+      title.textContent = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
+      body.innerHTML = '';
+      const renderKV = (k, v) => {
+        const keyDiv = document.createElement('div');
+        keyDiv.className = 'key';
+        keyDiv.textContent = k;
+        const valDiv = document.createElement('div');
+        valDiv.className = 'val';
+        if (Array.isArray(v)) {
+          valDiv.textContent = v.join(', ');
+        } else {
+          valDiv.textContent = normalizeString(v);
+        }
+        body.appendChild(keyDiv);
+        body.appendChild(valDiv);
+      };
+      const primaryKeys = [
+        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
+        'recommended_poe','behavior_min_power','ethernet_ports_speed',
+        'radios_iot_features','antenna_type','form_factor','msrp'
+      ];
+      const keys = Object.keys(entry);
+      const ordered = [
+        ...primaryKeys.filter(k => keys.includes(k)),
+        ...keys.filter(k => !primaryKeys.includes(k)).sort()
+      ];
+      ordered.forEach(k => renderKV(k, entry[k]));
+      overlay.style.display = 'flex';
+    }
+
+    function closeDetails() {
+      document.getElementById('modal').style.display = 'none';
     }
 
     function readStateFromUrl() {
@@ -219,6 +329,9 @@
       const d = params.get('d');
       if (s) currentSort.key = s;
       if (d === 'asc' || d === 'desc') currentSort.dir = d;
+      const cols = params.get('cols');
+      hiddenColumns.clear();
+      if (cols) cols.split(',').forEach(k => { if (k) hiddenColumns.add(k); });
     }
 
     function updateUrl() {
@@ -229,6 +342,7 @@
       if (currentFilters.form) params.set('f', currentFilters.form);
       if (currentSort.key !== 'vendor') params.set('s', currentSort.key);
       if (currentSort.dir !== 'asc') params.set('d', currentSort.dir);
+      if (hiddenColumns.size > 0) params.set('cols', Array.from(hiddenColumns).join(','));
       const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
       history.replaceState({}, '', newUrl);
     }
@@ -255,6 +369,7 @@
         if (vendorEl) vendorEl.value = currentFilters.vendor || '';
         if (antennaEl) antennaEl.value = currentFilters.antenna || '';
         if (formEl) formEl.value = currentFilters.form || '';
+        buildColumnsPanel();
         renderTable();
         errorEl.style.display = 'none';
         errorEl.textContent = '';
@@ -265,7 +380,7 @@
       }
     }
 
-    // Wire up search + filters + sorting + URL state
+    // Wire up search + filters + sorting + URL state + columns + modal
     document.addEventListener('DOMContentLoaded', () => {
       readStateFromUrl();
 
@@ -313,6 +428,20 @@
           renderTable();
           updateUrl();
         });
+      });
+
+      // Columns panel toggle
+      const columnsBtn = document.getElementById('toggle-columns');
+      const columnsPanel = document.getElementById('columns-panel');
+      columnsBtn.addEventListener('click', () => {
+        const isOpen = columnsPanel.style.display === 'block';
+        columnsPanel.style.display = isOpen ? 'none' : 'block';
+      });
+
+      // Modal events
+      document.getElementById('modal-close').addEventListener('click', closeDetails);
+      document.getElementById('modal').addEventListener('click', (e) => {
+        if (e.target.id === 'modal') closeDetails();
       });
     });
 

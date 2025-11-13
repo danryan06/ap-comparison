@@ -317,6 +317,91 @@ td.behavior:hover::before {
   font-size: 0.9rem;
 }
 
+/* Columns chooser panel */
+.columns-panel {
+  display: none;
+  background: #0b1223;
+  border: 1px solid #1f2937;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  margin: 0 0 0.75rem 0;
+  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.6);
+}
+.columns-panel h3 {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  color: #9ca3af;
+}
+.columns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.5rem 0.75rem;
+}
+.columns-grid label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+.columns-grid input[type="checkbox"] {
+  accent-color: #1d4ed8;
+}
+
+/* Details modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+.modal {
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 0.75rem;
+  max-width: 760px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: auto;
+  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.8);
+  padding: 1rem 1rem 1.25rem 1rem;
+}
+.modal header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.modal h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+.modal .modal-close {
+  background: transparent;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
+.modal .kv-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.5rem 0.75rem;
+}
+.modal .kv-grid .key {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+.modal .kv-grid .val {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
 .form-actions {
   margin-top: 1rem;
   display: flex;
