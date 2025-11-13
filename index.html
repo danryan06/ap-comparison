@@ -35,18 +35,18 @@
       <table>
         <thead>
           <tr>
-            <th>Vendor</th>
-            <th>Model</th>
-            <th>Wi-Fi Gen &amp; Radios</th>
-            <th>Spatial Streams<br>(2.4 / 5 / 6 GHz)</th>
-            <th>Min PoE Class</th>
-            <th>Recommended PoE</th>
-            <th>Behavior at Min Power</th>
-            <th>Ethernet Ports &amp; Speed</th>
-            <th>Radios &amp; IoT Features</th>
-            <th>Antenna Type</th>
-            <th>Form Factor</th>
-            <th>MSRP</th>
+            <th class="sortable" data-key="vendor">Vendor</th>
+            <th class="sortable" data-key="model">Model</th>
+            <th class="sortable" data-key="wifi_gen_radios">Wi-Fi Gen &amp; Radios</th>
+            <th class="sortable" data-key="spatial_streams">Spatial Streams<br>(2.4 / 5 / 6 GHz)</th>
+            <th class="sortable" data-key="min_poe_class">Min PoE Class</th>
+            <th class="sortable" data-key="recommended_poe">Recommended PoE</th>
+            <th class="sortable" data-key="behavior_min_power">Behavior at Min Power</th>
+            <th class="sortable" data-key="ethernet_ports_speed">Ethernet Ports &amp; Speed</th>
+            <th class="sortable" data-key="radios_iot_features">Radios &amp; IoT Features</th>
+            <th class="sortable" data-key="antenna_type">Antenna Type</th>
+            <th class="sortable" data-key="form_factor">Form Factor</th>
+            <th class="sortable" data-key="msrp">MSRP</th>
           </tr>
         </thead>
         <tbody id="ap-table-body">
@@ -69,6 +69,7 @@
     let apData = [];
     let currentQuery = '';
     const currentFilters = { vendor: '', antenna: '', form: '' };
+    let currentSort = { key: 'vendor', dir: 'asc' };
 
     function normalizeString(value) {
       if (value == null) return '';
@@ -88,6 +89,17 @@
         opt.value = v;
         opt.textContent = v;
         vendorSelect.appendChild(opt);
+      });
+    }
+
+    function updateSortIndicators() {
+      const ths = document.querySelectorAll('th.sortable');
+      ths.forEach(th => {
+        if (th.dataset.key === currentSort.key) {
+          th.setAttribute('data-dir', currentSort.dir);
+        } else {
+          th.removeAttribute('data-dir');
+        }
       });
     }
 
@@ -125,10 +137,19 @@
         return haystack.includes(q);
       });
 
+      // sort
+      const key = currentSort.key;
+      const dir = currentSort.dir === 'asc' ? 1 : -1;
+      const sorted = filtered.slice().sort((a, b) => {
+        const av = normalizeString(Array.isArray(a[key]) ? a[key].join(', ') : a[key]).toLowerCase();
+        const bv = normalizeString(Array.isArray(b[key]) ? b[key].join(', ') : b[key]).toLowerCase();
+        return av.localeCompare(bv) * dir;
+      });
+
       // Clear and render
       tbody.innerHTML = '';
 
-      filtered.forEach(entry => {
+      sorted.forEach(entry => {
         const tr = document.createElement('tr');
 
         function textCell(text, className) {
@@ -174,7 +195,7 @@
         tbody.appendChild(tr);
       });
 
-      if (filtered.length === 0) {
+      if (sorted.length === 0) {
         const tr = document.createElement('tr');
         const td = document.createElement('td');
         td.setAttribute('colspan', '12');
@@ -184,8 +205,33 @@
         tr.appendChild(td);
         tbody.appendChild(tr);
       }
+
+      updateSortIndicators();
     }
 
+    function readStateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      currentQuery = params.get('q') || '';
+      currentFilters.vendor = params.get('v') || '';
+      currentFilters.antenna = params.get('a') || '';
+      currentFilters.form = params.get('f') || '';
+      const s = params.get('s');
+      const d = params.get('d');
+      if (s) currentSort.key = s;
+      if (d === 'asc' || d === 'desc') currentSort.dir = d;
+    }
+
+    function updateUrl() {
+      const params = new URLSearchParams();
+      if (currentQuery) params.set('q', currentQuery);
+      if (currentFilters.vendor) params.set('v', currentFilters.vendor);
+      if (currentFilters.antenna) params.set('a', currentFilters.antenna);
+      if (currentFilters.form) params.set('f', currentFilters.form);
+      if (currentSort.key !== 'vendor') params.set('s', currentSort.key);
+      if (currentSort.dir !== 'asc') params.set('d', currentSort.dir);
+      const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+      history.replaceState({}, '', newUrl);
+    }
     async function loadApData() {
       const errorEl = document.getElementById('error-message');
 
@@ -200,6 +246,15 @@
         }
         apData = data;
         populateFilters();
+        // Reflect URL state into controls after options are available
+        const searchEl = document.getElementById('search');
+        const vendorEl = document.getElementById('filter-vendor');
+        const antennaEl = document.getElementById('filter-antenna');
+        const formEl = document.getElementById('filter-form');
+        if (searchEl) searchEl.value = currentQuery;
+        if (vendorEl) vendorEl.value = currentFilters.vendor || '';
+        if (antennaEl) antennaEl.value = currentFilters.antenna || '';
+        if (formEl) formEl.value = currentFilters.form || '';
         renderTable();
         errorEl.style.display = 'none';
         errorEl.textContent = '';
@@ -210,14 +265,19 @@
       }
     }
 
-    // Wire up search + filters
+    // Wire up search + filters + sorting + URL state
     document.addEventListener('DOMContentLoaded', () => {
+      readStateFromUrl();
+
       const searchEl = document.getElementById('search');
       if (searchEl) {
         searchEl.addEventListener('input', () => {
           currentQuery = searchEl.value;
           renderTable();
+          updateUrl();
         });
+        // reflect initial state
+        searchEl.value = currentQuery;
       }
       const vendorEl = document.getElementById('filter-vendor');
       const antennaEl = document.getElementById('filter-antenna');
@@ -225,14 +285,34 @@
       vendorEl.addEventListener('change', () => {
         currentFilters.vendor = vendorEl.value;
         renderTable();
+        updateUrl();
       });
       antennaEl.addEventListener('change', () => {
         currentFilters.antenna = antennaEl.value;
         renderTable();
+        updateUrl();
       });
       formEl.addEventListener('change', () => {
         currentFilters.form = formEl.value;
         renderTable();
+        updateUrl();
+      });
+
+      // Header sort click handlers
+      document.querySelectorAll('th.sortable').forEach(th => {
+        th.addEventListener('click', () => {
+          const key = th.dataset.key;
+          if (!key) return;
+          if (currentSort.key === key) {
+            currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+          } else {
+            currentSort.key = key;
+            currentSort.dir = 'asc';
+          }
+          updateSortIndicators();
+          renderTable();
+          updateUrl();
+        });
       });
     });
 

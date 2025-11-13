@@ -178,6 +178,22 @@ td:nth-child(12) {
   white-space: nowrap;
 }
 
+/* Sortable headers */
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+th.sortable[data-dir="asc"]::after {
+  content: " ▲";
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+th.sortable[data-dir="desc"]::after {
+  content: " ▼";
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
 /* Behavior at Min Power: truncated text + tooltip on hover */
 td.behavior {
   max-width: 160px;          /* controls when ellipsis appears */
