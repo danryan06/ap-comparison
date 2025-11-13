@@ -45,4 +45,20 @@
     ],
     "msrp": "~$2,195"
   }
+  {
+  "vendor": "Fortinet",
+  "model": "441K",
+  "wifi_gen_radios": "Wi-Fi 7",
+  "spatial_streams": "4x4 / 4x4 /4x4",
+  "min_poe_class": "802.3at or 2x 802.3af",
+  "recommended_poe": "802.3bt",
+  "behavior_min_power": "R1(2.4GHz), R2(5GHz) and R3\n(6GHz) Operation in Low Tx Power 17 dBm, # of Chains - 2x2;\nR4 operational ; USB - Disabled",
+  "ethernet_ports_speed": "2x 10G mGig",
+  "radios_iot_features": [
+    "BLE",
+    "ZigBee",
+    "GPS"
+  ],
+  "msrp": "$1,350"
+}
 ]
