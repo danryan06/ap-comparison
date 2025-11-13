@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wi-Fi AP Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Wi-Fi Access Point Comparison</h1>
+    <p class="subtitle">
+      Standardized reference for multi-vendor APs &mdash; Wi-Fi generation, spatial streams, PoE behavior, Ethernet ports, and radios/IoT features.
+    </p>
+
+    <div class="card">
+      <span class="badge">Community-maintained</span>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Model</th>
+            <th>Wi-Fi Gen &amp; Radios</th>
+            <th>Spatial Streams<br>(2.4 / 5 / 6 GHz)</th>
+            <th>Min PoE Class</th>
+            <th>Recommended PoE</th>
+            <th>Behavior at Min Power</th>
+            <th>Ethernet Ports &amp; Speed</th>
+            <th>Radios &amp; IoT Features</th>
+            <th>MSRP</th>
+          </tr>
+        </thead>
+        <tbody id="ap-table-body">
+          <!-- Rows will be populated dynamically from ap_data.json -->
+        </tbody>
+      </table>
+
+      <div id="error-message" class="error" style="display:none;"></div>
+
+      <div class="footer">
+        Maintained by Dan Ryan. To add or update an AP, submit a pull request editing <code>ap_data.json</code> in this repository.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Path to the data file in your repo root
+    const DATA_URL = 'ap_data.json';
+
+    async function loadApData() {
+      const tbody = document.getElementById('ap-table-body');
+      const errorEl = document.getElementById('error-message');
+
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) {
+          throw new Error('HTTP ' + res.status);
+        }
+
+        const data = await res.json();
+
+        if (!Array.isArray(data)) {
+          throw new Error('Data format error: expected an array');
+        }
+
+        // Clear any existing rows
+        tbody.innerHTML = '';
+
+        data.forEach(entry => {
+          const tr = document.createElement('tr');
+
+          // Helper to create a cell with simple text
+          function textCell(text, className) {
+            const td = document.createElement('td');
+            if (className) td.classList.add(className);
+            td.textContent = text || '';
+            return td;
+          }
+
+          // Vendor
+          tr.appendChild(textCell(entry.vendor, 'vendor'));
+          // Model
+          tr.appendChild(textCell(entry.model));
+          // Wi-Fi Gen & Radios
+          tr.appendChild(textCell(entry.wifi_gen_radios));
+          // Spatial Streams
+          tr.appendChild(textCell(entry.spatial_streams));
+          // Min PoE Class
+          tr.appendChild(textCell(entry.min_poe_class));
+          // Recommended PoE
+          tr.appendChild(textCell(entry.recommended_poe));
+
+          // Behavior at Min Power (with tooltip + truncation)
+          const behaviorTd = document.createElement('td');
+          behaviorTd.classList.add('behavior');
+          const behaviorText = entry.behavior_min_power || '';
+          behaviorTd.textContent = behaviorText;
+          behaviorTd.setAttribute('data-fulltext', behaviorText);
+          tr.appendChild(behaviorTd);
+
+          // Ethernet Ports & Speed
+          tr.appendChild(textCell(entry.ethernet_ports_speed));
+
+          // Radios & IoT Features (render as tags if array, else plain text)
+          const radiosTd = document.createElement('td');
+          if (Array.isArray(entry.radios_iot_features)) {
+            entry.radios_iot_features.forEach(feature => {
+              const span = document.createElement('span');
+              span.classList.add('tag');
+              span.textContent = feature;
+              radiosTd.appendChild(span);
+            });
+          } else if (typeof entry.radios_iot_features === 'string') {
+            radiosTd.textContent = entry.radios_iot_features;
+          }
+          tr.appendChild(radiosTd);
+
+          // MSRP
+          tr.appendChild(textCell(entry.msrp));
+
+          tbody.appendChild(tr);
+        });
+
+        if (data.length === 0) {
+          const tr = document.createElement('tr');
+          const td = document.createElement('td');
+          td.setAttribute('colspan', '10');
+          td.textContent = 'No APs defined yet. Add entries to ap_data.json.';
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+        }
+      } catch (err) {
+        console.error('Failed to load AP data:', err);
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Failed to load AP data. Please try again later or check ap_data.json.';
+      }
+    }
+
+    loadApData();
+  </script>
+</body>
+</html>
