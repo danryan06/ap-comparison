@@ -10,7 +10,8 @@
   <div class="container">
     <h1>Submit New AP</h1>
     <p class="subtitle">
-      Use this form to generate a standardized JSON entry for a new access point. You can copy the snippet or open a pre-filled GitHub issue for review.
+      Use this form to generate a standardized JSON entry for a new access point. Then click
+      “Open GitHub New AP Form”, paste the JSON into the <strong>JSON Snippet</strong> field, and submit.
     </p>
 
     <div class="actions">
@@ -85,8 +86,10 @@
       </div>
 
       <div class="footer">
-        After generating, you can either copy the JSON snippet into a pull request, or click “Open GitHub Issue” to submit it for review. The maintainers will handle the merge.
+        Workflow: Generate JSON ➜ open the GitHub New AP form ➜ paste the snippet into the <code>JSON Snippet</code> field ➜ submit.
+        A GitHub Action will turn your submission into a pull request.
       </div>
+
     </div>
   </div>
 
@@ -141,32 +144,18 @@
     });
 
     document.getElementById('open-issue-btn').addEventListener('click', function () {
+      // Make sure we at least have vendor + model so the user isn't totally lost
       const obj = buildApObjectFromForm();
-
       if (!obj.vendor || !obj.model) {
-        alert('Please fill in at least Vendor and Model before opening an issue.');
+        alert('Please fill in at least Vendor and Model, then click "Generate JSON Snippet" before opening the GitHub form.');
         return;
       }
 
-      const title = `New AP: ${obj.vendor} ${obj.model}`;
-
-      const bodyLines = [
-        'New AP submission:',
-        '',
-        '```json',
-        JSON.stringify(obj, null, 2),
-        '```',
-        '',
-        '_Submitted via on-site form._'
-      ];
-
-      const body = bodyLines.join('\n');
-
-      const url = `https://github.com/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_REPO)}/issues/new` +
-                  `?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-
+      // Open the New AP Issue Form
+      const url = `https://github.com/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_REPO)}/issues/new?template=new_ap.yml`;
       window.open(url, '_blank', 'noopener');
     });
+
   </script>
 </body>
 </html>
