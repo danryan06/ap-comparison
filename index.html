@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
   <div class="actions">
     <a class="btn-link" href="submit.html">Submit New AP</a>
     <a class="btn-link" href="edit.html">Edit Existing AP Information</a>
@@ -27,6 +28,7 @@
             <th>Behavior at Min Power</th>
             <th>Ethernet Ports &amp; Speed</th>
             <th>Radios &amp; IoT Features</th>
+            <th>Antenna Type</th>
             <th>MSRP</th>
           </tr>
         </thead>
@@ -115,6 +117,9 @@
           }
           tr.appendChild(radiosTd);
 
+          // Antenna Type
+          tr.appendChild(textCell(entry.antenna_type));
+
           // MSRP
           tr.appendChild(textCell(entry.msrp));
 
@@ -124,7 +129,7 @@
         if (data.length === 0) {
           const tr = document.createElement('tr');
           const td = document.createElement('td');
-          td.setAttribute('colspan', '10');
+          td.setAttribute('colspan', '11');
           td.textContent = 'No APs defined yet. Add entries to ap_data.json.';
           tr.appendChild(td);
           tbody.appendChild(tr);

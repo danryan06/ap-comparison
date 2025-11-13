@@ -68,6 +68,16 @@
           </div>
 
           <div class="form-row">
+            <label for="antenna_type">Antenna Type</label>
+            <select id="antenna_type" name="antenna_type" required>
+              <option value="" disabled selected>Select antenna type</option>
+              <option>Internal</option>
+              <option>External</option>
+              <option>Directional</option>
+            </select>
+          </div>
+
+          <div class="form-row">
             <label for="radios_iot_features">Radios &amp; IoT Features (comma-separated)</label>
             <input id="radios_iot_features" name="radios_iot_features" type="text" placeholder="BLE, Zigbee, GPS, vBLE array, sensor radio" />
           </div>
@@ -109,6 +119,7 @@
       const recommended_poe = document.getElementById('recommended_poe').value.trim();
       const behavior_min_power = document.getElementById('behavior_min_power').value.trim();
       const ethernet_ports_speed = document.getElementById('ethernet_ports_speed').value.trim();
+      const antenna_type = document.getElementById('antenna_type').value.trim();
       const radios_iot_features_raw = document.getElementById('radios_iot_features').value.trim();
       const msrp = document.getElementById('msrp').value.trim();
 
@@ -129,6 +140,7 @@
         recommended_poe,
         behavior_min_power,
         ethernet_ports_speed,
+        antenna_type,
         radios_iot_features,
         msrp
       };

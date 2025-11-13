@@ -8,6 +8,7 @@
     "recommended_poe": "802.3bt (~30 W)",
     "behavior_min_power": "On 802.3at, the AP may disable the USB port and/or one Wi-Fi band and reduce transmit power to stay within the power budget.",
     "ethernet_ports_speed": "1×2.5GbE",
+    "antenna_type": "Internal",
     "radios_iot_features": [
       "vBLE array",
       "dedicated sensor/spec-an radio"
@@ -23,6 +24,7 @@
     "recommended_poe": "802.3bt / UPOE+",
     "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate but USB and PoE-out are disabled and some advanced features may be constrained.",
     "ethernet_ports_speed": "1×mGig",
+    "antenna_type": "Internal",
     "radios_iot_features": [
       "BLE",
       "802.15.4 IoT radio"
@@ -38,6 +40,7 @@
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3at (Class 4), the AP-655 operates in a power-restricted mode similar to an AP-635, potentially limiting bands, features, or transmit power.",
     "ethernet_ports_speed": "2×5GbE",
+    "antenna_type": "Internal",
     "radios_iot_features": [
       "BLE",
       "Zigbee",
@@ -54,6 +57,7 @@
   "recommended_poe": "802.3bt",
   "behavior_min_power": "R1(2.4GHz), R2(5GHz) and R3\n(6GHz) Operation in Low Tx Power 17 dBm, # of Chains - 2x2;\nR4 operational ; USB - Disabled",
   "ethernet_ports_speed": "2x 10G mGig",
+  "antenna_type": "Internal",
   "radios_iot_features": [
     "BLE",
     "ZigBee",

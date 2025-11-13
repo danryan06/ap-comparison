@@ -238,7 +238,8 @@ td.behavior:hover::before {
 }
 
 .form-row input,
-.form-row textarea {
+.form-row textarea,
+.form-row select {
   border-radius: 0.55rem;
   border: 1px solid #374151;
   background: #020617;
