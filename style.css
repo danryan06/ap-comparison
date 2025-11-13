@@ -150,6 +150,34 @@ td:nth-child(9) {
   white-space: normal; /* allow wrapping for tags/text */
 }
 
+/* Ethernet Ports & Speed (col 8) */
+th:nth-child(8),
+td:nth-child(8) {
+  width: 140px;
+  white-space: nowrap;
+}
+
+/* Antenna Type (col 10) */
+th:nth-child(10),
+td:nth-child(10) {
+  width: 120px;
+  white-space: nowrap;
+}
+
+/* Form Factor (col 11) */
+th:nth-child(11),
+td:nth-child(11) {
+  width: 120px;
+  white-space: nowrap;
+}
+
+/* MSRP (col 12) */
+th:nth-child(12),
+td:nth-child(12) {
+  width: 120px;
+  white-space: nowrap;
+}
+
 /* Behavior at Min Power: truncated text + tooltip on hover */
 td.behavior {
   max-width: 160px;          /* controls when ellipsis appears */
@@ -251,6 +279,26 @@ td.behavior:hover::before {
 .form-row textarea {
   min-height: 80px;
   resize: vertical;
+}
+
+/* Filters/search controls on index page */
+.search-input {
+  min-width: 220px;
+  flex: 1 1 260px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 0.45rem 0.75rem;
+}
+
+.filter-select {
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.9rem;
 }
 
 .form-actions {

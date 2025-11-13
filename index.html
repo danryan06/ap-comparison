@@ -11,6 +11,22 @@
   <div class="actions">
     <a class="btn-link" href="submit.html">Submit New AP</a>
     <a class="btn-link" href="edit.html">Edit Existing AP Information</a>
+    <input id="search" class="search-input" type="search" placeholder="Search vendor, model, features, PoE…" />
+    <select id="filter-vendor" class="filter-select" title="Filter by vendor">
+      <option value="">All Vendors</option>
+    </select>
+    <select id="filter-antenna" class="filter-select" title="Filter by antenna type">
+      <option value="">All Antenna Types</option>
+      <option>Internal</option>
+      <option>External</option>
+      <option>Directional</option>
+    </select>
+    <select id="filter-form" class="filter-select" title="Filter by form factor">
+      <option value="">All Form Factors</option>
+      <option>Indoor</option>
+      <option>Outdoor</option>
+      <option>Wallplate</option>
+    </select>
   </div>
 
     <div class="card">
@@ -29,6 +45,7 @@
             <th>Ethernet Ports &amp; Speed</th>
             <th>Radios &amp; IoT Features</th>
             <th>Antenna Type</th>
+            <th>Form Factor</th>
             <th>MSRP</th>
           </tr>
         </thead>
@@ -40,7 +57,7 @@
       <div id="error-message" class="error" style="display:none;"></div>
 
       <div class="footer">
-        Maintained by Dan Ryan. To add or update an AP, submit a pull request editing <code>ap_data.json</code> in this repository.
+        Maintained by Dan Ryan. To add a new AP or request an edit, use the buttons above.
       </div>
     </div>
   </div>
@@ -49,8 +66,127 @@
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
 
-    async function loadApData() {
+    let apData = [];
+    let currentQuery = '';
+    const currentFilters = { vendor: '', antenna: '', form: '' };
+
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    function populateFilters() {
+      const vendorSelect = document.getElementById('filter-vendor');
+      const vendors = Array.from(new Set(apData.map(e => e.vendor).filter(Boolean))).sort((a, b) =>
+        a.localeCompare(b)
+      );
+      // Clear all except first option
+      while (vendorSelect.options.length > 1) vendorSelect.remove(1);
+      vendors.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v;
+        opt.textContent = v;
+        vendorSelect.appendChild(opt);
+      });
+    }
+
+    function renderTable() {
       const tbody = document.getElementById('ap-table-body');
+      const errorEl = document.getElementById('error-message');
+
+      // filter data
+      const q = currentQuery.trim().toLowerCase();
+      const filtered = apData.filter(entry => {
+        if (currentFilters.vendor && entry.vendor !== currentFilters.vendor) return false;
+        if (currentFilters.antenna && (entry.antenna_type || '').toLowerCase() !== currentFilters.antenna.toLowerCase()) return false;
+        if (currentFilters.form && (entry.form_factor || '').toLowerCase() !== currentFilters.form.toLowerCase()) return false;
+        if (!q) return true;
+        const haystack =
+          [
+            'vendor',
+            'model',
+            'wifi_gen_radios',
+            'spatial_streams',
+            'min_poe_class',
+            'recommended_poe',
+            'behavior_min_power',
+            'ethernet_ports_speed',
+            'form_factor',
+            'msrp'
+          ]
+            .map(k => normalizeString(entry[k]))
+            .join(' ')
+            .toLowerCase() +
+          ' ' +
+          normalizeString(entry.radios_iot_features).toLowerCase() +
+          ' ' +
+          normalizeString(entry.antenna_type).toLowerCase();
+        return haystack.includes(q);
+      });
+
+      // Clear and render
+      tbody.innerHTML = '';
+
+      filtered.forEach(entry => {
+        const tr = document.createElement('tr');
+
+        function textCell(text, className) {
+          const td = document.createElement('td');
+          if (className) td.classList.add(className);
+          td.textContent = text || '';
+          return td;
+        }
+
+        tr.appendChild(textCell(entry.vendor, 'vendor'));
+        tr.appendChild(textCell(entry.model));
+        tr.appendChild(textCell(entry.wifi_gen_radios));
+        tr.appendChild(textCell(entry.spatial_streams));
+        tr.appendChild(textCell(entry.min_poe_class));
+        tr.appendChild(textCell(entry.recommended_poe));
+
+        const behaviorTd = document.createElement('td');
+        behaviorTd.classList.add('behavior');
+        const behaviorText = entry.behavior_min_power || '';
+        behaviorTd.textContent = behaviorText;
+        behaviorTd.setAttribute('data-fulltext', behaviorText);
+        tr.appendChild(behaviorTd);
+
+        tr.appendChild(textCell(entry.ethernet_ports_speed));
+
+        const radiosTd = document.createElement('td');
+        if (Array.isArray(entry.radios_iot_features)) {
+          entry.radios_iot_features.forEach(feature => {
+            const span = document.createElement('span');
+            span.classList.add('tag');
+            span.textContent = feature;
+            radiosTd.appendChild(span);
+          });
+        } else if (typeof entry.radios_iot_features === 'string') {
+          radiosTd.textContent = entry.radios_iot_features;
+        }
+        tr.appendChild(radiosTd);
+
+        tr.appendChild(textCell(entry.antenna_type));
+        tr.appendChild(textCell(entry.form_factor));
+        tr.appendChild(textCell(entry.msrp));
+
+        tbody.appendChild(tr);
+      });
+
+      if (filtered.length === 0) {
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.setAttribute('colspan', '12');
+        td.textContent = currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
+          ? 'No APs match your search or filters.'
+          : 'No APs defined yet. Add entries to ap_data.json.';
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+      }
+    }
+
+    async function loadApData() {
       const errorEl = document.getElementById('error-message');
 
       try {
@@ -58,88 +194,47 @@
         if (!res.ok) {
           throw new Error('HTTP ' + res.status);
         }
-
         const data = await res.json();
-
         if (!Array.isArray(data)) {
           throw new Error('Data format error: expected an array');
         }
-
-        // Clear any existing rows
-        tbody.innerHTML = '';
-
-        data.forEach(entry => {
-          const tr = document.createElement('tr');
-
-          // Helper to create a cell with simple text
-          function textCell(text, className) {
-            const td = document.createElement('td');
-            if (className) td.classList.add(className);
-            td.textContent = text || '';
-            return td;
-          }
-
-          // Vendor
-          tr.appendChild(textCell(entry.vendor, 'vendor'));
-          // Model
-          tr.appendChild(textCell(entry.model));
-          // Wi-Fi Gen & Radios
-          tr.appendChild(textCell(entry.wifi_gen_radios));
-          // Spatial Streams
-          tr.appendChild(textCell(entry.spatial_streams));
-          // Min PoE Class
-          tr.appendChild(textCell(entry.min_poe_class));
-          // Recommended PoE
-          tr.appendChild(textCell(entry.recommended_poe));
-
-          // Behavior at Min Power (with tooltip + truncation)
-          const behaviorTd = document.createElement('td');
-          behaviorTd.classList.add('behavior');
-          const behaviorText = entry.behavior_min_power || '';
-          behaviorTd.textContent = behaviorText;
-          behaviorTd.setAttribute('data-fulltext', behaviorText);
-          tr.appendChild(behaviorTd);
-
-          // Ethernet Ports & Speed
-          tr.appendChild(textCell(entry.ethernet_ports_speed));
-
-          // Radios & IoT Features (render as tags if array, else plain text)
-          const radiosTd = document.createElement('td');
-          if (Array.isArray(entry.radios_iot_features)) {
-            entry.radios_iot_features.forEach(feature => {
-              const span = document.createElement('span');
-              span.classList.add('tag');
-              span.textContent = feature;
-              radiosTd.appendChild(span);
-            });
-          } else if (typeof entry.radios_iot_features === 'string') {
-            radiosTd.textContent = entry.radios_iot_features;
-          }
-          tr.appendChild(radiosTd);
-
-          // Antenna Type
-          tr.appendChild(textCell(entry.antenna_type));
-
-          // MSRP
-          tr.appendChild(textCell(entry.msrp));
-
-          tbody.appendChild(tr);
-        });
-
-        if (data.length === 0) {
-          const tr = document.createElement('tr');
-          const td = document.createElement('td');
-          td.setAttribute('colspan', '11');
-          td.textContent = 'No APs defined yet. Add entries to ap_data.json.';
-          tr.appendChild(td);
-          tbody.appendChild(tr);
-        }
+        apData = data;
+        populateFilters();
+        renderTable();
+        errorEl.style.display = 'none';
+        errorEl.textContent = '';
       } catch (err) {
         console.error('Failed to load AP data:', err);
         errorEl.style.display = 'block';
         errorEl.textContent = 'Failed to load AP data. Please try again later or check ap_data.json.';
       }
     }
+
+    // Wire up search + filters
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchEl = document.getElementById('search');
+      if (searchEl) {
+        searchEl.addEventListener('input', () => {
+          currentQuery = searchEl.value;
+          renderTable();
+        });
+      }
+      const vendorEl = document.getElementById('filter-vendor');
+      const antennaEl = document.getElementById('filter-antenna');
+      const formEl = document.getElementById('filter-form');
+      vendorEl.addEventListener('change', () => {
+        currentFilters.vendor = vendorEl.value;
+        renderTable();
+      });
+      antennaEl.addEventListener('change', () => {
+        currentFilters.antenna = antennaEl.value;
+        renderTable();
+      });
+      formEl.addEventListener('change', () => {
+        currentFilters.form = formEl.value;
+        renderTable();
+      });
+    });
 
     loadApData();
   </script>

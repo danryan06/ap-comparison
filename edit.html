@@ -78,6 +78,16 @@
           </div>
 
           <div class="form-row">
+            <label for="form_factor">Form Factor</label>
+            <select id="form_factor" name="form_factor" required>
+              <option value="" disabled selected>Select form factor</option>
+              <option>Indoor</option>
+              <option>Outdoor</option>
+              <option>Wallplate</option>
+            </select>
+          </div>
+
+          <div class="form-row">
             <label for="radios_iot_features">Radios &amp; IoT Features (comma-separated)</label>
             <input id="radios_iot_features" name="radios_iot_features" type="text" placeholder="BLE, Zigbee, GPS, vBLE array, sensor radio" />
           </div>
@@ -120,6 +130,7 @@
       const behavior_min_power = document.getElementById('behavior_min_power').value.trim();
       const ethernet_ports_speed = document.getElementById('ethernet_ports_speed').value.trim();
       const antenna_type = document.getElementById('antenna_type').value.trim();
+      const form_factor = document.getElementById('form_factor').value.trim();
       const radios_iot_features_raw = document.getElementById('radios_iot_features').value.trim();
       const msrp = document.getElementById('msrp').value.trim();
 
@@ -141,6 +152,7 @@
         behavior_min_power,
         ethernet_ports_speed,
         antenna_type,
+        form_factor,
         radios_iot_features,
         msrp
       };

@@ -1,4 +1,4 @@
-﻿Vendor,Model,Wi-Fi Gen & Radios,Spatial Streams (2.4 / 5 / 6 GHz),Min PoE Class,Recommended PoE,Behavior at Min Power,Ethernet Ports & Speed,Radios & IoT Features,Antenna Type,MSRP
-Juniper,AP45,Wi-Fi 6E (2.4/5/6),4x4 / 4x4 / 4x4,802.3at (Class 4),802.3bt (~30 W),May disable USB and/or reduce TX power or shut down one band when underpowered,1×2.5GbE,vBLE array; dedicated sensor/spec-an radio,Internal,$2,100–$2,200
-Cisco,Catalyst 9166I,Wi-Fi 6E (2.4/5/6),4x4 / 4x4 / 4x4,802.3at (Class 4),802.3bt / UPOE+,USB and PoE-out unavailable; some advanced features may be limited on at-power,1×mGig,BLE + 802.15.4 IoT radio,Internal,~$2,593
-Aruba,AP-655,Wi-Fi 6E (2.4/5/6),4x4 / 4x4 / 4x4,802.3at (Class 4),802.3bt (Class 6),"Runs in power-restricted mode on Class 4; may limit bands, features, or TX power",2×5GbE,BLE + Zigbee + GPS,Internal,~$2,195
+﻿Vendor,Model,Wi-Fi Gen & Radios,Spatial Streams (2.4 / 5 / 6 GHz),Min PoE Class,Recommended PoE,Behavior at Min Power,Ethernet Ports & Speed,Radios & IoT Features,Antenna Type,Form Factor,MSRP
+Juniper,AP45,Wi-Fi 6E (2.4/5/6),4x4 / 4x4 / 4x4,802.3at (Class 4),802.3bt (~30 W),May disable USB and/or reduce TX power or shut down one band when underpowered,1×2.5GbE,vBLE array; dedicated sensor/spec-an radio,Internal,Indoor,$2,100–$2,200
+Cisco,Catalyst 9166I,Wi-Fi 6E (2.4/5/6),4x4 / 4x4 / 4x4,802.3at (Class 4),802.3bt / UPOE+,USB and PoE-out unavailable; some advanced features may be limited on at-power,1×mGig,BLE + 802.15.4 IoT radio,Internal,Indoor,~$2,593
+Aruba,AP-655,Wi-Fi 6E (2.4/5/6),4x4 / 4x4 / 4x4,802.3at (Class 4),802.3bt (Class 6),"Runs in power-restricted mode on Class 4; may limit bands, features, or TX power",2×5GbE,BLE + Zigbee + GPS,Internal,Indoor,~$2,195
