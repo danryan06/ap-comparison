@@ -24,7 +24,9 @@
         <div class="form-grid">
           <div class="form-row">
             <label for="existing">Which AP are you editing? (Vendor + Model)</label>
-            <input id="existing" type="text" placeholder="e.g., Juniper AP45" />
+            <select id="existing" name="existing">
+              <option value="">Select an AP to edit…</option>
+            </select>
           </div>
 
           <div class="form-row">
@@ -139,6 +141,8 @@
     // TODO: set these to your actual GitHub username and repo name
     const GITHUB_USER = 'danryan06';
     const GITHUB_REPO = 'ap-comparison';
+    const DATA_URL = 'ap_data.json';
+    let apList = [];
 
     function buildApObjectFromForm() {
       const vendor = document.getElementById('vendor').value.trim();
@@ -186,6 +190,54 @@
       };
     }
 
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    function fillFormWithEntry(entry) {
+      document.getElementById('vendor').value = entry.vendor || '';
+      document.getElementById('model').value = entry.model || '';
+      document.getElementById('wifi_gen_radios').value = entry.wifi_gen_radios || '';
+      document.getElementById('spatial_streams').value = entry.spatial_streams || '';
+      document.getElementById('min_poe_class').value = entry.min_poe_class || '';
+      document.getElementById('recommended_poe').value = entry.recommended_poe || '';
+      document.getElementById('behavior_min_power').value = entry.behavior_min_power || '';
+      document.getElementById('ethernet_ports_speed').value = entry.ethernet_ports_speed || '';
+      document.getElementById('antenna_type').value = entry.antenna_type || '';
+      document.getElementById('form_factor').value = entry.form_factor || '';
+      document.getElementById('radios_iot_features').value =
+        Array.isArray(entry.radios_iot_features) ? entry.radios_iot_features.join(', ') : (entry.radios_iot_features || '');
+      document.getElementById('dimensions').value = entry.dimensions || '';
+      document.getElementById('weight').value = entry.weight || '';
+      document.getElementById('antenna_connectors').value = entry.antenna_connectors || '';
+      document.getElementById('operating_temp_range').value = entry.operating_temp_range || '';
+      document.getElementById('msrp').value = entry.msrp || '';
+    }
+
+    async function loadApList() {
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (!Array.isArray(data)) throw new Error('Data format error');
+        apList = data;
+        const select = document.getElementById('existing');
+        while (select.options.length > 1) select.remove(1);
+        data
+          .map((e, i) => ({ label: `${normalizeString(e.vendor)} ${normalizeString(e.model)}`.trim(), index: i }))
+          .sort((a, b) => a.label.localeCompare(b.label))
+          .forEach(({ label, index }) => {
+            const opt = document.createElement('option');
+            opt.value = String(index);
+            opt.textContent = label;
+            select.appendChild(opt);
+          });
+      } catch (err) {
+        console.error('Failed to load AP list:', err);
+      }
+    }
     document.getElementById('edit-ap-form').addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -199,7 +251,8 @@
 
     document.getElementById('open-issue-btn').addEventListener('click', function () {
       const obj = buildApObjectFromForm();
-      const existing = document.getElementById('existing').value.trim();
+      const existingSelect = document.getElementById('existing');
+      const existing = existingSelect.value ? existingSelect.options[existingSelect.selectedIndex].textContent.trim() : '';
 
       if (!obj.vendor || !obj.model) {
         alert('Please fill in at least Vendor and Model before opening an issue.');
@@ -227,6 +280,11 @@
 
       window.open(url, '_blank', 'noopener');
     });
+    document.getElementById('existing').addEventListener('change', function () {
+      const idx = this.value ? parseInt(this.value, 10) : -1;
+      if (idx >= 0 && apList[idx]) fillFormWithEntry(apList[idx]);
+    });
+    document.addEventListener('DOMContentLoaded', loadApList);
   </script>
 </body>
 </html>

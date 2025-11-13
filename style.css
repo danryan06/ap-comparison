@@ -428,6 +428,22 @@ td.behavior:hover::before {
   font-size: 0.9rem;
   word-break: break-word;
 }
+
+/* Generic key-value grid (used on details page) */
+.kv-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.5rem 0.75rem;
+}
+.kv-grid .key {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+.kv-grid .val {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
 .form-actions {
   margin-top: 1rem;
   display: flex;

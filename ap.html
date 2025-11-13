@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AP Details — Wi-Fi AP Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="actions">
+      <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
+    </div>
+
+    <div class="card">
+      <span class="badge">AP Details</span>
+
+      <h1 id="title">AP Details</h1>
+      <p class="subtitle" id="subtitle"></p>
+
+      <div id="details" class="kv-grid"></div>
+
+      <div id="error-message" class="error" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script>
+    const DATA_URL = 'ap_data.json';
+
+    function slugify(s) {
+      return String(s || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function readId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id') || '';
+    }
+
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    async function load() {
+      const errorEl = document.getElementById('error-message');
+      const titleEl = document.getElementById('title');
+      const subtitleEl = document.getElementById('subtitle');
+      const detailsEl = document.getElementById('details');
+      const backEl = document.getElementById('back-link');
+
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const id = readId();
+        const entry = data.find(e => slugify(`${e.vendor} ${e.model}`) === id);
+        if (!entry) {
+          errorEl.style.display = 'block';
+          errorEl.textContent = 'AP not found.';
+          return;
+        }
+
+        titleEl.textContent = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
+        subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
+
+        detailsEl.innerHTML = '';
+        const renderKV = (k, v) => {
+          const keyDiv = document.createElement('div');
+          keyDiv.className = 'key';
+          keyDiv.textContent = k;
+          const valDiv = document.createElement('div');
+          valDiv.className = 'val';
+          if (Array.isArray(v)) valDiv.textContent = v.join(', ');
+          else valDiv.textContent = normalizeString(v);
+          detailsEl.appendChild(keyDiv);
+          detailsEl.appendChild(valDiv);
+        };
+
+        const primaryKeys = [
+          'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
+          'recommended_poe','behavior_min_power','ethernet_ports_speed',
+          'radios_iot_features','antenna_type','form_factor','dimensions',
+          'weight','antenna_connectors','operating_temp_range','msrp'
+        ];
+        const keys = Object.keys(entry);
+        const ordered = [
+          ...primaryKeys.filter(k => keys.includes(k)),
+          ...keys.filter(k => !primaryKeys.includes(k)).sort()
+        ];
+        ordered.forEach(k => renderKV(k, entry[k]));
+
+        // Build back link preserving state params
+        const params = new URLSearchParams(window.location.search);
+        params.delete('id');
+        const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
+        backEl.setAttribute('href', backUrl);
+      } catch (err) {
+        console.error('Failed to load AP details:', err);
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Failed to load AP details.';
+      }
+    }
+
+    load();
+  </script>
+</body>
+<!-- End of ap.html -->
+</html>
+

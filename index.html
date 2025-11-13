@@ -28,6 +28,7 @@
       <option>Wallplate</option>
     </select>
     <button id="toggle-columns" type="button" class="btn-link">Choose Columns</button>
+    <button id="reset-btn" type="button" class="btn-link">Reset</button>
   </div>
 
     <div id="columns-panel" class="columns-panel">
@@ -90,7 +91,10 @@
     let currentQuery = '';
     const currentFilters = { vendor: '', antenna: '', form: '' };
     let currentSort = { key: 'vendor', dir: 'asc' };
-    const hiddenColumns = new Set(['dimensions','weight','antenna_connectors','operating_temp_range']); // keys to hide by default
+    function defaultHiddenColumns() {
+      return new Set(['dimensions','weight','antenna_connectors','operating_temp_range']);
+    }
+    const hiddenColumns = defaultHiddenColumns(); // keys to hide by default
 
     function normalizeString(value) {
       if (value == null) return '';
@@ -273,7 +277,13 @@
         tr.appendChild(textCell(entry.operating_temp_range));
         tr.appendChild(textCell(entry.msrp));
 
-        tr.addEventListener('click', () => openDetails(entry));
+        // Navigate to dedicated details page, preserving current table state in URL
+        tr.addEventListener('click', () => {
+          const slug = slugFor(entry);
+          const state = window.location.search.replace(/^\?/, '');
+          const url = `ap.html?id=${encodeURIComponent(slug)}${state ? '&' + state : ''}`;
+          window.location.href = url;
+        });
 
         tbody.appendChild(tr);
       });
@@ -291,6 +301,18 @@
 
       updateSortIndicators();
       applyColumnVisibility();
+    }
+
+    function slugify(s) {
+      return String(s || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function slugFor(entry) {
+      return slugify(`${entry.vendor} ${entry.model}`);
     }
 
     function openDetails(entry) {
@@ -450,6 +472,30 @@
       columnsBtn.addEventListener('click', () => {
         const isOpen = columnsPanel.style.display === 'block';
         columnsPanel.style.display = isOpen ? 'none' : 'block';
+      });
+
+      // Reset button
+      document.getElementById('reset-btn').addEventListener('click', () => {
+        currentQuery = '';
+        currentFilters.vendor = '';
+        currentFilters.antenna = '';
+        currentFilters.form = '';
+        currentSort = { key: 'vendor', dir: 'asc' };
+        const def = defaultHiddenColumns();
+        hiddenColumns.clear();
+        def.forEach(k => hiddenColumns.add(k));
+        // Reset controls
+        const searchEl = document.getElementById('search');
+        const vendorEl = document.getElementById('filter-vendor');
+        const antennaEl = document.getElementById('filter-antenna');
+        const formEl = document.getElementById('filter-form');
+        if (searchEl) searchEl.value = '';
+        if (vendorEl) vendorEl.value = '';
+        if (antennaEl) antennaEl.value = '';
+        if (formEl) formEl.value = '';
+        buildColumnsPanel();
+        renderTable();
+        updateUrl();
       });
 
       // Modal events
