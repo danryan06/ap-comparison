@@ -52,6 +52,10 @@
             <th class="sortable" data-key="radios_iot_features">Radios &amp; IoT Features</th>
             <th class="sortable" data-key="antenna_type">Antenna Type</th>
             <th class="sortable" data-key="form_factor">Form Factor</th>
+            <th class="sortable" data-key="dimensions">Dimensions</th>
+            <th class="sortable" data-key="weight">Weight</th>
+            <th class="sortable" data-key="antenna_connectors">Antenna Connectors</th>
+            <th class="sortable" data-key="operating_temp_range">Operating Temp Range</th>
             <th class="sortable" data-key="msrp">MSRP</th>
           </tr>
         </thead>
@@ -86,7 +90,7 @@
     let currentQuery = '';
     const currentFilters = { vendor: '', antenna: '', form: '' };
     let currentSort = { key: 'vendor', dir: 'asc' };
-    const hiddenColumns = new Set(); // keys to hide
+    const hiddenColumns = new Set(['dimensions','weight','antenna_connectors','operating_temp_range']); // keys to hide by default
 
     function normalizeString(value) {
       if (value == null) return '';
@@ -194,6 +198,10 @@
             'behavior_min_power',
             'ethernet_ports_speed',
             'form_factor',
+            'dimensions',
+            'weight',
+            'antenna_connectors',
+            'operating_temp_range',
             'msrp'
           ]
             .map(k => normalizeString(entry[k]))
@@ -259,6 +267,10 @@
 
         tr.appendChild(textCell(entry.antenna_type));
         tr.appendChild(textCell(entry.form_factor));
+        tr.appendChild(textCell(entry.dimensions));
+        tr.appendChild(textCell(entry.weight));
+        tr.appendChild(textCell(entry.antenna_connectors));
+        tr.appendChild(textCell(entry.operating_temp_range));
         tr.appendChild(textCell(entry.msrp));
 
         tr.addEventListener('click', () => openDetails(entry));
@@ -269,7 +281,7 @@
       if (sorted.length === 0) {
         const tr = document.createElement('tr');
         const td = document.createElement('td');
-        td.setAttribute('colspan', '12');
+        td.setAttribute('colspan', '16');
         td.textContent = currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
           ? 'No APs match your search or filters.'
           : 'No APs defined yet. Add entries to ap_data.json.';
@@ -330,8 +342,10 @@
       if (s) currentSort.key = s;
       if (d === 'asc' || d === 'desc') currentSort.dir = d;
       const cols = params.get('cols');
-      hiddenColumns.clear();
-      if (cols) cols.split(',').forEach(k => { if (k) hiddenColumns.add(k); });
+      if (cols != null) {
+        hiddenColumns.clear();
+        if (cols) cols.split(',').forEach(k => { if (k) hiddenColumns.add(k); });
+      }
     }
 
     function updateUrl() {

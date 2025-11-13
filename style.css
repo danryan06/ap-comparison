@@ -9,7 +9,7 @@ body {
 
 /* Page container */
 .container {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 3rem auto;
   padding: 0 1.5rem;
 }
@@ -171,9 +171,35 @@ td:nth-child(11) {
   white-space: nowrap;
 }
 
-/* MSRP (col 12) */
+/* Dimensions (col 12) */
 th:nth-child(12),
 td:nth-child(12) {
+  width: 160px;
+}
+
+/* Weight (col 13) */
+th:nth-child(13),
+td:nth-child(13) {
+  width: 110px;
+  white-space: nowrap;
+}
+
+/* Antenna Connectors (col 14) */
+th:nth-child(14),
+td:nth-child(14) {
+  width: 200px;
+}
+
+/* Operating Temp Range (col 15) */
+th:nth-child(15),
+td:nth-child(15) {
+  width: 200px;
+  white-space: nowrap;
+}
+
+/* MSRP (col 16) */
+th:nth-child(16),
+td:nth-child(16) {
   width: 120px;
   white-space: nowrap;
 }

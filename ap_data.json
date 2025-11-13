@@ -10,6 +10,10 @@
     "ethernet_ports_speed": "1×2.5GbE",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
+    "dimensions": "",
+    "weight": "",
+    "antenna_connectors": "",
+    "operating_temp_range": "",
     "radios_iot_features": [
       "vBLE array",
       "dedicated sensor/spec-an radio"
@@ -27,6 +31,10 @@
     "ethernet_ports_speed": "1×mGig",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
+    "dimensions": "",
+    "weight": "",
+    "antenna_connectors": "",
+    "operating_temp_range": "",
     "radios_iot_features": [
       "BLE",
       "802.15.4 IoT radio"
@@ -44,6 +52,10 @@
     "ethernet_ports_speed": "2×5GbE",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
+    "dimensions": "",
+    "weight": "",
+    "antenna_connectors": "",
+    "operating_temp_range": "",
     "radios_iot_features": [
       "BLE",
       "Zigbee",
@@ -62,6 +74,10 @@
   "ethernet_ports_speed": "2x 10G mGig",
   "antenna_type": "Internal",
   "form_factor": "Indoor",
+  "dimensions": "",
+  "weight": "",
+  "antenna_connectors": "",
+  "operating_temp_range": "",
   "radios_iot_features": [
     "BLE",
     "ZigBee",

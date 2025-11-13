@@ -89,6 +89,26 @@
           </div>
 
           <div class="form-row">
+            <label for="dimensions">Dimensions</label>
+            <input id="dimensions" name="dimensions" type="text" placeholder='e.g., 240 × 240 × 61 mm' />
+          </div>
+
+          <div class="form-row">
+            <label for="weight">Weight</label>
+            <input id="weight" name="weight" type="text" placeholder="e.g., 1.2 kg or 2.6 lb" />
+          </div>
+
+          <div class="form-row">
+            <label for="antenna_connectors">Antenna Connectors</label>
+            <input id="antenna_connectors" name="antenna_connectors" type="text" placeholder="Free-form (e.g., 4×RP-SMA, none)" />
+          </div>
+
+          <div class="form-row">
+            <label for="operating_temp_range">Operating Temperature Range</label>
+            <input id="operating_temp_range" name="operating_temp_range" type="text" placeholder="e.g., -20°C to 50°C" />
+          </div>
+
+          <div class="form-row">
             <label for="msrp">MSRP</label>
             <input id="msrp" name="msrp" type="text" placeholder="~$2,195" required />
           </div>
@@ -130,6 +150,10 @@
       const antenna_type = document.getElementById('antenna_type').value.trim();
       const form_factor = document.getElementById('form_factor').value.trim();
       const radios_iot_features_raw = document.getElementById('radios_iot_features').value.trim();
+      const dimensions = document.getElementById('dimensions').value.trim();
+      const weight = document.getElementById('weight').value.trim();
+      const antenna_connectors = document.getElementById('antenna_connectors').value.trim();
+      const operating_temp_range = document.getElementById('operating_temp_range').value.trim();
       const msrp = document.getElementById('msrp').value.trim();
 
       let radios_iot_features = [];
@@ -152,6 +176,10 @@
         antenna_type,
         form_factor,
         radios_iot_features,
+        dimensions,
+        weight,
+        antenna_connectors,
+        operating_temp_range,
         msrp
       };
     }
