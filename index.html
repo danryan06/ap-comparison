@@ -74,6 +74,7 @@
 
       <div class="footer">
         Maintained by Dan Ryan. To add a new AP or request an edit, use the buttons above.
+        <a href="data_issues.html" class="footer-link footer-right" title="Data Quality">Data Quality</a>
       </div>
     </div>
   </div>
@@ -635,21 +636,12 @@
         if (antennaEl) antennaEl.value = currentFilters.antenna || '';
         if (formEl) formEl.value = currentFilters.form || '';
         buildColumnsPanel();
-        // Validate data and notify if any issues
-        const issueCount = validateData(apData);
-        if (issueCount > 0) {
-          errorEl.style.display = 'block';
-          errorEl.textContent = `${issueCount} data issue(s) detected in ap_data.json. See console for details.`;
-        } else {
-          errorEl.style.display = 'none';
-          errorEl.textContent = '';
-        }
+        // Validate data (console only; no banner here to avoid alarming users)
+        validateData(apData);
         renderTable();
-        // If fetch succeeded and no issues, ensure error hidden
-        if (issueCount === 0) {
-          errorEl.style.display = 'none';
-          errorEl.textContent = '';
-        }
+        // Ensure error hidden after successful load
+        errorEl.style.display = 'none';
+        errorEl.textContent = '';
       } catch (err) {
         console.error('Failed to load AP data:', err);
         errorEl.style.display = 'block';

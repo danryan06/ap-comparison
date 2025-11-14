@@ -307,6 +307,19 @@ td.behavior:hover::before {
   color: #6b7280;
 }
 
+/* Footer utilities */
+.footer .footer-right {
+  float: right;
+}
+.footer a.footer-link {
+  color: #6b7280;
+  text-decoration: none;
+}
+.footer a.footer-link:hover {
+  color: #9ca3af;
+  text-decoration: underline;
+}
+
 /* Simple error message styling */
 .error {
   color: #f97373;

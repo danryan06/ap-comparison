@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Quality — Wi‑Fi AP Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="actions">
+      <a class="btn-link" href="index.html">&larr; Back to AP Table</a>
+      <label class="btn-link" style="display:inline-flex; gap:0.4rem; align-items:center;">
+        <input id="include-unknown" type="checkbox" checked />
+        Include “unknown”
+      </label>
+      <button id="export-issues" class="btn-link" type="button">Export Issues CSV</button>
+    </div>
+
+    <div class="card">
+      <span class="badge">Data Quality</span>
+      <h1>Missing Information</h1>
+      <p class="subtitle" id="summary">Scanning…</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Model</th>
+            <th>Issues</th>
+          </tr>
+        </thead>
+        <tbody id="issues-body"></tbody>
+      </table>
+      <div id="error-message" class="error" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script>
+    const DATA_URL = 'ap_data.json';
+
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    function valueIsUnknown(val) {
+      if (val == null) return true;
+      if (Array.isArray(val)) return val.length === 0 || val.some(v => valueIsUnknown(v));
+      const s = String(val).trim().toLowerCase();
+      return s.length === 0 || s === 'unknown';
+    }
+
+    function classifyIssues(entry, includeUnknown) {
+      const keysToCheck = [
+        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
+        'behavior_min_power','ethernet_ports_speed','radios_iot_features','antenna_type','form_factor',
+        'dimensions','weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
+      ];
+      const issues = [];
+      keysToCheck.forEach(k => {
+        if (!(k in entry) || normalizeString(entry[k]).trim() === '') {
+          issues.push(`${k}: missing`);
+        } else if (includeUnknown && valueIsUnknown(entry[k])) {
+          issues.push(`${k}: unknown`);
+        }
+      });
+      return issues;
+    }
+
+    async function load() {
+      const errorEl = document.getElementById('error-message');
+      const tbody = document.getElementById('issues-body');
+      const summary = document.getElementById('summary');
+      const includeUnknownEl = document.getElementById('include-unknown');
+
+      async function render() {
+        try {
+          errorEl.style.display = 'none';
+          tbody.innerHTML = '';
+          const res = await fetch(DATA_URL, { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          const includeUnknown = includeUnknownEl.checked;
+          let totalIssues = 0;
+          data.forEach(entry => {
+            const issues = classifyIssues(entry, includeUnknown);
+            if (issues.length) {
+              const tr = document.createElement('tr');
+              const tdVendor = document.createElement('td');
+              tdVendor.textContent = normalizeString(entry.vendor);
+              tr.appendChild(tdVendor);
+              const tdModel = document.createElement('td');
+              tdModel.textContent = normalizeString(entry.model);
+              tr.appendChild(tdModel);
+              const tdIssues = document.createElement('td');
+              tdIssues.textContent = issues.join('; ');
+              tr.appendChild(tdIssues);
+              tbody.appendChild(tr);
+              totalIssues += issues.length;
+            }
+          });
+          const rowsWithIssues = tbody.children.length;
+          summary.textContent = rowsWithIssues
+            ? `${rowsWithIssues} AP(s) have ${totalIssues} issue(s)${includeUnknown ? ' (including "unknown")' : ''}.`
+            : 'No issues detected.';
+        } catch (err) {
+          console.error('Failed to load issues:', err);
+          errorEl.style.display = 'block';
+          errorEl.textContent = 'Failed to load AP data.';
+        }
+      }
+
+      includeUnknownEl.addEventListener('change', render);
+
+      document.getElementById('export-issues').addEventListener('click', () => {
+        const includeUnknown = includeUnknownEl.checked;
+        const rows = Array.from(tbody.querySelectorAll('tr')).map(tr => {
+          const tds = tr.querySelectorAll('td');
+          return Array.from(tds).map(td => {
+            const s = td.textContent || '';
+            return /[\",\\n]/.test(s) ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s;
+          }).join(',');
+        });
+        const csv = ['Vendor,Model,Issues', ...rows].join('\\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = includeUnknown ? 'ap-data-issues-with-unknown.csv' : 'ap-data-issues.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      render();
+    }
+
+    document.addEventListener('DOMContentLoaded', load);
+  </script>
+</body>
+</html>
+
