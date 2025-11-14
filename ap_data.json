@@ -932,8 +932,7 @@
     "weight": "1440 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating",
-    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf
-    ",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
     "radios_iot_features": [
     "BLE",
     "Zigbee",
