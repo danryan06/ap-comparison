@@ -11,6 +11,7 @@
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
       <button id="toggle-columns" type="button" class="btn-link">Choose Columns</button>
+      <button id="export-csv" type="button" class="btn-link">Export CSV</button>
     </div>
 
     <div class="card">
@@ -38,6 +39,10 @@
     const DATA_URL = 'ap_data.json';
     const HIDDEN_KEY = 'compareTable.cols';
     const hiddenColumns = new Set(JSON.parse(localStorage.getItem(HIDDEN_KEY) || '[]'));
+    const ORDER_KEY = 'compareTable.colOrder';
+    const WIDTHS_KEY = 'compareTable.colWidths';
+    let currentSelected = [];
+    let currentVisibleColumns = [];
 
     function slugify(s) {
       return String(s || '')
@@ -134,14 +139,20 @@
         headerRow.innerHTML = '';
         const vendorTh = document.createElement('th');
         vendorTh.textContent = 'Vendor';
+        vendorTh.dataset.key = '__vendor__';
         headerRow.appendChild(vendorTh);
         const modelTh = document.createElement('th');
         modelTh.textContent = 'Model';
+        modelTh.dataset.key = 'model';
         headerRow.appendChild(modelTh);
         const visibleCols = columns.filter(([, key]) => !hiddenColumns.has(key));
         visibleCols.forEach(([label]) => {
           const th = document.createElement('th');
           th.textContent = label;
+          // Find key for dataset
+          const pair = visibleCols.find(([lbl]) => lbl === label);
+          const key = pair ? pair[1] : '';
+          th.dataset.key = key;
           headerRow.appendChild(th);
         });
 
@@ -175,6 +186,13 @@
 
         // Build columns panel after we know columns
         buildColumnsPanel(columns);
+        // Save context for CSV/export
+        currentSelected = selected;
+        currentVisibleColumns = visibleCols;
+
+        // Initialize resizers and DnD, then apply saved layout
+        initCompareColumnResizersAndDnD();
+        compareLoadLayout();
       } catch (err) {
         console.error('Failed to load comparison:', err);
         errorEl.style.display = 'block';
@@ -190,9 +208,185 @@
         const isOpen = panel.style.display === 'block';
         panel.style.display = isOpen ? 'none' : 'block';
       });
+      // Export CSV
+      const exportBtn = document.getElementById('export-csv');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+          if (!currentSelected.length) return;
+          const headers = ['Vendor', 'Model', ...currentVisibleColumns.map(([label]) => label)];
+          const keys = ['__vendor__', 'model', ...currentVisibleColumns.map(([, key]) => key)];
+          const rows = currentSelected.map(e => {
+            return keys.map(k => {
+              if (k === '__vendor__') return normalizeString(e.vendor);
+              const v = e[k];
+              const s = Array.isArray(v) ? v.join('; ') : normalizeString(v);
+              // Escape CSV
+              const needs = /[\",\\n]/.test(s);
+              return needs ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s;
+            }).join(',');
+          });
+          const csv = headers.join(',') + '\\n' + rows.join('\\n');
+          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'ap-comparison.csv';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+      }
     });
 
     load();
+
+    // ----- Column resize and drag/drop for compare table -----
+    let isResizing = false;
+    function compareSaveLayout() {
+      const ths = Array.from(document.querySelectorAll('#compare-table thead th'));
+      const order = ths.map(th => th.dataset.key || '');
+      const widths = {};
+      ths.forEach(th => {
+        const key = th.dataset.key || '';
+        const w = th.style.width || '';
+        if (key) widths[key] = w;
+      });
+      localStorage.setItem(ORDER_KEY, JSON.stringify(order));
+      localStorage.setItem(WIDTHS_KEY, JSON.stringify(widths));
+    }
+
+    function compareLoadLayout() {
+      const headerRow = document.querySelector('#compare-table thead tr');
+      if (!headerRow) return;
+      const storedOrder = JSON.parse(localStorage.getItem(ORDER_KEY) || '[]');
+      const storedWidths = JSON.parse(localStorage.getItem(WIDTHS_KEY) || '{}');
+      if (Array.isArray(storedOrder) && storedOrder.length > 0) {
+        const map = {};
+        Array.from(headerRow.children).forEach(th => { map[th.dataset.key || ''] = th; });
+        storedOrder.forEach(key => {
+          const th = map[key];
+          if (th) headerRow.appendChild(th);
+        });
+      }
+      // apply widths
+      const ths = Array.from(headerRow.children);
+      ths.forEach((th, index) => {
+        const key = th.dataset.key || '';
+        const w = storedWidths[key];
+        if (w) {
+          th.style.width = w;
+          const tbody = document.querySelector('#compare-table tbody');
+          if (tbody) {
+            Array.from(tbody.rows).forEach(row => {
+              const cell = row.children[index];
+              if (cell) cell.style.width = w;
+            });
+          }
+        }
+      });
+      applyCompareColumnOrderFromHeader();
+    }
+
+    function applyCompareColumnOrderFromHeader() {
+      const headerRow = document.querySelector('#compare-table thead tr');
+      if (!headerRow) return;
+      const ths = Array.from(headerRow.children);
+      const tbody = document.querySelector('#compare-table tbody');
+      if (!tbody) return;
+      Array.from(tbody.rows).forEach(row => {
+        const cells = Array.from(row.children);
+        const reordered = ths.map((_, idx) => cells[idx]);
+        reordered.forEach(cell => row.appendChild(cell));
+      });
+    }
+
+    function initCompareColumnResizersAndDnD() {
+      const headerRow = document.querySelector('#compare-table thead tr');
+      if (!headerRow) return;
+      const ths = Array.from(headerRow.querySelectorAll('th'));
+      ths.forEach((th, index) => {
+        // prevent dragging vendor/model columns
+        const key = th.dataset.key || '';
+        const isLocked = key === '__vendor__' || key === 'model';
+        // Add resizer
+        if (!th.querySelector('.col-resizer')) {
+          const resizer = document.createElement('span');
+          resizer.className = 'col-resizer';
+          th.appendChild(resizer);
+          let startX, startWidth;
+          let blockDragStart;
+          const onMouseMove = (e) => {
+            const delta = e.clientX - startX;
+            const newWidth = Math.max(60, startWidth + delta);
+            th.style.width = newWidth + 'px';
+            const tbody = document.querySelector('#compare-table tbody');
+            if (tbody) {
+              Array.from(tbody.rows).forEach(row => {
+                const cell = row.children[index];
+                if (cell) cell.style.width = newWidth + 'px';
+              });
+            }
+          };
+          const onMouseUp = () => {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+            document.removeEventListener('dragstart', blockDragStart, true);
+            isResizing = false;
+            if (!isLocked) th.draggable = true;
+            compareSaveLayout();
+          };
+          resizer.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            startX = e.clientX;
+            startWidth = th.getBoundingClientRect().width;
+            isResizing = true;
+            th.draggable = false;
+            blockDragStart = (ev) => { ev.preventDefault(); };
+            document.addEventListener('dragstart', blockDragStart, true);
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+          });
+        }
+        // Drag/drop reorder (skip locked)
+        if (!isLocked) {
+          th.setAttribute('draggable', 'true');
+          th.addEventListener('dragstart', (e) => {
+            if (isResizing) { e.preventDefault(); return; }
+            const currentIndex = Array.from(th.parentNode.children).indexOf(th);
+            e.dataTransfer.setData('text/plain', String(currentIndex));
+          });
+          th.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const rect = th.getBoundingClientRect();
+            const halfway = rect.left + rect.width / 2;
+            th.classList.toggle('drag-over-left', e.clientX < halfway);
+            th.classList.toggle('drag-over-right', e.clientX >= halfway);
+          });
+          th.addEventListener('dragleave', () => {
+            th.classList.remove('drag-over-left', 'drag-over-right');
+          });
+          th.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const srcIndex = parseInt(e.dataTransfer.getData('text/plain'), 10);
+            const srcTh = ths[srcIndex];
+            const rect = th.getBoundingClientRect();
+            const after = e.clientX >= rect.left + rect.width / 2;
+            th.classList.remove('drag-over-left', 'drag-over-right');
+            if (srcTh && srcTh !== th) {
+              if (after) {
+                th.parentNode.insertBefore(srcTh, th.nextSibling);
+              } else {
+                th.parentNode.insertBefore(srcTh, th);
+              }
+              applyCompareColumnOrderFromHeader();
+              compareSaveLayout();
+            }
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>

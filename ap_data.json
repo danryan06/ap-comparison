@@ -340,6 +340,163 @@
     "msrp": "~$2,593"
   },
   {
+    "vendor": "Cisco",
+    "model": "CW9172I",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af",
+    "recommended_poe": "802.3bt (Class 5 UPOE)",
+    "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
+    "ethernet_ports_speed": "1× 1/2.5 GbE mGig (RJ-45)",  
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "7.8 x 7.8 x 2.1 inches (20 x 20 x 5.3 cm)",  
+    "weight": "1.9 lbs (0.87 kg)",  
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C operating; storage unspecified",
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9172-series-access-points-ds.html",
+    "radios_iot_features": [
+      "Bluetooth Low Energy (BLE) 5.1",
+      "Dedicated scanning/AUX radio",
+      "GPS/GNSS, IoT and UWB radio"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "CW9174I",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3af",
+    "recommended_poe": "802.3bt",
+    "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G Multigigabit Ethernet (RJ-45)",  
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "8.9 x 8.9 x 1.95 inches (22.6 x 22.6 x 4.9 cm)",
+    "weight": "3.36 lbs (1.52 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9174-series-access-points-ds.html",
+    "radios_iot_features": [
+      "Dedicated IoT radio",
+      "Dedicated tri-band scanning radio",
+      "Bluetooth Low Energy (BLE) 5.3 (upgradable to BLE 6)",
+      "Accelerometer"
+    ],
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "CW9176I",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3af",
+    "recommended_poe": "802.3bt",
+    "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
+    "ethernet_ports_speed": "1× 1/2.5/5/10 GbE mGig (RJ-45)",  
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "9.5 x 9.5 x 2.0 inches (24 x 24 x 5.1 cm)",
+    "weight": "3.4 lbs (1.56 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; storage unspecified",
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9176-series-acc-point-ds.html",
+    "radios_iot_features": [
+      "Dedicated IoT radio",
+      "Built-in GPS/GNSS and UWB radio",
+      "Dedicated scanning/AUX radio"
+    ],
+    "msrp": "unknown"
+  },
+    {
+    "vendor": "Cisco",
+    "model": "Catalyst 9164I",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (PoE+)",
+    "recommended_poe": "802.3bt or DC for full operation with USB",
+    "behavior_min_power": "On 802.3bt or DC, all radios operate (2x2 2.4 GHz, 4x4 5/6 GHz) with USB enabled; on 802.3at, radios operate with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "9.5 x 9.5 x 2.2 in. (241.3 x 241.3 x 56.9 mm)",
+    "weight": "3.54 lb (1.60 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9164-series-access-points/catalyst-9164-series-access-points-ds.html",
+    "radios_iot_features": [
+    "BLE"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Cisco",
+    "model": "Catalyst 9166I",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (PoE+)",
+    "recommended_poe": "802.3bt or DC for full operation with USB",
+    "behavior_min_power": "On 802.3bt or DC, all radios operate 4x4 on 2.4/5/6 GHz with USB enabled; on 802.3at, radios remain 4x4 with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G mGig (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "9.5 x 9.5 x 2.2 in. (241.3 x 241.3 x 56.9 mm)",
+    "weight": "3.54 lb (1.60 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9166-series-access-points/catalyst-9166-series-access-points-ds.html",
+    "radios_iot_features": [
+    "BLE",
+    "Environmental sensors (TVOC/temperature/humidity)"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Cisco",
+    "model": "Catalyst 9166D1",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (PoE+)",
+    "recommended_poe": "802.3bt or DC for full operation with USB",
+    "behavior_min_power": "On 802.3bt or DC, all radios operate 4x4 on 2.4/5/6 GHz with USB enabled; on 802.3at, radios remain 4x4 with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G mGig (RJ45)",
+    "antenna_type": "Directional",
+    "form_factor": "Indoor",
+    "dimensions": "9.5 x 9.5 x 2.28 in. (241.3 x 241.3 x 57.9 mm)",
+    "weight": "3.50 lb (1.59 kg)",
+    "antenna_connectors": "None (integrated directional antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9166-series-access-points/catalyst-9166-series-access-points-ds.html",
+    "radios_iot_features": [
+    "BLE",
+    "Environmental sensors (TVOC/temperature/humidity)"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Cisco",
+    "model": "CW9179F",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (PoE+)",
+    "recommended_poe": "802.3bt (Class 6) for full quad-radio operation",
+    "behavior_min_power": "On 802.3bt (Class 6), operates in quad-radio mode with 4x4 radios on 2.4/5/6 GHz and both 10G uplinks; on 802.3at, operates in tri-radio mode with reduced radio configuration; on 802.3af, all radios are off and the AP is for configuration staging only.",
+    "ethernet_ports_speed": "2× 100M/1G/2.5G/5G/10G mGig (RJ45)",
+    "antenna_type": "Directional",
+    "form_factor": "Indoor/Outdoor",
+    "dimensions": "18.7 W x 13.0 L x 2.9 H in. (475 x 330 x 73 mm)",
+    "weight": "10.0 lb (4.54 kg) AP; 3.8 lb (1.72 kg) bracket",
+    "antenna_connectors": "None (integrated directional antennas)",
+    "operating_temp_range": "-4°F to 140°F (-20°C to 60°C) operating without solar loading; -4°F to 122°F (-20°C to 50°C) operating with solar loading; -4°F to 158°F (-20°C to 70°C) nonoperating",
+    "datasheet_url": "https://www.cisco.com/c/dam/en/us/products/collateral/wireless/access-points/wireless-9179-series-access-points/wireless-9179f-access-point-ds.pdf",
+    "radios_iot_features": [
+    "BLE",
+    "GPS"
+    ],
+    "msrp": "unknown"
+    },
+  {
     "vendor": "Aruba",
     "model": "AP-655",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
@@ -510,7 +667,7 @@
     "operating_temp_range": "32°F to 113°F (0°C to 45°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/Zigbee"
+      "BLE/ZigBee"
     ],
     "msrp": "unknown"
   },
