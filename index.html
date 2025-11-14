@@ -39,7 +39,7 @@
       <div style="margin-top:0.5rem; display:flex; justify-content:flex-end;">
         <button id="reset-layout-btn" type="button" class="btn-link">Reset Layout</button>
       </div>
-    </div>
+  </div>
 
     <div class="card">
       <span class="badge">Community-maintained</span>
@@ -254,6 +254,8 @@
       });
     }
 
+    let isResizing = false;
+
     function initColumnResizersAndDnD() {
       const headerRow = document.querySelector('thead tr');
       if (!headerRow) return;
@@ -282,11 +284,16 @@
           const onMouseUp = () => {
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('mouseup', onMouseUp);
+            isResizing = false;
+            th.draggable = true;
+            saveLayout();
           };
           resizer.addEventListener('mousedown', (e) => {
             e.stopPropagation();
             startX = e.clientX;
             startWidth = th.getBoundingClientRect().width;
+            isResizing = true;
+            th.draggable = false;
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
           });
@@ -294,7 +301,9 @@
         // Enable drag & drop reordering
         th.setAttribute('draggable', 'true');
         th.addEventListener('dragstart', (e) => {
-          e.dataTransfer.setData('text/plain', String(index));
+          if (isResizing) { e.preventDefault(); return; }
+          const currentIndex = Array.from(th.parentNode.children).indexOf(th);
+          e.dataTransfer.setData('text/plain', String(currentIndex));
         });
         th.addEventListener('dragover', (e) => {
           e.preventDefault();
@@ -324,6 +333,7 @@
             const newIndex = Array.from(th.parentNode.children).indexOf(srcTh);
             ths.splice(newIndex, 0, srcTh);
             applyColumnOrderFromHeader();
+            saveLayout();
           }
         });
       });
@@ -377,17 +387,17 @@
       });
 
       // Clear and render
-      tbody.innerHTML = '';
+        tbody.innerHTML = '';
 
       sorted.forEach(entry => {
-        const tr = document.createElement('tr');
+          const tr = document.createElement('tr');
 
-        function textCell(text, className) {
-          const td = document.createElement('td');
-          if (className) td.classList.add(className);
-          td.textContent = text || '';
-          return td;
-        }
+          function textCell(text, className) {
+            const td = document.createElement('td');
+            if (className) td.classList.add(className);
+            td.textContent = text || '';
+            return td;
+          }
 
         // Vendor cell with selection checkbox
         const vendorTd = document.createElement('td');
@@ -409,33 +419,33 @@
         const vendorText = document.createTextNode(entry.vendor || '');
         vendorTd.appendChild(vendorText);
         tr.appendChild(vendorTd);
-        tr.appendChild(textCell(entry.model));
-        tr.appendChild(textCell(entry.wifi_gen_radios));
-        tr.appendChild(textCell(entry.spatial_streams));
-        tr.appendChild(textCell(entry.min_poe_class));
-        tr.appendChild(textCell(entry.recommended_poe));
+          tr.appendChild(textCell(entry.model));
+          tr.appendChild(textCell(entry.wifi_gen_radios));
+          tr.appendChild(textCell(entry.spatial_streams));
+          tr.appendChild(textCell(entry.min_poe_class));
+          tr.appendChild(textCell(entry.recommended_poe));
 
-        const behaviorTd = document.createElement('td');
-        behaviorTd.classList.add('behavior');
-        const behaviorText = entry.behavior_min_power || '';
-        behaviorTd.textContent = behaviorText;
-        behaviorTd.setAttribute('data-fulltext', behaviorText);
-        tr.appendChild(behaviorTd);
+          const behaviorTd = document.createElement('td');
+          behaviorTd.classList.add('behavior');
+          const behaviorText = entry.behavior_min_power || '';
+          behaviorTd.textContent = behaviorText;
+          behaviorTd.setAttribute('data-fulltext', behaviorText);
+          tr.appendChild(behaviorTd);
 
-        tr.appendChild(textCell(entry.ethernet_ports_speed));
+          tr.appendChild(textCell(entry.ethernet_ports_speed));
 
-        const radiosTd = document.createElement('td');
-        if (Array.isArray(entry.radios_iot_features)) {
-          entry.radios_iot_features.forEach(feature => {
-            const span = document.createElement('span');
-            span.classList.add('tag');
-            span.textContent = feature;
-            radiosTd.appendChild(span);
-          });
-        } else if (typeof entry.radios_iot_features === 'string') {
-          radiosTd.textContent = entry.radios_iot_features;
-        }
-        tr.appendChild(radiosTd);
+          const radiosTd = document.createElement('td');
+          if (Array.isArray(entry.radios_iot_features)) {
+            entry.radios_iot_features.forEach(feature => {
+              const span = document.createElement('span');
+              span.classList.add('tag');
+              span.textContent = feature;
+              radiosTd.appendChild(span);
+            });
+          } else if (typeof entry.radios_iot_features === 'string') {
+            radiosTd.textContent = entry.radios_iot_features;
+          }
+          tr.appendChild(radiosTd);
 
         tr.appendChild(textCell(entry.antenna_type));
         tr.appendChild(textCell(entry.form_factor));
@@ -443,7 +453,7 @@
         tr.appendChild(textCell(entry.weight));
         tr.appendChild(textCell(entry.antenna_connectors));
         tr.appendChild(textCell(entry.operating_temp_range));
-        tr.appendChild(textCell(entry.msrp));
+          tr.appendChild(textCell(entry.msrp));
 
         // Navigate to dedicated details page, preserving current table state in URL
         tr.addEventListener('click', () => {
@@ -457,14 +467,14 @@
       });
 
       if (sorted.length === 0) {
-        const tr = document.createElement('tr');
-        const td = document.createElement('td');
+          const tr = document.createElement('tr');
+          const td = document.createElement('td');
         td.setAttribute('colspan', '16');
         td.textContent = currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
           ? 'No APs match your search or filters.'
           : 'No APs defined yet. Add entries to ap_data.json.';
-        tr.appendChild(td);
-        tbody.appendChild(tr);
+          tr.appendChild(td);
+          tbody.appendChild(tr);
       }
 
       updateSortIndicators();
@@ -474,7 +484,7 @@
     function updateCompareFab() {
       const fab = document.getElementById('compare-fab');
       const n = selectedIds.size;
-      if (n >= 2) {
+      if (n >= 1) {
         fab.style.display = 'inline-flex';
         fab.textContent = `Compare (${n})`;
       } else {

@@ -77,18 +77,9 @@
           return;
         }
 
-        // Build header: first cell empty (row labels), then AP titles
-        headerRow.innerHTML = '';
-        const firstTh = document.createElement('th');
-        firstTh.textContent = '';
-        headerRow.appendChild(firstTh);
-        selected.forEach(e => {
-          const th = document.createElement('th');
-          th.textContent = `${e.vendor || ''} ${e.model || ''}`.trim();
-          headerRow.appendChild(th);
-        });
-
-        const rows = [
+        // Build header: first column is AP, then attributes as columns (like main table)
+        const columns = [
+          ['Model', 'model'],
           ['Wi‑Fi Gen & Radios', 'wifi_gen_radios'],
           ['Spatial Streams', 'spatial_streams'],
           ['Min PoE Class', 'min_poe_class'],
@@ -106,13 +97,23 @@
           ['Datasheet', 'datasheet_url']
         ];
 
+        headerRow.innerHTML = '';
+        const apTh = document.createElement('th');
+        apTh.textContent = 'AP';
+        headerRow.appendChild(apTh);
+        columns.forEach(([label]) => {
+          const th = document.createElement('th');
+          th.textContent = label;
+          headerRow.appendChild(th);
+        });
+
         bodyEl.innerHTML = '';
-        rows.forEach(([label, key]) => {
+        selected.forEach(e => {
           const tr = document.createElement('tr');
-          const labelTd = document.createElement('td');
-          labelTd.textContent = label;
-          tr.appendChild(labelTd);
-          selected.forEach(e => {
+          const firstTd = document.createElement('td');
+          firstTd.textContent = `${e.vendor || ''} ${e.model || ''}`.trim();
+          tr.appendChild(firstTd);
+          columns.forEach(([label, key]) => {
             const td = document.createElement('td');
             if (key === 'datasheet_url' && e[key]) {
               const a = document.createElement('a');

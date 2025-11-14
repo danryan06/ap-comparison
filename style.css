@@ -476,6 +476,9 @@ td.behavior:hover::before {
   right: 24px;
   bottom: 24px;
   z-index: 60;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  box-shadow: 0 12px 22px rgba(34, 197, 94, 0.35);
 }
 
 /* Row select checkbox in vendor cell */
