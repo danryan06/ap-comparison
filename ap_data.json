@@ -514,7 +514,7 @@
     "datasheet_url": "https://www.hpe.com/psnow/doc/PSN1014382098CAEN",
     "radios_iot_features": [
       "BLE",
-      "ZigBee",
+      "Zigbee",
       "GPS"
     ],
     "msrp": "~$2,195"
@@ -537,7 +537,7 @@
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE",
-      "ZigBee",
+      "Zigbee",
       "GPS"
     ],
     "msrp": "$1,350"
@@ -559,7 +559,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee",
+      "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "unknown"
@@ -581,7 +581,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee",
+      "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "unknown"
@@ -603,7 +603,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee"
+      "BLE/Zigbee"
     ],
     "msrp": "unknown"
   },
@@ -624,7 +624,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee"
+      "BLE/Zigbee"
     ],
     "msrp": "unknown"
   },
@@ -667,7 +667,7 @@
     "operating_temp_range": "32°F to 113°F (0°C to 45°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee"
+      "BLE/Zigbee"
     ],
     "msrp": "unknown"
   },

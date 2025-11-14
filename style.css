@@ -154,54 +154,64 @@ td:nth-child(9) {
 th:nth-child(8),
 td:nth-child(8) {
   width: 110px;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Antenna Type (col 10) */
 th:nth-child(10),
 td:nth-child(10) {
   width: 120px;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Form Factor (col 11) */
 th:nth-child(11),
 td:nth-child(11) {
   width: 120px;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Dimensions (col 12) */
 th:nth-child(12),
 td:nth-child(12) {
   width: 160px;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Weight (col 13) */
 th:nth-child(13),
 td:nth-child(13) {
   width: 110px;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Antenna Connectors (col 14) */
 th:nth-child(14),
 td:nth-child(14) {
   width: 200px;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Operating Temp Range (col 15) */
 th:nth-child(15),
 td:nth-child(15) {
   width: 200px;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* MSRP (col 16) */
 th:nth-child(16),
 td:nth-child(16) {
   width: 120px;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Column resize handle on headers */
