@@ -20,6 +20,23 @@ h1 {
   margin-bottom: 0.25rem;
 }
 
+h1 a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.15s ease-out;
+  cursor: pointer;
+}
+
+h1 a:hover {
+  opacity: 0.8;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
 .subtitle {
   color: #9ca3af;
   margin-bottom: 1.5rem;
