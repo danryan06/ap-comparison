@@ -143,6 +143,14 @@ td:nth-child(6) {
   width: 130px;
 }
 
+/* Min PoE Class (col 5) */
+th:nth-child(5),
+td:nth-child(5) {
+  width: 110px;
+  white-space: normal;
+  word-break: break-word;
+}
+
 /* Radios & IoT Features (col 9) */
 th:nth-child(9),
 td:nth-child(9) {
