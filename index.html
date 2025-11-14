@@ -273,12 +273,17 @@
             const delta = e.clientX - startX;
             const newWidth = Math.max(60, startWidth + delta); // min width
             th.style.width = newWidth + 'px';
+            th.style.minWidth = newWidth + 'px';
             // Apply to all cells in this column
             const tbody = document.querySelector('tbody');
             if (tbody) {
+              const colIndex = Array.from(th.parentNode.children).indexOf(th);
               Array.from(tbody.rows).forEach(row => {
-                const cell = row.children[index];
-                if (cell) cell.style.width = newWidth + 'px';
+                const cell = row.children[colIndex];
+                if (cell) {
+                  cell.style.width = newWidth + 'px';
+                  cell.style.minWidth = newWidth + 'px';
+                }
               });
             }
           };
