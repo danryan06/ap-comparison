@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compare APs — Wi‑Fi AP Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="actions">
+      <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
+    </div>
+
+    <div class="card">
+      <span class="badge">Comparison</span>
+      <h1>Compare Access Points</h1>
+      <p class="subtitle">Side-by-side details for selected APs.</p>
+
+      <div id="error-message" class="error" style="display:none;"></div>
+
+      <table id="compare-table">
+        <thead>
+          <tr id="compare-header"></tr>
+        </thead>
+        <tbody id="compare-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const DATA_URL = 'ap_data.json';
+
+    function slugify(s) {
+      return String(s || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function readIds() {
+      const params = new URLSearchParams(window.location.search);
+      const ids = (params.get('ids') || '').split(',').map(s => s.trim()).filter(Boolean);
+      return ids;
+    }
+
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    function buildBackLink() {
+      const params = new URLSearchParams(window.location.search);
+      params.delete('ids');
+      const backEl = document.getElementById('back-link');
+      const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
+      backEl.setAttribute('href', backUrl);
+    }
+
+    async function load() {
+      buildBackLink();
+      const errorEl = document.getElementById('error-message');
+      const headerRow = document.getElementById('compare-header');
+      const bodyEl = document.getElementById('compare-body');
+
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const ids = readIds();
+        const selected = data.filter(e => ids.includes(slugify(`${e.vendor} ${e.model}`)));
+        if (selected.length < 2) {
+          errorEl.style.display = 'block';
+          errorEl.textContent = 'Select at least two APs to compare.';
+          return;
+        }
+
+        // Build header: first cell empty (row labels), then AP titles
+        headerRow.innerHTML = '';
+        const firstTh = document.createElement('th');
+        firstTh.textContent = '';
+        headerRow.appendChild(firstTh);
+        selected.forEach(e => {
+          const th = document.createElement('th');
+          th.textContent = `${e.vendor || ''} ${e.model || ''}`.trim();
+          headerRow.appendChild(th);
+        });
+
+        const rows = [
+          ['Wi‑Fi Gen & Radios', 'wifi_gen_radios'],
+          ['Spatial Streams', 'spatial_streams'],
+          ['Min PoE Class', 'min_poe_class'],
+          ['Recommended PoE', 'recommended_poe'],
+          ['Behavior at Min Power', 'behavior_min_power'],
+          ['Ethernet Ports & Speed', 'ethernet_ports_speed'],
+          ['Antenna Type', 'antenna_type'],
+          ['Form Factor', 'form_factor'],
+          ['Dimensions', 'dimensions'],
+          ['Weight', 'weight'],
+          ['Antenna Connectors', 'antenna_connectors'],
+          ['Operating Temp Range', 'operating_temp_range'],
+          ['Radios & IoT Features', 'radios_iot_features'],
+          ['MSRP', 'msrp'],
+          ['Datasheet', 'datasheet_url']
+        ];
+
+        bodyEl.innerHTML = '';
+        rows.forEach(([label, key]) => {
+          const tr = document.createElement('tr');
+          const labelTd = document.createElement('td');
+          labelTd.textContent = label;
+          tr.appendChild(labelTd);
+          selected.forEach(e => {
+            const td = document.createElement('td');
+            if (key === 'datasheet_url' && e[key]) {
+              const a = document.createElement('a');
+              a.href = e[key];
+              a.target = '_blank';
+              a.rel = 'noopener';
+              a.textContent = 'Open';
+              td.appendChild(a);
+            } else if (Array.isArray(e[key])) {
+              td.textContent = e[key].join(', ');
+            } else {
+              td.textContent = normalizeString(e[key]);
+            }
+            tr.appendChild(td);
+          });
+          bodyEl.appendChild(tr);
+        });
+      } catch (err) {
+        console.error('Failed to load comparison:', err);
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Failed to load comparison.';
+      }
+    }
+
+    load();
+  </script>
+</body>
+</html>
+

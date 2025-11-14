@@ -204,6 +204,31 @@ td:nth-child(16) {
   white-space: nowrap;
 }
 
+/* Column resize handle on headers */
+th {
+  position: sticky; /* already sticky; ensure positioning for resizer */
+}
+.col-resizer {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+  user-select: none;
+}
+.col-resizer:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* Drag-over indicator for header reordering */
+th.drag-over-left {
+  box-shadow: inset 3px 0 0 #60a5fa;
+}
+th.drag-over-right {
+  box-shadow: inset -3px 0 0 #60a5fa;
+}
+
 /* Sortable headers */
 th.sortable {
   cursor: pointer;
@@ -443,6 +468,20 @@ td.behavior:hover::before {
   color: #e5e7eb;
   font-size: 0.9rem;
   word-break: break-word;
+}
+
+/* Floating compare button */
+.floating-compare {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+}
+
+/* Row select checkbox in vendor cell */
+.row-select {
+  margin-right: 0.4rem;
+  transform: translateY(1px);
 }
 .form-actions {
   margin-top: 1rem;

@@ -8,6 +8,8 @@
 </head>
 <body>
   <div class="container">
+  <h1>Wi‑Fi AP Comparison</h1>
+  <p class="subtitle">Explore, filter, and compare enterprise access points.</p>
   <div class="actions">
     <a class="btn-link" href="submit.html">Submit New AP</a>
     <a class="btn-link" href="edit.html">Edit Existing AP Information</a>
@@ -34,6 +36,9 @@
     <div id="columns-panel" class="columns-panel">
       <h3>Show/Hide Columns</h3>
       <div id="columns-grid" class="columns-grid"></div>
+      <div style="margin-top:0.5rem; display:flex; justify-content:flex-end;">
+        <button id="reset-layout-btn" type="button" class="btn-link">Reset Layout</button>
+      </div>
     </div>
 
     <div class="card">
@@ -83,6 +88,8 @@
     </div>
   </div>
 
+  <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button">Compare (0)</button>
+
   <script>
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
@@ -95,6 +102,7 @@
       return new Set(['dimensions','weight','antenna_connectors','operating_temp_range']);
     }
     const hiddenColumns = defaultHiddenColumns(); // keys to hide by default
+    const selectedIds = new Set(); // slug ids of selected rows
 
     function normalizeString(value) {
       if (value == null) return '';
@@ -180,6 +188,147 @@
       updateSortIndicators();
     }
 
+    function saveLayout() {
+      const ths = Array.from(document.querySelectorAll('thead th'));
+      const order = ths.map(th => th.dataset.key || '');
+      const widths = {};
+      ths.forEach((th) => {
+        const key = th.dataset.key || '';
+        const w = th.style.width || '';
+        if (key) widths[key] = w;
+      });
+      localStorage.setItem('apTable.colOrder', JSON.stringify(order));
+      localStorage.setItem('apTable.colWidths', JSON.stringify(widths));
+    }
+
+    function loadLayout() {
+      const headerRow = document.querySelector('thead tr');
+      if (!headerRow) return;
+      const storedOrder = JSON.parse(localStorage.getItem('apTable.colOrder') || '[]');
+      const storedWidths = JSON.parse(localStorage.getItem('apTable.colWidths') || '{}');
+      if (Array.isArray(storedOrder) && storedOrder.length > 0) {
+        const map = {};
+        Array.from(headerRow.children).forEach(th => { map[th.dataset.key || ''] = th; });
+        storedOrder.forEach(key => {
+          const th = map[key];
+          if (th) headerRow.appendChild(th);
+        });
+      }
+      const ths = Array.from(headerRow.children);
+      ths.forEach((th, index) => {
+        const key = th.dataset.key || '';
+        const w = storedWidths[key];
+        if (w) {
+          th.style.width = w;
+          const tbody = document.querySelector('tbody');
+          if (tbody) {
+            Array.from(tbody.rows).forEach(row => {
+              const cell = row.children[index];
+              if (cell) cell.style.width = w;
+            });
+          }
+        }
+      });
+      applyColumnOrderFromHeader();
+    }
+
+    function applyColumnOrderFromHeader() {
+      const headerRow = document.querySelector('thead tr');
+      if (!headerRow) return;
+      const ths = Array.from(headerRow.children);
+      const order = ths.map((th, idx) => idx);
+      // Build mapping from current displayed index to actual index by reading header positions
+      const headerOrder = ths.map((_, newIdx) => {
+        return ths.findIndex(th => th.cellIndex === newIdx);
+      });
+      // If cellIndex doesn't reflect new DOM order in some browsers, fallback to DOM order
+      const actualOrder = ths.map((_, i) => i);
+      const useDomOrder = true;
+      const colOrder = useDomOrder ? actualOrder : headerOrder;
+      const tbody = document.querySelector('tbody');
+      if (!tbody) return;
+      Array.from(tbody.rows).forEach(row => {
+        const cells = Array.from(row.children);
+        const reordered = colOrder.map(i => cells[i]);
+        reordered.forEach(cell => row.appendChild(cell));
+      });
+    }
+
+    function initColumnResizersAndDnD() {
+      const headerRow = document.querySelector('thead tr');
+      if (!headerRow) return;
+      const ths = Array.from(headerRow.querySelectorAll('th'));
+      // Add resizers
+      ths.forEach((th, index) => {
+        // Avoid duplicate resizers
+        if (!th.querySelector('.col-resizer')) {
+          const resizer = document.createElement('span');
+          resizer.className = 'col-resizer';
+          th.appendChild(resizer);
+          let startX, startWidth;
+          const onMouseMove = (e) => {
+            const delta = e.clientX - startX;
+            const newWidth = Math.max(60, startWidth + delta); // min width
+            th.style.width = newWidth + 'px';
+            // Apply to all cells in this column
+            const tbody = document.querySelector('tbody');
+            if (tbody) {
+              Array.from(tbody.rows).forEach(row => {
+                const cell = row.children[index];
+                if (cell) cell.style.width = newWidth + 'px';
+              });
+            }
+          };
+          const onMouseUp = () => {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+          };
+          resizer.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+            startX = e.clientX;
+            startWidth = th.getBoundingClientRect().width;
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+          });
+        }
+        // Enable drag & drop reordering
+        th.setAttribute('draggable', 'true');
+        th.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', String(index));
+        });
+        th.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          const rect = th.getBoundingClientRect();
+          const halfway = rect.left + rect.width / 2;
+          th.classList.toggle('drag-over-left', e.clientX < halfway);
+          th.classList.toggle('drag-over-right', e.clientX >= halfway);
+        });
+        th.addEventListener('dragleave', () => {
+          th.classList.remove('drag-over-left', 'drag-over-right');
+        });
+        th.addEventListener('drop', (e) => {
+          e.preventDefault();
+          const srcIndex = parseInt(e.dataTransfer.getData('text/plain'), 10);
+          const srcTh = ths[srcIndex];
+          const rect = th.getBoundingClientRect();
+          const after = e.clientX >= rect.left + rect.width / 2;
+          th.classList.remove('drag-over-left', 'drag-over-right');
+          if (srcTh && srcTh !== th) {
+            if (after) {
+              th.parentNode.insertBefore(srcTh, th.nextSibling);
+            } else {
+              th.parentNode.insertBefore(srcTh, th);
+            }
+            // Update local ths array reference
+            ths.splice(ths.indexOf(srcTh), 1);
+            const newIndex = Array.from(th.parentNode.children).indexOf(srcTh);
+            ths.splice(newIndex, 0, srcTh);
+            applyColumnOrderFromHeader();
+          }
+        });
+      });
+    }
+
     function renderTable() {
       const tbody = document.getElementById('ap-table-body');
       const errorEl = document.getElementById('error-message');
@@ -240,7 +389,26 @@
           return td;
         }
 
-        tr.appendChild(textCell(entry.vendor, 'vendor'));
+        // Vendor cell with selection checkbox
+        const vendorTd = document.createElement('td');
+        vendorTd.classList.add('vendor');
+        const id = slugFor(entry);
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'row-select';
+        cb.checked = selectedIds.has(id);
+        cb.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+        cb.addEventListener('change', () => {
+          if (cb.checked) selectedIds.add(id);
+          else selectedIds.delete(id);
+          updateCompareFab();
+        });
+        vendorTd.appendChild(cb);
+        const vendorText = document.createTextNode(entry.vendor || '');
+        vendorTd.appendChild(vendorText);
+        tr.appendChild(vendorTd);
         tr.appendChild(textCell(entry.model));
         tr.appendChild(textCell(entry.wifi_gen_radios));
         tr.appendChild(textCell(entry.spatial_streams));
@@ -301,6 +469,17 @@
 
       updateSortIndicators();
       applyColumnVisibility();
+    }
+
+    function updateCompareFab() {
+      const fab = document.getElementById('compare-fab');
+      const n = selectedIds.size;
+      if (n >= 2) {
+        fab.style.display = 'inline-flex';
+        fab.textContent = `Compare (${n})`;
+      } else {
+        fab.style.display = 'none';
+      }
     }
 
     function valueIsUnknown(val) {
@@ -520,6 +699,27 @@
         const isOpen = columnsPanel.style.display === 'block';
         columnsPanel.style.display = isOpen ? 'none' : 'block';
       });
+
+      // Reset Layout inside columns panel
+      document.getElementById('reset-layout-btn').addEventListener('click', () => {
+        localStorage.removeItem('apTable.colOrder');
+        localStorage.removeItem('apTable.colWidths');
+        window.location.reload();
+      });
+
+      // Compare FAB click
+      document.getElementById('compare-fab').addEventListener('click', () => {
+        if (selectedIds.size < 2) return;
+        const idsParam = Array.from(selectedIds).join(',');
+        const state = window.location.search.replace(/^\?/, '');
+        const url = `compare.html?ids=${encodeURIComponent(idsParam)}${state ? '&' + state : ''}`;
+        window.location.href = url;
+      });
+
+      // Initialize column resizers and drag/drop
+      initColumnResizersAndDnD();
+      // Apply saved layout after initializers
+      loadLayout();
 
       // Reset button
       document.getElementById('reset-btn').addEventListener('click', () => {
