@@ -1,0 +1,28 @@
+name: Validate AP Data
+
+on:
+  push:
+    paths:
+      - 'ap_data.json'
+      - '.github/workflows/validate-data.yml'
+      - 'scripts/validate-data.js'
+  pull_request:
+    paths:
+      - 'ap_data.json'
+      - '.github/workflows/validate-data.yml'
+      - 'scripts/validate-data.js'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Run validator
+        run: node scripts/validate-data.js
+
+

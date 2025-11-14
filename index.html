@@ -510,6 +510,10 @@
       return s.length === 0 || s === 'unknown';
     }
 
+    function normalizeForSlug(s) {
+      if (!s) return '';
+      return String(s).toLowerCase().trim().replace(/[\u2010-\u2015\u2212]/g, '-').replace(/\s+/g, ' ');
+    }
     function validateData(data) {
       const keysToCheck = [
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
@@ -517,6 +521,7 @@
         'dimensions','weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
       ];
       const problems = [];
+      const slugToIndexes = new Map();
       data.forEach((entry, index) => {
         const issues = [];
         keysToCheck.forEach(k => {
@@ -525,6 +530,11 @@
           }
         });
         if (issues.length) problems.push({ index, vendor: entry.vendor, model: entry.model, issues });
+        // track duplicates by vendor+model
+        const slug = `${normalizeForSlug(entry.vendor)}|${normalizeForSlug(entry.model)}`;
+        const arr = slugToIndexes.get(slug) || [];
+        arr.push(index);
+        slugToIndexes.set(slug, arr);
       });
       if (problems.length) {
         console.groupCollapsed(`[ap_data.json] ${problems.length} issue(s) detected (click to expand)`);
@@ -533,6 +543,13 @@
           p.issues.forEach(i => console.warn(i));
           console.groupEnd();
         });
+        console.groupEnd();
+      }
+      // Duplicate report
+      const dups = Array.from(slugToIndexes.entries()).filter(([, idxs]) => idxs.length > 1);
+      if (dups.length) {
+        console.groupCollapsed(`[ap_data.json] ${dups.length} duplicate vendor+model slug(s) detected`);
+        dups.forEach(([slug, idxs]) => console.warn(`Duplicate: ${slug} at entries ${idxs.join(', ')}`));
         console.groupEnd();
       }
       return problems.length;

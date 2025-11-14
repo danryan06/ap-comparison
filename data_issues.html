@@ -34,6 +34,25 @@
       </table>
       <div id="error-message" class="error" style="display:none;"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <span class="badge">Duplicates</span>
+      <h1>Duplicate Vendor + Model</h1>
+      <p class="subtitle" id="dup-summary">Scanning…</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Model</th>
+            <th>Indexes</th>
+          </tr>
+        </thead>
+        <tbody id="dups-body"></tbody>
+      </table>
+      <div class="actions" style="margin-top:0.75rem;">
+        <button id="export-dups" class="btn-link" type="button">Export Duplicates CSV</button>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -69,11 +88,18 @@
       return issues;
     }
 
+    function normalizeForSlug(s) {
+      if (!s) return '';
+      return String(s).toLowerCase().trim().replace(/[\\u2010-\\u2015\\u2212]/g, '-').replace(/\\s+/g, ' ');
+    }
+
     async function load() {
       const errorEl = document.getElementById('error-message');
       const tbody = document.getElementById('issues-body');
       const summary = document.getElementById('summary');
       const includeUnknownEl = document.getElementById('include-unknown');
+      const dupsBody = document.getElementById('dups-body');
+      const dupSummary = document.getElementById('dup-summary');
 
       async function render() {
         try {
@@ -84,6 +110,8 @@
           const data = await res.json();
           const includeUnknown = includeUnknownEl.checked;
           let totalIssues = 0;
+          dupsBody.innerHTML = '';
+          const slugToIdx = new Map();
           data.forEach(entry => {
             const issues = classifyIssues(entry, includeUnknown);
             if (issues.length) {
@@ -100,11 +128,26 @@
               tbody.appendChild(tr);
               totalIssues += issues.length;
             }
+            const slug = normalizeForSlug(entry.vendor) + '|' + normalizeForSlug(entry.model);
+            const arr = slugToIdx.get(slug) || [];
+            arr.push(data.indexOf(entry));
+            slugToIdx.set(slug, arr);
           });
           const rowsWithIssues = tbody.children.length;
           summary.textContent = rowsWithIssues
             ? `${rowsWithIssues} AP(s) have ${totalIssues} issue(s)${includeUnknown ? ' (including "unknown")' : ''}.`
             : 'No issues detected.';
+
+          const dups = Array.from(slugToIdx.entries()).filter(([, idxs]) => idxs.length > 1);
+          dups.forEach(([slug, idxs]) => {
+            const [v, m] = slug.split('|');
+            const tr = document.createElement('tr');
+            const tdVendor = document.createElement('td'); tdVendor.textContent = v; tr.appendChild(tdVendor);
+            const tdModel = document.createElement('td'); tdModel.textContent = m; tr.appendChild(tdModel);
+            const tdIdx = document.createElement('td'); tdIdx.textContent = idxs.join(', '); tr.appendChild(tdIdx);
+            dupsBody.appendChild(tr);
+          });
+          dupSummary.textContent = dups.length ? `${dups.length} duplicate slug(s) found.` : 'No duplicates detected.';
         } catch (err) {
           console.error('Failed to load issues:', err);
           errorEl.style.display = 'block';
@@ -129,6 +172,26 @@
         const a = document.createElement('a');
         a.href = url;
         a.download = includeUnknown ? 'ap-data-issues-with-unknown.csv' : 'ap-data-issues.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      document.getElementById('export-dups').addEventListener('click', () => {
+        const rows = Array.from(dupsBody.querySelectorAll('tr')).map(tr => {
+          const tds = tr.querySelectorAll('td');
+          return Array.from(tds).map(td => {
+            const s = td.textContent || '';
+            return /[\",\\n]/.test(s) ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s;
+          }).join(',');
+        });
+        const csv = ['Vendor,Model,Indexes', ...rows].join('\\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ap-data-duplicates.csv';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

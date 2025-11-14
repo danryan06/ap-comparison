@@ -32,6 +32,9 @@
             <label for="model">Model</label>
             <input id="model" name="model" type="text" placeholder="AP45, Catalyst 9166I, AP-655, etc." required />
           </div>
+          <div class="form-row" id="dup-row" style="display:none;">
+            <div id="dup-warning" class="error">Possible duplicate detected.</div>
+          </div>
 
           <div class="form-row">
             <label for="wifi_gen_radios">Wi-Fi Gen &amp; Radios</label>
@@ -137,6 +140,55 @@
     // TODO: set these to your actual GitHub username and repo name
     const GITHUB_USER = 'danryan06';
     const GITHUB_REPO = 'ap-comparison';
+    const DATA_URL = 'ap_data.json';
+
+    let existingSlugSet = new Set();
+    function normalizeForSlug(s) {
+      if (!s) return '';
+      return String(s)
+        .toLowerCase()
+        .trim()
+        .replace(/[\\u2010-\\u2015\\u2212]/g, '-')      // normalize dashes
+        .replace(/\\s+/g, ' ');                        // collapse spaces
+    }
+    function makeSlug(vendor, model) {
+      return normalizeForSlug(vendor) + '|' + normalizeForSlug(model);
+    }
+    async function loadExistingSlugsOnce() {
+      if (existingSlugSet.size > 0) return;
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = await res.json();
+        data.forEach(e => existingSlugSet.add(makeSlug(e.vendor, e.model)));
+      } catch {}
+    }
+    function showDupWarning(show, matchLabel) {
+      const row = document.getElementById('dup-row');
+      const box = document.getElementById('dup-warning');
+      if (show) {
+        box.textContent = `Heads up: "${matchLabel}" already exists. Consider using Edit Existing AP.`;
+        row.style.display = 'block';
+      } else {
+        row.style.display = 'none';
+      }
+    }
+    async function checkDuplicate() {
+      await loadExistingSlugsOnce();
+      const vendor = document.getElementById('vendor').value;
+      const model = document.getElementById('model').value;
+      const slug = makeSlug(vendor, model);
+      const isDup = existingSlugSet.has(slug);
+      showDupWarning(isDup, `${vendor} ${model}`.trim());
+      return isDup;
+    }
+    ['vendor','model'].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('input', () => { checkDuplicate(); });
+      el.addEventListener('blur', () => { checkDuplicate(); });
+    });
+    // Preload slugs
+    loadExistingSlugsOnce();
 
     function buildApObjectFromForm() {
       const vendor = document.getElementById('vendor').value.trim();
@@ -188,6 +240,8 @@
       e.preventDefault();
 
       const obj = buildApObjectFromForm();
+      // optional: warn on duplicate, but still allow generation
+      // (duplicate warning UI already shown via input handlers)
       const jsonSnippet = JSON.stringify(obj, null, 2);
       const output = document.getElementById('output');
       output.value = jsonSnippet;
@@ -200,6 +254,11 @@
       const obj = buildApObjectFromForm();
       if (!obj.vendor || !obj.model) {
         alert('Please fill in at least Vendor and Model, then click "Generate JSON Snippet" before opening the GitHub form.');
+        return;
+      }
+      // Soft gate on duplicates
+      const isDup = existingSlugSet.has(makeSlug(obj.vendor, obj.model));
+      if (isDup && !confirm('This AP appears to already exist. Open the new AP issue anyway?')) {
         return;
       }
 
