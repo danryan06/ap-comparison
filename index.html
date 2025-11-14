@@ -281,19 +281,24 @@
               });
             }
           };
+          let blockDragStart;
           const onMouseUp = () => {
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('mouseup', onMouseUp);
+            document.removeEventListener('dragstart', blockDragStart, true);
             isResizing = false;
             th.draggable = true;
             saveLayout();
           };
           resizer.addEventListener('mousedown', (e) => {
             e.stopPropagation();
+            e.preventDefault();
             startX = e.clientX;
             startWidth = th.getBoundingClientRect().width;
             isResizing = true;
             th.draggable = false;
+            blockDragStart = (ev) => { ev.preventDefault(); };
+            document.addEventListener('dragstart', blockDragStart, true);
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
           });

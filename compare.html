@@ -10,6 +10,7 @@
   <div class="container">
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
+      <button id="toggle-columns" type="button" class="btn-link">Choose Columns</button>
     </div>
 
     <div class="card">
@@ -18,6 +19,11 @@
       <p class="subtitle">Side-by-side details for selected APs.</p>
 
       <div id="error-message" class="error" style="display:none;"></div>
+
+      <div id="columns-panel" class="columns-panel" style="display:none;">
+        <h3>Show/Hide Columns</h3>
+        <div id="columns-grid" class="columns-grid"></div>
+      </div>
 
       <table id="compare-table">
         <thead>
@@ -30,6 +36,8 @@
 
   <script>
     const DATA_URL = 'ap_data.json';
+    const HIDDEN_KEY = 'compareTable.cols';
+    const hiddenColumns = new Set(JSON.parse(localStorage.getItem(HIDDEN_KEY) || '[]'));
 
     function slugify(s) {
       return String(s || '')
@@ -59,6 +67,33 @@
       backEl.setAttribute('href', backUrl);
     }
 
+    function buildColumnsPanel(columns) {
+      const grid = document.getElementById('columns-grid');
+      grid.innerHTML = '';
+      const makeRow = (label, key, lock=false) => {
+        const lbl = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.checked = !hiddenColumns.has(key) || lock;
+        input.disabled = lock;
+        input.addEventListener('change', () => {
+          if (input.checked) hiddenColumns.delete(key);
+          else hiddenColumns.add(key);
+          localStorage.setItem(HIDDEN_KEY, JSON.stringify(Array.from(hiddenColumns)));
+          load(); // rebuild table with new column set
+        });
+        const span = document.createElement('span');
+        span.textContent = label;
+        lbl.appendChild(input);
+        lbl.appendChild(span);
+        grid.appendChild(lbl);
+      };
+      // Locked vendor/model
+      makeRow('Vendor', '__vendor__', true);
+      makeRow('Model', '__model__', true);
+      columns.forEach(([label, key]) => makeRow(label, key, false));
+    }
+
     async function load() {
       buildBackLink();
       const errorEl = document.getElementById('error-message');
@@ -77,9 +112,8 @@
           return;
         }
 
-        // Build header: first column is AP, then attributes as columns (like main table)
+        // Build header/rows with columns chooser (attributes as columns)
         const columns = [
-          ['Model', 'model'],
           ['Wi‑Fi Gen & Radios', 'wifi_gen_radios'],
           ['Spatial Streams', 'spatial_streams'],
           ['Min PoE Class', 'min_poe_class'],
@@ -98,10 +132,14 @@
         ];
 
         headerRow.innerHTML = '';
-        const apTh = document.createElement('th');
-        apTh.textContent = 'AP';
-        headerRow.appendChild(apTh);
-        columns.forEach(([label]) => {
+        const vendorTh = document.createElement('th');
+        vendorTh.textContent = 'Vendor';
+        headerRow.appendChild(vendorTh);
+        const modelTh = document.createElement('th');
+        modelTh.textContent = 'Model';
+        headerRow.appendChild(modelTh);
+        const visibleCols = columns.filter(([, key]) => !hiddenColumns.has(key));
+        visibleCols.forEach(([label]) => {
           const th = document.createElement('th');
           th.textContent = label;
           headerRow.appendChild(th);
@@ -110,10 +148,13 @@
         bodyEl.innerHTML = '';
         selected.forEach(e => {
           const tr = document.createElement('tr');
-          const firstTd = document.createElement('td');
-          firstTd.textContent = `${e.vendor || ''} ${e.model || ''}`.trim();
-          tr.appendChild(firstTd);
-          columns.forEach(([label, key]) => {
+          const vendorTd = document.createElement('td');
+          vendorTd.textContent = e.vendor || '';
+          tr.appendChild(vendorTd);
+          const modelTd = document.createElement('td');
+          modelTd.textContent = e.model || '';
+          tr.appendChild(modelTd);
+          visibleCols.forEach(([label, key]) => {
             const td = document.createElement('td');
             if (key === 'datasheet_url' && e[key]) {
               const a = document.createElement('a');
@@ -131,12 +172,25 @@
           });
           bodyEl.appendChild(tr);
         });
+
+        // Build columns panel after we know columns
+        buildColumnsPanel(columns);
       } catch (err) {
         console.error('Failed to load comparison:', err);
         errorEl.style.display = 'block';
         errorEl.textContent = 'Failed to load comparison.';
       }
     }
+
+    // Toggle for columns panel
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('toggle-columns');
+      const panel = document.getElementById('columns-panel');
+      btn.addEventListener('click', () => {
+        const isOpen = panel.style.display === 'block';
+        panel.style.display = isOpen ? 'none' : 'block';
+      });
+    });
 
     load();
   </script>
