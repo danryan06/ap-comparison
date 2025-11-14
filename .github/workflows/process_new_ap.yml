@@ -23,7 +23,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Extract JSON from issue body and update ap_data.json
+      - name: Extract JSON from issue body, download image, and update ap_data.json
         id: update-json
         uses: actions/github-script@v7
         with:
@@ -32,6 +32,8 @@ jobs:
             const github = require('@actions/github');
             const fs = require('fs');
             const path = require('path');
+            const https = require('https');
+            const http = require('http');
 
             const issue = github.context.payload.issue;
             const body = issue.body || '';
@@ -67,6 +69,81 @@ jobs:
               core.setFailed('JSON must include at least "vendor" and "model" fields.');
               return;
             }
+
+            // Helper to slugify vendor/model for filenames
+            function slugify(s) {
+              return String(s || '')
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+            }
+
+            // Try to find an image URL from JSON or issue body
+            function findImageUrlFromBody(text) {
+              if (!text) return null;
+              // Match common image hosts and extensions
+              const imgRegex = /(https?:\/\/[^\s)]+?(?:\.(?:png|jpe?g|gif|webp)|user-images\.githubusercontent\.com\/[^\s)]+))/i;
+              const m = text.match(imgRegex);
+              return m ? m[1] : null;
+            }
+
+            async function downloadImageIfNeeded(ap, bodyText) {
+              let url = ap.image_url && String(ap.image_url).trim();
+              if (!url) {
+                url = findImageUrlFromBody(bodyText);
+              }
+              if (!url) {
+                core.info('No image URL found in JSON or issue body; skipping image download.');
+                return ap;
+              }
+
+              core.info(`Attempting to download image from ${url}`);
+
+              const imagesDir = path.join(process.env.GITHUB_WORKSPACE, 'images');
+              fs.mkdirSync(imagesDir, { recursive: true });
+
+              const vendorSlug = slugify(ap.vendor);
+              const modelSlug = slugify(ap.model);
+
+              const extMatch = url.match(/\.(png|jpe?g|gif|webp)(?:\?|#|$)/i);
+              const ext = extMatch ? `.${extMatch[1].toLowerCase().replace('jpeg','jpg')}` : '.jpg';
+              const filename = `${vendorSlug}-${modelSlug}${ext}`;
+              const destPath = path.join(imagesDir, filename);
+
+              const client = url.startsWith('https:') ? https : http;
+
+              await new Promise((resolve, reject) => {
+                const file = fs.createWriteStream(destPath);
+                const request = client.get(url, response => {
+                  if (response.statusCode && response.statusCode >= 400) {
+                    file.close();
+                    fs.unlink(destPath, () => {});
+                    return reject(new Error(`Image download failed with status ${response.statusCode}`));
+                  }
+                  response.pipe(file);
+                  file.on('finish', () => {
+                    file.close();
+                    resolve(null);
+                  });
+                });
+                request.on('error', err => {
+                  file.close();
+                  fs.unlink(destPath, () => {});
+                  reject(err);
+                });
+              }).catch(err => {
+                core.warning(`Image download failed: ${err.message}`);
+              });
+
+              const repoRelative = `images/${filename}`;
+              core.info(`Image saved as ${repoRelative}`);
+              ap.image_url = repoRelative;
+              return ap;
+            }
+
+            // Download image (from JSON image_url or issue body) and update ap.image_url to local path
+            await downloadImageIfNeeded(ap, body);
 
             const filePath = path.join(process.env.GITHUB_WORKSPACE, 'ap_data.json');
             core.info(`Reading ${filePath}...`);

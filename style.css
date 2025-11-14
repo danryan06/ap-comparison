@@ -381,6 +381,11 @@ td.behavior:hover::before {
   color: #9ca3af;
 }
 
+.form-row .hint {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
 .form-row input,
 .form-row textarea,
 .form-row select {
@@ -517,6 +522,24 @@ td.behavior:hover::before {
   color: #e5e7eb;
   font-size: 0.9rem;
   word-break: break-word;
+}
+
+/* AP details image */
+.ap-image-wrapper {
+  margin-bottom: 1.25rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  background: radial-gradient(circle at top, #1f2937, #020617);
+}
+
+.ap-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  background: #020617;
 }
 
 /* Floating compare button */

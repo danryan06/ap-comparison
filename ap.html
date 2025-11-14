@@ -20,6 +20,10 @@
       <h2 id="title">AP Details</h2>
       <p class="subtitle" id="subtitle"></p>
 
+      <div id="image-container" class="ap-image-wrapper" style="display:none;">
+        <img id="ap-image" class="ap-image" alt="" loading="lazy" />
+      </div>
+
       <div id="details" class="kv-grid"></div>
 
       <div id="error-message" class="error" style="display:none;"></div>
@@ -102,6 +106,8 @@
       const titleEl = document.getElementById('title');
       const subtitleEl = document.getElementById('subtitle');
       const detailsEl = document.getElementById('details');
+      const imageWrapper = document.getElementById('image-container');
+      const imageEl = document.getElementById('ap-image');
       const backEl = document.getElementById('back-link');
 
       try {
@@ -116,11 +122,25 @@
           return;
         }
 
-        // Store entry for CSV export
+        // Store entry for CSV export and image display
         currentEntry = entry;
 
-        titleEl.textContent = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
+        const titleText = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
+        titleEl.textContent = titleText;
         subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
+
+        // Handle image, if present
+        const imgUrl = entry.image_url || '';
+        if (imgUrl) {
+          imageEl.src = imgUrl;
+          imageEl.alt = titleText;
+          imageWrapper.style.display = 'block';
+          imageEl.onerror = () => {
+            imageWrapper.style.display = 'none';
+          };
+        } else {
+          imageWrapper.style.display = 'none';
+        }
 
         detailsEl.innerHTML = '';
         const renderKV = (k, v) => {

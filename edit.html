@@ -96,6 +96,16 @@
           </div>
 
           <div class="form-row">
+            <label for="image_url">Image URL (optional)</label>
+            <input
+              id="image_url"
+              name="image_url"
+              type="url"
+              placeholder="https://example.com/path-to-ap-image.jpg"
+            />
+          </div>
+
+          <div class="form-row">
             <label for="dimensions">Dimensions</label>
             <input id="dimensions" name="dimensions" type="text" placeholder='e.g., 240 × 240 × 61 mm' />
           </div>
@@ -157,6 +167,7 @@
       const antenna_type = document.getElementById('antenna_type').value.trim();
       const form_factor = document.getElementById('form_factor').value.trim();
       const radios_iot_features_raw = document.getElementById('radios_iot_features').value.trim();
+      const image_url = document.getElementById('image_url').value.trim();
       const dimensions = document.getElementById('dimensions').value.trim();
       const weight = document.getElementById('weight').value.trim();
       const antenna_connectors = document.getElementById('antenna_connectors').value.trim();
@@ -183,6 +194,7 @@
         antenna_type,
         form_factor,
         radios_iot_features,
+        image_url,
         dimensions,
         weight,
         antenna_connectors,
