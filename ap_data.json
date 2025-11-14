@@ -645,7 +645,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee",
+      "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "unknown"
@@ -688,7 +688,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee",
+      "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "unknown"
@@ -710,7 +710,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee",
+      "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "unknown"
@@ -732,7 +732,7 @@
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee",
+      "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "unknown"
@@ -754,9 +754,192 @@
     "operating_temp_range": "-40°F to 140°F (-40°C to 60°C) operating; -58°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
-      "BLE/ZigBee",
+      "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "unknown"
-  }
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-504",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, USB is disabled unless IPM dynamically reduces other features based on power budget.",
+    "ethernet_ports_speed": "1× 10/100/1000BASE-T (RJ45)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "unknown",
+    "weight": "unknown",
+    "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP500Series.pdf",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Aruba",
+    "model": "AP-505",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, USB is disabled unless IPM dynamically reduces other features based on power budget.",
+    "ethernet_ports_speed": "1× 10/100/1000BASE-T (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "160 x 160 x 37 mm",
+    "weight": "500 g",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP500Series.pdf",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Aruba",
+    "model": "AP-514",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) or 802.3bt (Class 5) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3at/802.3bt, AP operates without restrictions. On 802.3af, USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE.",
+    "ethernet_ports_speed": "1× 100/1000/2500BASE-T SmartRate (RJ45) + 1× 10/100/1000BASE-T (RJ45)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "unknown",
+    "weight": "unknown",
+    "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP510Series.pdf",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Aruba",
+    "model": "AP-515",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) or 802.3bt (Class 5) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3at/802.3bt, AP operates without restrictions. On 802.3af, USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE.",
+    "ethernet_ports_speed": "1× 100/1000/2500BASE-T SmartRate (RJ45) + 1× 10/100/1000BASE-T (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "unknown",
+    "weight": "unknown",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP510Series.pdf",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Aruba",
+    "model": "AP-615",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, one Ethernet port is disabled and non-Wi-Fi features may be reduced; IPM can apply additional limits based on power budget.",
+    "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "unknown",
+    "weight": "unknown",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP610Series.pdf
+    ",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Aruba",
+    "model": "AP-635",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3bt, AP operates without restrictions. On 802.3at, USB is disabled; 802.3af is supported only for staging with radios disabled.",
+    "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "220 x 220 x 51 mm",
+    "weight": "1300 g",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C operating; -25°C to 55°C storage; -40°C to 70°C transportation",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP630Series.pdf",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee",
+    "GPS/GNSS"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Aruba",
+    "model": "AP-734",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "unknown",
+    "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3bt, AP operates without restrictions; behavior on lower PoE levels is not specified in the datasheet.",
+    "ethernet_ports_speed": "2× 1/2.5/5GbE SmartRate (RJ45)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "dimensions": "unknown",
+    "weight": "unknown",
+    "antenna_connectors": "External antennas (see datasheet)",
+    "operating_temp_range": "0°C to 50°C operating",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee",
+    "GPS/GNSS",
+    "Barometric sensor"
+    ],
+    "msrp": "unknown"
+    },
+    {
+    "vendor": "Aruba",
+    "model": "AP-735",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "unknown",
+    "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
+    "behavior_min_power": "On DC or 802.3bt, AP operates without restrictions; behavior on lower PoE levels is not specified in the datasheet.",
+    "ethernet_ports_speed": "2× 1/2.5/5GbE SmartRate (RJ45)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "dimensions": "240 x 240 x 56 mm",
+    "weight": "1440 g",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C operating",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf
+    ",
+    "radios_iot_features": [
+    "BLE",
+    "Zigbee",
+    "GPS/GNSS",
+    "Barometric sensor"
+    ],
+    "msrp": "unknown"
+    }
 ]
