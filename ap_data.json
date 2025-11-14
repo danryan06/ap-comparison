@@ -862,8 +862,7 @@
     "weight": "unknown",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP610Series.pdf
-    ",
+    "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP610Series.pdf",
     "radios_iot_features": [
     "BLE",
     "Zigbee"
