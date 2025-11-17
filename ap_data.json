@@ -991,19 +991,21 @@
     "ethernet_ports_speed": "1\u00d71/2.5/5/10GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "802.15.4 IoT radios",
+      "dual omnidirectional IoT antennas",
+      "Bluetooth 6.0",
+      "IoT sensors (temperature",
+      "accelerometer)",
+      "GNSS L1/L5"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a50014092enw",
+    "image_url": "images/juniper-ap66.jpg",
     "dimensions": "232 \u00d7 232 \u00d7 71 mm",
     "weight": "2.0 kg",
     "antenna_connectors": "N/A (internal antennas)",
     "operating_temp_range": "unknown",
-    "datasheet_url": "https://www.hpe.com/psnow/doc/a50014092enw",
-    "radios_iot_features": [
-      "dual-core 802.15.4 IoT radios",
-      "dual omnidirectional IoT antennas",
-      "Bluetooth 6.0",
-      "IoT sensors (temperature, accelerometer)",
-      "GNSS L1/L5"
-    ],
-    "msrp": "unknown"
+    "msrp": "$2,485"
   },
   {
     "vendor": "Juniper",
