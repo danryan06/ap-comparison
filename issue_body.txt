@@ -1,0 +1,36 @@
+Requested edit for AP via apcomparison.com
+Requested edit for: Juniper AP66
+
+JSON entry (do not edit unless you know what you're doing):
+
+```json
+{
+  "vendor": "Juniper",
+  "model": "AP66",
+  "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+  "spatial_streams": "2x2 / 2x2 / 2x2",
+  "min_poe_class": "802.3at (Class 4)",
+  "recommended_poe": "802.3at (Class 4)",
+  "behavior_min_power": "PoE PD via Eth0: on 802.3at the AP operates with full functionality; on 802.3af all radios are disabled and the AP provides only cloud connectivity.",
+  "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0)",
+  "antenna_type": "Internal",
+  "form_factor": "Outdoor",
+  "radios_iot_features": [
+    "802.15.4 IoT radios",
+    "dual omnidirectional IoT antennas",
+    "Bluetooth 6.0",
+    "IoT sensors (temperature",
+    "accelerometer)",
+    "GNSS L1/L5"
+  ],
+  "datasheet_url": "https://www.hpe.com/psnow/doc/a50014092enw",
+  "image_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/1000810-fig04?fmt=png8-alpha&network=on&wid=634&dpr=off",
+  "dimensions": "232 × 232 × 71 mm",
+  "weight": "2.0 kg",
+  "antenna_connectors": "N/A (internal antennas)",
+  "operating_temp_range": "unknown",
+  "msrp": "$2,485"
+}
+```
+
+Submitted via on-site edit form.
