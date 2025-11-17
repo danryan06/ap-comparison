@@ -1,19 +1,19 @@
 Requested edit for AP via apcomparison.com
-Requested edit for: Aruba AP-754
+Requested edit for: Aruba AP-755
 
 JSON entry (do not edit unless you know what you're doing):
 
 ```json
 {
   "vendor": "Aruba",
-  "model": "AP-754",
+  "model": "AP-755",
   "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
   "spatial_streams": "4x4 / 4x4 / 4x4",
   "min_poe_class": "802.3at (Class 4)",
   "recommended_poe": "802.3bt (Class 6) for full performance",
   "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
   "ethernet_ports_speed": "2× 100/1000/2.5/5/10GbE (RJ45)",
-  "antenna_type": "External",
+  "antenna_type": "Internal",
   "form_factor": "Indoor",
   "radios_iot_features": [
     "BLE",
@@ -23,11 +23,11 @@ JSON entry (do not edit unless you know what you're doing):
   ],
   "datasheet_url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
   "image_url": "https://www.hpe.com/content/dam/hpe/shared-publishing/images-norend/products/Aruba-750-AP-16-9.png.hpetransform/bounded-resize:width=800/image.webp",
-  "dimensions": "260 mm (W) x 260 mm (D) x 57 mm (H)",
-  "weight": "1530g",
-  "antenna_connectors": "8× RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
+  "dimensions": "350 mm (W) x 320 mm (D) x 83 mm (H)",
+  "weight": "2130g",
+  "antenna_connectors": "None (internal antennas)",
   "operating_temp_range": "0°C to +50°C operating; −25°C to +55°C storage; −40°C to +70°C transportation",
-  "msrp": "$2,695"
+  "msrp": "$2,595"
 }
 ```
 
