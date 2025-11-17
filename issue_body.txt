@@ -1,0 +1,33 @@
+Requested edit for AP via apcomparison.com
+Requested edit for: Juniper AP34
+
+JSON entry (do not edit unless you know what you're doing):
+
+```json
+{
+  "vendor": "Juniper",
+  "model": "AP34",
+  "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+  "spatial_streams": "2x2 / 2x2 / 2x2",
+  "min_poe_class": "802.3af (Class 3)",
+  "recommended_poe": "802.3at (Class 4)",
+  "behavior_min_power": "On 802.3af the AP supports a reduced single-radio mode primarily for cloud connectivity; on 802.3at full tri-band 2x2 operation is available.",
+  "ethernet_ports_speed": "1×1/2.5/5GbE (PoE-in on Eth0)",
+  "antenna_type": "Internal",
+  "form_factor": "Indoor",
+  "radios_iot_features": [
+    "IoT sensors (temperature",
+    "accelerometer)",
+    "Bluetooth 5.1 or later"
+  ],
+  "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap34-access-point-datasheet.pdf",
+  "image_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/ap34-45-front?fmt=png8-alpha&network=on&wid=634&dpr=off",
+  "dimensions": "230 × 230 × 50 mm",
+  "weight": "1.89 kg",
+  "antenna_connectors": "N/A (internal antennas)",
+  "operating_temp_range": "0°C to 40°C",
+  "msrp": "$1,665"
+}
+```
+
+Submitted via on-site edit form.
