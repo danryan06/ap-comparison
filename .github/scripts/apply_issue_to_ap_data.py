@@ -8,16 +8,41 @@ from pathlib import Path
 
 def extract_json(body: str) -> dict:
     """
-    Extract the first JSON object found in the issue body.
-    We assume your form puts a single JSON object in the body.
+    Extract a JSON object from the issue body, preferring fenced code blocks.
+
+    Priority order:
+      1. A ```json ... ``` fenced block
+      2. Any ``` ... ``` fenced block
+      3. A bare {...} JSON object
     """
-    match = re.search(r'\{.*\}', body, re.S)
-    if not match:
-        raise SystemExit("ERROR: No JSON object found in issue body.")
-    try:
-        return json.loads(match.group(0))
-    except json.JSONDecodeError as e:
-        raise SystemExit(f"ERROR: Failed to parse JSON from issue body: {e}")
+    # 1) ```json ... ```
+    match = re.search(r"```json\s*([\s\S]*?)```", body, re.MULTILINE)
+    if match:
+        json_text = match.group(1).strip()
+        try:
+            return json.loads(json_text)
+        except json.JSONDecodeError as e:
+            raise SystemExit(f"ERROR: Failed to parse JSON from ```json``` block: {e}")
+
+    # 2) any fenced block
+    match = re.search(r"```[\w]*\s*([\s\S]*?)```", body, re.MULTILINE)
+    if match:
+        json_text = match.group(1).strip()
+        try:
+            return json.loads(json_text)
+        except json.JSONDecodeError as e:
+            raise SystemExit(f"ERROR: Failed to parse JSON from fenced code block: {e}")
+
+    # 3) bare {...}
+    match = re.search(r"\{\s*[\s\S]*\}", body)
+    if match:
+        json_text = match.group(0)
+        try:
+            return json.loads(json_text)
+        except json.JSONDecodeError as e:
+            raise SystemExit(f"ERROR: Failed to parse JSON from bare object: {e}")
+
+    raise SystemExit("ERROR: No JSON object found in issue body.")
 
 
 def main():
