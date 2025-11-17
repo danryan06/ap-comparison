@@ -1,33 +1,37 @@
 Requested edit for AP via apcomparison.com
-Requested edit for: Juniper AP45E
+Requested edit for: Juniper AP37
 
 JSON entry (do not edit unless you know what you're doing):
 
 ```json
 {
   "vendor": "Juniper",
-  "model": "AP45E",
-  "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
-  "spatial_streams": "4x4 / 4x4 / 4x4",
+  "model": "AP37",
+  "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+  "spatial_streams": "2x2 / 4x4 / 4x4",
   "min_poe_class": "802.3at (Class 4)",
   "recommended_poe": "802.3bt (Class 6)",
-  "behavior_min_power": "Same PoE behavior as AP45: reduced radios and no USB or PoE-out on 802.3at; on 802.3af only a single low-power radio plus BLE and scan operate.",
-  "ethernet_ports_speed": "2×1GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
-  "antenna_type": "External",
+  "behavior_min_power": "PoE PD via Eth0: full functionality on 802.3bt; on 802.3at functionality is reduced; on 802.3af all Wi-Fi radios are disabled and the AP provides only cloud connectivity.",
+  "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0) + 1×1GbE (PoE-out on Eth1 with 802.3bt)",
+  "antenna_type": "Internal",
   "form_factor": "Indoor",
   "radios_iot_features": [
-    "vBLE 16-element directional antenna array",
-    "Bluetooth 5.1",
-    "environmental sensors (temperature",
-    "accelerometer)"
+    "802.15.4 IoT radios",
+    "dual omnidirectional IoT antennas",
+    "vBLE directional antenna array",
+    "Bluetooth 6.0",
+    "IoT sensors (pressure",
+    "temperature",
+    "accelerometer)",
+    "GNSS L1/L5"
   ],
-  "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
-  "image_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/ap34-45-front-datasheet?fmt=png8-alpha&network=on&wid=305&dpr=off",
-  "dimensions": "230 × 230 × 50 mm",
-  "weight": "1.97 kg",
-  "antenna_connectors": "Two pluggable connectors: 2.4/5 GHz (4-pin), 6 GHz + scan (6-pin)",
-  "operating_temp_range": "-10°C to 50°C",
-  "msrp": "$2,245"
+  "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
+  "image_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/1000809-fig05?fmt=png8-alpha&network=on&wid=634&dpr=off",
+  "dimensions": "230 × 230 × 45 mm",
+  "weight": "1.55 kg",
+  "antenna_connectors": "N/A (internal antennas)",
+  "operating_temp_range": "0°C to 40°C",
+  "msrp": "$2,085"
 }
 ```
 
