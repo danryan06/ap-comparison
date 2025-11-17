@@ -51,7 +51,7 @@ jobs:
           
           # Check if branch exists
           if git ls-remote --heads origin "$BRANCH_NAME" | grep -q "$BRANCH_NAME"; then
-            echo "Branch $BRANCH_NAME exists"
+            echo "Branch $BRANCH_NAME exists, attempting to rebase onto latest main"
             echo "branch-exists=true" >> $GITHUB_OUTPUT
             
             # Fetch the branch
@@ -64,20 +64,24 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             
-            # Try to rebase onto latest main (this will be the base for new changes)
+            # Try to rebase onto latest main
             if git rebase origin/main; then
               echo "Successfully rebased existing branch onto main"
               echo "rebase-success=true" >> $GITHUB_OUTPUT
-              # Push the rebased branch so the action can update it
+              # Push the rebased branch
               git push origin "$BRANCH_NAME" --force-with-lease || true
+              # Return to main for applying new changes
+              git checkout main
             else
-              echo "Rebase failed (likely due to conflicts), will continue from main"
+              echo "Rebase failed due to conflicts. Deleting old branch to start fresh."
               echo "rebase-success=false" >> $GITHUB_OUTPUT
               git rebase --abort || true
+              # Return to main
+              git checkout main
+              # Delete the conflicted branch - the action will recreate it fresh
+              git push origin --delete "$BRANCH_NAME" || echo "Branch may have already been deleted or doesn't exist remotely"
+              echo "Old branch deleted. Will create fresh branch from latest main."
             fi
-            
-            # Return to main for applying new changes
-            git checkout main
           else
             echo "Branch $BRANCH_NAME does not exist, will create new one"
             echo "branch-exists=false" >> $GITHUB_OUTPUT
