@@ -15,12 +15,16 @@ function fail(msg) {
 try {
   const file = path.join(process.cwd(), 'ap_data.json');
   const raw = fs.readFileSync(file, 'utf8');
-  // quick newline-in-url guard
-  if (/\"datasheet_url\"\s*:\s*\"https?:\/\/[^\n]*\n/.test(raw)) {
-    fail('datasheet_url contains a newline; URLs must be single-line strings.');
-  }
   const data = JSON.parse(raw);
   if (!Array.isArray(data)) fail('ap_data.json must be an array.');
+
+  data.forEach((entry, idx) => {
+    if (typeof entry.datasheet_url === 'string') {
+      if (/\r|\n/.test(entry.datasheet_url)) {
+        fail(`Entry index ${idx} (${entry.vendor} ${entry.model}) has a datasheet_url containing a newline; URLs must be single-line strings.`);
+      }
+    }
+  });
 
   const slugToIndexes = new Map();
   data.forEach((e, idx) => {
