@@ -21,6 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 0  # Fetch full history for rebasing
 
       - name: List repo contents (debug)
         run: |
@@ -37,6 +38,49 @@ jobs:
             echo "mode=new" >> $GITHUB_OUTPUT
           else
             echo "mode=edit" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Ensure we're on latest main
+        run: |
+          git pull origin main --rebase || git pull origin main
+
+      - name: Handle existing PR branch (prevent conflicts)
+        id: branch-handler
+        run: |
+          BRANCH_NAME="ap-update/issue-${{ github.event.issue.number }}"
+          
+          # Check if branch exists
+          if git ls-remote --heads origin "$BRANCH_NAME" | grep -q "$BRANCH_NAME"; then
+            echo "Branch $BRANCH_NAME exists"
+            echo "branch-exists=true" >> $GITHUB_OUTPUT
+            
+            # Fetch the branch
+            git fetch origin "$BRANCH_NAME"
+            
+            # Checkout the existing branch
+            git checkout "$BRANCH_NAME"
+            
+            # Configure git for rebase
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            
+            # Try to rebase onto latest main (this will be the base for new changes)
+            if git rebase origin/main; then
+              echo "Successfully rebased existing branch onto main"
+              echo "rebase-success=true" >> $GITHUB_OUTPUT
+              # Push the rebased branch so the action can update it
+              git push origin "$BRANCH_NAME" --force-with-lease || true
+            else
+              echo "Rebase failed (likely due to conflicts), will continue from main"
+              echo "rebase-success=false" >> $GITHUB_OUTPUT
+              git rebase --abort || true
+            fi
+            
+            # Return to main for applying new changes
+            git checkout main
+          else
+            echo "Branch $BRANCH_NAME does not exist, will create new one"
+            echo "branch-exists=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Save issue body to file
@@ -64,6 +108,10 @@ jobs:
             --issue-number "${{ github.event.issue.number }}" \
             --input issue_body.txt \
             --data ap_data.json
+
+      - name: Clean up temporary files
+        run: |
+          rm -f issue_body.txt
 
       - name: Create pull request with AP data changes
         uses: peter-evans/create-pull-request@v7
