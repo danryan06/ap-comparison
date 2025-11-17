@@ -273,6 +273,31 @@
     "msrp": "$2,695"
   },
   {
+    "vendor": "Aruba",
+    "model": "AP-755",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for full performance",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
+    "ethernet_ports_speed": "2\u00d7 100/1000/2.5/5/10GbE (RJ45)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4/Zigbee",
+      "GNSS",
+      "Barometric pressure sensor"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
+    "image_url": "",
+    "dimensions": "350 mm (W) x 320 mm (D) x 83 mm (H)",
+    "weight": "2130g",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0\u00b0C to +50\u00b0C operating; \u221225\u00b0C to +55\u00b0C storage; \u221240\u00b0C to +70\u00b0C transportation",
+    "msrp": "$2,595"
+  },
+  {
     "vendor": "Cisco",
     "model": "CW9172I",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
