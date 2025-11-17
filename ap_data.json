@@ -727,16 +727,18 @@
     "ethernet_ports_speed": "1\u00d71/2.5/5GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
+    "radios_iot_features": [
+      "IoT sensors (temperature",
+      "accelerometer)",
+      "Bluetooth 5.1 or later"
+    ],
+    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap34-access-point-datasheet.pdf",
+    "image_url": "images/juniper-ap34.jpg",
     "dimensions": "230 \u00d7 230 \u00d7 50 mm",
     "weight": "1.89 kg",
     "antenna_connectors": "N/A (internal antennas)",
     "operating_temp_range": "0\u00b0C to 40\u00b0C",
-    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap34-access-point-datasheet.pdf",
-    "radios_iot_features": [
-      "IoT sensors (temperature, accelerometer)",
-      "Bluetooth 5.1 or later"
-    ],
-    "msrp": "unknown"
+    "msrp": "$1,665"
   },
   {
     "vendor": "Juniper",
