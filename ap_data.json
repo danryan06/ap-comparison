@@ -855,17 +855,19 @@
     "ethernet_ports_speed": "2\u00d71GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
     "antenna_type": "External",
     "form_factor": "Indoor",
+    "radios_iot_features": [
+      "vBLE 16-element directional antenna array",
+      "Bluetooth 5.1",
+      "environmental sensors (temperature",
+      "accelerometer)"
+    ],
+    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
+    "image_url": "images/juniper-ap45e.jpg",
     "dimensions": "230 \u00d7 230 \u00d7 50 mm",
     "weight": "1.97 kg",
     "antenna_connectors": "Two pluggable connectors: 2.4/5 GHz (4-pin), 6 GHz + scan (6-pin)",
     "operating_temp_range": "-10\u00b0C to 50\u00b0C",
-    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
-    "radios_iot_features": [
-      "vBLE 16-element directional antenna array",
-      "Bluetooth 5.1",
-      "environmental sensors (temperature, accelerometer)"
-    ],
-    "msrp": "unknown"
+    "msrp": "$2,245"
   },
   {
     "vendor": "Juniper",
