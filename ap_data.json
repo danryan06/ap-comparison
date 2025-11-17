@@ -429,28 +429,6 @@
     "msrp": "~$2,593"
   },
   {
-    "vendor": "Cisco",
-    "model": "Catalyst 9166I",
-    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
-    "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3at (PoE+)",
-    "recommended_poe": "802.3bt or DC for full operation with USB",
-    "behavior_min_power": "On 802.3bt or DC, all radios operate 4x4 on 2.4/5/6 GHz with USB enabled; on 802.3at, radios remain 4x4 with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
-    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G mGig (RJ45)",
-    "antenna_type": "Internal",
-    "form_factor": "Indoor",
-    "dimensions": "9.5 x 9.5 x 2.2 in. (241.3 x 241.3 x 56.9 mm)",
-    "weight": "3.54 lb (1.60 kg)",
-    "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F (-30\u00b0C to 70\u00b0C) storage",
-    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9166-series-access-points/catalyst-9166-series-access-points-ds.html",
-    "radios_iot_features": [
-      "BLE",
-      "Environmental sensors (TVOC/temperature/humidity)"
-    ],
-    "msrp": "unknown"
-  },
-  {
     "vendor": "Extreme",
     "model": "AP5020",
     "wifi_gen_radios": "Wi-Fi 7",
