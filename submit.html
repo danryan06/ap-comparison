@@ -93,6 +93,17 @@
           </div>
 
           <div class="form-row">
+            <label for="datasheet_url">Datasheet URL</label>
+            <input
+              id="datasheet_url"
+              name="datasheet_url"
+              type="url"
+              placeholder="https://example.com/datasheet.pdf"
+              required
+            />
+          </div>
+
+          <div class="form-row">
             <label for="image_url">Image URL (optional)</label>
             <input
               id="image_url"
@@ -219,6 +230,7 @@
       const antenna_type = document.getElementById('antenna_type').value.trim();
       const form_factor = document.getElementById('form_factor').value.trim();
       const radios_iot_features_raw = document.getElementById('radios_iot_features').value.trim();
+      const datasheet_url = document.getElementById('datasheet_url').value.trim();
       const image_url = document.getElementById('image_url').value.trim();
       const dimensions = document.getElementById('dimensions').value.trim();
       const weight = document.getElementById('weight').value.trim();
@@ -246,6 +258,7 @@
         antenna_type,
         form_factor,
         radios_iot_features,
+        datasheet_url,
         image_url,
         dimensions,
         weight,

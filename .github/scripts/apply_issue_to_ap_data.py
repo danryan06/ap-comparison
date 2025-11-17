@@ -3,7 +3,9 @@ import argparse
 import json
 import re
 import sys
+import urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 def extract_json(body: str) -> dict:
@@ -43,6 +45,46 @@ def extract_json(body: str) -> dict:
             raise SystemExit(f"ERROR: Failed to parse JSON from bare object: {e}")
 
     raise SystemExit("ERROR: No JSON object found in issue body.")
+
+
+def slugify(value: str) -> str:
+    return re.sub(r'[^a-z0-9]+', '-', (value or '').strip().lower()).strip('-')
+
+
+def find_image_url(body: str) -> str:
+    """
+    Look for the first image-like URL in the issue body (e.g., GitHub-hosted uploads).
+    """
+    match = re.search(r'https?://\S+\.(?:png|jpe?g|gif|webp)', body, re.IGNORECASE)
+    if match:
+        return match.group(0)
+    # GitHub user-images links sometimes lack an extension
+    match = re.search(r'https?://user-images\.githubusercontent\.com/\S+', body, re.IGNORECASE)
+    if match:
+        return match.group(0)
+    return ''
+
+
+def download_image(image_url: str, vendor: str, model: str) -> str:
+    if not image_url:
+        return ''
+    try:
+        images_dir = Path('images')
+        images_dir.mkdir(exist_ok=True)
+        parsed = urlparse(image_url)
+        ext = Path(parsed.path).suffix.lower()
+        if ext not in {'.png', '.jpg', '.jpeg', '.gif', '.webp'}:
+            ext = '.jpg'
+        filename = f"{slugify(vendor)}-{slugify(model)}{ext}"
+        dest = images_dir / filename
+        with urllib.request.urlopen(image_url) as resp:
+            if resp.status >= 400:
+                raise RuntimeError(f'HTTP {resp.status}')
+            dest.write_bytes(resp.read())
+        return f"images/{filename}"
+    except Exception as e:
+        print(f"WARNING: Failed to download image {image_url}: {e}")
+        return ''
 
 
 def main():
@@ -90,6 +132,15 @@ def main():
          and (x.get("model") or "").strip() == key[1]),
         None
     )
+
+    image_url = (new_entry.get("image_url") or "").strip()
+    if not image_url:
+        image_url = find_image_url(body)
+    local_image_path = download_image(image_url, vendor, model)
+    if local_image_path:
+        new_entry["image_url"] = local_image_path
+    elif image_url:
+        new_entry["image_url"] = image_url
 
     if args.mode == "new":
         if existing_idx is not None:
