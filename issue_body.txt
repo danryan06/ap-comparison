@@ -1,35 +1,33 @@
 Requested edit for AP via apcomparison.com
-Requested edit for: Juniper AP66D
+Requested edit for: Aruba AP-754
 
 JSON entry (do not edit unless you know what you're doing):
 
 ```json
 {
-  "vendor": "Juniper",
-  "model": "AP66D",
+  "vendor": "Aruba",
+  "model": "AP-754",
   "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
-  "spatial_streams": "2x2 / 2x2 / 2x2",
+  "spatial_streams": "4x4 / 4x4 / 4x4",
   "min_poe_class": "802.3at (Class 4)",
-  "recommended_poe": "802.3at (Class 4)",
-  "behavior_min_power": "Same PoE behavior as AP66: full function on 802.3at; on 802.3af all radios are disabled for cloud connectivity only.",
-  "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0)",
-  "antenna_type": "Directional",
-  "form_factor": "Outdoor",
+  "recommended_poe": "802.3bt (Class 6) for full performance",
+  "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
+  "ethernet_ports_speed": "2× 100/1000/2.5/5/10GbE (RJ45)",
+  "antenna_type": "External",
+  "form_factor": "Indoor",
   "radios_iot_features": [
-    "802.15.4 IoT radios",
-    "dual omnidirectional IoT antennas",
-    "Bluetooth 6.0",
-    "IoT sensors (temperature",
-    "accelerometer)",
-    "GNSS L1/L5"
+    "BLE",
+    "802.15.4/Zigbee",
+    "GNSS",
+    "Barometric pressure sensor"
   ],
-  "datasheet_url": "https://www.hpe.com/psnow/doc/a50014092enw",
-  "image_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/1000810-fig04?fmt=png8-alpha&network=on&wid=634&dpr=off",
-  "dimensions": "232 × 232 × 88 mm",
-  "weight": "2.1 kg",
-  "antenna_connectors": "N/A (internal directional antennas)",
-  "operating_temp_range": "unknown",
-  "msrp": "$2,685"
+  "datasheet_url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
+  "image_url": "https://www.hpe.com/content/dam/hpe/shared-publishing/images-norend/products/Aruba-750-AP-16-9.png.hpetransform/bounded-resize:width=800/image.webp",
+  "dimensions": "260 mm (W) x 260 mm (D) x 57 mm (H)",
+  "weight": "1530g",
+  "antenna_connectors": "8× RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
+  "operating_temp_range": "0°C to +50°C operating; −25°C to +55°C storage; −40°C to +70°C transportation",
+  "msrp": "$2,695"
 }
 ```
 
