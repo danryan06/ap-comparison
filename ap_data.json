@@ -32,7 +32,7 @@
     "ethernet_ports_speed": "1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
-    "dimensions": "160 x 160 x 37 mm",
+    "dimensions": "160 mm x 160 mm x 37 mm",
     "weight": "500 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -40\u00b0C to 70\u00b0C storage",
