@@ -258,18 +258,19 @@
     "ethernet_ports_speed": "2\u00d7 100/1000/2.5/5/10GbE (RJ45)",
     "antenna_type": "External",
     "form_factor": "Indoor",
-    "dimensions": "unknown",
-    "weight": "unknown",
-    "antenna_connectors": "8\u00d7 RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
-    "operating_temp_range": "0\u00b0C to +50\u00b0C operating; \u221225\u00b0C to +55\u00b0C storage; \u221240\u00b0C to +70\u00b0C transportation",
-    "datasheet_url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
     "radios_iot_features": [
       "BLE",
       "802.15.4/Zigbee",
       "GNSS",
       "Barometric pressure sensor"
     ],
-    "msrp": "unknown"
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
+    "image_url": "https://www.hpe.com/content/dam/hpe/shared-publishing/images-norend/products/Aruba-750-AP-16-9.png.hpetransform/bounded-resize:width=800/image.webp",
+    "dimensions": "260 mm (W) x 260 mm (D) x 57 mm (H)",
+    "weight": "1530g",
+    "antenna_connectors": "8\u00d7 RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
+    "operating_temp_range": "0\u00b0C to +50\u00b0C operating; \u221225\u00b0C to +55\u00b0C storage; \u221240\u00b0C to +70\u00b0C transportation",
+    "msrp": "$2,695"
   },
   {
     "vendor": "Cisco",
