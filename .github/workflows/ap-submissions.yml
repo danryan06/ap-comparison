@@ -1,0 +1,63 @@
+name: AP submissions from issues
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+jobs:
+  process-ap-issue:
+    # Only run for issues that match our form patterns
+    if: |
+      startsWith(github.event.issue.title, 'New AP:') ||
+      startsWith(github.event.issue.title, 'Edit AP:')
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write        # needed to push branches / commits
+      pull-requests: write   # needed to open PRs
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Decide mode (new vs edit)
+        id: mode
+        run: |
+          title="${{ github.event.issue.title }}"
+          if [[ "$title" == New\ AP:* ]]; then
+            echo "mode=new" >> $GITHUB_OUTPUT
+          else
+            echo "mode=edit" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Save issue body to file
+        run: |
+          printf "%s" "${{ github.event.issue.body }}" > issue_body.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Apply issue to ap_data.json
+        id: apply
+        run: |
+          python .github/scripts/apply_issue_to_ap_data.py \
+            --mode "${{ steps.mode.outputs.mode }}" \
+            --issue-number "${{ github.event.issue.number }}" \
+            --input issue_body.txt \
+            --data ap_data.json
+
+      - name: Create pull request with AP data changes
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "AP data update from issue #${{ github.event.issue.number }}"
+          branch: "ap-update/issue-${{ github.event.issue.number }}"
+          title: "AP data update: ${{ github.event.issue.title }}"
+          body: |
+            This PR was auto-generated from issue #${{ github.event.issue.number }}.
+
+            Please review the AP data changes before merging.
+          labels: |
+            ap-submission
+          issue-number: ${{ github.event.issue.number }}
