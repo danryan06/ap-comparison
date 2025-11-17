@@ -19,6 +19,15 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: List repo contents (debug)
+        run: |
+          pwd
+          ls
+          ls .github
+          ls .github/scripts
 
       - name: Decide mode (new vs edit)
         id: mode
