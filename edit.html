@@ -11,7 +11,8 @@
     <h1><a href="index.html">Wi‑Fi AP Comparison</a></h1>
     <h2>Edit Existing AP Information</h2>
     <p class="subtitle">
-      Use this form to generate an updated JSON entry for an existing AP. You can copy the snippet or open a pre-filled GitHub issue requesting the change.
+      Use this form to generate an updated JSON entry for an existing AP. After generating the JSON,
+      click “Open GitHub Issue with This Update” to open a prefilled GitHub issue and submit it.
     </p>
 
     <div class="actions">
@@ -140,10 +141,14 @@
       <div class="output-box">
         <label for="output">Updated JSON entry (replace the existing object in <code>ap_data.json</code>):</label>
         <textarea id="output" readonly placeholder="Your updated JSON snippet will appear here after you generate it."></textarea>
+        <p class="hint" style="margin-top:0.5rem;">
+          Step 1: Load the AP, update the fields, and click “Generate Updated JSON Snippet”. Step 2: Click
+          “Open GitHub Issue with This Update” and submit the pre-filled issue in GitHub.
+        </p>
       </div>
 
       <div class="footer">
-        In your issue or pull request, mention which existing AP entry this should replace (e.g., "Replace Juniper AP45 entry"). The maintainers will handle the merge.
+        Workflow: Generate updated JSON ➜ open the prefilled GitHub issue ➜ review and submit ➜ automation creates the pull request.
       </div>
     </div>
   </div>
@@ -262,37 +267,46 @@
       output.select();
     });
 
-    document.getElementById('open-issue-btn').addEventListener('click', function () {
-      const obj = buildApObjectFromForm();
+    function openGithubEditApIssue() {
+      const vendor = document.getElementById('vendor').value.trim();
+      const model = document.getElementById('model').value.trim();
+      const jsonSnippet = document.getElementById('output').value.trim();
       const existingSelect = document.getElementById('existing');
       const existing = existingSelect.value ? existingSelect.options[existingSelect.selectedIndex].textContent.trim() : '';
 
-      if (!obj.vendor || !obj.model) {
-        alert('Please fill in at least Vendor and Model before opening an issue.');
+      if (!vendor || !model) {
+        alert('Please fill in at least Vendor and Model, then click "Generate Updated JSON Snippet" before opening the GitHub issue.');
+        return;
+      }
+      if (!jsonSnippet) {
+        alert('Please click "Generate Updated JSON Snippet" before opening the GitHub issue.');
         return;
       }
 
-      const title = `Edit AP: ${obj.vendor} ${obj.model}`;
-
+      const title = `Edit AP: ${vendor} ${model}`.trim();
       const bodyLines = [
-        existing ? `Requested edit for: ${existing}` : 'Requested edit for an existing AP.',
+        'Requested edit for AP via apcomparison.com'
+      ];
+      if (existing) {
+        bodyLines.push(`Requested edit for: ${existing}`);
+      }
+      bodyLines.push(
         '',
-        'Updated AP JSON entry:',
+        'JSON entry (do not edit unless you know what you\'re doing):',
         '',
         '```json',
-        JSON.stringify(obj, null, 2),
+        jsonSnippet,
         '```',
         '',
-        '_Submitted via on-site edit form._'
-      ];
+        'Submitted via on-site edit form.'
+      );
 
       const body = bodyLines.join('\n');
-
-      const url = `https://github.com/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_REPO)}/issues/new` +
-                  `?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-
+      const url = `https://github.com/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_REPO)}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
       window.open(url, '_blank', 'noopener');
-    });
+    }
+
+    document.getElementById('open-issue-btn').addEventListener('click', openGithubEditApIssue);
     document.getElementById('existing').addEventListener('change', function () {
       const idx = this.value ? parseInt(this.value, 10) : -1;
       if (idx >= 0 && apList[idx]) fillFormWithEntry(apList[idx]);

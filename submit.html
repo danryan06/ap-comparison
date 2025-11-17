@@ -11,8 +11,8 @@
     <h1><a href="index.html">Wi‑Fi AP Comparison</a></h1>
     <h2>Submit New AP</h2>
     <p class="subtitle">
-      Use this form to generate a standardized JSON entry for a new access point. Then click
-      “Open GitHub New AP Form”, paste the JSON into the <strong>JSON Snippet</strong> field, and submit.
+      Use this form to generate a standardized JSON entry for a new access point. After generating the JSON,
+      click “Open GitHub Issue with This Entry” to open a prefilled GitHub issue and submit it.
     </p>
 
     <div class="actions">
@@ -140,11 +140,14 @@
       <div class="output-box">
         <label for="output">Generated JSON entry (add this object to <code>ap_data.json</code>):</label>
         <textarea id="output" readonly placeholder="Your JSON snippet will appear here after you generate it."></textarea>
+        <p class="hint" style="margin-top:0.5rem;">
+          Step 1: Fill out the form and click “Generate JSON Snippet”. Step 2: Click “Open GitHub Issue with This Entry”
+          and submit the pre-filled issue in GitHub.
+        </p>
       </div>
 
       <div class="footer">
-        Workflow: Generate JSON ➜ open the GitHub New AP form ➜ paste the snippet into the <code>JSON Snippet</code> field ➜ submit.
-        A GitHub Action will turn your submission into a pull request.
+        Workflow: Generate JSON ➜ open the prefilled GitHub issue ➜ review and submit ➜ automation creates the pull request.
       </div>
 
     </div>
@@ -265,23 +268,43 @@
       output.select();
     });
 
-    document.getElementById('open-issue-btn').addEventListener('click', function () {
-      // Make sure we at least have vendor + model so the user isn't totally lost
-      const obj = buildApObjectFromForm();
-      if (!obj.vendor || !obj.model) {
-        alert('Please fill in at least Vendor and Model, then click "Generate JSON Snippet" before opening the GitHub form.');
+    function openGithubNewApIssue() {
+      const vendor = document.getElementById('vendor').value.trim();
+      const model = document.getElementById('model').value.trim();
+      const jsonSnippet = document.getElementById('output').value.trim();
+
+      if (!vendor || !model) {
+        alert('Please fill in at least Vendor and Model, then click "Generate JSON Snippet" before opening the GitHub issue.');
         return;
       }
-      // Soft gate on duplicates
-      const isDup = existingSlugSet.has(makeSlug(obj.vendor, obj.model));
+      if (!jsonSnippet) {
+        alert('Please click "Generate JSON Snippet" before opening the GitHub issue.');
+        return;
+      }
+
+      const isDup = existingSlugSet.has(makeSlug(vendor, model));
       if (isDup && !confirm('This AP appears to already exist. Open the new AP issue anyway?')) {
         return;
       }
 
-      // Open the New AP Issue Form
-      const url = `https://github.com/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_REPO)}/issues/new?template=new_ap.yml`;
+      const title = `New AP: ${vendor} ${model}`.trim();
+      const bodyLines = [
+        'New AP submission via apcomparison.com',
+        '',
+        'JSON entry (do not edit unless you know what you\'re doing):',
+        '',
+        '```json',
+        jsonSnippet,
+        '```',
+        '',
+        'Submitted via on-site form.'
+      ];
+      const body = bodyLines.join('\n');
+      const url = `https://github.com/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_REPO)}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
       window.open(url, '_blank', 'noopener');
-    });
+    }
+
+    document.getElementById('open-issue-btn').addEventListener('click', openGithubNewApIssue);
 
   </script>
 </body>
