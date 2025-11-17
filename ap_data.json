@@ -883,20 +883,23 @@
     "ethernet_ports_speed": "2\u00d710GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
-    "dimensions": "254 \u00d7 254 \u00d7 60 mm",
-    "weight": "2.0 kg",
-    "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0\u00b0C to 40\u00b0C",
-    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
     "radios_iot_features": [
       "dual multi-personality 802.15.4 IoT radios",
       "vBLE directional antenna array",
       "Bluetooth 6.0",
       "UWB",
       "GNSS L1/L5",
-      "IoT sensors (pressure, temperature, accelerometer)"
+      "IoT sensors (pressure",
+      "temperature",
+      "accelerometer)"
     ],
-    "msrp": "unknown"
+    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
+    "image_url": "images/juniper-ap47.jpg",
+    "dimensions": "254 \u00d7 254 \u00d7 60 mm",
+    "weight": "2.0 kg",
+    "antenna_connectors": "N/A (internal antennas)",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
+    "msrp": "$2,785"
   },
   {
     "vendor": "Juniper",
