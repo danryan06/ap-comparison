@@ -779,19 +779,22 @@
     "ethernet_ports_speed": "1\u00d71/2.5/5/10GbE (PoE-in on Eth0) + 1\u00d71GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": "External",
     "form_factor": "Indoor",
-    "dimensions": "230 \u00d7 230 \u00d7 45 mm",
-    "weight": "1.53 kg",
-    "antenna_connectors": "Two pluggable external antenna connectors: 2.4/5 GHz (4-pin) and 6 GHz (6-pin)",
-    "operating_temp_range": "-20\u00b0C to 50\u00b0C",
-    "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
     "radios_iot_features": [
       "dual-core 802.15.4 IoT radios",
       "dual omnidirectional IoT antennas",
       "Bluetooth 6.0",
-      "IoT sensors (pressure, temperature, accelerometer)",
+      "IoT sensors (pressure",
+      "temperature",
+      "accelerometer)",
       "GNSS L1/L5"
     ],
-    "msrp": "unknown"
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
+    "image_url": "images/juniper-ap36m.jpg",
+    "dimensions": "230 \u00d7 230 \u00d7 45 mm",
+    "weight": "1.53 kg",
+    "antenna_connectors": "Two pluggable external antenna connectors: 2.4/5 GHz (4-pin) and 6 GHz (6-pin)",
+    "operating_temp_range": "-20\u00b0C to 50\u00b0C",
+    "msrp": "$2,085"
   },
   {
     "vendor": "Juniper",
