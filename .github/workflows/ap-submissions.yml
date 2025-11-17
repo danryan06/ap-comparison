@@ -44,12 +44,12 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           python - <<'PY'
-from pathlib import Path
-import os
+          from pathlib import Path
+          import os
 
-body = os.environ["ISSUE_BODY"]
-Path("issue_body.txt").write_text(body, encoding="utf-8")
-PY
+          body = os.environ["ISSUE_BODY"]
+          Path("issue_body.txt").write_text(body, encoding="utf-8")
+          PY
 
       - name: Set up Python
         uses: actions/setup-python@v5
