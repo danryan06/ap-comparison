@@ -1,4 +1,5 @@
-New AP submission via apcomparison.com
+Requested edit for AP via apcomparison.com
+Requested edit for: Extreme AP5020
 
 JSON entry (do not edit unless you know what you're doing):
 
@@ -19,6 +20,7 @@ JSON entry (do not edit unless you know what you're doing):
     "Zigbee",
     "Thread"
   ],
+  "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/b441c2ee9d24460f8412f12c1dc04426?v=1e570430",
   "image_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/57c3cb6d8e0a412c9d5bf7e7a49d2b0b?v=6c1b2e5c",
   "dimensions": "10.16 in. x 10.16 in. x 1.62 in. (258mm x 258mm x 41mm)",
   "weight": "3.57 lbs (1.62kg)",
@@ -28,4 +30,4 @@ JSON entry (do not edit unless you know what you're doing):
 }
 ```
 
-Submitted via on-site form.
+Submitted via on-site edit form.
