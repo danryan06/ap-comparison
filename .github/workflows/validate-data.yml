@@ -5,12 +5,12 @@ on:
     paths:
       - 'ap_data.json'
       - '.github/workflows/validate-data.yml'
-      - 'scripts/validate-data.js'
+      - '.github/scripts/validate-data.js'
   pull_request:
     paths:
       - 'ap_data.json'
       - '.github/workflows/validate-data.yml'
-      - 'scripts/validate-data.js'
+      - '.github/scripts/validate-data.js'
 
 jobs:
   validate:
@@ -23,6 +23,6 @@ jobs:
         with:
           node-version: '18'
       - name: Run validator
-        run: node scripts/validate-data.js
+        run: node .github/scripts/validate-data.js
 
 
