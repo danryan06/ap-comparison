@@ -1,32 +1,33 @@
 Requested edit for AP via apcomparison.com
-Requested edit for: Juniper AP34
+Requested edit for: Juniper AP45
 
 JSON entry (do not edit unless you know what you're doing):
 
 ```json
 {
   "vendor": "Juniper",
-  "model": "AP34",
+  "model": "AP45",
   "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
-  "spatial_streams": "2x2 / 2x2 / 2x2",
-  "min_poe_class": "802.3af (Class 3)",
-  "recommended_poe": "802.3at (Class 4)",
-  "behavior_min_power": "On 802.3af the AP supports a reduced single-radio mode primarily for cloud connectivity; on 802.3at full tri-band 2x2 operation is available.",
-  "ethernet_ports_speed": "1×1/2.5/5GbE (PoE-in on Eth0)",
+  "spatial_streams": "4x4 / 4x4 / 4x4",
+  "min_poe_class": "802.3at (Class 4)",
+  "recommended_poe": "802.3bt (Class 6)",
+  "behavior_min_power": "On 802.3af, only a single 1x1 radio plus BLE and scan are enabled to signal that the AP needs more power. On 802.3at, any two radios can be 4x4 or the AP can run three bands with some radios reduced to 2x2; USB and PoE-out are disabled. On 802.3bt, full tri-band 4x4 plus scan, BLE, PoE-out on Eth1, and USB are enabled.",
+  "ethernet_ports_speed": "2×1GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
   "antenna_type": "Internal",
   "form_factor": "Indoor",
   "radios_iot_features": [
-    "IoT sensors (temperature",
-    "accelerometer)",
-    "Bluetooth 5.1 or later"
+    "vBLE 16-element directional antenna array",
+    "Bluetooth 5.1",
+    "environmental sensors (temperature",
+    "accelerometer)"
   ],
-  "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap34-access-point-datasheet.pdf",
-  "image_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/ap34-45-front?fmt=png8-alpha&network=on&wid=634&dpr=off",
+  "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
+  "image_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/ap34-45-front-datasheet?fmt=png8-alpha&network=on&wid=305&dpr=off",
   "dimensions": "230 × 230 × 50 mm",
-  "weight": "1.89 kg",
+  "weight": "2.01 kg",
   "antenna_connectors": "N/A (internal antennas)",
   "operating_temp_range": "0°C to 40°C",
-  "msrp": "$1,665"
+  "msrp": "$2,245"
 }
 ```
 
