@@ -703,16 +703,18 @@
     "ethernet_ports_speed": "1\u00d71/2.5GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
+    "radios_iot_features": [
+      "multi-personality IoT radio with BLE 5.3",
+      "IoT sensors (temperature",
+      "accelerometer)"
+    ],
+    "datasheet_url": "https://www.juniper.net/us/en/products/access-points/ap24-access-point-datasheet.html",
+    "image_url": "images/juniper-ap24.jpg",
     "dimensions": "185 \u00d7 185 \u00d7 39 mm",
     "weight": "0.75 kg",
     "antenna_connectors": "N/A (internal antennas)",
     "operating_temp_range": "0\u00b0C to 40\u00b0C",
-    "datasheet_url": "https://www.juniper.net/us/en/products/access-points/ap24-access-point-datasheet.html",
-    "radios_iot_features": [
-      "multi-personality IoT radio with BLE 5.3",
-      "IoT sensors (temperature, accelerometer)"
-    ],
-    "msrp": "unknown"
+    "msrp": "$1,240"
   },
   {
     "vendor": "Juniper",
