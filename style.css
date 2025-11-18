@@ -794,10 +794,116 @@ td.behavior:hover::before {
   cursor: pointer;
 }
 
-.results-grid {
+.results-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.result-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: auto 1fr 1.2fr 1.2fr 1fr 1fr 1fr 1fr 1fr auto;
   gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  align-items: center;
+  transition: background 0.15s ease-out;
+}
+
+.result-header {
+  background: rgba(15, 23, 42, 0.5);
+  border-bottom: 2px solid rgba(148, 163, 184, 0.15);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  padding: 0.75rem 1rem;
+}
+
+.result-header:hover {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-row:hover {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.result-row .row-select {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.result-cell {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+}
+
+.result-vendor {
+  font-weight: 600;
+  color: #bfdbfe;
+}
+
+.result-model a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.result-model a:hover {
+  color: #bfdbfe;
+  text-decoration: underline;
+}
+
+.result-wifi {
+  color: #9ca3af;
+}
+
+.result-spatial,
+.result-antenna,
+.result-form {
+  color: #d1d5db;
+}
+
+.result-msrp {
+  font-weight: 500;
+  color: #f3f4f6;
+}
+
+.result-actions {
+  justify-content: flex-end;
+}
+
+.btn-link-small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 1200px) {
+  .result-row {
+    grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .result-header {
+    grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr;
+  }
+  .result-spatial,
+  .result-antenna {
+    display: none;
+  }
+  .result-header .result-cell:nth-child(6),
+  .result-header .result-cell:nth-child(7) {
+    display: none;
+  }
 }
 
 .result-card {

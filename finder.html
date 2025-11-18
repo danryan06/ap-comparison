@@ -69,7 +69,19 @@
 
           <div id="active-filters" class="active-filters" style="display:none;"></div>
 
-          <div id="results" class="results-grid"></div>
+          <div id="results" class="results-table">
+            <div class="result-row result-header">
+              <div class="result-cell"></div>
+              <div class="result-cell">Vendor</div>
+              <div class="result-cell">Model</div>
+              <div class="result-cell">Wi-Fi Generation</div>
+              <div class="result-cell">Spatial Streams</div>
+              <div class="result-cell">Antenna</div>
+              <div class="result-cell">Form Factor</div>
+              <div class="result-cell">MSRP</div>
+              <div class="result-cell"></div>
+            </div>
+          </div>
           <div id="empty-state" class="empty-state" style="display:none;">
             <p>No APs match every selected requirement.</p>
             <p>Try removing one filter at a time to widen the results.</p>
@@ -78,6 +90,8 @@
       </div>
     </div>
   </div>
+
+  <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button">Compare (0)</button>
 
   <script>
     const DATA_URL = 'ap_data.json';
@@ -94,12 +108,9 @@
       form: new Set()
     };
 
+    const selectedIds = new Set(); // For comparison
     let enrichedData = [];
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
-      loadData();
-    });
 
     async function loadData() {
       try {
@@ -266,86 +277,93 @@
     function renderResults(matches) {
       const container = document.getElementById('results');
       const emptyState = document.getElementById('empty-state');
+      
+      // Keep the header row, remove only data rows
+      const header = container.querySelector('.result-header');
       container.innerHTML = '';
+      if (header) container.appendChild(header);
 
       if (matches.length === 0) {
         emptyState.style.display = 'block';
+        updateCompareFab();
         return;
       }
       emptyState.style.display = 'none';
 
       matches.forEach(entry => {
-        const card = document.createElement('article');
-        card.className = 'result-card result-card--hero';
+        const row = document.createElement('div');
+        row.className = 'result-row';
 
-        const vendorChip = document.createElement('div');
-        vendorChip.className = 'vendor-chip';
-        vendorChip.textContent = entry.vendor || 'Vendor';
-
-        const heading = document.createElement('div');
-        heading.className = 'result-card-header';
-        const title = document.createElement('h3');
-        title.textContent = entry.model || '';
-        const wifi = document.createElement('p');
-        wifi.className = 'result-wifi';
-        wifi.textContent = entry.wifi_gen_radios || '';
-        heading.appendChild(title);
-        heading.appendChild(wifi);
-
-        const summary = document.createElement('p');
-        summary.className = 'result-summary';
-        summary.textContent = [
-          entry._antennaCategory || entry.antenna_type || '',
-          entry.form_factor || '',
-          entry.spatial_streams || ''
-        ]
-          .filter(Boolean)
-          .join(' • ');
-
-        const meta = document.createElement('ul');
-        meta.className = 'result-meta result-meta--wide';
-        [
-          { label: 'Min PoE', value: entry.min_poe_class },
-          { label: 'Recommended PoE', value: entry.recommended_poe },
-          { label: 'Ethernet', value: entry.ethernet_ports_speed },
-          { label: 'Behavior @ Min', value: entry.behavior_min_power },
-          { label: 'MSRP', value: entry.msrp }
-        ].forEach(item => {
-          const li = document.createElement('li');
-          const spanLabel = document.createElement('span');
-          spanLabel.textContent = item.label;
-          const spanValue = document.createElement('strong');
-          spanValue.textContent = item.value || '—';
-          li.appendChild(spanLabel);
-          li.appendChild(spanValue);
-          meta.appendChild(li);
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'row-select';
+        checkbox.checked = selectedIds.has(entry._slug);
+        checkbox.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+        checkbox.addEventListener('change', () => {
+          if (checkbox.checked) selectedIds.add(entry._slug);
+          else selectedIds.delete(entry._slug);
+          updateCompareFab();
         });
 
-        const actions = document.createElement('div');
-        actions.className = 'result-actions';
-        const detailsLink = document.createElement('a');
-        detailsLink.href = `ap.html?id=${encodeURIComponent(entry._slug)}`;
-        detailsLink.className = 'btn-link btn-link-ghost';
-        detailsLink.textContent = 'View full specs';
-        const datasheetLink = document.createElement('a');
-        datasheetLink.href = entry.datasheet_url || '#';
-        datasheetLink.target = '_blank';
-        datasheetLink.rel = 'noopener noreferrer';
-        datasheetLink.className = 'btn-link btn-link-ghost';
-        datasheetLink.textContent = 'Open datasheet';
+        const vendor = document.createElement('div');
+        vendor.className = 'result-cell result-vendor';
+        vendor.textContent = entry.vendor || '';
 
-        actions.appendChild(detailsLink);
+        const model = document.createElement('div');
+        model.className = 'result-cell result-model';
+        const modelLink = document.createElement('a');
+        modelLink.href = `ap.html?id=${encodeURIComponent(entry._slug)}`;
+        modelLink.textContent = entry.model || '';
+        model.appendChild(modelLink);
+
+        const wifi = document.createElement('div');
+        wifi.className = 'result-cell result-wifi';
+        wifi.textContent = entry.wifi_gen_radios || '';
+
+        const spatial = document.createElement('div');
+        spatial.className = 'result-cell result-spatial';
+        spatial.textContent = entry.spatial_streams || '—';
+
+        const antenna = document.createElement('div');
+        antenna.className = 'result-cell result-antenna';
+        antenna.textContent = entry._antennaCategory || entry.antenna_type || '—';
+
+        const form = document.createElement('div');
+        form.className = 'result-cell result-form';
+        form.textContent = entry.form_factor || '—';
+
+        const msrp = document.createElement('div');
+        msrp.className = 'result-cell result-msrp';
+        msrp.textContent = entry.msrp || '—';
+
+        const actions = document.createElement('div');
+        actions.className = 'result-cell result-actions';
+        const datasheetLink = document.createElement('a');
         if (entry.datasheet_url) {
+          datasheetLink.href = entry.datasheet_url;
+          datasheetLink.target = '_blank';
+          datasheetLink.rel = 'noopener noreferrer';
+          datasheetLink.className = 'btn-link btn-link-ghost btn-link-small';
+          datasheetLink.textContent = 'Datasheet';
           actions.appendChild(datasheetLink);
         }
 
-        card.appendChild(vendorChip);
-        card.appendChild(heading);
-        card.appendChild(summary);
-        card.appendChild(meta);
-        card.appendChild(actions);
-        container.appendChild(card);
+        row.appendChild(checkbox);
+        row.appendChild(vendor);
+        row.appendChild(model);
+        row.appendChild(wifi);
+        row.appendChild(spatial);
+        row.appendChild(antenna);
+        row.appendChild(form);
+        row.appendChild(msrp);
+        row.appendChild(actions);
+
+        container.appendChild(row);
       });
+
+      updateCompareFab();
     }
 
     function updateMatchCount(count) {
@@ -407,8 +425,33 @@
       document.querySelectorAll('input[data-filter-type]').forEach(input => {
         input.checked = false;
       });
+      selectedIds.clear();
       applyFilters();
     }
+
+    function updateCompareFab() {
+      const fab = document.getElementById('compare-fab');
+      const n = selectedIds.size;
+      if (n >= 2) {
+        fab.style.display = 'inline-flex';
+        fab.textContent = `Compare (${n})`;
+      } else {
+        fab.style.display = 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
+      const compareFab = document.getElementById('compare-fab');
+      if (compareFab) {
+        compareFab.addEventListener('click', () => {
+          if (selectedIds.size < 2) return;
+          const idsParam = Array.from(selectedIds).join(',');
+          window.location.href = `compare.html?ids=${encodeURIComponent(idsParam)}`;
+        });
+      }
+      loadData();
+    });
   </script>
 </body>
 </html>
