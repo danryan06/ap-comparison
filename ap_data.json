@@ -384,17 +384,18 @@
     "ethernet_ports_speed": "1\u00d7 1/2.5/5/10 GbE mGig (RJ-45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
-    "dimensions": "9.5 x 9.5 x 2.0 inches (24 x 24 x 5.1 cm)",
-    "weight": "3.4 lbs (1.56 kg)",
-    "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; storage unspecified",
-    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9176-series-acc-point-ds.html",
     "radios_iot_features": [
       "Dedicated IoT radio",
       "Built-in GPS/GNSS and UWB radio",
       "Dedicated scanning/AUX radio"
     ],
-    "msrp": "unknown"
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9176-series-acc-point-ds.html",
+    "image_url": "images/cisco-cw9176i.png",
+    "dimensions": "9.5 x 9.5 x 2.0 inches (24 x 24 x 5.1 cm)",
+    "weight": "3.4 lbs (1.56 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; storage unspecified",
+    "msrp": "$2,592"
   },
   {
     "vendor": "Cisco",
