@@ -8,6 +8,7 @@ A comprehensive, open-source database for comparing enterprise Wi-Fi access poin
 
 - **Comprehensive Comparison Table**: View all access points in a sortable, filterable table
 - **Advanced Filtering**: Filter by vendor, antenna type (Internal/External/Directional), and form factor (Indoor/Outdoor/Wallplate)
+- **Feature Finder**: Interactive wizard to select desired Wi-Fi generations, IoT radios, antenna styles, and PoE budgets to instantly narrow the catalog
 - **Full-Text Search**: Search across all fields including vendor, model, features, and PoE requirements
 - **Side-by-Side Comparison**: Select multiple APs and compare them side-by-side
 - **Detailed AP Pages**: Click any AP to view complete specifications and images
@@ -39,9 +40,10 @@ Each access point entry includes:
 
 1. **Search**: Use the search box to find APs by vendor, model, or features
 2. **Filter**: Use the dropdown filters to narrow by vendor, antenna type, or form factor
-3. **Sort**: Click any column header to sort by that field
-4. **Customize Columns**: Click "Choose Columns" to show/hide specific fields
-5. **View Details**: Click any row to see the full AP details page
+3. **Feature Finder**: Open the [AP Feature Finder](https://apcomparison.com/finder.html) to select IoT radios, Wi-Fi generations, antenna requirements, or PoE budgets and view only matching APs
+4. **Sort**: Click any column header to sort by that field
+5. **Customize Columns**: Click "Choose Columns" to show/hide specific fields
+6. **View Details**: Click any row to see the full AP details page
 
 ### Comparing APs
 
