@@ -31,6 +31,24 @@ h1 a:hover {
   opacity: 0.8;
 }
 
+/* Header with logo */
+.header-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.header-with-logo .site-logo {
+  height: 2.5rem;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.header-with-logo h1 {
+  margin-bottom: 0;
+}
+
 h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
