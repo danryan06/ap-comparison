@@ -353,24 +353,25 @@
     "model": "CW9174I",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3at",
     "recommended_poe": "802.3bt",
     "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
     "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G Multigigabit Ethernet (RJ-45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
-    "dimensions": "8.9 x 8.9 x 1.95 inches (22.6 x 22.6 x 4.9 cm)",
-    "weight": "3.36 lbs (1.52 kg)",
-    "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F (-30\u00b0C to 70\u00b0C) storage",
-    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9174-series-access-points-ds.html",
     "radios_iot_features": [
       "Dedicated IoT radio",
       "Dedicated tri-band scanning radio",
       "Bluetooth Low Energy (BLE) 5.3 (upgradable to BLE 6)",
       "Accelerometer"
     ],
-    "msrp": "unknown"
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9174-series-access-points-ds.html",
+    "image_url": "",
+    "dimensions": "8.9 x 8.9 x 1.95 inches (22.6 x 22.6 x 4.9 cm)",
+    "weight": "3.36 lbs (1.52 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F (-30\u00b0C to 70\u00b0C) storage",
+    "msrp": "$2,177.06"
   },
   {
     "vendor": "Cisco",
