@@ -54,19 +54,19 @@
           <tr>
             <th class="sortable" data-key="vendor">Vendor</th>
             <th class="sortable" data-key="model">Model</th>
-            <th class="sortable" data-key="wifi_gen_radios">Wi-Fi Gen &amp; Radios</th>
-            <th class="sortable" data-key="spatial_streams">Spatial Streams<br>(2.4 / 5 / 6 GHz)</th>
-            <th class="sortable" data-key="min_poe_class">Min PoE Class</th>
-            <th class="sortable" data-key="recommended_poe">Recommended PoE</th>
-            <th class="sortable" data-key="behavior_min_power">Behavior at Min Power</th>
-            <th class="sortable" data-key="ethernet_ports_speed">Ethernet Ports &amp; Speed</th>
-            <th class="sortable" data-key="radios_iot_features">Radios &amp; IoT Features</th>
-            <th class="sortable" data-key="antenna_type">Antenna Type</th>
-            <th class="sortable" data-key="form_factor">Form Factor</th>
+            <th class="sortable" data-key="wifi_gen_radios" data-tooltip="Wi-Fi generation (6, 6E, or 7) and supported frequency bands">Wi-Fi Gen &amp; Radios</th>
+            <th class="sortable" data-key="spatial_streams" data-tooltip="Number of spatial streams for each band (e.g., 4x4 means 4 streams on 2.4GHz, 4 on 5GHz, 4 on 6GHz)">Spatial Streams<br>(2.4 / 5 / 6 GHz)</th>
+            <th class="sortable" data-key="min_poe_class" data-tooltip="Minimum Power over Ethernet class required for basic operation">Min PoE Class</th>
+            <th class="sortable" data-key="recommended_poe" data-tooltip="Recommended PoE class for full feature operation">Recommended PoE</th>
+            <th class="sortable" data-key="behavior_min_power" data-tooltip="How the AP behaves when powered at minimum PoE class">Behavior at Min Power</th>
+            <th class="sortable" data-key="ethernet_ports_speed" data-tooltip="Ethernet port count and maximum speeds">Ethernet Ports &amp; Speed</th>
+            <th class="sortable" data-key="radios_iot_features" data-tooltip="Additional radios and IoT features (Bluetooth, Zigbee, GPS, etc.)">Radios &amp; IoT Features</th>
+            <th class="sortable" data-key="antenna_type" data-tooltip="Internal, external, or directional antenna configuration">Antenna Type</th>
+            <th class="sortable" data-key="form_factor" data-tooltip="Deployment type: Indoor, Outdoor, or Wallplate">Form Factor</th>
             <th class="sortable" data-key="dimensions">Dimensions</th>
             <th class="sortable" data-key="weight">Weight</th>
-            <th class="sortable" data-key="antenna_connectors">Antenna Connectors</th>
-            <th class="sortable" data-key="operating_temp_range">Operating Temp Range</th>
+            <th class="sortable" data-key="antenna_connectors" data-tooltip="Type and count of antenna connectors (if external antennas)">Antenna Connectors</th>
+            <th class="sortable" data-key="operating_temp_range" data-tooltip="Operating and storage temperature ranges">Operating Temp Range</th>
             <th class="sortable" data-key="msrp">MSRP</th>
           </tr>
         </thead>
@@ -718,6 +718,17 @@
 
     // Wire up search + filters + sorting + URL state + columns + modal
     document.addEventListener('DOMContentLoaded', () => {
+      // Enhanced sticky header with scroll shadow
+      const header = document.querySelector('.header-with-logo');
+      if (header) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        });
+      }
       readStateFromUrl();
 
       const searchEl = document.getElementById('search');

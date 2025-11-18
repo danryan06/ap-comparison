@@ -43,7 +43,7 @@
   <script>
     const DATA_URL = 'ap_data.json';
     const HIDDEN_KEY = 'compareTable.cols';
-    const hiddenColumns = new Set(JSON.parse(localStorage.getItem(HIDDEN_KEY) || '[]'));
+    const hiddenColumns = new Set(JSON.parse(localStorage.getItem(HIDDEN_KEY) || '["behavior_min_power"]'));
     const ORDER_KEY = 'compareTable.colOrder';
     const WIDTHS_KEY = 'compareTable.colWidths';
     let currentSelected = [];
@@ -128,7 +128,6 @@
           ['Spatial Streams', 'spatial_streams'],
           ['Min PoE Class', 'min_poe_class'],
           ['Recommended PoE', 'recommended_poe'],
-          ['Behavior at Min Power', 'behavior_min_power'],
           ['Ethernet Ports & Speed', 'ethernet_ports_speed'],
           ['Antenna Type', 'antenna_type'],
           ['Form Factor', 'form_factor'],
@@ -172,6 +171,7 @@
           tr.appendChild(modelTd);
           visibleCols.forEach(([label, key]) => {
             const td = document.createElement('td');
+            td.dataset.key = key;
             if (key === 'datasheet_url' && e[key]) {
               const a = document.createElement('a');
               a.href = e[key];

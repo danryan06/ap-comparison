@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compare APs (Preview) — Enterprise AP Comparison Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Card-based comparison layout */
+    .comparison-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      padding: 24px 0;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .comparison-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: all var(--transition-base) var(--ease-out);
+      position: relative;
+    }
+
+    .comparison-card:hover {
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 12px;
+    }
+
+    .remove-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: var(--radius-md);
+      color: #f87171;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all var(--transition-base) var(--ease-out);
+      border: none;
+      font-weight: 600;
+    }
+
+    .remove-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+      transform: scale(1.1);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 24px;
+    }
+
+    .card-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .card-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.875rem;
+    }
+
+    .card-title {
+      padding: 24px 24px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-vendor {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .card-model {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .card-specs {
+      padding: 8px 0;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 12px 24px;
+      transition: background var(--transition-base) var(--ease-out);
+      gap: 1rem;
+    }
+
+    .spec-row:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .spec-row.spec-different {
+      background: rgba(251, 146, 60, 0.08);
+      border-left: 3px solid rgba(251, 146, 60, 0.5);
+    }
+
+    .spec-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      flex-shrink: 0;
+      min-width: 140px;
+    }
+
+    .spec-value {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: right;
+      flex: 1;
+      word-wrap: break-word;
+    }
+
+    .card-actions {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-secondary {
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-base) var(--ease-out);
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    .preview-badge {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: white;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-badge">PREVIEW MODE</div>
+  <div class="container">
+    <div class="actions">
+      <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
+      <a href="compare.html" class="btn-link">View Standard Comparison</a>
+      <button id="export-csv" type="button" class="btn-link">Export CSV</button>
+    </div>
+
+    <div class="card">
+      <span class="badge">Comparison Preview</span>
+      <div class="header-with-logo">
+        <h1><a href="index.html">Enterprise AP Comparison Database</a></h1>
+        <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
+      </div>
+      <h2>Compare Access Points (Card Layout Preview)</h2>
+      <p class="subtitle">Side-by-side card-based comparison for selected APs.</p>
+
+      <div id="error-message" class="error" style="display:none;"></div>
+
+      <div id="comparison-container" class="comparison-container"></div>
+    </div>
+  </div>
+
+  <script>
+    const DATA_URL = 'ap_data.json';
+    let currentSelected = [];
+    const allSpecs = [
+      { key: 'wifi_gen_radios', label: 'Wi‑Fi Gen & Radios' },
+      { key: 'spatial_streams', label: 'Spatial Streams' },
+      { key: 'min_poe_class', label: 'Min PoE Class' },
+      { key: 'recommended_poe', label: 'Recommended PoE' },
+      { key: 'ethernet_ports_speed', label: 'Ethernet Ports & Speed' },
+      { key: 'antenna_type', label: 'Antenna Type' },
+      { key: 'form_factor', label: 'Form Factor' },
+      { key: 'dimensions', label: 'Dimensions' },
+      { key: 'weight', label: 'Weight' },
+      { key: 'antenna_connectors', label: 'Antenna Connectors' },
+      { key: 'operating_temp_range', label: 'Operating Temp Range' },
+      { key: 'radios_iot_features', label: 'Radios & IoT Features' },
+      { key: 'msrp', label: 'MSRP' }
+    ];
+
+    function slugify(s) {
+      return String(s || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function readIds() {
+      const params = new URLSearchParams(window.location.search);
+      const ids = (params.get('ids') || '').split(',').map(s => s.trim()).filter(Boolean);
+      return ids;
+    }
+
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    function buildBackLink() {
+      const params = new URLSearchParams(window.location.search);
+      params.delete('ids');
+      const backEl = document.getElementById('back-link');
+      const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
+      backEl.setAttribute('href', backUrl);
+    }
+
+    function highlightDifferences() {
+      const cards = document.querySelectorAll('.comparison-card');
+      if (cards.length < 2) return;
+
+      allSpecs.forEach(({ key }) => {
+        const values = Array.from(cards).map(card => {
+          const specRow = card.querySelector(`[data-spec-key="${key}"]`);
+          return specRow ? specRow.querySelector('.spec-value').textContent.trim() : '';
+        });
+
+        const allSame = values.every(v => v === values[0] && v !== '');
+        if (!allSame && values.some(v => v !== '')) {
+          cards.forEach(card => {
+            const specRow = card.querySelector(`[data-spec-key="${key}"]`);
+            if (specRow) specRow.classList.add('spec-different');
+          });
+        }
+      });
+    }
+
+    function createCard(entry) {
+      const card = document.createElement('div');
+      card.className = 'comparison-card';
+
+      const header = document.createElement('div');
+      header.className = 'card-header';
+      const removeBtn = document.createElement('button');
+      removeBtn.className = 'remove-btn';
+      removeBtn.textContent = '×';
+      removeBtn.title = 'Remove from comparison';
+      removeBtn.onclick = () => {
+        const ids = readIds().filter(id => id !== slugify(`${entry.vendor} ${entry.model}`));
+        window.location.href = `compare-preview.html?ids=${ids.join(',')}`;
+      };
+      header.appendChild(removeBtn);
+      card.appendChild(header);
+
+      const imageDiv = document.createElement('div');
+      imageDiv.className = 'card-image';
+      if (entry.image_url) {
+        const img = document.createElement('img');
+        img.src = entry.image_url;
+        img.alt = `${entry.vendor} ${entry.model}`;
+        imageDiv.appendChild(img);
+      } else {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'card-image-placeholder';
+        placeholder.textContent = 'No image available';
+        imageDiv.appendChild(placeholder);
+      }
+      card.appendChild(imageDiv);
+
+      const titleDiv = document.createElement('div');
+      titleDiv.className = 'card-title';
+      const vendor = document.createElement('h3');
+      vendor.className = 'card-vendor';
+      vendor.textContent = entry.vendor || '';
+      const model = document.createElement('h2');
+      model.className = 'card-model';
+      model.textContent = entry.model || '';
+      titleDiv.appendChild(vendor);
+      titleDiv.appendChild(model);
+      card.appendChild(titleDiv);
+
+      const specsDiv = document.createElement('div');
+      specsDiv.className = 'card-specs';
+      allSpecs.forEach(({ key, label }) => {
+        const value = entry[key];
+        if (value == null || value === '') return;
+
+        const specRow = document.createElement('div');
+        specRow.className = 'spec-row';
+        specRow.dataset.specKey = key;
+
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'spec-label';
+        labelSpan.textContent = label;
+
+        const valueSpan = document.createElement('span');
+        valueSpan.className = 'spec-value';
+        valueSpan.textContent = normalizeString(value);
+
+        specRow.appendChild(labelSpan);
+        specRow.appendChild(valueSpan);
+        specsDiv.appendChild(specRow);
+      });
+      card.appendChild(specsDiv);
+
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'card-actions';
+      const viewBtn = document.createElement('a');
+      viewBtn.href = `ap.html?id=${slugify(`${entry.vendor} ${entry.model}`)}`;
+      viewBtn.className = 'btn-secondary btn-full';
+      viewBtn.textContent = 'View Details';
+      actionsDiv.appendChild(viewBtn);
+      if (entry.datasheet_url) {
+        const datasheetBtn = document.createElement('a');
+        datasheetBtn.href = entry.datasheet_url;
+        datasheetBtn.target = '_blank';
+        datasheetBtn.rel = 'noopener noreferrer';
+        datasheetBtn.className = 'btn-secondary btn-full';
+        datasheetBtn.textContent = 'Datasheet';
+        actionsDiv.appendChild(datasheetBtn);
+      }
+      card.appendChild(actionsDiv);
+
+      return card;
+    }
+
+    async function load() {
+      buildBackLink();
+      const errorEl = document.getElementById('error-message');
+      const container = document.getElementById('comparison-container');
+
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const ids = readIds();
+        const selected = data.filter(e => ids.includes(slugify(`${e.vendor} ${e.model}`)));
+        
+        if (selected.length < 2) {
+          errorEl.style.display = 'block';
+          errorEl.textContent = 'Select at least two APs to compare. Use the main comparison table or finder to select APs.';
+          container.innerHTML = '';
+          return;
+        }
+
+        container.innerHTML = '';
+        currentSelected = selected;
+        selected.forEach(entry => {
+          const card = createCard(entry);
+          container.appendChild(card);
+        });
+
+        // Highlight differences after a short delay to ensure DOM is ready
+        setTimeout(highlightDifferences, 100);
+      } catch (err) {
+        console.error('Failed to load comparison:', err);
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Failed to load comparison.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const exportBtn = document.getElementById('export-csv');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+          if (!currentSelected.length) return;
+          const headers = ['Vendor', 'Model', ...allSpecs.map(s => s.label)];
+          const keys = ['vendor', 'model', ...allSpecs.map(s => s.key)];
+          const rows = currentSelected.map(e => {
+            return keys.map(k => {
+              const v = e[k];
+              const s = Array.isArray(v) ? v.join('; ') : normalizeString(v);
+              const needs = /[\",\\n]/.test(s);
+              return needs ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s;
+            }).join(',');
+          });
+          const csv = headers.join(',') + '\\n' + rows.join('\\n');
+          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'ap-comparison-preview.csv';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+      }
+      load();
+    });
+  </script>
+</body>
+</html>
+

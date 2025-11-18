@@ -2,27 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Feature Finder | Enterprise AP Comparison Database</title>
+  <title>Feature Finder (Preview) | Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Card-based vendor selection */
+    .vendor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .vendor-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all var(--transition-base) var(--ease-out);
+      position: relative;
+    }
+
+    .vendor-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .vendor-card.selected {
+      background: rgba(59, 130, 246, 0.12);
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+    }
+
+    .vendor-logo {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-size: 2rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-md);
+    }
+
+    .vendor-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+    }
+
+    .vendor-card.selected .vendor-name {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .vendor-checkmark {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      background: #3b82f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all var(--transition-base) var(--ease-out);
+    }
+
+    .vendor-card.selected .vendor-checkmark {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .vendor-checkmark svg {
+      width: 14px;
+      height: 14px;
+      stroke: white;
+      stroke-width: 3;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .preview-badge {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: white;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+
+    @media (max-width: 640px) {
+      .vendor-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .vendor-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="preview-badge">PREVIEW MODE</div>
   <div class="container">
     <div class="header-with-logo">
-      <h1><a href="index.html">Feature Finder</a></h1>
+      <h1><a href="index.html">Feature Finder (Preview)</a></h1>
       <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
     </div>
 
     <div class="actions">
       <a class="btn-link" href="index.html">Back to Comparison Table</a>
+      <a class="btn-link" href="finder.html">View Standard Finder</a>
       <a class="btn-link" href="submit.html">Submit New AP</a>
       <button id="clear-filters" type="button" class="btn-link">Reset Filters</button>
       <button id="export-csv" type="button" class="btn-link">Export CSV</button>
     </div>
 
     <div class="card finder-card">
-      <div class="badge">New</div>
+      <div class="badge">Preview</div>
       <div class="finder-grid">
         <section class="filter-panel">
           <div class="wizard-steps">
@@ -59,7 +178,7 @@
             <div class="filter-group-head">
               <h3>Vendor</h3>
             </div>
-            <div id="vendor-options" class="chip-grid"></div>
+            <div id="vendor-options" class="vendor-grid"></div>
           </div>
 
           <div class="filter-group">
@@ -114,17 +233,16 @@
         </section>
       </div>
     </div>
-  </div>
 
-  <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button">Compare (0)</button>
+    <div id="floating-compare" class="floating-compare" style="display:none;">
+      <button id="compare-btn">Compare Selected (<span id="compare-count">0</span>)</button>
+    </div>
+  </div>
 
   <script>
     const DATA_URL = 'ap_data.json';
-    const wifiOptions = [
-      { id: 'wifi7', label: 'Wi-Fi 7 (2.4/5/6 GHz)' },
-      { id: 'wifi6e', label: 'Wi-Fi 6E (2.4/5/6 GHz)' },
-      { id: 'wifi6', label: 'Wi-Fi 6 (2.4/5 GHz)' }
-    ];
+    let enrichedData = [];
+    const selectedIds = new Set();
 
     const state = {
       wifi: new Set(),
@@ -133,71 +251,11 @@
       form: new Set()
     };
 
-    const selectedIds = new Set(); // For comparison
-    let enrichedData = [];
-
-
-    function restoreFilterStateFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      const wifi = params.get('wifi');
-      const vendors = params.get('vendors');
-      const antenna = params.get('antenna');
-      const form = params.get('form');
-      
-      if (wifi) wifi.split(',').forEach(v => state.wifi.add(v));
-      if (vendors) vendors.split(',').forEach(v => state.vendors.add(v));
-      if (antenna) antenna.split(',').forEach(v => state.antenna.add(v));
-      if (form) form.split(',').forEach(v => state.form.add(v));
-    }
-
-    async function loadData() {
-      try {
-        const res = await fetch(DATA_URL, { cache: 'no-store' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const raw = await res.json();
-        enrichedData = raw.map(enrichEntry);
-        buildFilterOptions();
-        restoreFilterStateFromUrl();
-        // Update checkboxes to reflect restored state
-        document.querySelectorAll('input[data-filter-type]').forEach(input => {
-          const type = input.dataset.filterType;
-          const value = input.dataset.filterValue;
-          const targetSet = state[type];
-          if (targetSet && targetSet.has(value)) {
-            input.checked = true;
-          }
-        });
-        applyFilters();
-      } catch (err) {
-        console.error('Failed to load data', err);
-        document.getElementById('results-note').textContent = 'Unable to load AP data.';
-      }
-    }
-
-    function enrichEntry(entry) {
-      return Object.assign({}, entry, {
-        _slug: slugFor(entry),
-        _wifiFlags: deriveWifiFlags(entry.wifi_gen_radios),
-        _antennaCategory: deriveAntennaCategory(entry.antenna_type)
-      });
-    }
-
-    function deriveWifiFlags(value) {
-      const flags = new Set();
-      const text = String(value || '').toLowerCase();
-      if (text.includes('wi-fi 7')) {
-        flags.add('wifi7');
-        flags.add('wifi6e');
-        flags.add('wifi6');
-      }
-      if (text.includes('wi-fi 6e')) {
-        flags.add('wifi6e');
-        flags.add('wifi6');
-      } else if (text.includes('wi-fi 6')) {
-        flags.add('wifi6');
-      }
-      return flags;
-    }
+    const wifiOptions = [
+      { id: 'wifi6', value: 'Wi-Fi 6', label: 'Wi-Fi 6' },
+      { id: 'wifi6e', value: 'Wi-Fi 6E', label: 'Wi-Fi 6E' },
+      { id: 'wifi7', value: 'Wi-Fi 7', label: 'Wi-Fi 7' }
+    ];
 
     function deriveAntennaCategory(value) {
       const text = String(value || '').toLowerCase();
@@ -228,15 +286,35 @@
     }
 
     function buildFilterOptions() {
-      renderCheckboxGroup('wifi-options', wifiOptions, 'wifi');
+      // Wi-Fi options (chip-based)
+      const wifiContainer = document.getElementById('wifi-options');
+      wifiContainer.innerHTML = '';
+      wifiOptions.forEach(option => {
+        const id = `wifi-${option.id}`;
+        const label = document.createElement('label');
+        label.className = 'chip-option';
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = id;
+        input.dataset.filterType = 'wifi';
+        input.dataset.filterValue = option.value;
+        input.addEventListener('change', () => toggleSelection('wifi', option.value, input.checked));
+        const span = document.createElement('span');
+        span.textContent = option.label;
+        label.appendChild(input);
+        label.appendChild(span);
+        wifiContainer.appendChild(label);
+      });
 
+      // Vendor options (card-based)
       const vendorOptions = collectUniqueValues('vendor').map(label => ({
         id: slugify(label),
         value: label,
         label
       }));
-      renderCheckboxGroup('vendor-options', vendorOptions, 'vendors');
+      renderVendorCards('vendor-options', vendorOptions);
 
+      // Form and antenna options (chip-based)
       const formValues = collectUniqueValues('form_factor').map(label => ({
         id: slugify(label),
         value: label,
@@ -261,13 +339,40 @@
       document.getElementById('results-note').textContent = 'Add filters to see matching APs.';
     }
 
-    function collectUniqueValues(key) {
-      const set = new Set();
-      enrichedData.forEach(entry => {
-        const value = (entry[key] || '').trim();
-        if (value) set.add(value);
+    function renderVendorCards(targetId, options) {
+      const container = document.getElementById(targetId);
+      container.innerHTML = '';
+      options.forEach(option => {
+        const card = document.createElement('div');
+        card.className = 'vendor-card';
+        card.dataset.vendor = option.value;
+        if (state.vendors.has(option.value)) {
+          card.classList.add('selected');
+        }
+
+        const logo = document.createElement('div');
+        logo.className = 'vendor-logo';
+        logo.textContent = option.label.charAt(0).toUpperCase();
+        card.appendChild(logo);
+
+        const name = document.createElement('div');
+        name.className = 'vendor-name';
+        name.textContent = option.label;
+        card.appendChild(name);
+
+        const checkmark = document.createElement('div');
+        checkmark.className = 'vendor-checkmark';
+        checkmark.innerHTML = '<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>';
+        card.appendChild(checkmark);
+
+        card.addEventListener('click', () => {
+          const isSelected = state.vendors.has(option.value);
+          toggleSelection('vendors', option.value, !isSelected);
+          card.classList.toggle('selected', !isSelected);
+        });
+
+        container.appendChild(card);
       });
-      return Array.from(set).sort((a, b) => a.localeCompare(b));
     }
 
     function renderCheckboxGroup(targetId, options, type) {
@@ -289,6 +394,15 @@
         label.appendChild(span);
         container.appendChild(label);
       });
+    }
+
+    function collectUniqueValues(key) {
+      const set = new Set();
+      enrichedData.forEach(entry => {
+        const value = (entry[key] || '').trim();
+        if (value) set.add(value);
+      });
+      return Array.from(set).sort((a, b) => a.localeCompare(b));
     }
 
     function toggleSelection(type, value, checked) {
@@ -350,7 +464,6 @@
       
       if (count > 0) {
         counter.style.display = 'block';
-        // Animate number change
         counterNumber.style.transform = 'scale(1.2)';
         setTimeout(() => {
           counterNumber.textContent = count;
@@ -367,44 +480,92 @@
           if (!entry._wifiFlags.has(need)) return false;
         }
       }
-      if (state.vendors.size && !state.vendors.has(entry.vendor)) return false;
-      if (state.form.size && !state.form.has(entry.form_factor)) return false;
-      if (state.antenna.size && !state.antenna.has(entry._antennaCategory)) return false;
+      if (state.vendors.size) {
+        if (!state.vendors.has(entry.vendor)) return false;
+      }
+      if (state.antenna.size) {
+        const cat = entry._antennaCategory || 'Other';
+        if (!state.antenna.has(cat)) return false;
+      }
+      if (state.form.size) {
+        if (!state.form.has(entry.form_factor)) return false;
+      }
       return true;
+    }
+
+    function renderActiveFilters() {
+      const container = document.getElementById('active-filters');
+      const chips = [];
+
+      function pushChips(type, set, labelFn) {
+        set.forEach(value => {
+          chips.push({ type, value, label: labelFn ? labelFn(value) : value });
+        });
+      }
+
+      pushChips('wifi', state.wifi, value => {
+        const option = wifiOptions.find(opt => opt.value === value);
+        return option ? option.label : value;
+      });
+      pushChips('vendors', state.vendors);
+      pushChips('antenna', state.antenna);
+      pushChips('form', state.form);
+
+      if (!chips.length) {
+        container.style.display = 'none';
+        return;
+      }
+
+      container.style.display = 'flex';
+      chips.forEach(chip => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-chip';
+        btn.textContent = chip.label;
+        btn.addEventListener('click', () => {
+          toggleSelection(chip.type, chip.value, false);
+          if (chip.type === 'vendors') {
+            const card = document.querySelector(`[data-vendor="${chip.value}"]`);
+            if (card) card.classList.remove('selected');
+          }
+        });
+        container.appendChild(btn);
+      });
     }
 
     function renderResults(matches) {
       const container = document.getElementById('results');
       const emptyState = document.getElementById('empty-state');
       
-      // Keep the header row, remove only data rows
-      const header = container.querySelector('.result-header');
-      container.innerHTML = '';
-      if (header) container.appendChild(header);
-
       if (matches.length === 0) {
+        container.style.display = 'none';
         emptyState.style.display = 'block';
-        updateCompareFab();
         return;
       }
+
+      container.style.display = 'block';
       emptyState.style.display = 'none';
+
+      const header = container.querySelector('.result-header');
+      container.innerHTML = '';
+      container.appendChild(header);
 
       matches.forEach(entry => {
         const row = document.createElement('div');
         row.className = 'result-row';
 
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'row-select';
-        checkbox.checked = selectedIds.has(entry._slug);
-        checkbox.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
-        checkbox.addEventListener('change', () => {
-          if (checkbox.checked) selectedIds.add(entry._slug);
+        const checkbox = document.createElement('div');
+        checkbox.className = 'result-cell';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'row-select';
+        cb.checked = selectedIds.has(entry._slug);
+        cb.addEventListener('change', () => {
+          if (cb.checked) selectedIds.add(entry._slug);
           else selectedIds.delete(entry._slug);
           updateCompareFab();
         });
+        checkbox.appendChild(cb);
+        row.appendChild(checkbox);
 
         const vendor = document.createElement('div');
         vendor.className = 'result-cell result-vendor';
@@ -459,7 +620,6 @@
         row.appendChild(msrp);
         row.appendChild(actions);
 
-        // Make entire row clickable (except checkbox)
         row.style.cursor = 'pointer';
         row.addEventListener('click', (e) => {
           if (e.target.type !== 'checkbox' && e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
@@ -481,69 +641,6 @@
       updateCompareFab();
     }
 
-    function updateMatchCount(count) {
-      const el = document.getElementById('match-count');
-      el.textContent = count === 0 ? '0 matches' : `${count} match${count === 1 ? '' : 'es'}`;
-    }
-
-    function renderActiveFilters() {
-      const container = document.getElementById('active-filters');
-      container.innerHTML = '';
-      const chips = [];
-
-      function pushChips(type, values, formatter) {
-        values.forEach(value => {
-          chips.push({
-            type,
-            value,
-            label: formatter ? formatter(value) : value
-          });
-        });
-      }
-
-      pushChips('wifi', state.wifi, value => {
-        const option = wifiOptions.find(opt => opt.id === value);
-        return option ? option.label : value;
-      });
-      pushChips('vendors', state.vendors);
-      pushChips('antenna', state.antenna);
-      pushChips('form', state.form);
-
-      if (!chips.length) {
-        container.style.display = 'none';
-        return;
-      }
-
-      container.style.display = 'flex';
-      chips.forEach(chip => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'active-filter-chip';
-        btn.textContent = chip.label;
-        btn.addEventListener('click', () => removeFilter(chip.type, chip.value));
-        container.appendChild(btn);
-      });
-    }
-
-    function removeFilter(type, value) {
-      const set = state[type];
-      if (!set) return;
-      set.delete(value);
-      const selector = `input[data-filter-type="${type}"][data-filter-value="${escapeAttrValue(value)}"]`;
-      const input = document.querySelector(selector);
-      if (input) input.checked = false;
-      applyFilters();
-    }
-
-    function clearAllFilters() {
-      Object.keys(state).forEach(key => state[key].clear());
-      document.querySelectorAll('input[data-filter-type]').forEach(input => {
-        input.checked = false;
-      });
-      selectedIds.clear();
-      applyFilters();
-    }
-
     function getFilterStateForUrl() {
       const params = new URLSearchParams();
       if (state.wifi.size) params.set('wifi', Array.from(state.wifi).join(','));
@@ -553,6 +650,31 @@
       return params.toString();
     }
 
+    function updateMatchCount(count) {
+      document.getElementById('match-count').textContent = count > 0 ? `${count} matches` : '—';
+    }
+
+    function updateCompareFab() {
+      const fab = document.getElementById('floating-compare');
+      const countEl = document.getElementById('compare-count');
+      if (selectedIds.size >= 2) {
+        fab.style.display = 'flex';
+        countEl.textContent = selectedIds.size;
+      } else {
+        fab.style.display = 'none';
+      }
+    }
+
+    function clearAllFilters() {
+      state.wifi.clear();
+      state.vendors.clear();
+      state.antenna.clear();
+      state.form.clear();
+      document.querySelectorAll('.chip-option input').forEach(cb => cb.checked = false);
+      document.querySelectorAll('.vendor-card').forEach(card => card.classList.remove('selected'));
+      applyFilters();
+    }
+
     function exportToCsv() {
       if (!enrichedData.length) return;
       const matches = enrichedData.filter(entry => matchesFilters(entry));
@@ -560,66 +682,60 @@
         alert('No APs to export. Please adjust your filters.');
         return;
       }
-
-      const primaryKeys = [
-        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
-        'recommended_poe','behavior_min_power','ethernet_ports_speed',
-        'radios_iot_features','antenna_type','form_factor','dimensions',
-        'weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
-      ];
-
-      function escapeCsvValue(value) {
-        const s = String(value || '');
-        const needsQuotes = /[",\n]/.test(s);
-        return needsQuotes ? '"' + s.replace(/"/g, '""') + '"' : s;
-      }
-
-      function normalizeString(value) {
-        if (value == null) return '';
-        if (Array.isArray(value)) return value.join('; ');
-        return String(value);
-      }
-
-      const keys = Object.keys(matches[0]);
-      const orderedKeys = [
-        ...primaryKeys.filter(k => keys.includes(k)),
-        ...keys.filter(k => !primaryKeys.includes(k)).sort()
-      ];
-
-      const headers = orderedKeys.map(k => escapeCsvValue(k));
-      const rows = matches.map(entry => {
-        return orderedKeys.map(k => {
-          const v = entry[k];
-          const s = normalizeString(v);
-          return escapeCsvValue(s);
-        });
-      });
-
-      const csv = [headers, ...rows].map(row => row.join(',')).join('\n');
+      const headers = ['Vendor', 'Model', 'Wi-Fi Generation', 'Spatial Streams', 'Antenna', 'Form Factor', 'MSRP'];
+      const rows = matches.map(entry => [
+        entry.vendor || '',
+        entry.model || '',
+        entry.wifi_gen_radios || '',
+        entry.spatial_streams || '',
+        entry._antennaCategory || entry.antenna_type || '',
+        entry.form_factor || '',
+        entry.msrp || ''
+      ]);
+      const csv = [headers.join(','), ...rows.map(r => r.map(v => {
+        const s = String(v);
+        const needs = /[\",\\n]/.test(s);
+        return needs ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s;
+      }).join(','))].join('\\n');
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'ap-finder-results.csv';
+      a.download = 'ap-finder-preview.csv';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     }
 
-    function updateCompareFab() {
-      const fab = document.getElementById('compare-fab');
-      const n = selectedIds.size;
-      if (n >= 2) {
-        fab.style.display = 'inline-flex';
-        fab.textContent = `Compare (${n})`;
-      } else {
-        fab.style.display = 'none';
+    async function loadData() {
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        enrichedData = data.map(entry => {
+          const slug = slugFor(entry);
+          const wifiFlags = new Set();
+          const wifiText = String(entry.wifi_gen_radios || '').toLowerCase();
+          if (wifiText.includes('wi-fi 6') && !wifiText.includes('6e') && !wifiText.includes('7')) wifiFlags.add('Wi-Fi 6');
+          if (wifiText.includes('wi-fi 6e') || wifiText.includes('6e')) wifiFlags.add('Wi-Fi 6E');
+          if (wifiText.includes('wi-fi 7') || wifiText.includes('7')) wifiFlags.add('Wi-Fi 7');
+          return {
+            ...entry,
+            _slug: slug,
+            _wifiFlags: wifiFlags,
+            _antennaCategory: deriveAntennaCategory(entry.antenna_type)
+          };
+        });
+        buildFilterOptions();
+        applyFilters();
+      } catch (err) {
+        console.error('Failed to load data:', err);
+        document.getElementById('results-note').textContent = 'Failed to load AP data.';
       }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Enhanced sticky header with scroll shadow
       const header = document.querySelector('.header-with-logo');
       if (header) {
         window.addEventListener('scroll', () => {
@@ -635,12 +751,12 @@
       if (exportBtn) {
         exportBtn.addEventListener('click', exportToCsv);
       }
-      const compareFab = document.getElementById('compare-fab');
-      if (compareFab) {
-        compareFab.addEventListener('click', () => {
+      const compareBtn = document.getElementById('compare-btn');
+      if (compareBtn) {
+        compareBtn.addEventListener('click', () => {
           if (selectedIds.size < 2) return;
           const idsParam = Array.from(selectedIds).join(',');
-          window.location.href = `compare.html?ids=${encodeURIComponent(idsParam)}`;
+          window.location.href = `compare-preview.html?ids=${encodeURIComponent(idsParam)}`;
         });
       }
       loadData();

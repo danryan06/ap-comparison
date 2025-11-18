@@ -59,6 +59,22 @@ h1 a:hover {
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 0.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 15, 20, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: box-shadow var(--transition-base) var(--ease-out);
+}
+
+.header-with-logo.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .header-with-logo .site-logo {
@@ -210,8 +226,7 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:hover {
-  background: rgba(59, 130, 246, 0.08) !important;
-  transform: translateX(2px);
+  background: rgba(15, 23, 42, 0.3) !important;
 }
 
 tbody tr:hover::before {
@@ -383,6 +398,7 @@ th.drag-over-right {
 th.sortable {
   cursor: pointer;
   user-select: none;
+  position: relative;
 }
 th.sortable[data-dir="asc"]::after {
   content: " ▲";
@@ -393,6 +409,57 @@ th.sortable[data-dir="desc"]::after {
   content: " ▼";
   color: #9ca3af;
   font-size: 0.75rem;
+}
+
+/* Tooltips for column headers */
+th[data-tooltip] {
+  position: relative;
+}
+
+th[data-tooltip]:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 8px 12px;
+  background: rgba(20, 20, 30, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-base) var(--ease-out);
+  z-index: 1000;
+  max-width: 300px;
+  white-space: normal;
+  text-align: left;
+}
+
+th[data-tooltip]:hover::after {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(20, 20, 30, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-base) var(--ease-out);
+}
+
+th[data-tooltip]:hover::before,
+th[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Behavior at Min Power: truncated text + tooltip on hover */
@@ -1207,8 +1274,198 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   padding: 3rem 1rem !important;
 }
 
+/* Compare table specific styles */
+#compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#compare-table th,
+#compare-table td {
+  padding: 0.75rem 0.5rem;
+  max-height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+#compare-table td {
+  max-height: 3rem;
+  line-height: 1.4;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Wider columns for compare table */
+#compare-table th[data-key="__vendor__"],
+#compare-table td:nth-child(1) {
+  min-width: 100px;
+  width: 100px;
+}
+
+#compare-table th[data-key="model"],
+#compare-table td:nth-child(2) {
+  min-width: 140px;
+  width: 140px;
+}
+
+#compare-table th[data-key="spatial_streams"],
+#compare-table td[data-key="spatial_streams"] {
+  min-width: 140px;
+  width: 140px;
+}
+
+#compare-table th[data-key="radios_iot_features"],
+#compare-table td[data-key="radios_iot_features"] {
+  min-width: 200px;
+  width: 200px;
+}
+
+#compare-table th[data-key="ethernet_ports_speed"],
+#compare-table td[data-key="ethernet_ports_speed"] {
+  min-width: 160px;
+  width: 160px;
+}
+
+#compare-table th[data-key="wifi_gen_radios"],
+#compare-table td[data-key="wifi_gen_radios"] {
+  min-width: 150px;
+  width: 150px;
+}
+
+/* Wizard step indicators */
+.wizard-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  gap: 0.5rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all var(--transition-slow) var(--ease-out);
+  font-size: 0.875rem;
+}
+
+.step.active .step-number {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.step.completed .step-number {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.5);
+  color: #4ade80;
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color var(--transition-slow) var(--ease-out);
+  text-align: center;
+}
+
+.step.active .step-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.step-connector {
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 0.5rem;
+  position: relative;
+  top: -10px;
+}
+
+/* Live results counter */
+.results-counter {
+  position: sticky;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  margin: 2rem auto 0;
+  z-index: 10;
+}
+
+.counter-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(20, 20, 30, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-full);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.counter-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.counter-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 @media (max-width: 980px) {
   .finder-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .wizard-steps {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  
+  .step-connector {
+    display: none;
+  }
+  
+  .results-counter {
+    position: relative;
+    transform: none;
+    left: auto;
+    margin: 1rem auto 0;
   }
 }
