@@ -105,7 +105,7 @@
     const currentFilters = { vendor: '', antenna: '', form: '' };
     let currentSort = { key: 'vendor', dir: 'asc' };
     function defaultHiddenColumns() {
-      return new Set(['dimensions','weight','antenna_connectors','operating_temp_range']);
+      return new Set(['dimensions','weight','antenna_connectors','operating_temp_range','behavior_min_power']);
     }
     const hiddenColumns = defaultHiddenColumns(); // keys to hide by default
     const selectedIds = new Set(); // slug ids of selected rows

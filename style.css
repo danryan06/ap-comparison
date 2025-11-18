@@ -41,7 +41,7 @@ h1 a:hover {
 }
 
 .header-with-logo .site-logo {
-  height: 3.5rem;
+  height: 5rem;
   width: auto;
   flex-shrink: 0;
   margin-left: auto;
