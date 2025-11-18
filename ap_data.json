@@ -303,6 +303,28 @@
   },
   {
     "vendor": "Cisco",
+    "model": "CW9172H",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af",
+    "recommended_poe": "802.3bt",
+    "behavior_min_power": "Disables PoE out, disables USB",
+    "ethernet_ports_speed": "2x 1 Gig LAN Ports  1x 1 Gig Lan port with 802.3af PoE output  1x Passthrough (RJ45) Port",
+    "antenna_type": "Internal",
+    "form_factor": "Wallplate",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9172-series-access-points-ds.html",
+    "image_url": "images/cisco-cw9172h.png",
+    "dimensions": "5.1 x 7.0 x 1.0 in. (13 x 18 x 2.6 cm)",
+    "weight": "1.16 lb. (572 g)",
+    "antenna_connectors": "N/A (internal antennas)",
+    "operating_temp_range": "32\u00b0 to 122\u00b0F (0\u00b0 to 50\u00b0C)",
+    "msrp": "$1,137.89"
+  },
+  {
+    "vendor": "Cisco",
     "model": "CW9172I",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
