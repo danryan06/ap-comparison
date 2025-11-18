@@ -12,16 +12,17 @@
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
       <button id="export-csv" type="button" class="btn-link">Export CSV</button>
+      <a id="datasheet-link" class="btn-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Open Datasheet</a>
+      <a id="install-guide-link" class="btn-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Install Guide</a>
     </div>
 
     <div class="card">
       <span class="badge">AP Details</span>
 
       <div class="header-with-logo">
-        <h1><a href="index.html">Enterprise AP Comparison Database</a></h1>
+        <h1 id="title-header">AP Details</h1>
         <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
       </div>
-      <h2 id="title">AP Details</h2>
       <p class="subtitle" id="subtitle"></p>
 
       <div id="image-container" class="ap-image-wrapper" style="display:none;">
@@ -105,14 +106,39 @@
       URL.revokeObjectURL(url);
     }
 
+    const fieldLabels = {
+      vendor: 'Vendor',
+      model: 'Model',
+      wifi_gen_radios: 'Wi-Fi Generation & Radios',
+      spatial_streams: 'Spatial Streams',
+      min_poe_class: 'Minimum PoE Class',
+      recommended_poe: 'Recommended PoE',
+      behavior_min_power: 'Behavior at Minimum Power',
+      ethernet_ports_speed: 'Ethernet Ports & Speed',
+      radios_iot_features: 'Radios & IoT Features',
+      antenna_type: 'Antenna Type',
+      form_factor: 'Form Factor',
+      dimensions: 'Dimensions',
+      weight: 'Weight',
+      antenna_connectors: 'Antenna Connectors',
+      operating_temp_range: 'Operating Temperature Range',
+      msrp: 'MSRP',
+      datasheet_url: 'Datasheet URL',
+      install_guide_url: 'Install Guide URL',
+      end_of_sale_date: 'End of Sale Date',
+      end_of_sale_url: 'End of Sale URL'
+    };
+
     async function load() {
       const errorEl = document.getElementById('error-message');
-      const titleEl = document.getElementById('title');
+      const titleHeaderEl = document.getElementById('title-header');
       const subtitleEl = document.getElementById('subtitle');
       const detailsEl = document.getElementById('details');
       const imageWrapper = document.getElementById('image-container');
       const imageEl = document.getElementById('ap-image');
       const backEl = document.getElementById('back-link');
+      const datasheetLinkEl = document.getElementById('datasheet-link');
+      const installGuideLinkEl = document.getElementById('install-guide-link');
 
       try {
         const res = await fetch(DATA_URL, { cache: 'no-store' });
@@ -130,7 +156,7 @@
         currentEntry = entry;
 
         const titleText = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
-        titleEl.textContent = titleText;
+        titleHeaderEl.textContent = titleText;
         subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
 
         // Handle image, if present
@@ -146,11 +172,24 @@
           imageWrapper.style.display = 'none';
         }
 
+        // Handle datasheet and install guide buttons
+        if (entry.datasheet_url) {
+          datasheetLinkEl.href = entry.datasheet_url;
+          datasheetLinkEl.style.display = 'inline-flex';
+        }
+        if (entry.install_guide_url) {
+          installGuideLinkEl.href = entry.install_guide_url;
+          installGuideLinkEl.style.display = 'inline-flex';
+        }
+
         detailsEl.innerHTML = '';
         const renderKV = (k, v) => {
+          // Skip image_url
+          if (k === 'image_url') return;
+          
           const keyDiv = document.createElement('div');
           keyDiv.className = 'key';
-          keyDiv.textContent = k;
+          keyDiv.textContent = fieldLabels[k] || k;
           const valDiv = document.createElement('div');
           valDiv.className = 'val';
           if (Array.isArray(v)) valDiv.textContent = v.join(', ');
@@ -163,20 +202,31 @@
           'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
           'recommended_poe','behavior_min_power','ethernet_ports_speed',
           'radios_iot_features','antenna_type','form_factor','dimensions',
-          'weight','antenna_connectors','operating_temp_range','msrp'
+          'weight','antenna_connectors','operating_temp_range','msrp',
+          'end_of_sale_date','end_of_sale_url','install_guide_url'
         ];
         const keys = Object.keys(entry);
         const ordered = [
           ...primaryKeys.filter(k => keys.includes(k)),
-          ...keys.filter(k => !primaryKeys.includes(k)).sort()
+          ...keys.filter(k => !primaryKeys.includes(k) && k !== 'image_url' && k !== 'datasheet_url').sort()
         ];
         ordered.forEach(k => renderKV(k, entry[k]));
 
-        // Build back link preserving state params
+        // Build back link - check if coming from finder
         const params = new URLSearchParams(window.location.search);
+        const fromFinder = params.get('from') === 'finder';
         params.delete('id');
-        const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
-        backEl.setAttribute('href', backUrl);
+        params.delete('from');
+        
+        if (fromFinder) {
+          backEl.textContent = '← Back to AP Finder';
+          const filterState = params.toString();
+          backEl.setAttribute('href', 'finder.html' + (filterState ? '?' + filterState : ''));
+        } else {
+          backEl.textContent = '← Back to AP Table';
+          const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
+          backEl.setAttribute('href', backUrl);
+        }
       } catch (err) {
         console.error('Failed to load AP details:', err);
         errorEl.style.display = 'block';

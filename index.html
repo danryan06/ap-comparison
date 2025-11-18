@@ -435,9 +435,14 @@
         const vendorText = document.createTextNode(entry.vendor || '');
         vendorTd.appendChild(vendorText);
         tr.appendChild(vendorTd);
-          tr.appendChild(textCell(entry.model));
+          const modelTd = textCell(entry.model);
+          modelTd.style.fontSize = '1rem';
+          modelTd.style.fontWeight = '600';
+          tr.appendChild(modelTd);
           tr.appendChild(textCell(entry.wifi_gen_radios));
-          tr.appendChild(textCell(entry.spatial_streams));
+          const spatialTd = textCell(entry.spatial_streams);
+          spatialTd.className = 'spatial-streams';
+          tr.appendChild(spatialTd);
           tr.appendChild(textCell(entry.min_poe_class));
           tr.appendChild(textCell(entry.recommended_poe));
 
@@ -483,14 +488,23 @@
       });
 
       if (sorted.length === 0) {
-          const tr = document.createElement('tr');
-          const td = document.createElement('td');
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
         td.setAttribute('colspan', '16');
-        td.textContent = currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
-          ? 'No APs match your search or filters.'
-          : 'No APs defined yet. Add entries to ap_data.json.';
-          tr.appendChild(td);
-          tbody.appendChild(tr);
+        td.className = 'empty-state-cell';
+        td.innerHTML = `
+          <div class="empty-state-enhanced">
+            <h3>No APs match your criteria</h3>
+            <p>${currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
+              ? 'Try adjusting your filters or search terms'
+              : 'No APs defined yet. Add entries to ap_data.json.'}</p>
+            ${currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
+              ? '<button class="btn-clear-filters" onclick="document.getElementById(\'reset-btn\').click()">Clear All Filters</button>'
+              : ''}
+          </div>
+        `;
+        tr.appendChild(td);
+        tbody.appendChild(tr);
       }
 
       updateSortIndicators();
@@ -639,8 +653,31 @@
       const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
       history.replaceState({}, '', newUrl);
     }
+    function showSkeletonLoader() {
+      const tbody = document.getElementById('ap-table-body');
+      tbody.innerHTML = '';
+      for (let i = 0; i < 5; i++) {
+        const tr = document.createElement('tr');
+        tr.className = 'skeleton-row';
+        ['vendor', 'model', 'wifi', 'spatial', 'poe', 'poe-rec', 'behavior', 'ethernet', 'iot', 'antenna', 'form', 'dims', 'weight', 'connectors', 'temp', 'msrp'].forEach((type, idx) => {
+          const td = document.createElement('td');
+          const div = document.createElement('div');
+          div.className = 'skeleton-box';
+          if (type === 'vendor') div.classList.add('skeleton-vendor');
+          else if (type === 'model') div.classList.add('skeleton-model');
+          else div.classList.add('skeleton-spec');
+          td.appendChild(div);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      }
+    }
+
     async function loadApData() {
       const errorEl = document.getElementById('error-message');
+
+      // Show skeleton loader
+      showSkeletonLoader();
 
       try {
         const res = await fetch(DATA_URL, { cache: 'no-store' });
@@ -673,6 +710,9 @@
         console.error('Failed to load AP data:', err);
         errorEl.style.display = 'block';
         errorEl.textContent = 'Failed to load AP data. Please try again later or check ap_data.json.';
+        // Clear skeleton on error
+        const tbody = document.getElementById('ap-table-body');
+        tbody.innerHTML = '';
       }
     }
 

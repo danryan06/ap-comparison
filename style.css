@@ -1,10 +1,31 @@
 /* Global styles */
+:root {
+  --transition-fast: 150ms;
+  --transition-base: 200ms;
+  --transition-slow: 300ms;
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.6, 1);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0f172a; /* dark slate */
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    #0f172a;
+  background-attachment: fixed;
   color: #e5e7eb;
   margin: 0;
   padding: 0;
+}
+
+* {
+  transition-timing-function: var(--ease-out);
 }
 
 /* Page container */
@@ -77,22 +98,51 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 0.4rem 0.9rem;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   font-size: 0.8rem;
   text-decoration: none;
   border: 1px solid #1d4ed8;
   color: #e5e7eb;
   background: rgba(37, 99, 235, 0.15);
-  transition:
-    background 0.15s ease-out,
-    transform 0.08s ease-out,
-    box-shadow 0.15s ease-out;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base) var(--ease-out);
+  cursor: pointer;
+}
+
+.btn-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-link:active::after {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-link:hover {
   background: rgba(37, 99, 235, 0.35);
   transform: translateY(-1px);
   box-shadow: 0 10px 18px rgba(30, 64, 175, 0.55);
+}
+
+.btn-link:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.btn-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
 }
 
 /* Card-style wrapper for the table / forms */
@@ -128,32 +178,75 @@ table {
 
 th,
 td {
-  padding: 0.7rem 0.5rem;
+  padding: 1rem 0.75rem;
   text-align: left;
   vertical-align: top;
 }
 
 th {
-  background: #111827;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
   color: #e5e7eb;
   font-weight: 600;
   position: sticky;
   top: 0;
   z-index: 1;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+tbody tr {
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
 }
 
 tbody tr:nth-child(even) {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 tbody tr:nth-child(odd) {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+tbody tr:hover {
+  background: rgba(59, 130, 246, 0.08) !important;
+  transform: translateX(2px);
+}
+
+tbody tr:hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 0 2px 2px 0;
 }
 
 /* Vendor column tweaks */
 td.vendor {
   white-space: nowrap;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Model names - larger and bolder */
+td:nth-child(2) {
+  font-size: 1rem;
   font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Technical specs - monospace for better alignment */
+td[data-key="spatial_streams"],
+.spatial-streams {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Radios & IoT tags */
@@ -382,6 +475,96 @@ td.behavior:hover::before {
   margin-top: 0.75rem;
   font-size: 0.8rem;
 }
+
+/* Skeleton loaders */
+.skeleton-row {
+  animation: fadeIn var(--transition-slow) var(--ease-out) backwards;
+}
+
+.skeleton-box {
+  height: 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.10) 50%,
+    rgba(255, 255, 255, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-vendor { width: 80px; }
+.skeleton-model { width: 120px; }
+.skeleton-spec { width: 100px; }
+
+/* Enhanced empty state */
+.empty-state-enhanced {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.empty-state-enhanced h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.empty-state-enhanced p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.btn-clear-filters {
+  padding: 0.625rem 1.25rem;
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-out);
+  font-size: 0.875rem;
+}
+
+.btn-clear-filters:hover {
+  background: rgba(59, 130, 246, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Fade-in animation for table rows */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+tbody tr {
+  animation: fadeIn var(--transition-slow) var(--ease-out) backwards;
+}
+
+tbody tr:nth-child(1) { animation-delay: 0ms; }
+tbody tr:nth-child(2) { animation-delay: 30ms; }
+tbody tr:nth-child(3) { animation-delay: 60ms; }
+tbody tr:nth-child(4) { animation-delay: 90ms; }
+tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 /* Form styling (submit/edit pages) */
 .form-grid {
@@ -1009,7 +1192,7 @@ td.behavior:hover::before {
 .empty-state {
   margin-top: 1rem;
   padding: 1rem;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-lg);
   border: 1px dashed #334155;
   background: rgba(15, 23, 42, 0.6);
   font-size: 0.9rem;
@@ -1018,6 +1201,10 @@ td.behavior:hover::before {
 }
 .empty-state p {
   margin: 0.25rem 0;
+}
+
+.empty-state-cell {
+  padding: 3rem 1rem !important;
 }
 
 @media (max-width: 980px) {

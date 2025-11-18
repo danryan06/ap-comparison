@@ -18,6 +18,7 @@
       <a class="btn-link" href="index.html">Back to Comparison Table</a>
       <a class="btn-link" href="submit.html">Submit New AP</a>
       <button id="clear-filters" type="button" class="btn-link">Reset Filters</button>
+      <button id="export-csv" type="button" class="btn-link">Export CSV</button>
     </div>
 
     <div class="card finder-card">
@@ -109,6 +110,19 @@
     let enrichedData = [];
 
 
+    function restoreFilterStateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const wifi = params.get('wifi');
+      const vendors = params.get('vendors');
+      const antenna = params.get('antenna');
+      const form = params.get('form');
+      
+      if (wifi) wifi.split(',').forEach(v => state.wifi.add(v));
+      if (vendors) vendors.split(',').forEach(v => state.vendors.add(v));
+      if (antenna) antenna.split(',').forEach(v => state.antenna.add(v));
+      if (form) form.split(',').forEach(v => state.form.add(v));
+    }
+
     async function loadData() {
       try {
         const res = await fetch(DATA_URL, { cache: 'no-store' });
@@ -116,6 +130,16 @@
         const raw = await res.json();
         enrichedData = raw.map(enrichEntry);
         buildFilterOptions();
+        restoreFilterStateFromUrl();
+        // Update checkboxes to reflect restored state
+        document.querySelectorAll('input[data-filter-type]').forEach(input => {
+          const type = input.dataset.filterType;
+          const value = input.dataset.filterValue;
+          const targetSet = state[type];
+          if (targetSet && targetSet.has(value)) {
+            input.checked = true;
+          }
+        });
         applyFilters();
       } catch (err) {
         console.error('Failed to load data', err);
@@ -357,6 +381,22 @@
         row.appendChild(msrp);
         row.appendChild(actions);
 
+        // Make entire row clickable (except checkbox)
+        row.style.cursor = 'pointer';
+        row.addEventListener('click', (e) => {
+          if (e.target.type !== 'checkbox' && e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+            const filterState = getFilterStateForUrl();
+            const urlParams = new URLSearchParams();
+            urlParams.set('id', entry._slug);
+            urlParams.set('from', 'finder');
+            if (filterState) {
+              const filterParams = new URLSearchParams(filterState);
+              filterParams.forEach((value, key) => urlParams.set(key, value));
+            }
+            window.location.href = `ap.html?${urlParams.toString()}`;
+          }
+        });
+
         container.appendChild(row);
       });
 
@@ -426,6 +466,69 @@
       applyFilters();
     }
 
+    function getFilterStateForUrl() {
+      const params = new URLSearchParams();
+      if (state.wifi.size) params.set('wifi', Array.from(state.wifi).join(','));
+      if (state.vendors.size) params.set('vendors', Array.from(state.vendors).join(','));
+      if (state.antenna.size) params.set('antenna', Array.from(state.antenna).join(','));
+      if (state.form.size) params.set('form', Array.from(state.form).join(','));
+      return params.toString();
+    }
+
+    function exportToCsv() {
+      if (!enrichedData.length) return;
+      const matches = enrichedData.filter(entry => matchesFilters(entry));
+      if (matches.length === 0) {
+        alert('No APs to export. Please adjust your filters.');
+        return;
+      }
+
+      const primaryKeys = [
+        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
+        'recommended_poe','behavior_min_power','ethernet_ports_speed',
+        'radios_iot_features','antenna_type','form_factor','dimensions',
+        'weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
+      ];
+
+      function escapeCsvValue(value) {
+        const s = String(value || '');
+        const needsQuotes = /[",\n]/.test(s);
+        return needsQuotes ? '"' + s.replace(/"/g, '""') + '"' : s;
+      }
+
+      function normalizeString(value) {
+        if (value == null) return '';
+        if (Array.isArray(value)) return value.join('; ');
+        return String(value);
+      }
+
+      const keys = Object.keys(matches[0]);
+      const orderedKeys = [
+        ...primaryKeys.filter(k => keys.includes(k)),
+        ...keys.filter(k => !primaryKeys.includes(k)).sort()
+      ];
+
+      const headers = orderedKeys.map(k => escapeCsvValue(k));
+      const rows = matches.map(entry => {
+        return orderedKeys.map(k => {
+          const v = entry[k];
+          const s = normalizeString(v);
+          return escapeCsvValue(s);
+        });
+      });
+
+      const csv = [headers, ...rows].map(row => row.join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ap-finder-results.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
     function updateCompareFab() {
       const fab = document.getElementById('compare-fab');
       const n = selectedIds.size;
@@ -439,6 +542,10 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
+      const exportBtn = document.getElementById('export-csv');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', exportToCsv);
+      }
       const compareFab = document.getElementById('compare-fab');
       if (compareFab) {
         compareFab.addEventListener('click', () => {
