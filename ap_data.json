@@ -375,6 +375,30 @@
   },
   {
     "vendor": "Cisco",
+    "model": "CW9176D1",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (PoE+)",
+    "recommended_poe": "802.3bt (Class 6)",
+    "behavior_min_power": "On 802.3bt (Class 6), full operation; on 802.3at, operation with reduced features (USB disabled, lower link speed); on 802.3af staging only (radios off).",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G/10G mGig (RJ-45)",
+    "antenna_type": "Directional",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE",
+      "GPS/GNSS",
+      "Ultra-Wideband (UWB)"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9176-series-acc-point-ds.html",
+    "image_url": "images/cisco-cw9176d1.png",
+    "dimensions": "9.5 x 9.5 x 2.0 inches (24 x 25 x 5.1 cm)",
+    "weight": "3.4 lbs (1.56 kg)",
+    "antenna_connectors": "None (internal directional antenna)",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; \u201322\u00b0F to 158\u00b0F (\u201330\u00b0C to 70\u00b0C) storage",
+    "msrp": "$2,904"
+  },
+  {
+    "vendor": "Cisco",
     "model": "CW9176I",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
@@ -396,29 +420,6 @@
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; storage unspecified",
     "msrp": "$2,592"
-  },
-  {
-    "vendor": "Cisco",
-    "model": "CW9176D1",
-    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
-    "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3at (PoE+)",
-    "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3bt (Class 6), full operation; on 802.3at, operation with reduced features (USB disabled, lower link speed); on 802.3af staging only (radios off).",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ-45)",
-    "antenna_type": "Directional",
-    "form_factor": "Indoor",
-    "dimensions": "9.5 x 9.5 x 2.0 inches (24 x 25 x 5.1 cm)",
-    "weight": "3.4 lbs (1.56 kg)",
-    "antenna_connectors": "None (internal directional antenna)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; –22°F to 158°F (–30°C to 70°C) storage",
-    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9176-series-acc-point-ds.html",
-    "radios_iot_features": [
-      "BLE",
-      "GPS/GNSS",
-      "Ultra-Wideband (UWB)"
-    ],
-    "msrp": "unknown"
   },
   {
     "vendor": "Cisco",
