@@ -431,17 +431,18 @@
     "behavior_min_power": "On 802.3bt (Class 6), operates in quad-radio mode with 4x4 radios on 2.4/5/6 GHz and both 10G uplinks; on 802.3at, operates in tri-radio mode with reduced radio configuration; on 802.3af, all radios are off and the AP is for configuration staging only.",
     "ethernet_ports_speed": "2\u00d7 100M/1G/2.5G/5G/10G mGig (RJ45)",
     "antenna_type": "Directional",
-    "form_factor": "Indoor/Outdoor",
-    "dimensions": "18.7 W x 13.0 L x 2.9 H in. (475 x 330 x 73 mm)",
-    "weight": "10.0 lb (4.54 kg) AP; 3.8 lb (1.72 kg) bracket",
-    "antenna_connectors": "None (integrated directional antennas)",
-    "operating_temp_range": "-4\u00b0F to 140\u00b0F (-20\u00b0C to 60\u00b0C) operating without solar loading; -4\u00b0F to 122\u00b0F (-20\u00b0C to 50\u00b0C) operating with solar loading; -4\u00b0F to 158\u00b0F (-20\u00b0C to 70\u00b0C) nonoperating",
-    "datasheet_url": "https://www.cisco.com/c/dam/en/us/products/collateral/wireless/access-points/wireless-9179-series-access-points/wireless-9179f-access-point-ds.pdf",
+    "form_factor": "Outdoor",
     "radios_iot_features": [
       "BLE",
       "GPS"
     ],
-    "msrp": "unknown"
+    "datasheet_url": "https://www.cisco.com/c/dam/en/us/products/collateral/wireless/access-points/wireless-9179-series-access-points/wireless-9179f-access-point-ds.pdf",
+    "image_url": "images/cisco-cw9179f.jpg",
+    "dimensions": "18.7 W x 13.0 L x 2.9 H in. (475 x 330 x 73 mm)",
+    "weight": "10.0 lb (4.54 kg) AP; 3.8 lb (1.72 kg) bracket",
+    "antenna_connectors": "None (integrated directional antennas)",
+    "operating_temp_range": "-4\u00b0F to 140\u00b0F (-20\u00b0C to 60\u00b0C) operating without solar loading; -4\u00b0F to 122\u00b0F (-20\u00b0C to 50\u00b0C) operating with solar loading; -4\u00b0F to 158\u00b0F (-20\u00b0C to 70\u00b0C) nonoperating",
+    "msrp": "$7,792"
   },
   {
     "vendor": "Cisco",
