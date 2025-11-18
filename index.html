@@ -729,6 +729,66 @@
           }
         });
       }
+      
+      // Fix tooltip positioning to account for sticky header
+      document.querySelectorAll('th[data-tooltip]').forEach(th => {
+        th.addEventListener('mouseenter', function(e) {
+          const rect = this.getBoundingClientRect();
+          const tooltipText = this.getAttribute('data-tooltip');
+          if (!tooltipText) return;
+          
+          const tooltipEl = document.createElement('div');
+          tooltipEl.className = 'tooltip-popup';
+          tooltipEl.textContent = tooltipText;
+          
+          // Calculate position above the header, ensuring it's visible
+          const headerHeight = header ? header.getBoundingClientRect().height : 0;
+          const tooltipTop = Math.max(headerHeight + 10, rect.top - 10);
+          
+          tooltipEl.style.cssText = `
+            position: fixed;
+            top: ${tooltipTop}px;
+            left: ${rect.left + rect.width / 2}px;
+            transform: translate(-50%, -100%);
+            padding: 8px 12px;
+            background: rgba(20, 20, 30, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.75rem;
+            font-weight: 500;
+            z-index: 10000;
+            max-width: 300px;
+            white-space: normal;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 200ms ease;
+          `;
+          document.body.appendChild(tooltipEl);
+          
+          // Fade in
+          setTimeout(() => {
+            tooltipEl.style.opacity = '1';
+          }, 10);
+          
+          this._tooltipEl = tooltipEl;
+        });
+        th.addEventListener('mouseleave', function() {
+          if (this._tooltipEl) {
+            this._tooltipEl.style.opacity = '0';
+            setTimeout(() => {
+              if (this._tooltipEl && this._tooltipEl.parentNode) {
+                this._tooltipEl.remove();
+              }
+              this._tooltipEl = null;
+            }, 200);
+          }
+        });
+      });
+      
       readStateFromUrl();
 
       const searchEl = document.getElementById('search');

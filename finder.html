@@ -25,27 +25,6 @@
       <div class="badge">New</div>
       <div class="finder-grid">
         <section class="filter-panel">
-          <div class="wizard-steps">
-            <div class="step" id="step-wifi">
-              <div class="step-number">1</div>
-              <div class="step-label">Wi-Fi Generation</div>
-            </div>
-            <div class="step-connector"></div>
-            <div class="step" id="step-vendors">
-              <div class="step-number">2</div>
-              <div class="step-label">Vendors</div>
-            </div>
-            <div class="step-connector"></div>
-            <div class="step" id="step-form">
-              <div class="step-number">3</div>
-              <div class="step-label">Form Factor</div>
-            </div>
-            <div class="step-connector"></div>
-            <div class="step" id="step-results">
-              <div class="step-number">4</div>
-              <div class="step-label">Results</div>
-            </div>
-          </div>
           <h2>Filters</h2>
 
           <div class="filter-group">
@@ -300,35 +279,7 @@
     }
 
     function updateWizardSteps() {
-      const hasWifi = state.wifi.size > 0;
-      const hasVendors = state.vendors.size > 0;
-      const hasForm = state.form.size > 0 || state.antenna.size > 0;
-      
-      const wifiStep = document.getElementById('step-wifi');
-      const vendorsStep = document.getElementById('step-vendors');
-      const formStep = document.getElementById('step-form');
-      const resultsStep = document.getElementById('step-results');
-      
-      [wifiStep, vendorsStep, formStep, resultsStep].forEach(s => {
-        s.classList.remove('active', 'completed');
-      });
-      
-      if (hasWifi) {
-        wifiStep.classList.add('completed');
-        if (hasVendors) {
-          vendorsStep.classList.add('completed');
-          if (hasForm) {
-            formStep.classList.add('completed');
-            resultsStep.classList.add('active');
-          } else {
-            formStep.classList.add('active');
-          }
-        } else {
-          vendorsStep.classList.add('active');
-        }
-      } else {
-        wifiStep.classList.add('active');
-      }
+      // Wizard steps removed per user request
     }
 
     function applyFilters() {
@@ -644,7 +595,6 @@
         });
       }
       loadData();
-      updateWizardSteps();
     });
   </script>
 </body>

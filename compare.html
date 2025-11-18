@@ -6,12 +6,181 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Card-based comparison layout */
+    .comparison-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      padding: 24px 0;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .comparison-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: all var(--transition-base) var(--ease-out);
+      position: relative;
+    }
+
+    .comparison-card:hover {
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 12px;
+    }
+
+    .remove-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: var(--radius-md);
+      color: #f87171;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all var(--transition-base) var(--ease-out);
+      border: none;
+      font-weight: 600;
+    }
+
+    .remove-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+      transform: scale(1.1);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 24px;
+    }
+
+    .card-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .card-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.875rem;
+    }
+
+    .card-title {
+      padding: 24px 24px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-vendor {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .card-model {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .card-specs {
+      padding: 8px 0;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 12px 24px;
+      transition: background var(--transition-base) var(--ease-out);
+      gap: 1rem;
+    }
+
+    .spec-row:nth-child(even) {
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .spec-row.spec-different {
+      background: rgba(59, 130, 246, 0.12);
+      border-left: 3px solid rgba(59, 130, 246, 0.5);
+    }
+
+    .spec-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      flex-shrink: 0;
+      min-width: 140px;
+    }
+
+    .spec-value {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: right;
+      flex: 1;
+      word-wrap: break-word;
+    }
+
+    .card-actions {
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-base) var(--ease-out);
+      text-decoration: none;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
-      <button id="toggle-columns" type="button" class="btn-link">Choose Columns</button>
       <button id="export-csv" type="button" class="btn-link">Export CSV</button>
     </div>
 
@@ -22,32 +191,32 @@
         <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
       </div>
       <h2>Compare Access Points</h2>
-      <p class="subtitle">Side-by-side details for selected APs.</p>
+      <p class="subtitle">Side-by-side card-based comparison for selected APs.</p>
 
       <div id="error-message" class="error" style="display:none;"></div>
 
-      <div id="columns-panel" class="columns-panel" style="display:none;">
-        <h3>Show/Hide Columns</h3>
-        <div id="columns-grid" class="columns-grid"></div>
-      </div>
-
-      <table id="compare-table">
-        <thead>
-          <tr id="compare-header"></tr>
-        </thead>
-        <tbody id="compare-body"></tbody>
-      </table>
+      <div id="comparison-container" class="comparison-container"></div>
     </div>
   </div>
 
   <script>
     const DATA_URL = 'ap_data.json';
-    const HIDDEN_KEY = 'compareTable.cols';
-    const hiddenColumns = new Set(JSON.parse(localStorage.getItem(HIDDEN_KEY) || '["behavior_min_power"]'));
-    const ORDER_KEY = 'compareTable.colOrder';
-    const WIDTHS_KEY = 'compareTable.colWidths';
     let currentSelected = [];
-    let currentVisibleColumns = [];
+    const allSpecs = [
+      { key: 'wifi_gen_radios', label: 'Wi‑Fi Gen & Radios' },
+      { key: 'spatial_streams', label: 'Spatial Streams' },
+      { key: 'min_poe_class', label: 'Min PoE Class' },
+      { key: 'recommended_poe', label: 'Recommended PoE' },
+      { key: 'ethernet_ports_speed', label: 'Ethernet Ports & Speed' },
+      { key: 'antenna_type', label: 'Antenna Type' },
+      { key: 'form_factor', label: 'Form Factor' },
+      { key: 'dimensions', label: 'Dimensions' },
+      { key: 'weight', label: 'Weight' },
+      { key: 'antenna_connectors', label: 'Antenna Connectors' },
+      { key: 'operating_temp_range', label: 'Operating Temp Range' },
+      { key: 'radios_iot_features', label: 'Radios & IoT Features' },
+      { key: 'msrp', label: 'MSRP' }
+    ];
 
     function slugify(s) {
       return String(s || '')
@@ -77,38 +246,119 @@
       backEl.setAttribute('href', backUrl);
     }
 
-    function buildColumnsPanel(columns) {
-      const grid = document.getElementById('columns-grid');
-      grid.innerHTML = '';
-      const makeRow = (label, key, lock=false) => {
-        const lbl = document.createElement('label');
-        const input = document.createElement('input');
-        input.type = 'checkbox';
-        input.checked = !hiddenColumns.has(key) || lock;
-        input.disabled = lock;
-        input.addEventListener('change', () => {
-          if (input.checked) hiddenColumns.delete(key);
-          else hiddenColumns.add(key);
-          localStorage.setItem(HIDDEN_KEY, JSON.stringify(Array.from(hiddenColumns)));
-          load(); // rebuild table with new column set
+    function highlightDifferences() {
+      const cards = document.querySelectorAll('.comparison-card');
+      if (cards.length < 2) return;
+
+      allSpecs.forEach(({ key }) => {
+        const values = Array.from(cards).map(card => {
+          const specRow = card.querySelector(`[data-spec-key="${key}"]`);
+          return specRow ? specRow.querySelector('.spec-value').textContent.trim() : '';
         });
-        const span = document.createElement('span');
-        span.textContent = label;
-        lbl.appendChild(input);
-        lbl.appendChild(span);
-        grid.appendChild(lbl);
+
+        const allSame = values.every(v => v === values[0] && v !== '');
+        if (!allSame && values.some(v => v !== '')) {
+          cards.forEach(card => {
+            const specRow = card.querySelector(`[data-spec-key="${key}"]`);
+            if (specRow) specRow.classList.add('spec-different');
+          });
+        }
+      });
+    }
+
+    function createCard(entry) {
+      const card = document.createElement('div');
+      card.className = 'comparison-card';
+
+      const header = document.createElement('div');
+      header.className = 'card-header';
+      const removeBtn = document.createElement('button');
+      removeBtn.className = 'remove-btn';
+      removeBtn.textContent = '×';
+      removeBtn.title = 'Remove from comparison';
+      removeBtn.onclick = () => {
+        const ids = readIds().filter(id => id !== slugify(`${entry.vendor} ${entry.model}`));
+        window.location.href = `compare.html?ids=${ids.join(',')}`;
       };
-      // Locked vendor/model
-      makeRow('Vendor', '__vendor__', true);
-      makeRow('Model', '__model__', true);
-      columns.forEach(([label, key]) => makeRow(label, key, false));
+      header.appendChild(removeBtn);
+      card.appendChild(header);
+
+      const imageDiv = document.createElement('div');
+      imageDiv.className = 'card-image';
+      if (entry.image_url) {
+        const img = document.createElement('img');
+        img.src = entry.image_url;
+        img.alt = `${entry.vendor} ${entry.model}`;
+        imageDiv.appendChild(img);
+      } else {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'card-image-placeholder';
+        placeholder.textContent = 'No image available';
+        imageDiv.appendChild(placeholder);
+      }
+      card.appendChild(imageDiv);
+
+      const titleDiv = document.createElement('div');
+      titleDiv.className = 'card-title';
+      const vendor = document.createElement('h3');
+      vendor.className = 'card-vendor';
+      vendor.textContent = entry.vendor || '';
+      const model = document.createElement('h2');
+      model.className = 'card-model';
+      model.textContent = entry.model || '';
+      titleDiv.appendChild(vendor);
+      titleDiv.appendChild(model);
+      card.appendChild(titleDiv);
+
+      const specsDiv = document.createElement('div');
+      specsDiv.className = 'card-specs';
+      allSpecs.forEach(({ key, label }) => {
+        const value = entry[key];
+        if (value == null || value === '') return;
+
+        const specRow = document.createElement('div');
+        specRow.className = 'spec-row';
+        specRow.dataset.specKey = key;
+
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'spec-label';
+        labelSpan.textContent = label;
+
+        const valueSpan = document.createElement('span');
+        valueSpan.className = 'spec-value';
+        valueSpan.textContent = normalizeString(value);
+
+        specRow.appendChild(labelSpan);
+        specRow.appendChild(valueSpan);
+        specsDiv.appendChild(specRow);
+      });
+      card.appendChild(specsDiv);
+
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'card-actions';
+      const viewBtn = document.createElement('a');
+      viewBtn.href = `ap.html?id=${slugify(`${entry.vendor} ${entry.model}`)}`;
+      viewBtn.className = 'btn-secondary';
+      viewBtn.textContent = 'View Details';
+      actionsDiv.appendChild(viewBtn);
+      if (entry.datasheet_url) {
+        const datasheetBtn = document.createElement('a');
+        datasheetBtn.href = entry.datasheet_url;
+        datasheetBtn.target = '_blank';
+        datasheetBtn.rel = 'noopener noreferrer';
+        datasheetBtn.className = 'btn-secondary';
+        datasheetBtn.textContent = 'Datasheet';
+        actionsDiv.appendChild(datasheetBtn);
+      }
+      card.appendChild(actionsDiv);
+
+      return card;
     }
 
     async function load() {
       buildBackLink();
       const errorEl = document.getElementById('error-message');
-      const headerRow = document.getElementById('compare-header');
-      const bodyEl = document.getElementById('compare-body');
+      const container = document.getElementById('comparison-container');
 
       try {
         const res = await fetch(DATA_URL, { cache: 'no-store' });
@@ -116,88 +366,23 @@
         const data = await res.json();
         const ids = readIds();
         const selected = data.filter(e => ids.includes(slugify(`${e.vendor} ${e.model}`)));
+        
         if (selected.length < 2) {
           errorEl.style.display = 'block';
-          errorEl.textContent = 'Select at least two APs to compare.';
+          errorEl.textContent = 'Select at least two APs to compare. Use the main comparison table or finder to select APs.';
+          container.innerHTML = '';
           return;
         }
 
-        // Build header/rows with columns chooser (attributes as columns)
-        const columns = [
-          ['Wi‑Fi Gen & Radios', 'wifi_gen_radios'],
-          ['Spatial Streams', 'spatial_streams'],
-          ['Min PoE Class', 'min_poe_class'],
-          ['Recommended PoE', 'recommended_poe'],
-          ['Ethernet Ports & Speed', 'ethernet_ports_speed'],
-          ['Antenna Type', 'antenna_type'],
-          ['Form Factor', 'form_factor'],
-          ['Dimensions', 'dimensions'],
-          ['Weight', 'weight'],
-          ['Antenna Connectors', 'antenna_connectors'],
-          ['Operating Temp Range', 'operating_temp_range'],
-          ['Radios & IoT Features', 'radios_iot_features'],
-          ['MSRP', 'msrp'],
-          ['Datasheet', 'datasheet_url']
-        ];
-
-        headerRow.innerHTML = '';
-        const vendorTh = document.createElement('th');
-        vendorTh.textContent = 'Vendor';
-        vendorTh.dataset.key = '__vendor__';
-        headerRow.appendChild(vendorTh);
-        const modelTh = document.createElement('th');
-        modelTh.textContent = 'Model';
-        modelTh.dataset.key = 'model';
-        headerRow.appendChild(modelTh);
-        const visibleCols = columns.filter(([, key]) => !hiddenColumns.has(key));
-        visibleCols.forEach(([label]) => {
-          const th = document.createElement('th');
-          th.textContent = label;
-          // Find key for dataset
-          const pair = visibleCols.find(([lbl]) => lbl === label);
-          const key = pair ? pair[1] : '';
-          th.dataset.key = key;
-          headerRow.appendChild(th);
-        });
-
-        bodyEl.innerHTML = '';
-        selected.forEach(e => {
-          const tr = document.createElement('tr');
-          const vendorTd = document.createElement('td');
-          vendorTd.textContent = e.vendor || '';
-          tr.appendChild(vendorTd);
-          const modelTd = document.createElement('td');
-          modelTd.textContent = e.model || '';
-          tr.appendChild(modelTd);
-          visibleCols.forEach(([label, key]) => {
-            const td = document.createElement('td');
-            td.dataset.key = key;
-            if (key === 'datasheet_url' && e[key]) {
-              const a = document.createElement('a');
-              a.href = e[key];
-              a.target = '_blank';
-              a.rel = 'noopener';
-              a.textContent = 'Open';
-              td.appendChild(a);
-            } else if (Array.isArray(e[key])) {
-              td.textContent = e[key].join(', ');
-            } else {
-              td.textContent = normalizeString(e[key]);
-            }
-            tr.appendChild(td);
-          });
-          bodyEl.appendChild(tr);
-        });
-
-        // Build columns panel after we know columns
-        buildColumnsPanel(columns);
-        // Save context for CSV/export
+        container.innerHTML = '';
         currentSelected = selected;
-        currentVisibleColumns = visibleCols;
+        selected.forEach(entry => {
+          const card = createCard(entry);
+          container.appendChild(card);
+        });
 
-        // Initialize resizers and DnD, then apply saved layout
-        initCompareColumnResizersAndDnD();
-        compareLoadLayout();
+        // Highlight differences after a short delay to ensure DOM is ready
+        setTimeout(highlightDifferences, 100);
       } catch (err) {
         console.error('Failed to load comparison:', err);
         errorEl.style.display = 'block';
@@ -205,27 +390,17 @@
       }
     }
 
-    // Toggle for columns panel
     document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('toggle-columns');
-      const panel = document.getElementById('columns-panel');
-      btn.addEventListener('click', () => {
-        const isOpen = panel.style.display === 'block';
-        panel.style.display = isOpen ? 'none' : 'block';
-      });
-      // Export CSV
       const exportBtn = document.getElementById('export-csv');
       if (exportBtn) {
         exportBtn.addEventListener('click', () => {
           if (!currentSelected.length) return;
-          const headers = ['Vendor', 'Model', ...currentVisibleColumns.map(([label]) => label)];
-          const keys = ['__vendor__', 'model', ...currentVisibleColumns.map(([, key]) => key)];
+          const headers = ['Vendor', 'Model', ...allSpecs.map(s => s.label)];
+          const keys = ['vendor', 'model', ...allSpecs.map(s => s.key)];
           const rows = currentSelected.map(e => {
             return keys.map(k => {
-              if (k === '__vendor__') return normalizeString(e.vendor);
               const v = e[k];
               const s = Array.isArray(v) ? v.join('; ') : normalizeString(v);
-              // Escape CSV
               const needs = /[\",\\n]/.test(s);
               return needs ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s;
             }).join(',');
@@ -242,157 +417,8 @@
           URL.revokeObjectURL(url);
         });
       }
+      load();
     });
-
-    load();
-
-    // ----- Column resize and drag/drop for compare table -----
-    let isResizing = false;
-    function compareSaveLayout() {
-      const ths = Array.from(document.querySelectorAll('#compare-table thead th'));
-      const order = ths.map(th => th.dataset.key || '');
-      const widths = {};
-      ths.forEach(th => {
-        const key = th.dataset.key || '';
-        const w = th.style.width || '';
-        if (key) widths[key] = w;
-      });
-      localStorage.setItem(ORDER_KEY, JSON.stringify(order));
-      localStorage.setItem(WIDTHS_KEY, JSON.stringify(widths));
-    }
-
-    function compareLoadLayout() {
-      const headerRow = document.querySelector('#compare-table thead tr');
-      if (!headerRow) return;
-      const storedOrder = JSON.parse(localStorage.getItem(ORDER_KEY) || '[]');
-      const storedWidths = JSON.parse(localStorage.getItem(WIDTHS_KEY) || '{}');
-      if (Array.isArray(storedOrder) && storedOrder.length > 0) {
-        const map = {};
-        Array.from(headerRow.children).forEach(th => { map[th.dataset.key || ''] = th; });
-        storedOrder.forEach(key => {
-          const th = map[key];
-          if (th) headerRow.appendChild(th);
-        });
-      }
-      // apply widths
-      const ths = Array.from(headerRow.children);
-      ths.forEach((th, index) => {
-        const key = th.dataset.key || '';
-        const w = storedWidths[key];
-        if (w) {
-          th.style.width = w;
-          const tbody = document.querySelector('#compare-table tbody');
-          if (tbody) {
-            Array.from(tbody.rows).forEach(row => {
-              const cell = row.children[index];
-              if (cell) cell.style.width = w;
-            });
-          }
-        }
-      });
-      applyCompareColumnOrderFromHeader();
-    }
-
-    function applyCompareColumnOrderFromHeader() {
-      const headerRow = document.querySelector('#compare-table thead tr');
-      if (!headerRow) return;
-      const ths = Array.from(headerRow.children);
-      const tbody = document.querySelector('#compare-table tbody');
-      if (!tbody) return;
-      Array.from(tbody.rows).forEach(row => {
-        const cells = Array.from(row.children);
-        const reordered = ths.map((_, idx) => cells[idx]);
-        reordered.forEach(cell => row.appendChild(cell));
-      });
-    }
-
-    function initCompareColumnResizersAndDnD() {
-      const headerRow = document.querySelector('#compare-table thead tr');
-      if (!headerRow) return;
-      const ths = Array.from(headerRow.querySelectorAll('th'));
-      ths.forEach((th, index) => {
-        // prevent dragging vendor/model columns
-        const key = th.dataset.key || '';
-        const isLocked = key === '__vendor__' || key === 'model';
-        // Add resizer
-        if (!th.querySelector('.col-resizer')) {
-          const resizer = document.createElement('span');
-          resizer.className = 'col-resizer';
-          th.appendChild(resizer);
-          let startX, startWidth;
-          let blockDragStart;
-          const onMouseMove = (e) => {
-            const delta = e.clientX - startX;
-            const newWidth = Math.max(60, startWidth + delta);
-            th.style.width = newWidth + 'px';
-            const tbody = document.querySelector('#compare-table tbody');
-            if (tbody) {
-              Array.from(tbody.rows).forEach(row => {
-                const cell = row.children[index];
-                if (cell) cell.style.width = newWidth + 'px';
-              });
-            }
-          };
-          const onMouseUp = () => {
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
-            document.removeEventListener('dragstart', blockDragStart, true);
-            isResizing = false;
-            if (!isLocked) th.draggable = true;
-            compareSaveLayout();
-          };
-          resizer.addEventListener('mousedown', (e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            startX = e.clientX;
-            startWidth = th.getBoundingClientRect().width;
-            isResizing = true;
-            th.draggable = false;
-            blockDragStart = (ev) => { ev.preventDefault(); };
-            document.addEventListener('dragstart', blockDragStart, true);
-            document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('mouseup', onMouseUp);
-          });
-        }
-        // Drag/drop reorder (skip locked)
-        if (!isLocked) {
-          th.setAttribute('draggable', 'true');
-          th.addEventListener('dragstart', (e) => {
-            if (isResizing) { e.preventDefault(); return; }
-            const currentIndex = Array.from(th.parentNode.children).indexOf(th);
-            e.dataTransfer.setData('text/plain', String(currentIndex));
-          });
-          th.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            const rect = th.getBoundingClientRect();
-            const halfway = rect.left + rect.width / 2;
-            th.classList.toggle('drag-over-left', e.clientX < halfway);
-            th.classList.toggle('drag-over-right', e.clientX >= halfway);
-          });
-          th.addEventListener('dragleave', () => {
-            th.classList.remove('drag-over-left', 'drag-over-right');
-          });
-          th.addEventListener('drop', (e) => {
-            e.preventDefault();
-            const srcIndex = parseInt(e.dataTransfer.getData('text/plain'), 10);
-            const srcTh = ths[srcIndex];
-            const rect = th.getBoundingClientRect();
-            const after = e.clientX >= rect.left + rect.width / 2;
-            th.classList.remove('drag-over-left', 'drag-over-right');
-            if (srcTh && srcTh !== th) {
-              if (after) {
-                th.parentNode.insertBefore(srcTh, th.nextSibling);
-              } else {
-                th.parentNode.insertBefore(srcTh, th);
-              }
-              applyCompareColumnOrderFromHeader();
-              compareSaveLayout();
-            }
-          });
-        }
-      });
-    }
   </script>
 </body>
 </html>
-
