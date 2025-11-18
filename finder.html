@@ -14,8 +14,7 @@
       <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
     </div>
     <p class="subtitle">
-      Pick the Wi-Fi generation, IoT radios, and deployment requirements you need. We will filter the catalog to show only APs that
-      match every selected requirement.
+      Design your deployment the way sizing tools do: pick your Wi-Fi generation, preferred vendors, and antenna style, then instantly see every AP that fits.
     </p>
 
     <div class="actions">
@@ -40,33 +39,25 @@
 
           <div class="filter-group">
             <div class="filter-group-head">
-              <h3>IoT &amp; Built-in Radios</h3>
-              <p>Need BLE, Zigbee, GPS, or sensors? Pick all that apply.</p>
+              <h3>Preferred Vendors</h3>
+              <p>Focus on the OEMs you deploy most often.</p>
             </div>
-            <div id="feature-options" class="chip-grid"></div>
+            <div id="vendor-options" class="chip-grid"></div>
           </div>
 
           <div class="filter-group">
             <div class="filter-group-head">
-              <h3>Antenna &amp; Form Factor</h3>
-              <p>Filter for internal vs external antennas, or indoor vs outdoor SKUs.</p>
+              <h3>Deployment Style</h3>
+              <p>Mix and match form factors and internal vs. external antenna requirements.</p>
             </div>
             <div class="filter-subgroup">
               <p class="filter-subgroup-title">Form Factor</p>
               <div id="form-options" class="chip-grid chip-grid-tight"></div>
             </div>
             <div class="filter-subgroup">
-              <p class="filter-subgroup-title">Antenna Type</p>
+              <p class="filter-subgroup-title">Antenna Style</p>
               <div id="antenna-options" class="chip-grid chip-grid-tight"></div>
             </div>
-          </div>
-
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Power Budget</h3>
-              <p>Pick the highest PoE class you can deliver. Matches include any AP that can run at that class or better.</p>
-            </div>
-            <div id="poe-options" class="chip-grid chip-grid-tight"></div>
           </div>
         </section>
 
@@ -98,22 +89,15 @@
       { id: 'wifi6e', label: 'Wi-Fi 6E (2.4/5/6 GHz)' },
       { id: 'wifi6', label: 'Wi-Fi 6 (2.4/5 GHz)' }
     ];
-    const poeOptionsList = [
-      { id: '802.3af', label: 'Runs on 802.3af (Class 3)' },
-      { id: '802.3at', label: 'Runs on/needs 802.3at (Class 4)' },
-      { id: '802.3bt', label: 'Requires/supports 802.3bt' }
-    ];
 
     const state = {
       wifi: new Set(),
-      features: new Set(),
+      vendors: new Set(),
       antenna: new Set(),
-      form: new Set(),
-      poe: new Set()
+      form: new Set()
     };
 
     let enrichedData = [];
-    let uniqueFeatures = [];
 
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
@@ -135,25 +119,11 @@
     }
 
     function enrichEntry(entry) {
-      const featureList = normalizeFeatures(entry.radios_iot_features);
       return Object.assign({}, entry, {
         _slug: slugFor(entry),
         _wifiFlags: deriveWifiFlags(entry.wifi_gen_radios),
-        _featureList: featureList,
-        _featureSet: new Set(featureList),
-        _poeTokens: derivePoeTokens(entry.min_poe_class)
+        _antennaCategory: deriveAntennaCategory(entry.antenna_type)
       });
-    }
-
-    function normalizeFeatures(value) {
-      if (!value) return [];
-      if (Array.isArray(value)) {
-        return value.map(v => String(v).trim()).filter(Boolean);
-      }
-      if (typeof value === 'string') {
-        return value.split(',').map(v => v.trim()).filter(Boolean);
-      }
-      return [];
     }
 
     function deriveWifiFlags(value) {
@@ -170,19 +140,16 @@
       } else if (text.includes('wi-fi 6')) {
         flags.add('wifi6');
       }
-      if (text.includes('wi-fi 5')) {
-        flags.add('wifi5');
-      }
       return flags;
     }
 
-    function derivePoeTokens(value) {
-      const tokens = new Set();
+    function deriveAntennaCategory(value) {
       const text = String(value || '').toLowerCase();
-      if (text.includes('802.3af')) tokens.add('802.3af');
-      if (text.includes('802.3at')) tokens.add('802.3at');
-      if (text.includes('802.3bt')) tokens.add('802.3bt');
-      return tokens;
+      if (!text) return 'Other';
+      if (text.includes('internal')) return 'Internal';
+      if (text.includes('external')) return 'External';
+      if (text.includes('directional')) return 'Directional';
+      return 'Other';
     }
 
     function slugify(value) {
@@ -206,19 +173,34 @@
 
     function buildFilterOptions() {
       renderCheckboxGroup('wifi-options', wifiOptions, 'wifi');
-      const featureSet = new Set();
-      enrichedData.forEach(ap => ap._featureList.forEach(feature => featureSet.add(feature)));
-      uniqueFeatures = Array.from(featureSet).sort((a, b) => a.localeCompare(b));
-      const featureOptions = uniqueFeatures.map(feature => ({ id: slugify(feature), value: feature, label: feature }));
-      renderCheckboxGroup('feature-options', featureOptions, 'features');
 
-      const antennaValues = collectUniqueValues('antenna_type');
-      renderCheckboxGroup('antenna-options', antennaValues.map(v => ({ id: slugify(v), value: v, label: v })), 'antenna');
+      const vendorOptions = collectUniqueValues('vendor').map(label => ({
+        id: slugify(label),
+        value: label,
+        label
+      }));
+      renderCheckboxGroup('vendor-options', vendorOptions, 'vendors');
 
-      const formValues = collectUniqueValues('form_factor');
-      renderCheckboxGroup('form-options', formValues.map(v => ({ id: slugify(v), value: v, label: v })), 'form');
+      const formValues = collectUniqueValues('form_factor').map(label => ({
+        id: slugify(label),
+        value: label,
+        label
+      }));
+      renderCheckboxGroup('form-options', formValues, 'form');
 
-      renderCheckboxGroup('poe-options', poeOptionsList.map(opt => ({ id: opt.id, value: opt.id, label: opt.label })), 'poe');
+      const antennaValues = Array.from(
+        new Set(
+          enrichedData
+            .map(entry => entry._antennaCategory)
+            .filter(label => label && label !== 'Other')
+        )
+      ).sort();
+      const antennaOptions = antennaValues.map(label => ({
+        id: slugify(label),
+        value: label,
+        label
+      }));
+      renderCheckboxGroup('antenna-options', antennaOptions, 'antenna');
 
       document.getElementById('results-note').textContent = 'Add filters to see matching APs.';
     }
@@ -278,23 +260,9 @@
           if (!entry._wifiFlags.has(need)) return false;
         }
       }
-      if (state.features.size) {
-        for (const feat of state.features) {
-          if (!entry._featureSet.has(feat)) return false;
-        }
-      }
-      if (state.antenna.size && !state.antenna.has(entry.antenna_type)) return false;
+      if (state.vendors.size && !state.vendors.has(entry.vendor)) return false;
       if (state.form.size && !state.form.has(entry.form_factor)) return false;
-      if (state.poe.size) {
-        let poeMatch = false;
-        for (const req of state.poe) {
-          if (entry._poeTokens.has(req)) {
-            poeMatch = true;
-            break;
-          }
-        }
-        if (!poeMatch) return false;
-      }
+      if (state.antenna.size && !state.antenna.has(entry._antennaCategory)) return false;
       return true;
     }
 
@@ -311,27 +279,39 @@
 
       matches.forEach(entry => {
         const card = document.createElement('article');
-        card.className = 'result-card';
+        card.className = 'result-card result-card--hero';
 
-        const header = document.createElement('div');
-        header.className = 'result-card-header';
+        const vendorChip = document.createElement('div');
+        vendorChip.className = 'vendor-chip';
+        vendorChip.textContent = entry.vendor || 'Vendor';
+
+        const heading = document.createElement('div');
+        heading.className = 'result-card-header';
         const title = document.createElement('h3');
-        title.textContent = `${entry.vendor || ''} ${entry.model || ''}`.trim();
+        title.textContent = entry.model || '';
         const wifi = document.createElement('p');
         wifi.className = 'result-wifi';
         wifi.textContent = entry.wifi_gen_radios || '';
-        header.appendChild(title);
-        header.appendChild(wifi);
-        card.appendChild(header);
+        heading.appendChild(title);
+        heading.appendChild(wifi);
+
+        const summary = document.createElement('p');
+        summary.className = 'result-summary';
+        summary.textContent = [
+          entry._antennaCategory || entry.antenna_type || '',
+          entry.form_factor || '',
+          entry.spatial_streams || ''
+        ]
+          .filter(Boolean)
+          .join(' • ');
 
         const meta = document.createElement('ul');
-        meta.className = 'result-meta';
+        meta.className = 'result-meta result-meta--wide';
         [
           { label: 'Min PoE', value: entry.min_poe_class },
           { label: 'Recommended PoE', value: entry.recommended_poe },
           { label: 'Ethernet', value: entry.ethernet_ports_speed },
-          { label: 'Antenna', value: entry.antenna_type },
-          { label: 'Form Factor', value: entry.form_factor },
+          { label: 'Behavior @ Min', value: entry.behavior_min_power },
           { label: 'MSRP', value: entry.msrp }
         ].forEach(item => {
           const li = document.createElement('li');
@@ -343,20 +323,6 @@
           li.appendChild(spanValue);
           meta.appendChild(li);
         });
-        card.appendChild(meta);
-
-        if (entry._featureList.length) {
-          const featureWrap = document.createElement('div');
-          featureWrap.className = 'result-features';
-          entry._featureList.forEach(feature => {
-            const tag = document.createElement('span');
-            tag.className = 'tag';
-            if (state.features.has(feature)) tag.classList.add('tag-highlight');
-            tag.textContent = feature;
-            featureWrap.appendChild(tag);
-          });
-          card.appendChild(featureWrap);
-        }
 
         const actions = document.createElement('div');
         actions.className = 'result-actions';
@@ -370,12 +336,17 @@
         datasheetLink.rel = 'noopener noreferrer';
         datasheetLink.className = 'btn-link btn-link-ghost';
         datasheetLink.textContent = 'Open datasheet';
+
         actions.appendChild(detailsLink);
         if (entry.datasheet_url) {
           actions.appendChild(datasheetLink);
         }
-        card.appendChild(actions);
 
+        card.appendChild(vendorChip);
+        card.appendChild(heading);
+        card.appendChild(summary);
+        card.appendChild(meta);
+        card.appendChild(actions);
         container.appendChild(card);
       });
     }
@@ -404,13 +375,9 @@
         const option = wifiOptions.find(opt => opt.id === value);
         return option ? option.label : value;
       });
-      pushChips('features', state.features);
+      pushChips('vendors', state.vendors);
       pushChips('antenna', state.antenna);
       pushChips('form', state.form);
-      pushChips('poe', state.poe, value => {
-        const opt = poeOptionsList.find(p => p.id === value);
-        return opt ? opt.label : value;
-      });
 
       if (!chips.length) {
         container.style.display = 'none';

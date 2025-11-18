@@ -769,6 +769,22 @@ td.behavior:hover::before {
   flex-direction: column;
   gap: 0.75rem;
 }
+.result-card--hero {
+  background: radial-gradient(circle at top, rgba(30, 64, 175, 0.25), rgba(2, 6, 23, 0.95));
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  box-shadow: 0 25px 45px rgba(15, 23, 42, 0.65);
+}
+.vendor-chip {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #bfdbfe;
+  border: 1px solid rgba(96, 165, 250, 0.5);
+}
 .result-card-header {
   display: flex;
   flex-direction: column;
@@ -783,6 +799,11 @@ td.behavior:hover::before {
   color: #9ca3af;
   font-size: 0.9rem;
 }
+.result-summary {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
 
 .result-meta {
   list-style: none;
@@ -792,6 +813,9 @@ td.behavior:hover::before {
   grid-template-columns: 1fr 1fr;
   gap: 0.4rem 0.75rem;
   font-size: 0.8rem;
+}
+.result-meta--wide {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
 .result-meta li {
   display: flex;
@@ -822,6 +846,9 @@ td.behavior:hover::before {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+.result-actions .btn-link {
+  border-radius: 0.6rem;
 }
 .btn-link-ghost {
   background: transparent;
