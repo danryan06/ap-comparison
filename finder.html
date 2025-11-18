@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AP Feature Finder | Enterprise AP Comparison Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header-with-logo">
+      <h1><a href="index.html">Enterprise AP Comparison Database</a></h1>
+      <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
+    </div>
+    <p class="subtitle">
+      Pick the Wi-Fi generation, IoT radios, and deployment requirements you need. We will filter the catalog to show only APs that
+      match every selected requirement.
+    </p>
+
+    <div class="actions">
+      <a class="btn-link" href="index.html">Back to Comparison Table</a>
+      <a class="btn-link" href="submit.html">Submit New AP</a>
+      <button id="clear-filters" type="button" class="btn-link">Reset Filters</button>
+    </div>
+
+    <div class="card finder-card">
+      <div class="badge">New</div>
+      <div class="finder-grid">
+        <section class="filter-panel">
+          <h2>1. Choose Your Requirements</h2>
+
+          <div class="filter-group">
+            <div class="filter-group-head">
+              <h3>Wi-Fi Generation &amp; Bands</h3>
+              <p>Select every generation you require; matches must support all selected items.</p>
+            </div>
+            <div id="wifi-options" class="chip-grid"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-head">
+              <h3>IoT &amp; Built-in Radios</h3>
+              <p>Need BLE, Zigbee, GPS, or sensors? Pick all that apply.</p>
+            </div>
+            <div id="feature-options" class="chip-grid"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-head">
+              <h3>Antenna &amp; Form Factor</h3>
+              <p>Filter for internal vs external antennas, or indoor vs outdoor SKUs.</p>
+            </div>
+            <div class="filter-subgroup">
+              <p class="filter-subgroup-title">Form Factor</p>
+              <div id="form-options" class="chip-grid chip-grid-tight"></div>
+            </div>
+            <div class="filter-subgroup">
+              <p class="filter-subgroup-title">Antenna Type</p>
+              <div id="antenna-options" class="chip-grid chip-grid-tight"></div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-head">
+              <h3>Power Budget</h3>
+              <p>Pick the highest PoE class you can deliver. Matches include any AP that can run at that class or better.</p>
+            </div>
+            <div id="poe-options" class="chip-grid chip-grid-tight"></div>
+          </div>
+        </section>
+
+        <section class="results-panel">
+          <div class="results-header">
+            <div>
+              <h2>2. Review Matching APs</h2>
+              <p class="results-note" id="results-note">Loading data…</p>
+            </div>
+            <div class="match-count" id="match-count">—</div>
+          </div>
+
+          <div id="active-filters" class="active-filters" style="display:none;"></div>
+
+          <div id="results" class="results-grid"></div>
+          <div id="empty-state" class="empty-state" style="display:none;">
+            <p>No APs match every selected requirement.</p>
+            <p>Try removing one filter at a time to widen the results.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DATA_URL = 'ap_data.json';
+    const wifiOptions = [
+      { id: 'wifi7', label: 'Wi-Fi 7 (2.4/5/6 GHz)' },
+      { id: 'wifi6e', label: 'Wi-Fi 6E (2.4/5/6 GHz)' },
+      { id: 'wifi6', label: 'Wi-Fi 6 (2.4/5 GHz)' }
+    ];
+    const poeOptionsList = [
+      { id: '802.3af', label: 'Runs on 802.3af (Class 3)' },
+      { id: '802.3at', label: 'Runs on/needs 802.3at (Class 4)' },
+      { id: '802.3bt', label: 'Requires/supports 802.3bt' }
+    ];
+
+    const state = {
+      wifi: new Set(),
+      features: new Set(),
+      antenna: new Set(),
+      form: new Set(),
+      poe: new Set()
+    };
+
+    let enrichedData = [];
+    let uniqueFeatures = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
+      loadData();
+    });
+
+    async function loadData() {
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const raw = await res.json();
+        enrichedData = raw.map(enrichEntry);
+        buildFilterOptions();
+        applyFilters();
+      } catch (err) {
+        console.error('Failed to load data', err);
+        document.getElementById('results-note').textContent = 'Unable to load AP data.';
+      }
+    }
+
+    function enrichEntry(entry) {
+      const featureList = normalizeFeatures(entry.radios_iot_features);
+      return Object.assign({}, entry, {
+        _slug: slugFor(entry),
+        _wifiFlags: deriveWifiFlags(entry.wifi_gen_radios),
+        _featureList: featureList,
+        _featureSet: new Set(featureList),
+        _poeTokens: derivePoeTokens(entry.min_poe_class)
+      });
+    }
+
+    function normalizeFeatures(value) {
+      if (!value) return [];
+      if (Array.isArray(value)) {
+        return value.map(v => String(v).trim()).filter(Boolean);
+      }
+      if (typeof value === 'string') {
+        return value.split(',').map(v => v.trim()).filter(Boolean);
+      }
+      return [];
+    }
+
+    function deriveWifiFlags(value) {
+      const flags = new Set();
+      const text = String(value || '').toLowerCase();
+      if (text.includes('wi-fi 7')) {
+        flags.add('wifi7');
+        flags.add('wifi6e');
+        flags.add('wifi6');
+      }
+      if (text.includes('wi-fi 6e')) {
+        flags.add('wifi6e');
+        flags.add('wifi6');
+      } else if (text.includes('wi-fi 6')) {
+        flags.add('wifi6');
+      }
+      if (text.includes('wi-fi 5')) {
+        flags.add('wifi5');
+      }
+      return flags;
+    }
+
+    function derivePoeTokens(value) {
+      const tokens = new Set();
+      const text = String(value || '').toLowerCase();
+      if (text.includes('802.3af')) tokens.add('802.3af');
+      if (text.includes('802.3at')) tokens.add('802.3at');
+      if (text.includes('802.3bt')) tokens.add('802.3bt');
+      return tokens;
+    }
+
+    function slugify(value) {
+      return String(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function slugFor(entry) {
+      return slugify(`${entry.vendor || ''}-${entry.model || ''}`);
+    }
+
+    function escapeAttrValue(value) {
+      if (window.CSS && typeof window.CSS.escape === 'function') {
+        return window.CSS.escape(value);
+      }
+      return String(value).replace(/"/g, '\\"');
+    }
+
+    function buildFilterOptions() {
+      renderCheckboxGroup('wifi-options', wifiOptions, 'wifi');
+      const featureSet = new Set();
+      enrichedData.forEach(ap => ap._featureList.forEach(feature => featureSet.add(feature)));
+      uniqueFeatures = Array.from(featureSet).sort((a, b) => a.localeCompare(b));
+      const featureOptions = uniqueFeatures.map(feature => ({ id: slugify(feature), value: feature, label: feature }));
+      renderCheckboxGroup('feature-options', featureOptions, 'features');
+
+      const antennaValues = collectUniqueValues('antenna_type');
+      renderCheckboxGroup('antenna-options', antennaValues.map(v => ({ id: slugify(v), value: v, label: v })), 'antenna');
+
+      const formValues = collectUniqueValues('form_factor');
+      renderCheckboxGroup('form-options', formValues.map(v => ({ id: slugify(v), value: v, label: v })), 'form');
+
+      renderCheckboxGroup('poe-options', poeOptionsList.map(opt => ({ id: opt.id, value: opt.id, label: opt.label })), 'poe');
+
+      document.getElementById('results-note').textContent = 'Add filters to see matching APs.';
+    }
+
+    function collectUniqueValues(key) {
+      const set = new Set();
+      enrichedData.forEach(entry => {
+        const value = (entry[key] || '').trim();
+        if (value) set.add(value);
+      });
+      return Array.from(set).sort((a, b) => a.localeCompare(b));
+    }
+
+    function renderCheckboxGroup(targetId, options, type) {
+      const container = document.getElementById(targetId);
+      container.innerHTML = '';
+      options.forEach(option => {
+        const id = `${type}-${option.id || slugify(option.value || option.label)}`;
+        const label = document.createElement('label');
+        label.className = 'chip-option';
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = id;
+        input.dataset.filterType = type;
+        input.dataset.filterValue = option.value || option.id;
+        input.addEventListener('change', () => toggleSelection(type, input.dataset.filterValue, input.checked));
+        const span = document.createElement('span');
+        span.textContent = option.label;
+        label.appendChild(input);
+        label.appendChild(span);
+        container.appendChild(label);
+      });
+    }
+
+    function toggleSelection(type, value, checked) {
+      const targetSet = state[type];
+      if (!targetSet) return;
+      if (checked) targetSet.add(value);
+      else targetSet.delete(value);
+      applyFilters();
+    }
+
+    function applyFilters() {
+      if (!enrichedData.length) return;
+      const matches = enrichedData.filter(entry => matchesFilters(entry));
+      renderActiveFilters();
+      renderResults(matches);
+      updateMatchCount(matches.length);
+      document.getElementById('results-note').textContent = matches.length
+        ? 'Showing APs that meet every selected requirement.'
+        : 'No matches yet — broaden your filters.';
+    }
+
+    function matchesFilters(entry) {
+      if (state.wifi.size) {
+        for (const need of state.wifi) {
+          if (!entry._wifiFlags.has(need)) return false;
+        }
+      }
+      if (state.features.size) {
+        for (const feat of state.features) {
+          if (!entry._featureSet.has(feat)) return false;
+        }
+      }
+      if (state.antenna.size && !state.antenna.has(entry.antenna_type)) return false;
+      if (state.form.size && !state.form.has(entry.form_factor)) return false;
+      if (state.poe.size) {
+        let poeMatch = false;
+        for (const req of state.poe) {
+          if (entry._poeTokens.has(req)) {
+            poeMatch = true;
+            break;
+          }
+        }
+        if (!poeMatch) return false;
+      }
+      return true;
+    }
+
+    function renderResults(matches) {
+      const container = document.getElementById('results');
+      const emptyState = document.getElementById('empty-state');
+      container.innerHTML = '';
+
+      if (matches.length === 0) {
+        emptyState.style.display = 'block';
+        return;
+      }
+      emptyState.style.display = 'none';
+
+      matches.forEach(entry => {
+        const card = document.createElement('article');
+        card.className = 'result-card';
+
+        const header = document.createElement('div');
+        header.className = 'result-card-header';
+        const title = document.createElement('h3');
+        title.textContent = `${entry.vendor || ''} ${entry.model || ''}`.trim();
+        const wifi = document.createElement('p');
+        wifi.className = 'result-wifi';
+        wifi.textContent = entry.wifi_gen_radios || '';
+        header.appendChild(title);
+        header.appendChild(wifi);
+        card.appendChild(header);
+
+        const meta = document.createElement('ul');
+        meta.className = 'result-meta';
+        [
+          { label: 'Min PoE', value: entry.min_poe_class },
+          { label: 'Recommended PoE', value: entry.recommended_poe },
+          { label: 'Ethernet', value: entry.ethernet_ports_speed },
+          { label: 'Antenna', value: entry.antenna_type },
+          { label: 'Form Factor', value: entry.form_factor },
+          { label: 'MSRP', value: entry.msrp }
+        ].forEach(item => {
+          const li = document.createElement('li');
+          const spanLabel = document.createElement('span');
+          spanLabel.textContent = item.label;
+          const spanValue = document.createElement('strong');
+          spanValue.textContent = item.value || '—';
+          li.appendChild(spanLabel);
+          li.appendChild(spanValue);
+          meta.appendChild(li);
+        });
+        card.appendChild(meta);
+
+        if (entry._featureList.length) {
+          const featureWrap = document.createElement('div');
+          featureWrap.className = 'result-features';
+          entry._featureList.forEach(feature => {
+            const tag = document.createElement('span');
+            tag.className = 'tag';
+            if (state.features.has(feature)) tag.classList.add('tag-highlight');
+            tag.textContent = feature;
+            featureWrap.appendChild(tag);
+          });
+          card.appendChild(featureWrap);
+        }
+
+        const actions = document.createElement('div');
+        actions.className = 'result-actions';
+        const detailsLink = document.createElement('a');
+        detailsLink.href = `ap.html?id=${encodeURIComponent(entry._slug)}`;
+        detailsLink.className = 'btn-link btn-link-ghost';
+        detailsLink.textContent = 'View full specs';
+        const datasheetLink = document.createElement('a');
+        datasheetLink.href = entry.datasheet_url || '#';
+        datasheetLink.target = '_blank';
+        datasheetLink.rel = 'noopener noreferrer';
+        datasheetLink.className = 'btn-link btn-link-ghost';
+        datasheetLink.textContent = 'Open datasheet';
+        actions.appendChild(detailsLink);
+        if (entry.datasheet_url) {
+          actions.appendChild(datasheetLink);
+        }
+        card.appendChild(actions);
+
+        container.appendChild(card);
+      });
+    }
+
+    function updateMatchCount(count) {
+      const el = document.getElementById('match-count');
+      el.textContent = count === 0 ? '0 matches' : `${count} match${count === 1 ? '' : 'es'}`;
+    }
+
+    function renderActiveFilters() {
+      const container = document.getElementById('active-filters');
+      container.innerHTML = '';
+      const chips = [];
+
+      function pushChips(type, values, formatter) {
+        values.forEach(value => {
+          chips.push({
+            type,
+            value,
+            label: formatter ? formatter(value) : value
+          });
+        });
+      }
+
+      pushChips('wifi', state.wifi, value => {
+        const option = wifiOptions.find(opt => opt.id === value);
+        return option ? option.label : value;
+      });
+      pushChips('features', state.features);
+      pushChips('antenna', state.antenna);
+      pushChips('form', state.form);
+      pushChips('poe', state.poe, value => {
+        const opt = poeOptionsList.find(p => p.id === value);
+        return opt ? opt.label : value;
+      });
+
+      if (!chips.length) {
+        container.style.display = 'none';
+        return;
+      }
+
+      container.style.display = 'flex';
+      chips.forEach(chip => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'active-filter-chip';
+        btn.textContent = chip.label;
+        btn.addEventListener('click', () => removeFilter(chip.type, chip.value));
+        container.appendChild(btn);
+      });
+    }
+
+    function removeFilter(type, value) {
+      const set = state[type];
+      if (!set) return;
+      set.delete(value);
+      const selector = `input[data-filter-type="${type}"][data-filter-value="${escapeAttrValue(value)}"]`;
+      const input = document.querySelector(selector);
+      if (input) input.checked = false;
+      applyFilters();
+    }
+
+    function clearAllFilters() {
+      Object.keys(state).forEach(key => state[key].clear());
+      document.querySelectorAll('input[data-filter-type]').forEach(input => {
+        input.checked = false;
+      });
+      applyFilters();
+    }
+  </script>
+</body>
+</html>
+
