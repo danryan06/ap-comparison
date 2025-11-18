@@ -229,17 +229,6 @@ tbody tr:hover {
   background: rgba(15, 23, 42, 0.3) !important;
 }
 
-tbody tr:hover::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
-  border-radius: 0 2px 2px 0;
-}
-
 /* Vendor column tweaks */
 td.vendor {
   white-space: nowrap;
