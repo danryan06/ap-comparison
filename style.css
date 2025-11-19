@@ -892,25 +892,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   resize: vertical;
 }
 
-/* Filters/search controls on index page */
-.search-input {
-  min-width: 220px;
-  flex: 1 1 260px;
-  border-radius: 999px;
-  border: 1px solid #374151;
-  background: #020617;
-  color: #e5e7eb;
-  padding: 0.45rem 0.75rem;
-}
-
-.filter-select {
-  border-radius: 999px;
-  border: 1px solid #374151;
-  background: #020617;
-  color: #e5e7eb;
-  padding: 0.45rem 0.6rem;
-  font-size: 0.9rem;
-}
+/* Generic search-input and filter-select rules removed - filter-bar uses specific styles */
 
 /* Columns chooser panel */
 .columns-panel {
@@ -1717,9 +1699,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 /* Search Box */
 .search-wrapper {
   position: relative;
-  flex: 0 1 300px;
-  min-width: 200px;
-  max-width: 300px;
+  flex: 1 1 auto;
+  min-width: 220px;
+  max-width: none;
 }
 
 .search-icon {
@@ -1766,6 +1748,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .filter-bar .filter-group {
   margin-left: 0; /* gap handles spacing now */
+  flex-shrink: 0; /* prevent dropdowns from shrinking onto search */
 }
 
 .filter-select {
@@ -1804,6 +1787,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   align-items: center;
   gap: 8px;
   margin-left: auto;
+  flex-shrink: 0; /* prevent action buttons from shrinking onto search */
 }
 
 .btn-filter-action {
