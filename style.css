@@ -1118,7 +1118,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   gap: 1rem;
 }
 
-.filter-group {
+.filter-panel .filter-group {
   background: transparent;
   border: none;
   border-bottom: 1px solid rgba(148, 163, 184, 0.1);
@@ -1127,11 +1127,11 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   box-shadow: none;
 }
 
-.filter-group:last-child {
+.filter-panel .filter-group:last-child {
   border-bottom: none;
 }
 
-.filter-group-head h3 {
+.filter-panel .filter-group-head h3 {
   margin: 0 0 0.75rem 0;
   font-size: 0.9rem;
   font-weight: 600;
@@ -1139,7 +1139,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.filter-group-head p {
+.filter-panel .filter-group-head p {
   margin: 0.25rem 0 0;
   font-size: 0.8rem;
   color: #94a3b8;
@@ -1699,9 +1699,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 /* Search Box */
 .search-wrapper {
   position: relative;
-  flex: 0 0 320px;
-  min-width: 260px;
-  max-width: 360px;
+  flex: 0 0 280px;
+  min-width: 240px;
+  max-width: 280px;
 }
 
 .search-icon {
@@ -1748,8 +1748,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .filter-bar .filter-group {
   margin-left: 0;
-  border-bottom: none;
-  padding-bottom: 0;   /* optional, tightens spacing a bit */
+  flex-shrink: 0;
 }
 
 .filter-select {
@@ -1862,7 +1861,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
     width: 100%;
   }
   
-  .filter-group {
+  .filter-bar .filter-group {
     width: 100%;
     margin-left: 0; /* reset alignment when stacked */
   }
@@ -1902,7 +1901,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
     justify-content: center;
   }
   
-  .filter-group {
+  .filter-bar .filter-group {
     flex-direction: column;
     gap: 8px;
   }
