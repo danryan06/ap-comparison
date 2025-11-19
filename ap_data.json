@@ -568,7 +568,7 @@
     "form_factor": "Outdoor",
     "dimensions": "10.15 x 8.50 x 2.26 inches (258 x 216 x 57.3 mm)",
     "weight": "3.05 lbs (1.38 kg)",
-    "antenna_connectors": "None (internal ruggedized antennas)",
+    "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40\u00b0F to 140\u00b0F (-40\u00b0C to 60\u00b0C) operating; -58\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
