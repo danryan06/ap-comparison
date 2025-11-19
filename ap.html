@@ -11,9 +11,8 @@
   <div class="container">
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
+      <a id="edit-link" class="btn-link" href="#" style="display:none;">Edit AP Information</a>
       <button id="export-csv" type="button" class="btn-link">Export CSV</button>
-      <a id="datasheet-link" class="btn-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Open Datasheet</a>
-      <a id="install-guide-link" class="btn-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Install Guide</a>
     </div>
 
     <div class="card">
@@ -32,6 +31,8 @@
       <div id="details" class="kv-grid"></div>
 
       <div id="error-message" class="error" style="display:none;"></div>
+
+      <div id="card-actions" class="card-actions" style="display:none;"></div>
     </div>
   </div>
 
@@ -137,8 +138,8 @@
       const imageWrapper = document.getElementById('image-container');
       const imageEl = document.getElementById('ap-image');
       const backEl = document.getElementById('back-link');
-      const datasheetLinkEl = document.getElementById('datasheet-link');
-      const installGuideLinkEl = document.getElementById('install-guide-link');
+      const editLinkEl = document.getElementById('edit-link');
+      const cardActionsEl = document.getElementById('card-actions');
 
       try {
         const res = await fetch(DATA_URL, { cache: 'no-store' });
@@ -159,6 +160,11 @@
         titleHeaderEl.textContent = titleText;
         subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
 
+        // Set up edit link
+        const entrySlug = slugify(`${entry.vendor} ${entry.model}`);
+        editLinkEl.href = `edit.html?id=${encodeURIComponent(entrySlug)}`;
+        editLinkEl.style.display = 'inline-flex';
+
         // Handle image, if present
         const imgUrl = entry.image_url || '';
         if (imgUrl) {
@@ -172,14 +178,34 @@
           imageWrapper.style.display = 'none';
         }
 
-        // Handle datasheet and install guide buttons
+        // Handle datasheet and install guide buttons at bottom
+        cardActionsEl.innerHTML = '';
+        let hasActions = false;
+        
         if (entry.datasheet_url) {
-          datasheetLinkEl.href = entry.datasheet_url;
-          datasheetLinkEl.style.display = 'inline-flex';
+          const datasheetBtn = document.createElement('a');
+          datasheetBtn.href = entry.datasheet_url;
+          datasheetBtn.target = '_blank';
+          datasheetBtn.rel = 'noopener noreferrer';
+          datasheetBtn.className = 'btn-secondary';
+          datasheetBtn.textContent = 'Datasheet';
+          cardActionsEl.appendChild(datasheetBtn);
+          hasActions = true;
         }
+        
         if (entry.install_guide_url) {
-          installGuideLinkEl.href = entry.install_guide_url;
-          installGuideLinkEl.style.display = 'inline-flex';
+          const installGuideBtn = document.createElement('a');
+          installGuideBtn.href = entry.install_guide_url;
+          installGuideBtn.target = '_blank';
+          installGuideBtn.rel = 'noopener noreferrer';
+          installGuideBtn.className = 'btn-secondary';
+          installGuideBtn.textContent = 'Install Guide';
+          cardActionsEl.appendChild(installGuideBtn);
+          hasActions = true;
+        }
+        
+        if (hasActions) {
+          cardActionsEl.style.display = 'flex';
         }
 
         detailsEl.innerHTML = '';
