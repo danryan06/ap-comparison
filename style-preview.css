@@ -1986,24 +1986,42 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
     -webkit-overflow-scrolling: touch;
   }
   
+  /* Table font sizes - MORE SPECIFIC with font boosting prevention */
   table {
     font-size: 11px;
     width: max-content; /* Allow table to be wider than container */
     min-width: 100%;
     display: table; /* Keep as table, don't change to block */
     border-collapse: collapse;
+    text-size-adjust: none; /* Prevent browser font boosting */
+    -webkit-text-size-adjust: none; /* Safari */
+    -moz-text-size-adjust: none; /* Firefox */
   }
   
-  th, td {
+  /* Apply consistent font size to ALL cells */
+  table th,
+  table td {
     padding: 10px 8px;
-    font-size: 11px;
-    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 11px !important;
+    white-space: nowrap;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
   }
   
-  /* Explicitly ensure Recommended PoE column matches font size */
+  /* Remove any inherited font-size overrides on specific columns */
+  table th:nth-child(5),
+  table td:nth-child(5),
   table th:nth-child(6),
   table td:nth-child(6) {
     font-size: 11px !important;
+    width: auto; /* Don't use fixed widths that might cause scaling */
+  }
+  
+  /* Ensure PoE class columns don't word-break differently */
+  table td:nth-child(5),
+  table td:nth-child(6) {
+    white-space: nowrap !important;
+    word-break: normal !important;
   }
   
   /* Sticky first two columns - CORRECTED */
@@ -2265,18 +2283,33 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   
   table {
     font-size: 10px;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
   }
   
-  th, td {
+  table th,
+  table td {
     padding: 8px 6px;
-    font-size: 10px;
-    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 10px !important;
+    white-space: nowrap;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
   }
   
-  /* Explicitly ensure Recommended PoE column matches font size on small screens */
+  /* Ensure PoE columns match the rest */
+  table th:nth-child(5),
+  table td:nth-child(5),
   table th:nth-child(6),
   table td:nth-child(6) {
     font-size: 10px !important;
+    width: auto; /* Don't use fixed widths that might cause scaling */
+  }
+  
+  /* Ensure PoE class columns don't word-break differently */
+  table td:nth-child(5),
+  table td:nth-child(6) {
+    white-space: nowrap !important;
+    word-break: normal !important;
   }
   
   /* Make sticky columns narrower on very small screens */
