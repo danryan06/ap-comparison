@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enterprise AP Comparison Database (Preview)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="preview-badge-header">PREVIEW MODE</div>
+  <header class="site-header">
+    <div class="header-content">
+      <!-- Logo Section -->
+      <div class="header-left">
+        <a href="index-preview.html" class="site-logo-link">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            <circle cx="12" cy="14" r="2"/>
+          </svg>
+          <span class="logo-text">AP Comparison</span>
+        </a>
+      </div>
+      
+      <!-- Navigation Section -->
+      <nav class="header-nav">
+        <a href="index-preview.html" class="nav-link active" data-page="index">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/>
+            <line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+          <span>Browse</span>
+        </a>
+        
+        <a href="finder-preview.html" class="nav-link" data-page="finder">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+          <span>Finder</span>
+        </a>
+        
+        <a href="compare-preview.html" class="nav-link" data-page="compare">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20V10"/>
+            <path d="M12 20V4"/>
+            <path d="M6 20v-6"/>
+          </svg>
+          <span>Compare</span>
+        </a>
+        
+        <a href="submit.html" class="nav-link nav-link-accent" data-page="submit">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          <span>Submit AP</span>
+        </a>
+      </nav>
+      
+      <!-- Utility Icons Section -->
+      <div class="header-right">
+        <a href="data_issues.html" class="icon-button" aria-label="Data Quality Dashboard" title="Data Quality">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </a>
+        
+        <a href="https://github.com/danryan06/ap-comparison" target="_blank" rel="noopener noreferrer" class="icon-button" aria-label="View on GitHub" title="GitHub Repository">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="margin-top: 24px;">
+  <p class="subtitle">Explore, filter, and compare enterprise access points.</p>
+  <div class="actions">
+    <a class="btn-link" href="submit.html">Submit New AP</a>
+    <a class="btn-link" href="edit.html">Edit Existing AP Information</a>
+    <a class="btn-link" href="finder-preview.html">Feature Finder</a>
+    <input id="search" class="search-input" type="search" placeholder="Search vendor, model, features, PoE…" />
+    <select id="filter-vendor" class="filter-select" title="Filter by vendor">
+      <option value="">All Vendors</option>
+    </select>
+    <select id="filter-antenna" class="filter-select" title="Filter by antenna type">
+      <option value="">All Antenna Types</option>
+      <option>Internal</option>
+      <option>External</option>
+      <option>Directional</option>
+    </select>
+    <select id="filter-form" class="filter-select" title="Filter by form factor">
+      <option value="">All Form Factors</option>
+      <option>Indoor</option>
+      <option>Outdoor</option>
+      <option>Wallplate</option>
+    </select>
+    <button id="toggle-columns" type="button" class="btn-link">Choose Columns</button>
+    <button id="reset-btn" type="button" class="btn-link">Reset</button>
+  </div>
+
+    <div id="columns-panel" class="columns-panel">
+      <h3>Show/Hide Columns</h3>
+      <div id="columns-grid" class="columns-grid"></div>
+      <div style="margin-top:0.5rem; display:flex; justify-content:flex-end;">
+        <button id="reset-layout-btn" type="button" class="btn-link">Reset Layout</button>
+      </div>
+  </div>
+
+    <div class="card">
+      <span class="badge">Community-maintained</span>
+
+      <table>
+        <thead>
+          <tr>
+            <th class="sortable" data-key="vendor">Vendor</th>
+            <th class="sortable" data-key="model">Model</th>
+            <th class="sortable" data-key="wifi_gen_radios" data-tooltip="Wi-Fi generation (6, 6E, or 7) and supported frequency bands">Wi-Fi Gen &amp; Radios</th>
+            <th class="sortable" data-key="spatial_streams" data-tooltip="Number of spatial streams for each band. Format: 2.4GHz / 5GHz / 6GHz (e.g., 4x4 / 4x4 / 4x4 means 4 streams on each band)">Spatial Streams<br>(2.4 / 5 / 6 GHz)</th>
+            <th class="sortable" data-key="min_poe_class" data-tooltip="Minimum Power over Ethernet class required for basic operation">Min PoE Class</th>
+            <th class="sortable" data-key="recommended_poe" data-tooltip="Recommended PoE class for full feature operation">Recommended PoE</th>
+            <th class="sortable" data-key="behavior_min_power" data-tooltip="How the AP behaves when powered at minimum PoE class">Behavior at Min Power</th>
+            <th class="sortable" data-key="ethernet_ports_speed" data-tooltip="Ethernet port count and maximum speeds">Ethernet Ports &amp; Speed</th>
+            <th class="sortable" data-key="radios_iot_features" data-tooltip="Additional radios and IoT features (Bluetooth, Zigbee, GPS, etc.)">Radios &amp; IoT Features</th>
+            <th class="sortable" data-key="antenna_type" data-tooltip="Internal, external, or directional antenna configuration">Antenna Type</th>
+            <th class="sortable" data-key="form_factor" data-tooltip="Deployment type: Indoor, Outdoor, or Wallplate">Form Factor</th>
+            <th class="sortable" data-key="dimensions">Dimensions</th>
+            <th class="sortable" data-key="weight">Weight</th>
+            <th class="sortable" data-key="antenna_connectors" data-tooltip="Type and count of antenna connectors (if external antennas)">Antenna Connectors</th>
+            <th class="sortable" data-key="operating_temp_range" data-tooltip="Operating and storage temperature ranges">Operating Temp Range</th>
+            <th class="sortable" data-key="msrp">MSRP</th>
+          </tr>
+        </thead>
+        <tbody id="ap-table-body">
+          <!-- Rows will be populated dynamically from ap_data.json -->
+        </tbody>
+      </table>
+
+      <div id="error-message" class="error" style="display:none;"></div>
+
+      <div class="footer">
+        Maintained by Dan Ryan. To add a new AP or request an edit, use the buttons above.
+        <a href="data_issues.html" class="footer-link footer-right" title="Data Quality">Data Quality</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <header>
+        <h2 id="modal-title">AP Details</h2>
+        <button id="modal-close" class="modal-close" type="button">Close</button>
+      </header>
+      <div id="modal-body" class="kv-grid"></div>
+    </div>
+  </div>
+
+  <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button">Compare (0)</button>
+
+  <script>
+    // Path to the data file in your repo root
+    const DATA_URL = 'ap_data.json';
+
+    let apData = [];
+    let currentQuery = '';
+    const currentFilters = { vendor: '', antenna: '', form: '' };
+    let currentSort = { key: 'vendor', dir: 'asc' };
+    function defaultHiddenColumns() {
+      return new Set(['dimensions','weight','antenna_connectors','operating_temp_range','behavior_min_power']);
+    }
+    const hiddenColumns = defaultHiddenColumns(); // keys to hide by default
+    const selectedIds = new Set(); // slug ids of selected rows
+
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    function populateFilters() {
+      const vendorSelect = document.getElementById('filter-vendor');
+      const vendors = Array.from(new Set(apData.map(e => e.vendor).filter(Boolean))).sort((a, b) =>
+        a.localeCompare(b)
+      );
+      // Clear all except first option
+      while (vendorSelect.options.length > 1) vendorSelect.remove(1);
+      vendors.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v;
+        opt.textContent = v;
+        vendorSelect.appendChild(opt);
+      });
+    }
+
+    function updateSortIndicators() {
+      const ths = document.querySelectorAll('th.sortable');
+      ths.forEach(th => {
+        if (th.dataset.key === currentSort.key) {
+          th.setAttribute('data-dir', currentSort.dir);
+        } else {
+          th.removeAttribute('data-dir');
+        }
+      });
+    }
+
+    function getColumnsFromHeader() {
+      const ths = Array.from(document.querySelectorAll('thead th'));
+      return ths.map((th, idx) => ({
+        key: th.dataset.key || `col_${idx+1}`,
+        label: th.innerText.replace(/\\s+/g, ' ').trim(),
+        index: idx
+      }));
+    }
+
+    function buildColumnsPanel() {
+      const grid = document.getElementById('columns-grid');
+      grid.innerHTML = '';
+      const columns = getColumnsFromHeader();
+      columns.forEach(col => {
+        const lock = col.key === 'vendor' || col.key === 'model';
+        const id = `colchk_${col.key}`;
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = id;
+        input.checked = !hiddenColumns.has(col.key) || lock;
+        input.disabled = lock;
+        input.addEventListener('change', () => {
+          if (input.checked) hiddenColumns.delete(col.key);
+          else hiddenColumns.add(col.key);
+          applyColumnVisibility();
+          updateUrl();
+        });
+        const span = document.createElement('span');
+        span.textContent = col.label;
+        label.appendChild(input);
+        label.appendChild(span);
+        grid.appendChild(label);
+      });
+    }
+
+    function applyColumnVisibility() {
+      const columns = getColumnsFromHeader();
+      const table = document.querySelector('table');
+      const rows = Array.from(table.querySelectorAll('tr'));
+      columns.forEach((col, i) => {
+        const hide = hiddenColumns.has(col.key) && !(col.key === 'vendor' || col.key === 'model');
+        rows.forEach(row => {
+          const cells = row.children;
+          if (cells[i]) {
+            cells[i].style.display = hide ? 'none' : '';
+          }
+        });
+      });
+      updateSortIndicators();
+    }
+
+    function saveLayout() {
+      const ths = Array.from(document.querySelectorAll('thead th'));
+      const order = ths.map(th => th.dataset.key || '');
+      const widths = {};
+      ths.forEach((th) => {
+        const key = th.dataset.key || '';
+        const w = th.style.width || '';
+        if (key) widths[key] = w;
+      });
+      localStorage.setItem('apTable.colOrder', JSON.stringify(order));
+      localStorage.setItem('apTable.colWidths', JSON.stringify(widths));
+    }
+
+    function loadLayout() {
+      const headerRow = document.querySelector('thead tr');
+      if (!headerRow) return;
+      const storedOrder = JSON.parse(localStorage.getItem('apTable.colOrder') || '[]');
+      const storedWidths = JSON.parse(localStorage.getItem('apTable.colWidths') || '{}');
+      if (Array.isArray(storedOrder) && storedOrder.length > 0) {
+        const map = {};
+        Array.from(headerRow.children).forEach(th => { map[th.dataset.key || ''] = th; });
+        storedOrder.forEach(key => {
+          const th = map[key];
+          if (th) headerRow.appendChild(th);
+        });
+      }
+      const ths = Array.from(headerRow.children);
+      ths.forEach((th, index) => {
+        const key = th.dataset.key || '';
+        const w = storedWidths[key];
+        if (w) {
+          th.style.width = w;
+          const tbody = document.querySelector('tbody');
+          if (tbody) {
+            Array.from(tbody.rows).forEach(row => {
+              const cell = row.children[index];
+              if (cell) cell.style.width = w;
+            });
+          }
+        }
+      });
+      applyColumnOrderFromHeader();
+    }
+
+    function applyColumnOrderFromHeader() {
+      const headerRow = document.querySelector('thead tr');
+      if (!headerRow) return;
+      const ths = Array.from(headerRow.children);
+      const order = ths.map((th, idx) => idx);
+      // Build mapping from current displayed index to actual index by reading header positions
+      const headerOrder = ths.map((_, newIdx) => {
+        return ths.findIndex(th => th.cellIndex === newIdx);
+      });
+      // If cellIndex doesn't reflect new DOM order in some browsers, fallback to DOM order
+      const actualOrder = ths.map((_, i) => i);
+      const useDomOrder = true;
+      const colOrder = useDomOrder ? actualOrder : headerOrder;
+      const tbody = document.querySelector('tbody');
+      if (!tbody) return;
+      Array.from(tbody.rows).forEach(row => {
+        const cells = Array.from(row.children);
+        const reordered = colOrder.map(i => cells[i]);
+        reordered.forEach(cell => row.appendChild(cell));
+      });
+    }
+
+    let isResizing = false;
+
+    function initColumnResizersAndDnD() {
+      const headerRow = document.querySelector('thead tr');
+      if (!headerRow) return;
+      const ths = Array.from(headerRow.querySelectorAll('th'));
+      // Add resizers
+      ths.forEach((th, index) => {
+        // Avoid duplicate resizers
+        if (!th.querySelector('.col-resizer')) {
+          const resizer = document.createElement('span');
+          resizer.className = 'col-resizer';
+          th.appendChild(resizer);
+          let startX, startWidth;
+          const onMouseMove = (e) => {
+            const delta = e.clientX - startX;
+            const newWidth = Math.max(60, startWidth + delta); // min width
+            th.style.width = newWidth + 'px';
+            th.style.minWidth = newWidth + 'px';
+            // Apply to all cells in this column
+            const tbody = document.querySelector('tbody');
+            if (tbody) {
+              const colIndex = Array.from(th.parentNode.children).indexOf(th);
+              Array.from(tbody.rows).forEach(row => {
+                const cell = row.children[colIndex];
+                if (cell) {
+                  cell.style.width = newWidth + 'px';
+                  cell.style.minWidth = newWidth + 'px';
+                }
+              });
+            }
+          };
+          let blockDragStart;
+          const onMouseUp = () => {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+            document.removeEventListener('dragstart', blockDragStart, true);
+            isResizing = false;
+            th.draggable = true;
+            saveLayout();
+          };
+          resizer.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            startX = e.clientX;
+            startWidth = th.getBoundingClientRect().width;
+            isResizing = true;
+            th.draggable = false;
+            blockDragStart = (ev) => { ev.preventDefault(); };
+            document.addEventListener('dragstart', blockDragStart, true);
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+          });
+        }
+        // Enable drag & drop reordering
+        th.setAttribute('draggable', 'true');
+        th.addEventListener('dragstart', (e) => {
+          if (isResizing) { e.preventDefault(); return; }
+          const currentIndex = Array.from(th.parentNode.children).indexOf(th);
+          e.dataTransfer.setData('text/plain', String(currentIndex));
+        });
+        th.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          const rect = th.getBoundingClientRect();
+          const halfway = rect.left + rect.width / 2;
+          th.classList.toggle('drag-over-left', e.clientX < halfway);
+          th.classList.toggle('drag-over-right', e.clientX >= halfway);
+        });
+        th.addEventListener('dragleave', () => {
+          th.classList.remove('drag-over-left', 'drag-over-right');
+        });
+        th.addEventListener('drop', (e) => {
+          e.preventDefault();
+          const srcIndex = parseInt(e.dataTransfer.getData('text/plain'), 10);
+          const srcTh = ths[srcIndex];
+          const rect = th.getBoundingClientRect();
+          const after = e.clientX >= rect.left + rect.width / 2;
+          th.classList.remove('drag-over-left', 'drag-over-right');
+          if (srcTh && srcTh !== th) {
+            if (after) {
+              th.parentNode.insertBefore(srcTh, th.nextSibling);
+            } else {
+              th.parentNode.insertBefore(srcTh, th);
+            }
+            // Update local ths array reference
+            ths.splice(ths.indexOf(srcTh), 1);
+            const newIndex = Array.from(th.parentNode.children).indexOf(srcTh);
+            ths.splice(newIndex, 0, srcTh);
+            applyColumnOrderFromHeader();
+            saveLayout();
+          }
+        });
+      });
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('ap-table-body');
+      const errorEl = document.getElementById('error-message');
+
+      // filter data
+      const q = currentQuery.trim().toLowerCase();
+      const filtered = apData.filter(entry => {
+        if (currentFilters.vendor && entry.vendor !== currentFilters.vendor) return false;
+        if (currentFilters.antenna && (entry.antenna_type || '').toLowerCase() !== currentFilters.antenna.toLowerCase()) return false;
+        if (currentFilters.form && (entry.form_factor || '').toLowerCase() !== currentFilters.form.toLowerCase()) return false;
+        if (!q) return true;
+        const haystack =
+          [
+            'vendor',
+            'model',
+            'wifi_gen_radios',
+            'spatial_streams',
+            'min_poe_class',
+            'recommended_poe',
+            'behavior_min_power',
+            'ethernet_ports_speed',
+            'form_factor',
+            'dimensions',
+            'weight',
+            'antenna_connectors',
+            'operating_temp_range',
+            'msrp'
+          ]
+            .map(k => normalizeString(entry[k]))
+            .join(' ')
+            .toLowerCase() +
+          ' ' +
+          normalizeString(entry.radios_iot_features).toLowerCase() +
+          ' ' +
+          normalizeString(entry.antenna_type).toLowerCase();
+        return haystack.includes(q);
+      });
+
+      // sort
+      const key = currentSort.key;
+      const dir = currentSort.dir === 'asc' ? 1 : -1;
+      const sorted = filtered.slice().sort((a, b) => {
+        const av = normalizeString(Array.isArray(a[key]) ? a[key].join(', ') : a[key]).toLowerCase();
+        const bv = normalizeString(Array.isArray(b[key]) ? b[key].join(', ') : b[key]).toLowerCase();
+        return av.localeCompare(bv) * dir;
+      });
+
+      // Clear and render
+        tbody.innerHTML = '';
+
+      sorted.forEach(entry => {
+          const tr = document.createElement('tr');
+
+          function textCell(text, className) {
+            const td = document.createElement('td');
+            if (className) td.classList.add(className);
+            td.textContent = text || '';
+            return td;
+          }
+
+        // Vendor cell with selection checkbox
+        const vendorTd = document.createElement('td');
+        vendorTd.classList.add('vendor');
+        const id = slugFor(entry);
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'row-select';
+        cb.checked = selectedIds.has(id);
+        cb.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+        cb.addEventListener('change', () => {
+          if (cb.checked) selectedIds.add(id);
+          else selectedIds.delete(id);
+          updateCompareFab();
+        });
+        vendorTd.appendChild(cb);
+        const vendorText = document.createTextNode(entry.vendor || '');
+        vendorTd.appendChild(vendorText);
+        tr.appendChild(vendorTd);
+          const modelTd = textCell(entry.model);
+          modelTd.style.fontSize = '1rem';
+          modelTd.style.fontWeight = '600';
+          tr.appendChild(modelTd);
+          tr.appendChild(textCell(entry.wifi_gen_radios));
+          const spatialTd = textCell(entry.spatial_streams);
+          spatialTd.className = 'spatial-streams';
+          tr.appendChild(spatialTd);
+          tr.appendChild(textCell(entry.min_poe_class));
+          tr.appendChild(textCell(entry.recommended_poe));
+
+          const behaviorTd = document.createElement('td');
+          behaviorTd.classList.add('behavior');
+          const behaviorText = entry.behavior_min_power || '';
+          behaviorTd.textContent = behaviorText;
+          behaviorTd.setAttribute('data-fulltext', behaviorText);
+          tr.appendChild(behaviorTd);
+
+          tr.appendChild(textCell(entry.ethernet_ports_speed));
+
+          const radiosTd = document.createElement('td');
+          if (Array.isArray(entry.radios_iot_features)) {
+            entry.radios_iot_features.forEach(feature => {
+              const span = document.createElement('span');
+              span.classList.add('tag');
+              span.textContent = feature;
+              radiosTd.appendChild(span);
+            });
+          } else if (typeof entry.radios_iot_features === 'string') {
+            radiosTd.textContent = entry.radios_iot_features;
+          }
+          tr.appendChild(radiosTd);
+
+        tr.appendChild(textCell(entry.antenna_type));
+        tr.appendChild(textCell(entry.form_factor));
+        tr.appendChild(textCell(entry.dimensions));
+        tr.appendChild(textCell(entry.weight));
+        tr.appendChild(textCell(entry.antenna_connectors));
+        tr.appendChild(textCell(entry.operating_temp_range));
+          tr.appendChild(textCell(entry.msrp));
+
+        // Navigate to dedicated details page, preserving current table state in URL
+        tr.addEventListener('click', () => {
+          const slug = slugFor(entry);
+          const state = window.location.search.replace(/^\?/, '');
+          const url = `ap.html?id=${encodeURIComponent(slug)}${state ? '&' + state : ''}`;
+          window.location.href = url;
+        });
+
+        tbody.appendChild(tr);
+      });
+
+      if (sorted.length === 0) {
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.setAttribute('colspan', '16');
+        td.className = 'empty-state-cell';
+        td.innerHTML = `
+          <div class="empty-state-enhanced">
+            <h3>No APs match your criteria</h3>
+            <p>${currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
+              ? 'Try adjusting your filters or search terms'
+              : 'No APs defined yet. Add entries to ap_data.json.'}</p>
+            ${currentQuery || currentFilters.vendor || currentFilters.antenna || currentFilters.form
+              ? '<button class="btn-clear-filters" onclick="document.getElementById(\'reset-btn\').click()">Clear All Filters</button>'
+              : ''}
+          </div>
+        `;
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+      }
+
+      updateSortIndicators();
+      applyColumnVisibility();
+    }
+
+    function updateCompareFab() {
+      const fab = document.getElementById('compare-fab');
+      const n = selectedIds.size;
+      if (n >= 1) {
+        fab.style.display = 'inline-flex';
+        fab.textContent = `Compare (${n})`;
+      } else {
+        fab.style.display = 'none';
+      }
+    }
+
+    function valueIsUnknown(val) {
+      if (val == null) return true;
+      if (Array.isArray(val)) return val.length === 0 || val.some(v => valueIsUnknown(v));
+      const s = String(val).trim().toLowerCase();
+      return s.length === 0 || s === 'unknown';
+    }
+
+    function normalizeForSlug(s) {
+      if (!s) return '';
+      return String(s).toLowerCase().trim().replace(/[\u2010-\u2015\u2212]/g, '-').replace(/\s+/g, ' ');
+    }
+    function validateData(data) {
+      const keysToCheck = [
+        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
+        'behavior_min_power','ethernet_ports_speed','radios_iot_features','antenna_type','form_factor',
+        'dimensions','weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
+      ];
+      const problems = [];
+      const slugToIndexes = new Map();
+      data.forEach((entry, index) => {
+        const issues = [];
+        keysToCheck.forEach(k => {
+          if (!(k in entry) || valueIsUnknown(entry[k])) {
+            issues.push(`${k} is missing or unknown`);
+          }
+        });
+        if (issues.length) problems.push({ index, vendor: entry.vendor, model: entry.model, issues });
+        // track duplicates by vendor+model
+        const slug = `${normalizeForSlug(entry.vendor)}|${normalizeForSlug(entry.model)}`;
+        const arr = slugToIndexes.get(slug) || [];
+        arr.push(index);
+        slugToIndexes.set(slug, arr);
+      });
+      if (problems.length) {
+        console.groupCollapsed(`[ap_data.json] ${problems.length} issue(s) detected (click to expand)`);
+        problems.forEach(p => {
+          console.group(`Entry #${p.index} — ${p.vendor || '?'} ${p.model || '?'}`);
+          p.issues.forEach(i => console.warn(i));
+          console.groupEnd();
+        });
+        console.groupEnd();
+      }
+      // Duplicate report
+      const dups = Array.from(slugToIndexes.entries()).filter(([, idxs]) => idxs.length > 1);
+      if (dups.length) {
+        console.groupCollapsed(`[ap_data.json] ${dups.length} duplicate vendor+model slug(s) detected`);
+        dups.forEach(([slug, idxs]) => console.warn(`Duplicate: ${slug} at entries ${idxs.join(', ')}`));
+        console.groupEnd();
+      }
+      return problems.length;
+    }
+
+    function slugify(s) {
+      return String(s || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function slugFor(entry) {
+      return slugify(`${entry.vendor} ${entry.model}`);
+    }
+
+    function openDetails(entry) {
+      const overlay = document.getElementById('modal');
+      const body = document.getElementById('modal-body');
+      const title = document.getElementById('modal-title');
+      title.textContent = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
+      body.innerHTML = '';
+      const renderKV = (k, v) => {
+        const keyDiv = document.createElement('div');
+        keyDiv.className = 'key';
+        keyDiv.textContent = k;
+        const valDiv = document.createElement('div');
+        valDiv.className = 'val';
+        if (Array.isArray(v)) {
+          valDiv.textContent = v.join(', ');
+        } else {
+          valDiv.textContent = normalizeString(v);
+        }
+        body.appendChild(keyDiv);
+        body.appendChild(valDiv);
+      };
+      const primaryKeys = [
+        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
+        'recommended_poe','behavior_min_power','ethernet_ports_speed',
+        'radios_iot_features','antenna_type','form_factor','msrp'
+      ];
+      const keys = Object.keys(entry);
+      const ordered = [
+        ...primaryKeys.filter(k => keys.includes(k)),
+        ...keys.filter(k => !primaryKeys.includes(k)).sort()
+      ];
+      ordered.forEach(k => renderKV(k, entry[k]));
+      overlay.style.display = 'flex';
+    }
+
+    function closeDetails() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function readStateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      currentQuery = params.get('q') || '';
+      currentFilters.vendor = params.get('v') || '';
+      currentFilters.antenna = params.get('a') || '';
+      currentFilters.form = params.get('f') || '';
+      const s = params.get('s');
+      const d = params.get('d');
+      if (s) currentSort.key = s;
+      if (d === 'asc' || d === 'desc') currentSort.dir = d;
+      const cols = params.get('cols');
+      if (cols != null) {
+        hiddenColumns.clear();
+        if (cols) cols.split(',').forEach(k => { if (k) hiddenColumns.add(k); });
+      }
+    }
+
+    function updateUrl() {
+      const params = new URLSearchParams();
+      if (currentQuery) params.set('q', currentQuery);
+      if (currentFilters.vendor) params.set('v', currentFilters.vendor);
+      if (currentFilters.antenna) params.set('a', currentFilters.antenna);
+      if (currentFilters.form) params.set('f', currentFilters.form);
+      if (currentSort.key !== 'vendor') params.set('s', currentSort.key);
+      if (currentSort.dir !== 'asc') params.set('d', currentSort.dir);
+      if (hiddenColumns.size > 0) params.set('cols', Array.from(hiddenColumns).join(','));
+      const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+      history.replaceState({}, '', newUrl);
+    }
+    function showSkeletonLoader() {
+      const tbody = document.getElementById('ap-table-body');
+      tbody.innerHTML = '';
+      for (let i = 0; i < 5; i++) {
+        const tr = document.createElement('tr');
+        tr.className = 'skeleton-row';
+        ['vendor', 'model', 'wifi', 'spatial', 'poe', 'poe-rec', 'behavior', 'ethernet', 'iot', 'antenna', 'form', 'dims', 'weight', 'connectors', 'temp', 'msrp'].forEach((type, idx) => {
+          const td = document.createElement('td');
+          const div = document.createElement('div');
+          div.className = 'skeleton-box';
+          if (type === 'vendor') div.classList.add('skeleton-vendor');
+          else if (type === 'model') div.classList.add('skeleton-model');
+          else div.classList.add('skeleton-spec');
+          td.appendChild(div);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      }
+    }
+
+    async function loadApData() {
+      const errorEl = document.getElementById('error-message');
+
+      // Show skeleton loader
+      showSkeletonLoader();
+
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) {
+          throw new Error('HTTP ' + res.status);
+        }
+        const data = await res.json();
+        if (!Array.isArray(data)) {
+          throw new Error('Data format error: expected an array');
+        }
+        apData = data;
+        populateFilters();
+        // Reflect URL state into controls after options are available
+        const searchEl = document.getElementById('search');
+        const vendorEl = document.getElementById('filter-vendor');
+        const antennaEl = document.getElementById('filter-antenna');
+        const formEl = document.getElementById('filter-form');
+        if (searchEl) searchEl.value = currentQuery;
+        if (vendorEl) vendorEl.value = currentFilters.vendor || '';
+        if (antennaEl) antennaEl.value = currentFilters.antenna || '';
+        if (formEl) formEl.value = currentFilters.form || '';
+        buildColumnsPanel();
+        // Validate data (console only; no banner here to avoid alarming users)
+        validateData(apData);
+        renderTable();
+        // Ensure error hidden after successful load
+        errorEl.style.display = 'none';
+        errorEl.textContent = '';
+      } catch (err) {
+        console.error('Failed to load AP data:', err);
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Failed to load AP data. Please try again later or check ap_data.json.';
+        // Clear skeleton on error
+        const tbody = document.getElementById('ap-table-body');
+        tbody.innerHTML = '';
+      }
+    }
+
+    // Wire up search + filters + sorting + URL state + columns + modal
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set active navigation link based on current page
+      const currentPage = window.location.pathname.split('/').pop() || 'index-preview.html';
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        if (linkPage === 'index' && currentPage.includes('index-preview')) {
+          link.classList.add('active');
+        } else if (linkPage && currentPage.includes(linkPage + '-preview')) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Add shadow to header on scroll
+      const header = document.querySelector('.site-header');
+      let lastScroll = 0;
+      
+      window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+      });
+      
+      // Fix tooltip positioning to account for sticky header
+      const headerEl = document.querySelector('.site-header');
+      document.querySelectorAll('th[data-tooltip]').forEach(th => {
+        th.addEventListener('mouseenter', function(e) {
+          const rect = this.getBoundingClientRect();
+          const tooltipText = this.getAttribute('data-tooltip');
+          if (!tooltipText) return;
+          
+          const tooltipEl = document.createElement('div');
+          tooltipEl.className = 'tooltip-popup';
+          tooltipEl.textContent = tooltipText;
+          
+          // Calculate position above the header, ensuring it's visible
+          const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 0;
+          const tooltipTop = Math.max(headerHeight + 10, rect.top - 10);
+          
+          tooltipEl.style.cssText = `
+            position: fixed;
+            top: ${tooltipTop}px;
+            left: ${rect.left + rect.width / 2}px;
+            transform: translate(-50%, -100%);
+            padding: 8px 12px;
+            background: rgba(20, 20, 30, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.75rem;
+            font-weight: 500;
+            z-index: 10000;
+            max-width: 300px;
+            white-space: normal;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 200ms ease;
+          `;
+          document.body.appendChild(tooltipEl);
+          
+          // Fade in
+          setTimeout(() => {
+            tooltipEl.style.opacity = '1';
+          }, 10);
+          
+          this._tooltipEl = tooltipEl;
+        });
+        th.addEventListener('mouseleave', function() {
+          if (this._tooltipEl) {
+            this._tooltipEl.style.opacity = '0';
+            setTimeout(() => {
+              if (this._tooltipEl && this._tooltipEl.parentNode) {
+                this._tooltipEl.remove();
+              }
+              this._tooltipEl = null;
+            }, 200);
+          }
+        });
+      });
+      
+      readStateFromUrl();
+
+      const searchEl = document.getElementById('search');
+      if (searchEl) {
+        searchEl.addEventListener('input', () => {
+          currentQuery = searchEl.value;
+          renderTable();
+          updateUrl();
+        });
+        // reflect initial state
+        searchEl.value = currentQuery;
+      }
+      const vendorEl = document.getElementById('filter-vendor');
+      const antennaEl = document.getElementById('filter-antenna');
+      const formEl = document.getElementById('filter-form');
+      vendorEl.addEventListener('change', () => {
+        currentFilters.vendor = vendorEl.value;
+        renderTable();
+        updateUrl();
+      });
+      antennaEl.addEventListener('change', () => {
+        currentFilters.antenna = antennaEl.value;
+        renderTable();
+        updateUrl();
+      });
+      formEl.addEventListener('change', () => {
+        currentFilters.form = formEl.value;
+        renderTable();
+        updateUrl();
+      });
+
+      // Header sort click handlers
+      document.querySelectorAll('th.sortable').forEach(th => {
+        th.addEventListener('click', () => {
+          const key = th.dataset.key;
+          if (!key) return;
+          if (currentSort.key === key) {
+            currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+          } else {
+            currentSort.key = key;
+            currentSort.dir = 'asc';
+          }
+          updateSortIndicators();
+          renderTable();
+          updateUrl();
+        });
+      });
+
+      // Columns panel toggle
+      const columnsBtn = document.getElementById('toggle-columns');
+      const columnsPanel = document.getElementById('columns-panel');
+      columnsBtn.addEventListener('click', () => {
+        const isOpen = columnsPanel.style.display === 'block';
+        columnsPanel.style.display = isOpen ? 'none' : 'block';
+      });
+
+      // Reset Layout inside columns panel
+      document.getElementById('reset-layout-btn').addEventListener('click', () => {
+        localStorage.removeItem('apTable.colOrder');
+        localStorage.removeItem('apTable.colWidths');
+        window.location.reload();
+      });
+
+      // Compare FAB click
+      document.getElementById('compare-fab').addEventListener('click', () => {
+        if (selectedIds.size < 2) return;
+        const idsParam = Array.from(selectedIds).join(',');
+        const state = window.location.search.replace(/^\?/, '');
+        const url = `compare-preview.html?ids=${encodeURIComponent(idsParam)}${state ? '&' + state : ''}`;
+        window.location.href = url;
+      });
+
+      // Initialize column resizers and drag/drop
+      initColumnResizersAndDnD();
+      // Apply saved layout after initializers
+      loadLayout();
+
+      // Reset button
+      document.getElementById('reset-btn').addEventListener('click', () => {
+        currentQuery = '';
+        currentFilters.vendor = '';
+        currentFilters.antenna = '';
+        currentFilters.form = '';
+        currentSort = { key: 'vendor', dir: 'asc' };
+        const def = defaultHiddenColumns();
+        hiddenColumns.clear();
+        def.forEach(k => hiddenColumns.add(k));
+        // Reset controls
+        const searchEl = document.getElementById('search');
+        const vendorEl = document.getElementById('filter-vendor');
+        const antennaEl = document.getElementById('filter-antenna');
+        const formEl = document.getElementById('filter-form');
+        if (searchEl) searchEl.value = '';
+        if (vendorEl) vendorEl.value = '';
+        if (antennaEl) antennaEl.value = '';
+        if (formEl) formEl.value = '';
+        buildColumnsPanel();
+        renderTable();
+        updateUrl();
+      });
+
+      // Modal events
+      document.getElementById('modal-close').addEventListener('click', closeDetails);
+      document.getElementById('modal').addEventListener('click', (e) => {
+        if (e.target.id === 'modal') closeDetails();
+      });
+    });
+
+    loadApData();
+  </script>
+</body>
+</html>
+
