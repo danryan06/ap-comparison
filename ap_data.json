@@ -102,8 +102,8 @@
     "ethernet_ports_speed": "2\u00d7 100/1000/2500BASE-T mGig (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
-    "dimensions": "unknown",
-    "weight": "unknown",
+    "dimensions": "5.1 x 20.1 x 18.3 x cm",
+    "weight": "0.72kg",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -40\u00b0C to 70\u00b0C storage",
     "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP610Series.pdf",
@@ -186,14 +186,14 @@
     "model": "AP-734",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "unknown",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
     "behavior_min_power": "On 802.3at PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
     "ethernet_ports_speed": "2\u00d7 1/2.5/5GbE SmartRate (RJ45)",
     "antenna_type": "External",
     "form_factor": "Indoor",
-    "dimensions": "unknown",
-    "weight": "unknown",
+    "dimensions": "240 mm x 240 mm x  56 mm",
+    "weight": "1830g",
     "antenna_connectors": "External antennas (see datasheet)",
     "operating_temp_range": "0\u00b0C to 50\u00b0C operating",
     "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
@@ -210,7 +210,7 @@
     "model": "AP-735",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "unknown",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
     "behavior_min_power": "On 802.3at PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
     "ethernet_ports_speed": "2\u00d7 1/2.5/5GbE SmartRate (RJ45)",
@@ -529,7 +529,7 @@
     "image_url": "images/extreme-ap5020.jpg",
     "dimensions": "10.16 in. x 10.16 in. x 1.62 in. (258mm x 258mm x 41mm)",
     "weight": "3.57 lbs (1.62kg)",
-    "antenna_connectors": "",
+    "antenna_connectors": "N/A (internal antennas)",
     "operating_temp_range": "0\u00b0C to 50\u00b0C (32\u00b0F to 122\u00b0F)",
     "msrp": "unknown"
   },
@@ -690,14 +690,14 @@
     "model": "FAP-432G",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "unknown",
-    "recommended_poe": "unknown",
-    "behavior_min_power": "unknown",
-    "ethernet_ports_speed": "unknown",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "",
+    "behavior_min_power": "On 802.3at or 2\u00d7802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "ethernet_ports_speed": "1x 10GbE + 1x 1GbE",
     "antenna_type": "External",
     "form_factor": "Indoor",
-    "dimensions": "unknown",
-    "weight": "unknown",
+    "dimensions": "9.45 x 9.45 x 2.74 inches (240.0 x 240.0 x 69.6 mm)",
+    "weight": "7.05 lbs",
     "antenna_connectors": "External antennas (see datasheet)",
     "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
@@ -1085,7 +1085,7 @@
     "dimensions": "232 \u00d7 232 \u00d7 71 mm",
     "weight": "2.0 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-40\u00b0C to 55\u00b0C (with solar load); -40\u00b0C to 65\u00b0C (without solar load)",
     "msrp": "$2,485"
   },
   {
@@ -1112,7 +1112,7 @@
     "dimensions": "232 \u00d7 232 \u00d7 88 mm",
     "weight": "2.1 kg",
     "antenna_connectors": "N/A (internal directional antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-40\u00b0C to 55\u00b0C (with solar load); -40\u00b0C to 65\u00b0C (without solar load)",
     "msrp": "$2,685"
   },
   {
@@ -1132,7 +1132,7 @@
     "dimensions": "250 x 250 x 43.5 mm",
     "weight": "1.8 kg (4.0 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 50°C operating",
+    "operating_temp_range": "-30°C to 50°C",
     "msrp": "$499.00"
   },
   {
@@ -1152,7 +1152,7 @@
     "dimensions": "250 x 250 x 45.5 mm (device only)",
     "weight": "2.2 kg (4.9 lb)",
     "antenna_connectors": "None (internal directional antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-30°C to 60°C",
     "msrp": "$799.00"
   },
   {
@@ -1170,9 +1170,9 @@
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro-xgs?s=us",
     "image_url": "images/ubiquiti-u7-pro-xgs.png",
     "dimensions": "Ø215 x 32.5 mm",
-    "weight": "unknown",
+    "weight": "800g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-30°C to 60°C",
     "msrp": "$299.00"
   },
   {
@@ -1190,9 +1190,9 @@
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro-xg?s=us",
     "image_url": "images/ubiquiti-u7-pro-xg.png",
     "dimensions": "Ø206 x 46 mm",
-    "weight": "unknown",
+    "weight": "750g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-30°C to 40°C",
     "msrp": "$199.00"
   },
   {
@@ -1252,7 +1252,7 @@
     "dimensions": "150 x 103 x 36 mm",
     "weight": "580 g (1.3 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-30°C to 40°C",
     "msrp": "$199.00"
   },
   {
@@ -1290,9 +1290,9 @@
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-iw?s=us",
     "image_url": "images/ubiquiti-u7-iw.png",
     "dimensions": "137 x 98.7 x 30.2 mm",
-    "weight": "unknown",
+    "weight": "400g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-30°C to 40°C",
     "msrp": "$149.00"
   }
 ]
