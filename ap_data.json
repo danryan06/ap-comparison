@@ -535,29 +535,6 @@
   },
   {
     "vendor": "Fortinet",
-    "model": "441K",
-    "wifi_gen_radios": "Wi-Fi 7",
-    "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3at or 2\u00d7 802.3af",
-    "recommended_poe": "802.3bt",
-    "behavior_min_power": "R1 (2.4GHz), R2 (5GHz) and R3 (6GHz) operate in low Tx power (17 dBm), with 2x2 chains; R4 operational; USB disabled.",
-    "ethernet_ports_speed": "2\u00d710G mGig",
-    "antenna_type": "Internal",
-    "form_factor": "Indoor",
-    "dimensions": "250 \u00d7 250 \u00d7 57.5 mm",
-    "weight": "1.98 kg",
-    "antenna_connectors": "Internal Wi-Fi antennas; 1\u00d7 SMA GNSS connector",
-    "operating_temp_range": "0\u00b0C to 50\u00b0C",
-    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
-    "radios_iot_features": [
-      "BLE",
-      "Zigbee",
-      "GPS"
-    ],
-    "msrp": "$1,350"
-  },
-  {
-    "vendor": "Fortinet",
     "model": "FAP-231K",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
@@ -576,7 +553,7 @@
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "unknown"
+    "msrp": "$490"
   },
   {
     "vendor": "Fortinet",
@@ -598,28 +575,7 @@
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "unknown"
-  },
-  {
-    "vendor": "Fortinet",
-    "model": "FAP-23JK",
-    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
-    "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "802.3at (Class 4)",
-    "recommended_poe": "802.3bt (Class 6) for full PoE-out capability",
-    "behavior_min_power": "On 802.3bt, 2.4/5/6 GHz radios operate and PoE-out (PSE) on LAN3 is available. On 802.3at, 2.4/5/6 GHz radios operate but PoE-out on LAN3 is disabled; USB and other features remain supported according to the datasheet.",
-    "ethernet_ports_speed": "1\u00d7 1/2.5/5/10GbE WAN (RJ45) + 3\u00d7 1GbE LAN (RJ45, one PoE-out) + 2\u00d7 pass-through RJ45 + 1\u00d7 RS-232",
-    "antenna_type": "Internal",
-    "form_factor": "Wallplate",
-    "dimensions": "7.08 x 4.72 x 1.57 inches (180 x 120 x 40 mm)",
-    "weight": "1.15 lbs (0.52 kg)",
-    "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32\u00b0F to 113\u00b0F (0\u00b0C to 45\u00b0C) operating; -22\u00b0F to 158\u00b0F",
-    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
-    "radios_iot_features": [
-      "BLE/Zigbee"
-    ],
-    "msrp": "unknown"
+    "msrp": "$1,200"
   },
   {
     "vendor": "Fortinet",
@@ -640,7 +596,7 @@
     "radios_iot_features": [
       "BLE/Zigbee"
     ],
-    "msrp": "unknown"
+    "msrp": "$800"
   },
   {
     "vendor": "Fortinet",
@@ -661,7 +617,7 @@
     "radios_iot_features": [
       "BLE/Zigbee"
     ],
-    "msrp": "unknown"
+    "msrp": "$900"
   },
   {
     "vendor": "Fortinet",
@@ -683,7 +639,7 @@
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "unknown"
+    "msrp": "$1,050"
   },
   {
     "vendor": "Fortinet",
@@ -695,7 +651,7 @@
     "behavior_min_power": "On 802.3at or 2\u00d7802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
     "ethernet_ports_speed": "1x 10GbE + 1x 1GbE",
     "antenna_type": "External",
-    "form_factor": "Indoor",
+    "form_factor": "Outdoor",
     "dimensions": "9.45 x 9.45 x 2.74 inches (240.0 x 240.0 x 69.6 mm)",
     "weight": "7.05 lbs",
     "antenna_connectors": "External antennas (see datasheet)",
@@ -705,7 +661,7 @@
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "unknown"
+    "msrp": "$2,600"
   },
   {
     "vendor": "Fortinet",
@@ -727,7 +683,7 @@
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "unknown"
+    "msrp": "$1,180"
   },
   {
     "vendor": "Fortinet",
@@ -749,7 +705,7 @@
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "unknown"
+    "msrp": "$1,350"
   },
   {
     "vendor": "Fortinet",
@@ -771,7 +727,7 @@
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "unknown"
+    "msrp": "$1,450"
   },
   {
     "vendor": "Juniper",
