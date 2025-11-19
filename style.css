@@ -1692,16 +1692,16 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 /* Search Box */
 .search-wrapper {
   position: relative;
-  flex: 0 0 280px;
+  flex: 0 0 300px;
   min-width: 240px;
-  max-width: 280px;
+  max-width: 300px;
 }
 
 .search-icon {
@@ -1725,6 +1725,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   font-size: 14px;
   font-family: inherit;
   transition: all 200ms ease;
+  box-sizing: border-box;
 }
 
 .filter-bar .search-input::placeholder {
@@ -1767,6 +1768,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   background-repeat: no-repeat;
   background-position: right 12px center;
   min-width: 160px;
+  box-sizing: border-box;
 }
 
 .filter-select:hover {
