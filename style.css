@@ -61,10 +61,10 @@
   opacity: 0.8;
 }
 
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  color: #3b82f6;
+.logo-icon,
+.logo-image {
+  width: 36px;
+  height: auto;
   flex-shrink: 0;
 }
 
@@ -249,7 +249,8 @@
 }
 
 @media (max-width: 480px) {
-  .logo-icon {
+  .logo-icon,
+  .logo-image {
     width: 28px;
     height: 28px;
   }
@@ -1859,7 +1860,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .filter-bar-content {
     flex-direction: column;
     align-items: stretch;
