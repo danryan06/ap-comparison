@@ -2031,7 +2031,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   th:nth-child(3), td:nth-child(3) { min-width: 140px; } /* Wi-Fi Gen */
   th:nth-child(4), td:nth-child(4) { min-width: 130px; } /* Spatial Streams */
   th:nth-child(5), td:nth-child(5) { min-width: 110px; } /* Min PoE */
-  th:nth-child(6), td:nth-child(6) { min-width: 130px; } /* Rec PoE */
+  th:nth-child(6), td:nth-child(6) { min-width: 130px; font-size: 11px !important; } /* Rec PoE - ensure font matches */
   th:nth-child(7), td:nth-child(7) { min-width: 160px; } /* Behavior */
   th:nth-child(8), td:nth-child(8) { min-width: 140px; } /* Ethernet */
   th:nth-child(9), td:nth-child(9) { min-width: 180px; } /* Radios/IoT */
@@ -2278,6 +2278,12 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   td:nth-child(2) {
     min-width: 100px;
     left: 80px; /* Position after first column */
+  }
+  
+  /* Ensure Recommended PoE column font matches others */
+  th:nth-child(6),
+  td:nth-child(6) {
+    font-size: 10px !important;
   }
   
   /* Hide button text, show icons only */
