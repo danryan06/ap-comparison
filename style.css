@@ -441,7 +441,7 @@ h2 {
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 20px 35px rgba(15, 23, 42, 0.75);
-  border: 1px solid #1f2937;
+  border: 1px solid rgba(148, 163, 184, 0.1);
   overflow-x: auto; /* allow horizontal scroll on small screens */
 }
 
@@ -463,40 +463,56 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 th,
 td {
-  padding: 1rem 0.75rem;
+  padding: 0.875rem 1rem;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
+}
+
+td {
+  color: #e5e7eb;
+  font-size: 0.85rem;
 }
 
 th {
-  background: rgba(17, 24, 39, 0.95);
+  background: rgba(15, 23, 42, 0.5);
   backdrop-filter: blur(10px);
-  color: #e5e7eb;
+  color: #94a3b8;
   font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   position: sticky;
   top: 0;
   z-index: 1;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  border-bottom: 2px solid rgba(148, 163, 184, 0.15);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 tbody tr {
-  transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 150ms ease-out;
   cursor: pointer;
   position: relative;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
 }
 
 tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
 }
 
 tbody tr:nth-child(odd) {
-  background: rgba(255, 255, 255, 0.04);
+  background: transparent;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
 }
 
 tbody tr:hover {
@@ -506,16 +522,16 @@ tbody tr:hover {
 /* Vendor column tweaks */
 td.vendor {
   white-space: nowrap;
-  font-weight: 400;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #bfdbfe;
 }
 
 /* Model names - larger and bolder */
 td:nth-child(2) {
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e5e7eb;
 }
 
 /* Technical specs - monospace for better alignment */
