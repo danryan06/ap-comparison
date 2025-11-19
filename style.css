@@ -1695,7 +1695,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .filter-bar {
   background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 16px 0;
   position: sticky;
   top: 73px; /* Adjust based on your header height */
@@ -1710,16 +1709,16 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 /* Search Box */
 .search-wrapper {
   position: relative;
-  flex: 0 1 320px;
-  min-width: 220px;
-  max-width: 320px;
+  flex: 0 1 300px;
+  min-width: 200px;
+  max-width: 300px;
 }
 
 .search-icon {
@@ -1765,7 +1764,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 }
 
 .filter-bar .filter-group {
-  margin-left: 8px; /* create a bit of breathing room between search and first dropdown */
+  margin-left: 0; /* gap handles spacing now */
 }
 
 .filter-select {
