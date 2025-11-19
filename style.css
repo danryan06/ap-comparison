@@ -1699,9 +1699,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 /* Search Box */
 .search-wrapper {
   position: relative;
-  flex: 1 1 auto;
-  min-width: 220px;
-  max-width: none;
+  flex: 0 0 320px;
+  min-width: 260px;
+  max-width: 360px;
 }
 
 .search-icon {
@@ -1747,8 +1747,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 }
 
 .filter-bar .filter-group {
-  margin-left: 0; /* gap handles spacing now */
-  flex-shrink: 0; /* prevent dropdowns from shrinking onto search */
+  margin-left: 0;
+  border-bottom: none;
+  padding-bottom: 0;   /* optional, tightens spacing a bit */
 }
 
 .filter-select {
