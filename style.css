@@ -1963,3 +1963,403 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
 }
+
+/* ================================
+   Enhanced Mobile Optimizations
+   ================================ */
+
+@media (max-width: 768px) {
+  /* Body and container adjustments */
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+  
+  /* Table container with horizontal scroll - CORRECTED VERSION */
+  .card {
+    padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Table font sizes - MORE SPECIFIC with font boosting prevention */
+  table {
+    font-size: 11px;
+    width: max-content; /* Allow table to be wider than container */
+    min-width: 100%;
+    display: table; /* Keep as table, don't change to block */
+    border-collapse: collapse;
+    text-size-adjust: none; /* Prevent browser font boosting */
+    -webkit-text-size-adjust: none; /* Safari */
+    -moz-text-size-adjust: none; /* Firefox */
+  }
+  
+  /* Apply consistent font size to ALL cells */
+  table th,
+  table td {
+    padding: 10px 8px;
+    font-size: 11px !important;
+    white-space: nowrap;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+  
+  /* Remove any inherited font-size overrides on specific columns */
+  table th:nth-child(5),
+  table td:nth-child(5),
+  table th:nth-child(6),
+  table td:nth-child(6) {
+    font-size: 11px !important;
+    width: auto; /* Don't use fixed widths that might cause scaling */
+  }
+  
+  /* Ensure PoE class columns don't word-break differently */
+  table td:nth-child(5),
+  table td:nth-child(6) {
+    white-space: nowrap !important;
+    word-break: normal !important;
+  }
+  
+  /* Sticky first two columns - CORRECTED */
+  th:nth-child(1),
+  td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: #020617;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Visual separation */
+  }
+  
+  th:nth-child(2),
+  td:nth-child(2) {
+    position: sticky;
+    left: 100px; /* Adjust based on column 1 actual width */
+    z-index: 2;
+    background: #020617;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ensure header sticky columns are on top */
+  th:nth-child(1),
+  th:nth-child(2) {
+    z-index: 3;
+  }
+  
+  /* Set minimum widths for all columns to prevent squishing */
+  th:nth-child(1), td:nth-child(1) { min-width: 100px; } /* Vendor */
+  th:nth-child(2), td:nth-child(2) { min-width: 120px; } /* Model */
+  th:nth-child(3), td:nth-child(3) { min-width: 140px; } /* Wi-Fi Gen */
+  th:nth-child(4), td:nth-child(4) { min-width: 130px; } /* Spatial Streams */
+  th:nth-child(5), td:nth-child(5) { min-width: 110px; } /* Min PoE */
+  th:nth-child(6), td:nth-child(6) { min-width: 130px; } /* Rec PoE */
+  th:nth-child(7), td:nth-child(7) { min-width: 160px; } /* Behavior */
+  th:nth-child(8), td:nth-child(8) { min-width: 140px; } /* Ethernet */
+  th:nth-child(9), td:nth-child(9) { min-width: 180px; } /* Radios/IoT */
+  th:nth-child(10), td:nth-child(10) { min-width: 100px; } /* Antenna */
+  th:nth-child(11), td:nth-child(11) { min-width: 100px; } /* Form Factor */
+  th:nth-child(12), td:nth-child(12) { min-width: 140px; } /* Dimensions */
+  th:nth-child(13), td:nth-child(13) { min-width: 80px; } /* Weight */
+  th:nth-child(14), td:nth-child(14) { min-width: 140px; } /* Connectors */
+  th:nth-child(15), td:nth-child(15) { min-width: 140px; } /* Temp */
+  th:nth-child(16), td:nth-child(16) { min-width: 90px; } /* MSRP */
+  
+  /* Filter bar mobile optimization */
+  .filter-bar {
+    position: relative; /* Remove sticky on mobile for better scrolling */
+    top: auto;
+  }
+  
+  .filter-bar-content {
+    padding: 0 1rem;
+    gap: 12px;
+  }
+  
+  .search-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  
+  .filter-bar .search-input {
+    font-size: 16px; /* Prevents iOS zoom */
+    min-height: 44px;
+    padding: 12px 16px 12px 44px;
+  }
+  
+  .filter-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .filter-select {
+    width: 100%;
+    font-size: 16px; /* Prevents iOS zoom */
+    min-height: 44px;
+    padding: 12px 40px 12px 16px;
+  }
+  
+  .filter-actions {
+    width: 100%;
+    flex-direction: row;
+    margin-left: 0;
+  }
+  
+  .btn-filter-action {
+    flex: 1;
+    min-height: 44px;
+    font-size: 14px;
+    justify-content: center;
+  }
+  
+  /* Show icons only on very small screens */
+  .btn-filter-action span {
+    display: inline; /* Keep text visible on tablets */
+  }
+  
+  /* Columns panel mobile optimization */
+  .columns-panel {
+    padding: 1rem;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .columns-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .columns-grid label {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+  }
+  
+  .columns-grid input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  
+  /* Action buttons */
+  .btn-link,
+  .btn-primary,
+  .btn-secondary {
+    min-height: 44px;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .actions .btn-link {
+    width: 100%;
+  }
+  
+  /* Floating compare button */
+  .floating-compare {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    min-height: 48px;
+    box-shadow: 0 8px 16px rgba(34, 197, 94, 0.4);
+  }
+  
+  /* Modal optimization */
+  .modal {
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 32px);
+    margin: 16px;
+  }
+  
+  .modal header {
+    position: sticky;
+    top: 0;
+    background: #020617;
+    z-index: 10;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .modal .modal-close {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px 16px;
+  }
+  
+  .modal .kv-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .modal .kv-grid .key {
+    font-weight: 600;
+    color: #94a3b8;
+  }
+  
+  .modal .kv-grid .val {
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Header mobile adjustments */
+  .site-header {
+    position: relative; /* Remove sticky on mobile */
+  }
+  
+  .header-content {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  
+  /* Ensure all nav buttons are at least 44x44px */
+  .nav-link,
+  .nav-link-secondary,
+  .nav-link-accent {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Subtitle */
+  .subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Card actions */
+  .card-actions {
+    padding: 12px 16px;
+    flex-direction: column;
+  }
+  
+  .card-actions .btn-secondary {
+    width: 100%;
+    min-width: 0;
+  }
+  
+  /* Empty state */
+  .empty-state-enhanced {
+    padding: 40px 16px;
+  }
+  
+  .empty-state-enhanced h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* Form elements */
+  .form-row input,
+  .form-row textarea,
+  .form-row select {
+    font-size: 16px; /* Prevents iOS zoom */
+    min-height: 44px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .card {
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+  }
+  
+  table {
+    font-size: 10px;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+  
+  table th,
+  table td {
+    padding: 8px 6px;
+    font-size: 10px !important;
+    white-space: nowrap;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+  
+  /* Ensure PoE columns match the rest */
+  table th:nth-child(5),
+  table td:nth-child(5),
+  table th:nth-child(6),
+  table td:nth-child(6) {
+    font-size: 10px !important;
+    width: auto; /* Don't use fixed widths that might cause scaling */
+  }
+  
+  /* Ensure PoE class columns don't word-break differently */
+  table td:nth-child(5),
+  table td:nth-child(6) {
+    white-space: nowrap !important;
+    word-break: normal !important;
+  }
+  
+  /* Make sticky columns narrower on very small screens */
+  th:nth-child(1),
+  td:nth-child(1) {
+    min-width: 80px;
+    left: 0; /* Ensure it's at the start */
+  }
+  
+  th:nth-child(2),
+  td:nth-child(2) {
+    min-width: 100px;
+    left: 80px; /* Position after first column */
+  }
+  
+  
+  /* Hide button text, show icons only */
+  .btn-filter-action span {
+    display: none;
+  }
+  
+  .btn-filter-action {
+    padding: 12px;
+    min-width: 44px;
+  }
+  
+  .filter-bar-content {
+    gap: 8px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 896px) and (orientation: landscape) {
+  .site-header {
+    position: relative; /* Remove sticky in landscape */
+  }
+  
+  .filter-bar {
+    position: relative;
+  }
+  
+  .modal {
+    max-height: calc(100vh - 16px);
+  }
+}
