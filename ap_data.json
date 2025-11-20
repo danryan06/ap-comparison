@@ -1072,6 +1072,26 @@
     "msrp": "$2,685"
   },
   {
+    "vendor": "Linksys",
+    "model": "WRT54G",
+    "wifi_gen_radios": "802.11g",
+    "spatial_streams": "1x1",
+    "min_poe_class": "N/A",
+    "recommended_poe": "N/A",
+    "behavior_min_power": "N/A",
+    "ethernet_ports_speed": "1x 10/100 WAN 4x 10/100 LAN",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "radios_iot_features": [],
+    "datasheet_url": "https://downloads.linksys.com/downloads/datasheet/WRT54GL_V11_DS_NC-WEB,0.pdf",
+    "image_url": "https://manuals.plus/wp-content/uploads/2023/12/LINKSYS-WRT54G-Wireless-G-Router-Instructions.png",
+    "dimensions": "7.32\" x 1.89\" x 7.87\" (186 x 48 x 200 mm)",
+    "weight": "17.0 oz (482 g)",
+    "antenna_connectors": "2x RP-TNC",
+    "operating_temp_range": "32 to 104\u00b0F (0 to 40\u00b0C)",
+    "msrp": "Priceless"
+  },
+  {
     "vendor": "Ruckus",
     "model": "R850",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
