@@ -325,7 +325,8 @@
       "BLE",
       "Zigbee"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/aruba/aruba-ap-615.png"
   },
   {
     "vendor": "Aruba",
@@ -348,7 +349,8 @@
       "Zigbee",
       "GPS/GNSS"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/aruba/aruba-ap-635.png"
   },
   {
     "vendor": "Aruba",
@@ -371,7 +373,8 @@
       "Zigbee",
       "GPS"
     ],
-    "msrp": "~$2,195"
+    "msrp": "~$2,195",
+    "image_url": "images/aruba/aruba-ap-655.png"
   },
   {
     "vendor": "Aruba",
@@ -393,7 +396,8 @@
       "BLE",
       "802.15.4/Zigbee"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/aruba/aruba-ap-725.png"
   },
   {
     "vendor": "Aruba",
@@ -417,7 +421,8 @@
       "GPS/GNSS",
       "Barometric sensor"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/aruba/aruba-ap-734.png"
   },
   {
     "vendor": "Aruba",
@@ -441,7 +446,8 @@
       "GPS/GNSS",
       "Barometric sensor"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/aruba/aruba-ap-735.png"
   },
   {
     "vendor": "Aruba",
@@ -463,7 +469,8 @@
       "BLE",
       "802.15.4/Zigbee"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/aruba/aruba-ap-745.png"
   },
   {
     "vendor": "Aruba",
@@ -897,7 +904,8 @@
     "radios_iot_features": [
       "BLE"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/cisco/cisco-9164i.png"
   },
   {
     "vendor": "Cisco",
@@ -919,7 +927,8 @@
       "BLE",
       "Environmental sensors (TVOC/temperature/humidity)"
     ],
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "image_url": "images/cisco/cisco-9166d1.png"
   },
   {
     "vendor": "Cisco",
@@ -941,7 +950,8 @@
       "BLE",
       "802.15.4 IoT radio"
     ],
-    "msrp": "~$2,593"
+    "msrp": "~$2,593",
+    "image_url": "images/cisco/cisco-9166i.png"
   },
   {
     "vendor": "Cisco",
