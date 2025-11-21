@@ -30,20 +30,50 @@ jobs:
             const https = require('https');
             const http = require('http');
 
-            // Safety check for github context - use github.event for issue events
+            // Access issue from context or fetch via API
             let issue;
             try {
-              // Try github.event first (more reliable for issue events)
-              if (github && github.event && github.event.issue) {
-                issue = github.event.issue;
-              } else if (github && github.context && github.context.payload && github.context.payload.issue) {
-                issue = github.context.payload.issue;
-              } else {
-                core.setFailed('GitHub issue context is not available. This action must be triggered by an issue event.');
+              if (!github) {
+                core.setFailed('GitHub client is not available in github-script context.');
+                return;
+              }
+              
+              // Try to get issue from context payload first
+              const payload = github.context?.payload;
+              if (payload) {
+                issue = payload.issue || payload;
+              }
+              
+              // If not in payload, fetch from API using context repo and issue number
+              if (!issue || !issue.body) {
+                const repo = github.context.repo;
+                const issueNumber = payload?.issue?.number || payload?.number;
+                
+                if (repo && issueNumber) {
+                  core.info(`Fetching issue #${issueNumber} from API...`);
+                  const response = await github.rest.issues.get({
+                    owner: repo.owner,
+                    repo: repo.repo,
+                    issue_number: parseInt(issueNumber)
+                  });
+                  issue = response.data;
+                }
+              }
+              
+              // Final validation
+              if (!issue || !issue.body) {
+                core.setFailed('Could not access issue data. This action must be triggered by an issue event.');
+                if (github.context) {
+                  core.info('Context event: ' + (github.context.eventName || 'unknown'));
+                  if (payload) {
+                    core.info('Payload keys: ' + Object.keys(payload).join(', '));
+                  }
+                }
                 return;
               }
             } catch (err) {
-              core.setFailed('Error accessing GitHub context: ' + err.message);
+              core.setFailed('Error accessing GitHub issue: ' + err.message);
+              core.info('Error details: ' + err.stack);
               return;
             }
 
