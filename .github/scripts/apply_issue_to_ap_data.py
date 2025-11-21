@@ -128,10 +128,29 @@ def main():
         raise SystemExit("ERROR: Expected ap_data.json to contain a JSON array (list).")
 
     # Look for existing AP (vendor + model match)
+    # Try multiple matching strategies for flexibility
+    def matches_ap(entry, vendor, model):
+        """Check if an entry matches the vendor and model, with flexible matching."""
+        entry_vendor = (entry.get("vendor") or "").strip()
+        entry_model = (entry.get("model") or "").strip()
+        
+        # Exact match (case-sensitive)
+        if entry_vendor == vendor and entry_model == model:
+            return True
+        
+        # Case-insensitive match
+        if entry_vendor.lower() == vendor.lower() and entry_model.lower() == model.lower():
+            return True
+        
+        # Partial vendor match (e.g., "Extreme" matches "Extreme Networks")
+        # and exact model match
+        if (vendor.lower() in entry_vendor.lower() or entry_vendor.lower() in vendor.lower()) and entry_model.lower() == model.lower():
+            return True
+        
+        return False
+    
     existing_idx = next(
-        (i for i, x in enumerate(ap_list)
-         if (x.get("vendor") or "").strip() == key[0]
-         and (x.get("model") or "").strip() == key[1]),
+        (i for i, x in enumerate(ap_list) if matches_ap(x, key[0], key[1])),
         None
     )
 
@@ -151,7 +170,28 @@ def main():
 
     elif args.mode == "edit":
         if existing_idx is None:
-            raise SystemExit(f"ERROR: AP {vendor} {model} not found; cannot edit.")
+            # Provide helpful error message with similar entries
+            similar = [
+                (x.get("vendor") or "").strip(), (x.get("model") or "").strip()
+                for x in ap_list
+                if (x.get("model") or "").strip().lower() == model.lower()
+            ]
+            error_msg = f"ERROR: AP {vendor} {model} not found; cannot edit."
+            if similar:
+                error_msg += f"\nFound {len(similar)} AP(s) with model '{model}':"
+                for v, m in similar:
+                    error_msg += f"\n  - {v} {m}"
+            raise SystemExit(error_msg)
+        
+        # Preserve existing image_url if new entry doesn't have one or has empty string
+        existing_entry = ap_list[existing_idx]
+        existing_image_url = (existing_entry.get("image_url") or "").strip()
+        new_image_url = (new_entry.get("image_url") or "").strip()
+        
+        if not new_image_url and existing_image_url:
+            new_entry["image_url"] = existing_image_url
+            print(f"INFO: Preserving existing image_url: {existing_image_url}")
+        
         ap_list[existing_idx] = new_entry
 
     # Optional: sort by vendor then model for nicer diffs
