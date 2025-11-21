@@ -30,7 +30,23 @@ jobs:
             const https = require('https');
             const http = require('http');
 
-            const issue = github.context.payload.issue;
+            // Safety check for github context - use github.event for issue events
+            let issue;
+            try {
+              // Try github.event first (more reliable for issue events)
+              if (github && github.event && github.event.issue) {
+                issue = github.event.issue;
+              } else if (github && github.context && github.context.payload && github.context.payload.issue) {
+                issue = github.context.payload.issue;
+              } else {
+                core.setFailed('GitHub issue context is not available. This action must be triggered by an issue event.');
+                return;
+              }
+            } catch (err) {
+              core.setFailed('Error accessing GitHub context: ' + err.message);
+              return;
+            }
+
             const body = issue.body || '';
 
             // Find the ```json ... ``` block containing the updated AP entry
