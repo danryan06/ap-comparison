@@ -40,6 +40,9 @@ jobs:
 
             const body = issue.body;
             core.info(`Processing issue #${issue.number}: ${issue.title}`);
+            core.info('=== ISSUE BODY START ===');
+            core.info(body);
+            core.info('=== ISSUE BODY END ===');
 
             // Find the ```json ... ``` block containing the updated AP entry
             let match = body.match(/```json\s*([\s\S]*?)```/);
@@ -64,6 +67,9 @@ jobs:
               core.setFailed('Invalid JSON in issue: ' + err.message);
               return;
             }
+
+            core.info('Parsed AP object:');
+            core.info(JSON.stringify(ap, null, 2));
 
             // Basic sanity checks
             if (!ap.vendor || !ap.model) {
@@ -122,37 +128,52 @@ jobs:
             const requestedLabel = normalizeLabel(requestedLabelRaw);
             core.info(`Requested edit for: ${requestedLabel || '(not specified)'}`);
 
-            // Try to find an image URL from JSON or issue body
+            // Try to find an image URL from JSON or issue body - IMPROVED VERSION
             function findImageUrlFromBody(text) {
               if (!text) return null;
               
-              // First, try to find markdown image syntax: ![alt](url)
-              const markdownImgMatch = text.match(/!\[[^\]]*\]\((https?:\/\/[^\s)]+)\)/i);
-              if (markdownImgMatch) {
-                return markdownImgMatch[1];
+              // First try to find markdown image syntax: ![alt](url)
+              const markdownMatch = text.match(/!\[.*?\]\((https?:\/\/[^\s)]+)\)/);
+              if (markdownMatch) {
+                core.info(`Found image in markdown format: ${markdownMatch[1]}`);
+                return markdownMatch[1];
               }
               
-              // Match common image hosts and extensions OR GitHub user-images URLs
-              const imgRegex = /(https?:\/\/[^\s)]+?(?:\.(?:png|jpe?g|gif|webp)(?:\?[^\s)]*)?|user-images\.githubusercontent\.com\/[^\s)]+))/i;
+              // Then try GitHub user-images URLs (they may not have extensions)
+              const githubImgMatch = text.match(/(https:\/\/(?:private-)?user-images\.githubusercontent\.com\/[^\s)]+)/i);
+              if (githubImgMatch) {
+                core.info(`Found GitHub user-images URL: ${githubImgMatch[1]}`);
+                return githubImgMatch[1];
+              }
+              
+              // Finally try any URL with common image extensions
+              const imgRegex = /(https?:\/\/[^\s)]+?\.(?:png|jpe?g|gif|webp|bmp|svg)(?:\?[^\s)]*)?)/i;
               const m = text.match(imgRegex);
-              return m ? m[1] : null;
+              if (m) {
+                core.info(`Found image URL with extension: ${m[1]}`);
+                return m[1];
+              }
+              
+              return null;
             }
 
             async function downloadImageIfNeeded(ap, bodyText) {
               let url = ap.image_url && String(ap.image_url).trim();
-              core.info(`Checking for image URL in JSON: ${url || '(not found)'}`);
+              
+              core.info(`Checking for image URL...`);
+              core.info(`  - From JSON image_url field: ${url || '(none)'}`);
               
               if (!url) {
                 url = findImageUrlFromBody(bodyText);
-                core.info(`Checking for image URL in issue body: ${url || '(not found)'}`);
+                core.info(`  - From issue body: ${url || '(none)'}`);
               }
               
               if (!url) {
-                core.info('No image URL found in JSON or issue body; skipping image download.');
+                core.warning('No image URL found in JSON or issue body; skipping image download.');
                 return ap;
               }
 
-              core.info(`Attempting to download image from ${url}`);
+              core.info(`✓ Will attempt to download image from: ${url}`);
 
               const imagesDir = path.join(process.env.GITHUB_WORKSPACE, 'images');
               fs.mkdirSync(imagesDir, { recursive: true });
@@ -164,33 +185,66 @@ jobs:
               const vendorDir = path.join(imagesDir, vendorSlug);
               fs.mkdirSync(vendorDir, { recursive: true });
 
-              const extMatch = url.match(/\.(png|jpe?g|gif|webp)(?:\?|#|$)/i);
-              const ext = extMatch ? `.${extMatch[1].toLowerCase().replace('jpeg','jpg')}` : '.jpg';
+              // Better extension detection
+              let ext = '.jpg'; // default
+              const extMatch = url.match(/\.(png|jpe?g|gif|webp|bmp)(?:\?|#|$)/i);
+              if (extMatch) {
+                ext = `.${extMatch[1].toLowerCase().replace('jpeg','jpg')}`;
+              } else if (url.includes('githubusercontent.com')) {
+                // GitHub images are typically PNG
+                ext = '.png';
+              }
+              
               const filename = `${vendorSlug}-${modelSlug}${ext}`;
               const destPath = path.join(vendorDir, filename);
+
+              core.info(`Downloading to: ${destPath}`);
 
               const client = url.startsWith('https:') ? https : http;
 
               try {
                 await new Promise((resolve, reject) => {
                   const file = fs.createWriteStream(destPath);
-                  const request = client.get(url, response => {
+                  const request = client.get(url, {
+                    headers: {
+                      'User-Agent': 'GitHub-Actions-Bot'
+                    }
+                  }, response => {
+                    core.info(`HTTP Response Status: ${response.statusCode}`);
+                    
                     if (response.statusCode && response.statusCode >= 400) {
                       file.close();
                       fs.unlink(destPath, () => {});
                       return reject(new Error(`Image download failed with status ${response.statusCode}`));
                     }
+                    
+                    // Handle redirects
+                    if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
+                      file.close();
+                      fs.unlink(destPath, () => {});
+                      core.info(`Following redirect to: ${response.headers.location}`);
+                      return reject(new Error('REDIRECT')); // We'll handle this outside
+                    }
+                    
+                    let downloadedBytes = 0;
+                    response.on('data', (chunk) => {
+                      downloadedBytes += chunk.length;
+                    });
+                    
                     response.pipe(file);
                     file.on('finish', () => {
                       file.close();
+                      core.info(`✓ Downloaded ${downloadedBytes} bytes`);
                       resolve(null);
                     });
                   });
+                  
                   request.on('error', err => {
                     file.close();
                     fs.unlink(destPath, () => {});
                     reject(err);
                   });
+                  
                   request.setTimeout(30000, () => {
                     request.destroy();
                     reject(new Error('Image download timeout'));
@@ -198,10 +252,23 @@ jobs:
                 });
 
                 const repoRelative = `images/${vendorSlug}/${filename}`;
-                core.info(`Image saved as ${repoRelative}`);
+                core.info(`✓✓ Image saved successfully as: ${repoRelative}`);
                 ap.image_url = repoRelative;
+                
+                // Verify file was written
+                if (fs.existsSync(destPath)) {
+                  const stats = fs.statSync(destPath);
+                  core.info(`File size: ${stats.size} bytes`);
+                  if (stats.size === 0) {
+                    core.warning('Downloaded file is 0 bytes!');
+                  }
+                } else {
+                  core.warning('File does not exist after download!');
+                }
+                
               } catch (err) {
-                core.warning(`Image download failed: ${err.message}. Continuing without image update.`);
+                core.error(`✗ Image download failed: ${err.message}`);
+                core.warning('Continuing without updating the image. The existing image_url will be preserved if available.');
               }
 
               return ap;
@@ -280,9 +347,16 @@ jobs:
             // Preserve existing image_url if the new entry doesn't have one or has an empty string
             const existingEntry = arr[targetIndex];
             const newImageUrl = ap.image_url && String(ap.image_url).trim();
+            
+            core.info(`Image URL comparison:`);
+            core.info(`  - Existing: ${existingEntry.image_url || '(none)'}`);
+            core.info(`  - New: ${newImageUrl || '(none)'}`);
+            
             if (!newImageUrl && existingEntry.image_url && String(existingEntry.image_url).trim()) {
-              core.info(`Preserving existing image_url: ${existingEntry.image_url}`);
+              core.info(`→ Preserving existing image_url: ${existingEntry.image_url}`);
               ap.image_url = existingEntry.image_url;
+            } else if (newImageUrl) {
+              core.info(`→ Using new image_url: ${newImageUrl}`);
             }
 
             core.info(`Updating existing AP at index ${targetIndex}`);
@@ -290,7 +364,7 @@ jobs:
 
             const updated = JSON.stringify(arr, null, 2) + '\n';
             fs.writeFileSync(filePath, updated, 'utf8');
-            core.info('Successfully updated ap_data.json');
+            core.info('✓ Successfully updated ap_data.json');
 
             // Set outputs instead of environment variables
             core.setOutput('vendor', ap.vendor);
