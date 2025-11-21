@@ -3,14 +3,14 @@ name: AP submissions from issues
 # DISABLED: This workflow has been replaced by process_new_ap.yml and process_edit_ap.yml
 # Keeping this file for reference but workflow is disabled
 
+# Completely disabled - no triggers at all
 on:
-  issues:
-    types: []  # Disabled - no triggers
+  workflow_dispatch: {}  # Empty workflow_dispatch prevents any automatic triggers
 
 jobs:
   process-ap-issue:
     # Only run for issues that match our form patterns
-    if: false  # Explicitly disabled
+    if: false  # Explicitly disabled - this job will never run
     runs-on: ubuntu-latest
     timeout-minutes: 10  # Prevent infinite hangs
 
