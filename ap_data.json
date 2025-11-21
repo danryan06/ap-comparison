@@ -1417,8 +1417,8 @@
   {
     "vendor": "Juniper",
     "model": "AP24",
-    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
-    "spatial_streams": "2x2 / 2x2",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3)",
     "behavior_min_power": "On 802.3af the AP can run 2x2 on two bands plus a 1x1 scan radio in tri-band mode; power is sufficient for full intended functionality.",
