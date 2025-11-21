@@ -1,15 +1,16 @@
 name: AP submissions from issues
 
+# DISABLED: This workflow has been replaced by process_new_ap.yml and process_edit_ap.yml
+# Keeping this file for reference but workflow is disabled
+
 on:
   issues:
-    types: [opened, edited, reopened]
+    types: []  # Disabled - no triggers
 
 jobs:
   process-ap-issue:
     # Only run for issues that match our form patterns
-    if: |
-      startsWith(github.event.issue.title, 'New AP:') ||
-      startsWith(github.event.issue.title, 'Edit AP:')
+    if: false  # Explicitly disabled
     runs-on: ubuntu-latest
     timeout-minutes: 10  # Prevent infinite hangs
 
