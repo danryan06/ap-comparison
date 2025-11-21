@@ -33,68 +33,15 @@ jobs:
             const https = require('https');
             const http = require('http');
 
-            // Access issue from context or fetch via API
-            let issue;
-            try {
-              if (!github) {
-                core.setFailed('GitHub client is not available in github-script context.');
-                return;
-              }
-              
-              // Get repo info first (needed for API fallback)
-              let owner, repoName;
-              if (github.context && github.context.repo) {
-                owner = github.context.repo.owner;
-                repoName = github.context.repo.repo;
-              } else if (process.env.GITHUB_REPOSITORY) {
-                // Fallback to environment variable: format is "owner/repo"
-                const parts = process.env.GITHUB_REPOSITORY.split('/');
-                if (parts.length === 2) {
-                  owner = parts[0];
-                  repoName = parts[1];
-                }
-              }
-              
-              // Try to get issue from context payload first
-              const payload = (github.context && github.context.payload) ? github.context.payload : null;
-              if (payload) {
-                // Try nested issue first, then payload itself
-                issue = payload.issue || (payload.body ? payload : null);
-              }
-              
-              // If not in payload, fetch from API
-              if (!issue || !issue.body) {
-                const issueNumber = payload?.issue?.number || payload?.number;
-                
-                if (owner && repoName && issueNumber) {
-                  core.info(`Fetching issue #${issueNumber} from API (owner: ${owner}, repo: ${repoName})...`);
-                  const response = await github.rest.issues.get({
-                    owner: owner,
-                    repo: repoName,
-                    issue_number: parseInt(issueNumber)
-                  });
-                  issue = response.data;
-                } else {
-                  core.warning(`Cannot fetch issue: owner=${owner}, repo=${repoName}, issueNumber=${issueNumber}`);
-                }
-              }
-              
-              // Final validation
-              if (!issue || !issue.body) {
-                core.setFailed('Could not access issue data. This action must be triggered by an issue event.');
-                if (github.context) {
-                  core.info('Context event: ' + (github.context.eventName || 'unknown'));
-                  if (payload) {
-                    core.info('Payload keys: ' + Object.keys(payload).join(', '));
-                  }
-                }
-                return;
-              }
-            } catch (err) {
-              core.setFailed('Error accessing GitHub issue: ' + err.message);
-              core.info('Error details: ' + err.stack);
+            // In github-script, context.payload.issue is always available for issue events
+            const issue = context.payload.issue;
+            
+            if (!issue || !issue.body) {
+              core.setFailed('Issue data is not available. This should not happen for issue events.');
               return;
             }
+            
+            core.info(`Processing issue #${issue.number}: ${issue.title}`);
 
             const body = issue.body || '';
 
@@ -231,23 +178,25 @@ jobs:
 
             const updated = JSON.stringify(arr, null, 2) + '\n';
             fs.writeFileSync(filePath, updated, 'utf8');
+            core.info('Successfully updated ap_data.json');
 
-            core.exportVariable('AP_VENDOR', ap.vendor);
-            core.exportVariable('AP_MODEL', ap.model);
-            core.exportVariable('ISSUE_NUMBER', issue.number.toString());
+            // Set outputs instead of environment variables
+            core.setOutput('vendor', ap.vendor);
+            core.setOutput('model', ap.model);
+            core.setOutput('issue_number', issue.number.toString());
 
       - name: Create pull request for new AP
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "Add new AP: ${{ env.AP_VENDOR }} ${{ env.AP_MODEL }}"
-          branch: "ap-from-issue-${{ env.ISSUE_NUMBER }}"
-          title: "Add new AP from issue #${{ env.ISSUE_NUMBER }}: ${{ env.AP_VENDOR }} ${{ env.AP_MODEL }}"
+          commit-message: "Add new AP: ${{ steps.update-json.outputs.vendor }} ${{ steps.update-json.outputs.model }}"
+          branch: "ap-from-issue-${{ steps.update-json.outputs.issue_number }}"
+          title: "Add new AP from issue #${{ steps.update-json.outputs.issue_number }}: ${{ steps.update-json.outputs.vendor }} ${{ steps.update-json.outputs.model }}"
           body: |
-            This PR adds a new AP entry derived from issue #${{ env.ISSUE_NUMBER }}.
+            This PR adds a new AP entry derived from issue #${{ steps.update-json.outputs.issue_number }}.
 
-            Vendor: **${{ env.AP_VENDOR }}**
-            Model: **${{ env.AP_MODEL }}**
+            Vendor: **${{ steps.update-json.outputs.vendor }}**
+            Model: **${{ steps.update-json.outputs.model }}**
 
-            Please review the changes to `ap_data.json` before merging.
+            Please review the changes to `ap_data.json` (and any new image under `images/`) before merging.
           labels: |
             new-ap
