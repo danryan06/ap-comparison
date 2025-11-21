@@ -1210,6 +1210,31 @@
     "msrp": "unknown"
   },
   {
+    "vendor": "Extreme Networks",
+    "model": "AP4020",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at",
+    "recommended_poe": "802.3at",
+    "behavior_min_power": "Full functionality on 802.3at (PoE+)",
+    "ethernet_ports_speed": "1x5GbE, 1x2.5GbE",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "Dual Zigbee",
+      "Thread",
+      "BLEv5",
+      "sensor radio"
+    ],
+    "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/6c4cd97dc1db45478295b8f74d2c6c82?v=22db8284",
+    "image_url": "",
+    "dimensions": "238mm x 238mm x 38mm",
+    "weight": "1.30 kg or 2.9 lbs",
+    "antenna_connectors": "none",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C (32\u00b0F to 122\u00b0F)",
+    "msrp": "~$1,300"
+  },
+  {
     "vendor": "Fortinet",
     "model": "FAP-231K",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
