@@ -944,6 +944,31 @@
     "msrp": "~$2,593"
   },
   {
+    "vendor": "Cisco",
+    "model": "IW9167E",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt / UPOE+",
+    "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate at 2\u00d72 and Ethernet ports are restricted to 1Gbps",
+    "ethernet_ports_speed": "1\u00d710/100/1/2.5/5 GbE mGig (RJ45), 1\u00d71/10 GbE (SFP+)",
+    "antenna_type": "External",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GPS/GNSS",
+      "Scanning radio"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-iw9167-series/cat-iw9167e-heavy-duty-ap-ds.html",
+    "image_url": "",
+    "dimensions": "292 \u00d7 267 \u00d7 71 mm",
+    "weight": "4.2 kg",
+    "antenna_connectors": "8\u00d7N-Type,1\u00d7RP-TNC (GNSS)",
+    "operating_temp_range": "-50\u00b0C to +75\u00b0C",
+    "msrp": "unknown"
+  },
+  {
     "vendor": "Extreme",
     "model": "AP5020",
     "wifi_gen_radios": "Wi-Fi 7",
