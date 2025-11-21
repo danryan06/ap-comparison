@@ -69,19 +69,21 @@ def download_image(image_url: str, vendor: str, model: str) -> str:
     if not image_url:
         return ''
     try:
-        images_dir = Path('images')
-        images_dir.mkdir(exist_ok=True)
+        # Create manufacturer subfolder
+        vendor_slug = slugify(vendor)
+        images_dir = Path('images') / vendor_slug
+        images_dir.mkdir(parents=True, exist_ok=True)
         parsed = urlparse(image_url)
         ext = Path(parsed.path).suffix.lower()
         if ext not in {'.png', '.jpg', '.jpeg', '.gif', '.webp'}:
             ext = '.jpg'
-        filename = f"{slugify(vendor)}-{slugify(model)}{ext}"
+        filename = f"{vendor_slug}-{slugify(model)}{ext}"
         dest = images_dir / filename
         with urllib.request.urlopen(image_url) as resp:
             if resp.status >= 400:
                 raise RuntimeError(f'HTTP {resp.status}')
             dest.write_bytes(resp.read())
-        return f"images/{filename}"
+        return f"images/{vendor_slug}/{filename}"
     except Exception as e:
         print(f"WARNING: Failed to download image {image_url}: {e}")
         return ''
