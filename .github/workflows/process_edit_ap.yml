@@ -125,17 +125,28 @@ jobs:
             // Try to find an image URL from JSON or issue body
             function findImageUrlFromBody(text) {
               if (!text) return null;
+              
+              // First, try to find markdown image syntax: ![alt](url)
+              const markdownImgMatch = text.match(/!\[[^\]]*\]\((https?:\/\/[^\s)]+)\)/i);
+              if (markdownImgMatch) {
+                return markdownImgMatch[1];
+              }
+              
               // Match common image hosts and extensions OR GitHub user-images URLs
-              const imgRegex = /(https?:\/\/[^\s)]+?(?:\.(?:png|jpe?g|gif|webp)|user-images\.githubusercontent\.com\/[^\s)]+))/i;
+              const imgRegex = /(https?:\/\/[^\s)]+?(?:\.(?:png|jpe?g|gif|webp)(?:\?[^\s)]*)?|user-images\.githubusercontent\.com\/[^\s)]+))/i;
               const m = text.match(imgRegex);
               return m ? m[1] : null;
             }
 
             async function downloadImageIfNeeded(ap, bodyText) {
               let url = ap.image_url && String(ap.image_url).trim();
+              core.info(`Checking for image URL in JSON: ${url || '(not found)'}`);
+              
               if (!url) {
                 url = findImageUrlFromBody(bodyText);
+                core.info(`Checking for image URL in issue body: ${url || '(not found)'}`);
               }
+              
               if (!url) {
                 core.info('No image URL found in JSON or issue body; skipping image download.');
                 return ap;
