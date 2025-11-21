@@ -112,10 +112,14 @@ jobs:
               const vendorSlug = slugify(ap.vendor);
               const modelSlug = slugify(ap.model);
 
+              // Create manufacturer subfolder
+              const vendorDir = path.join(imagesDir, vendorSlug);
+              fs.mkdirSync(vendorDir, { recursive: true });
+
               const extMatch = url.match(/\.(png|jpe?g|gif|webp)(?:\?|#|$)/i);
               const ext = extMatch ? `.${extMatch[1].toLowerCase().replace('jpeg','jpg')}` : '.jpg';
               const filename = `${vendorSlug}-${modelSlug}${ext}`;
-              const destPath = path.join(imagesDir, filename);
+              const destPath = path.join(vendorDir, filename);
 
               const client = url.startsWith('https:') ? https : http;
 
@@ -142,7 +146,7 @@ jobs:
                 core.warning(`Image download failed: ${err.message}`);
               });
 
-              const repoRelative = `images/${filename}`;
+              const repoRelative = `images/${vendorSlug}/${filename}`;
               core.info(`Image saved as ${repoRelative}`);
               ap.image_url = repoRelative;
               return ap;
@@ -197,6 +201,14 @@ jobs:
             if (targetIndex === -1) {
               core.setFailed('Could not find an existing AP entry to edit based on vendor/model.');
               return;
+            }
+
+            // Preserve existing image_url if the new entry doesn't have one or has an empty string
+            const existingEntry = arr[targetIndex];
+            const newImageUrl = ap.image_url && String(ap.image_url).trim();
+            if (!newImageUrl && existingEntry.image_url && String(existingEntry.image_url).trim()) {
+              core.info(`Preserving existing image_url: ${existingEntry.image_url}`);
+              ap.image_url = existingEntry.image_url;
             }
 
             core.info(`Updating existing AP at index ${targetIndex}`);
