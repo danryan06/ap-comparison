@@ -2090,5 +2090,25 @@
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 60°C",
     "msrp": "$299.00"
+  },
+  {
+    "vendor": "Ubiquiti",
+    "model": "E7 Audience",
+    "wifi_gen_radios": "Wi-Fi 7 (5/6 Low/6 High)",
+    "spatial_streams": "4x4 / 4x4 / 4x4",
+    "min_poe_class": "PoE++ (802.3bt)",
+    "recommended_poe": "PoE++ (802.3bt)",
+    "behavior_min_power": "The AP does not list lower-class PoE sources as being supported, and may not work properly or at all with less than 802.3bt (60 W) PoE.",
+    "ethernet_ports_speed": "(1) 10 GbE and (1) 1 GbE RJ45 ports",
+    "antenna_type": "Directional",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [],
+    "datasheet_url": "https://techspecs.ui.com/unifi/wifi/e7-audience-us?s=us#datasheet",
+    "image_url": "images/ubiquiti/ubiquiti-e7-audience.png",
+    "dimensions": "474.1 x 265.5 x 42.2 mm (device only)",
+    "weight": "3.3 kg (7.3 lb) (device only), 4.3 kg (9.5 lb) (device with mount)",
+    "antenna_connectors": "None (internal directional antennas switchable between 15 dBi, 50° x 50° and 11 dBi, 90° x 90° operation)",
+    "operating_temp_range": "-40 to 60°C (-40 to 140°F)",
+    "msrp": "$1999"
   }
 ]
