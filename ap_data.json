@@ -398,9 +398,9 @@
     "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 2.8,
       "5": 4.5,
-      "6": 4.5
+      "6": 4.5,
+      "2.4": 2.8
     },
     "form_factor": "Indoor",
     "dimensions": "5.1 x 20.1 x 18.3 x cm",
@@ -426,9 +426,9 @@
     "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.6,
-      "5": 7.0,
-      "6": 6.3
+      "5": 7,
+      "6": 6.3,
+      "2.4": 4.6
     },
     "form_factor": "Indoor",
     "dimensions": "220 x 220 x 51 mm",
@@ -455,9 +455,9 @@
     "ethernet_ports_speed": "2×5GbE",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.8,
       "5": 5.3,
-      "6": 5.4
+      "6": 5.4,
+      "2.4": 4.8
     },
     "form_factor": "Indoor",
     "dimensions": "260 × 260 × 60 mm",
@@ -484,9 +484,9 @@
     "ethernet_ports_speed": "1× 100/1000/2500BASE-T (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.1,
       "5": 5.4,
-      "6": 5.4
+      "6": 5.4,
+      "2.4": 5.1
     },
     "form_factor": "Indoor",
     "dimensions": "200 x 200 x 46 mm",
@@ -537,9 +537,9 @@
     "ethernet_ports_speed": "2× 1/2.5/5GbE SmartRate (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.1,
       "5": 5.5,
-      "6": 5.3
+      "6": 5.3,
+      "2.4": 5.1
     },
     "form_factor": "Indoor",
     "dimensions": "240 x 240 x 56 mm",
@@ -567,9 +567,9 @@
     "ethernet_ports_speed": "1× 100/1000/2.5/5GbE (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.9,
       "5": 5.8,
-      "6": 5.9
+      "6": 5.9,
+      "2.4": 5.9
     },
     "form_factor": "Indoor",
     "dimensions": "240 x 240 x 57 mm",
@@ -620,9 +620,9 @@
     "ethernet_ports_speed": "2× 100/1000/2.5/5/10GbE (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.3,
-      "5": 6.0,
-      "6": 6.0
+      "5": 6,
+      "6": 6,
+      "2.4": 5.3
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1106,9 +1106,9 @@
     "ethernet_ports_speed": "2× 100M/1G/2.5G/5G/10G Multigigabit Ethernet (RJ-45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4,
       "5": 5,
-      "6": 6
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1550,19 +1550,19 @@
     "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
     "behavior_min_power": "On 802.3bt or 2×802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, client radios operate at reduced Tx power (~17 dBm) with 2x2 chains and USB disabled; 2.4/5/6 GHz radios and the fourth radio remain operational.",
     "ethernet_ports_speed": "2× 1/2.5/5/10GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
-    "antenna_type": "External",
+    "antenna_type": "Internal",
     "form_factor": "Indoor",
-    "dimensions": "9.84 x 9.84 x 2.26 inches (250 x 250 x 57.5 mm)",
-    "weight": "4.36 lbs (1.98 kg)",
-    "antenna_connectors": "10× RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
-    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
       "GPS"
     ],
-    "msrp": "$1,350",
-    "image_url": "images/fortinet/fortinet-fap-441k.png"
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+    "image_url": "images/fortinet/fortinet-fap-441k.png",
+    "dimensions": "9.84 x 9.84 x 2.26 inches (250 x 250 x 57.5 mm)",
+    "weight": "4.36 lbs (1.98 kg)",
+    "antenna_connectors": "10× RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "msrp": "$1,350"
   },
   {
     "vendor": "Fortinet",
