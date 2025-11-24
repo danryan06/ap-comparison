@@ -1,0 +1,32 @@
+{
+  "vendor": "Vendor Name",
+  "model": "Model Number",
+  "wifi_gen_radios": "Wi-Fi 6 (2.4/5) or Wi-Fi 6E (2.4/5/6) or Wi-Fi 7 (2.4/5/6)",
+  "spatial_streams": "2x2 / 2x2 or 4x4 / 4x4 / 4x4 (format: 2.4GHz / 5GHz / 6GHz)",
+  "min_poe_class": "802.3af (Class 3) or 802.3at (Class 4) or 802.3bt (Class 5/6)",
+  "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+  "behavior_min_power": "Description of what happens when AP runs on minimum PoE class (e.g., 'On 802.3af, USB is disabled and radios operate at reduced power')",
+  "ethernet_ports_speed": "1× 1/2.5 GbE mGig (RJ45) or 2× 10 GbE (RJ45)",
+  "antenna_type": "Internal or External or Directional",
+  "antenna_gain_dbi": {
+    "2.4": 4.5,
+    "5": 5.0,
+    "6": 5.5
+  },
+  "form_factor": "Indoor or Outdoor or Wallplate",
+  "radios_iot_features": [
+    "BLE",
+    "Zigbee",
+    "GPS/GNSS",
+    "802.15.4 IoT radio",
+    "Scanning radio"
+  ],
+  "datasheet_url": "https://example.com/datasheet.pdf",
+  "image_url": "images/vendor/vendor-model.png",
+  "dimensions": "200 x 200 x 45 mm or 7.9 x 7.9 x 1.8 in",
+  "weight": "1.0 kg (2.2 lb) or 500 g",
+  "antenna_connectors": "None (internal antennas) or 4× RP-SMA or 8× N-type",
+  "operating_temp_range": "0°C to 50°C operating or 32°F to 122°F (0°C to 50°C)",
+  "msrp": "$1,000 or unknown"
+}
+
