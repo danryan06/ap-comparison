@@ -272,6 +272,7 @@
       { key: 'recommended_poe', label: 'Recommended PoE' },
       { key: 'ethernet_ports_speed', label: 'Ethernet Ports & Speed' },
       { key: 'antenna_type', label: 'Antenna Type' },
+      { key: 'antenna_gain_dbi', label: 'Antenna Gain (dBi)' },
       { key: 'form_factor', label: 'Form Factor' },
       { key: 'dimensions', label: 'Dimensions' },
       { key: 'weight', label: 'Weight' },
@@ -298,6 +299,18 @@
     function normalizeString(value) {
       if (value == null) return '';
       if (Array.isArray(value)) return value.join(', ');
+      if (typeof value === 'object') {
+        // Handle antenna_gain_dbi object: "2.4: 2.8 dBi, 5: 4.5 dBi, 6: 4.5 dBi"
+        if (value['2.4'] !== undefined || value['5'] !== undefined || value['6'] !== undefined) {
+          const parts = [];
+          if (value['2.4'] !== undefined) parts.push(`2.4: ${value['2.4']} dBi`);
+          if (value['5'] !== undefined) parts.push(`5: ${value['5']} dBi`);
+          if (value['6'] !== undefined) parts.push(`6: ${value['6']} dBi`);
+          return parts.join(', ');
+        }
+        // Handle other objects generically
+        return JSON.stringify(value);
+      }
       return String(value);
     }
 

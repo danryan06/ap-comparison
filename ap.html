@@ -87,7 +87,21 @@
       // Build CSV row
       const values = orderedKeys.map(k => {
         const v = currentEntry[k];
-        const s = Array.isArray(v) ? v.join('; ') : normalizeString(v);
+        let s;
+        if (Array.isArray(v)) {
+          s = v.join('; ');
+        } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {
+          // Format antenna_gain_dbi for CSV: "2.4: 2.8 dBi, 5: 4.5 dBi, 6: 4.5 dBi"
+          const parts = [];
+          if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']} dBi`);
+          if (v['5'] !== undefined) parts.push(`5: ${v['5']} dBi`);
+          if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
+          s = parts.join(', ');
+        } else if (v && typeof v === 'object' && v !== null) {
+          s = JSON.stringify(v);
+        } else {
+          s = normalizeString(v);
+        }
         return escapeCsvValue(s);
       });
 
@@ -118,6 +132,7 @@
       ethernet_ports_speed: 'Ethernet Ports & Speed',
       radios_iot_features: 'Radios & IoT Features',
       antenna_type: 'Antenna Type',
+      antenna_gain_dbi: 'Antenna Gain (dBi)',
       form_factor: 'Form Factor',
       dimensions: 'Dimensions',
       weight: 'Weight',
@@ -218,8 +233,21 @@
           keyDiv.textContent = fieldLabels[k] || k;
           const valDiv = document.createElement('div');
           valDiv.className = 'val';
-          if (Array.isArray(v)) valDiv.textContent = v.join(', ');
-          else valDiv.textContent = normalizeString(v);
+          if (Array.isArray(v)) {
+            valDiv.textContent = v.join(', ');
+          } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {
+            // Format antenna_gain_dbi object: "2.4: 2.8 dBi, 5: 4.5 dBi, 6: 4.5 dBi"
+            const parts = [];
+            if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']} dBi`);
+            if (v['5'] !== undefined) parts.push(`5: ${v['5']} dBi`);
+            if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
+            valDiv.textContent = parts.join(', ');
+          } else if (v && typeof v === 'object' && v !== null) {
+            // Handle other objects generically
+            valDiv.textContent = JSON.stringify(v);
+          } else {
+            valDiv.textContent = normalizeString(v);
+          }
           detailsEl.appendChild(keyDiv);
           detailsEl.appendChild(valDiv);
         };
@@ -227,7 +255,7 @@
         const primaryKeys = [
           'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
           'recommended_poe','behavior_min_power','ethernet_ports_speed',
-          'radios_iot_features','antenna_type','form_factor','dimensions',
+          'radios_iot_features','antenna_type','antenna_gain_dbi','form_factor','dimensions',
           'weight','antenna_connectors','operating_temp_range','msrp',
           'end_of_sale_date','end_of_sale_url','install_guide_url'
         ];
