@@ -1096,6 +1096,37 @@
     "msrp": "unknown"
   },
   {
+    "vendor": "Cisco",
+    "model": "9178I",
+    "wifi_gen_radios": "Wi-Fi 6/7 (2.4/5/6)",
+    "spatial_streams": "4x4 / 4x4+4x4 (dual 5 GHz) / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6)",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the AP reduces all radios to 2x2 operation, disables USB, and limits Ethernet link speed to 2.5 GbE. On 802.3af, radios are disabled (staging only, 13.95W max).",
+    "ethernet_ports_speed": "2× 100M/1G/2.5G/5G/10G Multigigabit Ethernet (RJ-45)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4,
+      "5": 5,
+      "6": 6
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE 5.3",
+      "UWB",
+      "GNSS/GPS (L1/L5)",
+      "AI/ML-driven scan radio",
+      "Dedicated IoT radio"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-wireless-9178-access-point/datasheet.html",
+    "image_url": "images/cisco/cisco-9178i.png",
+    "dimensions": "9.9 x 9.9 x 2.0 in (25.1 x 25.1 x 5.1 cm)",
+    "weight": "4.1 lb (1.87 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 122°F (0°C to 50°C)",
+    "msrp": "unknown"
+  },
+  {
     "vendor": "Cisco Meraki",
     "model": "MR36",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
