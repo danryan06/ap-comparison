@@ -397,6 +397,11 @@
     "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, one Ethernet port is disabled and non-Wi-Fi features may be reduced; IPM can apply additional limits based on power budget.",
     "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 2.8,
+      "5": 4.5,
+      "6": 4.5
+    },
     "form_factor": "Indoor",
     "dimensions": "5.1 x 20.1 x 18.3 x cm",
     "weight": "0.72kg",
@@ -420,6 +425,11 @@
     "behavior_min_power": "On DC or 802.3bt, AP operates without restrictions. On 802.3at, USB is disabled; 802.3af is supported only for staging with radios disabled.",
     "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4.6,
+      "5": 7.0,
+      "6": 6.3
+    },
     "form_factor": "Indoor",
     "dimensions": "220 x 220 x 51 mm",
     "weight": "1300 g",
@@ -444,6 +454,11 @@
     "behavior_min_power": "On 802.3at (Class 4), the AP-655 operates in a power-restricted mode similar to an AP-635, potentially limiting bands, features, or transmit power.",
     "ethernet_ports_speed": "2×5GbE",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4.8,
+      "5": 5.3,
+      "6": 5.4
+    },
     "form_factor": "Indoor",
     "dimensions": "260 × 260 × 60 mm",
     "weight": "1.8 kg",
@@ -468,6 +483,11 @@
     "behavior_min_power": "On 802.3af (Class 3) PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
     "ethernet_ports_speed": "1× 100/1000/2500BASE-T (RJ45)",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 5.1,
+      "5": 5.4,
+      "6": 5.4
+    },
     "form_factor": "Indoor",
     "dimensions": "200 x 200 x 46 mm",
     "weight": "910 g",
@@ -516,6 +536,11 @@
     "behavior_min_power": "On 802.3at PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
     "ethernet_ports_speed": "2× 1/2.5/5GbE SmartRate (RJ45)",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 5.1,
+      "5": 5.5,
+      "6": 5.3
+    },
     "form_factor": "Indoor",
     "dimensions": "240 x 240 x 56 mm",
     "weight": "1440 g",
@@ -541,6 +566,11 @@
     "behavior_min_power": "On 802.3bt (Class 6) PoE, the AP operates without restrictions; operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging), and IPM may apply additional feature and power reductions when power is limited.",
     "ethernet_ports_speed": "1× 100/1000/2.5/5GbE (RJ45)",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 5.9,
+      "5": 5.8,
+      "6": 5.9
+    },
     "form_factor": "Indoor",
     "dimensions": "240 x 240 x 57 mm",
     "weight": "1.3 kg",
@@ -589,6 +619,11 @@
     "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
     "ethernet_ports_speed": "2× 100/1000/2.5/5/10GbE (RJ45)",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 5.3,
+      "5": 6.0,
+      "6": 6.0
+    },
     "form_factor": "Indoor",
     "radios_iot_features": [
       "BLE",
