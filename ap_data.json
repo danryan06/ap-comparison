@@ -7,7 +7,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "2× 100M/1G/2.5G (RJ45, PoE+ capable)",
+    "ethernet_ports_speed": "2\u00d7 100M/1G/2.5G (RJ45, PoE+ capable)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -18,7 +18,7 @@
     "dimensions": "200 x 210 x 45 mm",
     "weight": "1.1 kg (2.42 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -29,7 +29,7 @@
     "min_poe_class": "802.3bt (Class 5)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
     "behavior_min_power": "On 802.3bt (Class 5) PoE++, the AP operates at full functionality. Lower-class PoE sources are not supported and may prevent the AP from booting.",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G (RJ45, PoE++ in)",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G (RJ45, PoE++ in)",
     "antenna_type": "External",
     "form_factor": "Outdoor",
     "radios_iot_features": [],
@@ -37,8 +37,8 @@
     "image_url": "images/allied-telesis/allied-telesis-tq6702e-gen2.png",
     "dimensions": "257 x 227 x 90 mm",
     "weight": "4.4 kg",
-    "antenna_connectors": "8× external connectors for detachable 2.4/5 GHz antennas",
-    "operating_temp_range": "-40°C to 65°C operating",
+    "antenna_connectors": "8\u00d7 external connectors for detachable 2.4/5 GHz antennas",
+    "operating_temp_range": "-40\u00b0C to 65\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -49,7 +49,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "2× 100M/1G/2.5G/5G (RJ45, PoE+ capable)",
+    "ethernet_ports_speed": "2\u00d7 100M/1G/2.5G/5G (RJ45, PoE+ capable)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
@@ -58,7 +58,7 @@
     "dimensions": "200 x 240 x 45 mm",
     "weight": "1.2 kg (2.64 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -69,7 +69,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "2× 100M/1G/2.5G/5G (RJ45, PoE+ capable)",
+    "ethernet_ports_speed": "2\u00d7 100M/1G/2.5G/5G (RJ45, PoE+ capable)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
@@ -78,7 +78,7 @@
     "dimensions": "200 x 240 x 45 mm",
     "weight": "1.2 kg (2.64 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -89,7 +89,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+ or 12V DC, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "2× 2.5 GbE (RJ45, PoE+)",
+    "ethernet_ports_speed": "2\u00d7 2.5 GbE (RJ45, PoE+)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -101,7 +101,7 @@
     "dimensions": "225 x 225 x 45 mm",
     "weight": "1.24 kg (2.73 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -112,7 +112,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt PoE++ for full performance",
     "behavior_min_power": "On 802.3at PoE+, USB is disabled, the 2.4 GHz radio is limited to 2x2 operation, and maximum EIRP is reduced across all bands.",
-    "ethernet_ports_speed": "2× 10 GbE (RJ45, PoE)",
+    "ethernet_ports_speed": "2\u00d7 10 GbE (RJ45, PoE)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -124,7 +124,7 @@
     "dimensions": "230 x 230 x 42.5 mm",
     "weight": "1.45 kg (3.2 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -135,7 +135,7 @@
     "min_poe_class": "802.3af",
     "recommended_poe": "802.3at (PoE+) for full performance",
     "behavior_min_power": "On 802.3af PoE, the 2.4 GHz radio is reduced to 1x1 operation and Ethernet link speed is limited to 1 GbE.",
-    "ethernet_ports_speed": "1× 5 GbE (RJ45, PoE)",
+    "ethernet_ports_speed": "1\u00d7 5 GbE (RJ45, PoE)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
@@ -144,7 +144,7 @@
     "dimensions": "185 x 185 x 45 mm",
     "weight": "1.09 kg (2.4 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -155,7 +155,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "2× 100M/1G/2.5G/5G (RJ45, PoE+)",
+    "ethernet_ports_speed": "2\u00d7 100M/1G/2.5G/5G (RJ45, PoE+)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -169,7 +169,7 @@
     "dimensions": "225 x 225 x 45 mm",
     "weight": "1.47 kg (3.24 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -180,7 +180,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+, USB is disabled, LAN2 is disabled, the 2.4 GHz radio is limited to 2x2 operation, and the multi-function radio EIRP is reduced by 3 dB.",
-    "ethernet_ports_speed": "2× 10 GbE (RJ45, PoE++)",
+    "ethernet_ports_speed": "2\u00d7 10 GbE (RJ45, PoE++)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -194,7 +194,7 @@
     "dimensions": "240 x 240 x 42.5 mm",
     "weight": "1.73 kg (3.81 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -205,7 +205,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+, USB is disabled, LAN2 is disabled, the 2.4 GHz radio is limited to 2x2 operation, and the multi-function radio EIRP is reduced by 3 dB.",
-    "ethernet_ports_speed": "2× 10 GbE (RJ45, PoE++)",
+    "ethernet_ports_speed": "2\u00d7 10 GbE (RJ45, PoE++)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -219,7 +219,7 @@
     "dimensions": "240 x 240 x 45.5 mm",
     "weight": "1.78 kg (3.92 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -230,7 +230,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+, the LAN2 PSE port is disabled while the client access radios remain fully functional.",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G uplink + 1× 100M/1G/2.5G/5G PoE-out (RJ45, IP67)",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G uplink + 1\u00d7 100M/1G/2.5G/5G PoE-out (RJ45, IP67)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -244,7 +244,7 @@
     "dimensions": "262 x 256 x 59 mm",
     "weight": "1.86 kg (4.1 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-40°C to 65°C operating",
+    "operating_temp_range": "-40\u00b0C to 65\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -255,7 +255,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+, the LAN2 PSE port is disabled while the client access radios remain fully functional.",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G uplink + 1× 100M/1G/2.5G/5G PoE-out (RJ45, IP67)",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G uplink + 1\u00d7 100M/1G/2.5G/5G PoE-out (RJ45, IP67)",
     "antenna_type": "External",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -268,8 +268,8 @@
     "image_url": "images/arista/arista-o-435e.png",
     "dimensions": "262 x 256 x 59 mm",
     "weight": "2.0 kg (4.4 lb)",
-    "antenna_connectors": "6× N-type connectors",
-    "operating_temp_range": "-40°C to 65°C operating",
+    "antenna_connectors": "6\u00d7 N-type connectors",
+    "operating_temp_range": "-40\u00b0C to 65\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -280,7 +280,7 @@
     "min_poe_class": "802.3at (PoE+)",
     "recommended_poe": "PoE++ for full performance",
     "behavior_min_power": "On 802.3at PoE+, PSE functionality is disabled, USB is disabled, and maximum transmit power is reduced across all bands.",
-    "ethernet_ports_speed": "1× 2.5 GbE uplink + 3× 1 GbE switch ports (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 2.5 GbE uplink + 3\u00d7 1 GbE switch ports (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Wallplate",
     "radios_iot_features": [
@@ -292,7 +292,7 @@
     "dimensions": "190.7 x 133.0 x 32.0 mm",
     "weight": "0.54 kg (1.19 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0\u00b0C to 45\u00b0C operating",
     "msrp": "unknown"
   },
   {
@@ -303,7 +303,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
     "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, USB is disabled unless IPM dynamically reduces other features based on power budget.",
-    "ethernet_ports_speed": "1× 10/100/1000BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -315,7 +315,7 @@
     "dimensions": "37 x 160 x 161 mm",
     "weight": "500g",
     "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
-    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -40\u00b0C to 70\u00b0C storage",
     "msrp": "$944"
   },
   {
@@ -326,7 +326,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
     "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, USB is disabled unless IPM dynamically reduces other features based on power budget.",
-    "ethernet_ports_speed": "1× 10/100/1000BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -338,7 +338,7 @@
     "dimensions": "160 mm x 160 mm x 37 mm",
     "weight": "500 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -40\u00b0C to 70\u00b0C storage",
     "msrp": "$944"
   },
   {
@@ -349,7 +349,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or 802.3bt (Class 5) or DC for unrestricted operation",
     "behavior_min_power": "On DC or 802.3at/802.3bt, AP operates without restrictions. On 802.3af, USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE.",
-    "ethernet_ports_speed": "1× 100/1000/2500BASE-T SmartRate (RJ45) + 1× 10/100/1000BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T SmartRate (RJ45) + 1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -361,7 +361,7 @@
     "dimensions": "46 x 200 x 200 mm (1.8 x 7.9 x 7.9 in)",
     "weight": "810 g (28.5 oz)",
     "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
-    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -40\u00b0C to 70\u00b0C storage",
     "msrp": "$1,486"
   },
   {
@@ -372,7 +372,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or 802.3bt (Class 5) or DC for unrestricted operation",
     "behavior_min_power": "On DC or 802.3at/802.3bt, AP operates without restrictions. On 802.3af, USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE.",
-    "ethernet_ports_speed": "1× 100/1000/2500BASE-T SmartRate (RJ45) + 1× 10/100/1000BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T SmartRate (RJ45) + 1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -384,7 +384,7 @@
     "dimensions": "46 x 200 x 200 mm (1.8 x 7.9 x 7.9 in)",
     "weight": "810 g (28.5 oz)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -40\u00b0C to 70\u00b0C storage",
     "msrp": "$1,486"
   },
   {
@@ -395,7 +395,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5/6) for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE, the AP operates with its dual radios but disables the secondary Ethernet port when IPM is not used; with IPM enabled, the AP starts unrestricted and may dynamically disable features based on the available PoE budget. Operation on 802.3af (Class 3 or lower) PoE sources is not supported.",
-    "ethernet_ports_speed": "1× 100/1000/2500BASE-T SmartRate (RJ45) + 1× 10/100/1000BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T SmartRate (RJ45) + 1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "External",
     "form_factor": "Ruggedized",
     "radios_iot_features": [
@@ -407,7 +407,7 @@
     "dimensions": "211 x 211 x 70 mm",
     "weight": "1.5 kg",
     "antenna_connectors": "Six RP-SMA connectors for external 2.4 GHz and 5 GHz antennas",
-    "operating_temp_range": "−40°C to +55°C operating; −40°C to +70°C storage",
+    "operating_temp_range": "\u221240\u00b0C to +55\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage",
     "msrp": "unknown"
   },
   {
@@ -418,7 +418,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) for unrestricted operation",
     "behavior_min_power": "On 802.3af (Class 3) PoE with IPM disabled, the AP reduces the 2.4 GHz radio to 1x1; with IPM enabled, the AP starts unrestricted and may dynamically apply feature reductions based on the available PoE budget. Using 802.3at (Class 4) PoE removes these restrictions.",
-    "ethernet_ports_speed": "1× 10/100/1000BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -430,7 +430,7 @@
     "dimensions": "165 x 165 x 130 mm",
     "weight": "1.03 kg",
     "antenna_connectors": "None (internal omni-directional antennas)",
-    "operating_temp_range": "−40°C to +55°C operating; −40°C to +70°C storage",
+    "operating_temp_range": "\u221240\u00b0C to +55\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage",
     "msrp": "unknown"
   },
   {
@@ -441,7 +441,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) for unrestricted operation",
     "behavior_min_power": "On 802.3af (Class 3) PoE with IPM disabled, the AP reduces the 2.4 GHz radio to 1x1; with IPM enabled, the AP starts unrestricted and may dynamically apply feature reductions based on the available PoE budget. Using 802.3at (Class 4) PoE removes these restrictions.",
-    "ethernet_ports_speed": "1× 10/100/1000BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000BASE-T (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -453,7 +453,7 @@
     "dimensions": "165 x 165 x 130 mm",
     "weight": "1.09 kg",
     "antenna_connectors": "None (internal directional antennas)",
-    "operating_temp_range": "−40°C to +55°C operating; −40°C to +70°C storage",
+    "operating_temp_range": "\u221240\u00b0C to +55\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage",
     "msrp": "unknown"
   },
   {
@@ -464,7 +464,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5/6) for unrestricted operation",
     "behavior_min_power": "On 802.3at (Class 4) PoE, the AP operates with both radios enabled but limits the 5 GHz radio to 2x2 operation and disables the USB port; 802.3bt is recommended for full 4x4 performance and full feature availability.",
-    "ethernet_ports_speed": "1× 100/1000BASE-T + 1× 2.5GBASE-T SmartRate (PoE in on E0)",
+    "ethernet_ports_speed": "1\u00d7 100/1000BASE-T + 1\u00d7 2.5GBASE-T SmartRate (PoE in on E0)",
     "antenna_type": "External",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -473,10 +473,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a00096370enw",
     "image_url": "images/aruba/aruba-ap570.png",
-    "dimensions": "267 × 228 × 100 mm",
+    "dimensions": "267 \u00d7 228 \u00d7 100 mm",
     "weight": "2.4 kg",
     "antenna_connectors": "Six RP-SMA connectors for external 2.4 GHz and 5 GHz antennas",
-    "operating_temp_range": "−40°C to +65°C operating; −40°C to +70°C storage",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage",
     "msrp": "unknown"
   },
   {
@@ -487,7 +487,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5/6) for unrestricted operation",
     "behavior_min_power": "On 802.3at (Class 4) PoE, the AP operates with both radios enabled but limits the 5 GHz radio to 2x2 operation and disables the USB port; 802.3bt is recommended for full 4x4 performance and full feature availability.",
-    "ethernet_ports_speed": "1× 100/1000BASE-T + 1× 2.5GBASE-T SmartRate (PoE in on E0)",
+    "ethernet_ports_speed": "1\u00d7 100/1000BASE-T + 1\u00d7 2.5GBASE-T SmartRate (PoE in on E0)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -496,10 +496,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a00096370enw",
     "image_url": "images/aruba/aruba-ap570.png",
-    "dimensions": "267 × 228 × 100 mm",
+    "dimensions": "267 \u00d7 228 \u00d7 100 mm",
     "weight": "2.4 kg",
     "antenna_connectors": "None (internal omni-directional antennas)",
-    "operating_temp_range": "−40°C to +65°C operating; −40°C to +70°C storage",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage",
     "msrp": "unknown"
   },
   {
@@ -510,7 +510,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5/6) for unrestricted operation",
     "behavior_min_power": "On 802.3at (Class 4) PoE, the AP operates with both radios enabled but limits the 5 GHz radio to 2x2 operation and disables the USB port; 802.3bt is recommended for full 4x4 performance and full feature availability.",
-    "ethernet_ports_speed": "1× 100/1000BASE-T + 1× 2.5GBASE-T SmartRate (PoE in on E0)",
+    "ethernet_ports_speed": "1\u00d7 100/1000BASE-T + 1\u00d7 2.5GBASE-T SmartRate (PoE in on E0)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -519,10 +519,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a00096370enw",
     "image_url": "images/aruba/aruba-ap570.png",
-    "dimensions": "267 × 228 × 100 mm",
+    "dimensions": "267 \u00d7 228 \u00d7 100 mm",
     "weight": "2.4 kg",
     "antenna_connectors": "None (internal directional antennas)",
-    "operating_temp_range": "−40°C to +65°C operating; −40°C to +70°C storage",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage",
     "msrp": "unknown"
   },
   {
@@ -533,7 +533,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5/6) for unrestricted operation",
     "behavior_min_power": "On 802.3at (Class 4) PoE, both Wi-Fi radios are reduced to 2x2 operation and PoE-out on E2 is disabled; 802.3bt is recommended whenever full 4x4 performance and downstream PoE are required.",
-    "ethernet_ports_speed": "1× 100/1000/2500/5000BASE-T (E0, PoE in) + 1× 10G SFP+ (E1) + 1× 10/100/1000BASE-T (E2, PoE-out PSE)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500/5000BASE-T (E0, PoE in) + 1\u00d7 10G SFP+ (E1) + 1\u00d7 10/100/1000BASE-T (E2, PoE-out PSE)",
     "antenna_type": "External",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -545,7 +545,7 @@
     "dimensions": "324 x 312 x 244 mm",
     "weight": "5.52 kg",
     "antenna_connectors": "Four dual-band N-type female connectors for external Wi-Fi antennas plus one N-type female connector for the Bluetooth/Zigbee IoT radio",
-    "operating_temp_range": "−40°C to +65°C operating; −40°C to +70°C storage; 5% to 93% RH non-condensing; IP66/67",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage; 5% to 93% RH non-condensing; IP66/67",
     "msrp": "unknown"
   },
   {
@@ -556,7 +556,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5/6) for unrestricted operation",
     "behavior_min_power": "On 802.3at (Class 4) PoE, both Wi-Fi radios are reduced to 2x2 operation and PoE-out on E2 is disabled; 802.3bt is recommended whenever full 4x4 performance and downstream PoE are required.",
-    "ethernet_ports_speed": "1× 100/1000/2500/5000BASE-T (E0, PoE in) + 1× 10G SFP+ (E1) + 1× 10/100/1000BASE-T (E2, PoE-out PSE)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500/5000BASE-T (E0, PoE in) + 1\u00d7 10G SFP+ (E1) + 1\u00d7 10/100/1000BASE-T (E2, PoE-out PSE)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -568,7 +568,7 @@
     "dimensions": "324 x 313 x 320 mm",
     "weight": "5.24 kg",
     "antenna_connectors": "None (built-in omnidirectional antennas)",
-    "operating_temp_range": "−40°C to +65°C operating; −40°C to +70°C storage; 5% to 93% RH non-condensing; IP66/67",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage; 5% to 93% RH non-condensing; IP66/67",
     "msrp": "unknown"
   },
   {
@@ -579,7 +579,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5/6) for unrestricted operation",
     "behavior_min_power": "On 802.3at (Class 4) PoE, both Wi-Fi radios are reduced to 2x2 operation and PoE-out on E2 is disabled; 802.3bt is recommended whenever full 4x4 performance and downstream PoE are required.",
-    "ethernet_ports_speed": "1× 100/1000/2500/5000BASE-T (E0, PoE in) + 1× 10G SFP+ (E1) + 1× 10/100/1000BASE-T (E2, PoE-out PSE)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500/5000BASE-T (E0, PoE in) + 1\u00d7 10G SFP+ (E1) + 1\u00d7 10/100/1000BASE-T (E2, PoE-out PSE)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -590,8 +590,8 @@
     "image_url": "images/aruba/aruba-ap580.png",
     "dimensions": "302 x 300 x 174 mm",
     "weight": "4.51 kg",
-    "antenna_connectors": "None (built-in 90°H x 90°V directional antennas)",
-    "operating_temp_range": "−40°C to +65°C operating; −40°C to +70°C storage; 5% to 93% RH non-condensing; IP66/67",
+    "antenna_connectors": "None (built-in 90\u00b0H x 90\u00b0V directional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating; \u221240\u00b0C to +70\u00b0C storage; 5% to 93% RH non-condensing; IP66/67",
     "msrp": "unknown"
   },
   {
@@ -602,7 +602,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
     "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, one Ethernet port is disabled and non-Wi-Fi features may be reduced; IPM can apply additional limits based on power budget.",
-    "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
+    "ethernet_ports_speed": "2\u00d7 100/1000/2500BASE-T mGig (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 2.8,
@@ -613,7 +613,7 @@
     "dimensions": "5.1 x 20.1 x 18.3 x cm",
     "weight": "0.72kg",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -40\u00b0C to 70\u00b0C storage",
     "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP610Series.pdf",
     "radios_iot_features": [
       "BLE",
@@ -630,7 +630,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
     "behavior_min_power": "On DC or 802.3bt, AP operates without restrictions. On 802.3at, USB is disabled; 802.3af is supported only for staging with radios disabled.",
-    "ethernet_ports_speed": "2× 100/1000/2500BASE-T mGig (RJ45)",
+    "ethernet_ports_speed": "2\u00d7 100/1000/2500BASE-T mGig (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 4.6,
@@ -641,7 +641,7 @@
     "dimensions": "220 x 220 x 51 mm",
     "weight": "1300 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating; -25°C to 55°C storage; -40°C to 70°C transportation",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; -25\u00b0C to 55\u00b0C storage; -40\u00b0C to 70\u00b0C transportation",
     "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP630Series.pdf",
     "radios_iot_features": [
       "BLE",
@@ -659,7 +659,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3at (Class 4), the AP-655 operates in a power-restricted mode similar to an AP-635, potentially limiting bands, features, or transmit power.",
-    "ethernet_ports_speed": "2×5GbE",
+    "ethernet_ports_speed": "2\u00d75GbE",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 4.8,
@@ -667,10 +667,10 @@
       "6": 5.4
     },
     "form_factor": "Indoor",
-    "dimensions": "260 × 260 × 60 mm",
+    "dimensions": "260 \u00d7 260 \u00d7 60 mm",
     "weight": "1.8 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "datasheet_url": "https://www.hpe.com/psnow/doc/PSN1014382098CAEN",
     "radios_iot_features": [
       "BLE",
@@ -688,7 +688,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) for full performance",
     "behavior_min_power": "On 802.3af (Class 3) PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
-    "ethernet_ports_speed": "1× 100/1000/2500BASE-T (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 5.1,
@@ -699,7 +699,7 @@
     "dimensions": "200 x 200 x 46 mm",
     "weight": "910 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to +40°C operating",
+    "operating_temp_range": "0\u00b0C to +40\u00b0C operating",
     "datasheet_url": "https://www.hpe.com/psnow/doc/a00146618enw",
     "radios_iot_features": [
       "BLE",
@@ -716,13 +716,13 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
     "behavior_min_power": "On 802.3at PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
-    "ethernet_ports_speed": "2× 1/2.5/5GbE SmartRate (RJ45)",
+    "ethernet_ports_speed": "2\u00d7 1/2.5/5GbE SmartRate (RJ45)",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "dimensions": "240 mm x 240 mm x  56 mm",
     "weight": "1830g",
     "antenna_connectors": "External antennas (see datasheet)",
-    "operating_temp_range": "0°C to 50°C operating",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating",
     "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
     "radios_iot_features": [
       "BLE",
@@ -741,7 +741,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
     "behavior_min_power": "On 802.3at PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
-    "ethernet_ports_speed": "2× 1/2.5/5GbE SmartRate (RJ45)",
+    "ethernet_ports_speed": "2\u00d7 1/2.5/5GbE SmartRate (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 5.1,
@@ -752,7 +752,7 @@
     "dimensions": "240 x 240 x 56 mm",
     "weight": "1440 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating",
     "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
     "radios_iot_features": [
       "BLE",
@@ -771,7 +771,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
     "behavior_min_power": "On 802.3bt (Class 6) PoE, the AP operates without restrictions; operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging), and IPM may apply additional feature and power reductions when power is limited.",
-    "ethernet_ports_speed": "1× 100/1000/2.5/5GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2.5/5GbE (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 5.9,
@@ -782,7 +782,7 @@
     "dimensions": "240 x 240 x 57 mm",
     "weight": "1.3 kg",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to +40°C operating; −25°C to +55°C storage; −40°C to +70°C transportation",
+    "operating_temp_range": "0\u00b0C to +40\u00b0C operating; \u221225\u00b0C to +55\u00b0C storage; \u221240\u00b0C to +70\u00b0C transportation",
     "datasheet_url": "https://www.hpe.com/psnow/doc/a00147704enw",
     "radios_iot_features": [
       "BLE",
@@ -799,7 +799,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
-    "ethernet_ports_speed": "2× 100/1000/2.5/5/10GbE (RJ45)",
+    "ethernet_ports_speed": "2\u00d7 100/1000/2.5/5/10GbE (RJ45)",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -812,8 +812,8 @@
     "image_url": "https://www.hpe.com/content/dam/hpe/shared-publishing/images-norend/products/Aruba-750-AP-16-9.png.hpetransform/bounded-resize:width=800/image.webp",
     "dimensions": "260 mm (W) x 260 mm (D) x 57 mm (H)",
     "weight": "1530g",
-    "antenna_connectors": "8× RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
-    "operating_temp_range": "0°C to +50°C operating; −25°C to +55°C storage; −40°C to +70°C transportation",
+    "antenna_connectors": "8\u00d7 RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
+    "operating_temp_range": "0\u00b0C to +50\u00b0C operating; \u221225\u00b0C to +55\u00b0C storage; \u221240\u00b0C to +70\u00b0C transportation",
     "msrp": "$2,695"
   },
   {
@@ -824,7 +824,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
-    "ethernet_ports_speed": "2× 100/1000/2.5/5/10GbE (RJ45)",
+    "ethernet_ports_speed": "2\u00d7 100/1000/2.5/5/10GbE (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 5.3,
@@ -843,8 +843,248 @@
     "dimensions": "350 mm (W) x 320 mm (D) x 83 mm (H)",
     "weight": "2130g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to +50°C operating; −25°C to +55°C storage; −40°C to +70°C transportation",
+    "operating_temp_range": "0\u00b0C to +50\u00b0C operating; \u221225\u00b0C to +55\u00b0C storage; \u221240\u00b0C to +70\u00b0C transportation",
     "msrp": "$2,595"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-675",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, both USB ports are disabled, the SFP port is disabled, and the 2.4 GHz radio drops to 1x1 while 5 GHz and 6 GHz remain 2x2; 802.3bt (Class 6) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (RJ45, PoE in) + 1\u00d7 1G SFP",
+    "antenna_type": "Internal (omnidirectional)",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00136588enw",
+    "image_url": "images/aruba/aruba-ap670.png",
+    "dimensions": "290 x 288 x 226 mm",
+    "weight": "4.2 kg",
+    "antenna_connectors": "None (internal omnidirectional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +70\u00b0C operating (no solar loading), \u221240\u00b0C to +65\u00b0C with solar loading; IP66/67 rated",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-675EX",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, both USB ports are disabled, the SFP port is disabled, and the 2.4 GHz radio drops to 1x1 while 5 GHz and 6 GHz remain 2x2; 802.3bt (Class 6) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (RJ45, PoE in) + 1\u00d7 1G SFP",
+    "antenna_type": "Internal (omnidirectional, HazLoc-rated)",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00136588enw",
+    "image_url": "images/aruba/aruba-ap670.png",
+    "dimensions": "290 x 288 x 226 mm",
+    "weight": "4.2 kg",
+    "antenna_connectors": "None (internal omnidirectional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +70\u00b0C operating (no solar loading), \u221240\u00b0C to +65\u00b0C with solar loading; IP66/67 rated; HazLoc certified (see datasheet)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-677",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, both USB ports are disabled, the SFP port is disabled, and the 2.4 GHz radio drops to 1x1 while 5 GHz and 6 GHz remain 2x2; 802.3bt (Class 6) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (RJ45, PoE in) + 1\u00d7 1G SFP",
+    "antenna_type": "Internal (directional)",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00136588enw",
+    "image_url": "images/aruba/aruba-ap670.png",
+    "dimensions": "290 x 288 x 171 mm",
+    "weight": "3.6 kg",
+    "antenna_connectors": "None (internal directional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +70\u00b0C operating (no solar loading), \u221240\u00b0C to +65\u00b0C with solar loading; IP66/67 rated",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-677EX",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, both USB ports are disabled, the SFP port is disabled, and the 2.4 GHz radio drops to 1x1 while 5 GHz and 6 GHz remain 2x2; 802.3bt (Class 6) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (RJ45, PoE in) + 1\u00d7 1G SFP",
+    "antenna_type": "Internal (directional, HazLoc-rated)",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00136588enw",
+    "image_url": "images/aruba/aruba-ap670.png",
+    "dimensions": "290 x 288 x 171 mm",
+    "weight": "3.6 kg",
+    "antenna_connectors": "None (internal directional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +70\u00b0C operating (no solar loading), \u221240\u00b0C to +65\u00b0C with solar loading; IP66/67 rated; HazLoc certified (see datasheet)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-679",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, both USB ports are disabled, the SFP port is disabled, and the 2.4 GHz radio drops to 1x1 while 5 GHz and 6 GHz remain 2x2; 802.3bt (Class 6) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (RJ45, PoE in) + 1\u00d7 1G SFP",
+    "antenna_type": "Internal (dynamic directional)",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00136588enw",
+    "image_url": "images/aruba/aruba-ap670.png",
+    "dimensions": "290 x 288 x 171 mm",
+    "weight": "3.8 kg",
+    "antenna_connectors": "None (internal dynamic directional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +70\u00b0C operating (no solar loading), \u221240\u00b0C to +65\u00b0C with solar loading; IP66/67 rated",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-679EX",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, both USB ports are disabled, the SFP port is disabled, and the 2.4 GHz radio drops to 1x1 while 5 GHz and 6 GHz remain 2x2; 802.3bt (Class 6) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (RJ45, PoE in) + 1\u00d7 1G SFP",
+    "antenna_type": "Internal (dynamic directional, HazLoc-rated)",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00136588enw",
+    "image_url": "images/aruba/aruba-ap670.png",
+    "dimensions": "290 x 288 x 171 mm",
+    "weight": "3.8 kg",
+    "antenna_connectors": "None (internal dynamic directional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +70\u00b0C operating (no solar loading), \u221240\u00b0C to +65\u00b0C with solar loading; IP66/67 rated; HazLoc certified (see datasheet)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-763",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 5) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE with IPM disabled, the AP disables the USB-C port; with IPM enabled, the AP starts unrestricted and may dynamically apply additional feature reductions based on the available PoE budget and configured policies. 802.3bt (Class 5) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500/5000BASE-T (RJ45, PoE in)",
+    "antenna_type": "Internal (dynamic omnidirectional)",
+    "form_factor": "Indoor hardened",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00147705enw",
+    "image_url": "images/aruba/aruba-ap760.png",
+    "dimensions": "263.3 x 170 x 93 mm",
+    "weight": "1.53 kg (with mount bracket)",
+    "antenna_connectors": "None (internal dynamic omnidirectional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +55\u00b0C operating (indoor hardened); IP50; \u221240\u00b0C to +70\u00b0C storage",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-764",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 5) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE with IPM disabled, the AP disables the USB-C port; with IPM enabled, the AP starts unrestricted and may dynamically apply additional feature reductions based on the available PoE budget and configured policies. 802.3bt (Class 5) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500/5000BASE-T (RJ45, PoE in)",
+    "antenna_type": "External (connectorized)",
+    "form_factor": "Outdoor hardened",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00147705enw",
+    "image_url": "images/aruba/aruba-ap760.png",
+    "dimensions": "266.4 x 174 x 83 mm",
+    "weight": "2.03 kg (with mount bracket)",
+    "antenna_connectors": "Multiple RF connectors for external 2.4/5/6 GHz antennas (see datasheet for details)",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating with solar cover (\u221240\u00b0C to +55\u00b0C without); IP66/67; \u221240\u00b0C to +70\u00b0C storage",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-765",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 5) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE with IPM disabled, the AP disables the USB-C port; with IPM enabled, the AP starts unrestricted and may dynamically apply additional feature reductions based on the available PoE budget and configured policies. 802.3bt (Class 5) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500/5000BASE-T (RJ45, PoE in)",
+    "antenna_type": "Internal (dynamic omnidirectional)",
+    "form_factor": "Outdoor hardened",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00147705enw",
+    "image_url": "images/aruba/aruba-ap760.png",
+    "dimensions": "266.4 x 174 x 100 mm",
+    "weight": "2.0 kg (with mount bracket)",
+    "antenna_connectors": "None (internal dynamic omnidirectional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating with solar cover (\u221240\u00b0C to +55\u00b0C without); IP66/67; \u221240\u00b0C to +70\u00b0C storage",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Aruba",
+    "model": "AP-765EX",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 5) for unrestricted operation",
+    "behavior_min_power": "On 802.3at (Class 4) PoE with IPM disabled, the AP disables the USB-C port; with IPM enabled, the AP starts unrestricted and may dynamically apply additional feature reductions based on the available PoE budget and configured policies. 802.3bt (Class 5) is recommended for unrestricted operation.",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500/5000BASE-T (RJ45, PoE in)",
+    "antenna_type": "Internal (dynamic omnidirectional, HazLoc-rated)",
+    "form_factor": "Outdoor hardened",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GNSS"
+    ],
+    "datasheet_url": "https://www.hpe.com/psnow/doc/a00147705enw",
+    "image_url": "images/aruba/aruba-ap760.png",
+    "dimensions": "266.1 x 174 x 100 mm",
+    "weight": "2.04 kg (with mount bracket)",
+    "antenna_connectors": "None (internal dynamic omnidirectional antennas)",
+    "operating_temp_range": "\u221240\u00b0C to +65\u00b0C operating with solar cover (\u221240\u00b0C to +55\u00b0C without); IP66/67; HazLoc certified (see datasheet); \u221240\u00b0C to +70\u00b0C storage",
+    "msrp": "unknown"
   },
   {
     "vendor": "Cambium",
@@ -854,7 +1094,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3at power the AP supports all three Wi-Fi radios (2.4 GHz, 5 GHz, and 6 GHz) plus the BLE/802.15.4 IoT radio in the intended operating mode; 802.3af power would force the radios and IoT features into a heavily reduced configuration and is not recommended for production deployments.",
-    "ethernet_ports_speed": "1× 100/1000/2500BASE-T (mGig) PoE in",
+    "ethernet_ports_speed": "1\u00d7 100/1000/2500BASE-T (mGig) PoE in",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -866,7 +1106,7 @@
     "dimensions": "209.6 x 209.6 x 45 mm",
     "weight": "935 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -877,7 +1117,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3at power the AP operates the 2.4 GHz and 5 GHz radios and the IoT radio at full performance; 802.3af power would severely limit functionality and is only suitable for discovery or emergency use rather than normal client service.",
-    "ethernet_ports_speed": "1× 10/100/1000/2500/5000BASE-T (mGig) PoE in",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000/2500/5000BASE-T (mGig) PoE in",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -889,7 +1129,7 @@
     "dimensions": "240 x 240 x 50 mm",
     "weight": "1600 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -900,7 +1140,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3at power the AP brings up the 2.4 GHz and 5 GHz radios together with the IoT radio but keeps the software-defined third radio and USB port disabled; 802.3bt power is recommended when you want the SDR radio and USB enabled for full functionality and maximum performance.",
-    "ethernet_ports_speed": "1× 10/100/1000/2500/5000BASE-T (mGig) PoE in",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000/2500/5000BASE-T (mGig) PoE in",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -912,7 +1152,7 @@
     "dimensions": "240 x 240 x 50 mm",
     "weight": "1600 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -923,7 +1163,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3at power the AP operates its three Wi-Fi radios but may need to disable power-hungry options such as the USB interface and IoT/BLE radio depending on the configured feature set; 802.3bt power is recommended whenever you want all radios and interfaces enabled under full load and at maximum performance.",
-    "ethernet_ports_speed": "1× 10/100/1000/2500BASE-T (PoE in) + 1× 10/100/1000BASE-T (downlink)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000/2500BASE-T (PoE in) + 1\u00d7 10/100/1000BASE-T (downlink)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -935,7 +1175,7 @@
     "dimensions": "220 x 200 x 86 mm",
     "weight": "2920 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -946,7 +1186,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3at power the AP can run its tri-radio set with reduced headroom and may need to limit features such as USB or IoT/BLE radio use; 802.3bt power is recommended for full tri-radio throughput, maximum EIRP, and PoE budget, especially in hot outdoor environments.",
-    "ethernet_ports_speed": "1× 10/100/1000/2500BASE-T (PoE in) + 1× 10/100/1000BASE-T (downlink)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000/2500BASE-T (PoE in) + 1\u00d7 10/100/1000BASE-T (downlink)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -958,7 +1198,7 @@
     "dimensions": "unknown",
     "weight": "unknown",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "-40°C to 65°C",
+    "operating_temp_range": "-40\u00b0C to 65\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -969,7 +1209,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3af power the AP can run both 2.4 GHz and 5 GHz radios for typical indoor coverage but with a tighter overall power budget; 802.3at power is recommended when you expect higher client density, higher throughput, or want additional headroom for sustained operation at maximum transmit power.",
-    "ethernet_ports_speed": "1× 10/100/1000BASE-T (PoE in)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000BASE-T (PoE in)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
@@ -978,7 +1218,7 @@
     "dimensions": "155 x 155 x 37 mm",
     "weight": "475 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -989,7 +1229,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3af power the AP runs the 2.4 GHz and 5 GHz radios and the IoT radio for in-room coverage but has little or no remaining power budget for PoE out; 802.3at power is recommended when you need to power an attached device (such as a phone or IoT hub) from the LAN port while maintaining reliable Wi-Fi service.",
-    "ethernet_ports_speed": "3× 10/100/1000BASE-T (1× WAN + 2× LAN, one with PoE out)",
+    "ethernet_ports_speed": "3\u00d7 10/100/1000BASE-T (1\u00d7 WAN + 2\u00d7 LAN, one with PoE out)",
     "antenna_type": "Internal",
     "form_factor": "Wallplate",
     "radios_iot_features": [
@@ -1001,7 +1241,7 @@
     "dimensions": "160 x 105 x 32 mm",
     "weight": "417 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -1012,7 +1252,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3at power the AP supports both Wi-Fi radios at full outdoor performance and meets the typical 20 W power requirement; falling back to 802.3af would not provide sufficient power and is not supported for normal operation.",
-    "ethernet_ports_speed": "1× 10/100/1000BASE-T (PoE in)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000BASE-T (PoE in)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [],
@@ -1021,7 +1261,7 @@
     "dimensions": "300 x 200 x 84 mm",
     "weight": "1200 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "-40°C to 65°C",
+    "operating_temp_range": "-40\u00b0C to 65\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -1032,7 +1272,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3at power the AP runs both Wi-Fi radios and the BLE radio with full outdoor performance and can supply power to an auxiliary device via the secondary Ethernet port; if the available power budget is constrained, PoE-out capability and/or radio performance may need to be reduced.",
-    "ethernet_ports_speed": "1× 10/100/1000/2500BASE-T (mGig) PoE in + 1× 10/100/1000BASE-T (PoE out)",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000/2500BASE-T (mGig) PoE in + 1\u00d7 10/100/1000BASE-T (PoE out)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -1043,7 +1283,7 @@
     "dimensions": "582 x 200 x 80 mm",
     "weight": "unknown",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "-40°C to 65°C",
+    "operating_temp_range": "-40\u00b0C to 65\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -1054,7 +1294,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3at power the AP operates both the 2.4 GHz and 5 GHz radios at full performance with normal feature support; on 802.3af power it will boot but runs in a reduced-function mode (such as limiting certain features or radio capabilities), so 802.3at is recommended for production deployments.",
-    "ethernet_ports_speed": "1× 10/100/1000/2500BASE-T (mGig) PoE in",
+    "ethernet_ports_speed": "1\u00d7 10/100/1000/2500BASE-T (mGig) PoE in",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
@@ -1063,7 +1303,7 @@
     "dimensions": "195 x 195 x 41.4 mm",
     "weight": "800 g",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -1085,7 +1325,7 @@
     "dimensions": "5.1 x 7.0 x 1.0 in. (13 x 18 x 2.6 cm)",
     "weight": "1.16 lb. (572 g)",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "32° to 122°F (0° to 50°C)",
+    "operating_temp_range": "32\u00b0 to 122\u00b0F (0\u00b0 to 50\u00b0C)",
     "msrp": "$1,137.89"
   },
   {
@@ -1096,7 +1336,7 @@
     "min_poe_class": "802.3af",
     "recommended_poe": "802.3bt (Class 5 UPOE)",
     "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
-    "ethernet_ports_speed": "1× 1/2.5 GbE mGig (RJ-45)",
+    "ethernet_ports_speed": "1\u00d7 1/2.5 GbE mGig (RJ-45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1110,7 +1350,7 @@
     "dimensions": "7.8 x 7.8 x 2.1 inches (20 x 20 x 5.3 cm)",
     "weight": "1.9 lbs (0.87 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating; storage unspecified",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; storage unspecified",
     "msrp": "$1,345.73"
   },
   {
@@ -1121,7 +1361,7 @@
     "min_poe_class": "802.3at",
     "recommended_poe": "802.3bt",
     "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G Multigigabit Ethernet (RJ-45)",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G Multigigabit Ethernet (RJ-45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1135,7 +1375,7 @@
     "dimensions": "8.9 x 8.9 x 1.95 inches (22.6 x 22.6 x 4.9 cm)",
     "weight": "3.36 lbs (1.52 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F (-30\u00b0C to 70\u00b0C) storage",
     "msrp": "$2,177.06"
   },
   {
@@ -1146,7 +1386,7 @@
     "min_poe_class": "802.3at (PoE+)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3bt (Class 6), full operation; on 802.3at, operation with reduced features (USB disabled, lower link speed); on 802.3af staging only (radios off).",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ-45)",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G/10G mGig (RJ-45)",
     "antenna_type": "Directional",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1159,7 +1399,7 @@
     "dimensions": "9.5 x 9.5 x 2.0 inches (24 x 25 x 5.1 cm)",
     "weight": "3.4 lbs (1.56 kg)",
     "antenna_connectors": "None (internal directional antenna)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; –22°F to 158°F (–30°C to 70°C) storage",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; \u201322\u00b0F to 158\u00b0F (\u201330\u00b0C to 70\u00b0C) storage",
     "msrp": "$2,904"
   },
   {
@@ -1170,7 +1410,7 @@
     "min_poe_class": "802.3af",
     "recommended_poe": "802.3bt",
     "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
-    "ethernet_ports_speed": "1× 1/2.5/5/10 GbE mGig (RJ-45)",
+    "ethernet_ports_speed": "1\u00d7 1/2.5/5/10 GbE mGig (RJ-45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1183,7 +1423,7 @@
     "dimensions": "9.5 x 9.5 x 2.0 inches (24 x 24 x 5.1 cm)",
     "weight": "3.4 lbs (1.56 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; storage unspecified",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; storage unspecified",
     "msrp": "$2,592"
   },
   {
@@ -1194,7 +1434,7 @@
     "min_poe_class": "802.3at (PoE+)",
     "recommended_poe": "802.3bt (Class 6) for full quad-radio operation",
     "behavior_min_power": "On 802.3bt (Class 6), operates in quad-radio mode with 4x4 radios on 2.4/5/6 GHz and both 10G uplinks; on 802.3at, operates in tri-radio mode with reduced radio configuration; on 802.3af, all radios are off and the AP is for configuration staging only.",
-    "ethernet_ports_speed": "2× 100M/1G/2.5G/5G/10G mGig (RJ45)",
+    "ethernet_ports_speed": "2\u00d7 100M/1G/2.5G/5G/10G mGig (RJ45)",
     "antenna_type": "Directional",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -1206,7 +1446,7 @@
     "dimensions": "18.7 W x 13.0 L x 2.9 H in. (475 x 330 x 73 mm)",
     "weight": "10.0 lb (4.54 kg) AP; 3.8 lb (1.72 kg) bracket",
     "antenna_connectors": "None (integrated directional antennas)",
-    "operating_temp_range": "-4°F to 140°F (-20°C to 60°C) operating without solar loading; -4°F to 122°F (-20°C to 50°C) operating with solar loading; -4°F to 158°F (-20°C to 70°C) nonoperating",
+    "operating_temp_range": "-4\u00b0F to 140\u00b0F (-20\u00b0C to 60\u00b0C) operating without solar loading; -4\u00b0F to 122\u00b0F (-20\u00b0C to 50\u00b0C) operating with solar loading; -4\u00b0F to 158\u00b0F (-20\u00b0C to 70\u00b0C) nonoperating",
     "msrp": "$7,792"
   },
   {
@@ -1217,13 +1457,13 @@
     "min_poe_class": "802.3at (PoE+)",
     "recommended_poe": "802.3bt or DC for full operation with USB",
     "behavior_min_power": "On 802.3bt or DC, all radios operate (2x2 2.4 GHz, 4x4 5/6 GHz) with USB enabled; on 802.3at, radios operate with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G mGig (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "dimensions": "9.5 x 9.5 x 2.2 in. (241.3 x 241.3 x 56.9 mm)",
     "weight": "3.54 lb (1.60 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F (-30\u00b0C to 70\u00b0C) storage",
     "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9164-series-access-points/catalyst-9164-series-access-points-ds.html",
     "radios_iot_features": [
       "BLE"
@@ -1239,13 +1479,13 @@
     "min_poe_class": "802.3at (PoE+)",
     "recommended_poe": "802.3bt or DC for full operation with USB",
     "behavior_min_power": "On 802.3bt or DC, all radios operate 4x4 on 2.4/5/6 GHz with USB enabled; on 802.3at, radios remain 4x4 with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G mGig (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 100M/1G/2.5G/5G mGig (RJ45)",
     "antenna_type": "Directional",
     "form_factor": "Indoor",
     "dimensions": "9.5 x 9.5 x 2.28 in. (241.3 x 241.3 x 57.9 mm)",
     "weight": "3.50 lb (1.59 kg)",
     "antenna_connectors": "None (integrated directional antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F (-30\u00b0C to 70\u00b0C) storage",
     "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9166-series-access-points/catalyst-9166-series-access-points-ds.html",
     "radios_iot_features": [
       "BLE",
@@ -1262,13 +1502,13 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt / UPOE+",
     "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate but USB and PoE-out are disabled and some advanced features may be constrained.",
-    "ethernet_ports_speed": "1×mGig",
+    "ethernet_ports_speed": "1\u00d7mGig",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
-    "dimensions": "241 × 241 × 56.9 mm",
+    "dimensions": "241 \u00d7 241 \u00d7 56.9 mm",
     "weight": "1.60 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C",
     "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9166-series-access-points/catalyst-9166-series-access-points-ds.html",
     "radios_iot_features": [
       "BLE",
@@ -1284,8 +1524,8 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt / UPOE+",
-    "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate at 2×2 and Ethernet ports are restricted to 1Gbps",
-    "ethernet_ports_speed": "1×10/100/1/2.5/5 GbE mGig (RJ45), 1×1/10 GbE (SFP+)",
+    "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate at 2\u00d72 and Ethernet ports are restricted to 1Gbps",
+    "ethernet_ports_speed": "1\u00d710/100/1/2.5/5 GbE mGig (RJ45), 1\u00d71/10 GbE (SFP+)",
     "antenna_type": "External",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -1296,10 +1536,10 @@
     ],
     "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-iw9167-series/cat-iw9167e-heavy-duty-ap-ds.html",
     "image_url": "images/cisco/cisco-iw9167e.png",
-    "dimensions": "292 × 267 × 71 mm",
+    "dimensions": "292 \u00d7 267 \u00d7 71 mm",
     "weight": "4.2 kg",
-    "antenna_connectors": "8×N-Type,1×RP-TNC (GNSS)",
-    "operating_temp_range": "-50°C to +75°C",
+    "antenna_connectors": "8\u00d7N-Type,1\u00d7RP-TNC (GNSS)",
+    "operating_temp_range": "-50\u00b0C to +75\u00b0C",
     "msrp": "unknown"
   },
   {
@@ -1310,7 +1550,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3at (Class 4) PoE+, the AP reduces all radios to 2x2 operation, disables USB, and limits Ethernet link speed to 2.5 GbE. On 802.3af, radios are disabled (staging only, 13.95W max).",
-    "ethernet_ports_speed": "2× 100M/1G/2.5G/5G/10G Multigigabit Ethernet (RJ-45)",
+    "ethernet_ports_speed": "2\u00d7 100M/1G/2.5G/5G/10G Multigigabit Ethernet (RJ-45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
       "2.4": 4,
@@ -1330,7 +1570,7 @@
     "dimensions": "9.9 x 9.9 x 2.0 in (25.1 x 25.1 x 5.1 cm)",
     "weight": "4.1 lb (1.87 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C)",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C)",
     "msrp": "unknown"
   },
   {
@@ -1351,7 +1591,7 @@
     ],
     "dimensions": "25.0 x 12.0 x 3.6 cm (9.84 x 4.72 x 1.42 in)",
     "weight": "492 g (17.35 oz)",
-    "operating_temp_range": "0°C to 40°C operating; 5–95% RH non-condensing",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C operating; 5\u201395% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR36_Datasheet",
     "image_url": "images/meraki/meraki-MR36.jpg",
     "msrp": "unknown"
@@ -1374,7 +1614,7 @@
     ],
     "dimensions": "15.5 x 11.0 x 2.3 cm (6.1 x 4.33 x 0.9 in)",
     "weight": "492 g (17.35 oz)",
-    "operating_temp_range": "0°C to 40°C operating; 5–95% RH non-condensing",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C operating; 5\u201395% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR36H_Datasheet",
     "image_url": "images/meraki/meraki-MR36H.png",
     "msrp": "unknown"
@@ -1397,7 +1637,7 @@
     ],
     "dimensions": "30.6 x 12.84 x 4.43 cm (12.05 x 5.06 x 1.74 in)",
     "weight": "739 g (26.07 oz)",
-    "operating_temp_range": "0°C to 40°C operating; 5–95% RH non-condensing",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C operating; 5\u201395% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR44_Datasheet",
     "image_url": "images/meraki/meraki-MR44.png",
     "msrp": "unknown"
@@ -1420,7 +1660,7 @@
     ],
     "dimensions": "30.6 x 12.84 x 4.43 cm (12.05 x 5.06 x 1.74 in)",
     "weight": "800 g (28.22 oz)",
-    "operating_temp_range": "0°C to 40°C operating; 5–95% RH non-condensing",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C operating; 5\u201395% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46_Datasheet",
     "image_url": "images/meraki/meraki-MR46.png",
     "msrp": "unknown"
@@ -1443,7 +1683,7 @@
     ],
     "dimensions": "30.6 x 15.62 x 3.54 cm (12.05 x 6.15 x 1.39 in)",
     "weight": "850 g (29.98 oz)",
-    "operating_temp_range": "0°C to 50°C operating; 5–95% RH non-condensing",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C operating; 5\u201395% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46E_Datasheet",
     "image_url": "images/meraki/meraki-MR46E.jpg",
     "msrp": "unknown"
@@ -1466,7 +1706,7 @@
     ],
     "dimensions": "32.6 x 14.08 x 4.47 cm (12.83 x 5.54 x 1.76 in)",
     "weight": "1.0 kg (35.27 oz)",
-    "operating_temp_range": "0°C to 40°C operating; 5–95% RH non-condensing",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C operating; 5\u201395% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR56_Datasheet",
     "image_url": "images/meraki/meraki-MR56.png",
     "msrp": "unknown"
@@ -1489,7 +1729,7 @@
     ],
     "dimensions": "Similar physical envelope to MR56; tri-band indoor chassis (see datasheet for exact values).",
     "weight": "Approx. 1.0 kg (see datasheet for exact value)",
-    "operating_temp_range": "0°C to 40°C operating; 5–95% RH non-condensing",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C operating; 5\u201395% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR57_Datasheet",
     "image_url": "images/meraki/meraki-MR57.png",
     "msrp": "unknown"
@@ -1512,7 +1752,7 @@
     ],
     "dimensions": "Open-air, IP67 enclosure (see datasheet for exact dimensions)",
     "weight": "Outdoor housing (see datasheet for exact weight)",
-    "operating_temp_range": "Extended outdoor range (approx. -40°C to +55°C; see datasheet for exact limits)",
+    "operating_temp_range": "Extended outdoor range (approx. -40\u00b0C to +55\u00b0C; see datasheet for exact limits)",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR76_Datasheet",
     "image_url": "images/meraki/meraki-MR76.png",
     "msrp": "unknown"
@@ -1535,7 +1775,7 @@
     ],
     "dimensions": "Compact outdoor enclosure (see datasheet for exact dimensions)",
     "weight": "Outdoor housing (see datasheet for exact weight)",
-    "operating_temp_range": "Extended outdoor range (approx. -40°C to +55°C; see datasheet for exact limits)",
+    "operating_temp_range": "Extended outdoor range (approx. -40\u00b0C to +55\u00b0C; see datasheet for exact limits)",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR78_Datasheet",
     "image_url": "images/meraki/meraki-MR78.png",
     "msrp": "unknown"
@@ -1561,7 +1801,7 @@
     "dimensions": "10.16 in. x 10.16 in. x 1.62 in. (258mm x 258mm x 41mm)",
     "weight": "3.57 lbs (1.62kg)",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C (32\u00b0F to 122\u00b0F)",
     "msrp": "unknown"
   },
   {
@@ -1586,7 +1826,7 @@
     "dimensions": "238mm x 238mm x 38mm",
     "weight": "1.30 kg or 2.9 lbs",
     "antenna_connectors": "none",
-    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "operating_temp_range": "0\u00b0C to 50\u00b0C (32\u00b0F to 122\u00b0F)",
     "msrp": "~$1,300"
   },
   {
@@ -1597,13 +1837,13 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4); 802.3bt optional",
     "behavior_min_power": "On 802.3at, all three Wi-Fi radios (2.4/5/6 GHz) operate at full Tx power with 2x2 MIMO. On 802.3af, radios still operate at full Tx power but are limited to 1x1 MIMO, reducing spatial stream capacity.",
-    "ethernet_ports_speed": "1× 1/2.5/5GbE mGig (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 1/2.5/5GbE mGig (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "dimensions": "6.88 x 6.88 x 2.2 inches (175 x 175 x 56 mm)",
     "weight": "2.22 lbs (1.01 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
@@ -1620,13 +1860,13 @@
     "min_poe_class": "802.3at (Class 4) or included passive PoE injector",
     "recommended_poe": "802.3at (Class 4) or PIN060-54PR 60W passive PoE injector (included)",
     "behavior_min_power": "With 802.3at or the included passive 60W injector, all radios operate at full Tx power with 2x2 MIMO. Lower PoE classes are not specified as supported for full operation.",
-    "ethernet_ports_speed": "1× 1/2.5GbE (RJ45) + 1× 1GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 1/2.5GbE (RJ45) + 1\u00d7 1GbE (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "dimensions": "10.15 x 8.50 x 2.26 inches (258 x 216 x 57.3 mm)",
     "weight": "3.05 lbs (1.38 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-40°F to 140°F (-40°C to 60°C) operating; -58°F to 158°F",
+    "operating_temp_range": "-40\u00b0F to 140\u00b0F (-40\u00b0C to 60\u00b0C) operating; -58\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
@@ -1643,13 +1883,13 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
     "behavior_min_power": "On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3at, 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
-    "ethernet_ports_speed": "1× 1/2.5/5/10GbE mGig (RJ45) + 1× 1GbE (RJ45) + 1× USB 2.0 + 1× RS-232",
+    "ethernet_ports_speed": "1\u00d7 1/2.5/5/10GbE mGig (RJ45) + 1\u00d7 1GbE (RJ45) + 1\u00d7 USB 2.0 + 1\u00d7 RS-232",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "dimensions": "7.48 x 7.48 x 2.01 inches (190 x 190 x 51 mm)",
     "weight": "2.4 lbs (1.09 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee"
@@ -1665,13 +1905,13 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
     "behavior_min_power": "On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3at, 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
-    "ethernet_ports_speed": "1× 1/2.5/5/10GbE mGig (RJ45) + 1× 1GbE (RJ45) + 1× USB 2.0 + 1× RS-232",
+    "ethernet_ports_speed": "1\u00d7 1/2.5/5/10GbE mGig (RJ45) + 1\u00d7 1GbE (RJ45) + 1\u00d7 USB 2.0 + 1\u00d7 RS-232",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "dimensions": "7.48 x 7.48 x 2.01 inches (190 x 190 x 51 mm)",
     "weight": "2.6 lbs (1.18 kg)",
-    "antenna_connectors": "6× RP-SMA (2 dual-band, 2 6GHz, 2 tri-band)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "antenna_connectors": "6\u00d7 RP-SMA (2 dual-band, 2 6GHz, 2 tri-band)",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee"
@@ -1685,15 +1925,15 @@
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (dual) or 802.3at (single)",
-    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
-    "ethernet_ports_speed": "2× 1/2.5/5GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "recommended_poe": "802.3bt (or 2\u00d7 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2\u00d7802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2\u00d7802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "ethernet_ports_speed": "2\u00d7 1/2.5/5GbE mGig (RJ45) + 1\u00d7 USB 3.0 + 1\u00d7 RS-232",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "dimensions": "8.85 x 8.85 x 2.12 inches (225.0 x 225.0 x 54.0 mm)",
     "weight": "3.05 lbs (1.4 kg)",
-    "antenna_connectors": "4× RP-SMA (dual-band) + 4 permanently attached tri-band antennas",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "antenna_connectors": "4\u00d7 RP-SMA (dual-band) + 4 permanently attached tri-band antennas",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
@@ -1709,14 +1949,14 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "",
-    "behavior_min_power": "On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "behavior_min_power": "On 802.3at or 2\u00d7802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
     "ethernet_ports_speed": "1x 10GbE + 1x 1GbE",
     "antenna_type": "External",
     "form_factor": "Outdoor",
     "dimensions": "9.45 x 9.45 x 2.74 inches (240.0 x 240.0 x 69.6 mm)",
     "weight": "7.05 lbs",
     "antenna_connectors": "External antennas (see datasheet)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
@@ -1731,15 +1971,15 @@
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (dual) or 802.3at (single)",
-    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
-    "ethernet_ports_speed": "2× 1/2.5/5GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "recommended_poe": "802.3bt (or 2\u00d7 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2\u00d7802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2\u00d7802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "ethernet_ports_speed": "2\u00d7 1/2.5/5GbE mGig (RJ45) + 1\u00d7 USB 3.0 + 1\u00d7 RS-232",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "dimensions": "8.85 x 8.85 x 2.12 inches (225.0 x 225.0 x 54.0 mm)",
     "weight": "3.05 lbs (1.4 kg)",
-    "antenna_connectors": "4× RP-SMA (dual-band) + 4 external permanently attached tri-band antennas",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "antenna_connectors": "4\u00d7 RP-SMA (dual-band) + 4 external permanently attached tri-band antennas",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
@@ -1754,15 +1994,15 @@
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (dual) or 802.3at (single)",
-    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, client radios operate at reduced Tx power (~17 dBm) with 2x2 chains and USB disabled; 2.4/5/6 GHz radios and the fourth radio remain operational.",
-    "ethernet_ports_speed": "2× 1/2.5/5/10GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "recommended_poe": "802.3bt (or 2\u00d7 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2\u00d7802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2\u00d7802.3af, client radios operate at reduced Tx power (~17 dBm) with 2x2 chains and USB disabled; 2.4/5/6 GHz radios and the fourth radio remain operational.",
+    "ethernet_ports_speed": "2\u00d7 1/2.5/5/10GbE mGig (RJ45) + 1\u00d7 USB 3.0 + 1\u00d7 RS-232",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "dimensions": "9.84 x 9.84 x 2.26 inches (250 x 250 x 57.5 mm)",
     "weight": "4.36 lbs (1.98 kg)",
-    "antenna_connectors": "10× RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "antenna_connectors": "10\u00d7 RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
@@ -1777,15 +2017,15 @@
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (dual) or 802.3at (single)",
-    "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, client radios operate at reduced Tx power (~17 dBm) with 4x4 chains but lower Tx power and USB disabled.",
-    "ethernet_ports_speed": "2× 1/2.5/5/10GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
+    "recommended_poe": "802.3bt (or 2\u00d7 802.3at) for full performance",
+    "behavior_min_power": "On 802.3bt or 2\u00d7802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2\u00d7802.3af, client radios operate at reduced Tx power (~17 dBm) with 4x4 chains but lower Tx power and USB disabled.",
+    "ethernet_ports_speed": "2\u00d7 1/2.5/5/10GbE mGig (RJ45) + 1\u00d7 USB 3.0 + 1\u00d7 RS-232",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "dimensions": "9.84 x 9.84 x 2.26 inches (250 x 250 x 57.5 mm)",
     "weight": "4.36 lbs (1.98 kg)",
-    "antenna_connectors": "10× RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F",
+    "antenna_connectors": "10\u00d7 RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
+    "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
@@ -1802,7 +2042,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3)",
     "behavior_min_power": "On 802.3af the AP can run 2x2 on two bands plus a 1x1 scan radio in tri-band mode; power is sufficient for full intended functionality.",
-    "ethernet_ports_speed": "1×1/2.5GbE (PoE-in on Eth0)",
+    "ethernet_ports_speed": "1\u00d71/2.5GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1812,10 +2052,10 @@
     ],
     "datasheet_url": "https://www.juniper.net/us/en/products/access-points/ap24-access-point-datasheet.html",
     "image_url": "images/juniper/juniper-ap24.jpg",
-    "dimensions": "185 × 185 × 39 mm",
+    "dimensions": "185 \u00d7 185 \u00d7 39 mm",
     "weight": "0.75 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "msrp": "$1,240"
   },
   {
@@ -1826,7 +2066,7 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "On 802.3af the AP supports a reduced single-radio mode primarily for cloud connectivity; on 802.3at full tri-band 2x2 operation is available.",
-    "ethernet_ports_speed": "1×1/2.5/5GbE (PoE-in on Eth0)",
+    "ethernet_ports_speed": "1\u00d71/2.5/5GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1836,10 +2076,10 @@
     ],
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap34-access-point-datasheet.pdf",
     "image_url": "images/juniper/juniper-ap34.jpg",
-    "dimensions": "230 × 230 × 50 mm",
+    "dimensions": "230 \u00d7 230 \u00d7 50 mm",
     "weight": "1.89 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "msrp": "$1,665"
   },
   {
@@ -1850,7 +2090,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "Same PoE behavior as AP37: full function on 802.3bt; reduced functionality on 802.3at; radios disabled with 802.3af.",
-    "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0) + 1×1GbE (PoE-out on Eth1 with 802.3bt)",
+    "ethernet_ports_speed": "1\u00d71/2.5/5/10GbE (PoE-in on Eth0) + 1\u00d71GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1864,10 +2104,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
     "image_url": "images/juniper/juniper-ap36.jpg",
-    "dimensions": "230 × 230 × 45 mm",
+    "dimensions": "230 \u00d7 230 \u00d7 45 mm",
     "weight": "1.5 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "msrp": "$1,785"
   },
   {
@@ -1878,7 +2118,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "Same PoE behavior as AP37/AP36: full function on 802.3bt; reduced functionality on 802.3at; radios disabled with 802.3af.",
-    "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0) + 1×1GbE (PoE-out on Eth1 with 802.3bt)",
+    "ethernet_ports_speed": "1\u00d71/2.5/5/10GbE (PoE-in on Eth0) + 1\u00d71GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1892,10 +2132,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
     "image_url": "images/juniper/juniper-ap36m.jpg",
-    "dimensions": "230 × 230 × 45 mm",
+    "dimensions": "230 \u00d7 230 \u00d7 45 mm",
     "weight": "1.53 kg",
     "antenna_connectors": "Two pluggable external antenna connectors: 2.4/5 GHz (4-pin) and 6 GHz (6-pin)",
-    "operating_temp_range": "-20°C to 50°C",
+    "operating_temp_range": "-20\u00b0C to 50\u00b0C",
     "msrp": "$2,085"
   },
   {
@@ -1906,7 +2146,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "PoE PD via Eth0: full functionality on 802.3bt; on 802.3at functionality is reduced; on 802.3af all Wi-Fi radios are disabled and the AP provides only cloud connectivity.",
-    "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0) + 1×1GbE (PoE-out on Eth1 with 802.3bt)",
+    "ethernet_ports_speed": "1\u00d71/2.5/5/10GbE (PoE-in on Eth0) + 1\u00d71GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1921,10 +2161,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
     "image_url": "images/juniper/juniper-ap37.jpg",
-    "dimensions": "230 × 230 × 45 mm",
+    "dimensions": "230 \u00d7 230 \u00d7 45 mm",
     "weight": "1.55 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "msrp": "$2,085"
   },
   {
@@ -1935,7 +2175,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3af, only a single 1x1 radio plus BLE and scan are enabled to signal that the AP needs more power. On 802.3at, any two radios can be 4x4 or the AP can run three bands with some radios reduced to 2x2; USB and PoE-out are disabled. On 802.3bt, full tri-band 4x4 plus scan, BLE, PoE-out on Eth1, and USB are enabled.",
-    "ethernet_ports_speed": "2×1GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
+    "ethernet_ports_speed": "2\u00d71GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1946,10 +2186,10 @@
     ],
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
     "image_url": "images/juniper/juniper-ap45.jpg",
-    "dimensions": "230 × 230 × 50 mm",
+    "dimensions": "230 \u00d7 230 \u00d7 50 mm",
     "weight": "2.01 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "msrp": "$2,245"
   },
   {
@@ -1960,7 +2200,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "Same PoE behavior as AP45: reduced radios and no USB or PoE-out on 802.3at; on 802.3af only a single low-power radio plus BLE and scan operate.",
-    "ethernet_ports_speed": "2×1GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
+    "ethernet_ports_speed": "2\u00d71GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
     "antenna_type": "External",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1971,10 +2211,10 @@
     ],
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
     "image_url": "images/juniper/juniper-ap45e.jpg",
-    "dimensions": "230 × 230 × 50 mm",
+    "dimensions": "230 \u00d7 230 \u00d7 50 mm",
     "weight": "1.97 kg",
     "antenna_connectors": "Two pluggable connectors: 2.4/5 GHz (4-pin), 6 GHz + scan (6-pin)",
-    "operating_temp_range": "-10°C to 50°C",
+    "operating_temp_range": "-10\u00b0C to 50\u00b0C",
     "msrp": "$2,245"
   },
   {
@@ -1985,7 +2225,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "On 802.3at, any two radios can run 4x4 or all three bands with some radios reduced to 2x2; USB is disabled but scan, dual IoT radios, UWB, GPS, and both 10GbE uplinks remain enabled. On 802.3af, Wi-Fi radios are disabled and the AP provides cloud connectivity only.",
-    "ethernet_ports_speed": "2×10GbE (PoE-in via Eth0 and Eth1)",
+    "ethernet_ports_speed": "2\u00d710GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2000,10 +2240,10 @@
     ],
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
     "image_url": "images/juniper/juniper-ap47.jpg",
-    "dimensions": "254 × 254 × 60 mm",
+    "dimensions": "254 \u00d7 254 \u00d7 60 mm",
     "weight": "2.0 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "msrp": "$2,785"
   },
   {
@@ -2014,13 +2254,13 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "Same PoE behavior as AP47: 802.3bt enables full tri-band 4x4 with all IoT, UWB, GPS, and dual 10GbE; on 802.3at one or more radios may be reduced to 2x2 and USB is disabled; on 802.3af radios are disabled for cloud connectivity only.",
-    "ethernet_ports_speed": "2×10GbE (PoE-in via Eth0 and Eth1)",
+    "ethernet_ports_speed": "2\u00d710GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": "Directional",
     "form_factor": "Indoor",
-    "dimensions": "254 × 254 × 66 mm",
+    "dimensions": "254 \u00d7 254 \u00d7 66 mm",
     "weight": "2.0 kg",
     "antenna_connectors": "N/A (internal directional panel antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0\u00b0C to 40\u00b0C",
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
     "radios_iot_features": [
       "dual multi-personality 802.15.4 IoT radios",
@@ -2040,13 +2280,13 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "Same PoE behavior as AP47: full functionality on 802.3bt; reduced radio chains and no USB on 802.3at; on 802.3af Wi-Fi radios are disabled and the AP provides cloud connectivity only.",
-    "ethernet_ports_speed": "2×10GbE (PoE-in via Eth0 and Eth1)",
+    "ethernet_ports_speed": "2\u00d710GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": "External",
     "form_factor": "Indoor",
-    "dimensions": "254 × 254 × 60 mm",
+    "dimensions": "254 \u00d7 254 \u00d7 60 mm",
     "weight": "2.0 kg",
     "antenna_connectors": "Three pluggable connectors: 2.4/5/6 GHz (6-pin), 6 GHz + scan (6-pin), 5 GHz (4-pin)",
-    "operating_temp_range": "-20°C to 50°C",
+    "operating_temp_range": "-20\u00b0C to 50\u00b0C",
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
     "radios_iot_features": [
       "dual multi-personality 802.15.4 IoT radios",
@@ -2066,13 +2306,13 @@
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3)",
     "behavior_min_power": "On 802.3af the AP can support full tri-band 2x2 plus scan; it is designed to operate within the 802.3af power budget.",
-    "ethernet_ports_speed": "1×1/2.5GbE (PoE-in on Eth0)",
+    "ethernet_ports_speed": "1\u00d71/2.5GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
-    "dimensions": "215 × 215 × 64 mm",
+    "dimensions": "215 \u00d7 215 \u00d7 64 mm",
     "weight": "1.5 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "-40°C to 55°C (with solar load); -40°C to 65°C (without solar load)",
+    "operating_temp_range": "-40\u00b0C to 55\u00b0C (with solar load); -40\u00b0C to 65\u00b0C (without solar load)",
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap64-access-point-datasheet.pdf",
     "radios_iot_features": [
       "multi-personality IoT radio with BLE 5.3",
@@ -2090,7 +2330,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "PoE PD via Eth0: on 802.3at the AP operates with full functionality; on 802.3af all radios are disabled and the AP provides only cloud connectivity.",
-    "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0)",
+    "ethernet_ports_speed": "1\u00d71/2.5/5/10GbE (PoE-in on Eth0)",
     "antenna_type": "Internal",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -2103,10 +2343,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a50014092enw",
     "image_url": "images/juniper/juniper-ap66.jpg",
-    "dimensions": "232 × 232 × 71 mm",
+    "dimensions": "232 \u00d7 232 \u00d7 71 mm",
     "weight": "2.0 kg",
     "antenna_connectors": "N/A (internal antennas)",
-    "operating_temp_range": "-40°C to 55°C (with solar load); -40°C to 65°C (without solar load)",
+    "operating_temp_range": "-40\u00b0C to 55\u00b0C (with solar load); -40\u00b0C to 65\u00b0C (without solar load)",
     "msrp": "$2,485"
   },
   {
@@ -2117,7 +2357,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
     "behavior_min_power": "Same PoE behavior as AP66: full function on 802.3at; on 802.3af all radios are disabled for cloud connectivity only.",
-    "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0)",
+    "ethernet_ports_speed": "1\u00d71/2.5/5/10GbE (PoE-in on Eth0)",
     "antenna_type": "Directional",
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -2130,10 +2370,10 @@
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a50014092enw",
     "image_url": "images/juniper/juniper-ap66d.jpg",
-    "dimensions": "232 × 232 × 88 mm",
+    "dimensions": "232 \u00d7 232 \u00d7 88 mm",
     "weight": "2.1 kg",
     "antenna_connectors": "N/A (internal directional antennas)",
-    "operating_temp_range": "-40°C to 55°C (with solar load); -40°C to 65°C (without solar load)",
+    "operating_temp_range": "-40\u00b0C to 55\u00b0C (with solar load); -40\u00b0C to 65\u00b0C (without solar load)",
     "msrp": "$2,685"
   },
   {
@@ -2153,7 +2393,7 @@
     "dimensions": "7.32\" x 1.89\" x 7.87\" (186 x 48 x 200 mm)",
     "weight": "17.0 oz (482 g)",
     "antenna_connectors": "2x RP-TNC",
-    "operating_temp_range": "32 to 104°F (0 to 40°C)",
+    "operating_temp_range": "32 to 104\u00b0F (0 to 40\u00b0C)",
     "msrp": "Priceless"
   },
   {
@@ -2179,7 +2419,7 @@
     "dimensions": "22.19 x 24.96 x 6 cm (or 8.74 x 9.83 x 2.36 in.)",
     "weight": "1.53 kg (or 3.37 lbs)",
     "antenna_connectors": "none",
-    "operating_temp_range": "-0°C to 50°C (32°F to 122°F)",
+    "operating_temp_range": "-0\u00b0C to 50\u00b0C (32\u00b0F to 122\u00b0F)",
     "msrp": "~$1,695 to ~$2,500"
   },
   {
@@ -2190,7 +2430,7 @@
     "min_poe_class": "PoE++ (802.3bt)",
     "recommended_poe": "802.3bt PoE++ for full performance",
     "behavior_min_power": "On 802.3bt PoE++ the AP operates at full performance. Lower-class PoE sources are not supported and may prevent the AP from booting.",
-    "ethernet_ports_speed": "1× 10 GbE + 1× 1 GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 10 GbE + 1\u00d7 1 GbE (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
@@ -2199,7 +2439,7 @@
     "dimensions": "250 x 250 x 43.5 mm",
     "weight": "1.8 kg (4.0 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 50°C",
+    "operating_temp_range": "-30\u00b0C to 50\u00b0C",
     "msrp": "$499.00"
   },
   {
@@ -2210,7 +2450,7 @@
     "min_poe_class": "PoE++ (802.3bt)",
     "recommended_poe": "802.3bt PoE++ for full performance",
     "behavior_min_power": "On 802.3bt PoE++ the AP operates at full performance. Lower-class PoE sources are not supported and may prevent the AP from booting.",
-    "ethernet_ports_speed": "1× 10 GbE + 1× 1 GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 10 GbE + 1\u00d7 1 GbE (RJ45)",
     "antenna_type": "Internal directional",
     "form_factor": "Outdoor",
     "radios_iot_features": [],
@@ -2219,7 +2459,7 @@
     "dimensions": "250 x 250 x 45.5 mm (device only)",
     "weight": "2.2 kg (4.9 lb)",
     "antenna_connectors": "None (internal directional antennas)",
-    "operating_temp_range": "-30°C to 60°C",
+    "operating_temp_range": "-30\u00b0C to 60\u00b0C",
     "msrp": "$799.00"
   },
   {
@@ -2230,7 +2470,7 @@
     "min_poe_class": "PoE+ (802.3at) / PoE++ (802.3bt for PoE-out)",
     "recommended_poe": "802.3bt PoE++ for full performance and PoE output; 802.3at PoE+ for AP-only operation",
     "behavior_min_power": "On 802.3bt PoE++, the AP and PoE-out port operate without restrictions. On 802.3at PoE+, the AP radios operate normally but PoE-out is disabled or limited to stay within the available power budget.",
-    "ethernet_ports_speed": "1× 1/2.5 GbE uplink + 4× 1 GbE switch ports (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 1/2.5 GbE uplink + 4\u00d7 1 GbE switch ports (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Wallplate",
     "radios_iot_features": [
@@ -2241,7 +2481,7 @@
     "dimensions": "159.7 x 156.7 x 33.8 mm",
     "weight": "884 g (1.9 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 60°C operating",
+    "operating_temp_range": "-30\u00b0C to 60\u00b0C operating",
     "msrp": "$299.00"
   },
   {
@@ -2252,7 +2492,7 @@
     "min_poe_class": "PoE (802.3af) / PoE+ (802.3at for PoE-out)",
     "recommended_poe": "802.3at PoE+ for AP plus PoE output; 802.3af PoE for AP-only operation",
     "behavior_min_power": "On 802.3at PoE+, the AP and PoE-out port operate normally. On 802.3af PoE, the AP radios operate but PoE-out is disabled to stay within the available power budget.",
-    "ethernet_ports_speed": "1× 2.5 GbE uplink + 4× 1 GbE switch ports (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 2.5 GbE uplink + 4\u00d7 1 GbE switch ports (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Wallplate",
     "radios_iot_features": [],
@@ -2261,7 +2501,7 @@
     "dimensions": "137 x 98.7 x 30.2 mm",
     "weight": "400g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 40°C",
+    "operating_temp_range": "-30\u00b0C to 40\u00b0C",
     "msrp": "$149.00"
   },
   {
@@ -2272,16 +2512,16 @@
     "min_poe_class": "PoE (802.3af)",
     "recommended_poe": "802.3af PoE for normal operation",
     "behavior_min_power": "Designed for 802.3af PoE; the AP operates normally within the supported voltage range. PoE sources with very low power budgets may cause boot or stability issues under heavy traffic.",
-    "ethernet_ports_speed": "1× 2.5 GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 2.5 GbE (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-lite?s=us",
     "image_url": "images/ubiquiti/ubiquiti-u7-lite.png",
-    "dimensions": "Ø171.5 x 33 mm",
+    "dimensions": "\u00d8171.5 x 33 mm",
     "weight": "313 g (11 oz)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 40°C operating",
+    "operating_temp_range": "-30\u00b0C to 40\u00b0C operating",
     "msrp": "$99.00"
   },
   {
@@ -2292,13 +2532,13 @@
     "min_poe_class": "PoE+ (802.3at)",
     "recommended_poe": "802.3at PoE+ for full performance",
     "behavior_min_power": "On 802.3at PoE+ the AP operates at full performance. 802.3af-class or low-power PoE sources may prevent the AP from powering on or staying stable under load.",
-    "ethernet_ports_speed": "1× 2.5 GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 2.5 GbE (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro?s=us",
     "image_url": "images/ubiquiti/ubiquiti-u7-pro.png",
-    "dimensions": "Ø206 x 46 mm",
+    "dimensions": "\u00d8206 x 46 mm",
     "weight": "680 g (1.5 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "unknown",
@@ -2312,7 +2552,7 @@
     "min_poe_class": "PoE+ (802.3at)",
     "recommended_poe": "802.3at PoE+ for full performance",
     "behavior_min_power": "On 802.3at PoE+ the AP operates at full performance. 802.3af-class or low-power PoE sources may prevent the AP from powering on or staying stable under load.",
-    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 1/2.5 GbE (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Wallplate",
     "radios_iot_features": [],
@@ -2321,7 +2561,7 @@
     "dimensions": "150 x 103 x 36 mm",
     "weight": "580 g (1.3 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 40°C",
+    "operating_temp_range": "-30\u00b0C to 40\u00b0C",
     "msrp": "$199.00"
   },
   {
@@ -2332,16 +2572,16 @@
     "min_poe_class": "PoE+ (802.3at)",
     "recommended_poe": "802.3at PoE+ for full performance",
     "behavior_min_power": "On 802.3at PoE+ the AP operates at full performance. 802.3af-class or undersized PoE sources may prevent the AP from booting or remaining stable.",
-    "ethernet_ports_speed": "1× 10 GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 10 GbE (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro-xg?s=us",
     "image_url": "images/ubiquiti/ubiquiti-u7-pro-xg.png",
-    "dimensions": "Ø206 x 46 mm",
+    "dimensions": "\u00d8206 x 46 mm",
     "weight": "750g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 40°C",
+    "operating_temp_range": "-30\u00b0C to 40\u00b0C",
     "msrp": "$199.00"
   },
   {
@@ -2352,16 +2592,16 @@
     "min_poe_class": "PoE++ (802.3bt)",
     "recommended_poe": "802.3bt PoE++ for full performance",
     "behavior_min_power": "On 802.3bt PoE++ the AP operates at full performance. Lower-class PoE sources are not supported and may prevent the AP from powering on reliably.",
-    "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (RJ45)",
+    "ethernet_ports_speed": "1\u00d7 1/2.5/5/10 GbE (RJ45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [],
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro-xgs?s=us",
     "image_url": "images/ubiquiti/ubiquiti-u7-pro-xgs.png",
-    "dimensions": "Ø215 x 32.5 mm",
+    "dimensions": "\u00d8215 x 32.5 mm",
     "weight": "800g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 60°C",
+    "operating_temp_range": "-30\u00b0C to 60\u00b0C",
     "msrp": "$299.00"
   },
   {
@@ -2380,8 +2620,8 @@
     "image_url": "images/ubiquiti/ubiquiti-e7-audience.png",
     "dimensions": "474.1 x 265.5 x 42.2 mm (device only)",
     "weight": "3.3 kg (7.3 lb) (device only), 4.3 kg (9.5 lb) (device with mount)",
-    "antenna_connectors": "None (internal directional antennas switchable between 15 dBi, 50° x 50° and 11 dBi, 90° x 90° operation)",
-    "operating_temp_range": "-40 to 60°C (-40 to 140°F)",
+    "antenna_connectors": "None (internal directional antennas switchable between 15 dBi, 50\u00b0 x 50\u00b0 and 11 dBi, 90\u00b0 x 90\u00b0 operation)",
+    "operating_temp_range": "-40 to 60\u00b0C (-40 to 140\u00b0F)",
     "msrp": "$1999"
   }
 ]
