@@ -1997,11 +1997,11 @@
     "recommended_poe": "802.3bt (or 2\u00d7 802.3at) for full performance",
     "behavior_min_power": "On 802.3bt or 2\u00d7802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2\u00d7802.3af, client radios operate at reduced Tx power (~17 dBm) with 2x2 chains and USB disabled; 2.4/5/6 GHz radios and the fourth radio remain operational.",
     "ethernet_ports_speed": "2\u00d7 1/2.5/5/10GbE mGig (RJ45) + 1\u00d7 USB 3.0 + 1\u00d7 RS-232",
-    "antenna_type": "External",
+    "antenna_type": "Internal (omnidirectional)",
     "form_factor": "Indoor",
     "dimensions": "9.84 x 9.84 x 2.26 inches (250 x 250 x 57.5 mm)",
     "weight": "4.36 lbs (1.98 kg)",
-    "antenna_connectors": "10\u00d7 RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
+    "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "32\u00b0F to 122\u00b0F (0\u00b0C to 50\u00b0C) operating; -22\u00b0F to 158\u00b0F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
