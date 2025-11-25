@@ -1675,7 +1675,6 @@
     "behavior_min_power": "On 802.3at the AP operates with full 4x4 radios and external antenna support; minimum PoE should be provisioned as 802.3at for full performance.",
     "ethernet_ports_speed": "1x 2.5G Ethernet (RJ45) uplink",
     "antenna_type": "External",
-    "antenna_connectors": "4x RP-TNC female connectors (2.4/5 GHz)",
     "form_factor": "Indoor",
     "radios_iot_features": [
       "BLE",
@@ -1683,6 +1682,7 @@
     ],
     "dimensions": "30.6 x 15.62 x 3.54 cm (12.05 x 6.15 x 1.39 in)",
     "weight": "850 g (29.98 oz)",
+    "antenna_connectors": "6x RP-TNC female connectors (2.4/5 GHz)",
     "operating_temp_range": "0°C to 50°C operating; 5–95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46E_Datasheet",
     "image_url": "images/meraki/meraki-MR46E.jpg",
