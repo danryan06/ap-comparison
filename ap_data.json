@@ -1574,6 +1574,202 @@
     "msrp": "unknown"
   },
   {
+    "vendor": "Cisco",
+    "model": "9105AXI",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3af (Class 3) PoE for full performance",
+    "behavior_min_power": "Runs at full functionality on 802.3af (Class 3) PoE; no reduced-power mode is documented.",
+    "ethernet_ports_speed": "1× 1 GbE (RJ45)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4,
+      "5": 5
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-744062.html",
+    "image_url": "images/cisco/cisco-9105.png",
+    "dimensions": "150 × 150 × 30 mm (5.9 × 5.9 × 1.18 in)",
+    "weight": "0.33 kg (0.7 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "9105AXW",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates with the 2.4 GHz and 5 GHz radios at 2x2 and the 2.5 GbE uplink enabled, but the USB port and PoE-out on LAN1 are disabled; on 802.3at (Class 4) PoE+ either the USB port or PoE-out on LAN1 can be enabled.",
+    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, uplink PoE in) + 3× 1 GbE (RJ45, LAN, one with PoE out)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 3,
+      "5": 5
+    },
+    "form_factor": "Wallplate",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-744062.html",
+    "image_url": "images/cisco/cisco-9105axh.png",
+    "dimensions": "90 × 160 × 32.7 mm (3.54 × 6.3 × 1.3 in)",
+    "weight": "0.37 kg (0.8 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "9115AXI",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "4x4 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP enters reduced-feature mode with both radios limited to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation with a 2.5 GbE uplink and USB enabled.",
+    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 3,
+      "5": 4
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-741988.html",
+    "image_url": "images/cisco/cisco-9115.png",
+    "dimensions": "203 × 203 × 38 mm (8.0 × 8.0 × 1.5 in)",
+    "weight": "1.0 kg (2.1 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "9115AXE",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "4x4 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP enters reduced-feature mode with both radios limited to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation with a 2.5 GbE uplink and USB enabled.",
+    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-741988.html",
+    "image_url": "images/cisco/cisco-9115axe.png",
+    "dimensions": "203 × 203 × 43 mm (8.0 × 8.0 × 1.7 in)",
+    "weight": "1.1 kg (2.4 lb)",
+    "antenna_connectors": "RP-TNC connectors for external antennas",
+    "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "9120AXI",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "4x4 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in reduced-power modes with radios limited to up to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation on both radios with a 2.5 GbE uplink and USB enabled.",
+    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4,
+      "5": 5
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9120ax-series-access-points/datasheet-c78-742115.html",
+    "image_url": "images/cisco/cisco-9120.png",
+    "dimensions": "216 × 216 × 43 mm (8.5 × 8.5 × 1.7 in)",
+    "weight": "1.3 kg (2.87 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "9120AXE",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "4x4 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in reduced-power modes with radios limited to up to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation on both radios with a 2.5 GbE uplink and USB enabled.",
+    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9120ax-series-access-points/datasheet-c78-742115.html",
+    "image_url": "images/cisco/cisco-9120axe.png",
+    "dimensions": "216 × 216 × 51 mm (8.5 × 8.5 × 2.0 in)",
+    "weight": "1.36 kg (3.0 lb)",
+    "antenna_connectors": "1× RP-TNC antenna port plus smart antenna (DART) connector for external antennas",
+    "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "9130AXI",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "4x4 / 8x8 or dual 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in a reduced-feature mode with both 2.4 GHz and 5 GHz radios limited to 1x1, the uplink restricted to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 on 2.4 GHz with either 8x8 or dual 4x4 operation on 5 GHz and can optionally power the USB port as documented in the datasheet power table.",
+    "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, mGig)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4,
+      "5": 6
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/nb-06-cat-9130-ser-ap-ds-cte-en.html",
+    "image_url": "images/cisco/cisco-9130.png",
+    "dimensions": "226 × 226 × 48 mm (8.9 × 8.9 × 1.88 in)",
+    "weight": "1.45 kg (3.2 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
+    "model": "9130AXE",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "4x4 / 8x8 or dual 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in a reduced-feature mode with both 2.4 GHz and 5 GHz radios limited to 1x1, the uplink restricted to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 on 2.4 GHz with either 8x8 or dual 4x4 operation on 5 GHz and can optionally power the USB port as documented in the datasheet power table.",
+    "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, mGig)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/nb-06-cat-9130-ser-ap-ds-cte-en.html",
+    "image_url": "images/cisco/cisco-9130.png",
+    "dimensions": "233 × 233 × 40 mm (9.17 × 9.17 × 1.58 in)",
+    "weight": "1.71 kg (3.78 lb)",
+    "antenna_connectors": "Smart antenna connector with 8-DART interface for external antennas",
+    "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
     "vendor": "Cisco Meraki",
     "model": "MR36",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
