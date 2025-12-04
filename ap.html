@@ -133,6 +133,7 @@
       radios_iot_features: 'Radios & IoT Features',
       antenna_type: 'Antenna Type',
       antenna_gain_dbi: 'Antenna Gain (dBi)',
+      beamwidth: 'Beamwidth',
       form_factor: 'Form Factor',
       dimensions: 'Dimensions',
       weight: 'Weight',
@@ -279,6 +280,13 @@
             if (v['5'] !== undefined) parts.push(`5: ${v['5']} dBi`);
             if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
             valDiv.textContent = parts.join(', ');
+          } else if (k === 'beamwidth' && v && typeof v === 'object') {
+            // Format beamwidth object: "2.4: 70° x 70°, 5: 70° x 70°, 6: 60° x 60°"
+            const parts = [];
+            if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']}`);
+            if (v['5'] !== undefined) parts.push(`5: ${v['5']}`);
+            if (v['6'] !== undefined) parts.push(`6: ${v['6']}`);
+            valDiv.textContent = parts.join(', ');
           } else if (k.endsWith('_url') && v && typeof v === 'string' && v.trim()) {
             // Make URL fields clickable links
             const link = document.createElement('a');
@@ -302,7 +310,7 @@
         const primaryKeys = [
           'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
           'recommended_poe','behavior_min_power','ethernet_ports_speed',
-          'radios_iot_features','antenna_type','antenna_gain_dbi','form_factor','dimensions',
+          'radios_iot_features','antenna_type','antenna_gain_dbi','beamwidth','form_factor','dimensions',
           'weight','antenna_connectors','operating_temp_range','msrp',
           'end_of_sale_announcement_date','end_of_sale_date','end_of_support_date','end_of_sale_url','manufacturer_suggested_replacement','install_guide_url'
         ];

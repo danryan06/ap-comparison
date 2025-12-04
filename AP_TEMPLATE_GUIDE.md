@@ -20,6 +20,11 @@ Use this template when submitting new AP entries. Copy the JSON structure below 
     "5": 5.0,
     "6": 5.5
   },
+  "beamwidth": {
+    "2.4": "70° x 70° (optional)",
+    "5": "70° x 70° (optional)",
+    "6": "60° x 60° (optional)"
+  },
   "form_factor": "Indoor or Outdoor or Wallplate",
   "radios_iot_features": [
     "BLE",
@@ -88,6 +93,13 @@ Use this template when submitting new AP entries. Copy the JSON structure below 
   - Object format: `{"2.4": 4.5, "5": 5.0, "6": 5.5}`
   - Values are numeric (dBi units implied)
   - Omit this field if not available
+
+- **beamwidth**: Antenna beamwidth per band (optional, typically for directional antennas)
+  - Object format: `{"2.4": "70° x 70°", "5": "70° x 70°", "6": "60° x 60°"}`
+  - Format: `"azimuth° x elevation°"` (e.g., `"70° x 70°"`)
+  - For multiple selectable patterns: `"90° x 90°, 90° x 30°, 30° x 30°"`
+  - Omit this field if not specified by manufacturer
+  - Typically only applicable to directional/external antenna models
 
 - **antenna_connectors**: Connector types and count
   - Examples: `"None (internal antennas)"`, `"4× RP-SMA"`, `"8× N-type"`
