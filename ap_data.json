@@ -1912,7 +1912,7 @@
     "msrp": "unknown",
     "end_of_sale_announcement_date": "February 7, 2025",
     "end_of_sale_date": "August 7, 2025",
-    "end_of_support_date": "August 7, 2025",
+    "end_of_support_date": "August 7, 2030",
     "end_of_sale_url": "https://documentation.meraki.com/@api/deki/files/30279/MR56-HW_EOS_NOTICE.pdf?revision=1",
     "manufacturer_suggested_replacement": "None"
   },
