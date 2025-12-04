@@ -178,6 +178,28 @@
         titleHeaderEl.textContent = titleText;
         subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
 
+        // Add End of Sale alert banner if applicable
+        if (entry.end_of_sale_announcement_date || entry.end_of_sale_date) {
+          const alert = document.createElement('div');
+          alert.className = 'eos-alert';
+          alert.innerHTML = `
+            <svg class="eos-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <div class="eos-content">
+              <h4>End of Sale Announced</h4>
+              <p>This access point has reached end of sale.${entry.end_of_sale_date ? ` Last order date: <strong>${entry.end_of_sale_date}</strong>` : ''}${entry.end_of_support_date ? ` • Support ends: <strong>${entry.end_of_support_date}</strong>` : ''}</p>
+              ${entry.end_of_sale_url ? `<a href="${entry.end_of_sale_url}" target="_blank" rel="noopener noreferrer" class="eos-link">View official notice →</a>` : ''}
+              ${entry.manufacturer_suggested_replacement && entry.manufacturer_suggested_replacement !== 'None' ? `<p style="margin-top: 0.5rem; font-size: 0.85rem;">Suggested replacement: <strong>${entry.manufacturer_suggested_replacement}</strong></p>` : ''}
+            </div>
+          `;
+          
+          // Insert after subtitle
+          subtitleEl.parentNode.insertBefore(alert, subtitleEl.nextSibling);
+        }
+
         // Set up edit link
         const entrySlug = slugify(`${entry.vendor} ${entry.model}`);
         editLinkEl.href = `edit.html?id=${encodeURIComponent(entrySlug)}`;
@@ -233,9 +255,21 @@
           
           const keyDiv = document.createElement('div');
           keyDiv.className = 'key';
+          
+          // Highlight EoS-related fields
+          const eosFields = ['end_of_sale_announcement_date', 'end_of_sale_date', 'end_of_support_date', 'manufacturer_suggested_replacement'];
+          if (eosFields.includes(k)) {
+            keyDiv.classList.add('eos-key');
+          }
+          
           keyDiv.textContent = fieldLabels[k] || k;
           const valDiv = document.createElement('div');
           valDiv.className = 'val';
+          
+          // Highlight EoS values
+          if (eosFields.includes(k)) {
+            valDiv.classList.add('eos-val');
+          }
           if (Array.isArray(v)) {
             valDiv.textContent = v.join(', ');
           } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {

@@ -1012,6 +1012,76 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   word-break: break-word;
 }
 
+/* End of Sale Alert Banner */
+.eos-alert {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(239, 68, 68, 0.15));
+  border: 1px solid rgba(251, 146, 60, 0.4);
+  border-radius: var(--radius-md);
+  align-items: flex-start;
+}
+
+.eos-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #fb923c;
+  margin-top: 2px;
+}
+
+.eos-content h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.eos-content p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.eos-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.eos-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+/* EoS fields in details grid */
+.kv-grid .eos-key {
+  color: #fb923c;
+  font-weight: 600;
+}
+
+.kv-grid .eos-val {
+  color: #fbbf24;
+  font-weight: 500;
+}
+
+/* Optional: subtle background highlight for EoS rows */
+.kv-grid .eos-key,
+.kv-grid .eos-val {
+  background: rgba(251, 146, 60, 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin: -0.25rem -0.5rem;
+}
+
 /* AP details image */
 .ap-image-wrapper {
   margin-bottom: 1.25rem;
