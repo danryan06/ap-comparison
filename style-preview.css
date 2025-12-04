@@ -2472,11 +2472,12 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .beamwidth-band {
   display: inline-block;
   padding: 0.15rem 0.5rem;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(148, 163, 184, 0.1);
   border-radius: 4px;
   margin: 0.1rem 0.2rem 0.1rem 0;
   font-size: 0.85rem;
   white-space: nowrap;
+  color: #d1d5db;
 }
 
 /* Directional badge for directional antennas */

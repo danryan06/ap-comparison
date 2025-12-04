@@ -249,21 +249,12 @@
             keyDiv.classList.add('eos-key');
           }
           
-          const antennaFields = ['antenna_gain_dbi', 'beamwidth', 'antenna_type', 'antenna_connectors'];
-          if (antennaFields.includes(k)) {
-            keyDiv.classList.add('antenna-spec-key');
-          }
-          
           keyDiv.textContent = fieldLabels[k] || k;
           const valDiv = document.createElement('div');
           valDiv.className = 'val';
           
           if (eosFields.includes(k)) {
             valDiv.classList.add('eos-val');
-          }
-          
-          if (antennaFields.includes(k)) {
-            valDiv.classList.add('antenna-spec-val');
           }
           
           if (Array.isArray(v)) {
@@ -291,14 +282,6 @@
             wrapper.innerHTML = parts.join(' ');
             valDiv.innerHTML = '';
             valDiv.appendChild(wrapper);
-          } else if (k === 'antenna_type' && v && typeof v === 'string') {
-            valDiv.textContent = v;
-            if (v.toLowerCase().includes('directional')) {
-              const badge = document.createElement('span');
-              badge.className = 'directional-badge';
-              badge.textContent = 'Directional';
-              valDiv.appendChild(badge);
-            }
           } else if (k.endsWith('_url') && v && typeof v === 'string' && v.trim()) {
             const link = document.createElement('a');
             link.href = v;

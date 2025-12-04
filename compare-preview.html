@@ -143,6 +143,7 @@
       text-align: right;
       flex: 1;
       word-wrap: break-word;
+      white-space: normal;
     }
 
     .card-actions {
@@ -330,10 +331,10 @@
       // Add beamwidth formatting
       if (key === 'beamwidth' && typeof value === 'object') {
         const parts = [];
-        if (value['2.4'] !== undefined) parts.push(`2.4: ${value['2.4']}`);
-        if (value['5'] !== undefined) parts.push(`5: ${value['5']}`);
-        if (value['6'] !== undefined) parts.push(`6: ${value['6']}`);
-        return parts.join(', ');
+        if (value['2.4'] !== undefined) parts.push(`2.4 GHz: ${value['2.4']}`);
+        if (value['5'] !== undefined) parts.push(`5 GHz: ${value['5']}`);
+        if (value['6'] !== undefined) parts.push(`6 GHz: ${value['6']}`);
+        return parts.join('<br>');
       }
       
       if (Array.isArray(value)) {
@@ -362,7 +363,9 @@
       allSpecs.forEach(({ key }) => {
         const values = Array.from(cards).map(card => {
           const specRow = card.querySelector(`[data-spec-key="${key}"]`);
-          return specRow ? specRow.querySelector('.spec-value').textContent.trim() : '';
+          if (!specRow) return '';
+          const valueEl = specRow.querySelector('.spec-value');
+          return valueEl ? (valueEl.textContent || valueEl.innerText || '').trim() : '';
         });
 
         const allSame = values.every(v => v === values[0] && v !== '');
@@ -435,7 +438,12 @@
 
         const valueSpan = document.createElement('span');
         valueSpan.className = 'spec-value';
-        valueSpan.textContent = formatValue(key, value);
+        const formattedValue = formatValue(key, value);
+        if (key === 'beamwidth' && typeof value === 'object') {
+          valueSpan.innerHTML = formattedValue;
+        } else {
+          valueSpan.textContent = formattedValue;
+        }
 
         specRow.appendChild(labelSpan);
         specRow.appendChild(valueSpan);
