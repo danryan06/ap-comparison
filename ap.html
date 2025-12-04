@@ -245,6 +245,16 @@
             if (v['5'] !== undefined) parts.push(`5: ${v['5']} dBi`);
             if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
             valDiv.textContent = parts.join(', ');
+          } else if (k.endsWith('_url') && v && typeof v === 'string' && v.trim()) {
+            // Make URL fields clickable links
+            const link = document.createElement('a');
+            link.href = v;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = v;
+            link.style.color = '#60a5fa';
+            link.style.textDecoration = 'underline';
+            valDiv.appendChild(link);
           } else if (v && typeof v === 'object' && v !== null) {
             // Handle other objects generically
             valDiv.textContent = JSON.stringify(v);
