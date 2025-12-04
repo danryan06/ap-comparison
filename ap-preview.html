@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AP Details – Enterprise AP Comparison Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style-preview.css" />
+</head>
+<body>
+  <div class="preview-badge-header">PREVIEW</div>
+  <div class="container">
+    <div class="actions">
+      <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
+      <a id="edit-link" class="btn-link" href="#" style="display:none;">Edit AP Information</a>
+      <button id="export-csv" type="button" class="btn-link">Export CSV</button>
+    </div>
+    <div class="card">
+      <span class="badge">AP Details</span>
+      <div class="header-with-logo">
+        <h1 id="title-header">AP Details</h1>
+        <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
+      </div>
+      <p class="subtitle" id="subtitle"></p>
+      <div id="image-container" class="ap-image-wrapper" style="display:none;">
+        <img id="ap-image" class="ap-image" alt="" loading="lazy" />
+      </div>
+      <div id="details" class="kv-grid"></div>
+      <div id="error-message" class="error" style="display:none;"></div>
+      <div id="card-actions" class="card-actions" style="display:none;"></div>
+    </div>
+  </div>
+  <script>
+    const DATA_URL = 'ap_data.json';
+    let currentEntry = null;
+
+    function slugify(s) {
+      return String(s || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function readId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id') || '';
+    }
+
+    function normalizeString(value) {
+      if (value == null) return '';
+      if (Array.isArray(value)) return value.join(', ');
+      return String(value);
+    }
+
+    function escapeCsvValue(value) {
+      const s = String(value || '');
+      const needsQuotes = /[",\n]/.test(s);
+      return needsQuotes ? '"' + s.replace(/"/g, '""') + '"' : s;
+    }
+
+    function exportToCsv() {
+      if (!currentEntry) return;
+      
+      const primaryKeys = [
+        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
+        'recommended_poe','behavior_min_power','ethernet_ports_speed',
+        'radios_iot_features','antenna_type','antenna_gain_dbi','beamwidth','form_factor','dimensions',
+        'weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
+      ];
+      const keys = Object.keys(currentEntry);
+      const orderedKeys = [
+        ...primaryKeys.filter(k => keys.includes(k)),
+        ...keys.filter(k => !primaryKeys.includes(k)).sort()
+      ];
+      const headers = orderedKeys.map(k => escapeCsvValue(k));
+      
+      const values = orderedKeys.map(k => {
+        const v = currentEntry[k];
+        let s;
+        if (Array.isArray(v)) {
+          s = v.join('; ');
+        } else if ((k === 'antenna_gain_dbi' || k === 'beamwidth') && v && typeof v === 'object') {
+          const parts = [];
+          if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
+          if (v['5'] !== undefined) parts.push(`5: ${v['5']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
+          if (v['6'] !== undefined) parts.push(`6: ${v['6']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
+          s = parts.join(', ');
+        } else if (v && typeof v === 'object' && v !== null) {
+          s = JSON.stringify(v);
+        } else {
+          s = normalizeString(v);
+        }
+        return escapeCsvValue(s);
+      });
+      const csv = headers.join(',') + '\n' + values.join(',');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const filename = slugify(`${currentEntry.vendor || 'ap'}-${currentEntry.model || 'details'}`) + '.csv';
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    const fieldLabels = {
+      vendor: 'Vendor',
+      model: 'Model',
+      wifi_gen_radios: 'Wi-Fi Generation & Radios',
+      spatial_streams: 'Spatial Streams',
+      min_poe_class: 'Minimum PoE Class',
+      recommended_poe: 'Recommended PoE',
+      behavior_min_power: 'Behavior at Minimum Power',
+      ethernet_ports_speed: 'Ethernet Ports & Speed',
+      radios_iot_features: 'Radios & IoT Features',
+      antenna_type: 'Antenna Type',
+      antenna_gain_dbi: 'Antenna Gain (dBi)',
+      beamwidth: 'Beamwidth',
+      form_factor: 'Form Factor',
+      dimensions: 'Dimensions',
+      weight: 'Weight',
+      antenna_connectors: 'Antenna Connectors',
+      operating_temp_range: 'Operating Temperature Range',
+      msrp: 'MSRP',
+      datasheet_url: 'Datasheet URL',
+      install_guide_url: 'Install Guide URL',
+      end_of_sale_announcement_date: 'End of Sale Announcement Date',
+      end_of_sale_date: 'End of Sale Date',
+      end_of_support_date: 'End of Support Date',
+      end_of_sale_url: 'End of Sale URL',
+      manufacturer_suggested_replacement: 'Manufacturer Suggested Replacement'
+    };
+
+    function addSectionHeader(detailsEl, title) {
+      const sectionDiv = document.createElement('div');
+      sectionDiv.className = 'spec-section';
+      const heading = document.createElement('h3');
+      heading.textContent = title;
+      sectionDiv.appendChild(heading);
+      detailsEl.appendChild(sectionDiv);
+    }
+
+    async function load() {
+      const errorEl = document.getElementById('error-message');
+      const titleHeaderEl = document.getElementById('title-header');
+      const subtitleEl = document.getElementById('subtitle');
+      const detailsEl = document.getElementById('details');
+      const imageWrapper = document.getElementById('image-container');
+      const imageEl = document.getElementById('ap-image');
+      const backEl = document.getElementById('back-link');
+      const editLinkEl = document.getElementById('edit-link');
+      const cardActionsEl = document.getElementById('card-actions');
+
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const id = readId();
+        const entry = data.find(e => slugify(`${e.vendor} ${e.model}`) === id);
+        if (!entry) {
+          errorEl.style.display = 'block';
+          errorEl.textContent = 'AP not found.';
+          return;
+        }
+
+        currentEntry = entry;
+        const titleText = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
+        titleHeaderEl.textContent = titleText;
+        subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
+
+        if (entry.end_of_sale_announcement_date || entry.end_of_sale_date) {
+          const alert = document.createElement('div');
+          alert.className = 'eos-alert';
+          alert.innerHTML = `
+            <svg class="eos-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <div class="eos-content">
+              <h4>End of Sale Announced</h4>
+              <p>This access point has reached end of sale.${entry.end_of_sale_date ? ` Last order date: <strong>${entry.end_of_sale_date}</strong>` : ''}${entry.end_of_support_date ? ` • Support ends: <strong>${entry.end_of_support_date}</strong>` : ''}</p>
+              ${entry.end_of_sale_url ? `<a href="${entry.end_of_sale_url}" target="_blank" rel="noopener noreferrer" class="eos-link">View official notice →</a>` : ''}
+              ${entry.manufacturer_suggested_replacement && entry.manufacturer_suggested_replacement !== 'None' ? `<p style="margin-top: 0.5rem; font-size: 0.85rem;">Suggested replacement: <strong>${entry.manufacturer_suggested_replacement}</strong></p>` : ''}
+            </div>
+          `;
+          
+          subtitleEl.parentNode.insertBefore(alert, subtitleEl.nextSibling);
+        }
+
+        const entrySlug = slugify(`${entry.vendor} ${entry.model}`);
+        editLinkEl.href = `edit.html?id=${encodeURIComponent(entrySlug)}`;
+        editLinkEl.style.display = 'inline-flex';
+
+        const imgUrl = entry.image_url || '';
+        if (imgUrl) {
+          imageEl.src = imgUrl;
+          imageEl.alt = titleText;
+          imageWrapper.style.display = 'block';
+          imageEl.onerror = () => {
+            imageWrapper.style.display = 'none';
+          };
+        } else {
+          imageWrapper.style.display = 'none';
+        }
+
+        cardActionsEl.innerHTML = '';
+        let hasActions = false;
+        
+        if (entry.datasheet_url) {
+          const datasheetBtn = document.createElement('a');
+          datasheetBtn.href = entry.datasheet_url;
+          datasheetBtn.target = '_blank';
+          datasheetBtn.rel = 'noopener noreferrer';
+          datasheetBtn.className = 'btn-secondary';
+          datasheetBtn.textContent = 'Datasheet';
+          cardActionsEl.appendChild(datasheetBtn);
+          hasActions = true;
+        }
+        
+        if (entry.install_guide_url) {
+          const installGuideBtn = document.createElement('a');
+          installGuideBtn.href = entry.install_guide_url;
+          installGuideBtn.target = '_blank';
+          installGuideBtn.rel = 'noopener noreferrer';
+          installGuideBtn.className = 'btn-secondary';
+          installGuideBtn.textContent = 'Install Guide';
+          cardActionsEl.appendChild(installGuideBtn);
+          hasActions = true;
+        }
+        
+        if (hasActions) {
+          cardActionsEl.style.display = 'flex';
+        }
+
+        detailsEl.innerHTML = '';
+        const renderKV = (k, v) => {
+          if (k === 'image_url') return;
+          
+          const keyDiv = document.createElement('div');
+          keyDiv.className = 'key';
+          
+          const eosFields = ['end_of_sale_announcement_date', 'end_of_sale_date', 'end_of_support_date', 'end_of_sale_url', 'manufacturer_suggested_replacement'];
+          if (eosFields.includes(k)) {
+            keyDiv.classList.add('eos-key');
+          }
+          
+          const antennaFields = ['antenna_gain_dbi', 'beamwidth', 'antenna_type', 'antenna_connectors'];
+          if (antennaFields.includes(k)) {
+            keyDiv.classList.add('antenna-spec-key');
+          }
+          
+          keyDiv.textContent = fieldLabels[k] || k;
+          const valDiv = document.createElement('div');
+          valDiv.className = 'val';
+          
+          if (eosFields.includes(k)) {
+            valDiv.classList.add('eos-val');
+          }
+          
+          if (antennaFields.includes(k)) {
+            valDiv.classList.add('antenna-spec-val');
+          }
+          
+          if (Array.isArray(v)) {
+            valDiv.textContent = v.join(', ');
+          } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {
+            const parts = [];
+            if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']} dBi`);
+            if (v['5'] !== undefined) parts.push(`5: ${v['5']} dBi`);
+            if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
+            valDiv.textContent = parts.join(', ');
+          } else if (k === 'beamwidth' && v && typeof v === 'object') {
+            const parts = [];
+            if (v['2.4'] !== undefined) {
+              parts.push(`<span class="beamwidth-band">2.4 GHz: ${v['2.4']}</span>`);
+            }
+            if (v['5'] !== undefined) {
+              parts.push(`<span class="beamwidth-band">5 GHz: ${v['5']}</span>`);
+            }
+            if (v['6'] !== undefined) {
+              parts.push(`<span class="beamwidth-band">6 GHz: ${v['6']}</span>`);
+            }
+            
+            const wrapper = document.createElement('div');
+            wrapper.className = 'beamwidth-value';
+            wrapper.innerHTML = parts.join(' ');
+            valDiv.innerHTML = '';
+            valDiv.appendChild(wrapper);
+          } else if (k === 'antenna_type' && v && typeof v === 'string') {
+            valDiv.textContent = v;
+            if (v.toLowerCase().includes('directional')) {
+              const badge = document.createElement('span');
+              badge.className = 'directional-badge';
+              badge.textContent = 'Directional';
+              valDiv.appendChild(badge);
+            }
+          } else if (k.endsWith('_url') && v && typeof v === 'string' && v.trim()) {
+            const link = document.createElement('a');
+            link.href = v;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = v;
+            link.style.color = '#60a5fa';
+            link.style.textDecoration = 'underline';
+            valDiv.appendChild(link);
+          } else if (v && typeof v === 'object' && v !== null) {
+            valDiv.textContent = JSON.stringify(v);
+          } else {
+            valDiv.textContent = normalizeString(v);
+          }
+          detailsEl.appendChild(keyDiv);
+          detailsEl.appendChild(valDiv);
+        };
+
+        // Define sections with their fields
+        const sections = [
+          {
+            title: 'Basic Information',
+            fields: ['vendor', 'model', 'wifi_gen_radios', 'spatial_streams', 'msrp']
+          },
+          {
+            title: 'Power Requirements',
+            fields: ['min_poe_class', 'recommended_poe', 'behavior_min_power']
+          },
+          {
+            title: 'Connectivity',
+            fields: ['ethernet_ports_speed', 'radios_iot_features']
+          },
+          {
+            title: 'Antenna Specifications',
+            fields: ['antenna_type', 'antenna_gain_dbi', 'beamwidth', 'antenna_connectors']
+          },
+          {
+            title: 'Physical Specifications',
+            fields: ['form_factor', 'dimensions', 'weight', 'operating_temp_range']
+          },
+          {
+            title: 'End of Life Information',
+            fields: ['end_of_sale_announcement_date', 'end_of_sale_date', 'end_of_support_date', 'end_of_sale_url', 'manufacturer_suggested_replacement']
+          },
+          {
+            title: 'Documentation',
+            fields: ['install_guide_url']
+          }
+        ];
+
+        // Render sections
+        sections.forEach(section => {
+          const fieldsToRender = section.fields.filter(field => 
+            entry.hasOwnProperty(field) && entry[field] != null && entry[field] !== ''
+          );
+          
+          if (fieldsToRender.length > 0) {
+            addSectionHeader(detailsEl, section.title);
+            fieldsToRender.forEach(field => renderKV(field, entry[field]));
+          }
+        });
+
+        // Render any remaining fields not in sections
+        const allSectionFields = sections.flatMap(s => s.fields);
+        const remainingFields = Object.keys(entry).filter(k => 
+          !allSectionFields.includes(k) && 
+          k !== 'image_url' && 
+          k !== 'datasheet_url' &&
+          entry[k] != null &&
+          entry[k] !== ''
+        ).sort();
+        
+        if (remainingFields.length > 0) {
+          addSectionHeader(detailsEl, 'Additional Information');
+          remainingFields.forEach(k => renderKV(k, entry[k]));
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const fromFinder = params.get('from') === 'finder';
+        params.delete('id');
+        params.delete('from');
+        
+        if (fromFinder) {
+          backEl.textContent = '← Back to AP Finder';
+          const filterState = params.toString();
+          backEl.setAttribute('href', 'finder.html' + (filterState ? '?' + filterState : ''));
+        } else {
+          backEl.textContent = '← Back to AP Table';
+          const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
+          backEl.setAttribute('href', backUrl);
+        }
+      } catch (err) {
+        console.error('Failed to load AP details:', err);
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Failed to load AP details.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const exportBtn = document.getElementById('export-csv');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', exportToCsv);
+      }
+    });
+
+    load();
+  </script>
+</body>
+</html>
+

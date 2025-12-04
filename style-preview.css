@@ -1012,6 +1012,76 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   word-break: break-word;
 }
 
+/* End of Sale Alert Banner */
+.eos-alert {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(239, 68, 68, 0.15));
+  border: 1px solid rgba(251, 146, 60, 0.4);
+  border-radius: var(--radius-md);
+  align-items: flex-start;
+}
+
+.eos-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #fb923c;
+  margin-top: 2px;
+}
+
+.eos-content h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.eos-content p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.eos-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.eos-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+/* EoS fields in details grid */
+.kv-grid .eos-key {
+  color: #fb923c;
+  font-weight: 600;
+}
+
+.kv-grid .eos-val {
+  color: #fbbf24;
+  font-weight: 500;
+}
+
+/* Optional: subtle background highlight for EoS rows */
+.kv-grid .eos-key,
+.kv-grid .eos-val {
+  background: rgba(251, 146, 60, 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin: -0.25rem -0.5rem;
+}
+
 /* AP details image */
 .ap-image-wrapper {
   margin-bottom: 1.25rem;
@@ -2362,4 +2432,89 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   .modal {
     max-height: calc(100vh - 16px);
   }
+}
+
+/* ================================
+   Antenna Specification Group Highlight
+   ================================ */
+
+/* Antenna specification group highlight */
+.kv-grid .antenna-spec-key {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.kv-grid .antenna-spec-val {
+  color: #93c5fd;
+  font-weight: 500;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 0.95rem;
+}
+
+/* Optional: Group antenna fields with subtle background */
+.kv-grid .antenna-spec-key,
+.kv-grid .antenna-spec-val {
+  background: rgba(59, 130, 246, 0.05);
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  margin: -0.25rem -0.5rem;
+}
+
+/* Beamwidth specific styling */
+.beamwidth-value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Make the beamwidth values more prominent */
+.beamwidth-band {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 4px;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Directional badge for directional antennas */
+.directional-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  margin-left: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Section dividers for grouped specs */
+.spec-section {
+  grid-column: 1 / -1;
+  padding: 0.75rem 0 0.25rem 0;
+  margin-top: 0.75rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.spec-section:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.spec-section h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
 }
