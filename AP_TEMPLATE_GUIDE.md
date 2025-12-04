@@ -33,7 +33,9 @@ Use this template when submitting new AP entries. Copy the JSON structure below 
   "antenna_connectors": "None (internal antennas) or 4× RP-SMA",
   "operating_temp_range": "0°C to 50°C operating",
   "msrp": "$1,000 or unknown",
-  "end_of_sale_date": "2024-12-31 (optional)",
+  "end_of_sale_announcement_date": "February 7, 2025 (optional)",
+  "end_of_sale_date": "August 7, 2025 (optional)",
+  "end_of_support_date": "August 7, 2025 (optional)",
   "end_of_sale_url": "https://vendor.com/eol-notice (optional)",
   "manufacturer_suggested_replacement": "AP-655, AP-675 (optional)"
 }
@@ -125,9 +127,17 @@ Use this template when submitting new AP entries. Copy the JSON structure below 
 
 ### End of Sale Information (Optional)
 
+- **end_of_sale_announcement_date**: Date when the end of sale was announced
+  - Format: `"February 7, 2025"` or `"2025-02-07"`
+  - Only include if the product has been announced as end-of-sale
+
 - **end_of_sale_date**: Date when the product reached end of sale
-  - Format: `"2024-12-31"` (YYYY-MM-DD) or `"December 31, 2024"`
+  - Format: `"August 7, 2025"` or `"2025-08-07"`
   - Only include if the product has been discontinued/end-of-saled
+
+- **end_of_support_date**: Date when vendor support ends
+  - Format: `"August 7, 2025"` or `"2025-08-07"`
+  - Only include if vendor has specified an end of support date
 
 - **end_of_sale_url**: URL to official end of sale/end of life notice
   - Format: `"https://vendor.com/eol-notice/ap-model"`
@@ -136,7 +146,8 @@ Use this template when submitting new AP entries. Copy the JSON structure below 
 - **manufacturer_suggested_replacement**: Model number(s) recommended as replacement
   - Format: `"AP-655"` for single replacement
   - Format: `"AP-655, AP-675"` for multiple replacement options
-  - Only include if manufacturer has specified replacement models
+  - Use `"None"` if manufacturer explicitly states no replacement
+  - Omit this field if replacement information is not available
 
 ## Notes
 

@@ -1909,7 +1909,12 @@
     "weight": "1.0 kg (35.27 oz)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "end_of_sale_announcement_date": "February 7, 2025",
+    "end_of_sale_date": "August 7, 2025",
+    "end_of_support_date": "August 7, 2025",
+    "end_of_sale_url": "https://documentation.meraki.com/@api/deki/files/30279/MR56-HW_EOS_NOTICE.pdf?revision=1",
+    "manufacturer_suggested_replacement": "None"
   },
   {
     "vendor": "Cisco Meraki",
