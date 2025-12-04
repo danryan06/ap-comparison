@@ -1885,7 +1885,7 @@
     "msrp": "unknown"
   },
   {
-    "vendor": "Meraki",
+    "vendor": "Cisco Meraki",
     "model": "MR56",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "4x4 / 8x8",
