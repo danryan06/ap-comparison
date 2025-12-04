@@ -2433,3 +2433,50 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
     max-height: calc(100vh - 16px);
   }
 }
+
+/* ================================
+   Beamwidth and Section Styling
+   ================================ */
+
+/* Beamwidth specific styling */
+.beamwidth-value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Make the beamwidth values more prominent */
+.beamwidth-band {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background: rgba(148, 163, 184, 0.1);
+  border-radius: 4px;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  color: #d1d5db;
+}
+
+/* Section dividers for grouped specs */
+.spec-section {
+  grid-column: 1 / -1;
+  padding: 0.75rem 0 0.25rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.spec-section:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.spec-section h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}

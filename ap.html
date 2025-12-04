@@ -68,11 +68,10 @@
     function exportToCsv() {
       if (!currentEntry) return;
       
-      // Get all keys in a consistent order
       const primaryKeys = [
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
         'recommended_poe','behavior_min_power','ethernet_ports_speed',
-        'radios_iot_features','antenna_type','form_factor','dimensions',
+        'radios_iot_features','antenna_type','antenna_gain_dbi','beamwidth','form_factor','dimensions',
         'weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
       ];
       const keys = Object.keys(currentEntry);
@@ -90,12 +89,11 @@
         let s;
         if (Array.isArray(v)) {
           s = v.join('; ');
-        } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {
-          // Format antenna_gain_dbi for CSV: "2.4: 2.8 dBi, 5: 4.5 dBi, 6: 4.5 dBi"
+        } else if ((k === 'antenna_gain_dbi' || k === 'beamwidth') && v && typeof v === 'object') {
           const parts = [];
-          if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']} dBi`);
-          if (v['5'] !== undefined) parts.push(`5: ${v['5']} dBi`);
-          if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
+          if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
+          if (v['5'] !== undefined) parts.push(`5: ${v['5']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
+          if (v['6'] !== undefined) parts.push(`6: ${v['6']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
           s = parts.join(', ');
         } else if (v && typeof v === 'object' && v !== null) {
           s = JSON.stringify(v);
@@ -148,6 +146,15 @@
       end_of_sale_url: 'End of Sale URL',
       manufacturer_suggested_replacement: 'Manufacturer Suggested Replacement'
     };
+
+    function addSectionHeader(detailsEl, title) {
+      const sectionDiv = document.createElement('div');
+      sectionDiv.className = 'spec-section';
+      const heading = document.createElement('h3');
+      heading.textContent = title;
+      sectionDiv.appendChild(heading);
+      detailsEl.appendChild(sectionDiv);
+    }
 
     async function load() {
       const errorEl = document.getElementById('error-message');
@@ -281,12 +288,22 @@
             if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
             valDiv.textContent = parts.join(', ');
           } else if (k === 'beamwidth' && v && typeof v === 'object') {
-            // Format beamwidth object: "2.4: 70° x 70°, 5: 70° x 70°, 6: 60° x 60°"
             const parts = [];
-            if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']}`);
-            if (v['5'] !== undefined) parts.push(`5: ${v['5']}`);
-            if (v['6'] !== undefined) parts.push(`6: ${v['6']}`);
-            valDiv.textContent = parts.join(', ');
+            if (v['2.4'] !== undefined) {
+              parts.push(`<span class="beamwidth-band">2.4 GHz: ${v['2.4']}</span>`);
+            }
+            if (v['5'] !== undefined) {
+              parts.push(`<span class="beamwidth-band">5 GHz: ${v['5']}</span>`);
+            }
+            if (v['6'] !== undefined) {
+              parts.push(`<span class="beamwidth-band">6 GHz: ${v['6']}</span>`);
+            }
+            
+            const wrapper = document.createElement('div');
+            wrapper.className = 'beamwidth-value';
+            wrapper.innerHTML = parts.join(' ');
+            valDiv.innerHTML = '';
+            valDiv.appendChild(wrapper);
           } else if (k.endsWith('_url') && v && typeof v === 'string' && v.trim()) {
             // Make URL fields clickable links
             const link = document.createElement('a');
@@ -307,19 +324,64 @@
           detailsEl.appendChild(valDiv);
         };
 
-        const primaryKeys = [
-          'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
-          'recommended_poe','behavior_min_power','ethernet_ports_speed',
-          'radios_iot_features','antenna_type','antenna_gain_dbi','beamwidth','form_factor','dimensions',
-          'weight','antenna_connectors','operating_temp_range','msrp',
-          'end_of_sale_announcement_date','end_of_sale_date','end_of_support_date','end_of_sale_url','manufacturer_suggested_replacement','install_guide_url'
+        // Define sections with their fields
+        const sections = [
+          {
+            title: 'Basic Information',
+            fields: ['vendor', 'model', 'wifi_gen_radios', 'spatial_streams', 'msrp']
+          },
+          {
+            title: 'Power Requirements',
+            fields: ['min_poe_class', 'recommended_poe', 'behavior_min_power']
+          },
+          {
+            title: 'Connectivity',
+            fields: ['ethernet_ports_speed', 'radios_iot_features']
+          },
+          {
+            title: 'Antenna Specifications',
+            fields: ['antenna_type', 'antenna_gain_dbi', 'beamwidth', 'antenna_connectors']
+          },
+          {
+            title: 'Physical Specifications',
+            fields: ['form_factor', 'dimensions', 'weight', 'operating_temp_range']
+          },
+          {
+            title: 'End of Life Information',
+            fields: ['end_of_sale_announcement_date', 'end_of_sale_date', 'end_of_support_date', 'end_of_sale_url', 'manufacturer_suggested_replacement']
+          },
+          {
+            title: 'Documentation',
+            fields: ['install_guide_url']
+          }
         ];
-        const keys = Object.keys(entry);
-        const ordered = [
-          ...primaryKeys.filter(k => keys.includes(k)),
-          ...keys.filter(k => !primaryKeys.includes(k) && k !== 'image_url' && k !== 'datasheet_url').sort()
-        ];
-        ordered.forEach(k => renderKV(k, entry[k]));
+
+        // Render sections
+        sections.forEach(section => {
+          const fieldsToRender = section.fields.filter(field => 
+            entry.hasOwnProperty(field) && entry[field] != null && entry[field] !== ''
+          );
+          
+          if (fieldsToRender.length > 0) {
+            addSectionHeader(detailsEl, section.title);
+            fieldsToRender.forEach(field => renderKV(field, entry[field]));
+          }
+        });
+
+        // Render any remaining fields not in sections
+        const allSectionFields = sections.flatMap(s => s.fields);
+        const remainingFields = Object.keys(entry).filter(k => 
+          !allSectionFields.includes(k) && 
+          k !== 'image_url' && 
+          k !== 'datasheet_url' &&
+          entry[k] != null &&
+          entry[k] !== ''
+        ).sort();
+        
+        if (remainingFields.length > 0) {
+          addSectionHeader(detailsEl, 'Additional Information');
+          remainingFields.forEach(k => renderKV(k, entry[k]));
+        }
 
         // Build back link - check if coming from finder
         const params = new URLSearchParams(window.location.search);
