@@ -2054,7 +2054,12 @@
     "weight": "0.56 kg",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to +50°C operating; −20°C to +70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "end_of_sale_announcement_date": "July 31, 2025",
+    "end_of_sale_date": "November 15, 2025",
+    "end_of_support_date": "November 15, 2030",
+    "end_of_sale_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/d1444fba23cd4a03a7a3b0d868b6972a?v=9233401b",
+    "manufacturer_suggested_replacement": "AP3000"
   },
   {
     "vendor": "Extreme",
