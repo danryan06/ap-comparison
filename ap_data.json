@@ -1885,26 +1885,30 @@
     "msrp": "unknown"
   },
   {
-    "vendor": "Cisco Meraki",
+    "vendor": "Meraki",
     "model": "MR56",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "4x4 / 8x8",
-    "min_poe_class": "802.3at",
-    "recommended_poe": "802.3at",
-    "behavior_min_power": "On 802.3at the AP operates with full 4x4 (2.4 GHz) and 8x8 (5 GHz) radios plus dedicated scanning/BLE radios; lower power is not supported for normal operation.",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "Runs at full functionality on 802.3at (Class 4) PoE+; no reduced-power mode is documented.",
     "ethernet_ports_speed": "1x 1/2.5/5G Ethernet (RJ45) uplink",
     "antenna_type": "Internal",
-    "antenna_connectors": "N/A (internal antennas)",
+    "antenna_gain_dbi": {
+      "2.4": 5.4,
+      "5": 6.0
+    },
     "form_factor": "Indoor",
     "radios_iot_features": [
       "BLE",
       "Scanning/security radio"
     ],
-    "dimensions": "32.6 x 14.08 x 4.47 cm (12.83 x 5.54 x 1.76 in)",
-    "weight": "1.0 kg (35.27 oz)",
-    "operating_temp_range": "0°C to 40°C operating; 5–95% RH non-condensing",
-    "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR56_Datasheet",
+    "datasheet_url": "https://documentation.meraki.com/Wireless/Product_Information/Overviews_and_Datasheets/MR56_Datasheet",
     "image_url": "images/meraki/meraki-MR56.png",
+    "dimensions": "12.83 x 5.54 x 1.76 in (32.6 x 14.08 x 4.47 cm)",
+    "weight": "1.0 kg (35.27 oz)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
     "msrp": "unknown"
   },
   {
@@ -3506,6 +3510,110 @@
     "weight": "3.24 kg (7.15 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Juniper",
+    "model": "AP32",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP reduces 5 GHz to 2x2, disables the USB port, and disables the secondary Ethernet port compared with 802.3at (Class 4) PoE+, which provides full functionality.",
+    "ethernet_ports_speed": "1× 100/1000/2.5G (RJ45, PoE in on Eth0) + 1× 10/100/1000 (RJ45, Eth1)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 5.0,
+      "5": 6.0
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap32.pdf",
+    "image_url": "images/juniper/juniper-ap32.png",
+    "dimensions": "202 x 202 x 44 mm (7.95 x 7.95 x 1.73 in)",
+    "weight": "0.83 kg (1.83 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 40°C",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Juniper",
+    "model": "AP32E",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP reduces 5 GHz to 2x2, disables the USB port, and disables the secondary Ethernet port compared with 802.3at (Class 4) PoE+, which provides full functionality.",
+    "ethernet_ports_speed": "1× 100/1000/2.5G (RJ45, PoE in on Eth0) + 1× 10/100/1000 (RJ45, Eth1)",
+    "antenna_type": "External",
+    "antenna_gain_dbi": {
+      "2.4": 5.0,
+      "5": 6.0
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap32.pdf",
+    "image_url": "images/juniper/juniper-ap32.png",
+    "dimensions": "202 x 202 x 44 mm (7.95 x 7.95 x 1.73 in)",
+    "weight": "0.81 kg (1.78 lb)",
+    "antenna_connectors": "5× RP-SMA (4× Wi-Fi, 1× sensor)",
+    "operating_temp_range": "-20°C to 50°C",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Extreme",
+    "model": "AP410i",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "Fully functional over 802.3at (Class 4) PoE+; capable of reduced-power operation on 802.3af.",
+    "ethernet_ports_speed": "1× 100/1000/2500 (RJ45, PoE in) + 1× 10/100/1000 (RJ45)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4.73,
+      "5": 5.36
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8575c683463142ea8e0b9685b38e9a28?v=531b8602",
+    "image_url": "images/extreme/extreme-ap410.png",
+    "dimensions": "165 mm x 180 mm x 47 mm (6.5 in x 7 in x 1.8 in)",
+    "weight": "1.5 lb (0.68 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Extreme",
+    "model": "AP410e",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "Fully functional over 802.3at (Class 4) PoE+; capable of reduced-power operation on 802.3af.",
+    "ethernet_ports_speed": "1× 100/1000/2500 (RJ45, PoE in) + 1× 10/100/1000 (RJ45)",
+    "antenna_type": "External",
+    "antenna_gain_dbi": {
+      "2.4": 4.73,
+      "5": 5.36
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE"
+    ],
+    "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8575c683463142ea8e0b9685b38e9a28?v=531b8602",
+    "image_url": "images/extreme/extreme-ap410.png",
+    "dimensions": "165 mm x 180 mm x 47 mm (6.5 in x 7 in x 1.8 in)",
+    "weight": "1.5 lb (0.68 kg)",
+    "antenna_connectors": "6× RP-SMA (Wi-Fi)",
+    "operating_temp_range": "-20°C to 55°C",
     "msrp": "unknown"
   }
 ]

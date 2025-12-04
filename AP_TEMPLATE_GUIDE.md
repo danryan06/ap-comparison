@@ -32,7 +32,10 @@ Use this template when submitting new AP entries. Copy the JSON structure below 
   "weight": "1.0 kg (2.2 lb)",
   "antenna_connectors": "None (internal antennas) or 4× RP-SMA",
   "operating_temp_range": "0°C to 50°C operating",
-  "msrp": "$1,000 or unknown"
+  "msrp": "$1,000 or unknown",
+  "end_of_sale_date": "2024-12-31 (optional)",
+  "end_of_sale_url": "https://vendor.com/eol-notice (optional)",
+  "manufacturer_suggested_replacement": "AP-655, AP-675 (optional)"
 }
 ```
 
@@ -119,6 +122,21 @@ Use this template when submitting new AP entries. Copy the JSON structure below 
 - **msrp**: Manufacturer's Suggested Retail Price
   - Format: `"$1,000"` or `"unknown"` if not available
   - Use `"~$1,000"` for approximate prices
+
+### End of Sale Information (Optional)
+
+- **end_of_sale_date**: Date when the product reached end of sale
+  - Format: `"2024-12-31"` (YYYY-MM-DD) or `"December 31, 2024"`
+  - Only include if the product has been discontinued/end-of-saled
+
+- **end_of_sale_url**: URL to official end of sale/end of life notice
+  - Format: `"https://vendor.com/eol-notice/ap-model"`
+  - Link to vendor's official announcement or support page
+
+- **manufacturer_suggested_replacement**: Model number(s) recommended as replacement
+  - Format: `"AP-655"` for single replacement
+  - Format: `"AP-655, AP-675"` for multiple replacement options
+  - Only include if manufacturer has specified replacement models
 
 ## Notes
 

@@ -142,7 +142,8 @@
       datasheet_url: 'Datasheet URL',
       install_guide_url: 'Install Guide URL',
       end_of_sale_date: 'End of Sale Date',
-      end_of_sale_url: 'End of Sale URL'
+      end_of_sale_url: 'End of Sale URL',
+      manufacturer_suggested_replacement: 'Manufacturer Suggested Replacement'
     };
 
     async function load() {
@@ -257,7 +258,7 @@
           'recommended_poe','behavior_min_power','ethernet_ports_speed',
           'radios_iot_features','antenna_type','antenna_gain_dbi','form_factor','dimensions',
           'weight','antenna_connectors','operating_temp_range','msrp',
-          'end_of_sale_date','end_of_sale_url','install_guide_url'
+          'end_of_sale_date','end_of_sale_url','manufacturer_suggested_replacement','install_guide_url'
         ];
         const keys = Object.keys(entry);
         const ordered = [
