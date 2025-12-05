@@ -2592,3 +2592,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .kv-grid .val.last-field {
   margin-bottom: 0;
 }
+
+/* Add buffer for the very last field in the entire grid (to bottom of outline) */
+.kv-grid .key.last-field:last-of-type,
+.kv-grid .val.last-field:nth-last-child(1) {
+  margin-bottom: 0.5rem;
+}
