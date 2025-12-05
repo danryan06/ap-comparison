@@ -238,11 +238,14 @@
         }
 
         detailsEl.innerHTML = '';
-        const renderKV = (k, v) => {
+        const renderKV = (k, v, isLastInSection = false) => {
           if (k === 'image_url') return;
           
           const keyDiv = document.createElement('div');
           keyDiv.className = 'key';
+          if (isLastInSection) {
+            keyDiv.classList.add('last-field');
+          }
           
           const eosFields = ['end_of_sale_announcement_date', 'end_of_sale_date', 'end_of_support_date', 'end_of_sale_url', 'manufacturer_suggested_replacement'];
           if (eosFields.includes(k)) {
@@ -252,6 +255,9 @@
           keyDiv.textContent = fieldLabels[k] || k;
           const valDiv = document.createElement('div');
           valDiv.className = 'val';
+          if (isLastInSection) {
+            valDiv.classList.add('last-field');
+          }
           
           if (eosFields.includes(k)) {
             valDiv.classList.add('eos-val');
@@ -340,7 +346,10 @@
           
           if (fieldsToRender.length > 0) {
             addSectionHeader(detailsEl, section.title);
-            fieldsToRender.forEach(field => renderKV(field, entry[field]));
+            fieldsToRender.forEach((field, index) => {
+              const isLast = index === fieldsToRender.length - 1;
+              renderKV(field, entry[field], isLast);
+            });
           }
         });
 
@@ -356,7 +365,10 @@
         
         if (remainingFields.length > 0) {
           addSectionHeader(detailsEl, 'Additional Information');
-          remainingFields.forEach(k => renderKV(k, entry[k]));
+          remainingFields.forEach((k, index) => {
+            const isLast = index === remainingFields.length - 1;
+            renderKV(k, entry[k], isLast);
+          });
         }
 
         const params = new URLSearchParams(window.location.search);

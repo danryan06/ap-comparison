@@ -257,12 +257,15 @@
         }
 
         detailsEl.innerHTML = '';
-        const renderKV = (k, v) => {
+        const renderKV = (k, v, isLastInSection = false) => {
           // Skip image_url
           if (k === 'image_url') return;
           
           const keyDiv = document.createElement('div');
           keyDiv.className = 'key';
+          if (isLastInSection) {
+            keyDiv.classList.add('last-field');
+          }
           
           // Highlight EoS-related fields
           const eosFields = ['end_of_sale_announcement_date', 'end_of_sale_date', 'end_of_support_date', 'end_of_sale_url', 'manufacturer_suggested_replacement'];
@@ -273,6 +276,9 @@
           keyDiv.textContent = fieldLabels[k] || k;
           const valDiv = document.createElement('div');
           valDiv.className = 'val';
+          if (isLastInSection) {
+            valDiv.classList.add('last-field');
+          }
           
           // Highlight EoS values
           if (eosFields.includes(k)) {
@@ -364,7 +370,10 @@
           
           if (fieldsToRender.length > 0) {
             addSectionHeader(detailsEl, section.title);
-            fieldsToRender.forEach(field => renderKV(field, entry[field]));
+            fieldsToRender.forEach((field, index) => {
+              const isLast = index === fieldsToRender.length - 1;
+              renderKV(field, entry[field], isLast);
+            });
           }
         });
 
@@ -380,7 +389,10 @@
         
         if (remainingFields.length > 0) {
           addSectionHeader(detailsEl, 'Additional Information');
-          remainingFields.forEach(k => renderKV(k, entry[k]));
+          remainingFields.forEach((k, index) => {
+            const isLast = index === remainingFields.length - 1;
+            renderKV(k, entry[k], isLast);
+          });
         }
 
         // Build back link - check if coming from finder

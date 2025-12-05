@@ -2501,8 +2501,13 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .spec-section {
   grid-column: 1 / -1;
   padding: 0.75rem 0 0.25rem 0;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* Add extra spacing after the last field in each section */
+.kv-grid .last-field {
+  margin-bottom: 0.75rem;
 }
 
 .spec-section:first-child {
