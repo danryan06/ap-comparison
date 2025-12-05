@@ -4,13 +4,16 @@
 
 - **Total APs in database (before)**: 90
 - **Total APs in database (now)**: 154
-- **New APs added**: 70
+- **New APs added**: 64
 - **APs modified**: 20+
 - **Net growth**: +64 APs (+71.1%)
+- **Manufacturers (before)**: 12
+- **Manufacturers (now)**: 14
+- **New manufacturers added**: 2 (Alcatel-Lucent, TP-Link Omada)
 
 ---
 
-## New APs Added (70 total)
+## New APs Added (64 total)
 
 ### Alcatel-Lucent (5 APs)
 - AP1511
@@ -40,7 +43,7 @@
 - AP-765
 - AP-765EX
 
-### Cisco (15 APs)
+### Cisco (9 APs)
 - 9105AXI
 - 9105AXW
 - 9115AXE
@@ -50,12 +53,8 @@
 - 9130AXE
 - 9130AXI
 - 9178I
-- CW9172H (Wi-Fi 7 wallplate)
-- CW9172I (Wi-Fi 7 indoor)
-- CW9174I (Wi-Fi 7 4x4 tri-band)
-- CW9176D1 (Wi-Fi 7 directional)
-- CW9176I (Wi-Fi 7 with IoT/GPS/UWB)
-- CW9179F (Wi-Fi 7 outdoor directional)
+
+**Note:** Additional Cisco 917X series APs (CW9172H, CW9172I, CW9174I, CW9176D1, CW9176I, CW9179F) were added and updated during this period, with comprehensive PoE behavior documentation and formatting improvements.
 
 ### Extreme Networks (6 APs)
 - AP3000
