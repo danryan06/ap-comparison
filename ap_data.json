@@ -1334,23 +1334,21 @@
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af",
-    "recommended_poe": "802.3bt (Class 5 UPOE)",
-    "behavior_min_power": "On 802.3bt or DC, all radios/features enabled. On 802.3at, radios active but USB/advanced features disabled. On 802.3af, radios reduced or disabled.",
+    "recommended_poe": "802.3bt (Class 5 UPOE) for full performance",
+    "behavior_min_power": "On 802.3bt or DC power, all features are enabled. On 802.3at, radios are active but USB and advanced features may be disabled. On 802.3af, radios operate in reduced-performance modes.",
     "ethernet_ports_speed": "1× 1/2.5 GbE mGig (RJ-45)",
     "antenna_type": "Internal",
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "Bluetooth Low Energy (BLE) 5.1",
-      "Dedicated scanning/AUX radio",
-      "GPS/GNSS",
-      "IoT and UWB radio"
+      "BLE 5.1",
+      "Dedicated scanning/AUX radio"
     ],
     "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9172-series-access-points-ds.html",
     "image_url": "images/cisco/cisco-cw9172i.png",
     "dimensions": "7.8 x 7.8 x 2.1 inches (20 x 20 x 5.3 cm)",
     "weight": "1.9 lbs (0.87 kg)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating; storage unspecified",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
     "msrp": "$1,345.73"
   },
   {
