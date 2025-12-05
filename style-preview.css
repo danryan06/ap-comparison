@@ -2615,14 +2615,8 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   line-height: 1;
 }
 
-/* Optional: Add subtle spacing after last field in each section */
+/* Remove extra margin from last field in each section - spacing comes from next section's margin-top */
 .kv-grid .key.last-field,
 .kv-grid .val.last-field {
-  margin-bottom: 0.5rem;
-}
-
-/* Remove the extra margin from the last field in the entire grid */
-.kv-grid .key.last-field:last-of-type,
-.kv-grid .val.last-field:nth-last-child(1) {
   margin-bottom: 0;
 }
