@@ -23,6 +23,7 @@
         <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
       </div>
       <p class="subtitle" id="subtitle"></p>
+      <!-- Inline actions will be inserted here via JavaScript -->
 
       <div id="image-container" class="ap-image-wrapper" style="display:none;">
         <img id="ap-image" class="ap-image" alt="" loading="lazy" />
@@ -31,8 +32,6 @@
       <div id="details" class="kv-grid"></div>
 
       <div id="error-message" class="error" style="display:none;"></div>
-
-      <div id="card-actions" class="card-actions" style="display:none;"></div>
     </div>
   </div>
 
@@ -165,7 +164,6 @@
       const imageEl = document.getElementById('ap-image');
       const backEl = document.getElementById('back-link');
       const editLinkEl = document.getElementById('edit-link');
-      const cardActionsEl = document.getElementById('card-actions');
 
       try {
         const res = await fetch(DATA_URL, { cache: 'no-store' });
@@ -231,7 +229,7 @@
 
         // Insert inline actions after subtitle (before EOS banner if present)
         if (hasInlineActions) {
-          subtitleEl.parentNode.insertBefore(inlineActionsDiv, subtitleEl.nextSibling);
+          subtitleEl.insertAdjacentElement('afterend', inlineActionsDiv);
         }
 
         // Add End of Sale alert banner if applicable
@@ -275,8 +273,6 @@
           imageWrapper.style.display = 'none';
         }
 
-        // Hide card actions (buttons moved to inline actions above)
-        cardActionsEl.style.display = 'none';
 
         detailsEl.innerHTML = '';
         const renderKV = (k, v, isLastInSection = false) => {
