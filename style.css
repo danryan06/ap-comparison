@@ -2495,11 +2495,23 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   flex-wrap: wrap;
 }
 
+/* Detail actions zone (below image, above specs) - with subtle background */
+.detail-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem -1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  flex-wrap: wrap;
+}
+
 .btn-inline-action {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1rem;
+  padding: 0.625rem 1.25rem;
   background: rgba(59, 130, 246, 0.15);
   border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: var(--radius-md);
@@ -2528,19 +2540,37 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   flex-shrink: 0;
 }
 
-/* Section dividers for grouped specs */
+/* Mobile optimization for detail-actions */
+@media (max-width: 768px) {
+  .detail-actions {
+    gap: 0.5rem;
+    margin: 1rem -1rem;
+    padding: 1rem;
+  }
+  
+  .btn-inline-action {
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-inline-action {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+/* Section dividers for grouped specs - OPTIMIZED */
 .spec-section {
   grid-column: 1 / -1;
-  padding: 0.75rem 0 0.25rem 0;
-  margin-top: 0.75rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  margin: 2rem 0 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
 }
 
-/* Add extra spacing after the last field in each section */
-.kv-grid .last-field {
-  margin-bottom: 0.75rem;
-}
-
+/* Remove top margin/border from first section */
 .spec-section:first-child {
   margin-top: 0;
   border-top: none;
@@ -2553,5 +2583,18 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin: 0;
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
+
+/* Optional: Add subtle spacing after last field in each section */
+.kv-grid .key.last-field,
+.kv-grid .val.last-field {
+  margin-bottom: 0.5rem;
+}
+
+/* Remove the extra margin from the last field in the entire grid */
+.kv-grid .key.last-field:last-of-type,
+.kv-grid .val.last-field:nth-last-child(1) {
+  margin-bottom: 0;
 }

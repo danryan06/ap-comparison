@@ -184,54 +184,6 @@
         titleHeaderEl.textContent = titleText;
         subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
 
-        // Create inline action buttons area (goes after subtitle)
-        const inlineActionsDiv = document.createElement('div');
-        inlineActionsDiv.className = 'inline-actions';
-        let hasInlineActions = false;
-
-        if (entry.datasheet_url) {
-          const datasheetBtn = document.createElement('a');
-          datasheetBtn.href = entry.datasheet_url;
-          datasheetBtn.target = '_blank';
-          datasheetBtn.rel = 'noopener noreferrer';
-          datasheetBtn.className = 'btn-inline-action';
-          datasheetBtn.innerHTML = `
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-            <span>Datasheet</span>
-          `;
-          inlineActionsDiv.appendChild(datasheetBtn);
-          hasInlineActions = true;
-        }
-
-        if (entry.install_guide_url) {
-          const installGuideBtn = document.createElement('a');
-          installGuideBtn.href = entry.install_guide_url;
-          installGuideBtn.target = '_blank';
-          installGuideBtn.rel = 'noopener noreferrer';
-          installGuideBtn.className = 'btn-inline-action';
-          installGuideBtn.innerHTML = `
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            <span>Install Guide</span>
-          `;
-          inlineActionsDiv.appendChild(installGuideBtn);
-          hasInlineActions = true;
-        }
-
-        // Insert inline actions after subtitle (before EOS banner if present)
-        if (hasInlineActions) {
-          subtitleEl.insertAdjacentElement('afterend', inlineActionsDiv);
-        }
-
         // Add End of Sale alert banner if applicable
         if (entry.end_of_sale_announcement_date || entry.end_of_sale_date) {
           const alert = document.createElement('div');
@@ -250,9 +202,8 @@
             </div>
           `;
           
-          // Insert after subtitle (or after inline actions if they exist)
-          const insertAfter = hasInlineActions ? inlineActionsDiv : subtitleEl;
-          insertAfter.parentNode.insertBefore(alert, insertAfter.nextSibling);
+          // Insert after subtitle
+          subtitleEl.insertAdjacentElement('afterend', alert);
         }
 
         // Set up edit link
@@ -271,6 +222,53 @@
           };
         } else {
           imageWrapper.style.display = 'none';
+        }
+
+        // Create action buttons area (goes after image, before specs)
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'detail-actions';
+        let hasActions = false;
+
+        if (entry.datasheet_url) {
+          const datasheetBtn = document.createElement('a');
+          datasheetBtn.href = entry.datasheet_url;
+          datasheetBtn.target = '_blank';
+          datasheetBtn.rel = 'noopener noreferrer';
+          datasheetBtn.className = 'btn-inline-action';
+          datasheetBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span>Datasheet</span>
+          `;
+          actionsDiv.appendChild(datasheetBtn);
+          hasActions = true;
+        }
+
+        if (entry.install_guide_url) {
+          const installGuideBtn = document.createElement('a');
+          installGuideBtn.href = entry.install_guide_url;
+          installGuideBtn.target = '_blank';
+          installGuideBtn.rel = 'noopener noreferrer';
+          installGuideBtn.className = 'btn-inline-action';
+          installGuideBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            <span>Install Guide</span>
+          `;
+          actionsDiv.appendChild(installGuideBtn);
+          hasActions = true;
+        }
+
+        // Insert actions before the details grid
+        if (hasActions) {
+          detailsEl.parentNode.insertBefore(actionsDiv, detailsEl);
         }
 
 
