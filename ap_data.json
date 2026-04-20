@@ -2409,7 +2409,7 @@
     "weight": "0.8 kg (1.76 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
-    "msrp": "unknown"
+    "msrp": "$1,285"
   },
   {
     "vendor": "Juniper",
@@ -2463,7 +2463,7 @@
     "weight": "0.85 kg (1.9 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
-    "msrp": "unknown"
+    "msrp": "$1,285"
   },
   {
     "vendor": "Juniper",
@@ -2488,7 +2488,7 @@
     "weight": "0.85 kg (1.9 lb)",
     "antenna_connectors": "4× RP-SMA (2× 2.4/5 GHz + 2× 6 GHz)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
-    "msrp": "unknown"
+    "msrp": "$1,285"
   },
   {
     "vendor": "Juniper",
