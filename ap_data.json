@@ -2389,6 +2389,30 @@
   },
   {
     "vendor": "Juniper",
+    "model": "AP17",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3bt (Class 5) PoE++ for full performance including PoE PSE out",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only. On 802.3at (Class 4) PoE+ the AP operates at full functionality but without PoE PSE output on Eth1. Full functionality including Eth1 PSE requires 802.3bt (Class 5) PoE++.",
+    "ethernet_ports_speed": "1× 100/1000/2500/5000/10000BASE-T mGig (RJ45, PoE in on Eth0) + 3× 100/1000BASE-T (RJ45, Eth1 with PoE PSE out on 802.3bt)",
+    "antenna_type": "Internal",
+    "form_factor": "Wallplate",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "Scanning radio"
+    ],
+    "datasheet_url": "https://h20195.www2.hpe.com/v2/getpdf.aspx/a00156302enw.pdf",
+    "image_url": "images/juniper/juniper-ap17.png",
+    "dimensions": "120 x 160 x 55 mm (4.72 x 6.3 x 2.17 in)",
+    "weight": "0.8 kg (1.76 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Juniper",
     "model": "AP24",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
@@ -2410,6 +2434,61 @@
     "antenna_connectors": "N/A (internal antennas)",
     "operating_temp_range": "0°C to 40°C",
     "msrp": "$1,240"
+  },
+  {
+    "vendor": "Juniper",
+    "model": "AP27",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only; full functionality requires 802.3at (Class 4) PoE+.",
+    "ethernet_ports_speed": "1× 100/1000/2500/5000/10000BASE-T mGig (RJ45, PoE in on Eth0) + 1× 100/1000BASE-T (RJ45, Eth1 data-only)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4.0,
+      "5": 6.0,
+      "6": 6.0
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "Scanning radio",
+      "GPS/GNSS"
+    ],
+    "datasheet_url": "https://h20195.www2.hpe.com/v2/getpdf.aspx/a00156795enw.pdf",
+    "image_url": "images/juniper/juniper-ap27.png",
+    "dimensions": "185 x 185 x 40 mm (7.28 x 7.28 x 1.58 in)",
+    "weight": "0.85 kg (1.9 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Juniper",
+    "model": "AP27E",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only; full functionality requires 802.3at (Class 4) PoE+.",
+    "ethernet_ports_speed": "1× 100/1000/2500/5000/10000BASE-T mGig (RJ45, PoE in on Eth0) + 1× 100/1000BASE-T (RJ45, Eth1 data-only)",
+    "antenna_type": "External",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "Scanning radio",
+      "GPS/GNSS"
+    ],
+    "datasheet_url": "https://h20195.www2.hpe.com/v2/getpdf.aspx/a00156795enw.pdf",
+    "image_url": "images/juniper/juniper-ap27e.png",
+    "dimensions": "185 x 185 x 40 mm (7.28 x 7.28 x 1.58 in)",
+    "weight": "0.85 kg (1.9 lb)",
+    "antenna_connectors": "4× RP-SMA (2× 2.4/5 GHz + 2× 6 GHz)",
+    "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
+    "msrp": "unknown"
   },
   {
     "vendor": "Juniper",
