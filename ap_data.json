@@ -1340,21 +1340,28 @@
     "model": "CW9172H",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "802.3af",
-    "recommended_poe": "802.3at (Class 4) for normal operation; 802.3bt for full PoE-out on LAN ports",
-    "behavior_min_power": "On 802.3af PoE, the Wi-Fi radios operate but PoE-out and USB are disabled. On 802.3at PoE+, radios remain active and limited PoE-out is available depending on the power budget. 802.3bt is required to support full PoE-out capability on the LAN port.",
-    "ethernet_ports_speed": "2× 1 GbE LAN ports + 1× 1 GbE LAN port with 802.3af PoE out + 1× passthrough (RJ45)",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3bt (Class 5) UPOE for full performance including PoE out on LAN port",
+    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, PoE out is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 and link speed is 2.5G, but PoE out on the LAN port remains disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with 15.4W PoE out on the LAN port.",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45, PoE in) + 3× 100M/1G LAN ports (1× with 802.3af PoE out on 802.3bt) + 1× passthrough (RJ45)",
     "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4.0,
+      "5": 7.0,
+      "6": 6.0
+    },
     "form_factor": "Wallplate",
     "radios_iot_features": [
-      "BLE"
+      "BLE 6",
+      "Dedicated scanning radio",
+      "802.15.4 IoT radio"
     ],
     "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9172-series-access-points-ds.html",
     "image_url": "images/cisco/cisco-cw9172h.png",
-    "dimensions": "5.1 × 7.0 × 1.0 in. (13 × 18 × 2.6 cm)",
-    "weight": "1.16 lb (572 g)",
+    "dimensions": "5.1 x 7.0 x 1.0 in. (13 x 18 x 2.6 cm)",
+    "weight": "1.26 lb (572 g)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "32°F to 122°F (0°C to 50°C)",
+    "operating_temp_range": "32°F to 104°F (0°C to 40°C) operating; -40°F to 158°F (-40°C to 70°C) storage",
     "msrp": "$1,137.89"
   },
   {
