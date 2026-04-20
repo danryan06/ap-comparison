@@ -2551,22 +2551,30 @@
     "recommended_poe": "802.3bt (Class 6)",
     "behavior_min_power": "Same PoE behavior as AP37/AP36: full function on 802.3bt; reduced functionality on 802.3at; radios disabled with 802.3af.",
     "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0) + 1×1GbE (PoE-out on Eth1 with 802.3bt)",
-    "antenna_type": "External",
+    "antenna_type": "Directional",
+    "antenna_gain_dbi": {
+      "2.4": 6.0,
+      "5": 8.0,
+      "6": 8.0
+    },
+    "beamwidth": {
+      "2.4": "60° x 60°",
+      "5": "60° x 60°",
+      "6": "60° x 60°"
+    },
     "form_factor": "Indoor",
     "radios_iot_features": [
       "dual-core 802.15.4 IoT radios",
       "dual omnidirectional IoT antennas",
       "Bluetooth 6.0",
-      "IoT sensors (pressure",
-      "temperature",
-      "accelerometer)",
+      "IoT sensors (pressure, temperature, accelerometer)",
       "GNSS L1/L5"
     ],
     "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
     "image_url": "images/juniper/juniper-ap36m.jpg",
     "dimensions": "230 × 230 × 45 mm",
     "weight": "1.53 kg",
-    "antenna_connectors": "Two pluggable external antenna connectors: 2.4/5 GHz (4-pin) and 6 GHz (6-pin)",
+    "antenna_connectors": "N/A (internal directional antennas); optional pluggable external antenna connectors: 2.4/5 GHz (4-pin) and 6 GHz (6-pin)",
     "operating_temp_range": "-20°C to 50°C",
     "msrp": "$2,085"
   },
