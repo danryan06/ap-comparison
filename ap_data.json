@@ -1309,7 +1309,7 @@
   {
     "vendor": "Cisco",
     "model": "CW9171I",
-    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5 or 2.4/6)",
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
@@ -1428,27 +1428,35 @@
     "model": "CW9176D1",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3af (staging only)",
-    "recommended_poe": "802.3bt (Class 6) for full performance",
-    "behavior_min_power": "On 802.3bt (Class 6) PoE or DC input, the AP operates with full functionality, including 4x4 operation on all three Wi-Fi bands and all auxiliary features. On 802.3at PoE+, the AP runs in a reduced-power mode with the USB interface and some advanced capabilities disabled and with link speed or radio performance constrained per the datasheet power table. On 802.3af PoE, the AP is intended only for configuration or staging and Wi-Fi radios are not fully enabled.",
-    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45)",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 10G link speed",
+    "behavior_min_power": "On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. On 802.3at, 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45, PoE in)",
     "antenna_type": "Directional",
+    "antenna_gain_dbi": {
+      "2.4": 7.0,
+      "5": 8.0,
+      "6": 8.0
+    },
     "beamwidth": {
-      "2.4": "70° x 70°",
+      "2.4": "80° x 80°",
       "5": "70° x 70°",
-      "6": "60° x 60°"
+      "6": "70° x 70°"
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "BLE",
+      "BLE 5.3 (upgradable to BLE 6)",
+      "Dedicated IoT radio",
+      "Dedicated tri-band scanning radio",
       "GPS/GNSS",
-      "Ultra-Wideband (UWB)"
+      "Ultra-Wideband (UWB)",
+      "Accelerometer"
     ],
     "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/wireless-9176-series-acc-point-ds.html",
     "image_url": "images/cisco/cisco-cw9176d1.png",
-    "dimensions": "9.5 × 9.5 × 2.0 in. (241.3 × 241.3 × 50.8 mm), not including mount plate",
+    "dimensions": "9.5 x 9.5 x 2.0 in. (24 x 25 x 5.1 cm)",
     "weight": "3.4 lb (1.56 kg)",
-    "antenna_connectors": "None (internal directional antenna)",
+    "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "32°F to 122°F (0°C to 50°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
     "msrp": "$2,904"
   },
