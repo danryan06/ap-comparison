@@ -3242,7 +3242,7 @@
     "form_factor": "Indoor",
     "radios_iot_features": [],
     "datasheet_url": "https://downloads.linksys.com/downloads/datasheet/WRT54GL_V11_DS_NC-WEB,0.pdf",
-    "image_url": "https://manuals.plus/wp-content/uploads/2023/12/LINKSYS-WRT54G-Wireless-G-Router-Instructions.png",
+    "image_url": "images/linksys/linksys-wrt54g.png",
     "dimensions": "7.32\" x 1.89\" x 7.87\" (186 x 48 x 200 mm)",
     "weight": "17.0 oz (482 g)",
     "antenna_connectors": "2x RP-TNC",
