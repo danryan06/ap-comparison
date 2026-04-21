@@ -2505,6 +2505,56 @@
   },
   {
     "vendor": "Fortinet",
+    "model": "FAP-222KL",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5)",
+    "spatial_streams": "2x2 / 2x2",
+    "min_poe_class": "802.3bt (Class 5)",
+    "recommended_poe": "802.3bt (Class 5)",
+    "behavior_min_power": "Requires 802.3bt PoE for full operation (included in package). Dual Wi-Fi radios (2.4/5 GHz) at 2x2. 802.3af PSE-OUT available on LAN2 port. Max power consumption 26W.",
+    "ethernet_ports_speed": "1x 100/1000/2500BASE-T (RJ45, PoE PD) + 1x 10/100/1000BASE-T (RJ45, 802.3af PoE PSE OUT)",
+    "antenna_type": "External",
+    "antenna_gain_dbi": {
+      "2.4": 5,
+      "5": 6.5
+    },
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "LoRaWAN (US 902-928 MHz, EU 863-870 MHz)",
+      "LTE Cat4 (eSIM, up to 150 Mbps DL)",
+      "GNSS (GPS, GLONASS, BeiDou, Galileo)"
+    ],
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf",
+    "image_url": "images/fortinet/fortinet-fap-222kl.png",
+    "dimensions": "8.66 x 8.66 x 2.36 inches (220 x 220 x 60 mm)",
+    "weight": "5.95 lbs (2.7 kg)",
+    "antenna_connectors": "N-type (6 external antennas: 2 Wi-Fi dual-band, 1 LoRaWAN, 1 LTE, with 1 internal GNSS patch)",
+    "operating_temp_range": "-40°F to 158°F (-40°C to 70°C) operating; -58°F to 178°F (-50°C to 80°C) storage; IP67",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-23JK",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 5)",
+    "behavior_min_power": "On 802.3bt: all three Wi-Fi radios (2.4/5/6 GHz) enabled with 802.3af PSE-OUT active on LAN3. On 802.3at: all three Wi-Fi radios enabled, PSE-OUT disabled. Max power 31W (with PSE out) / 19W (without).",
+    "ethernet_ports_speed": "1x 100/1000/2500/5000/10000BASE-T (WAN1, PoE PD) + 3x 10/100/1000BASE-T (LAN ports, LAN3 supports 802.3af PSE-OUT)",
+    "antenna_type": "Internal",
+    "form_factor": "Wallplate",
+    "radios_iot_features": [
+      "BLE/Zigbee"
+    ],
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf",
+    "image_url": "images/fortinet/fortinet-fap-23jk.png",
+    "dimensions": "7.08 x 4.72 x 1.57 inches (180 x 120 x 40 mm)",
+    "weight": "1.15 lbs (0.52 kg)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "32°F to 113°F (0°C to 45°C) operating; -22°F to 158°F (-30°C to 70°C) storage",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Fortinet",
     "model": "FAP-231K",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
@@ -2592,6 +2642,35 @@
     ],
     "msrp": "$900",
     "image_url": "images/fortinet/fortinet-fap-243k.png"
+  },
+  {
+    "vendor": "Fortinet",
+    "model": "FAP-244K",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3bt (Class 5)",
+    "recommended_poe": "802.3bt (Class 5)",
+    "behavior_min_power": "Requires 802.3bt PoE for full operation (included in package). Four radios (2.4/5/6 GHz data + tri-band scan) with 2x2 MIMO on each. Max power consumption 26W.",
+    "ethernet_ports_speed": "1x 100/1000/2500/5000BASE-T (RJ45, PoE PD) + 1x 1G/10G SFP+ fiber",
+    "antenna_type": "Directional",
+    "antenna_gain_dbi": {
+      "2.4": 8.8,
+      "5": 9.4,
+      "6": 8.5
+    },
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "GNSS (GPS, GLONASS, BeiDou, Galileo)",
+      "Dedicated tri-band scan radio"
+    ],
+    "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf",
+    "image_url": "images/fortinet/fortinet-fap-244k.png",
+    "dimensions": "8.66 x 8.66 x 2.36 inches (220 x 220 x 60 mm)",
+    "weight": "5.29 lbs (2.4 kg)",
+    "antenna_connectors": "None (internal directional antennas)",
+    "operating_temp_range": "-40°F to 158°F (-40°C to 70°C) operating; -58°F to 178°F (-50°C to 80°C) storage; IP67",
+    "msrp": "unknown"
   },
   {
     "vendor": "Fortinet",
