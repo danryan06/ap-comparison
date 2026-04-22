@@ -1235,8 +1235,8 @@
     ],
     "datasheet_url": "https://www.cambiumnetworks.com/resources/xe3-4tn-ds-wifi6-6e-ap",
     "image_url": "images/cambium/cambium-XE3-4TN.png",
-    "dimensions": "unknown",
-    "weight": "unknown",
+    "dimensions": "220mm x 200mm x 86mm (8.66 in x 7.87 in x 3.39 in)",
+    "weight": "2,920 g (6.44 lb)",
     "antenna_connectors": "N/A (internal antennas)",
     "operating_temp_range": "-40°C to 65°C",
     "msrp": "unknown"
@@ -1321,7 +1321,7 @@
     "datasheet_url": "https://www.cambiumnetworks.com/resources/xv2-2t0-ds-wifi6-outdoor-ap",
     "image_url": "images/cambium/cambium-XV2-2T0.png",
     "dimensions": "582 x 200 x 80 mm",
-    "weight": "unknown",
+    "weight": "2,700 g (5.95 lb)",
     "antenna_connectors": "N/A (internal antennas)",
     "operating_temp_range": "-40°C to 65°C",
     "msrp": "unknown"
@@ -3295,7 +3295,7 @@
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "4x4 / 8x8",
     "min_poe_class": "802.3af (Class 3)",
-    "recommended_poe": "unknown",
+    "recommended_poe": "uPoE (31.0W)",
     "behavior_min_power": "On 802.3at (Class 4) PoE the AP supports reduced-power operation where either the 5 GHz radio is limited to 4x4 with USB and Zigbee/BLE disabled or the secondary Ethernet port and USB are disabled to allow 8x8 operation on 5 GHz; on 802.3af (Class 3) PoE both Wi-Fi radios are disabled. Full functionality with both radios at maximum configuration, USB and IoT enabled is only documented for DC power or PoH/uPoE.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": "Internal",
@@ -3431,7 +3431,7 @@
     "dimensions": "Ø206 x 46 mm",
     "weight": "680 g (1.5 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "unknown",
+    "operating_temp_range": "-30 to 40°C (-22 to 104°F)",
     "msrp": "From $189.00"
   },
   {
@@ -4038,7 +4038,7 @@
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
-    "recommended_poe": "unknown",
+    "recommended_poe": "802.3at (Class 4) PoE+",
     "behavior_min_power": "On 802.3af or 802.3at PoE the AP operates with reduced transmit power and the USB port disabled; full functionality with higher transmit power and USB enabled is only supported using 48V DC power.",
     "ethernet_ports_speed": "1× 2.5 GbE (RJ45)",
     "antenna_type": "Internal",
