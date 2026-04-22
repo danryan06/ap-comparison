@@ -4402,5 +4402,106 @@
       }
     },
     "msrp": "unknown"
+  },
+  {
+    "vendor": "Meter",
+    "model": "A1",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+ with max power draw of 30 W, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "ethernet_ports_speed": "1x 100/1000/2500 Mbps mGig (RJ45, PoE-PD)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 4.7,
+      "5": 5.3,
+      "6": 6.2
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "Dedicated scanning radio (2x2 tri-band 2.4/5/6 GHz)",
+      "2.4 GHz IoT radio"
+    ],
+    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "image_url": "images/meter/meter-a1.jpg",
+    "dimensions": "200 x 200 x 36 mm",
+    "weight": "812.6 g (1.79 lb) without accessories",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 45°C operating",
+    "msrp": "subscription only"
+  },
+  {
+    "vendor": "Meter",
+    "model": "A2",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3bt (Class 6)",
+    "recommended_poe": "802.3bt (Class 6) PoE++ for full performance including PoE-out on LAN port",
+    "behavior_min_power": "Requires 802.3bt (Class 6) PoE++ input (max power draw 60 W) for full functionality including 802.3af PoE-out (15.4 W) on one downstream LAN port. Operation on lower-class PoE sources is not specified and may disable PoE-out to downstream devices.",
+    "ethernet_ports_speed": "1x 100/1000/2500 Mbps mGig (RJ45, PoE-PD, uplink) + 4x 10/100/1000 Mbps (RJ45, one port supports 802.3af PoE-out)",
+    "antenna_type": "Internal",
+    "form_factor": "Wallplate",
+    "radios_iot_features": [
+      "Dedicated scanning radio (2x2 tri-band 2.4/5/6 GHz)",
+      "2.4 GHz IoT radio"
+    ],
+    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "image_url": "images/meter/meter-a2.jpg",
+    "dimensions": "164 x 121 x 36 mm",
+    "weight": "unknown",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 45°C operating",
+    "msrp": "subscription only"
+  },
+  {
+    "vendor": "Meter",
+    "model": "MW08",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "4x4 / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, passive 48-54V PoE, or 12V DC input, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "ethernet_ports_speed": "1x 100/1000/2500 Mbps mGig (RJ45, PoE-PD) + 1x 10/100/1000 Mbps (RJ45)",
+    "antenna_type": "Internal",
+    "antenna_gain_dbi": {
+      "2.4": 5.0,
+      "5": 5.0
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "Dedicated scanning radio (1x1, dual-band 5/2.4 GHz)",
+      "BLE 5.0"
+    ],
+    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "image_url": "images/meter/meter-mw08.jpg",
+    "dimensions": "205 x 205 x 34 mm",
+    "weight": "812.6 g (1.79 lb) without accessories",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "-40°C to 70°C operating",
+    "msrp": "subscription only"
+  },
+  {
+    "vendor": "Meter",
+    "model": "MW09",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 2x2",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, passive 48-54V PoE, or 12V DC input, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "ethernet_ports_speed": "1x 100/1000/2500 Mbps mGig (RJ45, PoE-PD)",
+    "antenna_type": "Internal",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "Dedicated scanning radio (1x1, dual-band 5/2.4 GHz)",
+      "2.4 GHz IoT radio"
+    ],
+    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "image_url": "images/meter/meter-mw09.jpg",
+    "dimensions": "124 x 190 x 47 mm",
+    "weight": "unknown",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 60°C operating",
+    "msrp": "subscription only"
   }
 ]
