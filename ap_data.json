@@ -1577,7 +1577,7 @@
   },
   {
     "vendor": "Cisco",
-    "model": "Catalyst 9163E",
+    "model": "CW9163E",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
@@ -2143,7 +2143,7 @@
   },
   {
     "vendor": "Cisco Meraki",
-    "model": "Catalyst 9163E",
+    "model": "CW9163E",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
