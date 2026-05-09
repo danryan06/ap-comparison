@@ -1577,6 +1577,31 @@
   },
   {
     "vendor": "Cisco",
+    "model": "Catalyst 9163E",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (PoE+) for full 2x2 operation across all radios",
+    "behavior_min_power": "On 802.3at (PoE+), all three client radios operate at 2x2 on 2.4/5/6 GHz with the 2.5 Gbps Ethernet uplink active (25.5W max). On 802.3af (PoE), each client radio is reduced to 1x1 and the Ethernet uplink is restricted to 1 Gbps (14W max).",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45)",
+    "antenna_type": "External",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GPS/GNSS",
+      "Scanning radio"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
+    "image_url": "images/cisco/cisco-9163e.png",
+    "dimensions": "9.64 x 9.64 x 2.5 in. (245 x 245 x 63.5 mm)",
+    "weight": "3.3 lb (1.5 kg)",
+    "antenna_connectors": "4×N-Type, 1×RP-SMA (GNSS)",
+    "operating_temp_range": "-40°F to 149°F (-40°C to 65°C) operating without solar derating; -40°F to 131°F (-40°C to 55°C) with solar derating",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco",
     "model": "Catalyst 9164I",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 4x4",
@@ -2114,6 +2139,31 @@
     "operating_temp_range": "Extended outdoor range (approx. -40°C to +55°C; see datasheet for exact limits)",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR78_Datasheet",
     "image_url": "images/meraki/meraki-MR78.png",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cisco Meraki",
+    "model": "Catalyst 9163E",
+    "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (PoE+) for full 2x2 operation across all radios",
+    "behavior_min_power": "On 802.3at (PoE+), all three client radios operate at 2x2 on 2.4/5/6 GHz with the 2.5 Gbps Ethernet uplink active (25.5W max). On 802.3af (PoE), each client radio is reduced to 1x1 and the Ethernet uplink is restricted to 1 Gbps (14W max).",
+    "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45)",
+    "antenna_type": "External",
+    "form_factor": "Outdoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio",
+      "GPS/GNSS",
+      "Scanning radio"
+    ],
+    "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
+    "image_url": "images/cisco/cisco-9163e.png",
+    "dimensions": "9.64 x 9.64 x 2.5 in. (245 x 245 x 63.5 mm)",
+    "weight": "3.3 lb (1.5 kg)",
+    "antenna_connectors": "4×N-Type, 1×RP-SMA (GNSS)",
+    "operating_temp_range": "-40°F to 149°F (-40°C to 65°C) operating without solar derating; -40°F to 131°F (-40°C to 55°C) with solar derating",
     "msrp": "unknown"
   },
   {
