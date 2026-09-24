@@ -4052,6 +4052,29 @@
   },
   {
     "vendor": "Ruckus",
+    "model": "R575",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, both 2.5GbE ports, USB, and IoT operate with full 2x2 radios on 2.4/5/6 GHz (25.5W max). On 802.3af (Class 3) PoE, only one 2.5GbE WAN port is enabled, USB and IoT are disabled, and each Wi-Fi radio is reduced to 1 Tx / 2 Rx (12.95W max).",
+    "ethernet_ports_speed": "2× 100M/1/2.5 GbE (RJ45, one PoE in)",
+    "antenna_type": "Internal",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE",
+      "802.15.4 IoT radio (Zigbee)"
+    ],
+    "datasheet_url": "https://www.ruckusnetworks.com/products/wireless-access-points/r575/",
+    "image_url": "images/ruckus/ruckus-r575.png",
+    "dimensions": "19.85 cm (L) x 19.85 cm (W) x 4.85 cm (H)",
+    "weight": "0.828 kg (1.83 lb)",
+    "antenna_connectors": "None (internal antennas)",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Ruckus",
     "model": "R650",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 4x4",
