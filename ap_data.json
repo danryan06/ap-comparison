@@ -1357,9 +1357,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
       "5": 5.5,
-      "6": 6.0
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1386,9 +1386,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45, PoE in) + 3× 100M/1G LAN ports (1× with 802.3af PoE out on 802.3bt) + 1× passthrough (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
-      "5": 7.0,
-      "6": 6.0
+      "5": 7,
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Wallplate",
     "radios_iot_features": [
@@ -1415,9 +1415,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
       "5": 5.5,
-      "6": 6.0
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1444,9 +1444,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.0,
-      "5": 5.0,
-      "6": 6.0
+      "5": 5,
+      "6": 6,
+      "2.4": 5
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1474,14 +1474,14 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45, PoE in)",
     "antenna_type": "Directional",
     "antenna_gain_dbi": {
-      "2.4": 7.0,
-      "5": 8.0,
-      "6": 8.0
+      "5": 8,
+      "6": 8,
+      "2.4": 7
     },
     "beamwidth": {
-      "2.4": "80° x 80°",
       "5": "70° x 70°",
-      "6": "70° x 70°"
+      "6": "70° x 70°",
+      "2.4": "80° x 80°"
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1511,9 +1511,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.0,
-      "5": 5.0,
-      "6": 6.0
+      "5": 5,
+      "6": 6,
+      "2.4": 5
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1543,14 +1543,14 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45), 1× 1/10G (SFP+)",
     "antenna_type": "Directional",
     "antenna_gain_dbi": {
-      "2.4": 8.0,
-      "5": 6.0,
-      "6": 8.0
+      "5": 6,
+      "6": 8,
+      "2.4": 8
     },
     "beamwidth": {
-      "2.4": "70° x 70°",
       "5": "70° x 70°",
-      "6": "70° x 70°"
+      "6": "70° x 70°",
+      "2.4": "70° x 70°"
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -1607,9 +1607,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45), 1× 1/10G (SFP+)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
-      "5": 6.0,
-      "6": 6.0
+      "5": 6,
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -1652,22 +1652,22 @@
     "msrp": "$7,792",
     "beamwidth": {
       "wide": {
+        "6": "70° x 35°",
         "2.4": "70° x 70°",
         "5_high": "35° x 35°",
-        "5_low": "35° x 35°",
-        "6": "70° x 35°"
+        "5_low": "35° x 35°"
       },
       "narrow_boresight": {
+        "6": "35° x 35°",
         "2.4": "70° x 70°",
         "5_high": "35° x 35°",
-        "5_low": "35° x 35°",
-        "6": "35° x 35°"
+        "5_low": "35° x 35°"
       },
       "front_and_back": {
+        "6": "35° x 35°",
         "2.4": "N/A (redirected to external N-type connectors)",
         "5_high": "35° x 35°",
-        "5_low": "N/A (redirected to external N-type connectors)",
-        "6": "35° x 35°"
+        "5_low": "N/A (redirected to external N-type connectors)"
       }
     }
   },
@@ -1729,9 +1729,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G mGig (RJ45)",
     "antenna_type": "Directional",
     "beamwidth": {
-      "2.4": "70° x 70°",
       "5": "70° x 70°",
-      "6": "60° x 60°"
+      "6": "60° x 60°",
+      "2.4": "70° x 70°"
     },
     "form_factor": "Indoor",
     "dimensions": "9.5 x 9.5 x 2.28 in. (241.3 x 241.3 x 57.9 mm)",
@@ -1836,8 +1836,8 @@
     "ethernet_ports_speed": "1× 1 GbE (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4,
-      "5": 5
+      "5": 5,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1862,8 +1862,8 @@
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, uplink PoE in) + 3× 1 GbE (RJ45, LAN, one with PoE out)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 3,
-      "5": 5
+      "5": 5,
+      "2.4": 3
     },
     "form_factor": "Wallplate",
     "radios_iot_features": [
@@ -1888,8 +1888,8 @@
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 3,
-      "5": 4
+      "5": 4,
+      "2.4": 3
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1936,8 +1936,8 @@
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4,
-      "5": 5
+      "5": 5,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -1984,8 +1984,8 @@
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, mGig)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4,
-      "5": 6
+      "5": 6,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2147,8 +2147,8 @@
     "ethernet_ports_speed": "1x 1/2.5/5G Ethernet (RJ45) uplink",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.4,
-      "5": 6.0
+      "5": 6,
+      "2.4": 5.4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2273,9 +2273,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
       "5": 5.5,
-      "6": 6.0
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2302,9 +2302,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45, PoE in) + 3× 100M/1G LAN ports (1× with 802.3af PoE out on 802.3bt) + 1× passthrough (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
-      "5": 7.0,
-      "6": 6.0
+      "5": 7,
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Wallplate",
     "radios_iot_features": [
@@ -2331,9 +2331,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
       "5": 5.5,
-      "6": 6.0
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2360,9 +2360,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.0,
-      "5": 5.0,
-      "6": 6.0
+      "5": 5,
+      "6": 6,
+      "2.4": 5
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2390,14 +2390,14 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45, PoE in)",
     "antenna_type": "Directional",
     "antenna_gain_dbi": {
-      "2.4": 7.0,
-      "5": 8.0,
-      "6": 8.0
+      "5": 8,
+      "6": 8,
+      "2.4": 7
     },
     "beamwidth": {
-      "2.4": "80° x 80°",
       "5": "70° x 70°",
-      "6": "70° x 70°"
+      "6": "70° x 70°",
+      "2.4": "80° x 80°"
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2427,9 +2427,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45, PoE in)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.0,
-      "5": 5.0,
-      "6": 6.0
+      "5": 5,
+      "6": 6,
+      "2.4": 5
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -2459,14 +2459,14 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45), 1× 1/10G (SFP+)",
     "antenna_type": "Directional",
     "antenna_gain_dbi": {
-      "2.4": 8.0,
-      "5": 6.0,
-      "6": 8.0
+      "5": 6,
+      "6": 8,
+      "2.4": 8
     },
     "beamwidth": {
-      "2.4": "70° x 70°",
       "5": "70° x 70°",
-      "6": "70° x 70°"
+      "6": "70° x 70°",
+      "2.4": "70° x 70°"
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -2523,9 +2523,9 @@
     "ethernet_ports_speed": "1× 100M/1G/2.5G/5G/10G mGig (RJ45), 1× 1/10G (SFP+)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
-      "5": 6.0,
-      "6": 6.0
+      "5": 6,
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -2568,22 +2568,22 @@
     "msrp": "$7,792",
     "beamwidth": {
       "wide": {
+        "6": "70° x 35°",
         "2.4": "70° x 70°",
         "5_high": "35° x 35°",
-        "5_low": "35° x 35°",
-        "6": "70° x 35°"
+        "5_low": "35° x 35°"
       },
       "narrow_boresight": {
+        "6": "35° x 35°",
         "2.4": "70° x 70°",
         "5_high": "35° x 35°",
-        "5_low": "35° x 35°",
-        "6": "35° x 35°"
+        "5_low": "35° x 35°"
       },
       "front_and_back": {
+        "6": "35° x 35°",
         "2.4": "N/A (redirected to external N-type connectors)",
         "5_high": "35° x 35°",
-        "5_low": "N/A (redirected to external N-type connectors)",
-        "6": "35° x 35°"
+        "5_low": "N/A (redirected to external N-type connectors)"
       }
     }
   },
@@ -2691,9 +2691,9 @@
     "antenna_connectors": "None (internal 60° directional antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
     "beamwidth": {
-      "2.4": "60°",
       "5": "60°",
-      "6": "60°"
+      "6": "60°",
+      "2.4": "60°"
     },
     "msrp": "unknown"
   },
@@ -2950,8 +2950,8 @@
     "ethernet_ports_speed": "1x 100/1000/2500BASE-T (RJ45, PoE PD) + 1x 10/100/1000BASE-T (RJ45, 802.3af PoE PSE OUT)",
     "antenna_type": "External",
     "antenna_gain_dbi": {
-      "2.4": 5,
-      "5": 6.5
+      "5": 6.5,
+      "2.4": 5
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -3090,9 +3090,9 @@
     "ethernet_ports_speed": "1x 100/1000/2500/5000BASE-T (RJ45, PoE PD) + 1x 1G/10G SFP+ fiber",
     "antenna_type": "Directional",
     "antenna_gain_dbi": {
-      "2.4": 8.8,
       "5": 9.4,
-      "6": 8.5
+      "6": 8.5,
+      "2.4": 8.8
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -3282,9 +3282,9 @@
     "ethernet_ports_speed": "1× 100/1000/2500/5000/10000BASE-T mGig (RJ45, PoE in on Eth0) + 1× 100/1000BASE-T (RJ45, Eth1 data-only)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.0,
-      "5": 6.0,
-      "6": 6.0
+      "5": 6,
+      "6": 6,
+      "2.4": 4
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -3389,14 +3389,14 @@
     "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0) + 1×1GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": "Directional",
     "antenna_gain_dbi": {
-      "2.4": 6.0,
-      "5": 8.0,
-      "6": 8.0
+      "5": 8,
+      "6": 8,
+      "2.4": 6
     },
     "beamwidth": {
-      "2.4": "60° x 60°",
       "5": "60° x 60°",
-      "6": "60° x 60°"
+      "6": "60° x 60°",
+      "2.4": "60° x 60°"
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -3533,9 +3533,9 @@
     "ethernet_ports_speed": "2×10GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": "Directional",
     "beamwidth": {
-      "2.4": "60° x 60°",
       "5": "60° x 60°",
-      "6": "60° x 60°"
+      "6": "60° x 60°",
+      "2.4": "60° x 60°"
     },
     "form_factor": "Indoor",
     "dimensions": "254 × 254 × 66 mm",
@@ -3644,9 +3644,9 @@
     "ethernet_ports_speed": "1×1/2.5/5/10GbE (PoE-in on Eth0)",
     "antenna_type": "Directional",
     "beamwidth": {
-      "2.4": "90° x 90°, 90° x 30°, 30° x 30°",
       "5": "90° x 90°, 90° x 30°, 30° x 30°",
-      "6": "90° x 90°, 90° x 30°, 30° x 30°"
+      "6": "90° x 90°, 90° x 30°, 30° x 30°",
+      "2.4": "90° x 90°, 90° x 30°, 30° x 30°"
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -4522,8 +4522,8 @@
     "ethernet_ports_speed": "1× 100/1000/2.5G (RJ45, PoE in on Eth0) + 1× 10/100/1000 (RJ45, Eth1)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.0,
-      "5": 6.0
+      "5": 6,
+      "2.4": 5
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -4548,8 +4548,8 @@
     "ethernet_ports_speed": "1× 100/1000/2.5G (RJ45, PoE in on Eth0) + 1× 10/100/1000 (RJ45, Eth1)",
     "antenna_type": "External",
     "antenna_gain_dbi": {
-      "2.4": 5.0,
-      "5": 6.0
+      "5": 6,
+      "2.4": 5
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -4574,8 +4574,8 @@
     "ethernet_ports_speed": "1× 100/1000/2500 (RJ45, PoE in) + 1× 10/100/1000 (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.73,
-      "5": 5.36
+      "5": 5.36,
+      "2.4": 4.73
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -4600,8 +4600,8 @@
     "ethernet_ports_speed": "1× 100/1000/2500 (RJ45, PoE in) + 1× 10/100/1000 (RJ45)",
     "antenna_type": "External",
     "antenna_gain_dbi": {
-      "2.4": 4.73,
-      "5": 5.36
+      "5": 5.36,
+      "2.4": 4.73
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -4643,12 +4643,12 @@
     "operating_temp_range": "-40°C to +60°C (-40°F to +140°F) with solar load",
     "antenna_gain_dbi": {
       "mode1_tri_band": {
-        "2.4GHz": 5.0,
+        "2.4GHz": 5,
         "5GHz": 5.8,
         "6GHz": 11.4
       },
       "mode2_dual_5ghz": {
-        "2.4GHz": 5.0,
+        "2.4GHz": 5,
         "5GHz_full": 5.8,
         "5GHz_high": 10.5
       }
@@ -4710,7 +4710,7 @@
     "antenna_gain_dbi": {
       "mode1_tri_band": {
         "2.4GHz": 4.2,
-        "5GHz": 6.0,
+        "5GHz": 6,
         "6GHz": 5.2
       }
     },
@@ -4743,7 +4743,7 @@
     "operating_temp_range": "-40°C to +60°C (-40°F to +140°F)",
     "antenna_gain_dbi": {
       "mode1_tri_band": {
-        "2.4GHz": 5.0,
+        "2.4GHz": 5,
         "5GHz": 5.8,
         "6GHz": 5.8
       }
@@ -4778,14 +4778,14 @@
     "msrp": "unknown",
     "beamwidth": {
       "mode_30deg": {
-        "2.4": "30° x 30°",
         "5": "30° x 30°",
-        "6": "30° x 30°"
+        "6": "30° x 30°",
+        "2.4": "30° x 30°"
       },
       "mode_70deg": {
-        "2.4": "70° x 70°",
         "5": "70° x 70°",
-        "6": "70° x 70°"
+        "6": "70° x 70°",
+        "2.4": "70° x 70°"
       }
     }
   },
@@ -4800,9 +4800,9 @@
     "ethernet_ports_speed": "2x 100/1000/2500/5000/10000BASE-T (Eth0 PoE PD; Eth1 PoE PD or 15.4W PSE with 802.3bt on Eth0); 802.3az EEE",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 2.1,
       "5": 6.8,
-      "6": 6.7
+      "6": 6.7,
+      "2.4": 2.1
     },
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -4850,14 +4850,14 @@
     "operating_temp_range": "-40°C to +60°C (-40°F to +140°F) with solar load",
     "beamwidth": {
       "mode_20deg": {
-        "2.4": "20° x 20°",
         "5": "20° x 20°",
-        "6": "20° x 20°"
+        "6": "20° x 20°",
+        "2.4": "20° x 20°"
       },
       "mode_70deg": {
-        "2.4": "70° x 70°",
         "5": "70° x 70°",
-        "6": "70° x 70°"
+        "6": "70° x 70°",
+        "2.4": "70° x 70°"
       }
     },
     "msrp": "unknown"
@@ -4873,9 +4873,9 @@
     "ethernet_ports_speed": "1x 100/1000/2500 Mbps mGig (RJ45, PoE-PD)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 4.7,
       "5": 5.3,
-      "6": 6.2
+      "6": 6.2,
+      "2.4": 4.7
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -4924,8 +4924,8 @@
     "ethernet_ports_speed": "1x 100/1000/2500 Mbps mGig (RJ45, PoE-PD) + 1x 10/100/1000 Mbps (RJ45)",
     "antenna_type": "Internal",
     "antenna_gain_dbi": {
-      "2.4": 5.0,
-      "5": 5.0
+      "5": 5,
+      "2.4": 5
     },
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -4962,5 +4962,30 @@
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 60°C operating",
     "msrp": "subscription only"
+  },
+  {
+    "vendor": "Cambium",
+    "model": "X7-567X",
+    "wifi_gen_radios": "Wi-Fi 7 2.4 / 5 / 6",
+    "spatial_streams": "2x2 / 4x4 / 4x4",
+    "min_poe_class": "802.3 bt class 6",
+    "recommended_poe": "33 W",
+    "behavior_min_power": "802.3bt 2,4Ghz ON, 5Ghz ON, Radio 3 SDR ON, USB ON, IOT ON, Ethernet ON\n802.3at 2,4Ghz ON, 5Ghz ON, Radio 3 SDR OFF, USB OFF, IOT ON, Ethernet ON\n802.3af Ethernet ON\nNo Class Ethernet ON, IOT ON",
+    "ethernet_ports_speed": "1x10/1000 Mbps, 1x2.5Gbps/5Gbps PoE",
+    "antenna_type": "Directional",
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE",
+      "Zigbee",
+      "Matter",
+      "Thread Support"
+    ],
+    "datasheet_url": "https://www.cambiumnetworks.com/products/wifi/x7-56x-wi-fi-7-indoor-access-point/",
+    "image_url": "",
+    "dimensions": "240 x 240 x 50",
+    "weight": "1,6 kg",
+    "antenna_connectors": "",
+    "operating_temp_range": "0C to 50C",
+    "msrp": "unknown"
   }
 ]
