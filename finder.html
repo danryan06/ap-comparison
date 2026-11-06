@@ -163,6 +163,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button">Compare (0)</button>
 
+  <script src="ap-format.js"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     const wifiOptions = [
@@ -223,7 +224,7 @@
       return Object.assign({}, entry, {
         _slug: slugFor(entry),
         _wifiFlags: deriveWifiFlags(entry.wifi_gen_radios),
-        _antennaCategory: deriveAntennaCategory(entry.antenna_type)
+        _antennaTypes: antennaTypes(entry.antenna_type)
       });
     }
 
@@ -242,15 +243,6 @@
         flags.add('wifi6');
       }
       return flags;
-    }
-
-    function deriveAntennaCategory(value) {
-      const text = String(value || '').toLowerCase();
-      if (!text) return 'Other';
-      if (text.includes('internal')) return 'Internal';
-      if (text.includes('external')) return 'External';
-      if (text.includes('directional')) return 'Directional';
-      return 'Other';
     }
 
     function slugify(value) {
@@ -290,12 +282,8 @@
       renderCheckboxGroup('form-options', formValues, 'form');
 
       const antennaValues = Array.from(
-        new Set(
-          enrichedData
-            .map(entry => entry._antennaCategory)
-            .filter(label => label && label !== 'Other')
-        )
-      ).sort();
+        new Set(enrichedData.flatMap(entry => entry._antennaTypes))
+      ).sort((a, b) => ANTENNA_TYPES.indexOf(a) - ANTENNA_TYPES.indexOf(b));
       const antennaOptions = antennaValues.map(label => ({
         id: slugify(label),
         value: label,
@@ -386,7 +374,7 @@
       }
       if (state.vendors.size && !state.vendors.has(entry.vendor)) return false;
       if (state.form.size && !state.form.has(entry.form_factor)) return false;
-      if (state.antenna.size && !state.antenna.has(entry._antennaCategory)) return false;
+      if (!antennaMatchesAny(entry.antenna_type, state.antenna)) return false;
       return true;
     }
 
@@ -444,7 +432,7 @@
 
         const antenna = document.createElement('div');
         antenna.className = 'result-cell result-antenna';
-        antenna.textContent = entry._antennaCategory || entry.antenna_type || '—';
+        antenna.textContent = formatAntennaType(entry.antenna_type) || '—';
 
         const form = document.createElement('div');
         form.className = 'result-cell result-form';
@@ -591,9 +579,14 @@
         return needsQuotes ? '"' + s.replace(/"/g, '""') + '"' : s;
       }
 
-      function normalizeString(value) {
+      function normalizeString(value, key) {
+        if (key === 'antenna_type') return formatAntennaType(value);
+        if (key === 'antenna_gain_dbi') return formatBandObject(value, 'gain');
+        if (key === 'beamwidth') return formatBandObject(value, 'beam');
+        if (key === 'antenna_modes') return formatModeRows(value).map(row => `${row.label}: ${row.value}`).join('; ');
         if (value == null) return '';
         if (Array.isArray(value)) return value.join('; ');
+        if (typeof value === 'object') return JSON.stringify(value);
         return String(value);
       }
 
@@ -607,7 +600,7 @@
       const rows = matches.map(entry => {
         return orderedKeys.map(k => {
           const v = entry[k];
-          const s = normalizeString(v);
+          const s = normalizeString(v, k);
           return escapeCsvValue(s);
         });
       });

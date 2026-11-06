@@ -76,17 +76,16 @@
 
           <div class="form-row">
             <label for="ethernet_ports_speed">Ethernet Ports &amp; Speed</label>
-            <input id="ethernet_ports_speed" name="ethernet_ports_speed" type="text" placeholder="1×2.5GbE, 2×5GbE, etc." required />
+            <input id="ethernet_ports_speed" name="ethernet_ports_speed" type="text" placeholder="1× 100M/1/2.5/5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)" required />
           </div>
 
           <div class="form-row">
-            <label for="antenna_type">Antenna Type</label>
-            <select id="antenna_type" name="antenna_type" required>
-              <option value="" disabled selected>Select antenna type</option>
-              <option>Internal</option>
-              <option>External</option>
-              <option>Directional</option>
-            </select>
+            <span>Antenna Type</span>
+            <div class="antenna-type-options" id="antenna_type_group">
+              <label><input type="checkbox" name="antenna_type" value="Internal"> Internal</label>
+              <label><input type="checkbox" name="antenna_type" value="Directional"> Directional</label>
+              <label><input type="checkbox" name="antenna_type" value="External"> External</label>
+            </div>
           </div>
 
           <div class="form-row">
@@ -146,6 +145,21 @@
           </div>
 
           <div class="form-row">
+            <label for="operating_humidity">Operating Humidity</label>
+            <input id="operating_humidity" name="operating_humidity" type="text" placeholder="e.g., 5% to 95% RH non-condensing" />
+          </div>
+
+          <div class="form-row">
+            <label for="ingress_protection">Ingress Protection</label>
+            <input id="ingress_protection" name="ingress_protection" type="text" placeholder="e.g., IP67 or IP67 / NEMA 4 enclosure" />
+          </div>
+
+          <div class="form-row">
+            <label for="hazloc_certification">HazLoc Certification</label>
+            <input id="hazloc_certification" name="hazloc_certification" type="text" placeholder="e.g., Class I, Division 2, Groups A, B, C, D" />
+          </div>
+
+          <div class="form-row">
             <label for="msrp">MSRP</label>
             <input id="msrp" name="msrp" type="text" placeholder="~$2,195" required />
           </div>
@@ -172,6 +186,7 @@
     </div>
   </div>
 
+  <script src="ap-format.js"></script>
   <script>
     // TODO: set these to your actual GitHub username and repo name
     const GITHUB_USER = 'danryan06';
@@ -188,7 +203,10 @@
       const recommended_poe = document.getElementById('recommended_poe').value.trim();
       const behavior_min_power = document.getElementById('behavior_min_power').value.trim();
       const ethernet_ports_speed = document.getElementById('ethernet_ports_speed').value.trim();
-      const antenna_type = document.getElementById('antenna_type').value.trim();
+      const antenna_type = ANTENNA_TYPES.filter(type => {
+        const box = document.querySelector(`input[name="antenna_type"][value="${type}"]`);
+        return box && box.checked;
+      });
       const form_factor = document.getElementById('form_factor').value.trim();
       const radios_iot_features_raw = document.getElementById('radios_iot_features').value.trim();
       const datasheet_url = document.getElementById('datasheet_url').value.trim();
@@ -197,6 +215,9 @@
       const weight = document.getElementById('weight').value.trim();
       const antenna_connectors = document.getElementById('antenna_connectors').value.trim();
       const operating_temp_range = document.getElementById('operating_temp_range').value.trim();
+      const operating_humidity = document.getElementById('operating_humidity').value.trim();
+      const ingress_protection = document.getElementById('ingress_protection').value.trim();
+      const hazloc_certification = document.getElementById('hazloc_certification').value.trim();
       const msrp = document.getElementById('msrp').value.trim();
 
       let radios_iot_features = [];
@@ -225,6 +246,9 @@
         weight,
         antenna_connectors,
         operating_temp_range,
+        ...(operating_humidity ? { operating_humidity } : {}),
+        ...(ingress_protection ? { ingress_protection } : {}),
+        ...(hazloc_certification ? { hazloc_certification } : {}),
         msrp
       };
     }
@@ -244,7 +268,9 @@
       document.getElementById('recommended_poe').value = entry.recommended_poe || '';
       document.getElementById('behavior_min_power').value = entry.behavior_min_power || '';
       document.getElementById('ethernet_ports_speed').value = entry.ethernet_ports_speed || '';
-      document.getElementById('antenna_type').value = entry.antenna_type || '';
+      document.querySelectorAll('input[name="antenna_type"]').forEach(box => {
+        box.checked = antennaTypes(entry.antenna_type).includes(box.value);
+      });
       document.getElementById('form_factor').value = entry.form_factor || '';
       document.getElementById('radios_iot_features').value =
         Array.isArray(entry.radios_iot_features) ? entry.radios_iot_features.join(', ') : (entry.radios_iot_features || '');
@@ -252,6 +278,9 @@
       document.getElementById('weight').value = entry.weight || '';
       document.getElementById('antenna_connectors').value = entry.antenna_connectors || '';
       document.getElementById('operating_temp_range').value = entry.operating_temp_range || '';
+      document.getElementById('operating_humidity').value = entry.operating_humidity || '';
+      document.getElementById('ingress_protection').value = entry.ingress_protection || '';
+      document.getElementById('hazloc_certification').value = entry.hazloc_certification || '';
       document.getElementById('msrp').value = entry.msrp || '';
       document.getElementById('datasheet_url').value = entry.datasheet_url || '';
     }
@@ -280,6 +309,10 @@
     }
     document.getElementById('edit-ap-form').addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!document.querySelector('input[name="antenna_type"]:checked')) {
+        alert('Select at least one antenna type.');
+        return;
+      }
 
       const obj = buildApObjectFromForm();
       const jsonSnippet = JSON.stringify(obj, null, 2);

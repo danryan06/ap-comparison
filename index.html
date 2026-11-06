@@ -164,7 +164,7 @@
             <th class="sortable" data-key="behavior_min_power" data-tooltip="How the AP behaves when powered at minimum PoE class">Behavior at Min Power</th>
             <th class="sortable" data-key="ethernet_ports_speed" data-tooltip="Ethernet port count and maximum speeds">Ethernet Ports &amp; Speed</th>
             <th class="sortable" data-key="radios_iot_features" data-tooltip="Additional radios and IoT features (Bluetooth, Zigbee, GPS, etc.)">Radios &amp; IoT Features</th>
-            <th class="sortable" data-key="antenna_type" data-tooltip="Internal, external, or directional antenna configuration">Antenna Type</th>
+            <th class="sortable" data-key="antenna_type" data-tooltip="Internal, Directional, or External. An AP can list more than one.">Antenna Type</th>
             <th class="sortable" data-key="form_factor" data-tooltip="Deployment type: Indoor, Outdoor, or Wallplate">Form Factor</th>
             <th class="sortable" data-key="dimensions">Dimensions</th>
             <th class="sortable" data-key="weight">Weight</th>
@@ -199,6 +199,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button">Compare (0)</button>
 
+  <script src="ap-format.js"></script>
   <script>
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
@@ -217,15 +218,8 @@
       if (value == null) return '';
       if (Array.isArray(value)) return value.join(', ');
       if (typeof value === 'object') {
-        // Handle antenna_gain_dbi object: "2.4: 2.8 dBi, 5: 4.5 dBi, 6: 4.5 dBi"
-        if (value['2.4'] !== undefined || value['5'] !== undefined || value['6'] !== undefined) {
-          const parts = [];
-          if (value['2.4'] !== undefined) parts.push(`2.4: ${value['2.4']} dBi`);
-          if (value['5'] !== undefined) parts.push(`5: ${value['5']} dBi`);
-          if (value['6'] !== undefined) parts.push(`6: ${value['6']} dBi`);
-          return parts.join(', ');
-        }
-        // Handle other objects generically
+        const formatted = formatBandObject(value, 'gain');
+        if (formatted) return formatted;
         return JSON.stringify(value);
       }
       return String(value);
@@ -478,7 +472,7 @@
       const q = currentQuery.trim().toLowerCase();
       const filtered = apData.filter(entry => {
         if (currentFilters.vendor && entry.vendor !== currentFilters.vendor) return false;
-        if (currentFilters.antenna && (entry.antenna_type || '').toLowerCase() !== currentFilters.antenna.toLowerCase()) return false;
+        if (currentFilters.antenna && !antennaMatches(entry.antenna_type, currentFilters.antenna)) return false;
         if (currentFilters.form && (entry.form_factor || '').toLowerCase() !== currentFilters.form.toLowerCase()) return false;
         if (!q) return true;
         const haystack =
@@ -504,7 +498,7 @@
           ' ' +
           normalizeString(entry.radios_iot_features).toLowerCase() +
           ' ' +
-          normalizeString(entry.antenna_type).toLowerCase();
+          formatAntennaType(entry.antenna_type).toLowerCase();
         return haystack.includes(q);
       });
 
@@ -512,8 +506,11 @@
       const key = currentSort.key;
       const dir = currentSort.dir === 'asc' ? 1 : -1;
       const sorted = filtered.slice().sort((a, b) => {
-        const av = normalizeString(Array.isArray(a[key]) ? a[key].join(', ') : a[key]).toLowerCase();
-        const bv = normalizeString(Array.isArray(b[key]) ? b[key].join(', ') : b[key]).toLowerCase();
+        const sortText = (entry) => key === 'antenna_type'
+          ? formatAntennaType(entry.antenna_type)
+          : normalizeString(Array.isArray(entry[key]) ? entry[key].join(', ') : entry[key]);
+        const av = sortText(a).toLowerCase();
+        const bv = sortText(b).toLowerCase();
         return av.localeCompare(bv) * dir;
       });
 
@@ -583,7 +580,7 @@
           }
           tr.appendChild(radiosTd);
 
-        tr.appendChild(textCell(entry.antenna_type));
+        tr.appendChild(textCell(formatAntennaType(entry.antenna_type)));
         tr.appendChild(textCell(entry.form_factor));
         tr.appendChild(textCell(entry.dimensions));
         tr.appendChild(textCell(entry.weight));
@@ -713,7 +710,13 @@
         keyDiv.textContent = k;
         const valDiv = document.createElement('div');
         valDiv.className = 'val';
-        if (Array.isArray(v)) {
+        if (k === 'antenna_type') {
+          valDiv.textContent = formatAntennaType(v);
+        } else if (k === 'antenna_modes') {
+          valDiv.textContent = formatModeRows(v).map(row => `${row.label}: ${row.value}`).join('; ');
+        } else if (k === 'antenna_gain_dbi' || k === 'beamwidth') {
+          valDiv.textContent = formatBandObject(v, k === 'antenna_gain_dbi' ? 'gain' : 'beam') || normalizeString(v);
+        } else if (Array.isArray(v)) {
           valDiv.textContent = v.join(', ');
         } else {
           valDiv.textContent = normalizeString(v);

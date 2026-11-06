@@ -118,6 +118,8 @@ The edit will be automatically processed and a pull request will be created.
 ├── data_issues.html  # Data quality dashboard
 ├── style.css          # All styling
 ├── ap_data.json       # Main data file
+├── ap_template.json   # AP entry template
+├── AP_TEMPLATE_GUIDE.md # Field rules for new entries
 ├── images/            # AP product images
 ├── .github/
 │   ├── workflows/     # GitHub Actions workflows
@@ -128,30 +130,7 @@ The edit will be automatically processed and a pull request will be created.
 
 ### Data Format
 
-The `ap_data.json` file contains an array of AP objects. Each object follows this structure:
-
-```json
-{
-  "vendor": "Juniper",
-  "model": "AP45",
-  "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
-  "spatial_streams": "4x4 / 4x4 / 4x4",
-  "min_poe_class": "802.3at (Class 4)",
-  "recommended_poe": "802.3bt (Class 6)",
-  "behavior_min_power": "All radios active, USB disabled",
-  "ethernet_ports_speed": "1x 2.5GbE",
-  "antenna_type": "Internal",
-  "form_factor": "Indoor",
-  "dimensions": "220 x 220 x 51 mm",
-  "weight": "850g",
-  "antenna_connectors": "N/A",
-  "operating_temp_range": "0°C to 50°C",
-  "radios_iot_features": "Zigbee, Bluetooth 5.0",
-  "msrp": "$1,195",
-  "datasheet_url": "https://example.com/datasheet.pdf",
-  "image_url": "images/juniper-ap45.jpg"
-}
-```
+The `ap_data.json` file contains an array of AP objects. The entry template is `ap_template.json`. Field rules are in `AP_TEMPLATE_GUIDE.md`.
 
 ### Browser Support
 

@@ -39,6 +39,7 @@
     </div>
   </div>
 
+  <script src="ap-format.js"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentEntry = null;
@@ -75,7 +76,7 @@
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
         'recommended_poe','behavior_min_power','ethernet_ports_speed',
         'radios_iot_features','antenna_type','antenna_gain_dbi','beamwidth','form_factor','dimensions',
-        'weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
+        'weight','antenna_connectors','operating_temp_range','operating_humidity','ingress_protection','msrp','datasheet_url'
       ];
       const keys = Object.keys(currentEntry);
       const orderedKeys = [
@@ -90,14 +91,14 @@
       const values = orderedKeys.map(k => {
         const v = currentEntry[k];
         let s;
-        if (Array.isArray(v)) {
+        if (k === 'antenna_type') {
+          s = formatAntennaType(v);
+        } else if (k === 'antenna_modes') {
+          s = formatModeRows(v).map(row => `${row.label}: ${row.value}`).join('; ');
+        } else if (Array.isArray(v)) {
           s = v.join('; ');
         } else if ((k === 'antenna_gain_dbi' || k === 'beamwidth') && v && typeof v === 'object') {
-          const parts = [];
-          if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
-          if (v['5'] !== undefined) parts.push(`5: ${v['5']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
-          if (v['6'] !== undefined) parts.push(`6: ${v['6']}${k === 'antenna_gain_dbi' ? ' dBi' : ''}`);
-          s = parts.join(', ');
+          s = formatBandObject(v, k === 'antenna_gain_dbi' ? 'gain' : 'beam');
         } else if (v && typeof v === 'object' && v !== null) {
           s = JSON.stringify(v);
         } else {
@@ -135,6 +136,9 @@
       antenna_type: 'Antenna Type',
       antenna_gain_dbi: 'Antenna Gain (dBi)',
       beamwidth: 'Beamwidth',
+      hazloc_certification: 'HazLoc Certification',
+      operating_humidity: 'Operating Humidity',
+      ingress_protection: 'Ingress Protection',
       form_factor: 'Form Factor',
       dimensions: 'Dimensions',
       weight: 'Weight',
@@ -304,32 +308,27 @@
           if (eosFields.includes(k)) {
             valDiv.classList.add('eos-val');
           }
-          if (Array.isArray(v)) {
-            valDiv.textContent = v.join(', ');
+          if (k === 'antenna_type') {
+            valDiv.textContent = formatAntennaType(v);
           } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {
-            // Format antenna_gain_dbi object: "2.4: 2.8 dBi, 5: 4.5 dBi, 6: 4.5 dBi"
-            const parts = [];
-            if (v['2.4'] !== undefined) parts.push(`2.4: ${v['2.4']} dBi`);
-            if (v['5'] !== undefined) parts.push(`5: ${v['5']} dBi`);
-            if (v['6'] !== undefined) parts.push(`6: ${v['6']} dBi`);
-            valDiv.textContent = parts.join(', ');
+            valDiv.textContent = formatBandObject(v, 'gain');
           } else if (k === 'beamwidth' && v && typeof v === 'object') {
-            const parts = [];
-            if (v['2.4'] !== undefined) {
-              parts.push(`<span class="beamwidth-band">2.4 GHz: ${v['2.4']}</span>`);
+            const parts = flatBandParts(v, 'beam');
+            if (parts) {
+              const wrapper = document.createElement('div');
+              wrapper.className = 'beamwidth-value';
+              parts.forEach(part => {
+                const span = document.createElement('span');
+                span.className = 'beamwidth-band';
+                span.textContent = part.text;
+                wrapper.appendChild(span);
+              });
+              valDiv.appendChild(wrapper);
+            } else {
+              valDiv.textContent = formatBandObject(v, 'beam');
             }
-            if (v['5'] !== undefined) {
-              parts.push(`<span class="beamwidth-band">5 GHz: ${v['5']}</span>`);
-            }
-            if (v['6'] !== undefined) {
-              parts.push(`<span class="beamwidth-band">6 GHz: ${v['6']}</span>`);
-            }
-            
-            const wrapper = document.createElement('div');
-            wrapper.className = 'beamwidth-value';
-            wrapper.innerHTML = parts.join(' ');
-            valDiv.innerHTML = '';
-            valDiv.appendChild(wrapper);
+          } else if (Array.isArray(v)) {
+            valDiv.textContent = v.join(', ');
           } else if (k.endsWith('_url') && v && typeof v === 'string' && v.trim()) {
             // Make URL fields clickable links
             const link = document.createElement('a');
@@ -370,7 +369,7 @@
           },
           {
             title: 'Physical Specifications',
-            fields: ['form_factor', 'dimensions', 'weight', 'operating_temp_range']
+            fields: ['form_factor', 'dimensions', 'weight', 'operating_temp_range', 'operating_humidity', 'ingress_protection', 'hazloc_certification']
           },
           {
             title: 'End of Life Information',
@@ -387,12 +386,39 @@
           const fieldsToRender = section.fields.filter(field => 
             entry.hasOwnProperty(field) && entry[field] != null && entry[field] !== ''
           );
+          const rows = [];
+          fieldsToRender.forEach(field => {
+            if (field === 'beamwidth' && beamwidthModeRows(entry.beamwidth).length) {
+              beamwidthModeRows(entry.beamwidth).forEach(mode => {
+                rows.push({ key: mode.label, value: mode.value });
+              });
+            } else {
+              rows.push({ key: field, value: entry[field] });
+            }
+            const modeAnchor = field === 'beamwidth' || (field === 'antenna_gain_dbi' && !fieldsToRender.includes('beamwidth'));
+            if (section.title === 'Antenna Specifications' && modeAnchor) {
+              formatModeRows(entry.antenna_modes).forEach(mode => {
+                rows.push({ key: mode.label, value: mode.value });
+              });
+            }
+          });
+          if (section.title === 'Antenna Specifications') {
+            const modeRows = formatModeRows(entry.antenna_modes);
+            const already = modeRows.some(mode => rows.some(row => row.key === mode.label));
+            if (!already && modeRows.length) {
+              const connectorIndex = rows.findIndex(row => row.key === 'antenna_connectors');
+              const insertAt = connectorIndex === -1 ? rows.length : connectorIndex;
+              modeRows.forEach((mode, offset) => {
+                rows.splice(insertAt + offset, 0, { key: mode.label, value: mode.value });
+              });
+            }
+          }
           
-          if (fieldsToRender.length > 0) {
+          if (rows.length > 0) {
             addSectionHeader(detailsEl, section.title);
-            fieldsToRender.forEach((field, index) => {
-              const isLast = index === fieldsToRender.length - 1;
-              renderKV(field, entry[field], isLast);
+            rows.forEach((row, index) => {
+              const isLast = index === rows.length - 1;
+              renderKV(row.key, row.value, isLast);
             });
           }
         });
@@ -403,6 +429,7 @@
           !allSectionFields.includes(k) && 
           k !== 'image_url' && 
           k !== 'datasheet_url' &&
+          k !== 'antenna_modes' &&
           entry[k] != null &&
           entry[k] !== ''
         ).sort();

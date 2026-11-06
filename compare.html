@@ -267,6 +267,7 @@
     </div>
   </div>
 
+  <script src="ap-format.js"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentSelected = [];
@@ -284,6 +285,9 @@
       { key: 'weight', label: 'Weight' },
       { key: 'antenna_connectors', label: 'Antenna Connectors' },
       { key: 'operating_temp_range', label: 'Operating Temp Range' },
+      { key: 'operating_humidity', label: 'Operating Humidity' },
+      { key: 'ingress_protection', label: 'Ingress Protection' },
+      { key: 'hazloc_certification', label: 'HazLoc Certification' },
       { key: 'radios_iot_features', label: 'Radios & IoT Features' },
       { key: 'msrp', label: 'MSRP' }
     ];
@@ -306,15 +310,8 @@
       if (value == null) return '';
       if (Array.isArray(value)) return value.join(', ');
       if (typeof value === 'object') {
-        // Handle antenna_gain_dbi object: "2.4: 2.8 dBi, 5: 4.5 dBi, 6: 4.5 dBi"
-        if (value['2.4'] !== undefined || value['5'] !== undefined || value['6'] !== undefined) {
-          const parts = [];
-          if (value['2.4'] !== undefined) parts.push(`2.4: ${value['2.4']} dBi`);
-          if (value['5'] !== undefined) parts.push(`5: ${value['5']} dBi`);
-          if (value['6'] !== undefined) parts.push(`6: ${value['6']} dBi`);
-          return parts.join(', ');
-        }
-        // Handle other objects generically
+        const formatted = formatBandObject(value, 'gain');
+        if (formatted) return formatted;
         return JSON.stringify(value);
       }
       return String(value);
@@ -322,22 +319,16 @@
 
     function formatValue(key, value) {
       if (value == null) return '';
+
+      if (key === 'antenna_type') return formatAntennaType(value);
       
       if (key === 'antenna_gain_dbi' && typeof value === 'object') {
-        const parts = [];
-        if (value['2.4'] !== undefined) parts.push(`2.4: ${value['2.4']} dBi`);
-        if (value['5'] !== undefined) parts.push(`5: ${value['5']} dBi`);
-        if (value['6'] !== undefined) parts.push(`6: ${value['6']} dBi`);
-        return parts.join(', ');
+        return formatBandObject(value, 'gain');
       }
       
-      // Add beamwidth formatting
       if (key === 'beamwidth' && typeof value === 'object') {
-        const parts = [];
-        if (value['2.4'] !== undefined) parts.push(`2.4 GHz: ${value['2.4']}`);
-        if (value['5'] !== undefined) parts.push(`5 GHz: ${value['5']}`);
-        if (value['6'] !== undefined) parts.push(`6 GHz: ${value['6']}`);
-        return parts.join('<br>');
+        const formatted = formatBandObject(value, 'beam');
+        return formatted.replaceAll(', ', '<br>');
       }
       
       if (Array.isArray(value)) {
@@ -363,7 +354,11 @@
       const cards = document.querySelectorAll('.comparison-card');
       if (cards.length < 2) return;
 
-      allSpecs.forEach(({ key }) => {
+      const specKeys = new Set(allSpecs.map(spec => spec.key));
+      cards.forEach(card => {
+        card.querySelectorAll('[data-spec-key]').forEach(row => specKeys.add(row.dataset.specKey));
+      });
+      specKeys.forEach(key => {
         const values = Array.from(cards).map(card => {
           const specRow = card.querySelector(`[data-spec-key="${key}"]`);
           if (!specRow) return '';
@@ -427,31 +422,46 @@
 
       const specsDiv = document.createElement('div');
       specsDiv.className = 'card-specs';
-      allSpecs.forEach(({ key, label }) => {
-        const value = entry[key];
+      const appendSpec = (key, label, value, asHtml) => {
         if (value == null || value === '') return;
-
         const specRow = document.createElement('div');
         specRow.className = 'spec-row';
         specRow.dataset.specKey = key;
-
         const labelSpan = document.createElement('span');
         labelSpan.className = 'spec-label';
         labelSpan.textContent = label;
-
         const valueSpan = document.createElement('span');
         valueSpan.className = 'spec-value';
-        const formattedValue = formatValue(key, value);
-        if (key === 'beamwidth' && typeof value === 'object') {
-          valueSpan.innerHTML = formattedValue;
-        } else {
-          valueSpan.textContent = formattedValue;
-        }
-
+        if (asHtml) valueSpan.innerHTML = value;
+        else valueSpan.textContent = value;
         specRow.appendChild(labelSpan);
         specRow.appendChild(valueSpan);
         specsDiv.appendChild(specRow);
+      };
+
+      allSpecs.forEach(({ key, label }) => {
+        const value = entry[key];
+        if (value == null || value === '') return;
+        const nestedBeam = key === 'beamwidth' ? beamwidthModeRows(value) : [];
+        if (nestedBeam.length) {
+          nestedBeam.forEach((mode, index) => {
+            appendSpec(`beamwidth-mode-${index}`, mode.label, mode.value, false);
+          });
+        } else {
+          const formattedValue = formatValue(key, value);
+          appendSpec(key, label, formattedValue, key === 'beamwidth' && typeof value === 'object');
+        }
+        if (key === 'beamwidth' || (key === 'antenna_gain_dbi' && entry.beamwidth == null)) {
+          formatModeRows(entry.antenna_modes).forEach((mode, index) => {
+            appendSpec(`antenna-mode-${index}`, mode.label, mode.value, false);
+          });
+        }
       });
+      if (entry.antenna_gain_dbi == null && entry.beamwidth == null) {
+        formatModeRows(entry.antenna_modes).forEach((mode, index) => {
+          appendSpec(`antenna-mode-${index}`, mode.label, mode.value, false);
+        });
+      }
       card.appendChild(specsDiv);
 
       const actionsDiv = document.createElement('div');

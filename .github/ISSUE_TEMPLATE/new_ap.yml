@@ -92,7 +92,7 @@ body:
     attributes:
       label: Ethernet Ports & Speed
       description: Number and speed of Ethernet ports.
-      placeholder: e.g., 1×2.5GbE, 2×5GbE
+      placeholder: e.g., 1× 100M/1/2.5/5 GbE (RJ45, PoE in)
     validations:
       required: true
 
