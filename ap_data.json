@@ -539,7 +539,25 @@
     "weight": "1.03 kg",
     "antenna_connectors": "None (internal omni-directional antennas)",
     "operating_temp_range": "-40°C to +55°C operating; -40°C to +70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug and M4x6 screw",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -564,7 +582,25 @@
     "weight": "1.09 kg",
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-40°C to +55°C operating; -40°C to +70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug and M4x6 screw",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -589,7 +625,25 @@
     "weight": "2.4 kg",
     "antenna_connectors": "Six RP-SMA connectors for external 2.4 GHz and 5 GHz antennas",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Cable gland",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug and M4x6 screw",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -614,7 +668,25 @@
     "weight": "2.4 kg",
     "antenna_connectors": "None (internal omni-directional antennas)",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Cable gland",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug and M4x6 screw",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -639,7 +711,25 @@
     "weight": "2.4 kg",
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Cable gland",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug and M4x6 screw",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -666,7 +756,30 @@
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 cable gland",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug kit",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "2.4GHz Vpol N-type BLE antenna",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap580/ig/AP-580_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -693,7 +806,25 @@
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 cable gland",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug kit",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap580/ig/AP-580_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -720,7 +851,25 @@
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 cable gland",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug kit",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap580/ig/AP-580_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1035,7 +1184,25 @@
     "antenna_connectors": "None (internal omnidirectional antennas)",
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading",
     "ingress_protection": "IP66/67 rated",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit (including a grounding lug and an M4 x 8 screw)",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670/ig/AP-670_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1063,7 +1230,25 @@
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading",
     "ingress_protection": "IP66/67 rated",
     "hazloc_certification": "HazLoc certified",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "CMP A2F cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit (including a grounding lug and an M4 x 8 screw)",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1090,7 +1275,25 @@
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading",
     "ingress_protection": "IP66/67 rated",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit (including a grounding lug and an M4 x 8 screw)",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670/ig/AP-670_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1118,7 +1321,25 @@
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading",
     "ingress_protection": "IP66/67 rated",
     "hazloc_certification": "HazLoc certified",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "CMP A2F cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit (including a grounding lug and an M4 x 8 screw)",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1145,7 +1366,25 @@
     "antenna_connectors": "None (internal dynamic directional antennas)",
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading",
     "ingress_protection": "IP66/67 rated",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit (including a grounding lug and an M4 x 8 screw)",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670/ig/AP-670_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1173,7 +1412,25 @@
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading",
     "ingress_protection": "IP66/67 rated",
     "hazloc_certification": "HazLoc certified",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "CMP A2F cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit (including a grounding lug and an M4 x 8 screw)",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1200,7 +1457,20 @@
     "antenna_connectors": "None (internal dynamic omnidirectional antennas)",
     "operating_temp_range": "-40°C to +55°C operating (indoor hardened); -40°C to +70°C storage",
     "ingress_protection": "IP50",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1227,7 +1497,45 @@
     "antenna_connectors": "Multiple RF connectors for external 2.4/5/6 GHz antennas (see datasheet for details)",
     "operating_temp_range": "-40°C to +65°C operating with solar cover (-40°C to +55°C without); -40°C to +70°C storage",
     "ingress_protection": "IP66/67",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "GPS antenna",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "1m antenna cable",
+        "part_number": "ANT-CBL-RPSMA-TNC-1",
+        "qty": 1
+      },
+      {
+        "item": "GPS antenna bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Hose clamp with diameter 71-95 mm",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1254,7 +1562,25 @@
     "antenna_connectors": "None (internal dynamic omnidirectional antennas)",
     "operating_temp_range": "-40°C to +65°C operating with solar cover (-40°C to +55°C without); -40°C to +70°C storage",
     "ingress_protection": "IP66/67",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "M20 gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1282,7 +1608,25 @@
     "operating_temp_range": "-40°C to +65°C operating with solar cover (-40°C to +55°C without); -40°C to +70°C storage",
     "ingress_protection": "IP66/67",
     "hazloc_certification": "HazLoc certified",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "CMP A2F cable gland and gland adapter",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug kit",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760ex/ig/AP-760EX_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Cambium",
@@ -5052,7 +5396,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality with all radios enabled. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the datasheet lists no feature restrictions; maximum (worst case) power consumption is 23.4 W on a single 802.3at input.",
     "ethernet_ports_speed": "1× 5 GbE (RJ45, PoE)",
     "antenna_type": [
       "Internal"
@@ -5062,7 +5406,7 @@
       "BLE",
       "Zigbee"
     ],
-    "datasheet_url": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1511-datasheet-en.pdf",
+    "datasheet_url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1511-datasheet-en.pdf",
     "image_url": "images/alcatel-lucent/alcatel-lucent-ap1511.png",
     "dimensions": "190 x 190 x 38 mm",
     "weight": "764 g (1.68 lb)",
@@ -5088,7 +5432,7 @@
       "Zigbee",
       "Scanning Radio"
     ],
-    "datasheet_url": "https://www.al-enterprise.com/-/media/assets/internet/documents/alcatel-lucent-omniaccess-stellar-ap1521-datasheet-en.pdf",
+    "datasheet_url": "https://www.al-enterprise.com/api/media/file/alcatel-lucent-omniaccess-stellar-ap1521-datasheet-en.pdf",
     "image_url": "images/alcatel-lucent/alcatel-lucent-ap1521.png",
     "dimensions": "210 x 210 x 43 mm",
     "weight": "1020 g (2.25 lb)",
@@ -5103,16 +5447,14 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality with all radios enabled. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the datasheet lists no feature restrictions; maximum (worst case) power consumption is 23.64 W on a single 802.3at input.",
     "ethernet_ports_speed": "1× 2.5 GbE (RJ45, PoE)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Outdoor",
-    "radios_iot_features": [
-      "GPS/GNSS"
-    ],
-    "datasheet_url": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1561-datasheet-en.pdf",
+    "radios_iot_features": [],
+    "datasheet_url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1561-datasheet-en.pdf",
     "image_url": "images/alcatel-lucent/alcatel-lucent-ap1561.png",
     "dimensions": "243 x 243 x 85 mm",
     "weight": "2500 g (5.51 lb)",
@@ -5127,7 +5469,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+, Wi-Fi operates at 2.4GHz 2x2, 5GHz 2x2, 6GHz 2x2 with wired uplink at 5 GbE. Eth1 (downlink) with PSE and USB port are disabled.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the 1 GbE uplink/downlink port, PSE and USB port are disabled and the uplink port is set to 5 Gbps; maximum (worst case) power consumption is 25 W.",
     "ethernet_ports_speed": "1× 10 GbE (RJ45, PoE) or SFP/SFP+ Combo + 1× 1 GbE (RJ45, uplink/downlink)",
     "antenna_type": [
       "External"
@@ -5136,13 +5478,12 @@
     "radios_iot_features": [
       "BLE",
       "Zigbee",
-      "Scanning Radio",
-      "GPS/GNSS"
+      "Scanning Radio"
     ],
-    "datasheet_url": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1572-datasheet-en.pdf",
+    "datasheet_url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
     "image_url": "images/alcatel-lucent/alcatel-lucent-ap1572.png",
     "dimensions": "243 x 243 x 85 mm",
-    "weight": "2500 g (5.51 lb)",
+    "weight": "2684 g (5.91 lb)",
     "antenna_connectors": "6× N-type connectors",
     "operating_temp_range": "-40°C to 65°C operating",
     "msrp": "unknown"
@@ -5154,7 +5495,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+, Wi-Fi operates at 2.4GHz 2x2, 5GHz 2x2, 6GHz 2x2 with wired uplink at 5 GbE. Eth1 (downlink) with PSE and USB port are disabled.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the 1 GbE uplink/downlink port, PSE and USB port are disabled and the uplink port is set to 5 Gbps; maximum (worst case) power consumption is 25 W.",
     "ethernet_ports_speed": "1× 10 GbE (RJ45, PoE) or SFP/SFP+ Combo + 1× 1 GbE (RJ45, uplink/downlink)",
     "antenna_type": [
       "Internal"
@@ -5163,10 +5504,9 @@
     "radios_iot_features": [
       "BLE",
       "Zigbee",
-      "Scanning Radio",
-      "GPS/GNSS"
+      "Scanning Radio"
     ],
-    "datasheet_url": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1571-datasheet-en.pdf",
+    "datasheet_url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
     "image_url": "images/alcatel-lucent/alcatel-lucent-ap1571.png",
     "dimensions": "243 x 243 x 85 mm",
     "weight": "2500 g (5.51 lb)",
