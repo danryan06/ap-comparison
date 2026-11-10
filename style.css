@@ -2606,3 +2606,37 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   letter-spacing: 0.08em;
   margin: 0;
 }
+
+.spec-block {
+  grid-column: 1 / -1;
+  padding: 0 0 0.75rem 0;
+}
+
+.box-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.spec-block p.box-list {
+  padding-left: 0;
+}
+
+.box-list li {
+  margin: 0.25rem 0;
+}
+
+.box-part,
+.box-alias {
+  color: #9ca3af;
+}
+
+.box-alias {
+  font-size: 0.8rem;
+}
+
+.spec-block .eos-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+}

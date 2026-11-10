@@ -1,0 +1,3337 @@
+[
+  {
+    "id": "cisco-air-ap-bracket-1",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-BRACKET-1"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-BRACKET-1="
+      }
+    ],
+    "name": "Low-profile bracket",
+    "mount_type": [
+      "ceiling_tbar",
+      "hard_ceiling",
+      "wall"
+    ],
+    "compatible_aps": [
+      "cisco-cw9171i",
+      "cisco-meraki-cw9171i",
+      "cisco-cw9172i",
+      "cisco-meraki-cw9172i",
+      "cisco-cw9174i",
+      "cisco-meraki-cw9174i",
+      "cisco-cw9176i",
+      "cisco-meraki-cw9176i",
+      "cisco-cw9176d1",
+      "cisco-meraki-cw9176d1",
+      "cisco-cw9178i",
+      "cisco-meraki-cw9178i",
+      "cisco-catalyst-9164i",
+      "cisco-catalyst-9166i",
+      "cisco-catalyst-9166d1",
+      "cisco-9115axi",
+      "cisco-9115axe",
+      "cisco-9120axi",
+      "cisco-9120axe",
+      "cisco-9130axi",
+      "cisco-9130axe",
+      "cisco-meraki-mr57"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9171i/b-hig-cw9171i/installation-overview/access-point-mounting-and-installation-9171i.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9171i",
+          "cisco-meraki-cw9171i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9172i/b-hig-cw9172i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172i",
+          "cisco-meraki-cw9172i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174i",
+          "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176I/b-hig-cw9176i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176i",
+          "cisco-meraki-cw9176i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176d1/b-hig-cw9176D1/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9178I/b-hig-cw9178i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9178i",
+          "cisco-meraki-cw9178i"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172I_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9172i",
+          "cisco-meraki-cw9172i"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176I_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9176i",
+          "cisco-meraki-cw9176i"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9178I_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9178i",
+          "cisco-meraki-cw9178i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9164/install-guide/b-hig-cw9164i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9164i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166/install-guide/b-hig-cw9166i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166d1/install-guide/b-hig-cw9166D1/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9115axi",
+          "cisco-9115axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9120ax/quick/guide/ap9120ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9120axi",
+          "cisco-9120axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9130ax/quick/guide/ap9130ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9130axi",
+          "cisco-9130axe"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR57_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-meraki-mr57"
+        ]
+      }
+    ],
+    "notes": "Cisco HIGs: used for ceiling-mount installations (default option). Meraki guides add drop ceiling, wall and solid ceiling procedures. AIR-AP-BRACKET-3 is stated as not compatible with each of these models."
+  },
+  {
+    "id": "cisco-air-ap-bracket-2",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-BRACKET-2"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-BRACKET-2="
+      }
+    ],
+    "name": "Universal bracket",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "cisco-cw9171i",
+      "cisco-meraki-cw9171i",
+      "cisco-cw9172i",
+      "cisco-meraki-cw9172i",
+      "cisco-cw9174i",
+      "cisco-meraki-cw9174i",
+      "cisco-cw9176i",
+      "cisco-meraki-cw9176i",
+      "cisco-cw9176d1",
+      "cisco-meraki-cw9176d1",
+      "cisco-cw9178i",
+      "cisco-meraki-cw9178i",
+      "cisco-catalyst-9164i",
+      "cisco-catalyst-9166i",
+      "cisco-catalyst-9166d1",
+      "cisco-9115axi",
+      "cisco-9115axe",
+      "cisco-9120axi",
+      "cisco-9120axe",
+      "cisco-9130axi",
+      "cisco-9130axe",
+      "cisco-meraki-mr57"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9171i/b-hig-cw9171i/installation-overview/access-point-mounting-and-installation-9171i.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9171i",
+          "cisco-meraki-cw9171i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9172i/b-hig-cw9172i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172i",
+          "cisco-meraki-cw9172i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174i",
+          "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176I/b-hig-cw9176i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176i",
+          "cisco-meraki-cw9176i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176d1/b-hig-cw9176D1/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9178I/b-hig-cw9178i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9178i",
+          "cisco-meraki-cw9178i"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176D1_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9164/install-guide/b-hig-cw9164i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9164i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166/install-guide/b-hig-cw9166i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166d1/install-guide/b-hig-cw9166D1/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9115axi",
+          "cisco-9115axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9120ax/quick/guide/ap9120ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9120axi",
+          "cisco-9120axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9130ax/quick/guide/ap9130ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9130axi",
+          "cisco-9130axe"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR57_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-meraki-mr57"
+        ]
+      }
+    ],
+    "notes": "Cisco HIGs: used for wall or electrical box installations. Meraki CW9176D1 guide adds solid ceiling, below a drop ceiling, and electrical junction boxes."
+  },
+  {
+    "id": "cisco-air-ap-t-rail-r",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-T-RAIL-R"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-T-RAIL-R="
+      }
+    ],
+    "name": "Ceiling grid clip, recessed",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "9/16 in",
+      "15/16 in",
+      "1 ½ in"
+    ],
+    "rail_style": [
+      "recessed"
+    ],
+    "compatible_aps": [
+      "cisco-cw9171i",
+      "cisco-meraki-cw9171i",
+      "cisco-cw9172i",
+      "cisco-meraki-cw9172i",
+      "cisco-cw9174i",
+      "cisco-meraki-cw9174i",
+      "cisco-cw9176i",
+      "cisco-meraki-cw9176i",
+      "cisco-cw9176d1",
+      "cisco-meraki-cw9176d1",
+      "cisco-cw9178i",
+      "cisco-meraki-cw9178i",
+      "cisco-catalyst-9164i",
+      "cisco-catalyst-9166i",
+      "cisco-catalyst-9166d1",
+      "cisco-9115axi",
+      "cisco-9115axe",
+      "cisco-9105axi",
+      "cisco-9120axi",
+      "cisco-9120axe",
+      "cisco-9130axi",
+      "cisco-9130axe",
+      "cisco-meraki-mr57"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9171i/b-hig-cw9171i/installation-overview/access-point-mounting-and-installation-9171i.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9171i",
+          "cisco-meraki-cw9171i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9172i/b-hig-cw9172i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172i",
+          "cisco-meraki-cw9172i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174i",
+          "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176I/b-hig-cw9176i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176i",
+          "cisco-meraki-cw9176i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176d1/b-hig-cw9176D1/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9178I/b-hig-cw9178i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9178i",
+          "cisco-meraki-cw9178i"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172I_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9172i",
+          "cisco-meraki-cw9172i"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176I_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9176i",
+          "cisco-meraki-cw9176i"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176D1_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9178I_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9178i",
+          "cisco-meraki-cw9178i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9164/install-guide/b-hig-cw9164i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9164i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166/install-guide/b-hig-cw9166i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166d1/install-guide/b-hig-cw9166D1/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9115axi",
+          "cisco-9115axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axi-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9105axi"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9120ax/quick/guide/ap9120ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9120axi",
+          "cisco-9120axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9130ax/quick/guide/ap9130ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9130axi",
+          "cisco-9130axe"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR57_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-meraki-mr57"
+        ]
+      }
+    ],
+    "notes": "Rail widths from Meraki guides, which say the clip mounts on “most” of these T-rail widths. Meraki guides print this part as AIR-AP-TRAIL-R (CW9172I, CW9178I package lists); kept as an alias, not a separate SKU.",
+    "part_number_aliases": [
+      {
+        "vendor": "Cisco Meraki",
+        "part_number": "AIR-AP-TRAIL-R"
+      }
+    ]
+  },
+  {
+    "id": "cisco-air-ap-t-rail-f",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-T-RAIL-F"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-T-RAIL-F="
+      }
+    ],
+    "name": "Ceiling grid clip, flush",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_style": [
+      "flush"
+    ],
+    "compatible_aps": [
+      "cisco-cw9171i",
+      "cisco-meraki-cw9171i",
+      "cisco-cw9172i",
+      "cisco-meraki-cw9172i",
+      "cisco-cw9174i",
+      "cisco-meraki-cw9174i",
+      "cisco-cw9176i",
+      "cisco-meraki-cw9176i",
+      "cisco-cw9176d1",
+      "cisco-meraki-cw9176d1",
+      "cisco-cw9178i",
+      "cisco-meraki-cw9178i",
+      "cisco-catalyst-9164i",
+      "cisco-catalyst-9166i",
+      "cisco-catalyst-9166d1",
+      "cisco-9115axi",
+      "cisco-9115axe",
+      "cisco-9105axi",
+      "cisco-9120axi",
+      "cisco-9120axe",
+      "cisco-9130axi",
+      "cisco-9130axe",
+      "cisco-meraki-mr57"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9171i/b-hig-cw9171i/installation-overview/access-point-mounting-and-installation-9171i.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9171i",
+          "cisco-meraki-cw9171i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9172i/b-hig-cw9172i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172i",
+          "cisco-meraki-cw9172i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174i",
+          "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176I/b-hig-cw9176i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176i",
+          "cisco-meraki-cw9176i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176d1/b-hig-cw9176D1/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9178I/b-hig-cw9178i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9178i",
+          "cisco-meraki-cw9178i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9164/install-guide/b-hig-cw9164i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9164i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166/install-guide/b-hig-cw9166i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166d1/install-guide/b-hig-cw9166D1/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9115axi",
+          "cisco-9115axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axi-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9105axi"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9120ax/quick/guide/ap9120ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9120axi",
+          "cisco-9120axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9130ax/quick/guide/ap9130ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9130axi",
+          "cisco-9130axe"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR57_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-meraki-mr57"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cisco-air-chnl-adapter",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-CHNL-ADAPTER"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-CHNL-ADAPTER="
+      }
+    ],
+    "name": "Channel-rail adapter",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "cisco-cw9171i",
+      "cisco-meraki-cw9171i",
+      "cisco-cw9172i",
+      "cisco-meraki-cw9172i",
+      "cisco-cw9174i",
+      "cisco-meraki-cw9174i",
+      "cisco-cw9176i",
+      "cisco-meraki-cw9176i",
+      "cisco-cw9176d1",
+      "cisco-meraki-cw9176d1",
+      "cisco-cw9178i",
+      "cisco-meraki-cw9178i",
+      "cisco-catalyst-9164i",
+      "cisco-catalyst-9166i",
+      "cisco-catalyst-9166d1",
+      "cisco-9115axi",
+      "cisco-9115axe",
+      "cisco-9105axi",
+      "cisco-9120axi",
+      "cisco-9120axe",
+      "cisco-9130axi",
+      "cisco-9130axe"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9171i/b-hig-cw9171i/installation-overview/access-point-mounting-and-installation-9171i.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9171i",
+          "cisco-meraki-cw9171i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9172i/b-hig-cw9172i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172i",
+          "cisco-meraki-cw9172i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174i",
+          "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176I/b-hig-cw9176i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176i",
+          "cisco-meraki-cw9176i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176d1/b-hig-cw9176D1/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9178I/b-hig-cw9178i/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9178i",
+          "cisco-meraki-cw9178i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9164/install-guide/b-hig-cw9164i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9164i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166/install-guide/b-hig-cw9166i/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166d1/install-guide/b-hig-cw9166D1/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9115axi",
+          "cisco-9115axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axi-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9105axi"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9120ax/quick/guide/ap9120ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9120axi",
+          "cisco-9120axe"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9130ax/quick/guide/ap9130ax-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9130axi",
+          "cisco-9130axe"
+        ]
+      }
+    ],
+    "notes": "Optional adapter for channel-rail ceiling grid profiles; used with a ceiling grid clip."
+  },
+  {
+    "id": "cisco-cw-mnt-art2-00",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-ART2-00"
+      }
+    ],
+    "name": "Articulating arm",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "cisco-cw9176d1",
+      "cisco-meraki-cw9176d1",
+      "cisco-catalyst-9166d1"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176d1/b-hig-cw9176D1/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176D1_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9176d1",
+          "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166d1/install-guide/b-hig-cw9166D1/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-catalyst-9166d1"
+        ]
+      }
+    ],
+    "notes": "Requires AIR-AP-BRACKET-2 (not included in this kit). Hose clamps for 2.5 to 5 in poles included. Can be configured without the arm for single-axis pivot."
+  },
+  {
+    "id": "cisco-cw-mnt-h1",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-H1"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-H1-00"
+      }
+    ],
+    "name": "Wall plate bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cisco-cw9172h",
+      "cisco-meraki-cw9172h"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9172h/b-hig-cw9172h/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+        "doc": "Meraki installation guide (draft)",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      }
+    ],
+    "notes": "The 9172H HIG uses CW-MNT-H1 for the bracket included in the box and CW-MNT-H1-00 for the orderable PID."
+  },
+  {
+    "id": "cisco-meraki-ma-mnt-mr-h1a",
+    "part_numbers": [
+      {
+        "vendor": "Cisco Meraki",
+        "part_number": "MA-MNT-MR-H1A"
+      }
+    ],
+    "name": "Meraki wall mount bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cisco-cw9172h",
+      "cisco-meraki-cw9172h",
+      "cisco-meraki-mr36h"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9172h/b-hig-cw9172h/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+        "doc": "Meraki installation guide (draft)",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR36H_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-meraki-mr36h"
+        ]
+      }
+    ],
+    "notes": "MR36H guide: the MR30H mounting plate (MA-MNT-MR-H1A) can be reused for MR36H with two to four screws removed and replaced; it covers the MR36H passthrough port. The older MA-MNT-MR-H1 is not compatible with MR36H."
+  },
+  {
+    "id": "cisco-air-ap-bracket-w4",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-BRACKET-W4"
+      }
+    ],
+    "name": "Catalyst wall mount bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cisco-cw9172h",
+      "cisco-meraki-cw9172h",
+      "cisco-9105axw"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9172h/b-hig-cw9172h/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+        "doc": "Meraki installation guide (draft)",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axw-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9105axw"
+        ]
+      }
+    ],
+    "notes": "9105AXW guide: used only for wall mounting; shares mounting holes with AIR-AP-BRACKET-W3, but -W3 should not be used with the 9105AXW. Also fits electrical junction boxes. The Meraki CW9172H guide prints this part as AIR-AP-BRACKET-4; kept as an alias, not a separate SKU.",
+    "part_number_aliases": [
+      {
+        "vendor": "Cisco Meraki",
+        "part_number": "AIR-AP-BRACKET-4"
+      }
+    ]
+  },
+  {
+    "id": "cisco-cw-acc-spacer1-00",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-ACC-SPACER1-00"
+      }
+    ],
+    "name": "Wall spacer kit",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cisco-cw9172h",
+      "cisco-meraki-cw9172h"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9172h/b-hig-cw9172h/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+        "doc": "Meraki installation guide (draft)",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cisco-air-mnt-art1",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-MNT-ART1="
+      }
+    ],
+    "name": "Pivot articulating mount",
+    "mount_type": [
+      "wall",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "cisco-cw9177d",
+      "cisco-meraki-cw9177d"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/mount-the-ap.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9177d",
+          "cisco-meraki-cw9177d"
+        ]
+      }
+    ],
+    "notes": "Wall or 2 to 5 inch (51 to 127 mm) diameter pole. 9177 HIG marks CW9177I and CW9177E not compatible."
+  },
+  {
+    "id": "cisco-cw-mnt-art4",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-ART4"
+      }
+    ],
+    "name": "1 or 2 pivot articulating mount",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "cisco-cw9177d",
+      "cisco-meraki-cw9177d"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/mount-the-ap.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9177d",
+          "cisco-meraki-cw9177d"
+        ]
+      }
+    ],
+    "notes": "Can be used as a 1-pivot mount without the intermediate arm. Large and small pole clamps included."
+  },
+  {
+    "id": "cisco-cw-mnt-art3",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-ART3"
+      }
+    ],
+    "name": "Articulating wall/pole mount bracket",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "cisco-cw9177d",
+      "cisco-meraki-cw9177d",
+      "cisco-cw9179f",
+      "cisco-meraki-cw9179f"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/mount-the-ap.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9177d",
+          "cisco-meraki-cw9177d"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9179f/b-hig-cw9179f/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9179f",
+          "cisco-meraki-cw9179f"
+        ]
+      }
+    ],
+    "notes": "9177 HIG: on CW9177D use only the 1-pivot option; the 2-pivot configuration is not permitted for safety reasons. 9179F HIG: small pole 2 to 3 in, large pole 3 to 5 in."
+  },
+  {
+    "id": "cisco-cw-mnt-vert3",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-VERT3"
+      }
+    ],
+    "name": "Vertical mount with DC adapter",
+    "mount_type": [
+      "wall",
+      "pole"
+    ],
+    "compatible_aps": [
+      "cisco-cw9177d",
+      "cisco-meraki-cw9177d",
+      "cisco-cw9177e",
+      "cisco-meraki-cw9177e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/mount-the-ap.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9177d",
+          "cisco-meraki-cw9177d",
+          "cisco-cw9177e",
+          "cisco-meraki-cw9177e"
+        ]
+      }
+    ],
+    "notes": "Wall or 2 to 5 inch (51 to 127 mm) diameter pole; supports AC or DC power adapter."
+  },
+  {
+    "id": "cisco-meraki-ma-mnt-mr-16",
+    "part_numbers": [
+      {
+        "vendor": "Cisco Meraki",
+        "part_number": "MA-MNT-MR-16"
+      }
+    ],
+    "name": "Vertical mount plate",
+    "mount_type": [
+      "wall",
+      "pole"
+    ],
+    "compatible_aps": [
+      "cisco-cw9177d",
+      "cisco-meraki-cw9177d",
+      "cisco-cw9177e",
+      "cisco-meraki-cw9177e",
+      "cisco-cw9163e",
+      "cisco-meraki-cw9163e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/mount-the-ap.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9177d",
+          "cisco-meraki-cw9177d",
+          "cisco-cw9177e",
+          "cisco-meraki-cw9177e"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9163e/install-guide/b-hig-9163e/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9163e",
+          "cisco-meraki-cw9163e"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9163E-MR_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9163e",
+          "cisco-meraki-cw9163e"
+        ]
+      }
+    ],
+    "notes": "Pole range differs by document: 9177 HIG says 2 to 5 inch; 9163E HIG and Meraki guide say 2.5 to 3.9 inch. 9177 HIG summary table also marks CW9177I compatible, but its per-procedure tables say not compatible; CW9177I left out pending review."
+  },
+  {
+    "id": "cisco-cw-mnt-horz2",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-HORZ2"
+      }
+    ],
+    "name": "Horizontal mount",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "pole"
+    ],
+    "compatible_aps": [
+      "cisco-cw9177i",
+      "cisco-meraki-cw9177i",
+      "cisco-cw9177d",
+      "cisco-meraki-cw9177d"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/mount-the-ap.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9177i",
+          "cisco-meraki-cw9177i",
+          "cisco-cw9177d",
+          "cisco-meraki-cw9177d"
+        ]
+      }
+    ],
+    "notes": "Mounts AP parallel to the ground on a wall, ceiling, eave, or 2 to 5 inch pole. AIR-ACC-PS-MNT1= adds a DC power supply mount."
+  },
+  {
+    "id": "cisco-air-mnt-vert1",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-MNT-VERT1"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-MNT-VERT1="
+      }
+    ],
+    "name": "Vertical wall/pole mount",
+    "mount_type": [
+      "wall",
+      "pole"
+    ],
+    "compatible_aps": [
+      "cisco-cw9163e",
+      "cisco-meraki-cw9163e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9163e/install-guide/b-hig-9163e/installation-overview.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9163e",
+          "cisco-meraki-cw9163e"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9163E-MR_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-cw9163e",
+          "cisco-meraki-cw9163e"
+        ]
+      }
+    ],
+    "notes": "9163E HIG: wall or 2 to 3.9 inch (51 to 99.06 mm) pole."
+  },
+  {
+    "id": "cisco-air-accpmk3700",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-ACCPMK3700="
+      }
+    ],
+    "name": "Pole mounting bracket",
+    "mount_type": [
+      "pole"
+    ],
+    "compatible_aps": [
+      "cisco-iw9167e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/IIOT/wireless/iw9167eh/base-hig/b-iw9167eh-hig/m-unpacking-your-access-point.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-iw9167e"
+        ]
+      }
+    ],
+    "notes": "For 2 to 3.2 in diameter pole."
+  },
+  {
+    "id": "cisco-air-accpmk3700-2",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-ACCPMK3700-2="
+      }
+    ],
+    "name": "Pole mounting bracket, large",
+    "mount_type": [
+      "pole"
+    ],
+    "compatible_aps": [
+      "cisco-iw9167e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/IIOT/wireless/iw9167eh/base-hig/b-iw9167eh-hig/m-unpacking-your-access-point.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-iw9167e"
+        ]
+      }
+    ],
+    "notes": "For 2 to 16 in diameter pole."
+  },
+  {
+    "id": "cisco-air-ap-bracket-8",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-BRACKET-8"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-AP-BRACKET-8="
+      }
+    ],
+    "name": "Low-profile bracket (9105AXI)",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "cisco-9105axi"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axi-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9105axi"
+        ]
+      }
+    ],
+    "notes": "Guide: used for ceiling mount installations (default option); ships only if selected when ordering, also orderable separately. hard_ceiling withheld until a sentence names this bracket on a solid ceiling."
+  },
+  {
+    "id": "cisco-c9105axw-kit",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "C9105AXW-KIT"
+      },
+      {
+        "vendor": "Cisco",
+        "part_number": "C9105AXW-KIT="
+      }
+    ],
+    "name": "Wall-mount spacer kit",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cisco-9105axw"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axw-getstart.html",
+        "doc": "Getting started guide",
+        "aps": [
+          "cisco-9105axw"
+        ]
+      }
+    ],
+    "notes": "Used with AIR-AP-BRACKET-W4 on a wall or electrical junction box; kit includes an RJ45 jumper cable."
+  },
+  {
+    "id": "cisco-cw-acc-desk1-00",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-ACC-DESK1-00"
+      }
+    ],
+    "name": "Desk mount kit",
+    "mount_type": [
+      "desk"
+    ],
+    "compatible_aps": [
+      "cisco-cw9172h",
+      "cisco-meraki-cw9172h"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9172h/b-hig-cw9172h/installation-overview/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      },
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+        "doc": "Meraki installation guide (draft)",
+        "aps": [
+          "cisco-cw9172h",
+          "cisco-meraki-cw9172h"
+        ]
+      }
+    ],
+    "notes": "Includes desktop cover and base, passthrough jumper cable, security screw, and a Kensington lock bracket. Not compatible with the CW-MNT-H3-00 port lock."
+  },
+  {
+    "id": "cisco-meraki-ma-mnt-mr-h2",
+    "part_numbers": [
+      {
+        "vendor": "Cisco Meraki",
+        "part_number": "MA-MNT-MR-H2"
+      }
+    ],
+    "name": "Meraki Surface Mounting Kit",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cisco-meraki-mr36h"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR36H_Installation_Guide",
+        "doc": "Meraki installation guide",
+        "aps": [
+          "cisco-meraki-mr36h"
+        ]
+      }
+    ],
+    "notes": "MR36H guide says the MR36H fits this kit. mount_type wall is provisional, taken from the kit name; its own installation guide has not been opened."
+  },
+  {
+    "id": "cisco-meraki-ma-umnt-mr-a2",
+    "part_numbers": [
+      {
+        "vendor": "Cisco Meraki",
+        "part_number": "MA-UMNT-MR-A2"
+      }
+    ],
+    "name": "Universal mounting adapter",
+    "mount_type": [
+      "adapter"
+    ],
+    "environment": "indoor",
+    "compatible_aps": [
+      "cisco-meraki-mr36",
+      "cisco-meraki-mr44",
+      "cisco-meraki-mr46",
+      "cisco-meraki-mr46e",
+      "cisco-meraki-mr56"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MA-UMNT-MR-A2_Universal_Mounting_Adapter_Installation_Guide",
+        "doc": "Mount installation guide",
+        "aps": [
+          "cisco-meraki-mr36",
+          "cisco-meraki-mr44",
+          "cisco-meraki-mr46",
+          "cisco-meraki-mr46e",
+          "cisco-meraki-mr56"
+        ]
+      }
+    ],
+    "notes": "Lets a Meraki mount cradle attach to an installed Cisco AIR-AP-BRACKET-1 or AIR-AP-BRACKET-2; cannot mount an AP by itself. Not compatible with any outdoor MR. Also lists MR33, MR42/42E, MR45, MR52, MR53/53E, MR55 (not in ap_data.json)."
+  },
+  {
+    "id": "cisco-cw-mnt-strand1a",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-STRAND1A"
+      }
+    ],
+    "name": "Cable strand horizontal mount",
+    "mount_type": [
+      "strand"
+    ],
+    "compatible_aps": [
+      "cisco-cw9177i",
+      "cisco-meraki-cw9177i",
+      "cisco-cw9177d",
+      "cisco-meraki-cw9177d"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/mount-the-ap.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9177i",
+          "cisco-meraki-cw9177i",
+          "cisco-cw9177d",
+          "cisco-meraki-cw9177d"
+        ]
+      }
+    ],
+    "notes": "9177 HIG marks CW9177E not compatible."
+  },
+  {
+    "id": "cisco-air-accdmk3700",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "AIR-ACCDMK3700="
+      }
+    ],
+    "name": "DIN Rail mounting bracket",
+    "mount_type": [
+      "din_rail"
+    ],
+    "compatible_aps": [
+      "cisco-iw9167e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/IIOT/wireless/iw9167eh/base-hig/b-iw9167eh-hig/m-unpacking-your-access-point.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-iw9167e"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aruba-ap-mnt-a",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R3J15A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "JZ370A"
+      }
+    ],
+    "name": "Campus AP mount bracket kit Type A, suspended ceiling rail, flat 9/16",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "9/16 in"
+    ],
+    "compatible_aps": [
+      "aruba-ap-504",
+      "aruba-ap-505",
+      "aruba-ap-514",
+      "aruba-ap-515",
+      "aruba-ap-518",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725",
+      "aruba-ap-734",
+      "aruba-ap-735",
+      "aruba-ap-754",
+      "aruba-ap-755",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-504",
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-514",
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009206enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-734",
+          "aruba-ap-735"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009211enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-754",
+          "aruba-ap-755"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "AP-MNT-A (R3J15A) is a single kit; AP-MNT-MP10-A (JZ370A) is the 10-pack. HPE prints the rail as \"Flat 9/16\" with no unit; \"in\" added per site convention. The 630 QuickSpecs lists only AP-MNT-A (R3J15A) for the 630 Series; AP-MNT-MP10-A (JZ370A) is not in that table."
+  },
+  {
+    "id": "aruba-ap-mnt-b",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-B"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R3J16A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-B"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "Q9G69A"
+      }
+    ],
+    "name": "Campus AP mount bracket kit Type B, suspended ceiling rail, flat 15/16",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "aruba-ap-504",
+      "aruba-ap-505",
+      "aruba-ap-514",
+      "aruba-ap-515",
+      "aruba-ap-518",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725",
+      "aruba-ap-734",
+      "aruba-ap-735",
+      "aruba-ap-754",
+      "aruba-ap-755",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-504",
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-514",
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009206enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-734",
+          "aruba-ap-735"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009211enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-754",
+          "aruba-ap-755"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "AP-MNT-B (R3J16A) is a single kit; AP-MNT-MP10-B (Q9G69A) is the 10-pack. HPE prints the rail as \"Flat 15/16\" with no unit; \"in\" added per site convention."
+  },
+  {
+    "id": "aruba-ap-mnt-c",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-C"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R3J17A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-C"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "Q9G70A"
+      }
+    ],
+    "name": "Campus AP mount bracket kit Type C, suspended ceiling rail, profile 9/16",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "9/16 in"
+    ],
+    "compatible_aps": [
+      "aruba-ap-504",
+      "aruba-ap-505",
+      "aruba-ap-514",
+      "aruba-ap-515",
+      "aruba-ap-518",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725",
+      "aruba-ap-734",
+      "aruba-ap-735",
+      "aruba-ap-754",
+      "aruba-ap-755",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-504",
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-514",
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009206enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-734",
+          "aruba-ap-735"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009211enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-754",
+          "aruba-ap-755"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "For profile (shaped) ceiling rails, not flat T-bar; HPE's partner mounts page identifies these as Silhouette and Interlude rails. AP-MNT-C (R3J17A) single, AP-MNT-MP10-C (Q9G70A) 10-pack."
+  },
+  {
+    "id": "aruba-ap-mnt-mp10-b1",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-B1"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R6T34A"
+      }
+    ],
+    "name": "Campus AP 10-pack 15/16 adjustable flat ceiling rail mount bracket kit",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "aruba-ap-505",
+      "aruba-ap-515",
+      "aruba-ap-518",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725",
+      "aruba-ap-734",
+      "aruba-ap-735",
+      "aruba-ap-754",
+      "aruba-ap-755",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009206enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-734",
+          "aruba-ap-735"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009211enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-754",
+          "aruba-ap-755"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "The 500 and 510 QuickSpecs list this kit under the Snap-on Covers heading scoped to the 505 and 515 only (not the 504/514). The 518 QuickSpecs lists it under Spare Items; the 610, 630, 650, 720, 730 and 750 QuickSpecs list it under AP Mount Kits. 10-pack."
+  },
+  {
+    "id": "aruba-ap-mnt-d",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-D"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R3J18A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-D"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "Q9G71A"
+      }
+    ],
+    "name": "Campus AP mount bracket kit Type D, solid surface",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "aruba-ap-504",
+      "aruba-ap-505",
+      "aruba-ap-514",
+      "aruba-ap-515",
+      "aruba-ap-518",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725",
+      "aruba-ap-734",
+      "aruba-ap-735",
+      "aruba-ap-754",
+      "aruba-ap-755",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-504",
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-514",
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009206enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-734",
+          "aruba-ap-735"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009211enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-754",
+          "aruba-ap-755"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "Typed from the AP-MNT-D installation guide: \"a low-profile mount kit for attaching APs or Bridges to the ceiling or wall\"; ceiling mapped to hard_ceiling (non-rail; see to-check). AP-MNT-D (R3J18A) single, AP-MNT-MP10-D (Q9G71A) 10-pack. The 518 QuickSpecs lists the single under AP Mount Kits and the 10-pack under Spare Items. Kit installation guide: https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-D/AP-MNT-D_Install_Guide.pdf."
+  },
+  {
+    "id": "aruba-ap-mnt-e",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-E"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R3J19A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-E"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R1C72A"
+      }
+    ],
+    "name": "Campus AP mount bracket kit Type E, wall-box",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "aruba-ap-504",
+      "aruba-ap-505",
+      "aruba-ap-514",
+      "aruba-ap-515",
+      "aruba-ap-518",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725",
+      "aruba-ap-734",
+      "aruba-ap-735",
+      "aruba-ap-754",
+      "aruba-ap-755",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-504",
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-514",
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009206enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-734",
+          "aruba-ap-735"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009211enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-754",
+          "aruba-ap-755"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "Typed from the AP-MNT-E installation guide: \"a low-profile mount kit for attaching APs or Bridges to the ceiling or wall\"; mounts to a utility (wall) box. Ceiling mapped to hard_ceiling (see to-check). AP-MNT-E (R3J19A) single, AP-MNT-MP10-E (R1C72A) 10-pack. Kit installation guide: https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-E/AP-MNT-E_Install_Guide.pdf."
+  },
+  {
+    "id": "aruba-ap-mnt-u",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-U"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "S4K79A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-U"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "S0J40A"
+      }
+    ],
+    "name": "Campus AP universal mount bracket kit Type U",
+    "mount_type": [
+      "ceiling_tbar",
+      "wall",
+      "hard_ceiling"
+    ],
+    "rail_width": [
+      "9/16 in",
+      "15/16 in",
+      "1-1/2 in"
+    ],
+    "compatible_aps": [
+      "aruba-ap-504",
+      "aruba-ap-505",
+      "aruba-ap-514",
+      "aruba-ap-515",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725",
+      "aruba-ap-734",
+      "aruba-ap-735",
+      "aruba-ap-754",
+      "aruba-ap-755",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-504",
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-514",
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009206enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-734",
+          "aruba-ap-735"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009211enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-754",
+          "aruba-ap-755"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "Typed from the AP-MNT-U installation guide: \"a mount kit for mounting access points (APs) on a ceiling rail, wall or solid surface, and a single or dual gang wall-box\". Rail widths from the clip markings \"9/16, 15/16 or 1-1/2\". AP-MNT-U (S4K79A) single, AP-MNT-MP10-U (S0J40A) 10-pack. The 730 QuickSpecs lists only the single AP-MNT-U. Not listed for the 518. Kit installation guide: https://arubanetworking.hpe.com/techdocs/hardware/accessories/ap-mnt-u/AP-MNT-U_Install_Guide.pdf."
+  },
+  {
+    "id": "aruba-ap-mnt-mp10-x",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-MNT-MP10-X"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R3T20A"
+      }
+    ],
+    "name": "Campus AP 10-pack mount adapter kit for existing W2/W3 mounts",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "aruba-ap-504",
+      "aruba-ap-505",
+      "aruba-ap-514",
+      "aruba-ap-515",
+      "aruba-ap-518",
+      "aruba-ap-615",
+      "aruba-ap-635",
+      "aruba-ap-655",
+      "aruba-ap-725"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00067744enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-504",
+          "aruba-ap-505"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00054054enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-514",
+          "aruba-ap-515"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap518/ig/AP-518_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004285enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-615"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50002582enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-635"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004266enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-655"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009236enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-725"
+        ]
+      }
+    ],
+    "notes": "Typed from the 518 installation guide (Table 4): \"AP-MNT-MP10-X Campus AP mount adapter kit (10-pack) for existing W2/W3 mounts\". 10-pack; no single version listed. Not listed in the 730 or 750 QuickSpecs."
+  },
+  {
+    "id": "aruba-ap-270-mnt-adp",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-270-MNT-ADP"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "JW056A"
+      }
+    ],
+    "name": "AP-228 to AP-270-MNT-XX outdoor mount adapter",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "aruba-ap-518",
+      "aruba-ap-763"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap518/ig/AP-518_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763"
+        ]
+      }
+    ],
+    "notes": "518 and 763. Replaces the pre-installed bracket so the AP-270-MNT-XX outdoor kits and AP-OUT-MNT-V1A can be attached (518 and 760 installation guides)."
+  },
+  {
+    "id": "aruba-ap-270-mnt-v1",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-270-MNT-V1"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "JW052A"
+      }
+    ],
+    "name": "AP-270 series outdoor pole/wall long mount kit",
+    "mount_type": [
+      "pole",
+      "wall"
+    ],
+    "compatible_aps": [
+      "aruba-ap-518",
+      "aruba-ap-565",
+      "aruba-ap-567",
+      "aruba-ap-574",
+      "aruba-ap-575",
+      "aruba-ap-577"
+    ],
+    "sources": [
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap518/ig/AP-518_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      }
+    ],
+    "notes": "For the 518 only: the pre-assembled bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 installation guide). The 560 and 570 take it directly. Listed in the 518, 560 and 570 installation guides (\"long mount kit for wall and vertical pole mounting, 300 mm from vertical mounting asset\" in the 560/570 guides); not in any QuickSpecs ordering table, which list AP-OUT-MNT-V1A instead. Kept as its own record."
+  },
+  {
+    "id": "aruba-ap-out-mnt-v1a",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-OUT-MNT-V1A"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R9H97A"
+      }
+    ],
+    "name": "Outdoor AP long arm pole/wall mounting bracket",
+    "mount_type": [
+      "pole",
+      "wall"
+    ],
+    "compatible_aps": [
+      "aruba-ap-518",
+      "aruba-ap-565",
+      "aruba-ap-567",
+      "aruba-ap-574",
+      "aruba-ap-575",
+      "aruba-ap-577",
+      "aruba-ap-584",
+      "aruba-ap-585",
+      "aruba-ap-675",
+      "aruba-ap-677",
+      "aruba-ap-679",
+      "aruba-ap-675ex",
+      "aruba-ap-677ex",
+      "aruba-ap-679ex",
+      "aruba-ap-763",
+      "aruba-ap-764",
+      "aruba-ap-765",
+      "aruba-ap-765ex"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00094642enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056659enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004278enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap580/ig/AP-580_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670/ig/AP-670_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675ex",
+          "aruba-ap-677ex",
+          "aruba-ap-679ex"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763",
+          "aruba-ap-764",
+          "aruba-ap-765"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760ex/ig/AP-760EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-765ex"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763",
+          "aruba-ap-764",
+          "aruba-ap-765",
+          "aruba-ap-765ex"
+        ]
+      }
+    ],
+    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. 580 installation guide scopes it to \"AP-584/AP-585: Wall or Pole\"; the 587 is not listed against it there, so the 587 is held (see to-check) although the 580 QuickSpecs lists V1A for the series."
+  },
+  {
+    "id": "aruba-ap-270-mnt-v2",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-270-MNT-V2"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "JW053A"
+      }
+    ],
+    "name": "Outdoor AP short arm pole/wall mounting bracket",
+    "mount_type": [
+      "pole",
+      "wall"
+    ],
+    "compatible_aps": [
+      "aruba-ap-518",
+      "aruba-ap-565",
+      "aruba-ap-567",
+      "aruba-ap-574",
+      "aruba-ap-575",
+      "aruba-ap-577",
+      "aruba-ap-675",
+      "aruba-ap-677",
+      "aruba-ap-679",
+      "aruba-ap-675ex",
+      "aruba-ap-677ex",
+      "aruba-ap-679ex",
+      "aruba-ap-763",
+      "aruba-ap-764",
+      "aruba-ap-765",
+      "aruba-ap-765ex"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap518/ig/AP-518_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00094642enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056659enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675ex",
+          "aruba-ap-677ex",
+          "aruba-ap-679ex"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763",
+          "aruba-ap-764",
+          "aruba-ap-765"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760ex/ig/AP-760EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-765ex"
+        ]
+      }
+    ],
+    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. Not listed for the 580 Series. The 760 installation guide prose prints it once as \"AP-270MNT-V2\" (alias). For the 670 non-EX models the source is the QuickSpecs only (the 670 guide's mount table did not extract V2 cleanly).",
+    "part_number_aliases": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-270MNT-V2"
+      }
+    ]
+  },
+  {
+    "id": "aruba-ap-270-mnt-h1",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-270-MNT-H1"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "JW054A"
+      }
+    ],
+    "name": "Outdoor AP hanging one-way tilt pole/wall mounting bracket",
+    "mount_type": [
+      "pole",
+      "wall",
+      "hard_ceiling",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "aruba-ap-518",
+      "aruba-ap-565",
+      "aruba-ap-567",
+      "aruba-ap-574",
+      "aruba-ap-575",
+      "aruba-ap-577",
+      "aruba-ap-584",
+      "aruba-ap-585",
+      "aruba-ap-587",
+      "aruba-ap-675",
+      "aruba-ap-677",
+      "aruba-ap-679",
+      "aruba-ap-675ex",
+      "aruba-ap-677ex",
+      "aruba-ap-679ex",
+      "aruba-ap-763",
+      "aruba-ap-764",
+      "aruba-ap-765",
+      "aruba-ap-765ex"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap518/ig/AP-518_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00094642enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056659enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004278enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585",
+          "aruba-ap-587"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap580/ig/AP-580_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585",
+          "aruba-ap-587"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670/ig/AP-670_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675ex",
+          "aruba-ap-677ex",
+          "aruba-ap-679ex"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763",
+          "aruba-ap-764",
+          "aruba-ap-765"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760ex/ig/AP-760EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-765ex"
+        ]
+      }
+    ],
+    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. pole and wall from the QuickSpecs line; hard_ceiling from the 580 installation guide (\"AP-584/AP-585: Flat or Sloped Ceiling\"; \"AP-587: Wall or Pole\"). 560/570 guides: \"mount kit for hanging from inclined or horizontal structure\". 670/760 guides: \"articulating up-down wall or pole mount kit\"; 760 orientation table also lists H1 under Ceiling (Top-Mount)."
+  },
+  {
+    "id": "aruba-ap-270-mnt-h2",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-270-MNT-H2"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "JW055A"
+      }
+    ],
+    "name": "Outdoor AP flush wall mounting bracket",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "aruba-ap-518",
+      "aruba-ap-565",
+      "aruba-ap-567",
+      "aruba-ap-574",
+      "aruba-ap-575",
+      "aruba-ap-577",
+      "aruba-ap-584",
+      "aruba-ap-585",
+      "aruba-ap-587",
+      "aruba-ap-675",
+      "aruba-ap-677",
+      "aruba-ap-679",
+      "aruba-ap-675ex",
+      "aruba-ap-677ex",
+      "aruba-ap-679ex",
+      "aruba-ap-763",
+      "aruba-ap-764",
+      "aruba-ap-765",
+      "aruba-ap-765ex"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap518/ig/AP-518_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00094642enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056659enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004278enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585",
+          "aruba-ap-587"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap580/ig/AP-580_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585",
+          "aruba-ap-587"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670/ig/AP-670_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675ex",
+          "aruba-ap-677ex",
+          "aruba-ap-679ex"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763",
+          "aruba-ap-764",
+          "aruba-ap-765"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760ex/ig/AP-760EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-765ex"
+        ]
+      }
+    ],
+    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. Wall from the QuickSpecs line; ceiling from the 518 guide (\"flush wall or ceiling mount kit\"), the 560/570 guides (\"flush mount kit for wall and ceiling mounting\") and the 580 guide (\"AP-587: Wall\", \"AP-584/AP-585: Flat Ceiling\"). 670/670EX/760/760EX guides: \"non-articulating wall mount for directional APs, or ceiling mount for omni antenna APs\"."
+  },
+  {
+    "id": "aruba-ap-270-mnt-h3",
+    "part_numbers": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-270-MNT-H3"
+      },
+      {
+        "vendor": "Aruba",
+        "part_number": "R6W11A"
+      }
+    ],
+    "name": "Outdoor AP hanging dual-tilt pole/wall mounting bracket",
+    "mount_type": [
+      "pole",
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "aruba-ap-518",
+      "aruba-ap-565",
+      "aruba-ap-567",
+      "aruba-ap-574",
+      "aruba-ap-575",
+      "aruba-ap-577",
+      "aruba-ap-584",
+      "aruba-ap-585",
+      "aruba-ap-587",
+      "aruba-ap-675",
+      "aruba-ap-677",
+      "aruba-ap-679",
+      "aruba-ap-675ex",
+      "aruba-ap-677ex",
+      "aruba-ap-679ex",
+      "aruba-ap-763",
+      "aruba-ap-764",
+      "aruba-ap-765",
+      "aruba-ap-765ex"
+    ],
+    "sources": [
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056657enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-518"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00094642enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-565",
+          "aruba-ap-567"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a00056659enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-574",
+          "aruba-ap-575",
+          "aruba-ap-577"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50004278enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585",
+          "aruba-ap-587"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap580/ig/AP-580_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-584",
+          "aruba-ap-585",
+          "aruba-ap-587"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
+        "doc": "QuickSpecs",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670/ig/AP-670_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675",
+          "aruba-ap-677",
+          "aruba-ap-679"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap670ex/ig/AP-670EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-675ex",
+          "aruba-ap-677ex",
+          "aruba-ap-679ex"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760/ig/AP-760_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-763",
+          "aruba-ap-764",
+          "aruba-ap-765"
+        ]
+      },
+      {
+        "url": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap760ex/ig/AP-760EX_Install_Guide_EN.pdf",
+        "doc": "Installation Guide",
+        "aps": [
+          "aruba-ap-765ex"
+        ]
+      },
+      {
+        "url": "https://www.hpe.com/psnow/doc/PSN1014901369NLEN",
+        "doc": "Data sheet (PSN1014901369NLEN, Nov 2026; uploaded copy, URL not verified)",
+        "aps": [
+          "aruba-ap-763",
+          "aruba-ap-764",
+          "aruba-ap-765",
+          "aruba-ap-765ex"
+        ]
+      }
+    ],
+    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. pole and wall from the QuickSpecs line; hard_ceiling from the 580 installation guide (\"AP-584/AP-585: Flat or Sloped Ceiling\"; \"AP-587: Wall or Pole\"). The 760 and 760EX installation guides print it as \"AP-OUT-MNT-H3\" in their mounting-orientation tables (alias). 670/760 guides: \"wall or pole mounting of directional APs, or ceiling mounting APs on uneven ceilings\".",
+    "part_number_aliases": [
+      {
+        "vendor": "Aruba",
+        "part_number": "AP-OUT-MNT-H3"
+      }
+    ]
+  }
+]

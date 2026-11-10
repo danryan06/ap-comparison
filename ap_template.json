@@ -52,5 +52,14 @@
   "end_of_sale_date": "August 7, 2025 (optional)",
   "end_of_support_date": "August 7, 2030 (optional)",
   "end_of_sale_url": "https://vendor.com/eol-notice (optional)",
-  "manufacturer_suggested_replacement": "AP-655, AP-675 (optional)"
+  "manufacturer_suggested_replacement": "AP-655, AP-675 (optional)",
+  "in_box": [
+    {
+      "item": "Mounting bracket",
+      "part_number": "AIR-AP-BRACKET-1",
+      "qty": 1
+    }
+  ],
+  "in_box_source": "https://vendor.com/quick-start-guide",
+  "in_box_condition": "Ready to Go option (optional)"
 }

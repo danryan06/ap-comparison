@@ -388,7 +388,9 @@
     "weight": "500 g",
     "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "msrp": "$944"
+    "msrp": "$944",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap500/sug/AP-500_Startup_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -413,7 +415,9 @@
     "weight": "500 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "msrp": "$944"
+    "msrp": "$944",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap500/sug/AP-500_Startup_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -438,7 +442,9 @@
     "weight": "810 g (28.5 oz)",
     "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "msrp": "$1,486"
+    "msrp": "$1,486",
+    "in_box": [],
+    "in_box_source": "https://support.hpe.com/hpesc/public/api/document/a00062129en_us"
   },
   {
     "vendor": "Aruba",
@@ -463,7 +469,9 @@
     "weight": "810 g (28.5 oz)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "msrp": "$1,486"
+    "msrp": "$1,486",
+    "in_box": [],
+    "in_box_source": "https://support.hpe.com/hpesc/public/api/document/a00062129en_us"
   },
   {
     "vendor": "Aruba",
@@ -488,7 +496,25 @@
     "weight": "1.5 kg",
     "antenna_connectors": "Six RP-SMA connectors for external 2.4 GHz and 5 GHz antennas",
     "operating_temp_range": "-40°C to +55°C operating; -40°C to +70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Cable gland",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "USB Type-C console cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding lug and M4x6 screw",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap518/ig/AP-518_Install_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -724,7 +750,9 @@
       "Zigbee"
     ],
     "msrp": "unknown",
-    "image_url": "images/aruba/aruba-ap-615.png"
+    "image_url": "images/aruba/aruba-ap-615.png",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap615/sug/ap-615-sug-en.pdf"
   },
   {
     "vendor": "Aruba",
@@ -755,7 +783,9 @@
       "GPS/GNSS"
     ],
     "msrp": "unknown",
-    "image_url": "images/aruba/aruba-ap-635.png"
+    "image_url": "images/aruba/aruba-ap-635.png",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap630/sug/AP-630_Startup_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -786,7 +816,9 @@
       "GPS"
     ],
     "msrp": "~$2,195",
-    "image_url": "images/aruba/aruba-ap-655.png"
+    "image_url": "images/aruba/aruba-ap-655.png",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap655/sug/650_Series_Startup_Guide_EN.pdf"
   },
   {
     "vendor": "Aruba",
@@ -816,7 +848,9 @@
       "802.15.4/Zigbee"
     ],
     "msrp": "unknown",
-    "image_url": "images/aruba/aruba-ap-725.png"
+    "image_url": "images/aruba/aruba-ap-725.png",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap720/sug/AP-720_Startup_Guide.pdf"
   },
   {
     "vendor": "Aruba",
@@ -843,7 +877,9 @@
       "Barometric sensor"
     ],
     "msrp": "unknown",
-    "image_url": "images/aruba/aruba-ap-734.png"
+    "image_url": "images/aruba/aruba-ap-734.png",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap730/sug/AP-730_Startup_Guide.pdf"
   },
   {
     "vendor": "Aruba",
@@ -875,7 +911,9 @@
       "Barometric sensor"
     ],
     "msrp": "unknown",
-    "image_url": "images/aruba/aruba-ap-735.png"
+    "image_url": "images/aruba/aruba-ap-735.png",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap730/sug/AP-730_Startup_Guide.pdf"
   },
   {
     "vendor": "Aruba",
@@ -905,7 +943,9 @@
       "802.15.4/Zigbee"
     ],
     "msrp": "unknown",
-    "image_url": "images/aruba/aruba-ap-745.png"
+    "image_url": "images/aruba/aruba-ap-745.png",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap740/sug/AP-740_Startup_Guide.pdf"
   },
   {
     "vendor": "Aruba",
@@ -932,7 +972,9 @@
     "weight": "1530 g",
     "antenna_connectors": "8× RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
     "operating_temp_range": "0°C to +50°C operating; -25°C to +55°C storage; -40°C to +70°C transportation",
-    "msrp": "$2,695"
+    "msrp": "$2,695",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap750/sug/AP-750_Startup_Guide.pdf"
   },
   {
     "vendor": "Aruba",
@@ -964,7 +1006,9 @@
     "weight": "2130 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to +50°C operating; -25°C to +55°C storage; -40°C to +70°C transportation",
-    "msrp": "$2,595"
+    "msrp": "$2,595",
+    "in_box": [],
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap750/sug/AP-750_Startup_Guide.pdf"
   },
   {
     "vendor": "Aruba",
@@ -1509,7 +1553,22 @@
     "weight": "874 g (1.9 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -40°C to 70°C (-40°F to 158°F) storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9171i/b-hig-cw9171i/installation-overview/access-point-mounting-and-installation-9171i.html"
   },
   {
     "vendor": "Cisco",
@@ -1540,7 +1599,35 @@
     "weight": "572 g (1.26 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F) operating; -40°C to 70°C (-40°F to 158°F) storage",
-    "msrp": "$1,137.89"
+    "msrp": "$1,137.89",
+    "in_box": [
+      {
+        "item": "wall plate bracket",
+        "part_number": "CW-MNT-H1"
+      },
+      {
+        "item": "Passthrough cable jumper",
+        "part_number": null
+      },
+      {
+        "item": "Allen key or security release tool",
+        "part_number": null
+      },
+      {
+        "item": "Long Torx (25mm) security screw",
+        "part_number": null
+      },
+      {
+        "item": "short flat head T8 Torx M2.5x12mm security screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mylar label to cover the screw",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9172h/b-hig-cw9172h/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco",
@@ -1571,7 +1658,18 @@
     "weight": "874 g (1.9 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -40°C to 70°C (-40°F to 158°F) storage",
-    "msrp": "$1,345.73"
+    "msrp": "$1,345.73",
+    "in_box": [
+      {
+        "item": "Mounting bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Ceiling rail clip",
+        "part_number": "AIR-AP-T-RAIL-R"
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9172i/b-hig-cw9172i/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco",
@@ -1603,7 +1701,26 @@
     "weight": "1.52 kg (3.36 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
-    "msrp": "$2,177.06"
+    "msrp": "$2,177.06",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Screws",
+        "part_number": null
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco",
@@ -1642,7 +1759,22 @@
     "weight": "1.56 kg (3.4 lb)",
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
-    "msrp": "$2,904"
+    "msrp": "$2,904",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Universal bracket",
+        "part_number": "AIR-AP-BRACKET-2="
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176d1/b-hig-cw9176D1/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco",
@@ -1676,7 +1808,22 @@
     "weight": "1.56 kg (3.4 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
-    "msrp": "$2,592"
+    "msrp": "$2,592",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9176I/b-hig-cw9176i/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco",
@@ -1715,7 +1862,39 @@
     "weight": "4.11 kg (9.06 lb)",
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ethernet cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Changeable seal rubber for POE cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Oxide inhibitor",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/prepare-and-configure-the-ap.html"
   },
   {
     "vendor": "Cisco",
@@ -1744,7 +1923,39 @@
     "weight": "4.12 kg (9.08 lb)",
     "antenna_connectors": "8× N-Type (Wi-Fi), 1× RP-SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ethernet cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Changeable seal rubber for POE cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Oxide inhibitor",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/prepare-and-configure-the-ap.html"
   },
   {
     "vendor": "Cisco",
@@ -1778,7 +1989,39 @@
     "weight": "4.11 kg (9.06 lb)",
     "antenna_connectors": "None (internal omnidirectional antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ethernet cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Changeable seal rubber for POE cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Oxide inhibitor",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/prepare-and-configure-the-ap.html"
   },
   {
     "vendor": "Cisco",
@@ -1823,7 +2066,22 @@
         "5-upper": "35° x 35°",
         "6": "35° x 35°"
       }
-    }
+    },
+    "in_box": [
+      {
+        "item": "Indoor Environment Pack (pre-installed)",
+        "part_number": "CW-ACC-9179-A-00"
+      },
+      {
+        "item": "Grounding lug kit with oxide inhibitor",
+        "part_number": null
+      },
+      {
+        "item": "CDOC flyer",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9179f/b-hig-cw9179f/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco",
@@ -1850,7 +2108,34 @@
     "weight": "1.5 kg (3.3 lb)",
     "antenna_connectors": "4× N-Type, 1× RP-SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar derating; -40°C to 55°C (-40°F to 131°F) with solar derating",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ground lug and screws with lock washers",
+        "part_number": null
+      },
+      {
+        "item": "MA-MNT-MR-16 mounting plate",
+        "part_number": "MA-MNT-MR-16"
+      },
+      {
+        "item": "CAT 6/6A RJ45 Ethernet port termination plug",
+        "part_number": null
+      },
+      {
+        "item": "Anticorrosion sealant",
+        "part_number": null
+      },
+      {
+        "item": "Mounting straps",
+        "part_number": null
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9163e/install-guide/b-hig-9163e/installation-overview.html"
   },
   {
     "vendor": "Cisco",
@@ -1874,7 +2159,22 @@
       "BLE"
     ],
     "msrp": "unknown",
-    "image_url": "images/cisco/cisco-9164i.png"
+    "image_url": "images/cisco/cisco-9164i.png",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R"
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9164/install-guide/b-hig-cw9164i/installation-overview.html"
   },
   {
     "vendor": "Cisco",
@@ -1904,7 +2204,14 @@
       "Environmental sensors (TVOC/temperature/humidity)"
     ],
     "msrp": "unknown",
-    "image_url": "images/cisco/cisco-9166d1.png"
+    "image_url": "images/cisco/cisco-9166d1.png",
+    "in_box": [
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166d1/install-guide/b-hig-cw9166D1/installation-overview.html"
   },
   {
     "vendor": "Cisco",
@@ -1929,7 +2236,22 @@
       "802.15.4 IoT radio"
     ],
     "msrp": "~$2,593",
-    "image_url": "images/cisco/cisco-9166i.png"
+    "image_url": "images/cisco/cisco-9166i.png",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R"
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9166/install-guide/b-hig-cw9166i/installation-overview.html"
   },
   {
     "vendor": "Cisco",
@@ -1956,7 +2278,23 @@
     "weight": "4.2 kg",
     "antenna_connectors": "8×N-Type,1×RP-TNC (GNSS)",
     "operating_temp_range": "-50°C to +75°C",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ground lug kit with oxide inhibitor",
+        "part_number": null
+      },
+      {
+        "item": "PG13.5 gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Weatherization tape",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/IIOT/wireless/iw9167eh/base-hig/b-iw9167eh-hig/m-unpacking-your-access-point.html"
   },
   {
     "vendor": "Cisco",
@@ -1989,7 +2327,9 @@
     "weight": "1.87 kg (4.1 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9178I/b-hig-cw9178i/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco",
@@ -2017,7 +2357,9 @@
     "weight": "0.33 kg (0.7 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axi-getstart.html"
   },
   {
     "vendor": "Cisco",
@@ -2045,7 +2387,14 @@
     "weight": "0.37 kg (0.8 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Torx security screw and mylar label to cover the screw",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axw-getstart.html"
   },
   {
     "vendor": "Cisco",
@@ -2073,7 +2422,9 @@
     "weight": "1.0 kg (2.1 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html"
   },
   {
     "vendor": "Cisco",
@@ -2097,7 +2448,9 @@
     "weight": "1.1 kg (2.4 lb)",
     "antenna_connectors": "RP-TNC connectors for external antennas",
     "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html"
   },
   {
     "vendor": "Cisco",
@@ -2125,7 +2478,9 @@
     "weight": "1.3 kg (2.87 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9120ax/quick/guide/ap9120ax-getstart.html"
   },
   {
     "vendor": "Cisco",
@@ -2149,7 +2504,9 @@
     "weight": "1.36 kg (3.0 lb)",
     "antenna_connectors": "1× RP-TNC antenna port plus smart antenna (DART) connector for external antennas",
     "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9120ax/quick/guide/ap9120ax-getstart.html"
   },
   {
     "vendor": "Cisco",
@@ -2177,7 +2534,9 @@
     "weight": "1.45 kg (3.2 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9130ax/quick/guide/ap9130ax-getstart.html"
   },
   {
     "vendor": "Cisco",
@@ -2201,7 +2560,9 @@
     "weight": "1.71 kg (3.78 lb)",
     "antenna_connectors": "Smart antenna connector with 8-DART interface for external antennas",
     "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9130ax/quick/guide/ap9130ax-getstart.html"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2227,7 +2588,22 @@
     "operating_humidity": "5% to 95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR36_Datasheet",
     "image_url": "images/meraki/meraki-MR36.jpg",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mount cradle including built-in level tool",
+        "part_number": null
+      },
+      {
+        "item": "Drop ceiling mount kit",
+        "part_number": null
+      },
+      {
+        "item": "Wall screws, wall screw anchors, and security screws",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR36_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2253,7 +2629,38 @@
     "operating_humidity": "5% to 95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR36H_Datasheet",
     "image_url": "images/meraki/meraki-MR36H.png",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mount cradle",
+        "part_number": null
+      },
+      {
+        "item": "Eject/Security Screw Tool",
+        "part_number": null
+      },
+      {
+        "item": "Wall Screws (Phillips)",
+        "part_number": null
+      },
+      {
+        "item": "Wall Screw Anchors",
+        "part_number": null
+      },
+      {
+        "item": "Torx Security Screw",
+        "part_number": null
+      },
+      {
+        "item": "Phillips Security Screw",
+        "part_number": null
+      },
+      {
+        "item": "UTP Jumper Cable",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR36H_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2279,7 +2686,22 @@
     "operating_humidity": "5% to 95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR44_Datasheet",
     "image_url": "images/meraki/meraki-MR44.png",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mount cradle including built-in level tool",
+        "part_number": null
+      },
+      {
+        "item": "Drop ceiling mount kit",
+        "part_number": null
+      },
+      {
+        "item": "Wall screws, wall screw anchors, and security screws",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR44_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2305,7 +2727,22 @@
     "operating_humidity": "5% to 95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46_Datasheet",
     "image_url": "images/meraki/meraki-MR46.png",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mount cradle including built-in level tool",
+        "part_number": null
+      },
+      {
+        "item": "Drop ceiling mount kit",
+        "part_number": null
+      },
+      {
+        "item": "Wall screws, wall screw anchors, and security screws",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR46_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2331,7 +2768,22 @@
     "operating_humidity": "5% to 95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46E_Datasheet",
     "image_url": "images/meraki/meraki-MR46E.jpg",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mount cradle including built-in level tool",
+        "part_number": null
+      },
+      {
+        "item": "Drop ceiling mount kit",
+        "part_number": null
+      },
+      {
+        "item": "Wall screws, wall screw anchors, and security screws",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR46E_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2365,7 +2817,22 @@
     "end_of_sale_date": "August 7, 2025",
     "end_of_support_date": "August 7, 2030",
     "end_of_sale_url": "https://documentation.meraki.com/@api/deki/files/30279/MR56-HW_EOS_NOTICE.pdf?revision=1",
-    "manufacturer_suggested_replacement": "None"
+    "manufacturer_suggested_replacement": "None",
+    "in_box": [
+      {
+        "item": "Mount cradle including built-in level tool",
+        "part_number": null
+      },
+      {
+        "item": "Drop ceiling mount kit",
+        "part_number": null
+      },
+      {
+        "item": "Wall screws, wall screw anchors, and security screws",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR56_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2391,7 +2858,23 @@
     "operating_humidity": "5% to 95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR57_Datasheet",
     "image_url": "images/meraki/meraki-MR57.png",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Cisco Universal Mount Bracket",
+        "part_number": "AIR-AP-BRACKET-2"
+      },
+      {
+        "item": "T-Rail mount attachment",
+        "part_number": "AIR-AP-T-RAIL-R"
+      },
+      {
+        "item": "screws (6-32 x 1/4 included)",
+        "part_number": null,
+        "qty": 5
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR57_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2417,7 +2900,30 @@
     "ingress_protection": "IP67",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR76_Datasheet",
     "image_url": "images/meraki/meraki-MR76.png",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mount cradle",
+        "part_number": null
+      },
+      {
+        "item": "Wall screws",
+        "part_number": null
+      },
+      {
+        "item": "Wall screw anchors",
+        "part_number": null
+      },
+      {
+        "item": "Grounding screws",
+        "part_number": null
+      },
+      {
+        "item": "Mounting straps",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR76_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2446,7 +2952,18 @@
     "antenna_gain_dbi": {
       "2.4": 5.4,
       "5": 6.0
-    }
+    },
+    "in_box": [
+      {
+        "item": "Mount cradle including built-in level tool",
+        "part_number": null
+      },
+      {
+        "item": "Wall screws",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR78_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2473,7 +2990,46 @@
     "weight": "1.5 kg (3.3 lb)",
     "antenna_connectors": "4× N-Type, 1× RP-SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar derating; -40°C to 55°C (-40°F to 131°F) with solar derating",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Quick install guide",
+        "part_number": null
+      },
+      {
+        "item": "Regulatory compliance and safety information",
+        "part_number": null
+      },
+      {
+        "item": "Mount Plate",
+        "part_number": "MA-MNT-MR-16"
+      },
+      {
+        "item": "Support bracket",
+        "part_number": null
+      },
+      {
+        "item": "Mounting straps",
+        "part_number": null
+      },
+      {
+        "item": "Ground lug",
+        "part_number": null
+      },
+      {
+        "item": "RJ-45 Field termination gland",
+        "part_number": null
+      },
+      {
+        "item": "Waterproof cap",
+        "part_number": null
+      },
+      {
+        "item": "Oxide inhibitor paste",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9163E-MR_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2504,7 +3060,22 @@
     "weight": "874 g (1.9 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -40°C to 70°C (-40°F to 158°F) storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9171i/b-hig-cw9171i/installation-overview/access-point-mounting-and-installation-9171i.html"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2535,7 +3106,31 @@
     "weight": "572 g (1.26 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F) operating; -40°C to 70°C (-40°F to 158°F) storage",
-    "msrp": "$1,137.89"
+    "msrp": "$1,137.89",
+    "in_box": [
+      {
+        "item": "Wall Plate Mounting Brackett",
+        "part_number": "CW-MNT-H1"
+      },
+      {
+        "item": "Pass through cable jumper",
+        "part_number": null
+      },
+      {
+        "item": "Allen-key / Security Release Tool",
+        "part_number": null
+      },
+      {
+        "item": "Long security screw",
+        "part_number": null
+      },
+      {
+        "item": "screws (Flat HD T8 M2.5xL12)",
+        "part_number": null,
+        "qty": 2
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2566,7 +3161,24 @@
     "weight": "874 g (1.9 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -40°C to 70°C (-40°F to 158°F) storage",
-    "msrp": "$1,345.73"
+    "msrp": "$1,345.73",
+    "in_box": [
+      {
+        "item": "T-Rail Mount Attachment",
+        "part_number": "AIR-AP-TRAIL-R"
+      },
+      {
+        "item": "Low Profile Mounting Bracket",
+        "part_number": "AIR-AP-BRACKET-1"
+      },
+      {
+        "item": "Screws (6-32 x ¼ included)",
+        "part_number": null,
+        "qty": 5
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172I_Installation_Guide",
+    "in_box_condition": "Ready to Go option"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2598,7 +3210,26 @@
     "weight": "1.52 kg (3.36 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
-    "msrp": "$2,177.06"
+    "msrp": "$2,177.06",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Screws",
+        "part_number": null
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2637,7 +3268,14 @@
     "weight": "1.56 kg (3.4 lb)",
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
-    "msrp": "$2,904"
+    "msrp": "$2,904",
+    "in_box": [
+      {
+        "item": "Cisco Universal Mount Bracket",
+        "part_number": "AIR-AP-BRACKET-2"
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176D1_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2671,7 +3309,23 @@
     "weight": "1.56 kg (3.4 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
-    "msrp": "$2,592"
+    "msrp": "$2,592",
+    "in_box": [
+      {
+        "item": "T-Rail Mount Attachment",
+        "part_number": "AIR-AP-T-RAIL-R"
+      },
+      {
+        "item": "Low Profile Mounting Bracket",
+        "part_number": "AIR-AP-BRACKET-1"
+      },
+      {
+        "item": "Screws (6-32 x ¼ included)",
+        "part_number": null,
+        "qty": 5
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176I_Installation_Guide"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2710,7 +3364,39 @@
     "weight": "4.11 kg (9.06 lb)",
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ethernet cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Changeable seal rubber for POE cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Oxide inhibitor",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/prepare-and-configure-the-ap.html"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2739,7 +3425,39 @@
     "weight": "4.12 kg (9.08 lb)",
     "antenna_connectors": "8× N-Type (Wi-Fi), 1× RP-SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ethernet cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Changeable seal rubber for POE cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Oxide inhibitor",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/prepare-and-configure-the-ap.html"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2773,7 +3491,39 @@
     "weight": "4.11 kg (9.06 lb)",
     "antenna_connectors": "None (internal omnidirectional antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ethernet cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Changeable seal rubber for POE cable gland",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Ground lug screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Oxide inhibitor",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9177/cw9177-hig/installation-overview/prepare-and-configure-the-ap.html"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2818,7 +3568,22 @@
         "5-upper": "35° x 35°",
         "6": "35° x 35°"
       }
-    }
+    },
+    "in_box": [
+      {
+        "item": "Indoor Environment Pack (pre-installed)",
+        "part_number": "CW-ACC-9179-A-00"
+      },
+      {
+        "item": "Grounding lug kit with oxide inhibitor",
+        "part_number": null
+      },
+      {
+        "item": "CDOC flyer",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/cw9179f/b-hig-cw9179f/installation-overview/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco Meraki",
@@ -2851,7 +3616,23 @@
     "weight": "1.87 kg (4.1 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "T-Rail Mount Attachment",
+        "part_number": "AIR-AP-TRAIL-R"
+      },
+      {
+        "item": "Low Profile Mounting Bracket",
+        "part_number": "AIR-AP-BRACKET-1"
+      },
+      {
+        "item": "Screws.(6-32 x ¼ included)",
+        "part_number": null,
+        "qty": 5
+      }
+    ],
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9178I_Installation_Guide"
   },
   {
     "vendor": "Extreme",

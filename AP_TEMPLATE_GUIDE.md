@@ -59,7 +59,16 @@ Use this template when submitting new AP entries. The canonical JSON template is
   "end_of_sale_date": "August 7, 2025 (optional)",
   "end_of_support_date": "August 7, 2030 (optional)",
   "end_of_sale_url": "https://vendor.com/eol-notice (optional)",
-  "manufacturer_suggested_replacement": "AP-655, AP-675 (optional)"
+  "manufacturer_suggested_replacement": "AP-655, AP-675 (optional)",
+  "in_box": [
+    {
+      "item": "Mounting bracket",
+      "part_number": "AIR-AP-BRACKET-1",
+      "qty": 1
+    }
+  ],
+  "in_box_source": "https://vendor.com/quick-start-guide",
+  "in_box_condition": "Ready to Go option (optional)"
 }
 ```
 
@@ -208,9 +217,80 @@ Use this template when submitting new AP entries. The canonical JSON template is
   - `"None"` when the manufacturer explicitly states there is no replacement
   - Omit the field when replacement information is not available
 
+## In the box and mounting
+
+These fields cover two things: what ships with an AP, and the mounting parts you can order for it. Every value must trace to a vendor document (install guide, quick start guide, or ordering guide). If a document does not say it, it does not go in.
+
+### `in_box` (on the AP entry in ap_data.json)
+
+| State | Meaning |
+|---|---|
+| `in_box` absent | Not checked yet. The AP belongs on the to-check list. |
+| `in_box: []` | The vendor document lists nothing that ships unconditionally beyond the AP. This includes guides where every package line is "orderable" or "if selected when you order". |
+| `in_box: [ ... ]` | Everything the document lists as in the box. |
+
+Rules:
+
+- `in_box_source` is required whenever `in_box` is present, including the empty array. A confirmed empty box still needs a document behind it.
+- List everything the document says ships, not only mounts: brackets, clips, screws, cable glands, grounding lugs, and so on.
+- `item` is the document's wording, verbatim.
+- `part_number` is always present. Use `null` when the document publishes no number. Never use an empty string.
+- `qty` is omitted when the document gives no count. Do not default a missing count to 1.
+- When a document groups parts under a heading ("Default mounting brackets:", "Mount Kit", "Gift Box"), list the parts and drop the heading. Name each part from the same document's Brackets and Clips table when it has one.
+- `in_box_condition` (optional, on the AP entry) is one string naming a condition the document attaches to the whole list, e.g. `"Ready to Go option"`. Omit it when the list is unconditional. Configure-to-order guides use `[]` instead, not a condition.
+
+See `templates/in_box_template.json`.
+
+### mounts.json (one record per orderable mounting part)
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | Yes | Stable slug, lowercase with hyphens. Derived once from the first published part number (or vendor plus name when none is published) and never renamed, even if a part number changes later. |
+| `part_numbers` | Yes | Every published number, each as `{ "vendor", "part_number" }`, verbatim. Include Cisco spare SKUs with the trailing `=` alongside the base number when both are published. Use `[]` when no number is published. A part number belongs to one record only. |
+| `name` | Yes | Short descriptive name. |
+| `mount_type` | Yes | Array. A part that does more than one job lists each, e.g. `["wall", "pole", "articulating"]`. |
+| `environment` | No | `indoor`, `outdoor`, or `both`, from the mount's own document. Never copied from the AP. Omit when the document is silent. |
+| `rail_width` | No | T-bar mounts only. Number as printed, unit written as `in` or `mm`: `"9/16 in"`, `"1 ½ in"`, `"24 mm"`. Never convert between units. Omit when not stated. |
+| `rail_style` | No | T-bar mounts only. `flush`, `recessed`, or both. Omit when not stated. |
+| `compatible_aps` | Yes | Site slugs (e.g. `cisco-cw9176i`). Only models a document names. |
+| `sources` | Yes | Array of `{ "url", "doc", "aps" }`. `aps` lists which compatible APs that document supports. Every slug in `compatible_aps` must appear in at least one source. |
+| `part_number_aliases` | No | Misprinted forms of a part number seen in vendor documents (e.g. Meraki printing `AIR-AP-TRAIL-R` for `AIR-AP-T-RAIL-R`), same shape as `part_numbers`. The in-box cross-check matches them; the site should not show them as orderable. Say in `notes` where the alias is printed. |
+| `notes` | No | Omit when there is nothing to say. |
+
+#### `mount_type` values
+
+Surface: `ceiling_tbar`, `hard_ceiling`, `wall`, `pole`, `desk`, `strand`, `din_rail`
+Form: `articulating`, `enclosure`, `adapter`
+
+`adapter` covers parts that let an AP reuse another generation's bracket footprint. Flush and recessed are `rail_style` values, not mount types. Add a new type only when a real part does not fit any of these.
+
+#### Compatibility rules
+
+- A mount record is created only when a document names at least one AP model. A statement like "fits the 9160 family" goes in `notes` until each model is listed.
+- Cisco and Cisco Meraki listings are separate records for the same hardware. A bracket that fits the hardware is listed on both slugs. The validator warns when only one twin is listed.
+- When a second document adds compatibility for another AP, add a new entry to `sources` with that AP in its `aps` list.
+
+#### Out of scope
+
+Color, finish, and price.
+
+See `templates/mount_template.json`. The example values there are illustrative only.
+
+### Validation
+
+```
+python validate_mounts.py [--ap-data PATH] [--mounts PATH] [--ap-id-field FIELD]
+```
+
+```
+python validate_mounts.py --ap-data ap_data.json --mounts mounts.json
+```
+
+Errors fail the run. Warnings flag things to review: missing Cisco/Meraki twins, a rail width with no unit, or an AP whose in-box bracket has a mount record that does not list that AP. The in-box cross-check treats `PART` and `PART=` as the same part.
+
 ## Notes
 
-- Strings are the default. Arrays: `antenna_type`, `radios_iot_features`, `antenna_modes`. Objects: `antenna_gain_dbi`, `beamwidth`, and the gain or beamwidth object inside a mode.
-- `operating_humidity`, `ingress_protection`, `hazloc_certification`, and `antenna_modes` are omitted when they do not apply. Do not set them to empty strings or empty arrays just to hold a place.
+- Strings are the default. Arrays: `antenna_type`, `radios_iot_features`, `antenna_modes`, `in_box`. Objects: `antenna_gain_dbi`, `beamwidth`, and the gain or beamwidth object inside a mode.
+- `operating_humidity`, `ingress_protection`, `hazloc_certification`, `antenna_modes`, `in_box`, `in_box_source`, and `in_box_condition` are omitted when they do not apply. `in_box: []` means the document lists nothing that ships unconditionally. Do not set the other optional fields to empty strings or empty arrays just to hold a place.
 - Use `"unknown"` for a missing value that the schema still requires, such as MSRP.
 - Do not infer a number, temperature, certification class, or antenna type that the vendor documentation does not state.

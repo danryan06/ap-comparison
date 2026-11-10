@@ -154,6 +154,91 @@
       manufacturer_suggested_replacement: 'Manufacturer Suggested Replacement'
     };
 
+    function partLine(part) {
+      if (!part || !part.part_number) return '';
+      return part.vendor ? `${part.vendor} ${part.part_number}` : part.part_number;
+    }
+
+    function renderMounting(detailsEl, entry, mounts) {
+      const slug = slugify(`${entry.vendor} ${entry.model}`);
+      const hasBox = Object.prototype.hasOwnProperty.call(entry, 'in_box');
+      const compatible = (Array.isArray(mounts) ? mounts : []).filter(mount =>
+        mount && Array.isArray(mount.compatible_aps) && mount.compatible_aps.includes(slug)
+      );
+
+      if (hasBox) {
+        const title = entry.in_box_condition ? `In the Box (${entry.in_box_condition})` : 'In the Box';
+        addSectionHeader(detailsEl, title);
+        const block = document.createElement('div');
+        block.className = 'spec-block';
+        if (Array.isArray(entry.in_box) && entry.in_box.length === 0) {
+          const empty = document.createElement('p');
+          empty.className = 'box-list';
+          empty.textContent = 'No mounting hardware included by default; see orderable mounts';
+          block.appendChild(empty);
+        } else if (Array.isArray(entry.in_box)) {
+          const list = document.createElement('ul');
+          list.className = 'box-list';
+          entry.in_box.forEach(item => {
+            if (!item || typeof item !== 'object') return;
+            const row = document.createElement('li');
+            row.textContent = item.item || '';
+            if (item.part_number || item.qty) {
+              const meta = document.createElement('span');
+              meta.className = 'box-part';
+              const bits = [];
+              if (item.part_number) bits.push(item.part_number);
+              if (item.qty) bits.push(`qty ${item.qty}`);
+              meta.textContent = ` (${bits.join(', ')})`;
+              row.appendChild(meta);
+            }
+            list.appendChild(row);
+          });
+          block.appendChild(list);
+        }
+        if (entry.in_box_source) {
+          const source = document.createElement('a');
+          source.href = entry.in_box_source;
+          source.target = '_blank';
+          source.rel = 'noopener noreferrer';
+          source.className = 'eos-link';
+          source.textContent = 'Package contents source';
+          block.appendChild(source);
+        }
+        detailsEl.appendChild(block);
+      }
+
+      if (!compatible.length) return;
+      addSectionHeader(detailsEl, 'Orderable Mounts');
+      const block = document.createElement('div');
+      block.className = 'spec-block';
+      const list = document.createElement('ul');
+      list.className = 'box-list';
+      compatible.forEach(mount => {
+        const row = document.createElement('li');
+        const name = document.createElement('div');
+        name.textContent = mount.name || mount.id || '';
+        row.appendChild(name);
+        const numbers = (mount.part_numbers || []).map(partLine).filter(Boolean);
+        if (numbers.length) {
+          const parts = document.createElement('div');
+          parts.className = 'box-part';
+          parts.textContent = numbers.join(', ');
+          row.appendChild(parts);
+        }
+        const aliases = (mount.part_number_aliases || []).map(partLine).filter(Boolean);
+        if (aliases.length) {
+          const alias = document.createElement('div');
+          alias.className = 'box-alias';
+          alias.textContent = `Also printed as ${aliases.join(', ')}`;
+          row.appendChild(alias);
+        }
+        list.appendChild(row);
+      });
+      block.appendChild(list);
+      detailsEl.appendChild(block);
+    }
+
     function addSectionHeader(detailsEl, title) {
       const sectionDiv = document.createElement('div');
       sectionDiv.className = 'spec-section';
@@ -174,9 +259,13 @@
       const editLinkEl = document.getElementById('edit-link');
 
       try {
-        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        const [res, mountRes] = await Promise.all([
+          fetch(DATA_URL, { cache: 'no-store' }),
+          fetch('mounts.json', { cache: 'no-store' })
+        ]);
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
+        const mounts = mountRes.ok ? await mountRes.json() : [];
         const id = readId();
         const entry = data.find(e => slugify(`${e.vendor} ${e.model}`) === id);
         if (!entry) {
@@ -421,6 +510,9 @@
               renderKV(row.key, row.value, isLast);
             });
           }
+          if (section.title === 'Physical Specifications') {
+            renderMounting(detailsEl, entry, mounts);
+          }
         });
 
         // Render any remaining fields not in sections
@@ -430,6 +522,9 @@
           k !== 'image_url' && 
           k !== 'datasheet_url' &&
           k !== 'antenna_modes' &&
+          k !== 'in_box' &&
+          k !== 'in_box_source' &&
+          k !== 'in_box_condition' &&
           entry[k] != null &&
           entry[k] !== ''
         ).sort();

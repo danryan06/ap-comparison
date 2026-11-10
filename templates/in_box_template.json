@@ -1,0 +1,15 @@
+{
+  "in_box": [
+    {
+      "item": "Mounting bracket",
+      "part_number": "AIR-AP-BRACKET-1",
+      "qty": 1
+    },
+    {
+      "item": "T-bar clip",
+      "part_number": null
+    }
+  ],
+  "in_box_source": "https://vendor.com/quick-start-guide",
+  "in_box_condition": "Ready to Go option"
+}

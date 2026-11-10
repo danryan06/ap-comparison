@@ -1,0 +1,32 @@
+{
+  "id": "cisco-air-ap-t-rail-r",
+  "part_numbers": [
+    {
+      "vendor": "Cisco",
+      "part_number": "AIR-AP-T-RAIL-R"
+    },
+    {
+      "vendor": "Cisco",
+      "part_number": "AIR-AP-T-RAIL-R="
+    }
+  ],
+  "part_number_aliases": [
+    {
+      "vendor": "Cisco Meraki",
+      "part_number": "AIR-AP-TRAIL-R"
+    }
+  ],
+  "name": "Ceiling grid clip, recessed",
+  "mount_type": ["ceiling_tbar"],
+  "rail_width": ["9/16 in", "15/16 in", "1 ½ in"],
+  "rail_style": ["recessed"],
+  "compatible_aps": ["cisco-cw9176i", "cisco-meraki-cw9176i"],
+  "sources": [
+    {
+      "url": "https://vendor.com/ordering-guide",
+      "doc": "Ordering guide",
+      "aps": ["cisco-cw9176i", "cisco-meraki-cw9176i"]
+    }
+  ],
+  "notes": "Illustrative only. Meraki guides print this part as AIR-AP-TRAIL-R. Aliases are not orderable SKUs."
+}

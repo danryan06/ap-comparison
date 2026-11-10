@@ -118,6 +118,7 @@ The edit will be automatically processed and a pull request will be created.
 ├── data_issues.html  # Data quality dashboard
 ├── style.css          # All styling
 ├── ap_data.json       # Main data file
+├── mounts.json        # Orderable mounting parts
 ├── ap_template.json   # AP entry template
 ├── AP_TEMPLATE_GUIDE.md # Field rules for new entries
 ├── images/            # AP product images
@@ -130,7 +131,7 @@ The edit will be automatically processed and a pull request will be created.
 
 ### Data Format
 
-The `ap_data.json` file contains an array of AP objects. The entry template is `ap_template.json`. Field rules are in `AP_TEMPLATE_GUIDE.md`.
+The `ap_data.json` file contains an array of AP objects. The entry template is `ap_template.json`. Field rules are in `AP_TEMPLATE_GUIDE.md`. Orderable mounting parts are in `mounts.json`. What ships with an AP is `in_box` on that AP.
 
 ### Browser Support
 
