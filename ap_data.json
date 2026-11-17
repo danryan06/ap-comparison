@@ -2022,7 +2022,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 5G link speed",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 1x1, 5 and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G; intended for staging only. On 802.3at, full tri-band operation is available (2x2 on 2.4 GHz, 4x4 on 5 and 6 GHz), link speed is 2.5G, and USB is enabled at reduced 2.5W. 802.3bt (Class 5) enables the same tri-band 4x4 configuration at 5G link speed with USB at full 9W.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 GHz and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G (13.95 W max). On 802.3at (Class 4), the AP runs 2x2 on 2.4 GHz with 4x4 on 5 GHz and 6 GHz, or 4x4 on 2.4 GHz and 5 GHz with 6 GHz disabled, link speed is 2.5G, and USB is disabled (25.5 W max). On 802.3bt (Class 5) or DC power, those same radio configurations run at 5G link speed with USB at 9 W (37 W max with 6 GHz, 32 W without).",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -3579,7 +3579,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 5G link speed",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 1x1, 5 and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G; intended for staging only. On 802.3at, full tri-band operation is available (2x2 on 2.4 GHz, 4x4 on 5 and 6 GHz), link speed is 2.5G, and USB is enabled at reduced 2.5W. 802.3bt (Class 5) enables the same tri-band 4x4 configuration at 5G link speed with USB at full 9W.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 GHz and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G (13.95 W max). On 802.3at (Class 4), the AP runs 2x2 on 2.4 GHz with 4x4 on 5 GHz and 6 GHz, or 4x4 on 2.4 GHz and 5 GHz with 6 GHz disabled, link speed is 2.5G, and USB is disabled (25.5 W max). On 802.3bt (Class 5) or DC power, those same radio configurations run at 5G link speed with USB at 9 W (37 W max with 6 GHz, 32 W without).",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
