@@ -41,7 +41,7 @@
     "image_url": "images/allied-telesis/allied-telesis-tq6702e-gen2.png",
     "dimensions": "257 x 227 x 90 mm",
     "weight": "4.4 kg",
-    "antenna_connectors": "8× external connectors for detachable 2.4/5 GHz antennas",
+    "antenna_connectors": "8× N-type (4× 5 GHz, 4× 2.4/5 GHz dual-band)",
     "operating_temp_range": "-40°C to 65°C operating",
     "msrp": "unknown"
   },
@@ -225,7 +225,7 @@
     "behavior_min_power": "On 802.3at (Class 4), USB and LAN2 are disabled, the 2.4 GHz radio is limited to 2x2 with a maximum EIRP of 23 dBm (Arista's figure assumes a 4 dBi antenna), and the multi-function radio's maximum EIRP is reduced by 3 dB. On 802.3bt Class 6 or 12 V DC, the AP runs at full function with hitless PoE failover between its two Ethernet ports.",
     "ethernet_ports_speed": "2× 10 GbE (RJ45, PoE++)",
     "antenna_type": [
-      "Internal"
+      "External"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [
@@ -282,7 +282,7 @@
     "image_url": "images/arista/arista-o-405e.png",
     "dimensions": "unknown",
     "weight": "1.7 kg",
-    "antenna_connectors": "4× N-Type",
+    "antenna_connectors": "4× N-type",
     "operating_temp_range": "-30°C to +65°C (-22°F to +149°F)",
     "msrp": "unknown"
   },
@@ -336,7 +336,7 @@
     "image_url": "images/arista/arista-o-435e.png",
     "dimensions": "262 x 256 x 59 mm",
     "weight": "2.0 kg (4.4 lb)",
-    "antenna_connectors": "6× N-type connectors",
+    "antenna_connectors": "6× N-type",
     "operating_temp_range": "-40°C to 65°C operating",
     "msrp": "unknown"
   },
@@ -386,7 +386,7 @@
     "image_url": "images/aruba/aruba-ap-504.jpg",
     "dimensions": "37 x 160 x 161 mm",
     "weight": "500 g",
-    "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
+    "antenna_connectors": "2× RP-SMA (2× 2.4/5 GHz)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
     "msrp": "$944",
     "in_box": [],
@@ -440,7 +440,7 @@
     "image_url": "images/aruba/aruba-ap-514.jpg",
     "dimensions": "46 x 200 x 200 mm (1.8 x 7.9 x 7.9 in)",
     "weight": "810 g (28.5 oz)",
-    "antenna_connectors": "External RP-SMA connectors for antennas (see datasheet)",
+    "antenna_connectors": "4× RP-SMA (4× 2.4/5 GHz; the 2.4 GHz radio uses 2 of the 4)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
     "msrp": "$1,486",
     "in_box": [],
@@ -494,7 +494,7 @@
     "image_url": "images/aruba/aruba-ap518.png",
     "dimensions": "211 x 211 x 70 mm",
     "weight": "1.5 kg",
-    "antenna_connectors": "Six RP-SMA connectors for external 2.4 GHz and 5 GHz antennas",
+    "antenna_connectors": "6× RP-SMA (2× 2.4 GHz, 4× 5 GHz)",
     "operating_temp_range": "-40°C to +55°C operating; -40°C to +70°C storage",
     "msrp": "unknown",
     "in_box": [
@@ -623,7 +623,7 @@
     "image_url": "images/aruba/aruba-ap570.png",
     "dimensions": "267 x 228 x 100 mm",
     "weight": "2.4 kg",
-    "antenna_connectors": "Six RP-SMA connectors for external 2.4 GHz and 5 GHz antennas",
+    "antenna_connectors": "6× N-type (2× 2.4 GHz, 4× 5 GHz)",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "msrp": "unknown",
     "in_box": [
@@ -752,7 +752,7 @@
     "image_url": "images/aruba/aruba-ap580.png",
     "dimensions": "324 x 312 x 244 mm",
     "weight": "5.52 kg",
-    "antenna_connectors": "Four dual-band N-type female connectors for external Wi-Fi antennas plus one N-type female connector for the Bluetooth/Zigbee IoT radio",
+    "antenna_connectors": "5× N-type (4× 2.4/5 GHz, 1× 2.4 GHz BLE/Zigbee)",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
@@ -1016,7 +1016,7 @@
     "form_factor": "Indoor",
     "dimensions": "240 x 240 x 56 mm",
     "weight": "1830 g",
-    "antenna_connectors": "External antennas (see datasheet)",
+    "antenna_connectors": "4× RP-SMA (2× 2.4/5 GHz, 2× 6 GHz)",
     "operating_temp_range": "0°C to 50°C operating",
     "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
     "radios_iot_features": [
@@ -1119,7 +1119,7 @@
     "image_url": "images/aruba/aruba-ap754.png",
     "dimensions": "260 mm (W) x 260 mm (D) x 57 mm (H)",
     "weight": "1530 g",
-    "antenna_connectors": "8× RP-SMA (two sets of four for 2.4/5 GHz and 6 GHz radios)",
+    "antenna_connectors": "8× RP-SMA (4× 2.4/5 GHz, 4× 6 GHz)",
     "operating_temp_range": "0°C to +50°C operating; -25°C to +55°C storage; -40°C to +70°C transportation",
     "msrp": "$2,695",
     "in_box": [],
@@ -1494,7 +1494,7 @@
     "image_url": "images/aruba/aruba-ap760.png",
     "dimensions": "266.4 x 174 x 83 mm",
     "weight": "2.03 kg (with mount bracket)",
-    "antenna_connectors": "Multiple RF connectors for external 2.4/5/6 GHz antennas (see datasheet for details)",
+    "antenna_connectors": "7× RP-SMA (2× 2.4/5 GHz, 2× 6 GHz, 2× BLE/Zigbee IoT, 1× GPS/GNSS)",
     "operating_temp_range": "-40°C to +65°C operating with solar cover (-40°C to +55°C without); -40°C to +70°C storage",
     "ingress_protection": "IP66/67",
     "msrp": "unknown",
@@ -2265,7 +2265,7 @@
     "image_url": "images/cisco/cisco-cw9177e.png",
     "dimensions": "352.2 x 270 x 76.2 mm (13.8 x 10.6 x 3.0 in)",
     "weight": "4.12 kg (9.08 lb)",
-    "antenna_connectors": "8× N-Type (Wi-Fi), 1× RP-SMA (GNSS)",
+    "antenna_connectors": "8× N-type (4× 2.4/5 GHz, 4× 6 GHz or 5 GHz high band in dual-5 GHz mode) + 1× SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
     "msrp": "unknown",
     "in_box": [
@@ -2377,7 +2377,8 @@
     "behavior_min_power": "On 802.3af, all radios are off and the AP is for configuration staging only (single 1G link, 13.95 W max). On 802.3at (25.5 W max), the AP runs either quad-radio mode, with 2.4 GHz 2x2, dual 5 GHz at 2x2 lower band plus 2x2 upper band, and 6 GHz 2x2, with both uplinks at 2.5G; or tri-radio mode, with 2.4 GHz 2x2, a single full-band 5 GHz radio at 4x4, and 6 GHz 2x2, with both uplinks at 1G. On 802.3bt Class 6 (47 W max), all radios run 4x4, including dual 5 GHz at 4x4 plus 4x4, with both uplinks at 10G.",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE mGig (RJ45)",
     "antenna_type": [
-      "Directional"
+      "Directional",
+      "External"
     ],
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -2388,7 +2389,7 @@
     "image_url": "images/cisco/cisco-cw9179f.jpg",
     "dimensions": "475 x 330 x 73 mm (18.7 x 13.0 x 2.9 in)",
     "weight": "4.54 kg (10.0 lb) AP; 1.72 kg (3.8 lb) bracket",
-    "antenna_connectors": "None (integrated directional antennas)",
+    "antenna_connectors": "4× N-type (rear; used for 2.4 GHz and 5 GHz low band in front-and-back mode; left-most port SIA-capable)",
     "operating_temp_range": "-20°C to 60°C (-4°F to 140°F) operating without solar loading; -20°C to 50°C (-4°F to 122°F) operating with solar loading; -20°C to 70°C (-4°F to 158°F) nonoperating",
     "msrp": "$7,792",
     "beamwidth": {
@@ -2620,7 +2621,7 @@
     "image_url": "images/cisco/cisco-iw9167e.png",
     "dimensions": "292 x 267 x 71 mm",
     "weight": "4.2 kg",
-    "antenna_connectors": "8×N-Type,1×RP-TNC (GNSS)",
+    "antenna_connectors": "8× N-type (Wi-Fi) + 1× TNC (GNSS)",
     "operating_temp_range": "-50°C to +75°C",
     "msrp": "unknown",
     "in_box": [
@@ -2790,7 +2791,7 @@
     "image_url": "images/cisco/cisco-9115axe.png",
     "dimensions": "203 x 203 x 43 mm (8.0 x 8.0 x 1.7 in)",
     "weight": "1.1 kg (2.4 lb)",
-    "antenna_connectors": "RP-TNC connectors for external antennas",
+    "antenna_connectors": "4× RP-TNC (4× 2.4/5 GHz)",
     "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
     "msrp": "unknown",
     "in_box": [],
@@ -2846,7 +2847,7 @@
     "image_url": "images/cisco/cisco-9120axe.png",
     "dimensions": "216 x 216 x 51 mm (8.5 x 8.5 x 2.0 in)",
     "weight": "1.36 kg (3.0 lb)",
-    "antenna_connectors": "1× RP-TNC antenna port plus smart antenna (DART) connector for external antennas",
+    "antenna_connectors": "4× RP-TNC (4× 2.4/5 GHz) + 1× 4-port Smart Antenna (DART) connector",
     "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
     "msrp": "unknown",
     "in_box": [],
@@ -2902,7 +2903,7 @@
     "image_url": "images/cisco/cisco-9130.png",
     "dimensions": "233 x 233 x 40 mm (9.17 x 9.17 x 1.58 in)",
     "weight": "1.71 kg (3.78 lb)",
-    "antenna_connectors": "Smart antenna connector with 8-DART interface for external antennas",
+    "antenna_connectors": "1× 8-port Smart Antenna (DART-8) connector",
     "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
     "msrp": "unknown",
     "in_box": [],
@@ -3107,7 +3108,7 @@
     ],
     "dimensions": "30.6 x 15.62 x 3.54 cm (12.05 x 6.15 x 1.39 in)",
     "weight": "850 g (29.98 oz)",
-    "antenna_connectors": "6x RP-TNC female connectors (2.4/5 GHz)",
+    "antenna_connectors": "6× RP-TNC",
     "operating_temp_range": "0°C to 50°C operating",
     "operating_humidity": "5% to 95% RH non-condensing",
     "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46E_Datasheet",
@@ -3767,7 +3768,7 @@
     "image_url": "images/cisco/cisco-cw9177e.png",
     "dimensions": "352.2 x 270 x 76.2 mm (13.8 x 10.6 x 3.0 in)",
     "weight": "4.12 kg (9.08 lb)",
-    "antenna_connectors": "8× N-Type (Wi-Fi), 1× RP-SMA (GNSS)",
+    "antenna_connectors": "8× N-type (4× 2.4/5 GHz, 4× 6 GHz or 5 GHz high band in dual-5 GHz mode) + 1× SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar loading; -40°C to 55°C (-40°F to 131°F) operating with solar loading",
     "msrp": "unknown",
     "in_box": [
@@ -3879,7 +3880,8 @@
     "behavior_min_power": "On 802.3af, all radios are off and the AP is for configuration staging only (single 1G link, 13.95 W max). On 802.3at (25.5 W max), the AP runs either quad-radio mode, with 2.4 GHz 2x2, dual 5 GHz at 2x2 lower band plus 2x2 upper band, and 6 GHz 2x2, with both uplinks at 2.5G; or tri-radio mode, with 2.4 GHz 2x2, a single full-band 5 GHz radio at 4x4, and 6 GHz 2x2, with both uplinks at 1G. On 802.3bt Class 6 (47 W max), all radios run 4x4, including dual 5 GHz at 4x4 plus 4x4, with both uplinks at 10G.",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE mGig (RJ45)",
     "antenna_type": [
-      "Directional"
+      "Directional",
+      "External"
     ],
     "form_factor": "Outdoor",
     "radios_iot_features": [
@@ -3890,7 +3892,7 @@
     "image_url": "images/cisco/cisco-cw9179f.jpg",
     "dimensions": "475 x 330 x 73 mm (18.7 x 13.0 x 2.9 in)",
     "weight": "4.54 kg (10.0 lb) AP; 1.72 kg (3.8 lb) bracket",
-    "antenna_connectors": "None (integrated directional antennas)",
+    "antenna_connectors": "4× N-type (rear; used for 2.4 GHz and 5 GHz low band in front-and-back mode; left-most port SIA-capable)",
     "operating_temp_range": "-20°C to 60°C (-4°F to 140°F) operating without solar loading; -20°C to 50°C (-4°F to 122°F) operating with solar loading; -20°C to 70°C (-4°F to 158°F) nonoperating",
     "msrp": "$7,792",
     "beamwidth": {
@@ -4086,7 +4088,7 @@
     "image_url": "images/extreme/extreme-ap5022fx.png",
     "dimensions": "258 x 265 x 46 mm (10.16 x 10.43 x 1.81 in)",
     "weight": "1.53 kg (3.37 lb)",
-    "antenna_connectors": "External antennas via breakout cable (RP-SMA)",
+    "antenna_connectors": "1× breakout connector for the included ACC-CBL-BRKOUT-12RPSMA cable (12× RP-SMA: 4× 2.4/5 GHz, 4× 6 GHz, 4× used only in dual-5/dual-6 GHz modes) + 1× IoT antenna port",
     "operating_temp_range": "-20°C to 50°C (-4°F to 122°F)",
     "msrp": "unknown"
   },
@@ -4140,7 +4142,7 @@
     "image_url": "images/extreme/extreme-ap4020x.png",
     "dimensions": "288 x 245 x 43 mm (11.34 x 9.65 x 1.69 in)",
     "weight": "1.43 kg (3.2 lb)",
-    "antenna_connectors": "4× RP-SMA (2.4/5 GHz); 6 GHz internal omnidirectional antennas",
+    "antenna_connectors": "4× RP-SMA (2× 2.4/5 GHz, 1× 2.4 GHz IoT/5 GHz, 1× 5 GHz) + 2× permanently attached 6 GHz antennas",
     "operating_temp_range": "-20°C to 55°C (-4°F to 131°F)",
     "msrp": "unknown"
   },
@@ -4167,7 +4169,7 @@
     "image_url": "images/extreme/extreme-ap4020fx.png",
     "dimensions": "245 x 245 x 43 mm (9.65 x 9.65 x 1.69 in)",
     "weight": "1.40 kg (3.1 lb)",
-    "antenna_connectors": "6× RP-SMA",
+    "antenna_connectors": "6× RP-SMA (2× 6 GHz, 2× 2.4/5 GHz, 1× 2.4 GHz IoT/5 GHz, 1× 5 GHz)",
     "operating_temp_range": "-20°C to 55°C (-4°F to 131°F)",
     "msrp": "unknown"
   },
@@ -4246,7 +4248,7 @@
     "image_url": "images/extreme/extreme-ap3000.png",
     "dimensions": "200 x 200 x 47 mm",
     "weight": "0.74 kg",
-    "antenna_connectors": "6× RP-SMA connectors (external Wi-Fi antennas)",
+    "antenna_connectors": "2× RP-SMA (2.4/5 GHz) + 2× permanently attached 6 GHz antennas",
     "operating_temp_range": "0°C to +50°C operating; -20°C to +70°C storage",
     "msrp": "unknown"
   },
@@ -4469,7 +4471,7 @@
     "form_factor": "Indoor",
     "dimensions": "190 x 190 x 51 mm (7.48 x 7.48 x 2.01 in)",
     "weight": "1.18 kg (2.6 lb)",
-    "antenna_connectors": "6× RP-SMA (2 dual-band, 2 6GHz, 2 tri-band)",
+    "antenna_connectors": "6× RP-SMA (2× 2.4/5 GHz, 2× 6 GHz, 2× tri-band scanning)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
@@ -4525,7 +4527,7 @@
     "form_factor": "Indoor",
     "dimensions": "225.0 x 225.0 x 54.0 mm (8.85 x 8.85 x 2.12 in)",
     "weight": "1.4 kg (3.05 lb)",
-    "antenna_connectors": "4× RP-SMA (dual-band) + 4 permanently attached tri-band antennas",
+    "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
@@ -4550,7 +4552,7 @@
     "form_factor": "Outdoor",
     "dimensions": "240.0 x 240.0 x 69.6 mm (9.45 x 9.45 x 2.74 in)",
     "weight": "7.05 lb",
-    "antenna_connectors": "External antennas (see datasheet)",
+    "antenna_connectors": "9× N-type (4× 2.4/5 GHz, 4× tri-band Wi-Fi + scanning, 1× 2.4 GHz BLE/Zigbee)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
@@ -4625,7 +4627,7 @@
     "form_factor": "Indoor",
     "dimensions": "250 x 250 x 57.5 mm (9.84 x 9.84 x 2.26 in)",
     "weight": "1.98 kg (4.36 lb)",
-    "antenna_connectors": "10× RP-SMA (4 dual-band, 4 6GHz, 2 tri-band)",
+    "antenna_connectors": "10× RP-SMA (4× 2.4/5 GHz, 4× 6 GHz, 2× tri-band scanning)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
@@ -4741,7 +4743,7 @@
     "image_url": "images/juniper/juniper-ap27e.png",
     "dimensions": "185 x 185 x 40 mm (7.28 x 7.28 x 1.58 in)",
     "weight": "0.85 kg (1.9 lb)",
-    "antenna_connectors": "4× RP-SMA (2× 2.4/5 GHz + 2× 6 GHz)",
+    "antenna_connectors": "4× RP-SMA (2× 2.4/5 GHz, 2× 6 GHz)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
     "msrp": "$1,285"
   },
@@ -4914,7 +4916,7 @@
     "image_url": "images/juniper/juniper-ap45e.jpg",
     "dimensions": "230 x 230 x 50 mm",
     "weight": "1.97 kg",
-    "antenna_connectors": "Two pluggable connectors: 2.4/5 GHz (4-pin), 6 GHz + scan (6-pin)",
+    "antenna_connectors": "2× pluggable connectors (4-pin: 2.4/5 GHz; 6-pin: 6 GHz + scan)",
     "operating_temp_range": "-10°C to 50°C",
     "msrp": "$2,245"
   },
@@ -4996,7 +4998,7 @@
     "form_factor": "Indoor",
     "dimensions": "254 x 254 x 60 mm",
     "weight": "2.0 kg",
-    "antenna_connectors": "Three pluggable connectors: 2.4/5/6 GHz (6-pin), 6 GHz + scan (6-pin), 5 GHz (4-pin)",
+    "antenna_connectors": "3× pluggable connectors (6-pin: 2.4/5/6 GHz; 6-pin: 6 GHz + scan; 4-pin: 5 GHz)",
     "operating_temp_range": "-20°C to 50°C",
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
     "radios_iot_features": [
@@ -5484,7 +5486,7 @@
     "image_url": "images/alcatel-lucent/alcatel-lucent-ap1572.png",
     "dimensions": "243 x 243 x 85 mm",
     "weight": "2684 g (5.91 lb)",
-    "antenna_connectors": "6× N-type connectors",
+    "antenna_connectors": "6× N-type (2× 2.4 GHz, 2× 5 GHz, 2× 6 GHz or 5 GHz)",
     "operating_temp_range": "-40°C to 65°C operating",
     "msrp": "unknown"
   },
@@ -5889,14 +5891,17 @@
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
     "behavior_min_power": "On 802.3af (Class 3), USB is disabled (12.81 W max); Ruckus lists no radio reductions. On 802.3at (Class 4) or 12 V DC, the AP has full functionality (21.3 W max on 802.3at).",
     "ethernet_ports_speed": "1× 1 GbE (RJ45, PoE in)",
-    "antenna_type": "Directional",
+    "antenna_type": [
+      "Directional",
+      "External"
+    ],
     "form_factor": "Outdoor",
     "radios_iot_features": [],
     "datasheet_url": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf",
     "image_url": "images/ruckus/ruckus-t350.png",
     "dimensions": "209.1 x 261.7 x 102.5 mm (8.23 x 10.30 x 4.04 in)",
     "weight": "2.20 kg (4.85 lb)",
-    "antenna_connectors": "2× N-type female",
+    "antenna_connectors": "2× N-type (for optional external antenna; internal 120° sector otherwise)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F)",
     "msrp": "unknown"
   },
@@ -5935,6 +5940,7 @@
     "behavior_min_power": "On 802.3at (Class 4) PoE+ the AP operates with reduced functionality: the secondary Ethernet port remains enabled but PoE-out (PSE) on that port is disabled while onboard IoT and USB (where applicable) remain enabled; higher-power 802.3bt PoE++, PoH or AC input is required for full PSE capability with all features enabled.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45, PoE out PSE) + 1× 1/10 GbE SFP/SFP+ (fiber)",
     "antenna_type": [
+      "Directional",
       "External"
     ],
     "form_factor": "Outdoor",
@@ -5946,7 +5952,7 @@
     "image_url": "images/ruckus/ruckus-t750.png",
     "dimensions": "34.08 x 24.06 x 11.17 cm (13.42 x 9.47 x 4.4 in)",
     "weight": "3.31 kg (7.30 lb)",
-    "antenna_connectors": "4× N-type female",
+    "antenna_connectors": "4× N-type (for optional external antennas; internal 120° sector otherwise)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 145°F)",
     "msrp": "unknown"
   },
@@ -6068,7 +6074,7 @@
     "image_url": "images/juniper/juniper-ap32.png",
     "dimensions": "202 x 202 x 44 mm (7.95 x 7.95 x 1.73 in)",
     "weight": "0.81 kg (1.78 lb)",
-    "antenna_connectors": "5× RP-SMA (4× Wi-Fi, 1× sensor)",
+    "antenna_connectors": "5× RP-SMA (4× data radio, 1× scan radio)",
     "operating_temp_range": "-20°C to 50°C",
     "msrp": "unknown"
   },
@@ -6120,7 +6126,7 @@
     "image_url": "images/extreme/extreme-ap410.png",
     "dimensions": "165 x 180 x 47 mm (6.5 x 7 x 1.8 in)",
     "weight": "0.68 kg (1.5 lb)",
-    "antenna_connectors": "6× RP-SMA (Wi-Fi)",
+    "antenna_connectors": "7× RP-SMA (6× Wi-Fi, 1× BLE)",
     "operating_temp_range": "-20°C to 55°C",
     "msrp": "unknown"
   },
@@ -6195,7 +6201,7 @@
     "image_url": "images/extreme/extreme-ap4060x.png",
     "dimensions": "283 x 260 x 74 mm (11.1 x 10.2 x 2.9 in)",
     "weight": "2.59 kg (5.7 lb)",
-    "antenna_connectors": "N-type (external antennas required; compatible antennas: AIO-TS06360-N, AIO-TQ08055-N, AIO-TQ14035-N, AIO-TQ06120-N)",
+    "antenna_connectors": "5× N-type (2× 2.4/5 GHz, 2× 5/6 GHz, 1× BLE IoT)",
     "operating_temp_range": "-40°C to +60°C (-40°F to +140°F) with solar load",
     "msrp": "unknown"
   },
