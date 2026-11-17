@@ -2068,6 +2068,53 @@
   },
   {
     "vendor": "Cisco",
+    "model": "CW9174E",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 4x4 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 5G link speed",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 GHz and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G (13.95 W max). On 802.3at (Class 4), the AP runs 2x2 on 2.4 GHz with 4x4 on 5 GHz and 6 GHz, or 4x4 on 2.4 GHz and 5 GHz with 6 GHz disabled, link speed is 2.5G, and USB is disabled (25.5 W max). On 802.3bt (Class 5) or DC power, those same radio configurations run at 5G link speed with USB at 9 W (37 W max with 6 GHz, 32 W without).",
+    "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE mGig (RJ45, PoE in)",
+    "antenna_type": [
+      "External"
+    ],
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE 5.3 (upgradable to BLE 6)",
+      "Dedicated IoT radio",
+      "Dedicated tri-band scanning radio",
+      "Accelerometer (with CW-ANT-T-D2-D8 or CW-ANT-T-O2-D8 antenna)"
+    ],
+    "datasheet_url": "https://www.cisco.com/site/us/en/products/collateral/networking/wireless/access-points/wireless-9174-series-access-points-ds.html",
+    "image_url": "images/cisco/cisco-cw9174e.png",
+    "dimensions": "22.6 x 22.6 x 4.9 cm (8.9 x 8.9 x 1.95 in)",
+    "weight": "1.47 kg (3.26 lb)",
+    "antenna_connectors": "1× 8-port Smart Antenna (DART-8) connector",
+    "operating_temp_range": "-20°C to 50°C (-4°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
+    "operating_humidity": "10% to 90% non-condensing",
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Screws",
+        "part_number": null
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html"
+  },
+  {
+    "vendor": "Cisco",
     "model": "CW9176D1",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
@@ -3575,6 +3622,53 @@
       }
     ],
     "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174I/b-hig-cw9174i/installation-overview/access-point-mounting-and-installation.html"
+  },
+  {
+    "vendor": "Cisco Meraki",
+    "model": "CW9174E",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 4x4 / 4x4",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 5G link speed",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 GHz and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G (13.95 W max). On 802.3at (Class 4), the AP runs 2x2 on 2.4 GHz with 4x4 on 5 GHz and 6 GHz, or 4x4 on 2.4 GHz and 5 GHz with 6 GHz disabled, link speed is 2.5G, and USB is disabled (25.5 W max). On 802.3bt (Class 5) or DC power, those same radio configurations run at 5G link speed with USB at 9 W (37 W max with 6 GHz, 32 W without).",
+    "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE mGig (RJ45, PoE in)",
+    "antenna_type": [
+      "External"
+    ],
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE 5.3 (upgradable to BLE 6)",
+      "Dedicated IoT radio",
+      "Dedicated tri-band scanning radio",
+      "Accelerometer (with CW-ANT-T-D2-D8 or CW-ANT-T-O2-D8 antenna)"
+    ],
+    "datasheet_url": "https://www.cisco.com/site/us/en/products/collateral/networking/wireless/access-points/wireless-9174-series-access-points-ds.html",
+    "image_url": "images/cisco/cisco-cw9174e.png",
+    "dimensions": "22.6 x 22.6 x 4.9 cm (8.9 x 8.9 x 1.95 in)",
+    "weight": "1.47 kg (3.26 lb)",
+    "antenna_connectors": "1× 8-port Smart Antenna (DART-8) connector",
+    "operating_temp_range": "-20°C to 50°C (-4°F to 122°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
+    "operating_humidity": "10% to 90% non-condensing",
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Ceiling grid clip (recessed mounting)",
+        "part_number": "AIR-AP-T-RAIL-R="
+      },
+      {
+        "item": "Low-profile bracket",
+        "part_number": "AIR-AP-BRACKET-1="
+      },
+      {
+        "item": "Screws",
+        "part_number": null
+      },
+      {
+        "item": "Cisco product documentation and pointer card",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html"
   },
   {
     "vendor": "Cisco Meraki",
