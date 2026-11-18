@@ -6837,5 +6837,580 @@
       }
     ],
     "notes": "\"Optional desktop stand of FAP-23JK (pack of 10). Backward compatible to FAP-23JF model.\""
+  },
+  {
+    "id": "cambium-ax-x7-1brkt-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "AX-X7-1BRKT-WW"
+      }
+    ],
+    "name": "X7 series mounting bracket",
+    "mount_type": [
+      "ceiling_tbar",
+      "hard_ceiling",
+      "wall"
+    ],
+    "compatible_aps": [
+      "cambium-x7-35x",
+      "cambium-x7-53x",
+      "cambium-x7-55x",
+      "cambium-x7-56x",
+      "cambium-xe3-4"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/3cb22f998e5e9e60/original/X7-35X-Wi-Fi-7-Indoor-Access-Point.pdf",
+        "doc": "X7-35X Wi-Fi 7 Indoor Access Point data sheet",
+        "aps": [
+          "cambium-x7-35x",
+          "cambium-xe3-4"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/654a4fcce3817f9d/original/Cambium_Networks_data_sheet_WiFi-7_X7-53X_AP.pdf",
+        "doc": "X7-53X Wi-Fi 7 AP data sheet",
+        "aps": [
+          "cambium-x7-35x",
+          "cambium-x7-53x",
+          "cambium-x7-55x",
+          "cambium-x7-56x",
+          "cambium-xe3-4"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/231adaa96aac6a99/original/Cambium_Networks_data_sheet_WiFi-7_X7-55X_AP.pdf",
+        "doc": "X7-55X Wi-Fi 7 AP data sheet",
+        "aps": [
+          "cambium-x7-35x",
+          "cambium-x7-53x",
+          "cambium-x7-55x",
+          "cambium-x7-56x",
+          "cambium-xe3-4"
+        ]
+      },
+      {
+        "url": "https://www.cambiumnetworks.com/wp-content/uploads/Cambium_Networks_data_sheet_WiFi-7_X7-56X_AP.pdf",
+        "doc": "X7-56X Wi-Fi 7 AP data sheet",
+        "aps": [
+          "cambium-x7-35x",
+          "cambium-x7-53x",
+          "cambium-x7-55x",
+          "cambium-x7-56x",
+          "cambium-xe3-4"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/asset/646e2b2a-1615-4a43-8bd8-acdd82eb1abb/XE3-4-Wi-Fi-6-6E-Access-Point-Data-Sheet.pdf",
+        "doc": "XE3-4 Wi-Fi 6/6E Access Point data sheet",
+        "aps": [
+          "cambium-x7-35x",
+          "cambium-xe3-4"
+        ]
+      }
+    ],
+    "notes": "X7-53X, X7-55X and X7-56X data sheets: \"Mounting Bracket for X7 series enterprise access point. Compatible with X7 series, XE3-4, XV3-8\". X7-35X and XE3-4 data sheets: \"Spare Mounting Bracket ... Compatible with X7-3 series, XE3-4, XV3-8\". XV3-8 is not in ap_data. mount_type comes from the X7 Mount Options rows (\"Drop ceiling T-bar, ceiling tile, 4\\\" square electrical box ... wall or ceiling mount\"). XV2-2X left off (see to_check)."
+  },
+  {
+    "id": "cambium-ax-x7-dbrkt-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "AX-X7-DBRKT-WW"
+      }
+    ],
+    "name": "X7 series adjustable angle mounting bracket",
+    "mount_type": [
+      "wall",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "cambium-x7-35x",
+      "cambium-x7-53x",
+      "cambium-x7-55x",
+      "cambium-x7-56x"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/3cb22f998e5e9e60/original/X7-35X-Wi-Fi-7-Indoor-Access-Point.pdf",
+        "doc": "X7-35X Wi-Fi 7 Indoor Access Point data sheet",
+        "aps": [
+          "cambium-x7-35x",
+          "cambium-x7-53x",
+          "cambium-x7-55x",
+          "cambium-x7-56x"
+        ]
+      },
+      {
+        "url": "https://www.cambiumnetworks.com/wp-content/uploads/Cambium_Networks_data_sheet_WiFi-7_X7-56X_AP.pdf",
+        "doc": "X7-56X Wi-Fi 7 AP data sheet",
+        "aps": [
+          "cambium-x7-35x",
+          "cambium-x7-53x",
+          "cambium-x7-55x",
+          "cambium-x7-56x"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/654a4fcce3817f9d/original/Cambium_Networks_data_sheet_WiFi-7_X7-53X_AP.pdf",
+        "doc": "X7-53X Wi-Fi 7 AP data sheet",
+        "aps": [
+          "cambium-x7-53x"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/231adaa96aac6a99/original/Cambium_Networks_data_sheet_WiFi-7_X7-55X_AP.pdf",
+        "doc": "X7-55X Wi-Fi 7 AP data sheet",
+        "aps": [
+          "cambium-x7-55x"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/asset/a4d2e6b8-f662-425e-9b46-7753dae5d4af/Enterprise-Wi-Fi-6-and-7-Access-Point-Hardware-and-Installation-Guide.pdf",
+        "doc": "Hardware and Installation Guide: Enterprise Wi-Fi 6 and 7 Access Point (pmp-2982_025v000, July 2026)",
+        "aps": [
+          "cambium-x7-56x"
+        ]
+      }
+    ],
+    "notes": "\"Adjustable Angle Mounting Bracket for X7 series enterprise access point. Compatible with X7 series.\" X7-56X data sheet: \"Articulated mounting bracket to aim AP at ±60 degrees; bracket can be fixed on any flat surface or pole\"."
+  },
+  {
+    "id": "cambium-ax-wallbrkt-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "AX-WALLBRKT-WW"
+      }
+    ],
+    "name": "Wall mount L-bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cambium-xe3-4",
+      "cambium-xe3-4tn",
+      "cambium-xv2-21x",
+      "cambium-xv2-22h",
+      "cambium-xv2-23t",
+      "cambium-xv2-2t0",
+      "cambium-xv2-2x"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/asset/646e2b2a-1615-4a43-8bd8-acdd82eb1abb/XE3-4-Wi-Fi-6-6E-Access-Point-Data-Sheet.pdf",
+        "doc": "XE3-4 Wi-Fi 6/6E Access Point data sheet",
+        "aps": [
+          "cambium-xe3-4",
+          "cambium-xe3-4tn",
+          "cambium-xv2-21x",
+          "cambium-xv2-22h",
+          "cambium-xv2-23t",
+          "cambium-xv2-2t0",
+          "cambium-xv2-2x"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/3aa1d0726fa7f3/original/XV2-2-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
+        "doc": "XV2-2 Wi-Fi 6 Access Point data sheet",
+        "aps": [
+          "cambium-xe3-4",
+          "cambium-xe3-4tn",
+          "cambium-xv2-21x",
+          "cambium-xv2-22h",
+          "cambium-xv2-23t",
+          "cambium-xv2-2t0",
+          "cambium-xv2-2x"
+        ]
+      }
+    ],
+    "notes": "Family statement: \"Wall Mount L-Bracket for XV and XE series APs. Use to mount the AP horizontally.\""
+  },
+  {
+    "id": "cambium-ax-e510rbkt-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "AX-E510RBKT-WW"
+      }
+    ],
+    "name": "Shock mount bracket",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "cambium-xe3-4",
+      "cambium-xv2-2x",
+      "cambium-xv2-23t"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/asset/646e2b2a-1615-4a43-8bd8-acdd82eb1abb/XE3-4-Wi-Fi-6-6E-Access-Point-Data-Sheet.pdf",
+        "doc": "XE3-4 Wi-Fi 6/6E Access Point data sheet",
+        "aps": [
+          "cambium-xe3-4",
+          "cambium-xv2-2x"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/3aa1d0726fa7f3/original/XV2-2-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
+        "doc": "XV2-2 Wi-Fi 6 Access Point data sheet",
+        "aps": [
+          "cambium-xv2-2x"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/a413978b586d0d7/original/XV2-23T-Wi-Fi-6-Outdoor-Access-Point.pdf",
+        "doc": "XV2-23T Wi-Fi 6 Outdoor Access Point data sheet",
+        "aps": [
+          "cambium-xv2-23t"
+        ]
+      }
+    ],
+    "notes": "XE3-4 data sheet: \"Shock mount bracket for cnPilot e510 and e505, Wi-Fi 6 XV3-8, XV2-2. XE3-4\". XV2-23T data sheet: \"Shock mount bracket, Metal bracket suited for wall and ceiling mount.\" (mount_type from this line)."
+  },
+  {
+    "id": "cambium-ax-21x-brkt-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "AX-21X-BRKT-WW"
+      }
+    ],
+    "name": "XV2-21X junction box bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cambium-xv2-21x"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/asset/a4d2e6b8-f662-425e-9b46-7753dae5d4af/Enterprise-Wi-Fi-6-and-7-Access-Point-Hardware-and-Installation-Guide.pdf",
+        "doc": "Hardware and Installation Guide: Enterprise Wi-Fi 6 and 7 Access Point (pmp-2982_025v000, July 2026)",
+        "aps": [
+          "cambium-xv2-21x"
+        ]
+      }
+    ],
+    "notes": "\"The junction box bracket (part number: AX-21X-BRKT-WW) for XV2-21X AP is optional accessory.\" Filed as wall, the same as other outlet-box mounts."
+  },
+  {
+    "id": "cambium-xa-droptile15",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "XA-DROPTILE15"
+      }
+    ],
+    "name": "Recessed ceiling tile kit, 15mm T-bar (5 pack)",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "15 mm"
+    ],
+    "rail_style": [
+      "recessed"
+    ],
+    "compatible_aps": [
+      "cambium-xv2-21x"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/15f334cb236c8919/original/XV2-21X-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
+        "doc": "XV2-21X Wi-Fi 6 Access Point data sheet",
+        "aps": [
+          "cambium-xv2-21x"
+        ]
+      }
+    ],
+    "notes": "\"Recessed ceiling tile Installation Kit for 15mm T-bar, 20mm drop extension. 5 Pack\"."
+  },
+  {
+    "id": "cambium-xa-droptile24",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "XA-DROPTILE24"
+      }
+    ],
+    "name": "Recessed ceiling tile kit, 24mm T-bar (5 pack)",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "24 mm"
+    ],
+    "rail_style": [
+      "recessed"
+    ],
+    "compatible_aps": [
+      "cambium-xv2-21x"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/15f334cb236c8919/original/XV2-21X-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
+        "doc": "XV2-21X Wi-Fi 6 Access Point data sheet",
+        "aps": [
+          "cambium-xv2-21x"
+        ]
+      }
+    ],
+    "notes": "\"Recessed ceiling tile Installation Kit for 24mm T-bar, 20mm drop extension. 5 Pack\"."
+  },
+  {
+    "id": "cambium-pl-dtstandb-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "PL-DTSTANDB-WW"
+      }
+    ],
+    "name": "Desktop stand",
+    "mount_type": [
+      "desk"
+    ],
+    "compatible_aps": [
+      "cambium-xv2-22h"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/571a92cea13790cd/original/XV2-22H-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
+        "doc": "XV2-22H Wi-Fi 6 Access Point data sheet",
+        "aps": [
+          "cambium-xv2-22h"
+        ]
+      }
+    ],
+    "notes": "\"Desktop stand\"."
+  },
+  {
+    "id": "cambium-pl-wallmntb-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "PL-WALLMNTB-WW"
+      }
+    ],
+    "name": "Flush surface mounting adapter",
+    "mount_type": [
+      "wall",
+      "adapter"
+    ],
+    "compatible_aps": [
+      "cambium-xv2-22h"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/571a92cea13790cd/original/XV2-22H-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
+        "doc": "XV2-22H Wi-Fi 6 Access Point data sheet",
+        "aps": [
+          "cambium-xv2-22h"
+        ]
+      }
+    ],
+    "notes": "\"Mounting Adapter, mounts XV2-22H to a flush surface\"."
+  },
+  {
+    "id": "cambium-pl-snwlgngb-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "PL-SNWLGNGB-WW"
+      }
+    ],
+    "name": "Single gang junction box wall bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "cambium-xv2-22h"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/571a92cea13790cd/original/XV2-22H-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
+        "doc": "XV2-22H Wi-Fi 6 Access Point data sheet",
+        "aps": [
+          "cambium-xv2-22h"
+        ]
+      }
+    ],
+    "notes": "\"Wall bracket single gang junction box\"."
+  },
+  {
+    "id": "cambium-ax-o-wl1bkt-ww",
+    "part_numbers": [
+      {
+        "vendor": "Cambium",
+        "part_number": "AX-O-WL1BKT-WW"
+      }
+    ],
+    "name": "Outdoor wall or ceiling bracket",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "environment": "outdoor",
+    "compatible_aps": [
+      "cambium-xv2-23t"
+    ],
+    "sources": [
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/m/a413978b586d0d7/original/XV2-23T-Wi-Fi-6-Outdoor-Access-Point.pdf",
+        "doc": "XV2-23T Wi-Fi 6 Outdoor Access Point data sheet",
+        "aps": [
+          "cambium-xv2-23t"
+        ]
+      },
+      {
+        "url": "https://brandcentral.cambiumnetworks.com/asset/a4d2e6b8-f662-425e-9b46-7753dae5d4af/Enterprise-Wi-Fi-6-and-7-Access-Point-Hardware-and-Installation-Guide.pdf",
+        "doc": "Hardware and Installation Guide: Enterprise Wi-Fi 6 and 7 Access Point (pmp-2982_025v000, July 2026)",
+        "aps": [
+          "cambium-xv2-23t"
+        ]
+      }
+    ],
+    "notes": "\"Wall or Ceiling mounting bracket for Outdoor Wi-Fi access point. Adds security and allows mounting on junction boxes. Plastic bracket.\""
+  },
+  {
+    "id": "ubiquiti-uacc-ap-am",
+    "part_numbers": [
+      {
+        "vendor": "Ubiquiti",
+        "part_number": "UACC-AP-AM"
+      }
+    ],
+    "name": "AP Arm Mount",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "ubiquiti-u7-pro",
+      "ubiquiti-e7"
+    ],
+    "sources": [
+      {
+        "url": "https://ui.com/us/en/wifi/flagship",
+        "doc": "UniFi Flagship WiFi page, Installation Essentials",
+        "aps": [
+          "ubiquiti-u7-pro"
+        ]
+      },
+      {
+        "url": "https://help.ui.com/hc/en-us/articles/23999079657367",
+        "doc": "UniFi Help Center: WiFi Access Point (AP) Ceiling Mounts",
+        "aps": [
+          "ubiquiti-u7-pro",
+          "ubiquiti-e7"
+        ]
+      },
+      {
+        "url": "https://store.ui.com/us/en/category/accessories-access-point/products/uacc-ap-am",
+        "doc": "UniFi Store: AP Arm Mount",
+        "aps": [
+          "ubiquiti-u7-pro"
+        ]
+      }
+    ],
+    "notes": "Store: \"Wall mount for full-size UniFi Flagship WiFi access points.\" Flagship page lists U7 Pro, U7 Pro Max, U6 Pro, U6 Long-Range. Help Center lists U7-Pro and E7 under the Pro Mounting System, whose APs use the \"AP Pro Arm Mount\" and \"AP Arm Mount\" for wall mounting."
+  },
+  {
+    "id": "ubiquiti-u-pro-mp",
+    "part_numbers": [
+      {
+        "vendor": "Ubiquiti",
+        "part_number": "U-PRO-MP"
+      }
+    ],
+    "name": "Replacement AP Pro Mounting System",
+    "mount_type": [
+      "hard_ceiling",
+      "wall"
+    ],
+    "compatible_aps": [
+      "ubiquiti-u7-pro",
+      "ubiquiti-e7"
+    ],
+    "sources": [
+      {
+        "url": "https://help.ui.com/hc/en-us/articles/23999079657367",
+        "doc": "UniFi Help Center: WiFi Access Point (AP) Ceiling Mounts",
+        "aps": [
+          "ubiquiti-u7-pro",
+          "ubiquiti-e7"
+        ]
+      },
+      {
+        "url": "https://techspecs.ui.com/unifi/wifi/u7-pro",
+        "doc": "UniFi U7 Pro Tech Specs",
+        "aps": [
+          "ubiquiti-u7-pro"
+        ]
+      },
+      {
+        "url": "https://techspecs.ui.com/unifi/wifi/e7",
+        "doc": "UniFi E7 Tech Specs",
+        "aps": [
+          "ubiquiti-e7"
+        ]
+      }
+    ],
+    "notes": "Store listing: \"Flagship AP Replacement Mounting System U-PRO-MP. Professional mounting system for UniFi access points.\" Compatibility from the Help Center Pro Mounting System list (AC-Pro, AC-HD, AC-SHD, UAP-XG, U6-LR, U6-Pro, U7-Pro, U7-Pro-Max, E7). mount_type from the Tech Specs rows \"Ceiling, Wall (Pro Mount Included)\" (U7 Pro) and \"Ceiling, Wall, VESA (Pro Mount Included)\" (E7)."
+  },
+  {
+    "id": "ubiquiti-uacc-u7-pro-wall-ts",
+    "part_numbers": [
+      {
+        "vendor": "Ubiquiti",
+        "part_number": "UACC-U7-Pro-Wall-TS"
+      }
+    ],
+    "name": "U7 Pro Wall Table Stand",
+    "mount_type": [
+      "desk"
+    ],
+    "compatible_aps": [
+      "ubiquiti-u7-pro-wall"
+    ],
+    "sources": [
+      {
+        "url": "https://store.ui.com/us/en/category/accessories-access-point/collections/accessories-pro-ap-u7-pro-wall-mounts",
+        "doc": "UniFi Store: U7 Pro Wall Mounts",
+        "aps": [
+          "ubiquiti-u7-pro-wall"
+        ]
+      }
+    ],
+    "notes": "\"Lightweight, aluminum table stand for the U7 Pro Wall.\""
+  },
+  {
+    "id": "ubiquiti-uacc-u7-pro-wall-fm",
+    "part_numbers": [
+      {
+        "vendor": "Ubiquiti",
+        "part_number": "UACC-U7-Pro-Wall-FM"
+      }
+    ],
+    "name": "U7 Pro Wall Paintable Flush Mount",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "ubiquiti-u7-pro-wall"
+    ],
+    "sources": [
+      {
+        "url": "https://store.ui.com/us/en/category/accessories-access-point/products/uacc-u7-pro-wall-fm",
+        "doc": "UniFi Store: U7 Pro Wall Paintable Flush Mount",
+        "aps": [
+          "ubiquiti-u7-pro-wall"
+        ]
+      }
+    ],
+    "notes": "\"Paintable mounting kit for the U7 Pro Wall that enables near-invisible, recessed installation.\""
   }
 ]

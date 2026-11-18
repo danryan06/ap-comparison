@@ -1849,7 +1849,14 @@
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -20°C to 70°C (-4°F to 158°F) storage",
     "operating_humidity": "95% RH non-condensing",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "multi-functional system to mount the access point",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.cambiumnetworks.com/wp-content/uploads/Cambium_Networks_data_sheet_WiFi-7_X7-56X_AP.pdf"
   },
   {
     "vendor": "Cambium",
@@ -1873,7 +1880,14 @@
     "weight": "900 g (1.98 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "locking bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://brandcentral.cambiumnetworks.com/asset/646e2b2a-1615-4a43-8bd8-acdd82eb1abb/XE3-4-Wi-Fi-6-6E-Access-Point-Data-Sheet.pdf"
   },
   {
     "vendor": "Cambium",
@@ -1921,7 +1935,22 @@
     "weight": "475 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "locking bracket",
+        "part_number": null
+      },
+      {
+        "item": "steel plate",
+        "part_number": null
+      },
+      {
+        "item": "wall anchors",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://brandcentral.cambiumnetworks.com/m/15f334cb236c8919/original/XV2-21X-Wi-Fi-6-Access-Point-Data-Sheet.pdf"
   },
   {
     "vendor": "Cambium",
@@ -1969,7 +1998,14 @@
     "weight": "1200 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "clamps",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://brandcentral.cambiumnetworks.com/m/a413978b586d0d7/original/XV2-23T-Wi-Fi-6-Outdoor-Access-Point.pdf"
   },
   {
     "vendor": "Cambium",
@@ -2016,7 +2052,14 @@
     "weight": "800 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "locking bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://brandcentral.cambiumnetworks.com/m/3aa1d0726fa7f3/original/XV2-2-Wi-Fi-6-Access-Point-Data-Sheet.pdf"
   },
   {
     "vendor": "Cisco",
@@ -6340,7 +6383,14 @@
     "weight": "1.8 kg (4.0 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 50°C",
-    "msrp": "$499.00"
+    "msrp": "$499.00",
+    "in_box": [
+      {
+        "item": "Pro Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/e7"
   },
   {
     "vendor": "Ubiquiti",
@@ -6362,7 +6412,18 @@
     "weight": "2.2 kg (4.9 lb)",
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-30°C to 60°C",
-    "msrp": "$799.00"
+    "msrp": "$799.00",
+    "in_box": [
+      {
+        "item": "Mounts",
+        "part_number": null
+      },
+      {
+        "item": "Waterproof Door Kit",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/e7-campus-us"
   },
   {
     "vendor": "Ubiquiti",
@@ -6386,7 +6447,14 @@
     "weight": "884 g (1.9 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 60°C operating",
-    "msrp": "$299.00"
+    "msrp": "$299.00",
+    "in_box": [
+      {
+        "item": "Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/u6-enterprise-iw"
   },
   {
     "vendor": "Ubiquiti",
@@ -6408,7 +6476,14 @@
     "weight": "400 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 40°C",
-    "msrp": "$149.00"
+    "msrp": "$149.00",
+    "in_box": [
+      {
+        "item": "Metal Wall Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/u7-iw"
   },
   {
     "vendor": "Ubiquiti",
@@ -6430,7 +6505,14 @@
     "weight": "313 g (11 oz)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 40°C operating",
-    "msrp": "$99.00"
+    "msrp": "$99.00",
+    "in_box": [
+      {
+        "item": "Lite Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/u7-lite"
   },
   {
     "vendor": "Ubiquiti",
@@ -6452,7 +6534,14 @@
     "weight": "680 g (1.5 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30 to 40°C (-22 to 104°F)",
-    "msrp": "From $189.00"
+    "msrp": "From $189.00",
+    "in_box": [
+      {
+        "item": "Pro Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/u7-pro"
   },
   {
     "vendor": "Ubiquiti",
@@ -6474,7 +6563,14 @@
     "weight": "580 g (1.3 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 60°C",
-    "msrp": "$199.00"
+    "msrp": "$199.00",
+    "in_box": [
+      {
+        "item": "Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/u7-pro-wall"
   },
   {
     "vendor": "Ubiquiti",
@@ -6496,7 +6592,14 @@
     "weight": "750 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 40°C",
-    "msrp": "$199.00"
+    "msrp": "$199.00",
+    "in_box": [
+      {
+        "item": "Lite Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/other/u7-pro-xg"
   },
   {
     "vendor": "Ubiquiti",
@@ -6518,7 +6621,14 @@
     "weight": "800 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 40°C",
-    "msrp": "$299.00"
+    "msrp": "$299.00",
+    "in_box": [
+      {
+        "item": "Lite Mount",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/u7-pro-xgs"
   },
   {
     "vendor": "Ubiquiti",
@@ -6540,7 +6650,14 @@
     "weight": "3.3 kg (7.3 lb) (device only), 4.3 kg (9.5 lb) (device with mount)",
     "antenna_connectors": "None (internal directional antennas switchable between 15 dBi, 50° x 50° and 11 dBi, 90° x 90° operation)",
     "operating_temp_range": "-40 to 60°C (-40 to 140°F)",
-    "msrp": "$1999"
+    "msrp": "$1999",
+    "in_box": [
+      {
+        "item": "Mounts",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://techspecs.ui.com/unifi/wifi/e7-audience-us"
   },
   {
     "vendor": "TP-Link Omada",

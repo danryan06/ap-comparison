@@ -266,7 +266,7 @@ See `templates/in_box_template.json`.
 Surface: `ceiling_tbar`, `hard_ceiling`, `wall`, `pole`, `desk`, `strand`, `din_rail`, `beam`, `threaded_rod`
 Form: `articulating`, `enclosure`, `adapter`
 
-`adapter` covers a part that cannot mount the AP by itself: it joins the AP or its bracket to another bracket, or to a surface the bracket alone cannot reach. An adapter also lists that surface, for example `["beam", "adapter"]` or `["threaded_rod", "adapter"]`. Flush and recessed are `rail_style` values, not mount types. `beam` is a clip or bracket that fastens the AP to a structural beam. `threaded_rod` is a bracket or adapter that hangs the AP from a threaded rod. Add a new type only when a real part does not fit any of these.
+`adapter` covers a part that cannot mount the AP by itself: it joins the AP or its bracket to another bracket, or to a surface the bracket alone cannot reach. When it joins to a surface, an adapter also lists that surface, for example `["beam", "adapter"]` or `["threaded_rod", "adapter"]`. Flush and recessed are `rail_style` values, not mount types. `beam` is a clip or bracket that fastens the AP to a structural beam. `threaded_rod` is a bracket or adapter that hangs the AP from a threaded rod. Add a new type only when a real part does not fit any of these.
 
 #### Compatibility rules
 
