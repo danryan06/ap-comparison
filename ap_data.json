@@ -6,21 +6,21 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "behavior_min_power": "On 802.3at (Class 4), max power consumption is 18.4 W. Allied Telesis lists no per-class behavior or 802.3af mode. The AP can also run from AC power (17 W max).",
     "ethernet_ports_speed": "2× 100M/1/2.5 GbE (RJ45, PoE+ capable)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "BLE"
+      "BLE (future firmware release)"
     ],
     "datasheet_url": "https://www.alliedtelesis.com/sites/default/files/file/2024-06/ati-tq6403-gen2-ds.pdf",
     "image_url": "images/allied-telesis/allied-telesis-tq6403-gen2.png",
     "dimensions": "200 x 210 x 45 mm",
     "weight": "1.1 kg (2.42 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0°C to 45°C operating; -25°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -30,7 +30,7 @@
     "spatial_streams": "4x4 / 8x8",
     "min_poe_class": "802.3bt (Class 5)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3bt (Class 5) PoE++, the AP operates at full functionality. Lower-class PoE sources are not supported and may prevent the AP from booting.",
+    "behavior_min_power": "802.3bt (Class 5) is required. Max power consumption is 26.3 W (15 W average). Allied Telesis lists no reduced-power mode.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45, PoE++ in)",
     "antenna_type": [
       "External"
@@ -42,7 +42,7 @@
     "dimensions": "257 x 227 x 90 mm",
     "weight": "4.4 kg",
     "antenna_connectors": "8× N-type (4× 5 GHz, 4× 2.4/5 GHz dual-band)",
-    "operating_temp_range": "-40°C to 65°C operating",
+    "operating_temp_range": "-40°C to 65°C operating; -40°C to 80°C storage",
     "msrp": "unknown"
   },
   {
@@ -52,7 +52,7 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "behavior_min_power": "On 802.3at (Class 4), max power consumption is 16.9 W (13 W average). Allied Telesis lists no per-class behavior or 802.3af mode. The AP can also run from AC power (19 W max).",
     "ethernet_ports_speed": "2× 100M/1/2.5/5 GbE (RJ45, PoE+ capable)",
     "antenna_type": [
       "Internal"
@@ -64,7 +64,7 @@
     "dimensions": "200 x 240 x 45 mm",
     "weight": "1.2 kg (2.64 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating",
+    "operating_temp_range": "0°C to 50°C operating; -25°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -74,7 +74,7 @@
     "spatial_streams": "4x4 / 4x4 or 8x8",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "behavior_min_power": "On 802.3at (Class 4), max power consumption is 22.03 W (17 W average). Allied Telesis lists no per-class behavior or 802.3af mode. The AP can also run from AC power (24 W max).",
     "ethernet_ports_speed": "2× 100M/1/2.5/5 GbE (RJ45, PoE+ capable)",
     "antenna_type": [
       "Internal"
@@ -86,7 +86,7 @@
     "dimensions": "200 x 240 x 45 mm",
     "weight": "1.2 kg (2.64 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C operating",
+    "operating_temp_range": "0°C to 50°C operating; -25°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -485,7 +485,8 @@
     "antenna_type": [
       "External"
     ],
-    "form_factor": "Ruggedized",
+    "form_factor": "Indoor",
+    "hardened": true,
     "radios_iot_features": [
       "BLE",
       "802.15.4 IoT radio"
@@ -1444,7 +1445,7 @@
     "antenna_type": [
       "Internal"
     ],
-    "form_factor": "Indoor hardened",
+    "form_factor": "Indoor",
     "radios_iot_features": [
       "BLE",
       "802.15.4 IoT radio",
@@ -1455,7 +1456,7 @@
     "dimensions": "263.3 x 170 x 93 mm",
     "weight": "1.53 kg (with mount bracket)",
     "antenna_connectors": "None (internal dynamic omnidirectional antennas)",
-    "operating_temp_range": "-40°C to +55°C operating (indoor hardened); -40°C to +70°C storage",
+    "operating_temp_range": "-40°C to +55°C operating; -40°C to +70°C storage",
     "ingress_protection": "IP50",
     "msrp": "unknown",
     "in_box": [
@@ -1484,7 +1485,8 @@
     "antenna_type": [
       "External"
     ],
-    "form_factor": "Outdoor hardened",
+    "form_factor": "Outdoor",
+    "hardened": true,
     "radios_iot_features": [
       "BLE",
       "802.15.4 IoT radio",
@@ -1549,7 +1551,8 @@
     "antenna_type": [
       "Internal"
     ],
-    "form_factor": "Outdoor hardened",
+    "form_factor": "Outdoor",
+    "hardened": true,
     "radios_iot_features": [
       "BLE",
       "802.15.4 IoT radio",
@@ -1594,7 +1597,7 @@
     "antenna_type": [
       "Internal"
     ],
-    "form_factor": "Outdoor hardened",
+    "form_factor": "Outdoor",
     "radios_iot_features": [
       "BLE",
       "802.15.4 IoT radio",
@@ -1635,22 +1638,22 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3at power the AP supports all three Wi-Fi radios (2.4 GHz, 5 GHz, and 6 GHz) plus the BLE/802.15.4 IoT radio in the intended operating mode; 802.3af power would force the radios and IoT features into a heavily reduced configuration and is not recommended for production deployments.",
+    "behavior_min_power": "On 802.3at (Class 4), Cambium lists 25.5 W max power consumption and 10.6 W typical with the BLE/802.15.4 radio enabled. The datasheet names 802.3at as the only PoE input and lists no reduced-function mode.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (mGig) PoE in",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "BLE",
-      "802.15.4 (Zigbee/Thread/Matter)"
+      "BLE 5.1",
+      "802.15.4 IoT radio"
     ],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/x7-35x-ds-wifi7-indoor-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/3cb22f998e5e9e60/original/X7-35X-Wi-Fi-7-Indoor-Access-Point.pdf",
     "image_url": "images/cambium/cambium-X7-35X.png",
     "dimensions": "209.6 x 209.6 x 45 mm",
     "weight": "935 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0°C to 50°C operating; -20°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1660,22 +1663,22 @@
     "spatial_streams": "2x2 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3at power the AP operates the 2.4 GHz and 5 GHz radios and the IoT radio at full performance; 802.3af power would severely limit functionality and is only suitable for discovery or emergency use rather than normal client service.",
+    "behavior_min_power": "On 802.3at (Class 4), the 2.4 GHz and 5 GHz radios and the IoT radio are enabled (22.5 W max). 802.3bt (Class 6) enables the same functions. On 802.3af (Class 3), only Ethernet is enabled. With no PoE class detected, Ethernet and the IoT radio are enabled and the Wi-Fi radios are disabled.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (mGig) PoE in",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "BLE",
-      "802.15.4 (Zigbee/Thread/Matter)"
+      "BLE 5.1",
+      "802.15.4 IoT radio"
     ],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/x7-53x-ds-wifi7-indoor-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/654a4fcce3817f9d/original/Cambium_Networks_data_sheet_WiFi-7_X7-53X_AP.pdf",
     "image_url": "images/cambium/cambium-XE7-53X.png",
     "dimensions": "240 x 240 x 50 mm",
     "weight": "1600 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0°C to 50°C operating; -20°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1745,23 +1748,22 @@
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
-    "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3at power the AP operates its three Wi-Fi radios but may need to disable power-hungry options such as the USB interface and IoT/BLE radio depending on the configured feature set; 802.3bt power is recommended whenever you want all radios and interfaces enabled under full load and at maximum performance.",
+    "recommended_poe": "802.3bt",
+    "behavior_min_power": "On 802.3at (Class 4), the AP runs with USB and Bluetooth disabled (25.5 W). On 802.3bt, the AP draws up to 32 W. Typical draw is 22 W with USB disabled.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (PoE in) + 1× 10M/100M/1 GbE (downlink)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "BLE",
-      "802.15.4 (Zigbee/Thread/Matter)"
+      "BLE 4.1"
     ],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/xe3-4-ds-wifi6-6e-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/asset/646e2b2a-1615-4a43-8bd8-acdd82eb1abb/XE3-4-Wi-Fi-6-6E-Access-Point-Data-Sheet.pdf",
     "image_url": "images/cambium/cambium-XE3-4.png",
-    "dimensions": "220 x 200 x 86 mm",
-    "weight": "2920 g",
+    "dimensions": "215 x 215 x 42 mm",
+    "weight": "900 g (1.98 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1771,22 +1773,23 @@
     "spatial_streams": "2x2 / 4x4 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3at power the AP can run its tri-radio set with reduced headroom and may need to limit features such as USB or IoT/BLE radio use; 802.3bt power is recommended for full tri-radio throughput, maximum EIRP, and PoE budget, especially in hot outdoor environments.",
-    "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (PoE in) + 1× 10M/100M/1 GbE (downlink)",
+    "behavior_min_power": "On 802.3at (Class 4), typical power is 25 W. Maximum power is 62 W with PoE out enabled and sourcing 30 W of passive PoE (30 V or 48 V). The datasheet doesn't name the PoE input needed to run PoE out.",
+    "ethernet_ports_speed": "1× 100M/1/2.5 GbE (PoE in) + 1× 10M/100M/1 GbE (passive PoE out)",
     "antenna_type": [
-      "Internal"
+      "External"
     ],
     "form_factor": "Outdoor",
+    "hardened": true,
     "radios_iot_features": [
-      "BLE",
-      "802.15.4 (Zigbee/Thread/Matter)"
+      "BLE 4.1",
+      "GPS receiver"
     ],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/xe3-4tn-ds-wifi6-6e-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/1605ffefa3814519/original/XE3-4TN-Wi-Fi-6-Outdoor-Access-Point-Data-Sheet.pdf",
     "image_url": "images/cambium/cambium-XE3-4TN.png",
     "dimensions": "220 x 200 x 86 mm (8.66 x 7.87 x 3.39 in)",
     "weight": "2,920 g (6.44 lb)",
-    "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-40°C to 65°C",
+    "antenna_connectors": "6× N-type (4× 5/6 GHz, 2× 2.4/5 GHz), 1× SMA (GPS)",
+    "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1796,19 +1799,19 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3af power the AP can run both 2.4 GHz and 5 GHz radios for typical indoor coverage but with a tighter overall power budget; 802.3at power is recommended when you expect higher client density, higher throughput, or want additional headroom for sustained operation at maximum transmit power.",
+    "behavior_min_power": "On 802.3af (Class 3) or 802.3at, typical load consumption is 11 W. Cambium lists no reduced-function mode and gives no max power figure.",
     "ethernet_ports_speed": "1× 10M/100M/1 GbE (PoE in)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/xv2-21x-ds-wifi6-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/15f334cb236c8919/original/XV2-21X-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
     "image_url": "images/cambium/cambium-XV2-21X.png",
     "dimensions": "155 x 155 x 37 mm",
     "weight": "475 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1818,7 +1821,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3af power the AP runs the 2.4 GHz and 5 GHz radios and the IoT radio for in-room coverage but has little or no remaining power budget for PoE out; 802.3at power is recommended when you need to power an attached device (such as a phone or IoT hub) from the LAN port while maintaining reliable Wi-Fi service.",
+    "behavior_min_power": "On 802.3af (Class 3) or 802.3at, typical load is 10 W with no PoE out. With the PoE out port supplying its full 10 W, typical load is 20 W, more than the 12.95 W an 802.3af device can draw.",
     "ethernet_ports_speed": "3× 10M/100M/1 GbE (1× WAN + 2× LAN, one with PoE out)",
     "antenna_type": [
       "Internal"
@@ -1828,12 +1831,12 @@
       "BLE",
       "802.15.4 (Zigbee/Thread/Matter)"
     ],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/xv2-22h-ds-wifi6-wallplate-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/571a92cea13790cd/original/XV2-22H-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
     "image_url": "images/cambium/cambium-xv2-22h.png",
     "dimensions": "160 x 105 x 32 mm",
     "weight": "417 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 40°C",
+    "operating_temp_range": "0°C to 40°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1843,19 +1846,19 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3at power the AP supports both Wi-Fi radios at full outdoor performance and meets the typical 20 W power requirement; falling back to 802.3af would not provide sufficient power and is not supported for normal operation.",
+    "behavior_min_power": "On 802.3at (Class 4), typical consumption is 20 W. Cambium lists the AP as an 802.3at powered device only, with no 802.3af mode.",
     "ethernet_ports_speed": "1× 10M/100M/1 GbE (PoE in)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Outdoor",
     "radios_iot_features": [],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/xv2-23t-ds-wifi6-outdoor-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/a413978b586d0d7/original/XV2-23T-Wi-Fi-6-Outdoor-Access-Point.pdf",
     "image_url": "images/cambium/cambium-XV2-23T.png",
     "dimensions": "300 x 200 x 84 mm",
     "weight": "1200 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-40°C to 65°C",
+    "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1865,21 +1868,21 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3at power the AP runs both Wi-Fi radios and the BLE radio with full outdoor performance and can supply power to an auxiliary device via the secondary Ethernet port; if the available power budget is constrained, PoE-out capability and/or radio performance may need to be reduced.",
-    "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (mGig) PoE in + 1× 10M/100M/1 GbE (PoE out)",
+    "behavior_min_power": "On 802.3at (Class 4), max power is 20 W. Powering an auxiliary device through the passive PoE out port (30 V or 48 V, up to 30 W) raises draw to up to 50 W. The datasheet doesn't name the PoE input needed for that.",
+    "ethernet_ports_speed": "1× 100M/1/2.5 GbE (mGig) PoE in + 1× 10M/100M/1 GbE (passive PoE out)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Outdoor",
     "radios_iot_features": [
-      "BLE"
+      "BLE 4.1"
     ],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/xv2-2t0-ds-wifi6-outdoor-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/7a91d1496e2ab4c3/original/XV2-2T0-Wi-Fi-6-Outdoor-Access-Point.pdf",
     "image_url": "images/cambium/cambium-XV2-2T0.png",
     "dimensions": "582 x 200 x 80 mm",
     "weight": "2,700 g (5.95 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-40°C to 65°C",
+    "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -1889,19 +1892,19 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3at power the AP operates both the 2.4 GHz and 5 GHz radios at full performance with normal feature support; on 802.3af power it will boot but runs in a reduced-function mode (such as limiting certain features or radio capabilities), so 802.3at is recommended for production deployments.",
+    "behavior_min_power": "On 802.3at (Class 4), max power is 21 W (11 W typical with USB disabled). On 802.3af (15.4 W), Cambium lists operation with reduced function settings but doesn't say which functions are reduced.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (mGig) PoE in",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/xv2-2x-ds-wifi6-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/3aa1d0726fa7f3/original/XV2-2-Wi-Fi-6-Access-Point-Data-Sheet.pdf",
     "image_url": "images/cambium/cambium-XV2-2X.png",
     "dimensions": "195 x 195 x 41.4 mm",
     "weight": "800 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0°C to 50°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -2648,8 +2651,8 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt / UPOE+",
-    "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate but USB and PoE-out are disabled and some advanced features may be constrained.",
-    "ethernet_ports_speed": "1× mGig",
+    "behavior_min_power": "On 802.3at (Class 4), all three radios run 4x4 at 5 Gbps link speed with USB disabled (25.5 W max). 802.3bt (UPOE) or DC power adds USB at 4.5 W (30.5 W max on PoE). On 802.3af, all radios are off and the AP is for configuration staging only (1 Gbps, 14.0 W max).",
+    "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE mGig (RJ45)",
     "antenna_type": [
       "Internal"
     ],
@@ -2663,7 +2666,7 @@
       "BLE",
       "802.15.4 IoT radio"
     ],
-    "msrp": "~$2,593",
+    "msrp": "unknown",
     "image_url": "images/cisco/cisco-9166i.png",
     "in_box": [
       {
@@ -2727,7 +2730,7 @@
   {
     "vendor": "Cisco",
     "model": "CW9178I",
-    "wifi_gen_radios": "Wi-Fi 6/7 (2.4/5/6)",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4+4x4 (dual 5 GHz) / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
@@ -3138,8 +3141,8 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3at",
     "recommended_poe": "802.3at",
-    "behavior_min_power": "On 802.3at the AP operates with full 4x4 radios and dedicated scanning/BLE radios enabled; lower power is not recommended for production use.",
-    "ethernet_ports_speed": "1× 2.5 GbE (RJ45) uplink",
+    "behavior_min_power": "On 802.3at, the AP draws up to 30 W. Meraki marks 802.3at as required and lists no 802.3af or low-power mode. 12 V DC is an alternative power source.",
+    "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
     ],
@@ -3153,7 +3156,7 @@
     "weight": "800 g (28.22 oz)",
     "operating_temp_range": "0°C to 40°C operating",
     "operating_humidity": "5% to 95% RH non-condensing",
-    "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46_Datasheet",
+    "datasheet_url": "https://documentation.meraki.com/Wireless/Product_Information/Overviews_and_Datasheets/MR46_Datasheet",
     "image_url": "images/meraki/meraki-MR46.png",
     "msrp": "unknown",
     "in_box": [
@@ -4064,7 +4067,7 @@
   {
     "vendor": "Cisco Meraki",
     "model": "CW9178I",
-    "wifi_gen_radios": "Wi-Fi 6/7 (2.4/5/6)",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4+4x4 (dual 5 GHz) / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
@@ -4542,25 +4545,26 @@
     "model": "FAP-234G",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "802.3at (Class 4) or included passive PoE injector",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or PIN060-54PR 60W passive PoE injector (included)",
-    "behavior_min_power": "With 802.3at or the included passive 60W injector, all radios operate at full Tx power with 2x2 MIMO. Lower PoE classes are not specified as supported for full operation.",
-    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45) + 1× 1 GbE (RJ45)",
+    "behavior_min_power": "On 802.3af, radio 1 (2.4 GHz) and radio 2 (5 GHz) run at low Tx power (17 dBm) and radio 3 is disabled. On 802.3at or the included PIN060-54PR 60W passive injector, all radios run at full Tx power with 2x2 chains (28 W max). Hitless PoE failover is supported.",
+    "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Outdoor",
+    "hardened": true,
     "dimensions": "258 x 216 x 57.3 mm (10.15 x 8.50 x 2.26 in)",
     "weight": "1.38 kg (3.05 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-40°C to 60°C (-40°F to 140°F) operating; -58°F to 158°F",
+    "operating_temp_range": "-40°C to 60°C (-40°F to 140°F) operating; -50°C to 70°C (-58°F to 158°F) storage",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
     "radios_iot_features": [
       "BLE/Zigbee",
       "GPS"
     ],
     "msrp": "$1,200",
-    "image_url": "images/fortinet/fortinet-fap-23JK.png"
+    "image_url": "images/fortinet/fortinet-fap-234g.png"
   },
   {
     "vendor": "Fortinet",
@@ -5284,7 +5288,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "PoE++ (802.3bt)",
     "recommended_poe": "802.3bt PoE++ for full performance",
-    "behavior_min_power": "On 802.3bt PoE++ the AP operates at full performance. Lower-class PoE sources are not supported and may prevent the AP from booting.",
+    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 43 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5306,7 +5310,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "PoE++ (802.3bt)",
     "recommended_poe": "802.3bt PoE++ for full performance",
-    "behavior_min_power": "On 802.3bt PoE++ the AP operates at full performance. Lower-class PoE sources are not supported and may prevent the AP from booting.",
+    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 44 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Directional"
@@ -5374,7 +5378,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "PoE (802.3af)",
     "recommended_poe": "802.3af PoE for normal operation",
-    "behavior_min_power": "Designed for 802.3af PoE; the AP operates normally within the supported voltage range. PoE sources with very low power budgets may cause boot or stability issues under heavy traffic.",
+    "behavior_min_power": "On PoE (802.3af), max power consumption is 13 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5396,14 +5400,14 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "PoE+ (802.3at)",
     "recommended_poe": "802.3at PoE+ for full performance",
-    "behavior_min_power": "On 802.3at PoE+ the AP operates at full performance. 802.3af-class or low-power PoE sources may prevent the AP from powering on or staying stable under load.",
-    "ethernet_ports_speed": "1× 2.5 GbE (RJ45)",
+    "behavior_min_power": "On PoE+ (802.3at), max power consumption is 21 W. Ubiquiti documents no reduced-power mode.",
+    "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [],
-    "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro?s=us",
+    "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro",
     "image_url": "images/ubiquiti/ubiquiti-u7-pro.png",
     "dimensions": "Ø206 x 46 mm",
     "weight": "680 g (1.5 lb)",
@@ -5418,7 +5422,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "PoE+ (802.3at)",
     "recommended_poe": "802.3at PoE+ for full performance",
-    "behavior_min_power": "On 802.3at PoE+ the AP operates at full performance. 802.3af-class or low-power PoE sources may prevent the AP from powering on or staying stable under load.",
+    "behavior_min_power": "On PoE+ (802.3at), max power consumption is 22 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5430,7 +5434,7 @@
     "dimensions": "150 x 103 x 36 mm",
     "weight": "580 g (1.3 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 40°C",
+    "operating_temp_range": "-30°C to 60°C",
     "msrp": "$199.00"
   },
   {
@@ -5440,7 +5444,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "PoE+ (802.3at)",
     "recommended_poe": "802.3at PoE+ for full performance",
-    "behavior_min_power": "On 802.3at PoE+ the AP operates at full performance. 802.3af-class or undersized PoE sources may prevent the AP from booting or remaining stable.",
+    "behavior_min_power": "On PoE+ (802.3at), max power consumption is 22 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5449,7 +5453,7 @@
     "radios_iot_features": [],
     "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u7-pro-xg?s=us",
     "image_url": "images/ubiquiti/ubiquiti-u7-pro-xg.png",
-    "dimensions": "Ø206 x 46 mm",
+    "dimensions": "Ø206 x 32.5 mm",
     "weight": "750 g",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to 40°C",
@@ -5462,7 +5466,7 @@
     "spatial_streams": "2x2 / 4x4 / 2x2",
     "min_poe_class": "PoE++ (802.3bt)",
     "recommended_poe": "802.3bt PoE++ for full performance",
-    "behavior_min_power": "On 802.3bt PoE++ the AP operates at full performance. Lower-class PoE sources are not supported and may prevent the AP from powering on reliably.",
+    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 29 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5474,7 +5478,7 @@
     "dimensions": "Ø215 x 32.5 mm",
     "weight": "800 g",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to 60°C",
+    "operating_temp_range": "-30°C to 40°C",
     "msrp": "$299.00"
   },
   {
@@ -5484,7 +5488,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "PoE++ (802.3bt)",
     "recommended_poe": "PoE++ (802.3bt)",
-    "behavior_min_power": "The AP does not list lower-class PoE sources as being supported, and may not work properly or at all with less than 802.3bt (60 W) PoE.",
+    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 51 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE and 1× 1 GbE RJ45 ports",
     "antenna_type": [
       "Directional"
@@ -5502,8 +5506,8 @@
   {
     "vendor": "TP-Link Omada",
     "model": "EAP610",
-    "wifi_gen_radios": "Wi-Fi 6 (2.4 / 5 GHz)",
-    "spatial_streams": "2x2 / 2x2 / none",
+    "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
+    "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af",
     "recommended_poe": "802.3af (10.9 W max)",
     "behavior_min_power": "Designed for 802.3af PoE (10.9 W max on PoE); no reduced-power mode is documented. Also accepts 48 V passive PoE or 12 V DC (9.9 W max on DC).",
@@ -5518,7 +5522,7 @@
     "dimensions": "160 x 160 x 33.6 mm",
     "weight": "0.385 kg",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0–40 ℃",
+    "operating_temp_range": "0°C to 40°C",
     "msrp": "$88.60"
   },
   {
@@ -6527,8 +6531,8 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ with max power draw of 30 W, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE-PD)",
+    "behavior_min_power": "On 802.3at (Class 4), max power draw is 30 W. Meter lists no reduced-power mode or per-class behavior.",
+    "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE mGig (RJ45, PoE-PD)",
     "antenna_type": [
       "Internal"
     ],
@@ -6540,9 +6544,9 @@
     "form_factor": "Indoor",
     "radios_iot_features": [
       "Dedicated scanning radio (2x2 tri-band 2.4/5/6 GHz)",
-      "2.4 GHz IoT radio"
+      "2.4 GHz IoT radio (future software)"
     ],
-    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "datasheet_url": "https://docs.meter.com/hardware/access-points/a1",
     "image_url": "images/meter/meter-a1.jpg",
     "dimensions": "200 x 200 x 36 mm",
     "weight": "812.6 g (1.79 lb) without accessories",
@@ -6557,8 +6561,8 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3bt (Class 6)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance including PoE-out on LAN port",
-    "behavior_min_power": "Requires 802.3bt (Class 6) PoE++ input (max power draw 60 W) for full functionality including 802.3af PoE-out (15.4 W) on one downstream LAN port. Operation on lower-class PoE sources is not specified and may disable PoE-out to downstream devices.",
-    "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE-PD, uplink) + 4× 10M/100M/1 GbE (RJ45, one port supports 802.3af PoE-out)",
+    "behavior_min_power": "On 802.3bt (Class 6), max power draw is 60 W, including 802.3af PoE out (15.4 W). Meter lists no reduced-power mode or per-class behavior.",
+    "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE mGig (RJ45, PoE-PD, uplink) + 4× 10M/100M/1 GbE (RJ45), 802.3af PoE out",
     "antenna_type": [
       "Internal"
     ],
@@ -6567,7 +6571,7 @@
       "Dedicated scanning radio (2x2 tri-band 2.4/5/6 GHz)",
       "2.4 GHz IoT radio"
     ],
-    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "datasheet_url": "https://docs.meter.com/hardware/access-points/a2",
     "image_url": "images/meter/meter-a2.jpg",
     "dimensions": "164 x 121 x 36 mm",
     "weight": "unknown",
@@ -6582,8 +6586,8 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+, passive 48-54V PoE, or 12V DC input, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE-PD) + 1× 10M/100M/1 GbE (RJ45)",
+    "behavior_min_power": "Meter lists 802.3at, passive 48-54 V PoE (on the 2.5 GbE port) or 12 V DC as power sources. It gives no power draw figure and no per-class behavior.",
+    "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (RJ45, PoE-PD) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
     ],
@@ -6596,7 +6600,7 @@
       "Dedicated scanning radio (1x1, dual-band 5/2.4 GHz)",
       "BLE 5.0"
     ],
-    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "datasheet_url": "https://docs.meter.com/hardware/access-points/mw08",
     "image_url": "images/meter/meter-mw08.jpg",
     "dimensions": "205 x 205 x 34 mm",
     "weight": "812.6 g (1.79 lb) without accessories",
@@ -6611,8 +6615,8 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+, passive 48-54V PoE, or 12V DC input, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE-PD)",
+    "behavior_min_power": "Meter lists 802.3at, passive 48-54 V PoE (on the 2.5 GbE port) or 12 V DC as power sources. It gives no power draw figure and no per-class behavior.",
+    "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (RJ45, PoE-PD)",
     "antenna_type": [
       "Internal"
     ],
@@ -6621,7 +6625,7 @@
       "Dedicated scanning radio (1x1, dual-band 5/2.4 GHz)",
       "2.4 GHz IoT radio"
     ],
-    "datasheet_url": "https://meter-web.s3.us-west-1.amazonaws.com/meter.com/Meter+Hardware+Specs.zip",
+    "datasheet_url": "https://docs.meter.com/hardware/access-points/mw09",
     "image_url": "images/meter/meter-mw09.jpg",
     "dimensions": "124 x 190 x 47 mm",
     "weight": "unknown",

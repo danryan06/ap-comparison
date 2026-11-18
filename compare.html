@@ -281,6 +281,7 @@
       { key: 'antenna_gain_dbi', label: 'Antenna Gain (dBi)' },
       { key: 'beamwidth', label: 'Beamwidth' },
       { key: 'form_factor', label: 'Form Factor' },
+      { key: 'hardened', label: 'Hardened' },
       { key: 'dimensions', label: 'Dimensions' },
       { key: 'weight', label: 'Weight' },
       { key: 'antenna_connectors', label: 'Antenna Connectors' },
@@ -288,8 +289,7 @@
       { key: 'operating_humidity', label: 'Operating Humidity' },
       { key: 'ingress_protection', label: 'Ingress Protection' },
       { key: 'hazloc_certification', label: 'HazLoc Certification' },
-      { key: 'radios_iot_features', label: 'Radios & IoT Features' },
-      { key: 'msrp', label: 'MSRP' }
+      { key: 'radios_iot_features', label: 'Radios & IoT Features' }
     ];
 
     function slugify(s) {
@@ -320,6 +320,7 @@
     function formatValue(key, value) {
       if (value == null) return '';
 
+      if (key === 'hardened') return value === true ? 'Yes' : '';
       if (key === 'antenna_type') return formatAntennaType(value);
       
       if (key === 'antenna_gain_dbi' && typeof value === 'object') {

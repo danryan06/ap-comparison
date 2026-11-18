@@ -148,7 +148,6 @@
               <div class="result-cell">Spatial Streams</div>
               <div class="result-cell">Antenna</div>
               <div class="result-cell">Form Factor</div>
-              <div class="result-cell">MSRP</div>
               <div class="result-cell"></div>
             </div>
           </div>
@@ -436,11 +435,9 @@
 
         const form = document.createElement('div');
         form.className = 'result-cell result-form';
-        form.textContent = entry.form_factor || '—';
-
-        const msrp = document.createElement('div');
-        msrp.className = 'result-cell result-msrp';
-        msrp.textContent = entry.msrp || '—';
+        form.textContent = entry.form_factor
+          ? (entry.hardened ? `${entry.form_factor}, hardened` : entry.form_factor)
+          : '—';
 
         const actions = document.createElement('div');
         actions.className = 'result-cell result-actions';
@@ -461,7 +458,6 @@
         row.appendChild(spatial);
         row.appendChild(antenna);
         row.appendChild(form);
-        row.appendChild(msrp);
         row.appendChild(actions);
 
         // Make entire row clickable (except checkbox)

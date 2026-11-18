@@ -96,6 +96,7 @@
               <option>Outdoor</option>
               <option>Wallplate</option>
             </select>
+            <label class="checkbox-inline"><input id="hardened" name="hardened" type="checkbox"> Hardened</label>
           </div>
 
           <div class="form-row">
@@ -239,6 +240,7 @@
         ethernet_ports_speed,
         antenna_type,
         form_factor,
+        ...(document.getElementById('hardened').checked ? { hardened: true } : {}),
         radios_iot_features,
         datasheet_url,
         image_url,
@@ -272,6 +274,7 @@
         box.checked = antennaTypes(entry.antenna_type).includes(box.value);
       });
       document.getElementById('form_factor').value = entry.form_factor || '';
+      document.getElementById('hardened').checked = entry.hardened === true;
       document.getElementById('radios_iot_features').value =
         Array.isArray(entry.radios_iot_features) ? entry.radios_iot_features.join(', ') : (entry.radios_iot_features || '');
       document.getElementById('dimensions').value = entry.dimensions || '';

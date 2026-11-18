@@ -13,6 +13,7 @@ function fail(msg) {
 }
 
 const ANTENNA_TYPES = new Set(['Internal', 'Directional', 'External']);
+const FORM_FACTORS = new Set(['Indoor', 'Outdoor', 'Wallplate']);
 const BAND_KEYS = ['2.4', '5', '5-lower', '5-upper', '6'];
 const BAND_KEY_SET = new Set(BAND_KEYS);
 const OPTIONAL_STRING_FIELDS = ['hazloc_certification', 'operating_humidity', 'ingress_protection'];
@@ -106,6 +107,16 @@ function checkBeamwidth(entry, idx) {
   fail(`${entryName(entry, idx)} beamwidth must be a flat band map or an object of named modes.`);
 }
 
+function checkFormFactor(entry, idx) {
+  if (!FORM_FACTORS.has(entry.form_factor)) {
+    fail(`${entryName(entry, idx)} form_factor must be Indoor, Outdoor, or Wallplate.`);
+  }
+  if (entry.hardened == null) return;
+  if (entry.hardened !== true) {
+    fail(`${entryName(entry, idx)} hardened must be true when present. Omit it otherwise.`);
+  }
+}
+
 function checkOptionalStrings(entry, idx) {
   OPTIONAL_STRING_FIELDS.forEach(field => {
     if (entry[field] == null) return;
@@ -127,6 +138,7 @@ try {
         fail(`Entry index ${idx} (${entry.vendor} ${entry.model}) has a datasheet_url containing a newline; URLs must be single-line strings.`);
       }
     }
+    checkFormFactor(entry, idx);
     checkAntennaType(entry, idx);
     checkAntennaModes(entry, idx);
     checkBeamwidth(entry, idx);

@@ -140,6 +140,7 @@
       operating_humidity: 'Operating Humidity',
       ingress_protection: 'Ingress Protection',
       form_factor: 'Form Factor',
+      hardened: 'Hardened',
       dimensions: 'Dimensions',
       weight: 'Weight',
       antenna_connectors: 'Antenna Connectors',
@@ -397,7 +398,9 @@
           if (eosFields.includes(k)) {
             valDiv.classList.add('eos-val');
           }
-          if (k === 'antenna_type') {
+          if (k === 'hardened') {
+            valDiv.textContent = v === true ? 'Yes' : '';
+          } else if (k === 'antenna_type') {
             valDiv.textContent = formatAntennaType(v);
           } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {
             valDiv.textContent = formatBandObject(v, 'gain');
@@ -442,7 +445,7 @@
         const sections = [
           {
             title: 'Basic Information',
-            fields: ['vendor', 'model', 'wifi_gen_radios', 'spatial_streams', 'msrp']
+            fields: ['vendor', 'model', 'wifi_gen_radios', 'spatial_streams']
           },
           {
             title: 'Power Requirements',
@@ -458,7 +461,7 @@
           },
           {
             title: 'Physical Specifications',
-            fields: ['form_factor', 'dimensions', 'weight', 'operating_temp_range', 'operating_humidity', 'ingress_protection', 'hazloc_certification']
+            fields: ['form_factor', 'hardened', 'dimensions', 'weight', 'operating_temp_range', 'operating_humidity', 'ingress_protection', 'hazloc_certification']
           },
           {
             title: 'End of Life Information',
@@ -521,6 +524,7 @@
           !allSectionFields.includes(k) && 
           k !== 'image_url' && 
           k !== 'datasheet_url' &&
+          k !== 'msrp' &&
           k !== 'antenna_modes' &&
           k !== 'in_box' &&
           k !== 'in_box_source' &&

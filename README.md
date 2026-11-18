@@ -30,7 +30,6 @@ Each access point entry includes:
 - **Physical**: Antenna type, form factor, dimensions, weight, antenna connectors
 - **Environmental**: Operating temperature range
 - **Additional Features**: Radios & IoT features (Zigbee, Bluetooth, etc.)
-- **Pricing**: MSRP
 - **Documentation**: Datasheet URL
 - **Visual**: Product images
 

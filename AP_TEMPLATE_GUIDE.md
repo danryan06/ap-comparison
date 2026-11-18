@@ -157,7 +157,9 @@ Use this template when submitting new AP entries. The canonical JSON template is
 
 ### Physical Specifications
 
-- **form_factor**: `"Indoor"`, `"Outdoor"`, or `"Wallplate"`
+- **form_factor**: `"Indoor"`, `"Outdoor"`, or `"Wallplate"`. Do not put hardened, ruggedized, or HazLoc in this field.
+
+- **hardened**: Optional boolean. Set `true` only when the vendor calls that model hardened, including "indoor hardened" or "connectorized hardened", as the model's own description. A series title that says hardened is not enough. Omit the field otherwise. Do not set `false`. The table, detail, and compare views show it as hardened only when it is `true`.
 
 - **dimensions**: Metric first. Imperial, when the vendor states it, goes in parentheses.
   - `"200 x 200 x 45 mm (7.9 x 7.9 x 1.8 in)"`
@@ -199,7 +201,7 @@ Use this template when submitting new AP entries. The canonical JSON template is
   - Use a lowercase vendor name and model
   - Supported formats: `.png`, `.jpg`, `.jpeg`
 
-- **msrp**: Manufacturer's suggested retail price
+- **msrp**: Stored, not shown. The table, finder, compare view, and detail page do not display it.
   - Format: `"$1,000"` or `"unknown"` if not available
   - Use `"~$1,000"` for approximate prices
 
@@ -291,6 +293,6 @@ Errors fail the run. Warnings flag things to review: missing Cisco/Meraki twins,
 ## Notes
 
 - Strings are the default. Arrays: `antenna_type`, `radios_iot_features`, `antenna_modes`, `in_box`. Objects: `antenna_gain_dbi`, `beamwidth`, and the gain or beamwidth object inside a mode.
-- `operating_humidity`, `ingress_protection`, `hazloc_certification`, `antenna_modes`, `in_box`, `in_box_source`, and `in_box_condition` are omitted when they do not apply. `in_box: []` means the document lists nothing that ships unconditionally. Do not set the other optional fields to empty strings or empty arrays just to hold a place.
-- Use `"unknown"` for a missing value that the schema still requires, such as MSRP.
+- `hardened`, `operating_humidity`, `ingress_protection`, `hazloc_certification`, `antenna_modes`, `in_box`, `in_box_source`, and `in_box_condition` are omitted when they do not apply. `hardened` is omitted rather than set to `false`. `in_box: []` means the document lists nothing that ships unconditionally. Do not set the other optional fields to empty strings or empty arrays just to hold a place.
+- Use `"unknown"` for a missing `msrp`. The site does not display that field.
 - Do not infer a number, temperature, certification class, or antenna type that the vendor documentation does not state.

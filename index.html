@@ -170,7 +170,6 @@
             <th class="sortable" data-key="weight">Weight</th>
             <th class="sortable" data-key="antenna_connectors" data-tooltip="Type and count of antenna connectors (if external antennas)">Antenna Connectors</th>
             <th class="sortable" data-key="operating_temp_range" data-tooltip="Operating and storage temperature ranges">Operating Temp Range</th>
-            <th class="sortable" data-key="msrp">MSRP</th>
           </tr>
         </thead>
         <tbody id="ap-table-body">
@@ -489,12 +488,12 @@
             'dimensions',
             'weight',
             'antenna_connectors',
-            'operating_temp_range',
-            'msrp'
+            'operating_temp_range'
           ]
             .map(k => normalizeString(entry[k]))
             .join(' ')
             .toLowerCase() +
+          (entry.hardened ? ' hardened' : '') +
           ' ' +
           normalizeString(entry.radios_iot_features).toLowerCase() +
           ' ' +
@@ -581,12 +580,11 @@
           tr.appendChild(radiosTd);
 
         tr.appendChild(textCell(formatAntennaType(entry.antenna_type)));
-        tr.appendChild(textCell(entry.form_factor));
+        tr.appendChild(textCell(entry.hardened ? `${entry.form_factor}, hardened` : entry.form_factor));
         tr.appendChild(textCell(entry.dimensions));
         tr.appendChild(textCell(entry.weight));
         tr.appendChild(textCell(entry.antenna_connectors));
         tr.appendChild(textCell(entry.operating_temp_range));
-          tr.appendChild(textCell(entry.msrp));
 
         // Navigate to dedicated details page, preserving current table state in URL
         tr.addEventListener('click', () => {
@@ -649,7 +647,7 @@
       const keysToCheck = [
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
         'behavior_min_power','ethernet_ports_speed','radios_iot_features','antenna_type','form_factor',
-        'dimensions','weight','antenna_connectors','operating_temp_range','msrp','datasheet_url'
+        'dimensions','weight','antenna_connectors','operating_temp_range','datasheet_url'
       ];
       const problems = [];
       const slugToIndexes = new Map();
@@ -716,6 +714,8 @@
           valDiv.textContent = formatModeRows(v).map(row => `${row.label}: ${row.value}`).join('; ');
         } else if (k === 'antenna_gain_dbi' || k === 'beamwidth') {
           valDiv.textContent = formatBandObject(v, k === 'antenna_gain_dbi' ? 'gain' : 'beam') || normalizeString(v);
+        } else if (k === 'hardened') {
+          valDiv.textContent = v === true ? 'Yes' : '';
         } else if (Array.isArray(v)) {
           valDiv.textContent = v.join(', ');
         } else {
@@ -727,12 +727,12 @@
       const primaryKeys = [
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
         'recommended_poe','behavior_min_power','ethernet_ports_speed',
-        'radios_iot_features','antenna_type','antenna_gain_dbi','form_factor','msrp'
+        'radios_iot_features','antenna_type','antenna_gain_dbi','form_factor'
       ];
       const keys = Object.keys(entry);
-      const ordered = [
+        const ordered = [
         ...primaryKeys.filter(k => keys.includes(k)),
-        ...keys.filter(k => !primaryKeys.includes(k)).sort()
+        ...keys.filter(k => !primaryKeys.includes(k) && k !== 'msrp').sort()
       ];
       ordered.forEach(k => renderKV(k, entry[k]));
       overlay.style.display = 'flex';
@@ -777,7 +777,7 @@
       for (let i = 0; i < 5; i++) {
         const tr = document.createElement('tr');
         tr.className = 'skeleton-row';
-        ['vendor', 'model', 'wifi', 'spatial', 'poe', 'poe-rec', 'behavior', 'ethernet', 'iot', 'antenna', 'form', 'dims', 'weight', 'connectors', 'temp', 'msrp'].forEach((type, idx) => {
+        ['vendor', 'model', 'wifi', 'spatial', 'poe', 'poe-rec', 'behavior', 'ethernet', 'iot', 'antenna', 'form', 'dims', 'weight', 'connectors', 'temp'].forEach((type, idx) => {
           const td = document.createElement('td');
           const div = document.createElement('div');
           div.className = 'skeleton-box';

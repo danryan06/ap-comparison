@@ -908,6 +908,23 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   resize: vertical;
 }
 
+.form-row label.checkbox-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.form-row label.checkbox-inline input {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
 .antenna-type-options {
   display: flex;
   flex-wrap: wrap;
@@ -1365,7 +1382,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .result-row {
   display: grid;
-  grid-template-columns: auto 1fr 1.2fr 1.2fr 1fr 1fr 1fr 1fr 1fr auto;
+  grid-template-columns: auto 1fr 1.2fr 1.2fr 1fr 1fr 1fr auto;
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1px solid rgba(148, 163, 184, 0.08);
@@ -1432,11 +1449,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .result-antenna,
 .result-form {
   color: #d1d5db;
-}
-
-.result-msrp {
-  font-weight: 500;
-  color: #f3f4f6;
 }
 
 .result-actions {
