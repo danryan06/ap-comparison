@@ -3704,7 +3704,8 @@
       "ruckus-t350d",
       "ruckus-t350se",
       "ruckus-t670",
-      "ruckus-t750"
+      "ruckus-t750",
+      "ruckus-t750se"
     ],
     "sources": [
       {
@@ -3717,9 +3718,16 @@
           "ruckus-t670",
           "ruckus-t750"
         ]
+      },
+      {
+        "url": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db",
+        "doc": "RUCKUS T750 Data Sheet",
+        "aps": [
+          "ruckus-t750se"
+        ]
       }
     ],
-    "notes": "Accessory Guide kit contents include a U-joint bracket, wall mount bracket, AP bracket, and safety cable kit. The shared T750/T750SE data sheet lists this accessory with the T750 ordering block and does not name the T750SE, so the T750SE is not added."
+    "notes": "Accessory Guide kit contents include a U-joint bracket, wall mount bracket, AP bracket, and safety cable kit. The Accessory Guide names only T750. The T750 data sheet covers T750 and T750SE and lists 902-0125-0000 under Optional Accessories, so the T750SE is included."
   },
   {
     "id": "ruckus-902-0134-0000",
@@ -3737,22 +3745,36 @@
       "articulating"
     ],
     "compatible_aps": [
+      "ruckus-t350c",
+      "ruckus-t350d",
+      "ruckus-t350se",
       "ruckus-t670",
       "ruckus-t670sn",
-      "ruckus-t750"
+      "ruckus-t750",
+      "ruckus-t750se"
     ],
     "sources": [
       {
         "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
         "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
         "aps": [
+          "ruckus-t350c",
+          "ruckus-t350d",
+          "ruckus-t350se",
           "ruckus-t670",
           "ruckus-t670sn",
           "ruckus-t750"
         ]
+      },
+      {
+        "url": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db",
+        "doc": "RUCKUS T750 Data Sheet",
+        "aps": [
+          "ruckus-t750se"
+        ]
       }
     ],
-    "notes": "Accessory Guide: 180-degree azimuth and elevation adjustment, solid wall or ceiling, 1 to 4 in poles. Its compatible list also prints \"T350\" as a family name; T350c, T350d, and T350se are not listed individually, so they are not added. T670 and T670sn data sheets call it \"Secure Articulating Mounting Bracket with 10º increment\". The shared T750/T750SE data sheet lists this accessory with the T750 ordering block and does not name the T750SE, so the T750SE is not added."
+    "notes": "Accessory Guide: 180-degree azimuth and elevation adjustment, solid wall or ceiling, 1 to 4 in poles. Its compatible list prints \"T350\" as a family name, so T350c, T350d, and T350se are included. T670 and T670sn data sheets call it \"Secure Articulating Mounting Bracket with 10º increment\". The Accessory Guide names only T750. The T750 data sheet covers T750 and T750SE and lists 902-0134-0000 under Optional Accessories, so the T750SE is included."
   },
   {
     "id": "ruckus-902-0703-0000",
@@ -5289,6 +5311,7 @@
     ],
     "name": "Threaded rod adapter, 5/8 in",
     "mount_type": [
+      "threaded_rod",
       "adapter"
     ],
     "compatible_aps": [
@@ -5355,7 +5378,7 @@
         ]
       }
     ],
-    "notes": "Adapter for a 5/8-inch threaded rod, used with APBR-U. Threaded rod has no mount_type value."
+    "notes": "Adapter for a 5/8-inch threaded rod, used with APBR-U."
   },
   {
     "id": "juniper-apbr-adp-m16",
@@ -5367,6 +5390,7 @@
     ],
     "name": "Threaded rod adapter, 16 mm",
     "mount_type": [
+      "threaded_rod",
       "adapter"
     ],
     "compatible_aps": [
@@ -5433,7 +5457,7 @@
         ]
       }
     ],
-    "notes": "Adapter for a 16mm threaded rod, used with APBR-U. Threaded rod has no mount_type value."
+    "notes": "Adapter for a 16mm threaded rod, used with APBR-U."
   },
   {
     "id": "juniper-apbr-adp-t12",
@@ -5451,6 +5475,7 @@
     ],
     "name": "Threaded rod adapter, 1/2 in",
     "mount_type": [
+      "threaded_rod",
       "adapter"
     ],
     "compatible_aps": [
@@ -5953,14 +5978,16 @@
       "threaded_rod"
     ],
     "compatible_aps": [
-      "juniper-ap32"
+      "juniper-ap32",
+      "juniper-ap32e"
     ],
     "sources": [
       {
         "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
         "doc": "AP33 or AP32 Hardware Installation Guide",
         "aps": [
-          "juniper-ap32"
+          "juniper-ap32",
+          "juniper-ap32e"
         ]
       },
       {
@@ -5971,7 +5998,7 @@
         ]
       }
     ],
-    "notes": "The Juniper AP Mounting Guide says APBR-T58 applies to the AP32, AP33, AP41, and AP43. The bracket attaches to the 5/8-inch threaded rod, and the AP locks onto the bracket. The same page uses APBR-U with APBR-ADP-T58 for the AP24, AP27, AP34, AP36, AP37, AP45, and AP47. The Mist AP33 or AP32 Hardware Installation Guide lists this bracket in a document that also specifies the AP32E, without assigning the bracket to the AP32E, so the AP32E is not added."
+    "notes": "The Mist AP33 or AP32 Hardware Installation Guide names the AP32E (AP32E-US and AP32E-WW) and lists \"APBR-T58 5/8-inch threaded rod bracket\" in its ordering information. The Juniper AP Mounting Guide says APBR-T58 applies to the AP32, AP33, AP41, and AP43. The bracket attaches to the 5/8-inch threaded rod, and the AP locks onto the bracket. The same page uses APBR-U with APBR-ADP-T58 for the AP24, AP27, AP34, AP36, AP37, AP45, and AP47."
   },
   {
     "id": "juniper-apbr-m16",
@@ -5986,14 +6013,16 @@
       "threaded_rod"
     ],
     "compatible_aps": [
-      "juniper-ap32"
+      "juniper-ap32",
+      "juniper-ap32e"
     ],
     "sources": [
       {
         "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
         "doc": "AP33 or AP32 Hardware Installation Guide",
         "aps": [
-          "juniper-ap32"
+          "juniper-ap32",
+          "juniper-ap32e"
         ]
       },
       {
@@ -6004,7 +6033,7 @@
         ]
       }
     ],
-    "notes": "The Juniper AP Mounting Guide says APBR-M16 applies to the AP32, AP33, AP41, and AP43. The bracket attaches to the 16mm threaded rod, and the AP locks onto the bracket. The same page uses APBR-U with APBR-ADP-M16 for the AP24, AP27, AP34, AP36, AP37, AP45, and AP47. The Mist AP33 or AP32 Hardware Installation Guide lists this bracket in a document that also specifies the AP32E, without assigning the bracket to the AP32E, so the AP32E is not added."
+    "notes": "The Mist AP33 or AP32 Hardware Installation Guide names the AP32E (AP32E-US and AP32E-WW) and lists \"APBR-M16 16mm threaded rod bracket\" in its ordering information. The Juniper AP Mounting Guide says APBR-M16 applies to the AP32, AP33, AP41, and AP43. The bracket attaches to the 16mm threaded rod, and the AP locks onto the bracket. The same page uses APBR-U with APBR-ADP-M16 for the AP24, AP27, AP34, AP36, AP37, AP45, and AP47."
   },
   {
     "id": "arista-mnt-ap-24mm",
@@ -6024,6 +6053,7 @@
     ],
     "compatible_aps": [
       "arista-c-330",
+      "arista-c-360",
       "arista-c-400",
       "arista-c-430",
       "arista-c-460",
@@ -6070,6 +6100,7 @@
         "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
         "aps": [
           "arista-c-330",
+          "arista-c-360",
           "arista-c-400",
           "arista-c-430",
           "arista-c-460",
@@ -6077,7 +6108,7 @@
         ]
       }
     ],
-    "notes": "Ships in the box with the C-330, C-400, C-430, C-460, and C-460E. Their package pages print MNT-AP-24MM. The C-360 package page lists a 15/16 in (24 mm) bracket and does not print the part number, so the C-360 is not added. The datasheet says MNT-AP-24MM ships with all C-series APs and lists compatibility as \"All C-series APs\"."
+    "notes": "Ships in the box with the C-330, C-400, C-430, C-460, and C-460E. Their package pages print MNT-AP-24MM. The C-360 package page lists a 15/16 in (24 mm) bracket and does not print the part number. The datasheet says MNT-AP-24MM ships with all C-series APs and lists compatibility as \"All C-series APs\"."
   },
   {
     "id": "arista-mnt-ap-flat-14cm",
@@ -6093,6 +6124,8 @@
       "hard_ceiling"
     ],
     "compatible_aps": [
+      "arista-c-330",
+      "arista-c-360",
       "arista-c-400",
       "arista-c-430",
       "arista-c-460",
@@ -6131,6 +6164,8 @@
         "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
         "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
         "aps": [
+          "arista-c-330",
+          "arista-c-360",
           "arista-c-400",
           "arista-c-430",
           "arista-c-460",
@@ -6138,7 +6173,201 @@
         ]
       }
     ],
-    "notes": "Install pages for the C-400, C-430, C-460, and C-460E say the wall mounting accessory SKU (MNT-AP-FLAT-14CM) can be ordered and purchased separately. Datasheet mount type: \"Wall, Hard-ceiling, gang box\". Gang box has no mount type. Datasheet compatibility is \"All C-series APs\". The C-330 install page was not fetched, and the C-360 install page does not name this SKU, so those models are not added."
+    "notes": "Install pages for the C-400, C-430, C-460, and C-460E say the wall mounting accessory SKU (MNT-AP-FLAT-14CM) can be ordered and purchased separately. Datasheet mount type: \"Wall, Hard-ceiling, gang box\". Gang box has no mount type. Datasheet compatibility: \"All C-series APs\"."
+  },
+  {
+    "id": "arista-mnt-ap-15mm",
+    "part_numbers": [
+      {
+        "vendor": "Arista",
+        "part_number": "MNT-AP-15MM"
+      }
+    ],
+    "name": "Suprafine 9/16 in (15 mm) T-grid mount kit",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "15 mm",
+      "9/16 in"
+    ],
+    "compatible_aps": [
+      "arista-c-330",
+      "arista-c-360",
+      "arista-c-400",
+      "arista-c-430",
+      "arista-c-460",
+      "arista-c-460e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+        "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
+        "aps": [
+          "arista-c-330",
+          "arista-c-360",
+          "arista-c-400",
+          "arista-c-430",
+          "arista-c-460",
+          "arista-c-460e"
+        ]
+      }
+    ],
+    "notes": "\"AP mount kit for Suprafine (15mm, 9/16\") T-grid rails\". Datasheet compatibility: \"All C-series APs\"."
+  },
+  {
+    "id": "arista-mnt-ap-15mm-adapter",
+    "part_numbers": [
+      {
+        "vendor": "Arista",
+        "part_number": "MNT-AP-15MM-ADAPTER"
+      }
+    ],
+    "name": "Recessed-tile adapter kit, 9/16 in (15 mm) T-grid",
+    "mount_type": [
+      "ceiling_tbar",
+      "adapter"
+    ],
+    "rail_width": [
+      "15 mm",
+      "9/16 in"
+    ],
+    "compatible_aps": [
+      "arista-c-330",
+      "arista-c-360",
+      "arista-c-400",
+      "arista-c-430",
+      "arista-c-460",
+      "arista-c-460e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+        "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
+        "aps": [
+          "arista-c-330",
+          "arista-c-360",
+          "arista-c-400",
+          "arista-c-430",
+          "arista-c-460",
+          "arista-c-460e"
+        ]
+      }
+    ],
+    "notes": "\"AP mount adapter kit for recessed tiles and Suprafine (15mm, 9/16\") T-grid rails\". Datasheet mount type: \"Ceiling (for recessed tiles)\". That describes recessed tiles, not a recessed rail, so rail_style is omitted. Datasheet compatibility: \"All C-series APs\"."
+  },
+  {
+    "id": "arista-mnt-ap-24mm-adapter",
+    "part_numbers": [
+      {
+        "vendor": "Arista",
+        "part_number": "MNT-AP-24MM-ADAPTER"
+      }
+    ],
+    "name": "Recessed-tile adapter kit, 15/16 in (24 mm) T-grid",
+    "mount_type": [
+      "ceiling_tbar",
+      "adapter"
+    ],
+    "rail_width": [
+      "24 mm",
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "arista-c-330",
+      "arista-c-360",
+      "arista-c-400",
+      "arista-c-430",
+      "arista-c-460",
+      "arista-c-460e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+        "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
+        "aps": [
+          "arista-c-330",
+          "arista-c-360",
+          "arista-c-400",
+          "arista-c-430",
+          "arista-c-460",
+          "arista-c-460e"
+        ]
+      }
+    ],
+    "notes": "\"AP mount adapter kit for recessed tiles and Prelude (24mm, 15/16\") T-grid rails\". Datasheet mount type: \"Ceiling (for recessed tiles)\". That describes recessed tiles, not a recessed rail, so rail_style is omitted. Datasheet compatibility: \"All C-series APs\"."
+  },
+  {
+    "id": "arista-mnt-ap-intsil",
+    "part_numbers": [
+      {
+        "vendor": "Arista",
+        "part_number": "MNT-AP-INTSIL"
+      }
+    ],
+    "name": "Interlude and Silhouette T-grid mount kit",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "arista-c-330",
+      "arista-c-360",
+      "arista-c-400",
+      "arista-c-430",
+      "arista-c-460",
+      "arista-c-460e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+        "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
+        "aps": [
+          "arista-c-330",
+          "arista-c-360",
+          "arista-c-400",
+          "arista-c-430",
+          "arista-c-460",
+          "arista-c-460e"
+        ]
+      }
+    ],
+    "notes": "\"AP mount kit for Interlude and Silhouette T-grid rails\". Datasheet compatibility: \"All C-series APs\"."
+  },
+  {
+    "id": "arista-mnt-ap-u-adapter-1",
+    "part_numbers": [
+      {
+        "vendor": "Arista",
+        "part_number": "MNT-AP-U-ADAPTER-1"
+      }
+    ],
+    "name": "Adapter bracket for Cisco mounts",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "arista-c-330",
+      "arista-c-360",
+      "arista-c-400",
+      "arista-c-430",
+      "arista-c-460",
+      "arista-c-460e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+        "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
+        "aps": [
+          "arista-c-330",
+          "arista-c-360",
+          "arista-c-400",
+          "arista-c-430",
+          "arista-c-460",
+          "arista-c-460e"
+        ]
+      }
+    ],
+    "notes": "\"Adapter Bracket for Cisco Mounts\". Datasheet mount type: \"Ceiling\". Datasheet compatibility: \"All C-series APs\"."
   },
   {
     "id": "fortinet-fap-400-mnt-10",
@@ -6358,6 +6587,7 @@
     "mount_type": [
       "wall",
       "hard_ceiling",
+      "threaded_rod",
       "adapter"
     ],
     "compatible_aps": [
@@ -6384,7 +6614,7 @@
         ]
       }
     ],
-    "notes": "Enables mounting of FAPs with a 15/16 in. T-bar mount to flat surfaces (wall, ceiling), an outlet box (single, double gang, and 4x4 junction box), hanging conduit (3/4 in. trade size), and hanging all-thread (3/8 in.). Listed only in the per-model matrix. Hanging conduit has no mount type. The 3/8 in. all-thread joins the AP's existing 15/16 in. T-bar mount."
+    "notes": "Enables mounting of FAPs with a 15/16 in. T-bar mount to flat surfaces (wall, ceiling), an outlet box (single, double gang, and 4x4 junction box), hanging conduit (3/4 in. trade size), and hanging all-thread (3/8 in.). Listed only in the per-model matrix. The datasheet describes this as \"Outlet box mounting, hanging conduit, and all-thread mounting\". Hanging conduit has no mount type. All-thread is threaded rod."
   },
   {
     "id": "fortinet-fap-enc-43x",

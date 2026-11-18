@@ -264,11 +264,11 @@ See `templates/in_box_template.json`.
 Surface: `ceiling_tbar`, `hard_ceiling`, `wall`, `pole`, `desk`, `strand`, `din_rail`, `beam`, `threaded_rod`
 Form: `articulating`, `enclosure`, `adapter`
 
-`adapter` covers parts that let an AP reuse another generation's bracket footprint. Flush and recessed are `rail_style` values, not mount types. `beam` is a clip or bracket that fastens the AP to a structural beam. `threaded_rod` is a bracket that hangs the AP from a threaded rod by itself. A part that only joins a rod or another bracket to a second mount stays `adapter`. Add a new type only when a real part does not fit any of these.
+`adapter` covers a part that mounts the AP by joining it to another bracket or to a surface. An adapter lists that surface as well as `adapter`, for example `["beam", "adapter"]` or `["threaded_rod", "adapter"]`. Flush and recessed are `rail_style` values, not mount types. `beam` is a clip or bracket that fastens the AP to a structural beam. `threaded_rod` is a bracket or adapter that hangs the AP from a threaded rod. Add a new type only when a real part does not fit any of these.
 
 #### Compatibility rules
 
-- A mount record is created only when a document names at least one AP model. A statement like "fits the 9160 family" goes in `notes` until each model is listed.
+- A mount record is created only when a document names at least one AP model. When a document says a mount fits an entire family, list every in-scope model in that family. Add that document as a source with those models in `aps`, and quote the family wording in `notes`. "All C-series APs" and a compatibility list that prints "T350" are family statements.
 - Cisco and Cisco Meraki listings are separate records for the same hardware. A bracket that fits the hardware is listed on both slugs. The validator warns when only one twin is listed.
 - When a second document adds compatibility for another AP, add a new entry to `sources` with that AP in its `aps` list.
 
