@@ -7369,5 +7369,226 @@
       }
     ],
     "notes": "\"Paintable mounting kit for the U7 Pro Wall that enables near-invisible, recessed installation.\""
+  },
+  {
+    "id": "alcatel-lucent-ap-mnt-in-be",
+    "part_numbers": [
+      {
+        "vendor": "Alcatel-Lucent",
+        "part_number": "AP-MNT-IN-BE"
+      }
+    ],
+    "name": "Indoor T-rail mounting kit, Type B1/B2",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "9/16 in",
+      "15/16 in"
+    ],
+    "environment": "indoor",
+    "compatible_aps": [
+      "alcatel-lucent-ap1511",
+      "alcatel-lucent-ap1521"
+    ],
+    "sources": [
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1511-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1511 datasheet",
+        "aps": [
+          "alcatel-lucent-ap1511",
+          "alcatel-lucent-ap1521"
+        ]
+      },
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/alcatel-lucent-omniaccess-stellar-ap1521-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1521 datasheet",
+        "aps": [
+          "alcatel-lucent-ap1511",
+          "alcatel-lucent-ap1521"
+        ]
+      }
+    ],
+    "notes": "\"Indoor mounting kit enhanced, Type B1 (9/16) and Type B2 (15/16) for T shaped ceiling rail mounting. Applicable for OmniAccess Stellar Indoor AP1101, AP12xx, AP13xx, AP14xx and AP15xx series.\" Rail widths are printed without a unit."
+  },
+  {
+    "id": "alcatel-lucent-ap-mnt-in-ce",
+    "part_numbers": [
+      {
+        "vendor": "Alcatel-Lucent",
+        "part_number": "AP-MNT-IN-CE"
+      }
+    ],
+    "name": "Indoor ceiling rail mounting kit, Type C1/C2",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "environment": "indoor",
+    "compatible_aps": [
+      "alcatel-lucent-ap1511",
+      "alcatel-lucent-ap1521"
+    ],
+    "sources": [
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1511-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1511 datasheet",
+        "aps": [
+          "alcatel-lucent-ap1511",
+          "alcatel-lucent-ap1521"
+        ]
+      },
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/alcatel-lucent-omniaccess-stellar-ap1521-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1521 datasheet",
+        "aps": [
+          "alcatel-lucent-ap1511",
+          "alcatel-lucent-ap1521"
+        ]
+      }
+    ],
+    "notes": "\"Indoor mounting kit enhanced, Type C1 (Open Silhouette) and C2 (Flanged Interlude), for other shaped ceiling rail mounting. Applicable for OmniAccess Stellar Indoor AP1101, AP12xx, AP13xx, AP14xx and AP15xx series.\""
+  },
+  {
+    "id": "alcatel-lucent-ap-mnt-in-we",
+    "part_numbers": [
+      {
+        "vendor": "Alcatel-Lucent",
+        "part_number": "AP-MNT-IN-WE"
+      }
+    ],
+    "name": "Indoor metal flat surface mounting kit, Type WE",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "environment": "indoor",
+    "compatible_aps": [
+      "alcatel-lucent-ap1511",
+      "alcatel-lucent-ap1521"
+    ],
+    "sources": [
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1511-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1511 datasheet",
+        "aps": [
+          "alcatel-lucent-ap1511"
+        ]
+      },
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/alcatel-lucent-omniaccess-stellar-ap1521-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1521 datasheet",
+        "aps": [
+          "alcatel-lucent-ap1521"
+        ]
+      }
+    ],
+    "notes": "\"Indoor metal mounting kit, Type WE for flat surface: wall, ceiling and electrical box mounting.\" Listed in the accessory section of each datasheet; the line itself names no AP."
+  },
+  {
+    "id": "alcatel-lucent-ap-mnt-out",
+    "part_numbers": [
+      {
+        "vendor": "Alcatel-Lucent",
+        "part_number": "AP-MNT-OUT"
+      }
+    ],
+    "name": "Outdoor pole/wall mount kit",
+    "mount_type": [
+      "pole",
+      "wall"
+    ],
+    "environment": "outdoor",
+    "compatible_aps": [
+      "alcatel-lucent-ap1561",
+      "alcatel-lucent-ap1572"
+    ],
+    "sources": [
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1561-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1561 datasheet",
+        "aps": [
+          "alcatel-lucent-ap1561",
+          "alcatel-lucent-ap1572"
+        ]
+      },
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1570 series datasheet",
+        "aps": [
+          "alcatel-lucent-ap1572"
+        ]
+      }
+    ],
+    "notes": "AP1561 datasheet: \"AP-MNT-OUT OAW-AP1561, OAW-AP1570, OAW-AP1360 outdoor Pole/Wall mount kit.\" AP1570 datasheet: \"AP-MNT-OUT OAW-AP1570, OAW-AP1360 and OAW-AP1251 outdoor mount kit.\" AP1571 left off (see to_check)."
+  },
+  {
+    "id": "alcatel-lucent-ap-mnt-out-h",
+    "part_numbers": [
+      {
+        "vendor": "Alcatel-Lucent",
+        "part_number": "AP-MNT-OUT-H"
+      }
+    ],
+    "name": "Outdoor hanging down-tilt mount kit",
+    "mount_type": [
+      "articulating"
+    ],
+    "environment": "outdoor",
+    "compatible_aps": [
+      "alcatel-lucent-ap1571"
+    ],
+    "sources": [
+      {
+        "url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
+        "doc": "OmniAccess Stellar AP1570 series datasheet",
+        "aps": [
+          "alcatel-lucent-ap1571"
+        ]
+      }
+    ],
+    "notes": "\"AP-MNT-OUT-H OAW-AP1571, OAW-AP1361 hanging down-tilt mount kit.\" Spec row: \"Hang/Downtilt mounting for AP1571\". No surface is named, so no surface type is filed."
+  },
+  {
+    "id": "allied-telesis-at-brkt-conv-ap1",
+    "part_numbers": [
+      {
+        "vendor": "Allied Telesis",
+        "part_number": "AT-BRKT-CONV-AP1"
+      }
+    ],
+    "name": "Access point bracket converter",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "allied-telesis-tq6403-gen2",
+      "allied-telesis-tqm6602-gen2",
+      "allied-telesis-tqm6702-gen2"
+    ],
+    "sources": [
+      {
+        "url": "https://www.alliedtelesis.com/sites/default/files/file/2024-06/ati-tq6403-gen2-ds.pdf",
+        "doc": "TQ6403 GEN2 datasheet",
+        "aps": [
+          "allied-telesis-tq6403-gen2"
+        ]
+      },
+      {
+        "url": "https://sandboxenv.alliedtelesis.com/wp-content/uploads/2026/05/ati-tq6403-gen2-ig.pdf",
+        "doc": "TQ6403 GEN2 Wireless Access Points Installation Guide (613-003092 Rev. C)",
+        "aps": [
+          "allied-telesis-tq6403-gen2"
+        ]
+      },
+      {
+        "url": "https://www.alliedtelesis.com/sites/default/files/file/2022-01/ati-tqm6000-gen2-ds.pdf",
+        "doc": "TQm6000 GEN2 datasheet",
+        "aps": [
+          "allied-telesis-tqm6602-gen2",
+          "allied-telesis-tqm6702-gen2"
+        ]
+      }
+    ],
+    "notes": "Datasheets list \"AT-BRKT-CONV-AP1 Replacement bracket converter\" under Related Products. The converter's own installation guide (613-002987 Rev. A, 2021) says it adapts an existing Cisco AIR-AP-BRACKET-1 / AIR-AP-BRACKET-2 or Fortinet 650-00234 bracket to fit a TQ Series AP; its model list (TQ1402, TQm1402, TQ5403, TQm5403, TQ6602) predates the GEN2 models. Bracket-to-bracket, so no surface type."
   }
 ]

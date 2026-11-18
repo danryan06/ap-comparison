@@ -21,7 +21,20 @@
     "weight": "1.1 kg (2.42 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 45°C operating; -25°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mounting Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "M5 x 4.5 mm, Pan-head Screws",
+        "part_number": null,
+        "qty": 2
+      }
+    ],
+    "in_box_source": "https://sandboxenv.alliedtelesis.com/wp-content/uploads/2026/05/ati-tq6403-gen2-ig.pdf"
   },
   {
     "vendor": "Allied Telesis",
@@ -43,7 +56,70 @@
     "weight": "4.4 kg",
     "antenna_connectors": "8× N-type (4× 5 GHz, 4× 2.4/5 GHz dual-band)",
     "operating_temp_range": "-40°C to 65°C operating; -40°C to 80°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "5GHz single band antennas",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "2.4G/5GHz dual band antennas",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "mounting base",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "sets of a screw (M6xP1.0 16mm), washer, and spring washer for the mounting base",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "pole-mount bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "sets of a Hex-head bolt, washer, and spring washer for pole-mount bracket",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "U-bolts",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "nuts for the U-bolts",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "pole straps",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "8AWG ground cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "screw with a washer and spring washer for the ground cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "external surge protectors with nuts, metal washer, and rubber washers",
+        "part_number": null,
+        "qty": 8
+      }
+    ],
+    "in_box_source": "https://www.alliedtelesis.com/sites/default/files/file/2023-10/ati-tq6702e-gen2-qig.pdf"
   },
   {
     "vendor": "Allied Telesis",
@@ -65,7 +141,24 @@
     "weight": "1.2 kg (2.64 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -25°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Quick Installation Guide",
+        "part_number": null
+      },
+      {
+        "item": "mounting bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "M5 x4.5 mm pan-head screws for the mounting bracket",
+        "part_number": null,
+        "qty": 2
+      }
+    ],
+    "in_box_source": "https://www.alliedtelesis.com/sites/default/files/file/2022-06/ati-tq6000gen2-qig.pdf"
   },
   {
     "vendor": "Allied Telesis",
@@ -87,7 +180,24 @@
     "weight": "1.2 kg (2.64 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C operating; -25°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Quick Installation Guide",
+        "part_number": null
+      },
+      {
+        "item": "mounting bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "M5 x4.5 mm pan-head screws for the mounting bracket",
+        "part_number": null,
+        "qty": 2
+      }
+    ],
+    "in_box_source": "https://www.alliedtelesis.com/sites/default/files/file/2022-06/ati-tq6000gen2-qig.pdf"
   },
   {
     "vendor": "Arista",
@@ -6679,7 +6789,22 @@
     "weight": "0.385 kg",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C operating; -40°C to 70°C storage",
-    "msrp": "$88.60"
+    "msrp": "$88.60",
+    "in_box": [
+      {
+        "item": "Power Adapter",
+        "part_number": null
+      },
+      {
+        "item": "Ceiling/Wall/Junction Box Mounting Kits",
+        "part_number": null
+      },
+      {
+        "item": "Installation Guide",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap610/"
   },
   {
     "vendor": "Alcatel-Lucent",
