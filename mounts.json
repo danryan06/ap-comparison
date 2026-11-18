@@ -7316,50 +7316,7 @@
         ]
       }
     ],
-    "notes": "Store: \"Wall mount for full-size UniFi Flagship WiFi access points.\" Flagship page lists U7 Pro, U7 Pro Max, U6 Pro, U6 Long-Range. Help Center lists U7-Pro and E7 under the Pro Mounting System, whose APs use the \"AP Pro Arm Mount\" and \"AP Arm Mount\" for wall mounting."
-  },
-  {
-    "id": "ubiquiti-u-pro-mp",
-    "part_numbers": [
-      {
-        "vendor": "Ubiquiti",
-        "part_number": "U-PRO-MP"
-      }
-    ],
-    "name": "Replacement AP Pro Mounting System",
-    "mount_type": [
-      "hard_ceiling",
-      "wall"
-    ],
-    "compatible_aps": [
-      "ubiquiti-u7-pro",
-      "ubiquiti-e7"
-    ],
-    "sources": [
-      {
-        "url": "https://help.ui.com/hc/en-us/articles/23999079657367",
-        "doc": "UniFi Help Center: WiFi Access Point (AP) Ceiling Mounts",
-        "aps": [
-          "ubiquiti-u7-pro",
-          "ubiquiti-e7"
-        ]
-      },
-      {
-        "url": "https://techspecs.ui.com/unifi/wifi/u7-pro",
-        "doc": "UniFi U7 Pro Tech Specs",
-        "aps": [
-          "ubiquiti-u7-pro"
-        ]
-      },
-      {
-        "url": "https://techspecs.ui.com/unifi/wifi/e7",
-        "doc": "UniFi E7 Tech Specs",
-        "aps": [
-          "ubiquiti-e7"
-        ]
-      }
-    ],
-    "notes": "Store listing: \"Flagship AP Replacement Mounting System U-PRO-MP. Professional mounting system for UniFi access points.\" Compatibility from the Help Center Pro Mounting System list (AC-Pro, AC-HD, AC-SHD, UAP-XG, U6-LR, U6-Pro, U7-Pro, U7-Pro-Max, E7). mount_type from the Tech Specs rows \"Ceiling, Wall (Pro Mount Included)\" (U7 Pro) and \"Ceiling, Wall, VESA (Pro Mount Included)\" (E7)."
+    "notes": "Store: \"Wall mount for full-size UniFi Flagship WiFi access points.\" Flagship page lists U7 Pro, U7 Pro Max, U6 Pro, U6 Enterprise. Help Center lists U7-Pro and E7 under the Pro Mounting System, whose APs use the \"AP Pro Arm Mount\" and \"AP Arm Mount\" for wall mounting."
   },
   {
     "id": "ubiquiti-uacc-u7-pro-wall-ts",
