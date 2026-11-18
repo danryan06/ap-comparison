@@ -5159,7 +5159,8 @@
     ],
     "name": "Beam clip",
     "mount_type": [
-      "beam"
+      "beam",
+      "adapter"
     ],
     "compatible_aps": [
       "extreme-ap410i",
@@ -5952,20 +5953,25 @@
       "threaded_rod"
     ],
     "compatible_aps": [
-      "juniper-ap32",
-      "juniper-ap32e"
+      "juniper-ap32"
     ],
     "sources": [
       {
         "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
         "doc": "AP33 or AP32 Hardware Installation Guide",
         "aps": [
-          "juniper-ap32",
-          "juniper-ap32e"
+          "juniper-ap32"
+        ]
+      },
+      {
+        "url": "https://www.juniper.net/documentation/us/en/hardware/ap-mounting/topics/topic-map/ap-mount-5-8-inch-threaded-rod.html",
+        "doc": "Juniper AP Mounting Guide: 5/8-inch threaded rod",
+        "aps": [
+          "juniper-ap32"
         ]
       }
     ],
-    "notes": "Listed with the mounting brackets in the AP33 or AP32 Hardware Installation Guide. That guide also specifies the AP32E. This bracket hangs the AP from a 5/8-inch threaded rod. APBR-ADP-T12 is the separate adapter for a 1/2-inch rod."
+    "notes": "The Juniper AP Mounting Guide says APBR-T58 applies to the AP32, AP33, AP41, and AP43. The bracket attaches to the 5/8-inch threaded rod, and the AP locks onto the bracket. The same page uses APBR-U with APBR-ADP-T58 for the AP24, AP27, AP34, AP36, AP37, AP45, and AP47. The Mist AP33 or AP32 Hardware Installation Guide lists this bracket in a document that also specifies the AP32E, without assigning the bracket to the AP32E, so the AP32E is not added."
   },
   {
     "id": "juniper-apbr-m16",
@@ -5980,19 +5986,571 @@
       "threaded_rod"
     ],
     "compatible_aps": [
-      "juniper-ap32",
-      "juniper-ap32e"
+      "juniper-ap32"
     ],
     "sources": [
       {
         "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
         "doc": "AP33 or AP32 Hardware Installation Guide",
         "aps": [
-          "juniper-ap32",
-          "juniper-ap32e"
+          "juniper-ap32"
+        ]
+      },
+      {
+        "url": "https://www.juniper.net/documentation/us/en/hardware/ap-mounting/topics/topic-map/ap-mount-16-mm-threaded-rod.html",
+        "doc": "Juniper AP Mounting Guide: 16-mm threaded rod",
+        "aps": [
+          "juniper-ap32"
         ]
       }
     ],
-    "notes": "Listed with the mounting brackets in the AP33 or AP32 Hardware Installation Guide. That guide also specifies the AP32E. This bracket hangs the AP from a 16mm threaded rod."
+    "notes": "The Juniper AP Mounting Guide says APBR-M16 applies to the AP32, AP33, AP41, and AP43. The bracket attaches to the 16mm threaded rod, and the AP locks onto the bracket. The same page uses APBR-U with APBR-ADP-M16 for the AP24, AP27, AP34, AP36, AP37, AP45, and AP47. The Mist AP33 or AP32 Hardware Installation Guide lists this bracket in a document that also specifies the AP32E, without assigning the bracket to the AP32E, so the AP32E is not added."
+  },
+  {
+    "id": "arista-mnt-ap-24mm",
+    "part_numbers": [
+      {
+        "vendor": "Arista",
+        "part_number": "MNT-AP-24MM"
+      }
+    ],
+    "name": "Prelude 15/16 in (24 mm) T-grid mount kit",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "24 mm",
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "arista-c-330",
+      "arista-c-400",
+      "arista-c-430",
+      "arista-c-460",
+      "arista-c-460e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c330/wap-c330-package-content",
+        "doc": "C-330 Quick Start Guide: Package Content",
+        "aps": [
+          "arista-c-330"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c400/wap-c400-package-content",
+        "doc": "C-400 Quick Start Guide: Package Content",
+        "aps": [
+          "arista-c-400"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c430/wap-c430-package-content",
+        "doc": "C-430 Quick Start Guide: Package Content",
+        "aps": [
+          "arista-c-430"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c460/wap-c460-package-content",
+        "doc": "C-460 Quick Start Guide: Package Content",
+        "aps": [
+          "arista-c-460"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c460e/wap-c460e-package-content",
+        "doc": "C-460E Quick Start Guide: Package Content",
+        "aps": [
+          "arista-c-460e"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+        "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
+        "aps": [
+          "arista-c-330",
+          "arista-c-400",
+          "arista-c-430",
+          "arista-c-460",
+          "arista-c-460e"
+        ]
+      }
+    ],
+    "notes": "Ships in the box with the C-330, C-400, C-430, C-460, and C-460E. Their package pages print MNT-AP-24MM. The C-360 package page lists a 15/16 in (24 mm) bracket and does not print the part number, so the C-360 is not added. The datasheet says MNT-AP-24MM ships with all C-series APs and lists compatibility as \"All C-series APs\"."
+  },
+  {
+    "id": "arista-mnt-ap-flat-14cm",
+    "part_numbers": [
+      {
+        "vendor": "Arista",
+        "part_number": "MNT-AP-FLAT-14CM"
+      }
+    ],
+    "name": "Flat surface mount kit",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "arista-c-400",
+      "arista-c-430",
+      "arista-c-460",
+      "arista-c-460e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c400/wap-c400-installing-the-access-point",
+        "doc": "C-400 Quick Start Guide: Installing the Access Point",
+        "aps": [
+          "arista-c-400"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c430/wap-c430-installing-the-access-point",
+        "doc": "C-430 Quick Start Guide: Installing the Access Point",
+        "aps": [
+          "arista-c-430"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c460/wap-c460-installing-the-access-point",
+        "doc": "C-460 Quick Start Guide: Installing the Access Point",
+        "aps": [
+          "arista-c-460"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/en/qsg-wap-c460e/wap-c460e-installing-the-access-point",
+        "doc": "C-460E Quick Start Guide: Installing the Access Point",
+        "aps": [
+          "arista-c-460e"
+        ]
+      },
+      {
+        "url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+        "doc": "Arista Access Point Mounting Brackets Datasheet (May 28, 2025)",
+        "aps": [
+          "arista-c-400",
+          "arista-c-430",
+          "arista-c-460",
+          "arista-c-460e"
+        ]
+      }
+    ],
+    "notes": "Install pages for the C-400, C-430, C-460, and C-460E say the wall mounting accessory SKU (MNT-AP-FLAT-14CM) can be ordered and purchased separately. Datasheet mount type: \"Wall, Hard-ceiling, gang box\". Gang box has no mount type. Datasheet compatibility is \"All C-series APs\". The C-330 install page was not fetched, and the C-360 install page does not name this SKU, so those models are not added."
+  },
+  {
+    "id": "fortinet-fap-400-mnt-10",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-400-MNT-10"
+      }
+    ],
+    "name": "Wall and T-rail mount kit (10 pack)",
+    "mount_type": [
+      "ceiling_tbar",
+      "wall"
+    ],
+    "rail_width": [
+      "9/16 in",
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-441k",
+      "fortinet-fap-443k",
+      "fortinet-fap-431g",
+      "fortinet-fap-433g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-441k",
+          "fortinet-fap-443k",
+          "fortinet-fap-431g",
+          "fortinet-fap-433g"
+        ]
+      }
+    ],
+    "notes": "\"Complete wall and T-rail Mount Kit (Pack of 10)\". The mounting-type table prints Wall Mount, and T-rail 9/16 in and 15/16 in Standard and Recessed. Standard is left as printed."
+  },
+  {
+    "id": "fortinet-fap-400-smnt-20",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-400-SMNT-20"
+      }
+    ],
+    "name": "Standard wall or ceiling brackets (20 pack)",
+    "mount_type": [
+      "ceiling_tbar",
+      "wall"
+    ],
+    "rail_width": [
+      "9/16 in",
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-441k",
+      "fortinet-fap-443k",
+      "fortinet-fap-431g",
+      "fortinet-fap-433g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-441k",
+          "fortinet-fap-443k",
+          "fortinet-fap-431g",
+          "fortinet-fap-433g"
+        ]
+      }
+    ],
+    "notes": "\"Mounting brackets for standard/wall or ceiling mount (Pack of 20)\". The mounting-type table prints Wall Mount, and T-rail 9/16 in and 15/16 in Standard. Standard is left as printed."
+  },
+  {
+    "id": "fortinet-fap-400-rmnt-20",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-400-RMNT-20"
+      }
+    ],
+    "name": "Recessed T-rail brackets (20 pack)",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "9/16 in",
+      "15/16 in"
+    ],
+    "rail_style": [
+      "recessed"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-441k",
+      "fortinet-fap-443k",
+      "fortinet-fap-431g",
+      "fortinet-fap-433g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-441k",
+          "fortinet-fap-443k",
+          "fortinet-fap-431g",
+          "fortinet-fap-433g"
+        ]
+      }
+    ],
+    "notes": "\"Mounting brackets for recessed T-rail (Pack of 20)\". The mounting-type table prints T-rail 9/16 in and 15/16 in Recessed."
+  },
+  {
+    "id": "fortinet-fap-all-mtl-5",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-ALL-MTL-5"
+      }
+    ],
+    "name": "Metal T-rail, wall, or ceiling brackets (5 pack)",
+    "mount_type": [
+      "ceiling_tbar",
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-441k",
+      "fortinet-fap-443k",
+      "fortinet-fap-431g",
+      "fortinet-fap-433g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-441k",
+          "fortinet-fap-443k",
+          "fortinet-fap-431g",
+          "fortinet-fap-433g"
+        ]
+      }
+    ],
+    "notes": "\"Metal mounting brackets for standard T-rail, wall, or ceiling mount (Pack of 5)\"."
+  },
+  {
+    "id": "fortinet-fap-smnt-mtl-20",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-SMNT-MTL-20"
+      }
+    ],
+    "name": "Metal standoff brackets (20 pack)",
+    "mount_type": [
+      "ceiling_tbar",
+      "wall"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-441k",
+      "fortinet-fap-443k"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-441k",
+          "fortinet-fap-443k"
+        ]
+      }
+    ],
+    "notes": "\"Metal extended standoff mounting brackets for standard T-rail wall or ceiling mount (Pack of 20)\". The per-model matrix also checks FAP-431G and FAP-433G, but the Available Models table omits them, so they are left off."
+  },
+  {
+    "id": "fortinet-fap-mnt-gbox-10pk",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-MNT-Gbox-10pk"
+      }
+    ],
+    "name": "15/16 in T-bar adapter for flat surface, outlet box, conduit, or all-thread",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "adapter"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-441k",
+      "fortinet-fap-443k",
+      "fortinet-fap-431g",
+      "fortinet-fap-433g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-441k",
+          "fortinet-fap-443k",
+          "fortinet-fap-431g",
+          "fortinet-fap-433g"
+        ]
+      }
+    ],
+    "notes": "Enables mounting of FAPs with a 15/16 in. T-bar mount to flat surfaces (wall, ceiling), an outlet box (single, double gang, and 4x4 junction box), hanging conduit (3/4 in. trade size), and hanging all-thread (3/8 in.). Listed only in the per-model matrix. Hanging conduit has no mount type. The 3/8 in. all-thread joins the AP's existing 15/16 in. T-bar mount."
+  },
+  {
+    "id": "fortinet-fap-enc-43x",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-ENC-43X"
+      }
+    ],
+    "name": "Under-seat wedge or wall enclosure",
+    "mount_type": [
+      "enclosure",
+      "wall"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-431g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-431g"
+        ]
+      }
+    ],
+    "notes": "\"Under-seat wedge / wall mount enclosure for stadiums and arenas\"."
+  },
+  {
+    "id": "fortinet-fap-enc-12x10",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-ENC-12X10"
+      }
+    ],
+    "name": "NEMA 4X polycarbonate enclosure",
+    "mount_type": [
+      "enclosure",
+      "wall",
+      "pole"
+    ],
+    "environment": "both",
+    "compatible_aps": [
+      "fortinet-fap-231k",
+      "fortinet-fap-241k",
+      "fortinet-fap-243k",
+      "fortinet-fap-441k",
+      "fortinet-fap-431g",
+      "fortinet-fap-433g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-231k",
+          "fortinet-fap-241k",
+          "fortinet-fap-243k",
+          "fortinet-fap-441k",
+          "fortinet-fap-431g",
+          "fortinet-fap-433g"
+        ]
+      }
+    ],
+    "notes": "\"12 x 10 x 6 inch NEMA 4X Polycarbonate Enclosure, indoor or outdoor use\". FAP-441K is listed; FAP-443K is not."
+  },
+  {
+    "id": "fortinet-fap-brkt-mnt-5",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-BRKT-MNT-5"
+      }
+    ],
+    "name": "Articulating wall or mast mount (5 pack)",
+    "mount_type": [
+      "wall",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-234g",
+      "fortinet-fap-432g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-234g",
+          "fortinet-fap-432g"
+        ]
+      }
+    ],
+    "notes": "\"Wall or Mast mounting solution for outdoor Access Points (Pack of 5)\". Matrix columns: \"Fully Articulated Wall Mount\" and \"Pole/Mast Mount\"."
+  },
+  {
+    "id": "fortinet-fap-mnt-odr-5pk",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-MNT-ODR-5PK"
+      }
+    ],
+    "name": "Universal articulating pole and wall bracket (5 pack)",
+    "mount_type": [
+      "wall",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-234g",
+      "fortinet-fap-244k",
+      "fortinet-fap-432g"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-234g",
+          "fortinet-fap-244k",
+          "fortinet-fap-432g"
+        ]
+      }
+    ],
+    "notes": "Listed only in the per-model matrix. The matrix also lists \"FAP-HD-222KL\"; that name does not match FAP-222KL, so it is not added."
+  },
+  {
+    "id": "fortinet-fap-desk-jk-10pk",
+    "part_numbers": [
+      {
+        "vendor": "Fortinet",
+        "part_number": "FAP-DESK-JK-10pk"
+      }
+    ],
+    "name": "23JK desktop stand (10 pack)",
+    "mount_type": [
+      "desk"
+    ],
+    "compatible_aps": [
+      "fortinet-fap-23jk"
+    ],
+    "sources": [
+      {
+        "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+        "doc": "Fortinet Wireless Accessories Data Sheet (FACC-DAT-R12-20260226)",
+        "aps": [
+          "fortinet-fap-23jk"
+        ]
+      },
+      {
+        "url": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-23jk-quickstart-guide",
+        "doc": "FortiAP 23JK QuickStart Guide",
+        "aps": [
+          "fortinet-fap-23jk"
+        ]
+      }
+    ],
+    "notes": "\"Optional desktop stand of FAP-23JK (pack of 10). Backward compatible to FAP-23JF model.\""
   }
 ]

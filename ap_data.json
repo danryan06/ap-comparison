@@ -112,7 +112,14 @@
     "weight": "1.24 kg (2.73 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "15/16\" (24 mm) Mounting Bracket (MNT-AP-24MM)",
+        "part_number": "MNT-AP-24MM"
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-c330/wap-c330-package-content"
   },
   {
     "vendor": "Arista",
@@ -137,7 +144,14 @@
     "weight": "1.45 kg (3.2 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "15/16\" (24 mm) Mounting Bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-c360/wap-c360-package-content"
   },
   {
     "vendor": "Arista",
@@ -159,7 +173,14 @@
     "weight": "1.09 kg (2.4 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "15/16\" (24 mm) Mounting Bracket (MNT-AP-24MM)",
+        "part_number": "MNT-AP-24MM"
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-c400/wap-c400-package-content"
   },
   {
     "vendor": "Arista",
@@ -186,7 +207,14 @@
     "weight": "1.47 kg (3.24 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "15/16\" (24 mm) Mounting Bracket (MNT-AP-24MM)",
+        "part_number": "MNT-AP-24MM"
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-c430/wap-c430-package-content"
   },
   {
     "vendor": "Arista",
@@ -213,7 +241,14 @@
     "weight": "1.73 kg (3.81 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "15/16\" (24 mm) Mounting Bracket (MNT-AP-24MM)",
+        "part_number": "MNT-AP-24MM"
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-c460/wap-c460-package-content"
   },
   {
     "vendor": "Arista",
@@ -240,7 +275,14 @@
     "weight": "1.78 kg (3.92 lb)",
     "antenna_connectors": "6× RP-SMA",
     "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "15/16\" (24 mm) Mounting Bracket (MNT-AP-24MM)",
+        "part_number": "MNT-AP-24MM"
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-c460e/wap-c460e-package-content"
   },
   {
     "vendor": "Arista",
@@ -262,7 +304,24 @@
     "weight": "1.7 kg",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to +65°C (-22°F to +149°F) operating; -40°C to +70°C (-40°F to +158°F) storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "metal clamps for fixing the mounting bracket to the pole",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mounting bracket",
+        "part_number": null
+      },
+      {
+        "item": "steel bosses for fixing AP in the bracket",
+        "part_number": null,
+        "qty": 4
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-o405/wap-o405-package-content"
   },
   {
     "vendor": "Arista",
@@ -311,7 +370,24 @@
     "weight": "1.86 kg (4.1 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "metal clamps for fixing the mounting bracket to the pole",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mounting bracket",
+        "part_number": null
+      },
+      {
+        "item": "steel bosses for fixing AP in the bracket",
+        "part_number": null,
+        "qty": 4
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-o435/wap-o435-package-content"
   },
   {
     "vendor": "Arista",
@@ -338,7 +414,24 @@
     "weight": "2.0 kg (4.4 lb)",
     "antenna_connectors": "6× N-type",
     "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "metal clamps for attaching the mounting bracket to the pole",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mounting bracket",
+        "part_number": null
+      },
+      {
+        "item": "steel bosses for fixing AP in the bracket",
+        "part_number": null,
+        "qty": 4
+      }
+    ],
+    "in_box_source": "https://www.arista.com/en/qsg-wap-o435e/wap-o435e-package-contents"
   },
   {
     "vendor": "Arista",
@@ -4810,7 +4903,60 @@
     "antenna_connectors": "5× N-type (2× Wi-Fi 2.4/5 GHz, 1× LoRaWAN, 1× LTE, 1× GNSS)",
     "operating_temp_range": "-40°C to 70°C (-40°F to 158°F) operating; -50°C to 80°C (-58°F to 178°F) storage",
     "ingress_protection": "IP67",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "QuickStart Guide",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "N-Type Omni Antennas",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "GNSS antenna",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "PoE Injector and AC Cord (100V-240V AC Input, 54V DC Output)",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Wall Mount Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pole Mount Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pole Straps",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mounting Bolts with Screws",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "Grounding Cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 9
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-222kl-quickstart-guide"
   },
   {
     "vendor": "Fortinet",
@@ -4834,7 +4980,18 @@
     "weight": "0.52 kg (1.15 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 45°C (32°F to 113°F) operating; -30°C to 70°C (-22°F to 158°F) storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mounting Bracket and Screw",
+        "part_number": null
+      },
+      {
+        "item": "FortiAP 23JK QuickStart Guide",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-23jk-quickstart-guide"
   },
   {
     "vendor": "Fortinet",
@@ -4859,7 +5016,29 @@
       "GPS"
     ],
     "msrp": "$490",
-    "image_url": "images/fortinet/fortinet-fap-231k.png"
+    "image_url": "images/fortinet/fortinet-fap-231k.png",
+    "in_box": [
+      {
+        "item": "Mounting Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "Anchors",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-231k-quickstart-guide"
   },
   {
     "vendor": "Fortinet",
@@ -4885,7 +5064,55 @@
       "GPS"
     ],
     "msrp": "$1,200",
-    "image_url": "images/fortinet/fortinet-fap-234g.png"
+    "image_url": "images/fortinet/fortinet-fap-234g.png",
+    "in_box": [
+      {
+        "item": "pole straps",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "mounting bolts",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "grounding cable and screw",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Wall Mount Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Pole Mount Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "PoE Injector",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "AC Cord (100V-220V AC input, 54V DC output)",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-234g-quickstart-guide"
   },
   {
     "vendor": "Fortinet",
@@ -4909,7 +5136,34 @@
       "BLE/Zigbee"
     ],
     "msrp": "$800",
-    "image_url": "images/fortinet/fortinet-fap-241k.png"
+    "image_url": "images/fortinet/fortinet-fap-241k.png",
+    "in_box": [
+      {
+        "item": "9/16 in. or 15/16 in. T-Rail",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mounting Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "Anchors",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-241k-243k-quick-start-guide"
   },
   {
     "vendor": "Fortinet",
@@ -4933,7 +5187,39 @@
       "BLE/Zigbee"
     ],
     "msrp": "$900",
-    "image_url": "images/fortinet/fortinet-fap-243k.png"
+    "image_url": "images/fortinet/fortinet-fap-243k.png",
+    "in_box": [
+      {
+        "item": "9/16 in. or 15/16 in. T-Rail",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mounting Bracket",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "Anchors",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      },
+      {
+        "item": "Antennas",
+        "part_number": null,
+        "qty": 6
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-241k-243k-quick-start-guide"
   },
   {
     "vendor": "Fortinet",
@@ -4965,7 +5251,64 @@
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-40°C to 70°C (-40°F to 158°F) operating; -50°C to 80°C (-58°F to 178°F) storage",
     "ingress_protection": "IP67",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      },
+      {
+        "item": "Power Cord",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "PoE Injector",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Grounding Cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "M6",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "M4",
+        "part_number": null,
+        "qty": 5
+      },
+      {
+        "item": "M8",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Mounting Plate",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Die Casting Brackets",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Hose Clamps",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "M30 Cable Gland",
+        "part_number": null,
+        "qty": 1
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-244k-quickstart-guide"
   },
   {
     "vendor": "Fortinet",
@@ -4990,7 +5333,32 @@
       "GPS"
     ],
     "msrp": "$1,050",
-    "image_url": "images/fortinet/fortinet-fap-431g.png"
+    "image_url": "images/fortinet/fortinet-fap-431g.png",
+    "in_box": [
+      {
+        "item": "9/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "15/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "Anchors",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-431g-433g-series-qsg"
   },
   {
     "vendor": "Fortinet",
@@ -5015,7 +5383,52 @@
       "GPS"
     ],
     "msrp": "$2,600",
-    "image_url": "images/fortinet/fortinet-fap-432g.jpg"
+    "image_url": "images/fortinet/fortinet-fap-432g.jpg",
+    "in_box": [
+      {
+        "item": "PoE Injector and AC Cord (100V-220V AC Input, 54V DC Output)",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Wall Mount Bracket",
+        "part_number": null
+      },
+      {
+        "item": "Pole Straps",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Mounting Bolts with Screws",
+        "part_number": null,
+        "qty": 4
+      },
+      {
+        "item": "Grounding Cable",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 9
+      },
+      {
+        "item": "Pole Mount Bracket",
+        "part_number": null
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      },
+      {
+        "item": "N-Type Omni Antennas",
+        "part_number": null,
+        "qty": 9
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-432g-quickstart-guide"
   },
   {
     "vendor": "Fortinet",
@@ -5040,7 +5453,37 @@
       "GPS"
     ],
     "msrp": "$1,180",
-    "image_url": "images/fortinet/fortinet-fap-433g.png"
+    "image_url": "images/fortinet/fortinet-fap-433g.png",
+    "in_box": [
+      {
+        "item": "9/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "15/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "Anchors",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      },
+      {
+        "item": "Antennas (4x detachable, 4x non-detachable)",
+        "part_number": null,
+        "qty": 8
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-431g-433g-series-qsg"
   },
   {
     "vendor": "Fortinet",
@@ -5065,7 +5508,32 @@
       "GPS"
     ],
     "msrp": "$1,350",
-    "image_url": "images/fortinet/fortinet-fap-441k.png"
+    "image_url": "images/fortinet/fortinet-fap-441k.png",
+    "in_box": [
+      {
+        "item": "9/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "15/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "Anchors",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-441k-443k-quickstart-guide"
   },
   {
     "vendor": "Fortinet",
@@ -5090,7 +5558,37 @@
       "GPS"
     ],
     "msrp": "$1,450",
-    "image_url": "images/fortinet/fortinet-fap-443k.png"
+    "image_url": "images/fortinet/fortinet-fap-443k.png",
+    "in_box": [
+      {
+        "item": "9/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "15/16” Ceiling Mounting Bracket",
+        "part_number": null
+      },
+      {
+        "item": "Mounting Screws",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "Anchors",
+        "part_number": null,
+        "qty": 8
+      },
+      {
+        "item": "QuickStart Guide",
+        "part_number": null
+      },
+      {
+        "item": "Antennas",
+        "part_number": null,
+        "qty": 10
+      }
+    ],
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-441k-443k-quickstart-guide"
   },
   {
     "vendor": "Juniper",
