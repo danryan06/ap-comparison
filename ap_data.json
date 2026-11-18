@@ -96,7 +96,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ or 12V DC, the AP operates at full functionality. Operation on 802.3af or lower-class PoE sources is not specified and should be avoided for production use.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the AP runs at full function (24.35 W max), with hitless PoE failover between its two Ethernet ports. It can also run from 12 V DC. Arista lists no 802.3af mode.",
     "ethernet_ports_speed": "2× 2.5 GbE (RJ45, PoE+)",
     "antenna_type": [
       "Internal"
@@ -104,14 +104,14 @@
     "form_factor": "Indoor",
     "radios_iot_features": [
       "BLE",
-      "Zigbee"
+      "Zigbee (future software)"
     ],
     "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-C-330-Datasheet.pdf",
     "image_url": "images/arista/arista-c-330.png",
     "dimensions": "225 x 225 x 45 mm",
     "weight": "1.24 kg (2.73 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -121,7 +121,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt PoE++ for full performance",
-    "behavior_min_power": "On 802.3at PoE+, USB is disabled, the 2.4 GHz radio is limited to 2x2 operation, and maximum EIRP is reduced across all bands.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, USB is disabled, the 2.4 GHz radio is limited to 2x2 operation, and maximum EIRP is reduced across all bands.",
     "ethernet_ports_speed": "2× 10 GbE (RJ45, PoE)",
     "antenna_type": [
       "Internal"
@@ -144,9 +144,9 @@
     "model": "C-400",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (PoE+) for full performance",
-    "behavior_min_power": "On 802.3af PoE, the 2.4 GHz radio is reduced to 1x1 operation and Ethernet link speed is limited to 1 GbE.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE, the 2.4 GHz radio is reduced to 1x1 operation and Ethernet link speed is limited to 1 GbE.",
     "ethernet_ports_speed": "1× 5 GbE (RJ45, PoE)",
     "antenna_type": [
       "Internal"
@@ -168,24 +168,24 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on lower-class PoE sources is not specified and should be avoided for production use.",
+    "behavior_min_power": "On 802.3at (Class 4), the AP draws up to 24 W, with hitless PoE failover between its two Ethernet ports. It can also run from 12 V DC. Arista lists no 802.3af mode.",
     "ethernet_ports_speed": "2× 100M/1/2.5/5 GbE (RJ45, PoE+)",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "BLE",
-      "Zigbee",
-      "OpenThread",
-      "Matter"
+      "BLE 5.3",
+      "Zigbee (future software)",
+      "OpenThread (future software)",
+      "Matter (future software)"
     ],
     "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-C-430-Datasheet.pdf",
     "image_url": "images/arista/arista-c-430.png",
     "dimensions": "225 x 225 x 45 mm",
     "weight": "1.47 kg (3.24 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 45°C operating",
+    "operating_temp_range": "0°C to 45°C operating; -40°C to 70°C storage",
     "msrp": "unknown"
   },
   {
@@ -249,19 +249,20 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45, PoE+) + 1× 10 GbE SFP+ optical",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the AP runs at full function (25 W max). Arista lists no 802.3af mode.",
+    "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (RJ45, PoE+) + 1× 10 GbE SFP+ optical",
     "antenna_type": [
       "Internal"
     ],
     "form_factor": "Outdoor",
+    "hardened": true,
     "radios_iot_features": [],
     "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-405-Datasheet.pdf",
     "image_url": "images/arista/arista-o-405.png",
     "dimensions": "unknown",
     "weight": "1.7 kg",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "-30°C to +65°C (-22°F to +149°F)",
+    "operating_temp_range": "-30°C to +65°C (-22°F to +149°F) operating; -40°C to +70°C (-40°F to +158°F) storage",
     "msrp": "unknown"
   },
   {
@@ -271,19 +272,20 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+ within the supported voltage range, the AP operates at full functionality. Operation on lower-class PoE sources is not specified and should be avoided for production use.",
-    "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45, PoE+) + 1× 10 GbE SFP+ optical",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, the AP runs at full function (25 W max). Arista lists no 802.3af mode.",
+    "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (RJ45, PoE+) + 1× 10 GbE SFP+ optical",
     "antenna_type": [
       "External"
     ],
     "form_factor": "Outdoor",
+    "hardened": true,
     "radios_iot_features": [],
     "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-405E-Datasheet.pdf",
     "image_url": "images/arista/arista-o-405e.png",
     "dimensions": "unknown",
     "weight": "1.7 kg",
     "antenna_connectors": "4× N-type",
-    "operating_temp_range": "-30°C to +65°C (-22°F to +149°F)",
+    "operating_temp_range": "-30°C to +65°C (-22°F to +149°F) operating; -40°C to +70°C (-40°F to +158°F) storage",
     "msrp": "unknown"
   },
   {
@@ -345,9 +347,9 @@
     "model": "W-318",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "802.3at (PoE+)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "PoE++ for full performance",
-    "behavior_min_power": "On 802.3at PoE+, PSE functionality is disabled, USB is disabled, and maximum transmit power is reduced across all bands.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, PSE functionality is disabled, USB is disabled, and maximum transmit power is reduced across all bands.",
     "ethernet_ports_speed": "1× 2.5 GbE uplink + 3× 1 GbE switch ports (RJ45)",
     "antenna_type": [
       "Internal"
@@ -372,7 +374,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
-    "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, USB is disabled unless IPM dynamically reduces other features based on power budget.",
+    "behavior_min_power": "On 802.3af (Class 3), USB is disabled unless IPM dynamically reduces other features based on power budget. On DC or 802.3at, AP operates without restrictions.",
     "ethernet_ports_speed": "1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "External"
@@ -399,7 +401,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
-    "behavior_min_power": "On DC or 802.3at, AP operates without restrictions. On 802.3af, USB is disabled unless IPM dynamically reduces other features based on power budget.",
+    "behavior_min_power": "On 802.3af (Class 3), USB is disabled unless IPM dynamically reduces other features based on power budget. On DC or 802.3at, AP operates without restrictions.",
     "ethernet_ports_speed": "1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -426,7 +428,7 @@
     "spatial_streams": "2x2 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or 802.3bt (Class 5) or DC for unrestricted operation",
-    "behavior_min_power": "On DC or 802.3at/802.3bt, AP operates without restrictions. On 802.3af, USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE.",
+    "behavior_min_power": "On 802.3af (Class 3), USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE. On DC or 802.3at/802.3bt, AP operates without restrictions.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE SmartRate (RJ45) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "External"
@@ -453,7 +455,7 @@
     "spatial_streams": "2x2 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or 802.3bt (Class 5) or DC for unrestricted operation",
-    "behavior_min_power": "On DC or 802.3at/802.3bt, AP operates without restrictions. On 802.3af, USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE.",
+    "behavior_min_power": "On 802.3af (Class 3), USB and at least one Ethernet port are disabled and IPM may reduce other features based on available PoE. On DC or 802.3at/802.3bt, AP operates without restrictions.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE SmartRate (RJ45) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -879,7 +881,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or DC for unrestricted operation",
-    "behavior_min_power": "On DC or 802.3at (Class 4), the AP operates without restrictions. On 802.3af (Class 3) with IPM disabled, the USB port is disabled and the Ethernet port is limited to 1 Gbps; Intelligent Power Monitoring (IPM) can be used to avoid these restrictions.",
+    "behavior_min_power": "On 802.3af (Class 3) with IPM disabled, the USB port is disabled and the Ethernet port is limited to 1 Gbps; Intelligent Power Monitoring (IPM) can be used to avoid these restrictions. On DC or 802.3at (Class 4), the AP operates without restrictions.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE SmartRate (RJ45, E0, PoE in)",
     "antenna_type": [
       "Internal"
@@ -911,7 +913,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
-    "behavior_min_power": "On DC or 802.3bt, AP operates without restrictions. On 802.3at, USB is disabled; 802.3af is supported only for staging with radios disabled.",
+    "behavior_min_power": "On 802.3at (Class 4), USB is disabled; 802.3af is supported only for staging with radios disabled. On DC or 802.3bt, AP operates without restrictions.",
     "ethernet_ports_speed": "2× 100M/1/2.5 GbE mGig (RJ45)",
     "antenna_type": [
       "Internal"
@@ -944,7 +946,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On DC, 802.3bt (Class 5), or two combined 802.3at sources, the AP operates without restrictions. On a single 802.3at (Class 4) source with IPM disabled, the USB port is disabled. 802.3af (Class 3 or lower) is not supported. With IPM enabled, the AP starts unrestricted and applies configurable reductions to stay within the 802.3at budget; HPE's examples are an 18 dBm EIRP cap on all radios, or single-Ethernet operation with a 21 dBm EIRP cap, or single-Ethernet with one radio disabled.",
+    "behavior_min_power": "On a single 802.3at (Class 4) source with IPM disabled, the USB port is disabled. With IPM enabled, the AP starts unrestricted and applies configurable reductions to stay within the 802.3at budget; HPE's examples are an 18 dBm EIRP cap on all radios, or single-Ethernet operation with a 21 dBm EIRP cap, or single-Ethernet with one radio disabled. 802.3af (Class 3 or lower) is not supported. On DC, 802.3bt (Class 5), or two combined 802.3at sources, the AP operates without restrictions.",
     "ethernet_ports_speed": "2× 5 GbE",
     "antenna_type": [
       "Internal"
@@ -1009,7 +1011,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
-    "behavior_min_power": "On 802.3at PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
     "ethernet_ports_speed": "2× 1/2.5/5 GbE SmartRate (RJ45)",
     "antenna_type": [
       "External"
@@ -1038,7 +1040,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) or DC for unrestricted operation",
-    "behavior_min_power": "On 802.3at PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, USB is disabled and maximum transmit power on all radios is reduced by up to 3 dB; with IPM enabled, additional feature and power reductions may be applied based on available power.",
     "ethernet_ports_speed": "2× 1/2.5/5 GbE SmartRate (RJ45)",
     "antenna_type": [
       "Internal"
@@ -1072,7 +1074,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
-    "behavior_min_power": "On 802.3bt (Class 6) PoE, the AP operates without restrictions; operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging), and IPM may apply additional feature and power reductions when power is limited.",
+    "behavior_min_power": "On 802.3at (Class 4) with IPM disabled, the AP disables the USB port (25.7 W max without USB devices). On 802.3bt (Class 6), the AP operates without restrictions (36.8 W max with USB devices attached). With IPM enabled, the AP starts unrestricted and may apply configurable restrictions based on the available power budget. A single 802.3af (Class 3 or lower) source is not supported, except for AP staging.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -1104,7 +1106,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB. On 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE (RJ45)",
     "antenna_type": [
       "External"
@@ -1133,7 +1135,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB; on 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
+    "behavior_min_power": "On 802.3at (Class 4) PoE, the AP runs in restricted mode with USB disabled, the second Ethernet port disabled, MIMO operation reduced to 2x2, and maximum RF transmit power reduced by 3 dB. On 802.3bt (Class 6) PoE, the AP operates without restrictions, and operation on a single 802.3af (Class 3 or lower) PoE source is not supported (except for AP staging).",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -1663,7 +1665,7 @@
     "spatial_streams": "2x2 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3at (Class 4), the 2.4 GHz and 5 GHz radios and the IoT radio are enabled (22.5 W max). 802.3bt (Class 6) enables the same functions. On 802.3af (Class 3), only Ethernet is enabled. With no PoE class detected, Ethernet and the IoT radio are enabled and the Wi-Fi radios are disabled.",
+    "behavior_min_power": "On 802.3at (Class 4), the 2.4 GHz and 5 GHz radios and the IoT radio are enabled (22.5 W max). On 802.3af (Class 3), only Ethernet is enabled. 802.3bt (Class 6) enables the same functions. With no PoE class detected, Ethernet and the IoT radio are enabled and the Wi-Fi radios are disabled.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (mGig) PoE in",
     "antenna_type": [
       "Internal"
@@ -1687,23 +1689,29 @@
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
-    "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3at power the AP brings up the 2.4 GHz and 5 GHz radios together with the IoT radio but keeps the software-defined third radio and USB port disabled; 802.3bt power is recommended when you want the SDR radio and USB enabled for full functionality and maximum performance.",
+    "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
+    "behavior_min_power": "On 802.3at (Class 4), the 2.4 GHz and 5 GHz radios and the IoT radio are enabled, and the software-defined third radio and USB port are disabled. On 802.3bt (Class 6), all three Wi-Fi radios, the USB port, and the IoT radio are enabled (33 W max). On 802.3af (Class 3), only Ethernet is enabled. With no PoE class detected, Ethernet and the IoT radio are enabled and the Wi-Fi radios and USB are disabled.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (mGig) PoE in",
     "antenna_type": [
       "Internal"
     ],
+    "antenna_gain_dbi": {
+      "2.4": 5,
+      "5": 6,
+      "6": 7
+    },
     "form_factor": "Indoor",
     "radios_iot_features": [
-      "BLE",
-      "802.15.4 (Zigbee/Thread/Matter)"
+      "BLE 5.1",
+      "802.15.4 IoT radio"
     ],
-    "datasheet_url": "https://www.cambiumnetworks.com/resources/x7-55x-ds-wifi7-indoor-ap",
+    "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/231adaa96aac6a99/original/Cambium_Networks_data_sheet_WiFi-7_X7-55X_AP.pdf",
     "image_url": "images/cambium/cambium-XE7-55X.png",
-    "dimensions": "240 x 240 x 50 mm",
-    "weight": "1600 g",
+    "dimensions": "240 x 240 x 50 mm (9.45 x 9.45 x 1.97 in)",
+    "weight": "1600 g (3.52 lb)",
     "antenna_connectors": "None (internal antennas)",
-    "operating_temp_range": "0°C to 50°C",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -20°C to 70°C (-4°F to 158°F) storage",
+    "operating_humidity": "95% RH non-condensing",
     "msrp": "unknown"
   },
   {
@@ -1713,7 +1721,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4), the 2.4 GHz and 5 GHz radios and the IoT radio are enabled, and the software-defined third radio and USB port are disabled. On 802.3bt (Class 6), all three Wi-Fi radios, the USB port, and the IoT radio are enabled (33 W max). On 802.3af (Class 3), only Ethernet is enabled. With no PoE class detected, Ethernet and the IoT radio are enabled and the Wi-Fi radios and USB are disabled.",
+    "behavior_min_power": "On 802.3at (Class 4), the 2.4 GHz and 5 GHz radios and the IoT radio are enabled, and the software-defined third radio and USB port are disabled. On 802.3af (Class 3), only Ethernet is enabled. On 802.3bt (Class 6), all three Wi-Fi radios, the USB port, and the IoT radio are enabled (33 W max). With no PoE class detected, Ethernet and the IoT radio are enabled and the Wi-Fi radios and USB are disabled.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (mGig) PoE in",
     "antenna_type": [
       "Directional"
@@ -1914,7 +1922,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at, both radios operate at full 2x2, USB is enabled at 4.5W, and link speed is 2.5G. On 802.3af, only the 2.4 GHz radio operates at 1x1, the 5/6 GHz radio is disabled, USB is disabled, and link speed is limited to 1G.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5/6 GHz radio is disabled, USB is disabled, and link speed is limited to 1G. On 802.3at, both radios operate at full 2x2, USB is enabled at 4.5W, and link speed is 2.5G.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -1960,7 +1968,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including PoE out on LAN port",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, PoE out is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 and link speed is 2.5G, but PoE out on the LAN port remains disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with 15.4W PoE out on the LAN port.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, PoE out is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 and link speed is 2.5G, but PoE out on the LAN port remains disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with 15.4W PoE out on the LAN port.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE in) + 3× 100M/1 GbE LAN ports (1× with 802.3af PoE out on 802.3bt) + 1× passthrough (RJ45)",
     "antenna_type": [
       "Internal"
@@ -2019,7 +2027,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 (or optionally 4x4 on 5 GHz with 6 GHz disabled), link speed is 2.5G, but USB is disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with USB enabled at 4.5W.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 (or optionally 4x4 on 5 GHz with 6 GHz disabled), link speed is 2.5G, but USB is disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with USB enabled at 4.5W.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -2159,7 +2167,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 10G link speed",
-    "behavior_min_power": "On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. On 802.3at, 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
+    "behavior_min_power": "On 802.3at (Class 4), 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Directional"
@@ -2213,7 +2221,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 10G link speed",
-    "behavior_min_power": "On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. On 802.3at, 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
+    "behavior_min_power": "On 802.3at (Class 4), 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -2262,7 +2270,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) / UPoE+ for full 4x4 tri-band operation and 10G uplink",
-    "behavior_min_power": "On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3af (PoE), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W.",
+    "behavior_min_power": "On 802.3af (Class 3), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45), 1× 1/10 GbE (SFP+)",
     "antenna_type": [
       "Directional"
@@ -2333,7 +2341,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) / UPoE+ for full 4x4 tri-band operation and 10G uplink",
-    "behavior_min_power": "On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3af (PoE), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W.",
+    "behavior_min_power": "On 802.3af (Class 3), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45), 1× 1/10 GbE (SFP+)",
     "antenna_type": [
       "External"
@@ -2394,7 +2402,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) / UPoE+ for full 4x4 tri-band operation and 10G uplink",
-    "behavior_min_power": "On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3af (PoE), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W.",
+    "behavior_min_power": "On 802.3af (Class 3), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45), 1× 1/10 GbE (SFP+)",
     "antenna_type": [
       "Internal"
@@ -2460,7 +2468,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full quad-radio operation",
-    "behavior_min_power": "On 802.3af, all radios are off and the AP is for configuration staging only (single 1G link, 13.95 W max). On 802.3at (25.5 W max), the AP runs either quad-radio mode, with 2.4 GHz 2x2, dual 5 GHz at 2x2 lower band plus 2x2 upper band, and 6 GHz 2x2, with both uplinks at 2.5G; or tri-radio mode, with 2.4 GHz 2x2, a single full-band 5 GHz radio at 4x4, and 6 GHz 2x2, with both uplinks at 1G. On 802.3bt Class 6 (47 W max), all radios run 4x4, including dual 5 GHz at 4x4 plus 4x4, with both uplinks at 10G.",
+    "behavior_min_power": "On 802.3at (Class 4) (25.5 W max), the AP runs either quad-radio mode, with 2.4 GHz 2x2, dual 5 GHz at 2x2 lower band plus 2x2 upper band, and 6 GHz 2x2, with both uplinks at 2.5G; or tri-radio mode, with 2.4 GHz 2x2, a single full-band 5 GHz radio at 4x4, and 6 GHz 2x2, with both uplinks at 1G. On 802.3af, all radios are off and the AP is for configuration staging only (single 1G link, 13.95 W max). On 802.3bt Class 6 (47 W max), all radios run 4x4, including dual 5 GHz at 4x4 plus 4x4, with both uplinks at 10G.",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE mGig (RJ45)",
     "antenna_type": [
       "Directional",
@@ -2521,7 +2529,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (PoE+) for full 2x2 operation across all radios",
-    "behavior_min_power": "On 802.3at (PoE+), all three client radios operate at 2x2 on 2.4/5/6 GHz with the 2.5 Gbps Ethernet uplink active (25.5W max). On 802.3af (PoE), each client radio is reduced to 1x1 and the Ethernet uplink is restricted to 1 Gbps (14W max).",
+    "behavior_min_power": "On 802.3af (Class 3), each client radio is reduced to 1x1 and the Ethernet uplink is restricted to 1 Gbps (14W max). On 802.3at (PoE+), all three client radios operate at 2x2 on 2.4/5/6 GHz with the 2.5 Gbps Ethernet uplink active (25.5W max).",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45)",
     "antenna_type": [
       "External"
@@ -2573,9 +2581,9 @@
     "model": "Catalyst 9164I",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 4x4",
-    "min_poe_class": "802.3at (PoE+)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt or DC for full operation with USB",
-    "behavior_min_power": "On 802.3bt or DC, all radios operate (2x2 2.4 GHz, 4x4 5/6 GHz) with USB enabled; on 802.3at, radios operate with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
+    "behavior_min_power": "On 802.3at (Class 4), radios operate with USB disabled. On 802.3af, all radios are off and the AP is for configuration staging only. On 802.3bt or DC, all radios operate (2x2 2.4 GHz, 4x4 5/6 GHz) with USB enabled.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45)",
     "antenna_type": [
       "Internal"
@@ -2612,9 +2620,9 @@
     "model": "Catalyst 9166D1",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3at (PoE+)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt or DC for full operation with USB",
-    "behavior_min_power": "On 802.3bt or DC, all radios operate 4x4 on 2.4/5/6 GHz with USB enabled; on 802.3at, radios remain 4x4 with USB disabled; on 802.3af, all radios are off and the AP is for configuration staging only.",
+    "behavior_min_power": "On 802.3at (Class 4), radios remain 4x4 with USB disabled. On 802.3af, all radios are off and the AP is for configuration staging only. On 802.3bt or DC, all radios operate 4x4 on 2.4/5/6 GHz with USB enabled.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE mGig (RJ45)",
     "antenna_type": [
       "Directional"
@@ -2651,7 +2659,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt / UPOE+",
-    "behavior_min_power": "On 802.3at (Class 4), all three radios run 4x4 at 5 Gbps link speed with USB disabled (25.5 W max). 802.3bt (UPOE) or DC power adds USB at 4.5 W (30.5 W max on PoE). On 802.3af, all radios are off and the AP is for configuration staging only (1 Gbps, 14.0 W max).",
+    "behavior_min_power": "On 802.3at (Class 4), all three radios run 4x4 at 5 Gbps link speed with USB disabled (25.5 W max). On 802.3af, all radios are off and the AP is for configuration staging only (1 Gbps, 14.0 W max). 802.3bt (UPOE) or DC power adds USB at 4.5 W (30.5 W max on PoE).",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE mGig (RJ45)",
     "antenna_type": [
       "Internal"
@@ -2691,7 +2699,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt / UPOE+",
-    "behavior_min_power": "On 802.3at, all Wi-Fi radios can operate at 2×2 and Ethernet ports are restricted to 1Gbps",
+    "behavior_min_power": "On 802.3at (Class 4), all Wi-Fi radios can operate at 2×2 and Ethernet ports are restricted to 1Gbps.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE mGig (RJ45), 1× 1/10 GbE (SFP+)",
     "antenna_type": [
       "External"
@@ -2769,7 +2777,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3) PoE for full performance",
-    "behavior_min_power": "Runs at full functionality on 802.3af (Class 3) PoE; no reduced-power mode is documented.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE, runs at full functionality; no reduced-power mode is documented.",
     "ethernet_ports_speed": "1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -2799,7 +2807,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates with the 2.4 GHz and 5 GHz radios at 2x2 and the 2.5 GbE uplink enabled, but the USB port and PoE-out on LAN1 are disabled; on 802.3at (Class 4) PoE+ either the USB port or PoE-out on LAN1 can be enabled.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates with the 2.4 GHz and 5 GHz radios at 2x2 and the 2.5 GbE uplink enabled, but the USB port and PoE-out on LAN1 are disabled. On 802.3at (Class 4) PoE+ either the USB port or PoE-out on LAN1 can be enabled.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, uplink PoE in) + 3× 1 GbE (RJ45, LAN, one with PoE out)",
     "antenna_type": [
       "Internal"
@@ -2834,7 +2842,7 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP enters reduced-feature mode with both radios limited to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation with a 2.5 GbE uplink and USB enabled.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP enters reduced-feature mode with both radios limited to 2x2, the uplink limited to 1 GbE, and the USB port disabled. On 802.3at (Class 4) PoE+ it supports 4x4 operation with a 2.5 GbE uplink and USB enabled.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
     "antenna_type": [
       "Internal"
@@ -2864,7 +2872,7 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP enters reduced-feature mode with both radios limited to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation with a 2.5 GbE uplink and USB enabled.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP enters reduced-feature mode with both radios limited to 2x2, the uplink limited to 1 GbE, and the USB port disabled. On 802.3at (Class 4) PoE+ it supports 4x4 operation with a 2.5 GbE uplink and USB enabled.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
     "antenna_type": [
       "External"
@@ -2890,7 +2898,7 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in reduced-power modes with radios limited to up to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation on both radios with a 2.5 GbE uplink and USB enabled.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in reduced-power modes with radios limited to up to 2x2, the uplink limited to 1 GbE, and the USB port disabled. On 802.3at (Class 4) PoE+ it supports 4x4 operation on both radios with a 2.5 GbE uplink and USB enabled.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
     "antenna_type": [
       "Internal"
@@ -2920,7 +2928,7 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in reduced-power modes with radios limited to up to 2x2, the uplink limited to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 operation on both radios with a 2.5 GbE uplink and USB enabled.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in reduced-power modes with radios limited to up to 2x2, the uplink limited to 1 GbE, and the USB port disabled. On 802.3at (Class 4) PoE+ it supports 4x4 operation on both radios with a 2.5 GbE uplink and USB enabled.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, mGig)",
     "antenna_type": [
       "External"
@@ -2946,7 +2954,7 @@
     "spatial_streams": "4x4 / 8x8 or dual 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in a reduced-feature mode with both 2.4 GHz and 5 GHz radios limited to 1x1, the uplink restricted to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 on 2.4 GHz with either 8x8 or dual 4x4 operation on 5 GHz and can optionally power the USB port as documented in the datasheet power table.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in a reduced-feature mode with both 2.4 GHz and 5 GHz radios limited to 1x1, the uplink restricted to 1 GbE, and the USB port disabled. On 802.3at (Class 4) PoE+ it supports 4x4 on 2.4 GHz with either 8x8 or dual 4x4 operation on 5 GHz and can optionally power the USB port as documented in the datasheet power table.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, mGig)",
     "antenna_type": [
       "Internal"
@@ -2976,7 +2984,7 @@
     "spatial_streams": "4x4 / 8x8 or dual 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in a reduced-feature mode with both 2.4 GHz and 5 GHz radios limited to 1x1, the uplink restricted to 1 GbE, and the USB port disabled; on 802.3at (Class 4) PoE+ it supports 4x4 on 2.4 GHz with either 8x8 or dual 4x4 operation on 5 GHz and can optionally power the USB port as documented in the datasheet power table.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in a reduced-feature mode with both 2.4 GHz and 5 GHz radios limited to 1x1, the uplink restricted to 1 GbE, and the USB port disabled. On 802.3at (Class 4) PoE+ it supports 4x4 on 2.4 GHz with either 8x8 or dual 4x4 operation on 5 GHz and can optionally power the USB port as documented in the datasheet power table.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, mGig)",
     "antenna_type": [
       "External"
@@ -3000,9 +3008,9 @@
     "model": "MR36",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af",
-    "behavior_min_power": "On 802.3af the AP operates with full radios and features as specified, assuming a full 802.3af power budget is available.",
+    "behavior_min_power": "On 802.3af (Class 3), the AP operates with full radios and features as specified, assuming a full 802.3af power budget is available.",
     "ethernet_ports_speed": "1× 1 GbE (RJ45) uplink",
     "antenna_type": [
       "Internal"
@@ -3041,9 +3049,9 @@
     "model": "MR36H",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at",
-    "behavior_min_power": "On 802.3af the AP enters low-power mode with PoE-out disabled; client Wi-Fi radios remain active.",
+    "behavior_min_power": "On 802.3af (Class 3), the AP enters low-power mode with PoE-out disabled; client Wi-Fi radios remain active.",
     "ethernet_ports_speed": "1× 1 GbE uplink, 1× 1 GbE PoE-out, 2× 1 GbE access, 1× passthrough (all RJ45)",
     "antenna_type": [
       "Internal"
@@ -3098,9 +3106,9 @@
     "model": "MR44",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 4x4",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at",
-    "behavior_min_power": "On 802.3af the AP runs in low-power mode with 5 GHz reduced to 2x2, 2.5G uplink downshifted to 1G, scanning and IoT radios disabled, and reduced max transmit power.",
+    "behavior_min_power": "On 802.3af (Class 3), the AP runs in low-power mode with 5 GHz reduced to 2x2, 2.5G uplink downshifted to 1G, scanning and IoT radios disabled, and reduced max transmit power.",
     "ethernet_ports_speed": "1× 2.5 GbE (RJ45) uplink",
     "antenna_type": [
       "Internal"
@@ -3139,9 +3147,9 @@
     "model": "MR46",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "4x4 / 4x4",
-    "min_poe_class": "802.3at",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at",
-    "behavior_min_power": "On 802.3at, the AP draws up to 30 W. Meraki marks 802.3at as required and lists no 802.3af or low-power mode. 12 V DC is an alternative power source.",
+    "behavior_min_power": "On 802.3at (Class 4), the AP draws up to 30 W. Meraki marks 802.3at as required and lists no 802.3af or low-power mode. 12 V DC is an alternative power source.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -3180,9 +3188,9 @@
     "model": "MR46E",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "4x4 / 4x4",
-    "min_poe_class": "802.3at",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at",
-    "behavior_min_power": "On 802.3at the AP operates with full 4x4 radios and external antenna support; minimum PoE should be provisioned as 802.3at for full performance.",
+    "behavior_min_power": "On 802.3at (Class 4), the AP operates with full 4x4 radios and external antenna support; minimum PoE should be provisioned as 802.3at for full performance.",
     "ethernet_ports_speed": "1× 2.5 GbE (RJ45) uplink",
     "antenna_type": [
       "External"
@@ -3223,7 +3231,7 @@
     "spatial_streams": "4x4 / 8x8",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "Runs at full functionality on 802.3at (Class 4) PoE+; no reduced-power mode is documented.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+, runs at full functionality; no reduced-power mode is documented.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45) uplink",
     "antenna_type": [
       "Internal"
@@ -3270,9 +3278,9 @@
     "model": "MR57",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3at",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at",
-    "behavior_min_power": "On 802.3at the tri-radio AP operates with full 4x4 2.4/5/6 GHz radios and dedicated scanning/BLE radios; minimum PoE should be provisioned as 802.3at for full Wi-Fi 6E capability.",
+    "behavior_min_power": "On 802.3at (Class 4), the tri-radio AP operates with full 4x4 2.4/5/6 GHz radios and dedicated scanning/BLE radios; minimum PoE should be provisioned as 802.3at for full Wi-Fi 6E capability.",
     "ethernet_ports_speed": "1× 5 GbE (RJ45) uplink",
     "antenna_type": [
       "Internal"
@@ -3312,9 +3320,9 @@
     "model": "MR76",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (15 W max)",
-    "behavior_min_power": "Operates on 802.3af PoE (15 W max); Meraki documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3af (Class 3), operates (15 W max); Meraki documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 1 GbE (RJ45) uplink",
     "antenna_type": [
       "External"
@@ -3361,9 +3369,9 @@
     "model": "MR78",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (15 W max)",
-    "behavior_min_power": "Operates on 802.3af PoE (15 W max); Meraki documents no reduced-power mode. 12 V DC input is an alternative power source.",
+    "behavior_min_power": "On 802.3af (Class 3), operates (15 W max); Meraki documents no reduced-power mode. 12 V DC input is an alternative power source.",
     "ethernet_ports_speed": "1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -3403,7 +3411,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (PoE+) for full 2x2 operation across all radios",
-    "behavior_min_power": "On 802.3at (PoE+), all three client radios operate at 2x2 on 2.4/5/6 GHz with the 2.5 Gbps Ethernet uplink active (25.5W max). On 802.3af (PoE), each client radio is reduced to 1x1 and the Ethernet uplink is restricted to 1 Gbps (14W max).",
+    "behavior_min_power": "On 802.3af (Class 3), each client radio is reduced to 1x1 and the Ethernet uplink is restricted to 1 Gbps (14W max). On 802.3at (PoE+), all three client radios operate at 2x2 on 2.4/5/6 GHz with the 2.5 Gbps Ethernet uplink active (25.5W max).",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45)",
     "antenna_type": [
       "External"
@@ -3469,7 +3477,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at, both radios operate at full 2x2, USB is enabled at 4.5W, and link speed is 2.5G. On 802.3af, only the 2.4 GHz radio operates at 1x1, the 5/6 GHz radio is disabled, USB is disabled, and link speed is limited to 1G.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5/6 GHz radio is disabled, USB is disabled, and link speed is limited to 1G. On 802.3at, both radios operate at full 2x2, USB is enabled at 4.5W, and link speed is 2.5G.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -3515,7 +3523,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including PoE out on LAN port",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, PoE out is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 and link speed is 2.5G, but PoE out on the LAN port remains disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with 15.4W PoE out on the LAN port.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, PoE out is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 and link speed is 2.5G, but PoE out on the LAN port remains disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with 15.4W PoE out on the LAN port.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE in) + 3× 100M/1 GbE LAN ports (1× with 802.3af PoE out on 802.3bt) + 1× passthrough (RJ45)",
     "antenna_type": [
       "Internal"
@@ -3570,7 +3578,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 (or optionally 4x4 on 5 GHz with 6 GHz disabled), link speed is 2.5G, but USB is disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with USB enabled at 4.5W.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 1x1, the 5 and 6 GHz radios are disabled, USB is disabled, and link speed is limited to 1G. On 802.3at, all three radios operate at full 2x2 (or optionally 4x4 on 5 GHz with 6 GHz disabled), link speed is 2.5G, but USB is disabled. 802.3bt (Class 5) enables full tri-band 2x2 at 2.5G with USB enabled at 4.5W.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -3716,7 +3724,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 10G link speed",
-    "behavior_min_power": "On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. On 802.3at, 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
+    "behavior_min_power": "On 802.3at (Class 4), 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Directional"
@@ -3762,7 +3770,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) UPOE for full performance including USB at 9W and 10G link speed",
-    "behavior_min_power": "On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. On 802.3at, 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
+    "behavior_min_power": "On 802.3at (Class 4), 2.4 GHz operates at 2x2 while 5 and 6 GHz remain at full 4x4, link speed is 2.5G, and USB is disabled. On 802.3af, all three Wi-Fi radios are fully disabled and the AP provides cloud connectivity only at 1G link speed; intended for staging only. 802.3bt (Class 5) enables full tri-band 4x4 at 10G link speed with USB at 9W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -3812,7 +3820,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) / UPoE+ for full 4x4 tri-band operation and 10G uplink",
-    "behavior_min_power": "On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3af (PoE), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W.",
+    "behavior_min_power": "On 802.3af (Class 3), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45), 1× 1/10 GbE (SFP+)",
     "antenna_type": [
       "Directional"
@@ -3883,7 +3891,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) / UPoE+ for full 4x4 tri-band operation and 10G uplink",
-    "behavior_min_power": "On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3af (PoE), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W.",
+    "behavior_min_power": "On 802.3af (Class 3), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45), 1× 1/10 GbE (SFP+)",
     "antenna_type": [
       "External"
@@ -3944,7 +3952,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 6) / UPoE+ for full 4x4 tri-band operation and 10G uplink",
-    "behavior_min_power": "On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3af (PoE), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W.",
+    "behavior_min_power": "On 802.3af (Class 3), each radio is reduced to 1x1 and the uplink is restricted to 1G at 15.4W. On 802.3at (PoE+), the radios are reduced to 2x2 across all three bands and the uplink is restricted to 2.5G at 30W. On 802.3bt (Class 6), all three client radios operate at 4x4 on 2.4/5/6 GHz (or 2.4 GHz plus dual 5 GHz) with a 10G uplink (RJ45 or SFP+) at 45.1W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45), 1× 1/10 GbE (SFP+)",
     "antenna_type": [
       "Internal"
@@ -4010,7 +4018,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full quad-radio operation",
-    "behavior_min_power": "On 802.3af, all radios are off and the AP is for configuration staging only (single 1G link, 13.95 W max). On 802.3at (25.5 W max), the AP runs either quad-radio mode, with 2.4 GHz 2x2, dual 5 GHz at 2x2 lower band plus 2x2 upper band, and 6 GHz 2x2, with both uplinks at 2.5G; or tri-radio mode, with 2.4 GHz 2x2, a single full-band 5 GHz radio at 4x4, and 6 GHz 2x2, with both uplinks at 1G. On 802.3bt Class 6 (47 W max), all radios run 4x4, including dual 5 GHz at 4x4 plus 4x4, with both uplinks at 10G.",
+    "behavior_min_power": "On 802.3at (Class 4) (25.5 W max), the AP runs either quad-radio mode, with 2.4 GHz 2x2, dual 5 GHz at 2x2 lower band plus 2x2 upper band, and 6 GHz 2x2, with both uplinks at 2.5G; or tri-radio mode, with 2.4 GHz 2x2, a single full-band 5 GHz radio at 4x4, and 6 GHz 2x2, with both uplinks at 1G. On 802.3af, all radios are off and the AP is for configuration staging only (single 1G link, 13.95 W max). On 802.3bt Class 6 (47 W max), all radios run 4x4, including dual 5 GHz at 4x4 plus 4x4, with both uplinks at 10G.",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE mGig (RJ45)",
     "antenna_type": [
       "Directional",
@@ -4120,7 +4128,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt",
-    "behavior_min_power": "On 802.3af, the AP stays in a staging state: all three Wi-Fi radios and PSE out are disabled and only the Ethernet port is active, so 802.3af is not a usable operating mode. On 802.3at in the default tri-radio mode (Mode 1), the 2.4 GHz radio runs 2x2, the 5 GHz radio 3x3, and the 6 GHz radio 2x2, all capped at 13 dBm; USB and PSE out are disabled, except that USB remains enabled in the sensor modes (Modes 2 and 4). On 802.3bt, all three radios operate at full 4x4 at 18 dBm, USB is enabled (5 W), and ETH1 can supply 802.3af PSE out (disabled by default; requires 802.3bt on ETH0). On DC power, radio and USB behavior matches 802.3bt but PSE out is not available. In dual-5 GHz mode (Mode 3) on 802.3at, all three radios run 2x2 at 13 dBm.",
+    "behavior_min_power": "On 802.3at (Class 4), in the default tri-radio mode (Mode 1), the 2.4 GHz radio runs 2x2, the 5 GHz radio 3x3, and the 6 GHz radio 2x2, all capped at 13 dBm; USB and PSE out are disabled, except that USB remains enabled in the sensor modes (Modes 2 and 4). In dual-5 GHz mode (Mode 3) on 802.3at, all three radios run 2x2 at 13 dBm. On 802.3af, the AP stays in a staging state: all three Wi-Fi radios and PSE out are disabled and only the Ethernet port is active, so 802.3af is not a usable operating mode. On 802.3bt, all three radios operate at full 4x4 at 18 dBm, USB is enabled (5 W), and ETH1 can supply 802.3af PSE out (disabled by default; requires 802.3bt on ETH0). On DC power, radio and USB behavior matches 802.3bt but PSE out is not available.",
     "ethernet_ports_speed": "1× 10 GbE 1× 5 GbE",
     "antenna_type": [
       "Internal"
@@ -4146,7 +4154,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt for PoE-out on Eth1 and USB",
-    "behavior_min_power": "On 802.3at (PoE+), all three 4x4 data radios and the dedicated 2x2 tri-band sensor operate, typical 21W/max 25.5W, with USB and PoE-out disabled. On 802.3bt, USB (5W) and 15.4W PSE on Eth1 are enabled (typical 26W, max 38W with USB).",
+    "behavior_min_power": "On 802.3at (Class 4), all three 4x4 data radios and the dedicated 2x2 tri-band sensor operate, typical 21W/max 25.5W, with USB and PoE-out disabled. On 802.3bt, USB (5W) and 15.4W PSE on Eth1 are enabled (typical 26W, max 38W with USB).",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE (Eth0 PoE PD; Eth1 PoE PD or 15.4W PSE with 802.3bt on Eth0)",
     "antenna_type": [
       "Internal"
@@ -4173,7 +4181,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt for PoE-out on Eth1 and USB",
-    "behavior_min_power": "On 802.3at (PoE+), all three 4x4 data radios and the dedicated 2x2 tri-band sensor operate, typical 21W/max 25.5W, with USB and PoE-out disabled. On 802.3bt, USB (5W) and 15.4W PSE on Eth1 are enabled (typical 26W, max 38W with USB).",
+    "behavior_min_power": "On 802.3at (Class 4), all three 4x4 data radios and the dedicated 2x2 tri-band sensor operate, typical 21W/max 25.5W, with USB and PoE-out disabled. On 802.3bt, USB (5W) and 15.4W PSE on Eth1 are enabled (typical 26W, max 38W with USB).",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE (Eth0 PoE PD; Eth1 PoE PD or 15.4W PSE with 802.3bt on Eth0)",
     "antenna_type": [
       "Directional"
@@ -4205,7 +4213,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt for PoE-out on Eth1 and USB",
-    "behavior_min_power": "On 802.3at (PoE+), all three 4x4 data radios and the dedicated 2x2 tri-band sensor operate, typical 21W/max 25.5W, with USB and PoE-out disabled. On 802.3bt, USB (5W) and 15.4W PSE on Eth1 are enabled (typical 26W, max 38W with USB).",
+    "behavior_min_power": "On 802.3at (Class 4), all three 4x4 data radios and the dedicated 2x2 tri-band sensor operate, typical 21W/max 25.5W, with USB and PoE-out disabled. On 802.3bt, USB (5W) and 15.4W PSE on Eth1 are enabled (typical 26W, max 38W with USB).",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE (Eth0 PoE PD; Eth1 PoE PD or 15.4W PSE with 802.3bt on Eth0)",
     "antenna_type": [
       "External"
@@ -4230,9 +4238,9 @@
     "model": "AP4020",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "802.3at",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at",
-    "behavior_min_power": "Full functionality on 802.3at (PoE+)",
+    "behavior_min_power": "On 802.3at (Class 4), full functionality.",
     "ethernet_ports_speed": "1× 5 GbE, 1× 2.5 GbE",
     "antenna_type": [
       "Internal"
@@ -4259,7 +4267,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full tri-band operation",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 2x2, the 5 and 6 GHz radios are disabled, and USB is disabled. On 802.3at, all three data radios operate at 2x2 with the dedicated sensor enabled and USB at 2.5W. 802.3bt enables USB at 5W.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 2x2, the 5 and 6 GHz radios are disabled, and USB is disabled. On 802.3at, all three data radios operate at 2x2 with the dedicated sensor enabled and USB at 2.5W. 802.3bt enables USB at 5W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (Eth0, PoE PD) + 1× 100M/1/2.5 GbE (Eth1, PoE PD)",
     "antenna_type": [
       "External"
@@ -4286,7 +4294,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full tri-band operation",
-    "behavior_min_power": "On 802.3af, only the 2.4 GHz radio operates at 2x2, the 5 and 6 GHz radios are disabled, and USB is disabled. On 802.3at, all three data radios operate at 2x2 with the dedicated sensor enabled and USB at 2.5W. 802.3bt enables USB at 5W. Available in the USA and Canada only because of external 6 GHz ports.",
+    "behavior_min_power": "On 802.3af (Class 3), only the 2.4 GHz radio operates at 2x2, the 5 and 6 GHz radios are disabled, and USB is disabled. On 802.3at, all three data radios operate at 2x2 with the dedicated sensor enabled and USB at 2.5W. 802.3bt enables USB at 5W. Available in the USA and Canada only because of external 6 GHz ports.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (Eth0, PoE PD) + 1× 100M/1/2.5 GbE (Eth1, PoE PD)",
     "antenna_type": [
       "External"
@@ -4392,7 +4400,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) required for normal operation",
-    "behavior_min_power": "On 802.3af (Class 3) PoE, the AP cannot power its downstream Ethernet ports and may disable the USB port; 802.3at is required for full wallplate switch functionality.",
+    "behavior_min_power": "802.3at (Class 4) is required for full wallplate switch functionality. On 802.3af (Class 3) PoE, the AP cannot power its downstream Ethernet ports and may disable the USB port.",
     "ethernet_ports_speed": "1× 100M/1 GbE uplink (PoE in) + 4× 100M/1 GbE downlink ports",
     "antenna_type": [
       "Internal"
@@ -4416,7 +4424,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt for PoE-out on LAN and USB",
-    "behavior_min_power": "On 802.3af, radios and Ethernet ports operate with USB and downlink PoE-out disabled (typical 11.6W, max 14.5W). On 802.3at, USB is enabled at 5W and PoE-out remains disabled. On 802.3bt, Eth1 PoE-out is enabled at 15.4W and USB at 5W (typical 35W, max 38W).",
+    "behavior_min_power": "On 802.3af (Class 3), radios and Ethernet ports operate with USB and downlink PoE-out disabled (typical 11.6W, max 14.5W). On 802.3at, USB is enabled at 5W and PoE-out remains disabled. On 802.3bt, Eth1 PoE-out is enabled at 15.4W and USB at 5W (typical 35W, max 38W).",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (Eth0, PoE in) + 3× 10M/100M/1 GbE (Eth1 with 15.4W PSE on 802.3bt) + passthrough",
     "antenna_type": [
       "Internal"
@@ -4467,7 +4475,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3bt (Class 5)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "Requires 802.3bt PoE for full operation (included in package). Dual Wi-Fi radios (2.4/5 GHz) at 2x2. 802.3af PSE-OUT available on LAN2 port. Max power consumption 26W.",
+    "behavior_min_power": "802.3bt (Class 5) is required for full operation (included in package). Dual Wi-Fi radios (2.4/5 GHz) at 2x2. 802.3af PSE-OUT available on LAN2 port. Max power consumption 26W.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45, PoE PD) + 1× 10M/100M/1 GbE (RJ45, 802.3af PoE PSE OUT)",
     "antenna_type": [
       "External"
@@ -4498,7 +4506,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "On 802.3bt: all three Wi-Fi radios (2.4/5/6 GHz) enabled with 802.3af PSE-OUT active on LAN3. On 802.3at: all three Wi-Fi radios enabled, PSE-OUT disabled. Max power 31W (with PSE out) / 19W (without).",
+    "behavior_min_power": "On 802.3at (Class 4), all three Wi-Fi radios enabled, PSE-OUT disabled. Max power 31W (with PSE out) / 19W (without). On 802.3bt: all three Wi-Fi radios (2.4/5/6 GHz) enabled with 802.3af PSE-OUT active on LAN3.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE (WAN1, PoE PD) + 3× 10M/100M/1 GbE (LAN ports, LAN3 supports 802.3af PSE-OUT)",
     "antenna_type": [
       "Internal"
@@ -4522,7 +4530,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4); 802.3bt optional",
-    "behavior_min_power": "On 802.3at, all three Wi-Fi radios (2.4/5/6 GHz) operate at full Tx power with 2x2 MIMO. On 802.3af, radios still operate at full Tx power but are limited to 1x1 MIMO, reducing spatial stream capacity.",
+    "behavior_min_power": "On 802.3af (Class 3), radios still operate at full Tx power but are limited to 1x1 MIMO, reducing spatial stream capacity. On 802.3at, all three Wi-Fi radios (2.4/5/6 GHz) operate at full Tx power with 2x2 MIMO.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE mGig (RJ45)",
     "antenna_type": [
       "Internal"
@@ -4547,7 +4555,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) or PIN060-54PR 60W passive PoE injector (included)",
-    "behavior_min_power": "On 802.3af, radio 1 (2.4 GHz) and radio 2 (5 GHz) run at low Tx power (17 dBm) and radio 3 is disabled. On 802.3at or the included PIN060-54PR 60W passive injector, all radios run at full Tx power with 2x2 chains (28 W max). Hitless PoE failover is supported.",
+    "behavior_min_power": "On 802.3af (Class 3), radio 1 (2.4 GHz) and radio 2 (5 GHz) run at low Tx power (17 dBm) and radio 3 is disabled. On 802.3at or the included PIN060-54PR 60W passive injector, all radios run at full Tx power with 2x2 chains (28 W max). Hitless PoE failover is supported.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -4573,7 +4581,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
-    "behavior_min_power": "On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3at, 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
+    "behavior_min_power": "On 802.3at (Class 4), 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE mGig (RJ45) + 1× 1 GbE (RJ45) + 1× USB 2.0 + 1× RS-232",
     "antenna_type": [
       "Internal"
@@ -4597,7 +4605,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6) for full performance",
-    "behavior_min_power": "On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3at, 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
+    "behavior_min_power": "On 802.3at (Class 4), 2.4 GHz and 5 GHz radios operate at full power while 6 GHz runs at reduced Tx power (~15 dBm) with scanning and USB enabled. On 802.3af, all three Wi-Fi radios (2.4/5/6 GHz) are disabled for client service and only scanning is supported, USB off. On 802.3bt, all radios operate at full power with scanning and USB enabled.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE mGig (RJ45) + 1× 1 GbE (RJ45) + 1× USB 2.0 + 1× RS-232",
     "antenna_type": [
       "External"
@@ -4621,7 +4629,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3bt (Class 5)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "Requires 802.3bt PoE for full operation (included in package). Four radios (2.4/5/6 GHz data + tri-band scan) with 2x2 MIMO on each. Max power consumption 26W.",
+    "behavior_min_power": "802.3bt (Class 5) is required for full operation (included in package). Four radios (2.4/5/6 GHz data + tri-band scan) with 2x2 MIMO on each. Max power consumption 26W.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45, PoE PD) + 1× 1/10 GbE SFP+ fiber",
     "antenna_type": [
       "Directional"
@@ -4651,9 +4659,9 @@
     "model": "FAP-431G",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "behavior_min_power": "On 802.3at (Class 4) or 2× 802.3af, all radios run at low Tx power (17 dBm) with 4x4 chains and USB disabled. On 802.3bt, 2× 802.3at, or DC, all radios run at full Tx power with 4x4 chains and USB enabled. A single 802.3af source disables all radios.",
     "ethernet_ports_speed": "2× 1/2.5/5 GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
     "antenna_type": [
       "Internal"
@@ -4701,9 +4709,9 @@
     "model": "FAP-433G",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, radios operate at full Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "behavior_min_power": "On 802.3at (Class 4) or 2× 802.3af, all radios run at low Tx power (17 dBm) with 4x4 chains and USB disabled. On 802.3bt, 2× 802.3at, or DC, all radios run at full Tx power with 4x4 chains and USB enabled. A single 802.3af source disables all radios.",
     "ethernet_ports_speed": "2× 1/2.5/5 GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
     "antenna_type": [
       "External"
@@ -4726,9 +4734,9 @@
     "model": "FAP-441K",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, client radios operate at reduced Tx power (~17 dBm) with 2x2 chains and USB disabled; 2.4/5/6 GHz radios and the fourth radio remain operational.",
+    "behavior_min_power": "On 802.3at (Class 4) or 2× 802.3af, the 2.4, 5, and 6 GHz radios run at low Tx power (17 dBm) with 2x2 chains, the fourth radio stays operational, and USB is disabled. On 802.3bt, 2× 802.3at, or DC, all radios run at maximum Tx power with 4x4 chains and USB enabled.",
     "ethernet_ports_speed": "2× 1/2.5/5/10 GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
     "antenna_type": [
       "Internal"
@@ -4751,9 +4759,9 @@
     "model": "FAP-443K",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "802.3af (dual) or 802.3at (single)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (or 2× 802.3at) for full performance",
-    "behavior_min_power": "On 802.3bt or 2×802.3at or DC, all client radios operate at maximum Tx power with 4x4 chains and USB enabled. On 802.3at or 2×802.3af, client radios operate at reduced Tx power (~17 dBm) with 4x4 chains but lower Tx power and USB disabled.",
+    "behavior_min_power": "On 802.3at (Class 4) or 2× 802.3af, the 2.4, 5, and 6 GHz radios run at low Tx power (17 dBm) with 2x2 chains, the fourth radio stays operational, and USB is disabled. On 802.3bt, 2× 802.3at, or DC, all radios run at maximum Tx power with 4x4 chains and USB enabled.",
     "ethernet_ports_speed": "2× 1/2.5/5/10 GbE mGig (RJ45) + 1× USB 3.0 + 1× RS-232",
     "antenna_type": [
       "External"
@@ -4778,7 +4786,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance including PoE PSE out",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only. On 802.3at (Class 4) PoE+ the AP operates at full functionality but without PoE PSE output on Eth1. Full functionality including Eth1 PSE requires 802.3bt (Class 5) PoE++.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+ the AP operates at full functionality but without PoE PSE output on Eth1. On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only. Full functionality including Eth1 PSE requires 802.3bt (Class 5) PoE++.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45, PoE in on Eth0) + 3× 100M/1 GbE (RJ45, Eth1 with PoE PSE out on 802.3bt)",
     "antenna_type": [
       "Internal"
@@ -4804,7 +4812,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3)",
-    "behavior_min_power": "On 802.3af the AP can run 2x2 on two bands plus a 1x1 scan radio in tri-band mode; power is sufficient for full intended functionality.",
+    "behavior_min_power": "On 802.3af (Class 3), the AP can run 2x2 on two bands plus a 1x1 scan radio in tri-band mode; power is sufficient for full intended functionality.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (PoE-in on Eth0)",
     "antenna_type": [
       "Internal"
@@ -4829,7 +4837,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only; full functionality requires 802.3at (Class 4) PoE+.",
+    "behavior_min_power": "802.3at (Class 4) PoE+ is required for full functionality. On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45, PoE in on Eth0) + 1× 100M/1 GbE (RJ45, Eth1 data-only)",
     "antenna_type": [
       "Internal"
@@ -4861,7 +4869,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only; full functionality requires 802.3at (Class 4) PoE+.",
+    "behavior_min_power": "802.3at (Class 4) PoE+ is required for full functionality. On 802.3af (Class 3) PoE the AP operates in cloud connectivity mode only.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5/10 GbE mGig (RJ45, PoE in on Eth0) + 1× 100M/1 GbE (RJ45, Eth1 data-only)",
     "antenna_type": [
       "External"
@@ -4888,7 +4896,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients. Full tri-band 2x2 operation requires 802.3at.",
+    "behavior_min_power": "802.3at (Class 4) is required for full tri-band 2x2 operation. On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (PoE-in on Eth0)",
     "antenna_type": [
       "Internal"
@@ -4913,7 +4921,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients. On 802.3at with all three Wi-Fi radios enabled, the 6 GHz radio drops from 4x4 to 2x2 while 5 GHz stays 4x4 and 2.4 GHz stays 2x2; with any two Wi-Fi radios enabled, each runs 4x4. The scanning radio, BLE, and GPS stay enabled on any power source. 802.3bt provides full functionality.",
+    "behavior_min_power": "On 802.3at (Class 4), with all three Wi-Fi radios enabled, the 6 GHz radio drops from 4x4 to 2x2 while 5 GHz stays 4x4 and 2.4 GHz stays 2x2; with any two Wi-Fi radios enabled, each runs 4x4. The scanning radio, BLE, and GPS stay enabled on any power source. On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients. 802.3bt provides full functionality.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (PoE-in on Eth0) + 1× 1 GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": [
       "Internal"
@@ -4941,7 +4949,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients. On 802.3at with all three Wi-Fi radios enabled, the 6 GHz radio drops from 4x4 to 2x2 while 5 GHz stays 4x4 and 2.4 GHz stays 2x2; with any two Wi-Fi radios enabled, each runs 4x4. The scanning radio, BLE, and GPS stay enabled on any power source. 802.3bt provides full functionality.",
+    "behavior_min_power": "On 802.3at (Class 4), with all three Wi-Fi radios enabled, the 6 GHz radio drops from 4x4 to 2x2 while 5 GHz stays 4x4 and 2.4 GHz stays 2x2; with any two Wi-Fi radios enabled, each runs 4x4. The scanning radio, BLE, and GPS stay enabled on any power source. On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients. 802.3bt provides full functionality.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (PoE-in on Eth0) + 1× 1 GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": [
       "Directional",
@@ -4980,7 +4988,7 @@
     "spatial_streams": "2x2 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients. On 802.3at with all three Wi-Fi radios enabled, the 6 GHz radio drops from 4x4 to 2x2 while 5 GHz stays 4x4 and 2.4 GHz stays 2x2; with any two Wi-Fi radios enabled, each runs 4x4. The scanning radio, BLE, and GPS stay enabled on any power source. 802.3bt provides full functionality.",
+    "behavior_min_power": "On 802.3at (Class 4), with all three Wi-Fi radios enabled, the 6 GHz radio drops from 4x4 to 2x2 while 5 GHz stays 4x4 and 2.4 GHz stays 2x2; with any two Wi-Fi radios enabled, each runs 4x4. The scanning radio, BLE, and GPS stay enabled on any power source. On 802.3af, the AP connects to the cloud only to report that it needs more power; it does not serve clients. 802.3bt provides full functionality.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (PoE-in on Eth0) + 1× 1 GbE (PoE-out on Eth1 with 802.3bt)",
     "antenna_type": [
       "Internal"
@@ -5009,7 +5017,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only to report that it needs more power. On 802.3at with all three data radios enabled, 2.4 GHz runs 2x2, 5 GHz 4x4, and 6 GHz 2x2; with any two data radios enabled, both run 4x4; with 5 GHz dual-band also enabled, one 5 GHz radio runs 2x2 and the other 4x4. On 802.3at, USB is powered only if a single radio is enabled at start-up. Eth1 802.3af PSE out (up to 15.4 W) requires 802.3bt on Eth0. The scanning radio and BLE stay active on any power source.",
+    "behavior_min_power": "On 802.3at (Class 4), with all three data radios enabled, 2.4 GHz runs 2x2, 5 GHz 4x4, and 6 GHz 2x2; with any two data radios enabled, both run 4x4; with 5 GHz dual-band also enabled, one 5 GHz radio runs 2x2 and the other 4x4. On 802.3at, USB is powered only if a single radio is enabled at start-up. On 802.3af, the AP connects to the cloud only to report that it needs more power. Eth1 802.3af PSE out (up to 15.4 W) requires 802.3bt on Eth0. The scanning radio and BLE stay active on any power source.",
     "ethernet_ports_speed": "2× 1 GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
     "antenna_type": [
       "Internal"
@@ -5035,7 +5043,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only to report that it needs more power. On 802.3at with all three data radios enabled, 2.4 GHz runs 2x2, 5 GHz 4x4, and 6 GHz 2x2; with any two data radios enabled, both run 4x4; with 5 GHz dual-band also enabled, one 5 GHz radio runs 2x2 and the other 4x4. On 802.3at, USB is powered only if a single radio is enabled at start-up. Eth1 802.3af PSE out (up to 15.4 W) requires 802.3bt on Eth0. The scanning radio and BLE stay active on any power source.",
+    "behavior_min_power": "On 802.3at (Class 4), with all three data radios enabled, 2.4 GHz runs 2x2, 5 GHz 4x4, and 6 GHz 2x2; with any two data radios enabled, both run 4x4; with 5 GHz dual-band also enabled, one 5 GHz radio runs 2x2 and the other 4x4. On 802.3at, USB is powered only if a single radio is enabled at start-up. On 802.3af, the AP connects to the cloud only to report that it needs more power. Eth1 802.3af PSE out (up to 15.4 W) requires 802.3bt on Eth0. The scanning radio and BLE stay active on any power source.",
     "ethernet_ports_speed": "2× 1 GbE (PoE-in on Eth0, PoE-out on Eth1 when powered by 802.3bt)",
     "antenna_type": [
       "External"
@@ -5050,7 +5058,7 @@
     "image_url": "images/juniper/juniper-ap45e.jpg",
     "dimensions": "230 x 230 x 50 mm",
     "weight": "1.97 kg",
-    "antenna_connectors": "2× pluggable connectors (4-pin: 2.4/5 GHz; 6-pin: 6 GHz + scan)",
+    "antenna_connectors": "Two pluggable antenna connectors: 2.4/5 (4 pin), 6+Scan (6 pin)",
     "operating_temp_range": "-10°C to 50°C",
     "msrp": "$2,245"
   },
@@ -5061,7 +5069,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On a single 802.3at source, Wi-Fi is reduced: with all three Wi-Fi radios enabled they run 2x2, or any two radios run 4x4, and the USB port is not powered. A single 802.3bt source, or two 802.3at sources (one per port), provides full functionality; with two 802.3at sources the power is shared, and the AP may brown out or reboot if one fails, so Juniper recommends 802.3bt for full redundancy. The scanning radio, BLE, GPS, and UWB stay enabled on any power source.",
+    "behavior_min_power": "On a single 802.3at (Class 4) source, Wi-Fi is reduced: with all three Wi-Fi radios enabled they run 2x2, or any two radios run 4x4, and the USB port is not powered. A single 802.3bt source, or two 802.3at sources (one per port), provides full functionality; with two 802.3at sources the power is shared, and the AP may brown out or reboot if one fails, so Juniper recommends 802.3bt for full redundancy. The scanning radio, BLE, GPS, and UWB stay enabled on any power source.",
     "ethernet_ports_speed": "2× 10 GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": [
       "Internal"
@@ -5090,7 +5098,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On a single 802.3at source, Wi-Fi is reduced: with all three Wi-Fi radios enabled they run 2x2, or any two radios run 4x4, and the USB port is not powered. A single 802.3bt source, or two 802.3at sources (one per port), provides full functionality; with two 802.3at sources the power is shared, and the AP may brown out or reboot if one fails, so Juniper recommends 802.3bt for full redundancy. The scanning radio, BLE, GPS, and UWB stay enabled on any power source.",
+    "behavior_min_power": "On a single 802.3at (Class 4) source, Wi-Fi is reduced: with all three Wi-Fi radios enabled they run 2x2, or any two radios run 4x4, and the USB port is not powered. A single 802.3bt source, or two 802.3at sources (one per port), provides full functionality; with two 802.3at sources the power is shared, and the AP may brown out or reboot if one fails, so Juniper recommends 802.3bt for full redundancy. The scanning radio, BLE, GPS, and UWB stay enabled on any power source.",
     "ethernet_ports_speed": "2× 10 GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": [
       "Directional"
@@ -5124,7 +5132,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 6)",
-    "behavior_min_power": "On a single 802.3at source, Wi-Fi is reduced: with all three Wi-Fi radios enabled they run 2x2, or any two radios run 4x4, and the USB port is not powered. A single 802.3bt source, or two 802.3at sources (one per port), provides full functionality; with two 802.3at sources the power is shared, and the AP may brown out or reboot if one fails, so Juniper recommends 802.3bt for full redundancy. The scanning radio, BLE, GPS, and UWB stay enabled on any power source.",
+    "behavior_min_power": "On a single 802.3at (Class 4) source, Wi-Fi is reduced: with all three Wi-Fi radios enabled they run 2x2, or any two radios run 4x4, and the USB port is not powered. A single 802.3bt source, or two 802.3at sources (one per port), provides full functionality; with two 802.3at sources the power is shared, and the AP may brown out or reboot if one fails, so Juniper recommends 802.3bt for full redundancy. The scanning radio, BLE, GPS, and UWB stay enabled on any power source.",
     "ethernet_ports_speed": "2× 10 GbE (PoE-in via Eth0 and Eth1)",
     "antenna_type": [
       "External"
@@ -5132,7 +5140,7 @@
     "form_factor": "Indoor",
     "dimensions": "254 x 254 x 60 mm",
     "weight": "2.0 kg",
-    "antenna_connectors": "3× pluggable connectors (6-pin: 2.4/5/6 GHz; 6-pin: 6 GHz + scan; 4-pin: 5 GHz)",
+    "antenna_connectors": "Three pluggable antenna connectors: 2.4/5/6 GHz (6 pin), 6 GHz + Scan (6 pin), and 5 GHz (4 pin)",
     "operating_temp_range": "-20°C to 50°C",
     "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
     "radios_iot_features": [
@@ -5153,7 +5161,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3)",
-    "behavior_min_power": "On 802.3af the AP can support full tri-band 2x2 plus scan; it is designed to operate within the 802.3af power budget.",
+    "behavior_min_power": "On 802.3af (Class 3), the AP can support full tri-band 2x2 plus scan; it is designed to operate within the 802.3af power budget.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (PoE-in on Eth0)",
     "antenna_type": [
       "Internal"
@@ -5180,7 +5188,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only; Wi-Fi client service requires 802.3at, which provides full functionality.",
+    "behavior_min_power": "802.3at (Class 4) is required for Wi-Fi client service, which provides full functionality. On 802.3af, the AP connects to the cloud only.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (PoE-in on Eth0)",
     "antenna_type": [
       "Internal"
@@ -5208,7 +5216,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "On 802.3af, the AP connects to the cloud only; Wi-Fi client service requires 802.3at, which provides full functionality.",
+    "behavior_min_power": "802.3at (Class 4) is required for Wi-Fi client service, which provides full functionality. On 802.3af, the AP connects to the cloud only.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (PoE-in on Eth0)",
     "antenna_type": [
       "Directional"
@@ -5263,7 +5271,7 @@
     "spatial_streams": "4x4 / 8x8",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "uPoE (31.0W)",
-    "behavior_min_power": "On 802.3at (Class 4) PoE the AP supports reduced-power operation where either the 5 GHz radio is limited to 4x4 with USB and Zigbee/BLE disabled or the secondary Ethernet port and USB are disabled to allow 8x8 operation on 5 GHz; on 802.3af (Class 3) PoE both Wi-Fi radios are disabled. Full functionality with both radios at maximum configuration, USB and IoT enabled is only documented for DC power or PoH/uPoE.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE the AP supports reduced-power operation where either the 5 GHz radio is limited to 4x4 with USB and Zigbee/BLE disabled or the secondary Ethernet port and USB are disabled to allow 8x8 operation on 5 GHz. On 802.3af (Class 3) PoE both Wi-Fi radios are disabled. Full functionality with both radios at maximum configuration, USB and IoT enabled is only documented for DC power or PoH/uPoE.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5330,9 +5338,9 @@
     "model": "U6 Enterprise In-Wall",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 4x4",
-    "min_poe_class": "PoE+ (802.3at) / PoE++ (802.3bt for PoE-out)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt PoE++ for full performance and PoE output; 802.3at PoE+ for AP-only operation",
-    "behavior_min_power": "On 802.3bt PoE++, the AP and PoE-out port operate without restrictions. On 802.3at PoE+, the AP radios operate normally but PoE-out is disabled or limited to stay within the available power budget.",
+    "behavior_min_power": "On 802.3at (Class 4), the AP draws up to 21 W, excluding PoE output. 802.3bt (PoE++) is required to use the PoE output port.",
     "ethernet_ports_speed": "1× 1/2.5 GbE uplink + 4× 1 GbE switch ports (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5341,7 +5349,7 @@
     "radios_iot_features": [
       "BLE"
     ],
-    "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u6-enterprise-iw?s=us",
+    "datasheet_url": "https://techspecs.ui.com/unifi/wifi/u6-enterprise-iw",
     "image_url": "images/ubiquiti/ubiquiti-u6-enterprise-iw.png",
     "dimensions": "159.7 x 156.7 x 33.8 mm",
     "weight": "884 g (1.9 lb)",
@@ -5354,9 +5362,9 @@
     "model": "U7 In-Wall",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
-    "min_poe_class": "PoE (802.3af) / PoE+ (802.3at for PoE-out)",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at PoE+ for AP plus PoE output; 802.3af PoE for AP-only operation",
-    "behavior_min_power": "On 802.3at PoE+, the AP and PoE-out port operate normally. On 802.3af PoE, the AP radios operate but PoE-out is disabled to stay within the available power budget.",
+    "behavior_min_power": "On 802.3af (Class 3), the AP draws up to 13 W, excluding PoE output. 802.3at (PoE+) is required to use the PoE output port.",
     "ethernet_ports_speed": "1× 2.5 GbE uplink + 4× 1 GbE switch ports (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5376,9 +5384,9 @@
     "model": "U7 Lite",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
-    "min_poe_class": "PoE (802.3af)",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af PoE for normal operation",
-    "behavior_min_power": "On PoE (802.3af), max power consumption is 13 W. Ubiquiti documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3af (Class 3), max power consumption is 13 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5398,9 +5406,9 @@
     "model": "U7 Pro",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "PoE+ (802.3at)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at PoE+ for full performance",
-    "behavior_min_power": "On PoE+ (802.3at), max power consumption is 21 W. Ubiquiti documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3at (Class 4), max power consumption is 21 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5420,9 +5428,9 @@
     "model": "U7 Pro Wall",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "PoE+ (802.3at)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at PoE+ for full performance",
-    "behavior_min_power": "On PoE+ (802.3at), max power consumption is 22 W. Ubiquiti documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3at (Class 4), max power consumption is 22 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5442,9 +5450,9 @@
     "model": "U7 Pro XG",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "PoE+ (802.3at)",
+    "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at PoE+ for full performance",
-    "behavior_min_power": "On PoE+ (802.3at), max power consumption is 22 W. Ubiquiti documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3at (Class 4), max power consumption is 22 W. Ubiquiti documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5508,9 +5516,9 @@
     "model": "EAP610",
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
-    "min_poe_class": "802.3af",
+    "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (10.9 W max)",
-    "behavior_min_power": "Designed for 802.3af PoE (10.9 W max on PoE); no reduced-power mode is documented. Also accepts 48 V passive PoE or 12 V DC (9.9 W max on DC).",
+    "behavior_min_power": "On 802.3af (Class 3), designed for PoE (10.9 W max on PoE); no reduced-power mode is documented. Also accepts 48 V passive PoE or 12 V DC (9.9 W max on DC).",
     "ethernet_ports_speed": "1× 1 GbE",
     "antenna_type": [
       "Internal"
@@ -5657,7 +5665,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3) PoE for full performance",
-    "behavior_min_power": "Runs at full functionality on 802.3af (Class 3) PoE; no reduced-power mode is documented.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE, runs at full functionality; no reduced-power mode is documented.",
     "ethernet_ports_speed": "1× 1 GbE (RJ45, PoE in) + 2× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5682,7 +5690,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3af, both radios run 2x2 at full transmit power (16 dBm per chain on 2.4 GHz, 19 dBm per chain on 5 GHz), BLE, Zigbee, and all four LAN ports stay enabled, and USB and PoE out are disabled. On 802.3at, the AP runs one of three configurations: USB enabled with PoE out disabled; PoE out up to 8.4 W at the powered device (20 m cable max) with USB enabled; or PoE out up to 12.4 W (20 m cable max) with USB disabled. On 802.3bt, PoH, or uPoE, USB and PoE out (12.95 W, 100 m cable) are both enabled.",
+    "behavior_min_power": "On 802.3af (Class 3), both radios run 2x2 at full transmit power (16 dBm per chain on 2.4 GHz, 19 dBm per chain on 5 GHz), BLE, Zigbee, and all four LAN ports stay enabled, and USB and PoE out are disabled. On 802.3at, the AP runs one of three configurations: USB enabled with PoE out disabled; PoE out up to 8.4 W at the powered device (20 m cable max) with USB enabled; or PoE out up to 12.4 W (20 m cable max) with USB disabled. On 802.3bt, PoH, or uPoE, USB and PoE out (12.95 W, 100 m cable) are both enabled.",
     "ethernet_ports_speed": "1× 1 GbE (RJ45, PoE in) + 4× 1 GbE (RJ45, one with PoE out)",
     "antenna_type": [
       "Internal"
@@ -5732,7 +5740,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3) PoE for full performance",
-    "behavior_min_power": "Runs at full functionality on 802.3af (Class 3) PoE; no reduced-power mode is documented.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE, runs at full functionality; no reduced-power mode is documented.",
     "ethernet_ports_speed": "1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5754,7 +5762,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3af (Class 3) PoE for full performance",
-    "behavior_min_power": "Runs at full functionality on 802.3af (Class 3) PoE; no reduced-power mode is documented.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE, runs at full functionality; no reduced-power mode is documented.",
     "ethernet_ports_speed": "1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5776,7 +5784,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af, the 2.4 GHz radio runs 2x2 at 19 dBm per chain and the 5 GHz radio runs 2x2 at 18 dBm per chain; the second Ethernet port, onboard IoT radio, and USB are disabled (12.71 W max). On 802.3at or 12 V DC, the AP runs with full functionality (18.71 W max on 802.3at).",
+    "behavior_min_power": "On 802.3af (Class 3), the 2.4 GHz radio runs 2x2 at 19 dBm per chain and the 5 GHz radio runs 2x2 at 18 dBm per chain; the second Ethernet port, onboard IoT radio, and USB are disabled (12.71 W max). On 802.3at or 12 V DC, the AP runs with full functionality (18.71 W max on 802.3at).",
     "ethernet_ports_speed": "2× 1 GbE (RJ45, one with PoE in)",
     "antenna_type": [
       "Internal"
@@ -5801,7 +5809,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (25 W), the 5 GbE port and IoT radio stay enabled, the 1 GbE port and USB are disabled, and the radios run 2.4 GHz 2x2 at 23 dBm, 5 GHz 2x2 at 22 dBm, and 6 GHz 2x2 at 19 dBm. On 802.3bt, PoH, uPoE, or DC, both Ethernet ports, USB (3 W), and IoT are enabled, with 6 GHz at 22 dBm. Ruckus does not document 802.3af operation.",
+    "behavior_min_power": "On 802.3at (Class 4) (25 W), the 5 GbE port and IoT radio stay enabled, the 1 GbE port and USB are disabled, and the radios run 2.4 GHz 2x2 at 23 dBm, 5 GHz 2x2 at 22 dBm, and 6 GHz 2x2 at 19 dBm. On 802.3bt, PoH, uPoE, or DC, both Ethernet ports, USB (3 W), and IoT are enabled, with 6 GHz at 22 dBm. Ruckus does not document 802.3af operation.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5826,7 +5834,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE+, both 2.5GbE ports, USB, and IoT operate with full 2x2 radios on 2.4/5/6 GHz (25.5W max). On 802.3af (Class 3) PoE, only one 2.5GbE WAN port is enabled, USB and IoT are disabled, and each Wi-Fi radio is reduced to 1 Tx / 2 Rx (12.95W max).",
+    "behavior_min_power": "On 802.3af (Class 3) PoE, only one 2.5GbE WAN port is enabled, USB and IoT are disabled, and each Wi-Fi radio is reduced to 1 Tx / 2 Rx (12.95W max). On 802.3at (Class 4) PoE+, both 2.5GbE ports, USB, and IoT operate with full 2x2 radios on 2.4/5/6 GHz (25.5W max).",
     "ethernet_ports_speed": "2× 100M/1/2.5 GbE (RJ45, one PoE in)",
     "antenna_type": [
       "Internal"
@@ -5851,7 +5859,7 @@
     "spatial_streams": "2x2 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af, the 2.4 GHz radio runs 2x2 at 19 dBm per chain and the 5 GHz radio runs 2x4 at 20 dBm per chain; the second Ethernet port, onboard IoT radio, and USB are disabled (12.25 W max). On 802.3at or DC, the AP has full functionality: 2.4 GHz 2x2 at 23 dBm per chain, 5 GHz 4x4 at 22 dBm per chain, and the second Ethernet port, IoT radio, and USB (3 W) enabled.",
+    "behavior_min_power": "On 802.3af (Class 3), the 2.4 GHz radio runs 2x2 at 19 dBm per chain and the 5 GHz radio runs 2x4 at 20 dBm per chain; the second Ethernet port, onboard IoT radio, and USB are disabled (12.25 W max). On 802.3at or DC, the AP has full functionality: 2.4 GHz 2x2 at 23 dBm per chain, 5 GHz 4x4 at 22 dBm per chain, and the second Ethernet port, IoT radio, and USB (3 W) enabled.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5876,7 +5884,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (25.5 W), both Ethernet ports and the IoT radio stay enabled, USB is disabled, and transmit power drops to 20 dBm on 2.4 GHz, 20 dBm on 5 GHz, and 21 dBm on 6 GHz (all 2x2 in tri-band mode). On 802.3bt, PoH, uPoE, or DC (35 W), USB (3 W) is enabled and all three radios run at 22 dBm. Ruckus does not document 802.3af operation or 802.3at behavior in the 4x4 dual-band mode.",
+    "behavior_min_power": "On 802.3at (Class 4) (25.5 W), both Ethernet ports and the IoT radio stay enabled, USB is disabled, and transmit power drops to 20 dBm on 2.4 GHz, 20 dBm on 5 GHz, and 21 dBm on 6 GHz (all 2x2 in tri-band mode). On 802.3bt, PoH, uPoE, or DC (35 W), USB (3 W) is enabled and all three radios run at 22 dBm. Ruckus does not document 802.3af operation or 802.3at behavior in the 4x4 dual-band mode.",
     "ethernet_ports_speed": "1× 1/2.5/5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5901,7 +5909,7 @@
     "spatial_streams": "2x2 / 4x4 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (25.5 W), the 10 GbE port stays enabled, the 1 GbE port and USB are disabled, and transmit power drops to 16 dBm on 2.4 GHz (2x2), 15 dBm on 5 GHz (4x4), and 16 dBm on 6 GHz (2x2). On 802.3bt, PoH, uPoE, or DC, both Ethernet ports and USB (3 W) are enabled, with 2.4 GHz at 23 dBm and 5 and 6 GHz at 22 dBm. Ruckus does not document 802.3af operation.",
+    "behavior_min_power": "On 802.3at (Class 4) (25.5 W), the 10 GbE port stays enabled, the 1 GbE port and USB are disabled, and transmit power drops to 16 dBm on 2.4 GHz (2x2), 15 dBm on 5 GHz (4x4), and 16 dBm on 6 GHz (2x2). On 802.3bt, PoH, uPoE, or DC, both Ethernet ports and USB (3 W) are enabled, with 2.4 GHz at 23 dBm and 5 and 6 GHz at 22 dBm. Ruckus does not document 802.3af operation.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5926,7 +5934,7 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates with both radios limited to 2x4 streams and the second Ethernet port, onboard IoT radio and USB port disabled; on 802.3at (Class 4) PoE+ full 4x4 operation with the second Ethernet port, IoT and USB enabled is supported.",
+    "behavior_min_power": "On 802.3af (Class 3) PoE the AP operates with both radios limited to 2x4 streams and the second Ethernet port, onboard IoT radio and USB port disabled. On 802.3at (Class 4) PoE+ full 4x4 operation with the second Ethernet port, IoT and USB enabled is supported.",
     "ethernet_ports_speed": "1× 1/2.5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -5951,7 +5959,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (25.5 W), the 10 GbE port stays enabled, the 1 GbE port, USB, and Zigbee/BLE radio are disabled, and all radios stay 4x4 with transmit power cut sharply: in 2.4/5/6 GHz mode, 2.4 GHz runs at 13 dBm and 5 and 6 GHz at 14 dBm; in 2.4/5/5 GHz mode, 2.4 GHz runs at 15 dBm and the two 5 GHz radios at 16 and 15 dBm. On DC power, both Ethernet ports, USB (3 W), and Zigbee/BLE are enabled with all radios at 22 dBm; Ruckus lists the same for 802.3bt, PoH, and uPoE. Ruckus does not document 802.3af operation.",
+    "behavior_min_power": "On 802.3at (Class 4) (25.5 W), the 10 GbE port stays enabled, the 1 GbE port, USB, and Zigbee/BLE radio are disabled, and all radios stay 4x4 with transmit power cut sharply: in 2.4/5/6 GHz mode, 2.4 GHz runs at 13 dBm and 5 and 6 GHz at 14 dBm; in 2.4/5/5 GHz mode, 2.4 GHz runs at 15 dBm and the two 5 GHz radios at 16 and 15 dBm. On DC power, both Ethernet ports, USB (3 W), and Zigbee/BLE are enabled with all radios at 22 dBm; Ruckus lists the same for 802.3bt, PoH, and uPoE. Ruckus does not document 802.3af operation.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE mGig (RJ45, PoE in) + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -6119,7 +6127,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (25.5 W), both Ethernet ports and GPS stay enabled and USB is disabled; in tri-band mode the radios run 2.4 GHz 2x2 at 19 dBm, 5 GHz 2x2 at 20 dBm, and 6 GHz 2x2 at 20 dBm, and in dual-band mode 2.4 GHz 2x2 at 20 dBm and 5 GHz 4x4 at 21 dBm. On 802.3bt, PoH, uPoE, or DC (35 W), USB (3 W) is enabled and all radios run at 22 dBm. A USB port is present only on the 901-T670-XX02 SKU. Ruckus does not document 802.3af operation.",
+    "behavior_min_power": "On 802.3at (Class 4) (25.5 W), both Ethernet ports and GPS stay enabled and USB is disabled; in tri-band mode the radios run 2.4 GHz 2x2 at 19 dBm, 5 GHz 2x2 at 20 dBm, and 6 GHz 2x2 at 20 dBm, and in dual-band mode 2.4 GHz 2x2 at 20 dBm and 5 GHz 4x4 at 21 dBm. On 802.3bt, PoH, uPoE, or DC (35 W), USB (3 W) is enabled and all radios run at 22 dBm. A USB port is present only on the 901-T670-XX02 SKU. Ruckus does not document 802.3af operation.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45, PoE in) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -6141,7 +6149,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at (25.5 W), both Ethernet ports and GPS stay enabled and USB is disabled; in tri-band mode the radios run 2.4 GHz 2x2 at 19 dBm, 5 GHz 2x2 at 20 dBm, and 6 GHz 2x2 at 20 dBm, and in dual-band mode 2.4 GHz 2x2 at 20 dBm and 5 GHz 4x4 at 21 dBm. On 802.3bt, PoH, uPoE, or DC (35 W), USB (3 W) is enabled and all radios run at 22 dBm. Ruckus does not document 802.3af operation.",
+    "behavior_min_power": "On 802.3at (Class 4) (25.5 W), both Ethernet ports and GPS stay enabled and USB is disabled; in tri-band mode the radios run 2.4 GHz 2x2 at 19 dBm, 5 GHz 2x2 at 20 dBm, and 6 GHz 2x2 at 20 dBm, and in dual-band mode 2.4 GHz 2x2 at 20 dBm and 5 GHz 4x4 at 21 dBm. On 802.3bt, PoH, uPoE, or DC (35 W), USB (3 W) is enabled and all radios run at 22 dBm. Ruckus does not document 802.3af operation.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45, PoE in) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Directional"
@@ -6219,7 +6227,7 @@
     "spatial_streams": "2x2 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af, the 5 GHz radio drops from 4x4 to 2x2 and USB is disabled; the 2.4 GHz radio (2x2), the dual-band sensor radio (2x2), and BLE keep running, with transmit power unchanged at 20 dBm. On 802.3at or 802.3bt, the 5 GHz radio runs 4x4 and USB is enabled.",
+    "behavior_min_power": "On 802.3af (Class 3), the 5 GHz radio drops from 4x4 to 2x2 and USB is disabled; the 2.4 GHz radio (2x2), the dual-band sensor radio (2x2), and BLE keep running, with transmit power unchanged at 20 dBm. On 802.3at or 802.3bt, the 5 GHz radio runs 4x4 and USB is enabled.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45, PoE in) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -6247,7 +6255,7 @@
     "spatial_streams": "2x2 / 4x4",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "On 802.3af, the 5 GHz radio drops from 4x4 to 2x2 and USB is disabled; the 2.4 GHz radio (2x2), the dual-band sensor radio (2x2), and BLE keep running, with transmit power unchanged at 19 dBm on 2.4 GHz and 18 dBm on 5 GHz. On 802.3at or 802.3bt, the 5 GHz radio runs 4x4 and USB is enabled.",
+    "behavior_min_power": "On 802.3af (Class 3), the 5 GHz radio drops from 4x4 to 2x2 and USB is disabled; the 2.4 GHz radio (2x2), the dual-band sensor radio (2x2), and BLE keep running, with transmit power unchanged at 19 dBm on 2.4 GHz and 18 dBm on 5 GHz. On 802.3at or 802.3bt, the 5 GHz radio runs 4x4 and USB is enabled.",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45, PoE in) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "External"
@@ -6271,7 +6279,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "Full functionality on 802.3at (PoE+); supports PoE failover between Eth0 and Eth1",
+    "behavior_min_power": "On 802.3at (Class 4), full functionality; supports PoE failover between Eth0 and Eth1.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (Eth0, PoE PD) + 1× 100M/1/2.5 GbE (Eth1, PoE PD); 802.3az EEE",
     "antenna_type": [
       "Internal"
@@ -6316,7 +6324,7 @@
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4)",
-    "behavior_min_power": "Full functionality on 802.3at (PoE+); supports PoE failover between Eth0 and Eth1",
+    "behavior_min_power": "On 802.3at (Class 4), full functionality; supports PoE failover between Eth0 and Eth1.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (Eth0, PoE PD) + 1× 100M/1/2.5 GbE (Eth1, PoE PD); 802.3az EEE",
     "antenna_type": [
       "External"
@@ -6346,7 +6354,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "On 802.3at (PoE+): full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out or USB. On 802.3bt: PoE-out on Eth1 (15.4W PSE) and USB enabled",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+: full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out or USB. On 802.3bt: PoE-out on Eth1 (15.4W PSE) and USB enabled.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (Eth0, PoE PD) + 1× 100M/1/2.5 GbE (Eth1, optional PoE PSE with 802.3bt); 802.3az EEE; USB 2.0 Type A",
     "antenna_type": [
       "Internal"
@@ -6379,7 +6387,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "On 802.3at (PoE+): full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: PoE-out on Eth1 (15.4W PSE) enabled",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+: full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: PoE-out on Eth1 (15.4W PSE) enabled.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (Eth0, PoE PD) + 1× 100M/1/2.5 GbE (Eth1, optional PoE PSE with 802.3bt)",
     "antenna_type": [
       "Internal"
@@ -6413,7 +6421,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "On 802.3at (PoE+): full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: PoE-out on Eth1 (15.4W PSE) enabled",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+: full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: PoE-out on Eth1 (15.4W PSE) enabled.",
     "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (Eth0, PoE PD) + 1× 100M/1/2.5 GbE (Eth1, optional PoE PSE with 802.3bt)",
     "antenna_type": [
       "Directional"
@@ -6454,7 +6462,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "On 802.3at (PoE+): full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: typical 25W/max 30W w/o PoE-out, or PoE-out on Eth1 (15.4W PSE) enabled. PoE failover between Eth0 and Eth1 supported.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+: full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: typical 25W/max 30W w/o PoE-out, or PoE-out on Eth1 (15.4W PSE) enabled. PoE failover between Eth0 and Eth1 supported.",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE (Eth0 PoE PD; Eth1 PoE PD or 15.4W PSE with 802.3bt on Eth0); 802.3az EEE",
     "antenna_type": [
       "Internal"
@@ -6489,7 +6497,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5)",
-    "behavior_min_power": "On 802.3at (PoE+): full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: typical 25W/max 30W w/o PoE-out, or PoE-out on Eth1 (15.4W PSE) enabled. PoE failover between Eth0 and Eth1 supported.",
+    "behavior_min_power": "On 802.3at (Class 4) PoE+: full Wi-Fi functionality, typical 21W/max 25.5W, no PoE-out. On 802.3bt: typical 25W/max 30W w/o PoE-out, or PoE-out on Eth1 (15.4W PSE) enabled. PoE failover between Eth0 and Eth1 supported.",
     "ethernet_ports_speed": "2× 100M/1/2.5/5/10 GbE (Eth0 PoE PD; Eth1 PoE PD or 15.4W PSE with 802.3bt on Eth0); 802.3az EEE",
     "antenna_type": [
       "Directional"
