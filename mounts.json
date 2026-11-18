@@ -24,6 +24,8 @@
       "cisco-meraki-cw9172i",
       "cisco-cw9174i",
       "cisco-meraki-cw9174i",
+      "cisco-cw9174e",
+      "cisco-meraki-cw9174e",
       "cisco-cw9176i",
       "cisco-meraki-cw9176i",
       "cisco-cw9176d1",
@@ -64,6 +66,14 @@
         "aps": [
           "cisco-cw9174i",
           "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174e",
+          "cisco-meraki-cw9174e"
         ]
       },
       {
@@ -194,6 +204,8 @@
       "cisco-meraki-cw9172i",
       "cisco-cw9174i",
       "cisco-meraki-cw9174i",
+      "cisco-cw9174e",
+      "cisco-meraki-cw9174e",
       "cisco-cw9176i",
       "cisco-meraki-cw9176i",
       "cisco-cw9176d1",
@@ -234,6 +246,14 @@
         "aps": [
           "cisco-cw9174i",
           "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174e",
+          "cisco-meraki-cw9174e"
         ]
       },
       {
@@ -354,6 +374,8 @@
       "cisco-meraki-cw9172i",
       "cisco-cw9174i",
       "cisco-meraki-cw9174i",
+      "cisco-cw9174e",
+      "cisco-meraki-cw9174e",
       "cisco-cw9176i",
       "cisco-meraki-cw9176i",
       "cisco-cw9176d1",
@@ -395,6 +417,14 @@
         "aps": [
           "cisco-cw9174i",
           "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174e",
+          "cisco-meraki-cw9174e"
         ]
       },
       {
@@ -547,6 +577,8 @@
       "cisco-meraki-cw9172i",
       "cisco-cw9174i",
       "cisco-meraki-cw9174i",
+      "cisco-cw9174e",
+      "cisco-meraki-cw9174e",
       "cisco-cw9176i",
       "cisco-meraki-cw9176i",
       "cisco-cw9176d1",
@@ -588,6 +620,14 @@
         "aps": [
           "cisco-cw9174i",
           "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174e",
+          "cisco-meraki-cw9174e"
         ]
       },
       {
@@ -698,6 +738,8 @@
       "cisco-meraki-cw9172i",
       "cisco-cw9174i",
       "cisco-meraki-cw9174i",
+      "cisco-cw9174e",
+      "cisco-meraki-cw9174e",
       "cisco-cw9176i",
       "cisco-meraki-cw9176i",
       "cisco-cw9176d1",
@@ -738,6 +780,14 @@
         "aps": [
           "cisco-cw9174i",
           "cisco-meraki-cw9174i"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174e",
+          "cisco-meraki-cw9174e"
         ]
       },
       {
@@ -837,6 +887,8 @@
     "compatible_aps": [
       "cisco-cw9176d1",
       "cisco-meraki-cw9176d1",
+      "cisco-cw9174e",
+      "cisco-meraki-cw9174e",
       "cisco-catalyst-9166d1"
     ],
     "sources": [
@@ -846,6 +898,14 @@
         "aps": [
           "cisco-cw9176d1",
           "cisco-meraki-cw9176d1"
+        ]
+      },
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174e",
+          "cisco-meraki-cw9174e"
         ]
       },
       {
@@ -864,7 +924,35 @@
         ]
       }
     ],
-    "notes": "Requires AIR-AP-BRACKET-2 (not included in this kit). Hose clamps for 2.5 to 5 in poles included. Can be configured without the arm for single-axis pivot."
+    "notes": "On the 9176D1 and Catalyst 9166D1, requires AIR-AP-BRACKET-2 (not included in this kit). Hose clamps for 2.5 to 5 in poles included. Can be configured without the arm for single-axis pivot. 9174E HIG lists it as an orderable articulating mount and says the CW-ANT-T-D2-D8 package includes it for optional wall, ceiling, or indoor-pole installation."
+  },
+  {
+    "id": "cisco-cw-mnt-9",
+    "part_numbers": [
+      {
+        "vendor": "Cisco",
+        "part_number": "CW-MNT-9"
+      }
+    ],
+    "name": "Integrated AP and antenna mount",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "cisco-cw9174e",
+      "cisco-meraki-cw9174e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw917x/c9174e/install-guide/b-hig-cw9174e/installing-the-ap/access-point-mounting-and-installation.html",
+        "doc": "Hardware installation guide",
+        "aps": [
+          "cisco-cw9174e",
+          "cisco-meraki-cw9174e"
+        ]
+      }
+    ],
+    "notes": "Joins the CW9174E to the CW-ANT-T-D2-D8. The antenna mounting plate, or CW-MNT-ART2-00, then carries the assembly on a wall, ceiling, or pole. The 9174E mounting section says indoor use only. Package is the plate and four screws."
   },
   {
     "id": "cisco-cw-mnt-h1",
@@ -1181,7 +1269,8 @@
     "name": "Vertical mount plate",
     "mount_type": [
       "wall",
-      "pole"
+      "pole",
+      "hard_ceiling"
     ],
     "compatible_aps": [
       "cisco-cw9177d",
@@ -1219,7 +1308,7 @@
         ]
       }
     ],
-    "notes": "Pole range differs by document: 9177 HIG says 2 to 5 inch; 9163E HIG and Meraki guide say 2.5 to 3.9 inch. 9177 HIG summary table also marks CW9177I compatible, but its per-procedure tables say not compatible; CW9177I left out pending review."
+    "notes": "Pole range differs by document: 9177 HIG says 2 to 5 inch; 9163E HIG and Meraki guide say 2.5 to 3.9 inch. CW9177I is not compatible: the pole and wall procedure tables under the MA-MNT-MR-16 headings mark 9177I N. The summary table and the ceiling procedure mark it Y; those were not followed. hard_ceiling is from the ceiling procedure, which names this kit for the CW9177D and CW9177E."
   },
   {
     "id": "cisco-cw-mnt-horz2",
