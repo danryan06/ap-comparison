@@ -259,7 +259,7 @@
     "radios_iot_features": [],
     "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-405-Datasheet.pdf",
     "image_url": "images/arista/arista-o-405.png",
-    "dimensions": "unknown",
+    "dimensions": "205 x 175 x 65 mm",
     "weight": "1.7 kg",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-30°C to +65°C (-22°F to +149°F) operating; -40°C to +70°C (-40°F to +158°F) storage",
@@ -282,7 +282,7 @@
     "radios_iot_features": [],
     "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-405E-Datasheet.pdf",
     "image_url": "images/arista/arista-o-405e.png",
-    "dimensions": "unknown",
+    "dimensions": "205 x 175 x 65 mm",
     "weight": "1.7 kg",
     "antenna_connectors": "4× N-type",
     "operating_temp_range": "-30°C to +65°C (-22°F to +149°F) operating; -40°C to +70°C (-40°F to +158°F) storage",
@@ -2545,7 +2545,7 @@
     "image_url": "images/cisco/cisco-9163e.png",
     "dimensions": "245 x 245 x 63.5 mm (9.64 x 9.64 x 2.5 in)",
     "weight": "1.5 kg (3.3 lb)",
-    "antenna_connectors": "4× N-Type, 1× RP-SMA (GNSS)",
+    "antenna_connectors": "4× N-Type, 1× SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar derating; -40°C to 55°C (-40°F to 131°F) with solar derating",
     "msrp": "unknown",
     "in_box": [
@@ -3327,7 +3327,7 @@
     "antenna_type": [
       "External"
     ],
-    "antenna_connectors": "4x N-type female connectors (2 per band)",
+    "antenna_connectors": "4× N-type",
     "form_factor": "Outdoor",
     "radios_iot_features": [
       "BLE",
@@ -3427,7 +3427,7 @@
     "image_url": "images/cisco/cisco-9163e.png",
     "dimensions": "245 x 245 x 63.5 mm (9.64 x 9.64 x 2.5 in)",
     "weight": "1.5 kg (3.3 lb)",
-    "antenna_connectors": "4× N-Type, 1× RP-SMA (GNSS)",
+    "antenna_connectors": "4× N-Type, 1× SMA (GNSS)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F) operating without solar derating; -40°C to 55°C (-40°F to 131°F) with solar derating",
     "msrp": "unknown",
     "in_box": [
@@ -4494,7 +4494,7 @@
     "image_url": "images/fortinet/fortinet-fap-222kl.png",
     "dimensions": "220 x 220 x 60 mm (8.66 x 8.66 x 2.36 in)",
     "weight": "2.7 kg (5.95 lb)",
-    "antenna_connectors": "N-type (6 external antennas: 2 Wi-Fi dual-band, 1 LoRaWAN, 1 LTE, with 1 internal GNSS patch)",
+    "antenna_connectors": "5× N-type (2× Wi-Fi 2.4/5 GHz, 1× LoRaWAN, 1× LTE, 1× GNSS)",
     "operating_temp_range": "-40°C to 70°C (-40°F to 158°F) operating; -50°C to 80°C (-58°F to 178°F) storage",
     "ingress_protection": "IP67",
     "msrp": "unknown"
@@ -4693,7 +4693,7 @@
     ],
     "form_factor": "Outdoor",
     "dimensions": "240.0 x 240.0 x 69.6 mm (9.45 x 9.45 x 2.74 in)",
-    "weight": "7.05 lb",
+    "weight": "3.2 kg (7.05 lb)",
     "antenna_connectors": "9× N-type (4× 2.4/5 GHz, 4× tri-band Wi-Fi + scanning, 1× 2.4 GHz BLE/Zigbee)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -22°F to 158°F",
     "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
@@ -6156,7 +6156,7 @@
     ],
     "form_factor": "Outdoor",
     "radios_iot_features": [],
-    "datasheet_url": "https://webresources.commscope.com/download/assets/RUCKUS+T670+with+USB+Data+sheet/c2d5143e622f11f0a3004ee8e7262270",
+    "datasheet_url": "https://fr.commscope.com/globalassets/digizuite/1015755-Ruckus-T670SN-DataSheet-PA-119999.pdf",
     "image_url": "images/ruckus/ruckus-t670.png",
     "dimensions": "421 mm (L) x 291 mm (W) x 108 mm (H)",
     "weight": "3.24 kg (7.15 lb)",
@@ -6437,7 +6437,7 @@
     ],
     "datasheet_url": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-outdoor/ap5050d",
     "image_url": "images/extreme/extreme-ap5050d.png",
-    "dimensions": "286 x 484 x 86 mm (11.3 x 19.1 x 3.4 in)",
+    "dimensions": "288 x 478 x 75 mm (11.3 x 18.8 x 2.9 in)",
     "weight": "10.2 lb",
     "antenna_connectors": "None (internal directional antennas, software-selectable 30° or 70° beamwidth)",
     "operating_temp_range": "-40°C to +60°C (-40°F to +140°F)",
@@ -6626,8 +6626,12 @@
     "behavior_min_power": "Meter lists 802.3at, passive 48-54 V PoE (on the 2.5 GbE port) or 12 V DC as power sources. It gives no power draw figure and no per-class behavior.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (RJ45, PoE-PD)",
     "antenna_type": [
-      "Internal"
+      "External"
     ],
+    "antenna_gain_dbi": {
+      "2.4": 5.0,
+      "5": 5.0
+    },
     "form_factor": "Outdoor",
     "radios_iot_features": [
       "Dedicated scanning radio (1x1, dual-band 5/2.4 GHz)",
@@ -6636,8 +6640,8 @@
     "datasheet_url": "https://docs.meter.com/hardware/access-points/mw09",
     "image_url": "images/meter/meter-mw09.jpg",
     "dimensions": "124 x 190 x 47 mm",
-    "weight": "unknown",
-    "antenna_connectors": "None (internal antennas)",
+    "weight": "720 g",
+    "antenna_connectors": "4× detachable (2× 2.4 GHz, 2× 5 GHz); connector type not published",
     "operating_temp_range": "0°C to 60°C operating",
     "msrp": "subscription only"
   }
