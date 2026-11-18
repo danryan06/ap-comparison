@@ -3422,5 +3422,387 @@
         "part_number": "AP-OUT-MNT-H3"
       }
     ]
+  },
+  {
+    "id": "ruckus-902-0120-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0120-0000"
+      }
+    ],
+    "part_number_aliases": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0120-000"
+      }
+    ],
+    "name": "Accessory mounting bracket (secure)",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "pole"
+    ],
+    "compatible_aps": [
+      "ruckus-r350",
+      "ruckus-r350e",
+      "ruckus-r370",
+      "ruckus-r550",
+      "ruckus-r560",
+      "ruckus-r575",
+      "ruckus-r650",
+      "ruckus-r670",
+      "ruckus-r750",
+      "ruckus-r760",
+      "ruckus-r770",
+      "ruckus-r850",
+      "ruckus-h670"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-r350",
+          "ruckus-r350e",
+          "ruckus-r370",
+          "ruckus-r550",
+          "ruckus-r560",
+          "ruckus-r650",
+          "ruckus-r670",
+          "ruckus-r750",
+          "ruckus-r760",
+          "ruckus-r770",
+          "ruckus-r850"
+        ]
+      },
+      {
+        "url": "https://docs.ruckusnetworks.com/prod/R650_QSG_800-72206-001-RevF-20240311",
+        "doc": "R650 Quick Setup Guide (800-72206-001 Rev F)",
+        "aps": [
+          "ruckus-r650"
+        ]
+      },
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+R575+Data+Sheet/9f88997e603a11f19ca57a92be02af9a",
+        "doc": "R575 data sheet",
+        "aps": [
+          "ruckus-r575"
+        ]
+      },
+      {
+        "url": "https://webresources.commscope.com/download/assets/Datasheet%3A+RUCKUS+H670/79c7b466bff111f0bec43eb6b2e1ebd0",
+        "doc": "H670 data sheet",
+        "aps": [
+          "ruckus-h670"
+        ]
+      }
+    ],
+    "notes": "Accessory Guide: supports mounting to hard wall, ceiling, pole or truss. Its compatible list has a third column (R770, R850) with the note \"Fits AP, but does not support padlock security\". Data sheets list it as \"Spare, Accessory Mounting Bracket\". The R370 data sheet Mounting row prints 902-0120-000; its Optional Accessories table prints 902-0120-0000. The H670 is a wall plate AP and is listed only by its own data sheet, not by the Accessory Guide. R650 Quick Setup Guide: pole mounting with this kit uses a 1.5 in to 2.5 in pipe or pole, and the two pole clamps are customer-supplied."
+  },
+  {
+    "id": "ruckus-902-0123-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0123-0000"
+      }
+    ],
+    "name": "Flush-frame acoustic ceiling bracket",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_style": [
+      "flush"
+    ],
+    "compatible_aps": [
+      "ruckus-r550",
+      "ruckus-r560",
+      "ruckus-r650",
+      "ruckus-r750",
+      "ruckus-r770",
+      "ruckus-r850"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-r550",
+          "ruckus-r560",
+          "ruckus-r650",
+          "ruckus-r750",
+          "ruckus-r770",
+          "ruckus-r850"
+        ]
+      }
+    ],
+    "notes": "Accessory Guide says flush-frame only, not for standard (recessed-frame) acoustic ceilings."
+  },
+  {
+    "id": "ruckus-902-0195-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0195-0000"
+      }
+    ],
+    "name": "T-bar ceiling mount kit, flush frame",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_style": [
+      "flush"
+    ],
+    "compatible_aps": [
+      "ruckus-r350",
+      "ruckus-r350e",
+      "ruckus-r550",
+      "ruckus-r650",
+      "ruckus-r750",
+      "ruckus-r850"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-r350",
+          "ruckus-r350e",
+          "ruckus-r550",
+          "ruckus-r650",
+          "ruckus-r750",
+          "ruckus-r850"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ruckus-902-0196-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0196-0000"
+      }
+    ],
+    "name": "T-bar bracket, flush frame",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_style": [
+      "flush"
+    ],
+    "compatible_aps": [
+      "ruckus-r370",
+      "ruckus-r560",
+      "ruckus-r575",
+      "ruckus-r670",
+      "ruckus-r770"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-r370",
+          "ruckus-r560",
+          "ruckus-r670",
+          "ruckus-r770"
+        ]
+      },
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+R575+Data+Sheet/9f88997e603a11f19ca57a92be02af9a",
+        "doc": "R575 data sheet",
+        "aps": [
+          "ruckus-r575"
+        ]
+      }
+    ],
+    "notes": "Accessory Guide description names R560 and R770; its compatible list also names R370 and R670. R670, R770, and R575 data sheets call it \"T-bar Bracket\"."
+  },
+  {
+    "id": "ruckus-902-0700-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0700-0000"
+      }
+    ],
+    "name": "Stadium Enclosure, under-the-seat",
+    "mount_type": [
+      "enclosure"
+    ],
+    "compatible_aps": [
+      "ruckus-r350",
+      "ruckus-r370",
+      "ruckus-r550",
+      "ruckus-r560",
+      "ruckus-r650",
+      "ruckus-r670",
+      "ruckus-r750"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-r350",
+          "ruckus-r370",
+          "ruckus-r550",
+          "ruckus-r560",
+          "ruckus-r650",
+          "ruckus-r670",
+          "ruckus-r750"
+        ]
+      }
+    ],
+    "notes": "Ships with 35-degree and 45-degree mounting brackets per the Accessory Guide kit contents."
+  },
+  {
+    "id": "ruckus-902-0136-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0136-0000"
+      }
+    ],
+    "name": "Wall plate AP surface mount bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "ruckus-h350",
+      "ruckus-h550"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-h350",
+          "ruckus-h550"
+        ]
+      }
+    ],
+    "notes": "For mounting a wall switch AP where no junction box is available."
+  },
+  {
+    "id": "ruckus-902-0125-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0125-0000"
+      }
+    ],
+    "name": "Secure articulating mounting bracket",
+    "mount_type": [
+      "wall",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "ruckus-t350c",
+      "ruckus-t350d",
+      "ruckus-t350se",
+      "ruckus-t670",
+      "ruckus-t750"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-t350c",
+          "ruckus-t350d",
+          "ruckus-t350se",
+          "ruckus-t670",
+          "ruckus-t750"
+        ]
+      }
+    ],
+    "notes": "Accessory Guide kit contents include a U-joint bracket, wall mount bracket, AP bracket, and safety cable kit. The shared T750/T750SE data sheet lists this accessory with the T750 ordering block and does not name the T750SE, so the T750SE is not added."
+  },
+  {
+    "id": "ruckus-902-0134-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0134-0000"
+      }
+    ],
+    "name": "Outdoor articulating mounting bracket, weatherized aluminum",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "ruckus-t670",
+      "ruckus-t670sn",
+      "ruckus-t750"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-t670",
+          "ruckus-t670sn",
+          "ruckus-t750"
+        ]
+      }
+    ],
+    "notes": "Accessory Guide: 180-degree azimuth and elevation adjustment, solid wall or ceiling, 1 to 4 in poles. Its compatible list also prints \"T350\" as a family name; T350c, T350d, and T350se are not listed individually, so they are not added. T670 and T670sn data sheets call it \"Secure Articulating Mounting Bracket with 10º increment\". The shared T750/T750SE data sheet lists this accessory with the T750 ordering block and does not name the T750SE, so the T750SE is not added."
+  },
+  {
+    "id": "ruckus-902-0703-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0703-0000"
+      }
+    ],
+    "name": "T750 strand mount bracket",
+    "mount_type": [
+      "strand"
+    ],
+    "compatible_aps": [
+      "ruckus-t750"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-t750"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ruckus-902-0707-0000",
+    "part_numbers": [
+      {
+        "vendor": "Ruckus",
+        "part_number": "902-0707-0000"
+      }
+    ],
+    "name": "T670 omni under-seat flush mounting bracket",
+    "mount_type": [
+      "enclosure"
+    ],
+    "compatible_aps": [
+      "ruckus-t670"
+    ],
+    "sources": [
+      {
+        "url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+        "doc": "RUCKUS Accessory Guide (CO-113939.19-EN, 02/26)",
+        "aps": [
+          "ruckus-t670"
+        ]
+      }
+    ],
+    "notes": "Accessory Guide names the model only in the part title, \"T670 omni Under-Seat Flush Mounting Bracket\". Kit contents include an under-seat enclosure and internal bracket. T670sn is the directional model and is not named."
   }
 ]

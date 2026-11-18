@@ -5300,7 +5300,14 @@
     "weight": "1.53 kg (3.37 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+R850+Data+Sheet/581bde2a3bd311f09d0e068e18034550"
   },
   {
     "vendor": "Ubiquiti",
@@ -5744,7 +5751,14 @@
     "weight": "0.32 kg (0.71 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Wall mounting bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/Datasheet%3A+RUCKUS+H670/79c7b466bff111f0bec43eb6b2e1ebd0"
   },
   {
     "vendor": "Ruckus",
@@ -5766,7 +5780,14 @@
     "weight": "368 g (13 oz)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 40°C (32°F to 104°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/r350/ds-commscope-r350.html"
   },
   {
     "vendor": "Ruckus",
@@ -5813,7 +5834,14 @@
     "weight": "0.562 kg (1.24 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/r550/ds-commscope-r550.html"
   },
   {
     "vendor": "Ruckus",
@@ -5838,7 +5866,14 @@
     "weight": "1.09 kg (2.40 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/r560/ds-commscope-r560.html"
   },
   {
     "vendor": "Ruckus",
@@ -5863,7 +5898,14 @@
     "weight": "0.828 kg (1.83 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+R575+Data+Sheet/9f88997e603a11f19ca57a92be02af9a"
   },
   {
     "vendor": "Ruckus",
@@ -5888,7 +5930,49 @@
     "weight": "0.854 kg (1.88 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "wall-mount anchor kit, including two 1-inch No. 8 steel pan-head Phillips sheet metal screws and wall-mount anchors",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "external T-bar bracket (two unassembled parts)",
+        "part_number": null,
+        "qty": 1
+      },
+      {
+        "item": "T-bar wall mount screws, two 1-inch No. 8 steel pan-head Phillips sheet metal screws",
+        "part_number": null,
+        "qty": 2
+      },
+      {
+        "item": "Service Level Agreement/Limited Warranty Statement",
+        "part_number": null
+      },
+      {
+        "item": "Declaration of Conformity",
+        "part_number": null
+      },
+      {
+        "item": "Regulatory Statement",
+        "part_number": null
+      },
+      {
+        "item": "Ruckus Access Point Getting Started Guide",
+        "part_number": null
+      },
+      {
+        "item": "AP Cloud Management Insert",
+        "part_number": null
+      },
+      {
+        "item": "This Quick Setup Guide",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://docs.ruckusnetworks.com/prod/R650_QSG_800-72206-001-RevF-20240311"
   },
   {
     "vendor": "Ruckus",
@@ -5913,7 +5997,14 @@
     "weight": "1.02 kg (2.25 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/Data+Sheet%3A+R670/99acc26e3bd811f09165faa31792deb3"
   },
   {
     "vendor": "Ruckus",
@@ -5938,7 +6029,14 @@
     "weight": "1.36 kg (3 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-10°C to 50°C (14°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/DS-RUCKUS-R770-PA-118269-EN/046f4ad63bd411f09d0e068e18034550"
   },
   {
     "vendor": "Ruckus",
@@ -5963,7 +6061,14 @@
     "weight": "1.01 kg (2.23 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "0°C to 50°C (32°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/r750/ds-ruckus-r750.pdf"
   },
   {
     "vendor": "Ruckus",
@@ -5988,7 +6093,14 @@
     "weight": "1.79 kg (3.95 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-10°C to 50°C (14°F to 122°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "adjustable acoustic drop ceiling bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+R760+Data+Sheet/7205f9a43bd511f0a93ad2e4a07eb9db"
   },
   {
     "vendor": "Ruckus",
@@ -6011,7 +6123,14 @@
     "weight": "1.01 kg (2.23 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-20°C to 65°C (-4°F to 149°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "mounting bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
   },
   {
     "vendor": "Ruckus",
@@ -6037,7 +6156,14 @@
     "weight": "1.07 kg (2.36 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "mounting bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
   },
   {
     "vendor": "Ruckus",
@@ -6061,7 +6187,14 @@
     "weight": "2.20 kg (4.85 lb)",
     "antenna_connectors": "2× N-type (for optional external antenna; internal 120° sector otherwise)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "adjustable mounting bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
   },
   {
     "vendor": "Ruckus",
@@ -6087,7 +6220,14 @@
     "weight": "2.84 kg (6.27 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 145°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mounting bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db"
   },
   {
     "vendor": "Ruckus",
@@ -6114,7 +6254,14 @@
     "weight": "3.31 kg (7.30 lb)",
     "antenna_connectors": "4× N-type (for optional external antennas; internal 120° sector otherwise)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 145°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mounting bracket",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db"
   },
   {
     "vendor": "Ruckus",
@@ -6161,7 +6308,14 @@
     "weight": "1.97 kg (4.34 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mounting brackets",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T670+with+USB+Data+sheet/c2d5143e622f11f0a3004ee8e7262270"
   },
   {
     "vendor": "Ruckus",
@@ -6186,7 +6340,14 @@
     "weight": "3.24 kg (7.15 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C (-40°F to 149°F)",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "in_box": [
+      {
+        "item": "Mounting brackets",
+        "part_number": null
+      }
+    ],
+    "in_box_source": "https://fr.commscope.com/globalassets/digizuite/1015755-Ruckus-T670SN-DataSheet-PA-119999.pdf"
   },
   {
     "vendor": "Juniper",
