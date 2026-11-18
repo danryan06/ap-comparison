@@ -1705,6 +1705,42 @@
   },
   {
     "vendor": "Cambium",
+    "model": "X7-56X",
+    "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
+    "spatial_streams": "2x2 / 4x4 / 4x4",
+    "min_poe_class": "802.3at (Class 4)",
+    "recommended_poe": "802.3bt (Class 6) PoE++ for full performance",
+    "behavior_min_power": "On 802.3at (Class 4), the 2.4 GHz and 5 GHz radios and the IoT radio are enabled, and the software-defined third radio and USB port are disabled. On 802.3bt (Class 6), all three Wi-Fi radios, the USB port, and the IoT radio are enabled (33 W max). On 802.3af (Class 3), only Ethernet is enabled. With no PoE class detected, Ethernet and the IoT radio are enabled and the Wi-Fi radios and USB are disabled.",
+    "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (mGig) PoE in",
+    "antenna_type": [
+      "Directional"
+    ],
+    "antenna_gain_dbi": {
+      "2.4": 8,
+      "5": 9,
+      "6": 9
+    },
+    "beamwidth": {
+      "2.4": "60° x 60°",
+      "5": "60° x 60°",
+      "6": "60° x 60°"
+    },
+    "form_factor": "Indoor",
+    "radios_iot_features": [
+      "BLE 5.1",
+      "802.15.4 IoT radio"
+    ],
+    "datasheet_url": "https://www.cambiumnetworks.com/wp-content/uploads/Cambium_Networks_data_sheet_WiFi-7_X7-56X_AP.pdf",
+    "image_url": "images/cambium/cambium-X7-56X.png",
+    "dimensions": "240 x 240 x 50 mm (9.45 x 9.45 x 1.97 in)",
+    "weight": "1600 g (3.52 lb)",
+    "antenna_connectors": "None (internal directional antennas)",
+    "operating_temp_range": "0°C to 50°C (32°F to 122°F) operating; -20°C to 70°C (-4°F to 158°F) storage",
+    "operating_humidity": "95% RH non-condensing",
+    "msrp": "unknown"
+  },
+  {
+    "vendor": "Cambium",
     "model": "XE3-4",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 2x2",
