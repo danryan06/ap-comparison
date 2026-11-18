@@ -543,13 +543,7 @@
         ]
       }
     ],
-    "notes": "Rail widths from Meraki guides, which say the clip mounts on “most” of these T-rail widths. Meraki guides print this part as AIR-AP-TRAIL-R (CW9172I, CW9178I package lists); kept as an alias, not a separate SKU.",
-    "part_number_aliases": [
-      {
-        "vendor": "Cisco Meraki",
-        "part_number": "AIR-AP-TRAIL-R"
-      }
-    ]
+    "notes": "Rail widths from Meraki guides, which say the clip mounts on “most” of these T-rail widths. The Meraki CW9172I and CW9178I package lists print AIR-AP-TRAIL-R. That is a typo; the part is AIR-AP-T-RAIL-R."
   },
   {
     "id": "cisco-air-ap-t-rail-f",
@@ -1080,13 +1074,7 @@
         ]
       }
     ],
-    "notes": "9105AXW guide: used only for wall mounting; shares mounting holes with AIR-AP-BRACKET-W3, but -W3 should not be used with the 9105AXW. Also fits electrical junction boxes. The Meraki CW9172H guide prints this part as AIR-AP-BRACKET-4; kept as an alias, not a separate SKU.",
-    "part_number_aliases": [
-      {
-        "vendor": "Cisco Meraki",
-        "part_number": "AIR-AP-BRACKET-4"
-      }
-    ]
+    "notes": "9105AXW guide: used only for wall mounting; shares mounting holes with AIR-AP-BRACKET-W3, but -W3 should not be used with the 9105AXW. Also fits electrical junction boxes. The Meraki CW9172H guide prints this part as AIR-AP-BRACKET-4. That is a typo; the part is AIR-AP-BRACKET-W4."
   },
   {
     "id": "cisco-cw-acc-spacer1-00",
@@ -2967,13 +2955,7 @@
         ]
       }
     ],
-    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. Not listed for the 580 Series. The 760 installation guide prose prints it once as \"AP-270MNT-V2\" (alias). For the 670 non-EX models the source is the QuickSpecs only (the 670 guide's mount table did not extract V2 cleanly).",
-    "part_number_aliases": [
-      {
-        "vendor": "Aruba",
-        "part_number": "AP-270MNT-V2"
-      }
-    ]
+    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. Not listed for the 580 Series. The 760 installation guide prose prints it once as \"AP-270MNT-V2\". That is a typo; the part is AP-270-MNT-V2. For the 670 non-EX models the source is the QuickSpecs only (the 670 guide's mount table did not extract V2 cleanly)."
   },
   {
     "id": "aruba-ap-270-mnt-h1",
@@ -3415,13 +3397,7 @@
         ]
       }
     ],
-    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. pole and wall from the QuickSpecs line; hard_ceiling from the 580 installation guide (\"AP-584/AP-585: Flat or Sloped Ceiling\"; \"AP-587: Wall or Pole\"). The 760 and 760EX installation guides print it as \"AP-OUT-MNT-H3\" in their mounting-orientation tables (alias). 670/760 guides: \"wall or pole mounting of directional APs, or ceiling mounting APs on uneven ceilings\".",
-    "part_number_aliases": [
-      {
-        "vendor": "Aruba",
-        "part_number": "AP-OUT-MNT-H3"
-      }
-    ]
+    "notes": "For the 518 and 763 only: the pre-installed bracket must be removed and the AP-270-MNT-ADP adapter (sold separately) attached first (518 and 760 installation guides). The 560, 570, 580, 670/670EX, 764, 765 and 765EX take it directly. pole and wall from the QuickSpecs line; hard_ceiling from the 580 installation guide (\"AP-584/AP-585: Flat or Sloped Ceiling\"; \"AP-587: Wall or Pole\"). The 760 and 760EX installation guides print it as \"AP-OUT-MNT-H3\" in their mounting-orientation tables. That is a typo; the part is AP-270-MNT-H3. 670/760 guides: \"wall or pole mounting of directional APs, or ceiling mounting APs on uneven ceilings\"."
   },
   {
     "id": "ruckus-902-0120-0000",
@@ -3429,12 +3405,6 @@
       {
         "vendor": "Ruckus",
         "part_number": "902-0120-0000"
-      }
-    ],
-    "part_number_aliases": [
-      {
-        "vendor": "Ruckus",
-        "part_number": "902-0120-000"
       }
     ],
     "name": "Accessory mounting bracket (secure)",
@@ -3498,7 +3468,7 @@
         ]
       }
     ],
-    "notes": "Accessory Guide: supports mounting to hard wall, ceiling, pole or truss. Its compatible list has a third column (R770, R850) with the note \"Fits AP, but does not support padlock security\". Data sheets list it as \"Spare, Accessory Mounting Bracket\". The R370 data sheet Mounting row prints 902-0120-000; its Optional Accessories table prints 902-0120-0000. The H670 is a wall plate AP and is listed only by its own data sheet, not by the Accessory Guide. R650 Quick Setup Guide: pole mounting with this kit uses a 1.5 in to 2.5 in pipe or pole, and the two pole clamps are customer-supplied."
+    "notes": "Accessory Guide: supports mounting to hard wall, ceiling, pole or truss. Its compatible list has a third column (R770, R850) with the note \"Fits AP, but does not support padlock security\". Data sheets list it as \"Spare, Accessory Mounting Bracket\". The R370 data sheet Mounting row prints 902-0120-000. That is a typo; the part is 902-0120-0000, which the same sheet's Optional Accessories table and the Accessory Guide use. The H670 is a wall plate AP and is listed only by its own data sheet, not by the Accessory Guide. R650 Quick Setup Guide: pole mounting with this kit uses a 1.5 in to 2.5 in pipe or pole, and the two pole clamps are customer-supplied."
   },
   {
     "id": "ruckus-902-0123-0000",
@@ -4473,13 +4443,7 @@
         ]
       }
     ],
-    "part_number_aliases": [
-      {
-        "vendor": "Extreme",
-        "part_number": "ACC-BTK-AX-TBW"
-      }
-    ],
-    "notes": "The AP4020X and AP4020FX accessory tables print ACC-BTK-AX-TBW. The Accessories Guide matrix leaves AP5020 unchecked, and the AP5020 and AP5022 guides do not list it."
+    "notes": "The AP4020 guide prints ACC-BKT-AX-TBW. The AP4020X and AP4020FX accessory tables print ACC-BTK-AX-TBW. That is a typo. The Accessories Guide matrix leaves AP5020 unchecked, and the AP5020 and AP5022 guides do not list it."
   },
   {
     "id": "extreme-acc-bkt-ax-wp-spare",
@@ -4540,13 +4504,7 @@
         ]
       }
     ],
-    "part_number_aliases": [
-      {
-        "vendor": "Extreme",
-        "part_number": "ACC-BKT-AXWP-EXT"
-      }
-    ],
-    "notes": "Adds a 20 mm extension between the wall or junction box and the AP for protruding cables. The AP3020W guide's Installation Workflow table prints ACC-BKT-AXWP-EXT."
+    "notes": "Adds a 20 mm extension between the wall or junction box and the AP for protruding cables. The AP302W guide uses ACC-BKT-AX-WP-EXT. The AP3020W guide's Installation Workflow table prints ACC-BKT-AXWP-EXT. That is a typo."
   },
   {
     "id": "extreme-acc-bkt-ax-wp-dskstd",
@@ -5523,12 +5481,6 @@
         "part_number": "APBR-ADP-T12"
       }
     ],
-    "part_number_aliases": [
-      {
-        "vendor": "Juniper",
-        "part_number": "APBR-AP-T12"
-      }
-    ],
     "name": "Threaded rod adapter, 1/2 in",
     "mount_type": [
       "threaded_rod",
@@ -5616,12 +5568,6 @@
       {
         "vendor": "Juniper",
         "part_number": "APBR-ADP-CR9"
-      }
-    ],
-    "part_number_aliases": [
-      {
-        "vendor": "Juniper",
-        "part_number": "ADPR-ADP-CR9"
       }
     ],
     "name": "Recessed 9/16 in T-bar and channel rail adapter",
@@ -5719,12 +5665,6 @@
         "part_number": "APBR-ADP-RT15"
       }
     ],
-    "part_number_aliases": [
-      {
-        "vendor": "Juniper",
-        "part_number": "ADPR-ADP-RT15"
-      }
-    ],
     "name": "Recessed 15/16 in T-bar adapter",
     "mount_type": [
       "ceiling_tbar",
@@ -5818,12 +5758,6 @@
       {
         "vendor": "Juniper",
         "part_number": "APBR-ADP-WS15"
-      }
-    ],
-    "part_number_aliases": [
-      {
-        "vendor": "Juniper",
-        "part_number": "ADPR-ADP-WS15"
       }
     ],
     "name": "Recessed 1.5 in T-bar adapter",
