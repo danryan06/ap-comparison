@@ -281,18 +281,6 @@ Color, finish, and price.
 
 See `templates/mount_template.json`. The example values there are illustrative only.
 
-### Validation
-
-```
-python validate_mounts.py [--ap-data PATH] [--mounts PATH] [--ap-id-field FIELD]
-```
-
-```
-python validate_mounts.py --ap-data ap_data.json --mounts mounts.json
-```
-
-Errors fail the run. Warnings flag things to review: missing Cisco/Meraki twins, a rail width with no unit, or an AP whose in-box bracket has a mount record that does not list that AP. The in-box cross-check treats `PART` and `PART=` as the same part.
-
 ## Notes
 
 - Strings are the default. Arrays: `antenna_type`, `radios_iot_features`, `antenna_modes`, `in_box`. Objects: `antenna_gain_dbi`, `beamwidth`, and the gain or beamwidth object inside a mode.

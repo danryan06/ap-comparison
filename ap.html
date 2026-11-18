@@ -76,12 +76,12 @@
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
         'recommended_poe','behavior_min_power','ethernet_ports_speed',
         'radios_iot_features','antenna_type','antenna_gain_dbi','beamwidth','form_factor','dimensions',
-        'weight','antenna_connectors','operating_temp_range','operating_humidity','ingress_protection','msrp','datasheet_url'
+        'weight','antenna_connectors','operating_temp_range','operating_humidity','ingress_protection','datasheet_url'
       ];
       const keys = Object.keys(currentEntry);
       const orderedKeys = [
         ...primaryKeys.filter(k => keys.includes(k)),
-        ...keys.filter(k => !primaryKeys.includes(k)).sort()
+        ...keys.filter(k => !primaryKeys.includes(k) && k !== 'msrp').sort()
       ];
 
       // Build CSV header

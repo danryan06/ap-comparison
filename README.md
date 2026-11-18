@@ -28,7 +28,10 @@ Each access point entry includes:
 - **Power Requirements**: Minimum PoE class, recommended PoE, behavior at minimum power
 - **Connectivity**: Ethernet ports and speeds
 - **Physical**: Antenna type, form factor, dimensions, weight, antenna connectors
+- **Antenna gain and beamwidth (where published)**
 - **Environmental**: Operating temperature range
+- **Mounting**: what ships in the box (in_box) and orderable mounting parts (mounts.json)
+- **Lifecycle**: end-of-sale and end-of-support dates (where published)
 - **Additional Features**: Radios & IoT features (Zigbee, Bluetooth, etc.)
 - **Documentation**: Datasheet URL
 - **Visual**: Product images
@@ -112,19 +115,25 @@ The edit will be automatically processed and a pull request will be created.
 ├── index.html          # Main comparison table
 ├── ap.html            # Individual AP details page
 ├── compare.html       # Side-by-side comparison page
+├── finder.html        # Feature finder
 ├── submit.html        # New AP submission form
 ├── edit.html          # Edit existing AP form
 ├── data_issues.html  # Data quality dashboard
 ├── style.css          # All styling
+├── ap-format.js       # Shared formatting helpers
 ├── ap_data.json       # Main data file
 ├── mounts.json        # Orderable mounting parts
 ├── ap_template.json   # AP entry template
 ├── AP_TEMPLATE_GUIDE.md # Field rules for new entries
+├── templates/         # in_box and mount templates
+│   ├── in_box_template.json
+│   └── mount_template.json
 ├── images/            # AP product images
+├── CNAME              # GitHub Pages custom domain
+├── LICENSE            # MIT License
 ├── .github/
 │   ├── workflows/     # GitHub Actions workflows
-│   ├── scripts/       # Automation scripts
-│   └── ISSUE_TEMPLATE/ # Issue templates
+│   └── scripts/       # Automation scripts
 └── README.md          # This file
 ```
 
@@ -143,14 +152,14 @@ The `ap_data.json` file contains an array of AP objects. The entry template is `
 The project includes automated data quality checks:
 - Missing required fields
 - Duplicate vendor/model combinations
-- Invalid URLs
+- Single-line URL format
 - Data format validation
 
 View the [Data Quality Dashboard](https://apcomparison.com/data_issues.html) to see current issues.
 
 ## License
 
-This project is open source. The data is maintained by the community.
+Code is released under the MIT License (see LICENSE). Product images are the property of their respective vendors and are used for identification only. Specifications come from vendor documentation; always verify with the vendor before purchasing.
 
 ## Maintainer
 
