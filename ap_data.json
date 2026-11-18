@@ -250,7 +250,7 @@
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
     "behavior_min_power": "On 802.3at (Class 4) PoE+, the AP runs at full function (25 W max). Arista lists no 802.3af mode.",
-    "ethernet_ports_speed": "1× 10M/100M/1/2.5/5 GbE (RJ45, PoE+) + 1× 10 GbE SFP+ optical",
+    "ethernet_ports_speed": "1× 100M/1/2.5/5 GbE (RJ45, PoE+) + 1× 10 GbE SFP+ optical",
     "antenna_type": [
       "Internal"
     ],
