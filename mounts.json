@@ -3804,5 +3804,2195 @@
       }
     ],
     "notes": "Accessory Guide names the model only in the part title, \"T670 omni Under-Seat Flush Mounting Bracket\". Kit contents include an under-seat enclosure and internal bracket. T670sn is the directional model and is not named."
+  },
+  {
+    "id": "extreme-ah-acc-bkt-ax-tb",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "AH-ACC-BKT-AX-TB"
+      }
+    ],
+    "name": "Flat T-bar and wall bracket",
+    "mount_type": [
+      "ceiling_tbar",
+      "wall"
+    ],
+    "rail_width": [
+      "15/16 in",
+      "9/16 in"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap5020",
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x",
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ],
+    "notes": "Prelude 15/16 in. and Suprafine 9/16 in. flat ceiling grids, and walls. Ships in the box with most indoor models (see in_box)."
+  },
+  {
+    "id": "extreme-ah-acc-bkt-ax-il",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "AH-ACC-BKT-AX-IL"
+      }
+    ],
+    "name": "Interlude ceiling bracket",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "9/16 in"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap5020",
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x",
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ],
+    "notes": "Interlude ceilings: 9/16 in. wide T-bar with center protrusion."
+  },
+  {
+    "id": "extreme-ah-acc-bkt-ax-sl",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "AH-ACC-BKT-AX-SL"
+      }
+    ],
+    "name": "Silhouette ceiling bracket",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap5020",
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x",
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ],
+    "notes": "Silhouette ceiling grids with a 1/8 in. or 1/4 in. bottom opening."
+  },
+  {
+    "id": "extreme-ah-acc-bkt-ax-wl",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "AH-ACC-BKT-AX-WL"
+      }
+    ],
+    "name": "Direct-to-wall bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap5020",
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x",
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ],
+    "notes": "Gives 1.25 in. of space between the wall and the AP."
+  },
+  {
+    "id": "extreme-acc-bkt-ax-jb",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AX-JB"
+      }
+    ],
+    "name": "Junction box or wall bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap5020",
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x",
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "extreme-acc-bkt-ax-wngadapt",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AX-WNGADAPT"
+      }
+    ],
+    "name": "Adapter for WiNG mounting plate 37201",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap5020",
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x",
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ],
+    "notes": "Lets a cloud AP twist-mount onto the legacy WiNG mounting plate (#37201). Ships in a pack of 10."
+  },
+  {
+    "id": "extreme-acc-bkt-tb-nf",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-TB-NF"
+      }
+    ],
+    "name": "15/16 in T-bar adapter for sculpted tiles",
+    "mount_type": [
+      "ceiling_tbar",
+      "adapter"
+    ],
+    "rail_width": [
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx",
+      "extreme-ap5020",
+      "extreme-ap3000"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5020%20Installation%20Guide/downloads/ExtremeWireless_AP5020_Installation_Guide.pdf",
+        "doc": "AP5020 Installation Guide (9037977-00)",
+        "aps": [
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP3000/downloads/AP3000_Installation_Guide.pdf",
+        "doc": "AP3000 Installation Guide",
+        "aps": [
+          "extreme-ap3000"
+        ]
+      }
+    ],
+    "notes": "Used with AH-ACC-BKT-AX-TB on 15/16 in. T-bars with non-flat or protruded ceiling tiles. The AP5022 and AP4020FX notes columns print \"5/16 in.\"."
+  },
+  {
+    "id": "extreme-ah-acc-bkt-916-kit",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "AH-ACC-BKT-916-KIT"
+      }
+    ],
+    "name": "9/16 in T-bar kit for sculpted tiles",
+    "mount_type": [
+      "ceiling_tbar",
+      "adapter"
+    ],
+    "rail_width": [
+      "9/16 in"
+    ],
+    "compatible_aps": [
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx",
+      "extreme-ap5020",
+      "extreme-ap3000"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5020%20Installation%20Guide/downloads/ExtremeWireless_AP5020_Installation_Guide.pdf",
+        "doc": "AP5020 Installation Guide (9037977-00)",
+        "aps": [
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP3000/downloads/AP3000_Installation_Guide.pdf",
+        "doc": "AP3000 Installation Guide",
+        "aps": [
+          "extreme-ap3000"
+        ]
+      }
+    ],
+    "notes": "AP5022 guide: use with AH-ACC-BKT-AX-TB, for 9/16 in. non-flat or protruded ceiling tiles."
+  },
+  {
+    "id": "extreme-acc-bkt-ax-tbw",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AX-TBW"
+      }
+    ],
+    "name": "1.5 in wide T-bar bracket",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "rail_width": [
+      "1.5 in"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ],
+    "part_number_aliases": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BTK-AX-TBW"
+      }
+    ],
+    "notes": "The AP4020X and AP4020FX accessory tables print ACC-BTK-AX-TBW. The Accessories Guide matrix leaves AP5020 unchecked, and the AP5020 and AP5022 guides do not list it."
+  },
+  {
+    "id": "extreme-acc-bkt-ax-wp-spare",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AX-WP-SPARE"
+      }
+    ],
+    "name": "AP302W wall plate bracket",
+    "mount_type": [
+      "wall",
+      "hard_ceiling"
+    ],
+    "compatible_aps": [
+      "extreme-ap302w"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP302W%20Installation%20Guide/downloads/AP302W_Installation_Guide.pdf",
+        "doc": "AP302W Installation Guide (9036815-00)",
+        "aps": [
+          "extreme-ap302w"
+        ]
+      }
+    ],
+    "notes": "Ships in the box. For wall, junction box, or solid ceiling mounting. The AP302W guide's usage table prints ACC-BKT-AXWP-SPARE; its table of contents prints ACC-BKT-AX-WP-SPARE."
+  },
+  {
+    "id": "extreme-acc-bkt-ax-wp-ext",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AX-WP-EXT"
+      }
+    ],
+    "name": "Wall plate housing extension",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "extreme-ap302w",
+      "extreme-ap3020w"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP302W%20Installation%20Guide/downloads/AP302W_Installation_Guide.pdf",
+        "doc": "AP302W Installation Guide (9036815-00)",
+        "aps": [
+          "extreme-ap302w"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP3020W%20Installation%20Guide/downloads/AP3020W_Installation_Guide.pdf",
+        "doc": "AP3020W Installation Guide (9041063-00)",
+        "aps": [
+          "extreme-ap3020w"
+        ]
+      }
+    ],
+    "part_number_aliases": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AXWP-EXT"
+      }
+    ],
+    "notes": "Adds a 20 mm extension between the wall or junction box and the AP for protruding cables. The AP3020W guide's Installation Workflow table prints ACC-BKT-AXWP-EXT."
+  },
+  {
+    "id": "extreme-acc-bkt-ax-wp-dskstd",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AX-WP-DSKSTD"
+      }
+    ],
+    "name": "AP302W desk stand",
+    "mount_type": [
+      "desk"
+    ],
+    "compatible_aps": [
+      "extreme-ap302w"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP302W%20Installation%20Guide/downloads/AP302W_Installation_Guide.pdf",
+        "doc": "AP302W Installation Guide (9036815-00)",
+        "aps": [
+          "extreme-ap302w"
+        ]
+      }
+    ],
+    "notes": "The AP302W guide's usage table prints ACC-BKT-AXWP-DSKSTD; its accessory bag section prints ACC-BKT-AX-WP-DSKSTD."
+  },
+  {
+    "id": "extreme-acc-bkt-wp-ap3020w",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-WP-AP3020W"
+      }
+    ],
+    "name": "AP3020W wall plate bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "extreme-ap3020w"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP3020W%20Installation%20Guide/downloads/AP3020W_Installation_Guide.pdf",
+        "doc": "AP3020W Installation Guide (9041063-00)",
+        "aps": [
+          "extreme-ap3020w"
+        ]
+      }
+    ],
+    "notes": "Ships in the box. Wall and junction box mounting."
+  },
+  {
+    "id": "extreme-acc-bkt-deskstd-ap3020w",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-DESKSTD-AP3020W"
+      }
+    ],
+    "name": "AP3020W desk stand",
+    "mount_type": [
+      "desk"
+    ],
+    "compatible_aps": [
+      "extreme-ap3020w"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP3020W%20Installation%20Guide/downloads/AP3020W_Installation_Guide.pdf",
+        "doc": "AP3020W Installation Guide (9041063-00)",
+        "aps": [
+          "extreme-ap3020w"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "extreme-37201",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "37201"
+      }
+    ],
+    "name": "Main mounting bracket (WiNG mounting plate)",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "extreme-ap410i",
+      "extreme-ap410e"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+        "doc": "AP410i/e Installation Guide (9036459-04)",
+        "aps": [
+          "extreme-ap410i",
+          "extreme-ap410e"
+        ]
+      }
+    ],
+    "notes": "Ships in the box with AP410i/e. ACC-BKT-AX-WNGADAPT adapts newer APs to this plate. Beam mounting is the separate BRKT-000147A-01 clip on this bracket. Flat-surface mounting is not filed on this record."
+  },
+  {
+    "id": "extreme-kt-135628-01",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "KT-135628-01"
+      }
+    ],
+    "name": "Main bracket accessory for wall or protruded ceiling",
+    "mount_type": [
+      "ceiling_tbar",
+      "wall",
+      "adapter"
+    ],
+    "compatible_aps": [
+      "extreme-ap410i",
+      "extreme-ap410e"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+        "doc": "AP410i/e Installation Guide (9036459-04)",
+        "aps": [
+          "extreme-ap410i",
+          "extreme-ap410e"
+        ]
+      }
+    ],
+    "notes": "Used with the main mounting bracket (#37201). Wall mount or protruded ceiling mount with single width."
+  },
+  {
+    "id": "extreme-ws-mbi-dcmtr01",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "WS-MBI-DCMTR01"
+      },
+      {
+        "vendor": "Extreme",
+        "part_number": "30518"
+      }
+    ],
+    "name": "Protruded ceiling bracket, varying widths",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "extreme-ap410i",
+      "extreme-ap410e"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+        "doc": "AP410i/e Installation Guide (9036459-04)",
+        "aps": [
+          "extreme-ap410i",
+          "extreme-ap410e"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "extreme-ws-mbi-wall04",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "WS-MBI-WALL04"
+      },
+      {
+        "vendor": "Extreme",
+        "part_number": "30516"
+      }
+    ],
+    "name": "Wall and junction box bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "extreme-ap410i",
+      "extreme-ap410e"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+        "doc": "AP410i/e Installation Guide (9036459-04)",
+        "aps": [
+          "extreme-ap410i",
+          "extreme-ap410e"
+        ]
+      }
+    ],
+    "notes": "Ships with two Phillips pan head screws and two screw-in anchors."
+  },
+  {
+    "id": "extreme-37210",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "37210"
+      }
+    ],
+    "name": "Flat metal easy-attach adapter",
+    "mount_type": [
+      "wall",
+      "hard_ceiling",
+      "adapter"
+    ],
+    "compatible_aps": [
+      "extreme-ap410i",
+      "extreme-ap410e"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+        "doc": "AP410i/e Installation Guide (9036459-04)",
+        "aps": [
+          "extreme-ap410i",
+          "extreme-ap410e"
+        ]
+      }
+    ],
+    "notes": "Used with the main mounting bracket (#37201). Wall mount, ceiling mount, or any solid surface."
+  },
+  {
+    "id": "extreme-ws-mbi-dcflush",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "WS-MBI-DCFLUSH"
+      },
+      {
+        "vendor": "Extreme",
+        "part_number": "37211"
+      }
+    ],
+    "name": "Protruded ceiling bracket, varying widths",
+    "mount_type": [
+      "ceiling_tbar"
+    ],
+    "compatible_aps": [
+      "extreme-ap410i",
+      "extreme-ap410e"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+        "doc": "AP410i/e Installation Guide (9036459-04)",
+        "aps": [
+          "extreme-ap410i",
+          "extreme-ap410e"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "extreme-ah-acc-strp-mrn",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "AH-ACC-STRP-MRN"
+      }
+    ],
+    "name": "Stainless steel pole strap, 3 to 7 in",
+    "mount_type": [
+      "pole"
+    ],
+    "compatible_aps": [
+      "extreme-ap4060",
+      "extreme-ap4060x",
+      "extreme-ap5060d",
+      "extreme-ap5060u",
+      "extreme-ap5050d",
+      "extreme-ap5050u"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/downloads/AP4060_AP4060X_Installation_Guide.pdf",
+        "doc": "AP4060 and AP4060X Installation Guide (9039136-00)",
+        "aps": [
+          "extreme-ap4060",
+          "extreme-ap4060x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5060D%20and%20AP5060U%20Installation%20Guide/downloads/AP5060D_AP5060U_Installation_Guide.pdf",
+        "doc": "AP5060D and AP5060U Installation Guide (9039548-00)",
+        "aps": [
+          "extreme-ap5060d",
+          "extreme-ap5060u"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-889A1282-34EE-4528-AFB8-B7FE53D00311.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Outdoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap5050d",
+          "extreme-ap5050u"
+        ]
+      }
+    ],
+    "notes": "Hose strap for 3 in. to 7 in. diameter poles. Order two per AP. The AP5050D and AP5050U install guides do not list it; only the Accessories Guide outdoor matrix does."
+  },
+  {
+    "id": "extreme-ah-acc-bkt-asm",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "AH-ACC-BKT-ASM"
+      }
+    ],
+    "name": "Outdoor stainless steel wall bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "extreme-ap4060",
+      "extreme-ap4060x"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/downloads/AP4060_AP4060X_Installation_Guide.pdf",
+        "doc": "AP4060 and AP4060X Installation Guide (9039136-00)",
+        "aps": [
+          "extreme-ap4060",
+          "extreme-ap4060x"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "extreme-kt-147407-02",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "KT-147407-02"
+      }
+    ],
+    "name": "Outdoor tilt mount kit",
+    "mount_type": [
+      "wall",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "extreme-ap4060",
+      "extreme-ap4060x",
+      "extreme-ap5060d",
+      "extreme-ap5060u",
+      "extreme-ap5050d",
+      "extreme-ap5050u"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/downloads/AP4060_AP4060X_Installation_Guide.pdf",
+        "doc": "AP4060 and AP4060X Installation Guide (9039136-00)",
+        "aps": [
+          "extreme-ap4060",
+          "extreme-ap4060x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5060D%20and%20AP5060U%20Installation%20Guide/downloads/AP5060D_AP5060U_Installation_Guide.pdf",
+        "doc": "AP5060D and AP5060U Installation Guide (9039548-00)",
+        "aps": [
+          "extreme-ap5060d",
+          "extreme-ap5060u"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+        "doc": "AP5050D Installation Guide (9037683-01)",
+        "aps": [
+          "extreme-ap5050d"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050U/downloads/AP5050U_Installation_Guide.pdf",
+        "doc": "AP5050U Installation Guide (9037682-01)",
+        "aps": [
+          "extreme-ap5050u"
+        ]
+      }
+    ],
+    "notes": "Stainless steel kit with +/- 15 degree tilt for wall or pole. Cable clamps for pole mounting are sold separately. KT-150173-01 is a 12 in. extension arm used with this bracket. It does not mount an AP by itself."
+  },
+  {
+    "id": "extreme-mbo-art03",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "MBO-ART03"
+      }
+    ],
+    "name": "Outdoor two-axis articulating bracket",
+    "mount_type": [
+      "wall",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "extreme-ap4060",
+      "extreme-ap4060x",
+      "extreme-ap5060u",
+      "extreme-ap5050d",
+      "extreme-ap5050u"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/downloads/AP4060_AP4060X_Installation_Guide.pdf",
+        "doc": "AP4060 and AP4060X Installation Guide (9039136-00)",
+        "aps": [
+          "extreme-ap4060",
+          "extreme-ap4060x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5060D%20and%20AP5060U%20Installation%20Guide/downloads/AP5060D_AP5060U_Installation_Guide.pdf",
+        "doc": "AP5060D and AP5060U Installation Guide (9039548-00)",
+        "aps": [
+          "extreme-ap5060u"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+        "doc": "AP5050D Installation Guide (9037683-01)",
+        "aps": [
+          "extreme-ap5050d"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050U/downloads/AP5050U_Installation_Guide.pdf",
+        "doc": "AP5050U Installation Guide (9037682-01)",
+        "aps": [
+          "extreme-ap5050u"
+        ]
+      }
+    ],
+    "notes": "+/-80 degree tilt on two axes with 7.5, 9, or 10.5 in. extension. For walls and Unistrut; pole mounting with the pole section of KT-147407-02. The AP5060 guide lists it for AP5060U only."
+  },
+  {
+    "id": "extreme-mbo-art02",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "MBO-ART02"
+      }
+    ],
+    "name": "Outdoor two-axis wall bracket (end of sale)",
+    "mount_type": [
+      "wall",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "extreme-ap5050d",
+      "extreme-ap5050u"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+        "doc": "AP5050D Installation Guide (9037683-01)",
+        "aps": [
+          "extreme-ap5050d"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050U/downloads/AP5050U_Installation_Guide.pdf",
+        "doc": "AP5050U Installation Guide (9037682-01)",
+        "aps": [
+          "extreme-ap5050u"
+        ]
+      }
+    ],
+    "notes": "End of Sale as of January 2023; replaced by MBO-ART03."
+  },
+  {
+    "id": "extreme-ws-mbo-pole01",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "WS-MBO-POLE01"
+      },
+      {
+        "vendor": "Extreme",
+        "part_number": "30520"
+      }
+    ],
+    "name": "Pole bracket for MBO-ART02 (end of sale)",
+    "mount_type": [
+      "pole",
+      "adapter"
+    ],
+    "compatible_aps": [
+      "extreme-ap5050d",
+      "extreme-ap5050u"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+        "doc": "AP5050D Installation Guide (9037683-01)",
+        "aps": [
+          "extreme-ap5050d"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050U/downloads/AP5050U_Installation_Guide.pdf",
+        "doc": "AP5050U Installation Guide (9037682-01)",
+        "aps": [
+          "extreme-ap5050u"
+        ]
+      }
+    ],
+    "notes": "Used with MBO-ART02 for pole mounting. The 30520 kit is End of Sale."
+  },
+  {
+    "id": "extreme-eio-04",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "EIO-04"
+      }
+    ],
+    "name": "Under-seat mounting kit",
+    "mount_type": [
+      "enclosure"
+    ],
+    "compatible_aps": [
+      "extreme-ap5050u",
+      "extreme-ap5060u"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050U/downloads/AP5050U_Installation_Guide.pdf",
+        "doc": "AP5050U Installation Guide (9037682-01)",
+        "aps": [
+          "extreme-ap5050u"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5060D%20and%20AP5060U%20Installation%20Guide/downloads/AP5060D_AP5060U_Installation_Guide.pdf",
+        "doc": "AP5060D and AP5060U Installation Guide (9039548-00)",
+        "aps": [
+          "extreme-ap5060u"
+        ]
+      }
+    ],
+    "notes": "Under-seat mounting solution with passthrough. Includes service panel parts, conduit covers, and anchor hardware."
+  },
+  {
+    "id": "extreme-acc-bkt-ax-beam",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "ACC-BKT-AX-BEAM"
+      }
+    ],
+    "name": "Beam mounting bracket",
+    "mount_type": [
+      "beam"
+    ],
+    "compatible_aps": [
+      "extreme-ap305c",
+      "extreme-ap4000",
+      "extreme-ap5010",
+      "extreme-ap3000",
+      "extreme-ap3000x",
+      "extreme-ap5020",
+      "extreme-ap5022",
+      "extreme-ap5022s6d",
+      "extreme-ap5022fx",
+      "extreme-ap4020",
+      "extreme-ap4020x",
+      "extreme-ap4020fx"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/Accessories_Guide/GUID-180E70D3-73F5-43A4-AD91-644AE3CACE8A.shtml",
+        "doc": "802.11ax and Cloud Access Points Accessories Guide: Indoor Mounting Accessory Compatibility",
+        "aps": [
+          "extreme-ap305c",
+          "extreme-ap4000",
+          "extreme-ap5010",
+          "extreme-ap3000",
+          "extreme-ap3000x",
+          "extreme-ap5020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5022%20AP5022FX%20AP5022S6D%20Installation%20Guide/downloads/AP5022_AP5022FX_AP5022S6DInstallation_Guide.pdf",
+        "doc": "AP5022, AP5022S6D, and AP5022FX Installation Guide (9039545-00)",
+        "aps": [
+          "extreme-ap5022",
+          "extreme-ap5022s6d",
+          "extreme-ap5022fx"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+        "doc": "AP4020 Installation Guide (9038978-00)",
+        "aps": [
+          "extreme-ap4020"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/accessories.shtml",
+        "doc": "AP4020X Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/accessories.shtml",
+        "doc": "AP4020FX Installation Guide: Accessories",
+        "aps": [
+          "extreme-ap4020fx"
+        ]
+      }
+    ],
+    "notes": "Mounting bracket for beam mounting. The AP5022 accessory table and the AP4020FX accessories table say up to 0.78 in. thick. The AP4020 and AP5022 beam procedures say the beam must be flat, the attachment area at least 0.5 in. wide, and the surface at least 0.040 in. and less than 0.650 in. thick."
+  },
+  {
+    "id": "extreme-brkt-000147a-01",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "BRKT-000147A-01"
+      }
+    ],
+    "name": "Beam clip",
+    "mount_type": [
+      "beam"
+    ],
+    "compatible_aps": [
+      "extreme-ap410i",
+      "extreme-ap410e"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+        "doc": "AP410i/e Installation Guide (9036459-04)",
+        "aps": [
+          "extreme-ap410i",
+          "extreme-ap410e"
+        ]
+      }
+    ],
+    "notes": "Attaches to the main mounting bracket (37201). The AP410i/e guide says the beam must be flat and the mounting surface less than 0.650 in. thick, with an attachment area at least 0.5 in. wide."
+  },
+  {
+    "id": "juniper-apbr-u",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-U"
+      }
+    ],
+    "name": "Universal AP bracket",
+    "mount_type": [
+      "ceiling_tbar",
+      "hard_ceiling",
+      "wall"
+    ],
+    "rail_width": [
+      "9/16 in",
+      "15/16 in"
+    ],
+    "compatible_aps": [
+      "juniper-ap24",
+      "juniper-ap27",
+      "juniper-ap27e",
+      "juniper-ap32",
+      "juniper-ap32e",
+      "juniper-ap34",
+      "juniper-ap36",
+      "juniper-ap36m",
+      "juniper-ap37",
+      "juniper-ap45",
+      "juniper-ap45e",
+      "juniper-ap47",
+      "juniper-ap47d",
+      "juniper-ap47e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP24-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP24 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap24"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP27AP27E-Mist-Installation-Guide-v6.pdf",
+        "doc": "AP27 and AP27E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap27",
+          "juniper-ap27e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
+        "doc": "AP33 or AP32 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap32",
+          "juniper-ap32e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP34-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP34 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap34"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP37AP36-Mist-Installation-Guide-v5.pdf",
+        "doc": "AP37, AP36, & AP36M Hardware Installation Guide",
+        "aps": [
+          "juniper-ap36",
+          "juniper-ap36m",
+          "juniper-ap37"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP45-Mist-Installation-Guide-v15.pdf",
+        "doc": "AP45 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap45",
+          "juniper-ap45e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP47-Mist-Installation-Guide-v10.pdf",
+        "doc": "AP47 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap47",
+          "juniper-ap47d",
+          "juniper-ap47e"
+        ]
+      },
+      {
+        "url": "https://juniper.net/documentation/us/en/hardware/ap24/topics/topic-map/ap24-mounting.html",
+        "doc": "Mount the AP24 Access Point",
+        "aps": [
+          "juniper-ap24"
+        ]
+      }
+    ],
+    "notes": "Mist guides: \"Universal AP Bracket for T-Rail and Drywall mounting for Indoor Access Points\". Juniper AP mounting pages: direct mount on 9/16 in. or 15/16 in. ceiling T-bar; wall, ceiling, and US/EU junction boxes. Recessed T-bars need an APBR-ADP adapter."
+  },
+  {
+    "id": "juniper-apbr-adp-t58",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-ADP-T58"
+      }
+    ],
+    "name": "Threaded rod adapter, 5/8 in",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "juniper-ap24",
+      "juniper-ap27",
+      "juniper-ap27e",
+      "juniper-ap34",
+      "juniper-ap36",
+      "juniper-ap36m",
+      "juniper-ap37",
+      "juniper-ap45",
+      "juniper-ap45e",
+      "juniper-ap47",
+      "juniper-ap47d",
+      "juniper-ap47e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP24-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP24 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap24"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP27AP27E-Mist-Installation-Guide-v6.pdf",
+        "doc": "AP27 and AP27E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap27",
+          "juniper-ap27e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP34-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP34 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap34"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP37AP36-Mist-Installation-Guide-v5.pdf",
+        "doc": "AP37, AP36, & AP36M Hardware Installation Guide",
+        "aps": [
+          "juniper-ap36",
+          "juniper-ap36m",
+          "juniper-ap37"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP45-Mist-Installation-Guide-v15.pdf",
+        "doc": "AP45 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap45",
+          "juniper-ap45e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP47-Mist-Installation-Guide-v10.pdf",
+        "doc": "AP47 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap47",
+          "juniper-ap47d",
+          "juniper-ap47e"
+        ]
+      }
+    ],
+    "notes": "Adapter for a 5/8-inch threaded rod, used with APBR-U. Threaded rod has no mount_type value."
+  },
+  {
+    "id": "juniper-apbr-adp-m16",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-ADP-M16"
+      }
+    ],
+    "name": "Threaded rod adapter, 16 mm",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "juniper-ap24",
+      "juniper-ap27",
+      "juniper-ap27e",
+      "juniper-ap34",
+      "juniper-ap36",
+      "juniper-ap36m",
+      "juniper-ap37",
+      "juniper-ap45",
+      "juniper-ap45e",
+      "juniper-ap47",
+      "juniper-ap47d",
+      "juniper-ap47e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP24-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP24 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap24"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP27AP27E-Mist-Installation-Guide-v6.pdf",
+        "doc": "AP27 and AP27E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap27",
+          "juniper-ap27e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP34-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP34 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap34"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP37AP36-Mist-Installation-Guide-v5.pdf",
+        "doc": "AP37, AP36, & AP36M Hardware Installation Guide",
+        "aps": [
+          "juniper-ap36",
+          "juniper-ap36m",
+          "juniper-ap37"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP45-Mist-Installation-Guide-v15.pdf",
+        "doc": "AP45 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap45",
+          "juniper-ap45e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP47-Mist-Installation-Guide-v10.pdf",
+        "doc": "AP47 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap47",
+          "juniper-ap47d",
+          "juniper-ap47e"
+        ]
+      }
+    ],
+    "notes": "Adapter for a 16mm threaded rod, used with APBR-U. Threaded rod has no mount_type value."
+  },
+  {
+    "id": "juniper-apbr-adp-t12",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-ADP-T12"
+      }
+    ],
+    "part_number_aliases": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-AP-T12"
+      }
+    ],
+    "name": "Threaded rod adapter, 1/2 in",
+    "mount_type": [
+      "adapter"
+    ],
+    "compatible_aps": [
+      "juniper-ap24",
+      "juniper-ap27",
+      "juniper-ap27e",
+      "juniper-ap32",
+      "juniper-ap32e",
+      "juniper-ap34",
+      "juniper-ap36",
+      "juniper-ap36m",
+      "juniper-ap37",
+      "juniper-ap45",
+      "juniper-ap45e",
+      "juniper-ap47",
+      "juniper-ap47d",
+      "juniper-ap47e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP24-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP24 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap24"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP27AP27E-Mist-Installation-Guide-v6.pdf",
+        "doc": "AP27 and AP27E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap27",
+          "juniper-ap27e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
+        "doc": "AP33 or AP32 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap32",
+          "juniper-ap32e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP34-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP34 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap34"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP37AP36-Mist-Installation-Guide-v5.pdf",
+        "doc": "AP37, AP36, & AP36M Hardware Installation Guide",
+        "aps": [
+          "juniper-ap36",
+          "juniper-ap36m",
+          "juniper-ap37"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP45-Mist-Installation-Guide-v15.pdf",
+        "doc": "AP45 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap45",
+          "juniper-ap45e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP47-Mist-Installation-Guide-v10.pdf",
+        "doc": "AP47 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap47",
+          "juniper-ap47d",
+          "juniper-ap47e"
+        ]
+      }
+    ],
+    "notes": "Adapter for a 1/2-inch threaded rod, used with APBR-U. The juniper.net AP32 and AP33 mounting pages print APBR-AP-T12 in their bracket tables."
+  },
+  {
+    "id": "juniper-apbr-adp-cr9",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-ADP-CR9"
+      }
+    ],
+    "part_number_aliases": [
+      {
+        "vendor": "Juniper",
+        "part_number": "ADPR-ADP-CR9"
+      }
+    ],
+    "name": "Recessed 9/16 in T-bar and channel rail adapter",
+    "mount_type": [
+      "ceiling_tbar",
+      "adapter"
+    ],
+    "rail_width": [
+      "9/16 in"
+    ],
+    "rail_style": [
+      "recessed"
+    ],
+    "compatible_aps": [
+      "juniper-ap24",
+      "juniper-ap27",
+      "juniper-ap27e",
+      "juniper-ap32",
+      "juniper-ap32e",
+      "juniper-ap34",
+      "juniper-ap36",
+      "juniper-ap36m",
+      "juniper-ap37",
+      "juniper-ap45",
+      "juniper-ap45e",
+      "juniper-ap47",
+      "juniper-ap47d",
+      "juniper-ap47e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP24-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP24 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap24"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP27AP27E-Mist-Installation-Guide-v6.pdf",
+        "doc": "AP27 and AP27E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap27",
+          "juniper-ap27e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
+        "doc": "AP33 or AP32 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap32",
+          "juniper-ap32e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP34-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP34 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap34"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP37AP36-Mist-Installation-Guide-v5.pdf",
+        "doc": "AP37, AP36, & AP36M Hardware Installation Guide",
+        "aps": [
+          "juniper-ap36",
+          "juniper-ap36m",
+          "juniper-ap37"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP45-Mist-Installation-Guide-v15.pdf",
+        "doc": "AP45 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap45",
+          "juniper-ap45e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP47-Mist-Installation-Guide-v10.pdf",
+        "doc": "AP47 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap47",
+          "juniper-ap47d",
+          "juniper-ap47e"
+        ]
+      }
+    ],
+    "notes": "Used with APBR-U. Also fits channel rail. The juniper.net per-model mounting pages print ADPR-ADP-CR9 in the procedure text."
+  },
+  {
+    "id": "juniper-apbr-adp-rt15",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-ADP-RT15"
+      }
+    ],
+    "part_number_aliases": [
+      {
+        "vendor": "Juniper",
+        "part_number": "ADPR-ADP-RT15"
+      }
+    ],
+    "name": "Recessed 15/16 in T-bar adapter",
+    "mount_type": [
+      "ceiling_tbar",
+      "adapter"
+    ],
+    "rail_width": [
+      "15/16 in"
+    ],
+    "rail_style": [
+      "recessed"
+    ],
+    "compatible_aps": [
+      "juniper-ap24",
+      "juniper-ap27",
+      "juniper-ap27e",
+      "juniper-ap32",
+      "juniper-ap32e",
+      "juniper-ap34",
+      "juniper-ap36",
+      "juniper-ap36m",
+      "juniper-ap37",
+      "juniper-ap45",
+      "juniper-ap45e",
+      "juniper-ap47",
+      "juniper-ap47d",
+      "juniper-ap47e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP24-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP24 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap24"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP27AP27E-Mist-Installation-Guide-v6.pdf",
+        "doc": "AP27 and AP27E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap27",
+          "juniper-ap27e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
+        "doc": "AP33 or AP32 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap32",
+          "juniper-ap32e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP34-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP34 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap34"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP37AP36-Mist-Installation-Guide-v5.pdf",
+        "doc": "AP37, AP36, & AP36M Hardware Installation Guide",
+        "aps": [
+          "juniper-ap36",
+          "juniper-ap36m",
+          "juniper-ap37"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP45-Mist-Installation-Guide-v15.pdf",
+        "doc": "AP45 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap45",
+          "juniper-ap45e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP47-Mist-Installation-Guide-v10.pdf",
+        "doc": "AP47 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap47",
+          "juniper-ap47d",
+          "juniper-ap47e"
+        ]
+      }
+    ],
+    "notes": "Used with APBR-U. The juniper.net per-model mounting pages print ADPR-ADP-RT15 in the procedure text."
+  },
+  {
+    "id": "juniper-apbr-adp-ws15",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-ADP-WS15"
+      }
+    ],
+    "part_number_aliases": [
+      {
+        "vendor": "Juniper",
+        "part_number": "ADPR-ADP-WS15"
+      }
+    ],
+    "name": "Recessed 1.5 in T-bar adapter",
+    "mount_type": [
+      "ceiling_tbar",
+      "adapter"
+    ],
+    "rail_width": [
+      "1.5 in"
+    ],
+    "rail_style": [
+      "recessed"
+    ],
+    "compatible_aps": [
+      "juniper-ap24",
+      "juniper-ap27",
+      "juniper-ap27e",
+      "juniper-ap32",
+      "juniper-ap32e",
+      "juniper-ap34",
+      "juniper-ap36",
+      "juniper-ap36m",
+      "juniper-ap37",
+      "juniper-ap45",
+      "juniper-ap45e",
+      "juniper-ap47",
+      "juniper-ap47d",
+      "juniper-ap47e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP24-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP24 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap24"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP27AP27E-Mist-Installation-Guide-v6.pdf",
+        "doc": "AP27 and AP27E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap27",
+          "juniper-ap27e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
+        "doc": "AP33 or AP32 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap32",
+          "juniper-ap32e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP34-Mist-Installation-Guide-v9.pdf",
+        "doc": "AP34 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap34"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP37AP36-Mist-Installation-Guide-v5.pdf",
+        "doc": "AP37, AP36, & AP36M Hardware Installation Guide",
+        "aps": [
+          "juniper-ap36",
+          "juniper-ap36m",
+          "juniper-ap37"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP45-Mist-Installation-Guide-v15.pdf",
+        "doc": "AP45 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap45",
+          "juniper-ap45e"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP47-Mist-Installation-Guide-v10.pdf",
+        "doc": "AP47 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap47",
+          "juniper-ap47d",
+          "juniper-ap47e"
+        ]
+      }
+    ],
+    "notes": "Used with APBR-U. Mist guides say \"recessed 1.5\\\" t-rail\"; the juniper.net procedure heading for this adapter omits \"recessed\". The juniper.net per-model pages print ADPR-ADP-WS15 in the procedure text."
+  },
+  {
+    "id": "juniper-apbr-wp2",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-WP2"
+      }
+    ],
+    "name": "AP17 wall plate bracket",
+    "mount_type": [
+      "wall"
+    ],
+    "compatible_aps": [
+      "juniper-ap17"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP17-Mist-Installation-Guide-v4.pdf",
+        "doc": "AP17 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap17"
+        ]
+      },
+      {
+        "url": "https://www.juniper.net/documentation/us/en/hardware/ap-mounting/topics/topic-map/ap-mount-single-gang-junction-box.html",
+        "doc": "Juniper AP Mounting Guide: single-gang junction box",
+        "aps": [
+          "juniper-ap17"
+        ]
+      }
+    ],
+    "notes": "Mist guide lists it under Accessories as \"Bracket for AP17\". Mounting guide: single-gang and double-gang junction boxes."
+  },
+  {
+    "id": "juniper-apoutbr-fm2",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APOUTBR-FM2"
+      }
+    ],
+    "name": "Outdoor flush mount bracket",
+    "mount_type": [
+      "wall",
+      "pole"
+    ],
+    "compatible_aps": [
+      "juniper-ap64",
+      "juniper-ap66",
+      "juniper-ap66d"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP64-Mist-Installation-Guide-v8.pdf",
+        "doc": "AP64 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap64"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP66-Mist-Installation-Guide-v8.pdf",
+        "doc": "AP66, AP66D, & AP66E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap66",
+          "juniper-ap66d"
+        ]
+      }
+    ],
+    "notes": "Ships in the box with AP64 and AP66 family. Juniper AP Mounting Guide kit contents: one APOUTBR-FM2 bracket, two hose clamps, four sets of M6 screws, washers, and lock washers, five sets of anchors and screws."
+  },
+  {
+    "id": "juniper-apoutbr-art2",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APOUTBR-ART2"
+      }
+    ],
+    "name": "Outdoor articulating mount",
+    "mount_type": [
+      "wall",
+      "pole",
+      "articulating"
+    ],
+    "compatible_aps": [
+      "juniper-ap64",
+      "juniper-ap66",
+      "juniper-ap66d"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP64-Mist-Installation-Guide-v8.pdf",
+        "doc": "AP64 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap64"
+        ]
+      },
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP66-Mist-Installation-Guide-v8.pdf",
+        "doc": "AP66, AP66D, & AP66E Hardware Installation Guide",
+        "aps": [
+          "juniper-ap66",
+          "juniper-ap66d"
+        ]
+      }
+    ],
+    "notes": "Listed as \"Optional accessory bracket\". Juniper AP Mounting Guide covers wall and pole articulating mounts for AP63, AP64, and AP66."
+  },
+  {
+    "id": "juniper-apbr-t58",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-T58"
+      }
+    ],
+    "name": "5/8-inch threaded rod bracket",
+    "mount_type": [
+      "threaded_rod"
+    ],
+    "compatible_aps": [
+      "juniper-ap32",
+      "juniper-ap32e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
+        "doc": "AP33 or AP32 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap32",
+          "juniper-ap32e"
+        ]
+      }
+    ],
+    "notes": "Listed with the mounting brackets in the AP33 or AP32 Hardware Installation Guide. That guide also specifies the AP32E. This bracket hangs the AP from a 5/8-inch threaded rod. APBR-ADP-T12 is the separate adapter for a 1/2-inch rod."
+  },
+  {
+    "id": "juniper-apbr-m16",
+    "part_numbers": [
+      {
+        "vendor": "Juniper",
+        "part_number": "APBR-M16"
+      }
+    ],
+    "name": "16mm threaded rod bracket",
+    "mount_type": [
+      "threaded_rod"
+    ],
+    "compatible_aps": [
+      "juniper-ap32",
+      "juniper-ap32e"
+    ],
+    "sources": [
+      {
+        "url": "https://www.mist.com/wp-content/uploads/AP33AP32-Mist-Installation-Guide-v13.pdf",
+        "doc": "AP33 or AP32 Hardware Installation Guide",
+        "aps": [
+          "juniper-ap32",
+          "juniper-ap32e"
+        ]
+      }
+    ],
+    "notes": "Listed with the mounting brackets in the AP33 or AP32 Hardware Installation Guide. That guide also specifies the AP32E. This bracket hangs the AP from a 16mm threaded rod."
   }
 ]

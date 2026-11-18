@@ -261,10 +261,10 @@ See `templates/in_box_template.json`.
 
 #### `mount_type` values
 
-Surface: `ceiling_tbar`, `hard_ceiling`, `wall`, `pole`, `desk`, `strand`, `din_rail`
+Surface: `ceiling_tbar`, `hard_ceiling`, `wall`, `pole`, `desk`, `strand`, `din_rail`, `beam`, `threaded_rod`
 Form: `articulating`, `enclosure`, `adapter`
 
-`adapter` covers parts that let an AP reuse another generation's bracket footprint. Flush and recessed are `rail_style` values, not mount types. Add a new type only when a real part does not fit any of these.
+`adapter` covers parts that let an AP reuse another generation's bracket footprint. Flush and recessed are `rail_style` values, not mount types. `beam` is a clip or bracket that fastens the AP to a structural beam. `threaded_rod` is a bracket that hangs the AP from a threaded rod by itself. A part that only joins a rod or another bracket to a second mount stays `adapter`. Add a new type only when a real part does not fit any of these.
 
 #### Compatibility rules
 
