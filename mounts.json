@@ -4936,7 +4936,63 @@
         ]
       }
     ],
-    "notes": "Stainless steel kit with +/- 15 degree tilt for wall or pole. Cable clamps for pole mounting are sold separately. KT-150173-01 is a 12 in. extension arm used with this bracket. It does not mount an AP by itself."
+    "notes": "Stainless steel kit with +/- 15 degree tilt for wall or pole. Cable clamps for pole mounting are sold separately. KT-150173-01 is the 12 in. extension arm used with this bracket."
+  },
+  {
+    "id": "extreme-kt-150173-01",
+    "part_numbers": [
+      {
+        "vendor": "Extreme",
+        "part_number": "KT-150173-01"
+      }
+    ],
+    "name": "Outdoor 12 in extension arm",
+    "mount_type": [
+      "wall",
+      "pole",
+      "adapter"
+    ],
+    "compatible_aps": [
+      "extreme-ap4060",
+      "extreme-ap4060x",
+      "extreme-ap5060d",
+      "extreme-ap5060u",
+      "extreme-ap5050d",
+      "extreme-ap5050u"
+    ],
+    "sources": [
+      {
+        "url": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/downloads/AP4060_AP4060X_Installation_Guide.pdf",
+        "doc": "AP4060 and AP4060X Installation Guide (9039136-00)",
+        "aps": [
+          "extreme-ap4060",
+          "extreme-ap4060x"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/AP5060D%20and%20AP5060U%20Installation%20Guide/downloads/AP5060D_AP5060U_Installation_Guide.pdf",
+        "doc": "AP5060D and AP5060U Installation Guide (9039548-00)",
+        "aps": [
+          "extreme-ap5060d",
+          "extreme-ap5060u"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+        "doc": "AP5050D Installation Guide (9037683-01)",
+        "aps": [
+          "extreme-ap5050d"
+        ]
+      },
+      {
+        "url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050U/downloads/AP5050U_Installation_Guide.pdf",
+        "doc": "AP5050U Installation Guide (9037682-01)",
+        "aps": [
+          "extreme-ap5050u"
+        ]
+      }
+    ],
+    "notes": "Used with KT-147407-02. Provides a minimum standoff of twelve inches to avoid antenna interference. Sold separately."
   },
   {
     "id": "extreme-mbo-art03",
@@ -6583,10 +6639,9 @@
         "part_number": "FAP-MNT-Gbox-10pk"
       }
     ],
-    "name": "15/16 in T-bar adapter for flat surface, outlet box, conduit, or all-thread",
+    "name": "15/16 in T-bar adapter for outlet box, conduit, or all-thread",
     "mount_type": [
       "wall",
-      "hard_ceiling",
       "threaded_rod",
       "adapter"
     ],
@@ -6614,7 +6669,7 @@
         ]
       }
     ],
-    "notes": "Enables mounting of FAPs with a 15/16 in. T-bar mount to flat surfaces (wall, ceiling), an outlet box (single, double gang, and 4x4 junction box), hanging conduit (3/4 in. trade size), and hanging all-thread (3/8 in.). Listed only in the per-model matrix. The datasheet describes this as \"Outlet box mounting, hanging conduit, and all-thread mounting\". Hanging conduit has no mount type. All-thread is threaded rod."
+    "notes": "\"Outlet box mounting, hanging conduit, and all-thread mounting for FAPs with a 15/16 in. T-bar mount\". Hanging conduit has no mount type. All-thread is threaded rod."
   },
   {
     "id": "fortinet-fap-enc-43x",
