@@ -227,13 +227,6 @@
           parts.textContent = numbers.join(', ');
           row.appendChild(parts);
         }
-        const aliases = (mount.part_number_aliases || []).map(partLine).filter(Boolean);
-        if (aliases.length) {
-          const alias = document.createElement('div');
-          alias.className = 'box-alias';
-          alias.textContent = `Also printed as ${aliases.join(', ')}`;
-          row.appendChild(alias);
-        }
         list.appendChild(row);
       });
       block.appendChild(list);

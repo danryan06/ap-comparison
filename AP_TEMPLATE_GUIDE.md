@@ -239,6 +239,7 @@ Rules:
 - A line written as one kit with its contents (for example "Grounding lug kit (including a grounding lug and an M4 x 8 screw)" or "wall-mount anchor kit, including two screws and wall-mount anchors") stays one item. This differs from a heading that groups separate lines, which is dropped.
 - `item` is the document's wording, verbatim.
 - `part_number` is always present. Use `null` when the document publishes no number. Never use an empty string.
+- When a vendor document misprints a part number, use the correct number and say in the matching mount record's notes where the misprint appears.
 - `qty` is omitted when the document gives no count. Do not default a missing count to 1.
 - When a document groups parts under a heading ("Default mounting brackets:", "Mount Kit", "Gift Box"), list the parts and drop the heading. Name each part from the same document's Brackets and Clips table when it has one.
 - `in_box_condition` (optional, on the AP entry) is one string naming a condition the document attaches to the whole list, e.g. `"Ready to Go option"`. Omit it when the list is unconditional. Configure-to-order guides use `[]` instead, not a condition.
@@ -258,7 +259,6 @@ See `templates/in_box_template.json`.
 | `rail_style` | No | T-bar mounts only. `flush`, `recessed`, or both. Omit when not stated. |
 | `compatible_aps` | Yes | Site slugs (e.g. `cisco-cw9176i`). Only models a document names. |
 | `sources` | Yes | Array of `{ "url", "doc", "aps" }`. `aps` lists which compatible APs that document supports. Every slug in `compatible_aps` must appear in at least one source. |
-| `part_number_aliases` | No | Misprinted forms of a part number seen in vendor documents (e.g. Meraki printing `AIR-AP-TRAIL-R` for `AIR-AP-T-RAIL-R`), same shape as `part_numbers`. The in-box cross-check matches them; the site should not show them as orderable. Say in `notes` where the alias is printed. |
 | `notes` | No | Omit when there is nothing to say. |
 
 #### `mount_type` values

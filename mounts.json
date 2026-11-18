@@ -543,7 +543,7 @@
         ]
       }
     ],
-    "notes": "Rail widths from Meraki guides, which say the clip mounts on “most” of these T-rail widths. The Meraki CW9172I and CW9178I package lists print AIR-AP-TRAIL-R. That is a typo; the part is AIR-AP-T-RAIL-R."
+    "notes": "Rail widths from Meraki guides, which say the clip mounts on “most” of these T-rail widths. The Meraki CW9172I and CW9178I package lists print AIR-AP-TRAIL-R. That is a typo; the part is AIR-AP-T-RAIL-R. The CW9172I and CW9178I in-box entries use the corrected number."
   },
   {
     "id": "cisco-air-ap-t-rail-f",

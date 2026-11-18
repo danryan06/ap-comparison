@@ -2639,13 +2639,8 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   margin: 0.25rem 0;
 }
 
-.box-part,
-.box-alias {
+.box-part {
   color: #9ca3af;
-}
-
-.box-alias {
-  font-size: 0.8rem;
 }
 
 .spec-block .eos-link {
