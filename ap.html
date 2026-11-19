@@ -228,7 +228,7 @@
             if (item.qty) {
               const qty = document.createElement('span');
               qty.className = 'box-qty';
-              qty.textContent = `×${item.qty} `;
+              qty.textContent = `${item.qty}× `;
               name.appendChild(qty);
             }
             name.appendChild(document.createTextNode(item.item || ''));
