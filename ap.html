@@ -168,19 +168,27 @@
       );
 
       if (hasBox) {
-        const title = entry.in_box_condition ? `In the Box (${entry.in_box_condition})` : 'In the Box';
-        addSectionHeader(detailsEl, title);
+        const boxItems = Array.isArray(entry.in_box) ? entry.in_box : [];
+        const boxLabel = entry.in_box_condition ? `In the Box, ${entry.in_box_condition}` : 'In the Box';
+        const boxSummary = boxItems.length === 0
+          ? 'In the Box (none listed)'
+          : `${boxLabel} (${boxItems.length} items)`;
+        const box = document.createElement('details');
+        box.className = 'spec-collapse';
+        const boxHeading = document.createElement('summary');
+        boxHeading.textContent = boxSummary;
+        box.appendChild(boxHeading);
         const block = document.createElement('div');
         block.className = 'spec-block';
-        if (Array.isArray(entry.in_box) && entry.in_box.length === 0) {
+        if (boxItems.length === 0) {
           const empty = document.createElement('p');
           empty.className = 'box-list';
           empty.textContent = 'No mounting hardware included by default; see orderable mounts';
           block.appendChild(empty);
-        } else if (Array.isArray(entry.in_box)) {
+        } else {
           const list = document.createElement('ul');
           list.className = 'box-list';
-          entry.in_box.forEach(item => {
+          boxItems.forEach(item => {
             if (!item || typeof item !== 'object') return;
             const row = document.createElement('li');
             row.textContent = item.item || '';
@@ -206,11 +214,16 @@
           source.textContent = 'Package contents source';
           block.appendChild(source);
         }
-        detailsEl.appendChild(block);
+        box.appendChild(block);
+        detailsEl.appendChild(box);
       }
 
       if (!compatible.length) return;
-      addSectionHeader(detailsEl, 'Orderable Mounts');
+      const mountsSection = document.createElement('details');
+      mountsSection.className = 'spec-collapse';
+      const mountsHeading = document.createElement('summary');
+      mountsHeading.textContent = `Orderable Mounts (${compatible.length})`;
+      mountsSection.appendChild(mountsHeading);
       const block = document.createElement('div');
       block.className = 'spec-block';
       const list = document.createElement('ul');
@@ -230,7 +243,8 @@
         list.appendChild(row);
       });
       block.appendChild(list);
-      detailsEl.appendChild(block);
+      mountsSection.appendChild(block);
+      detailsEl.appendChild(mountsSection);
     }
 
     function addSectionHeader(detailsEl, title) {

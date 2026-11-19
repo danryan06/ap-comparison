@@ -2647,3 +2647,58 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   display: inline-block;
   margin-top: 0.35rem;
 }
+
+.spec-collapse {
+  grid-column: 1 / -1;
+  margin-top: 0.375rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.spec-collapse:not([open]) > :not(summary) {
+  display: none;
+}
+
+.spec-collapse summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 8px 0;
+  margin: 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.spec-collapse summary::-webkit-details-marker {
+  display: none;
+}
+
+.spec-collapse summary::marker {
+  content: none;
+}
+
+.spec-collapse summary::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+  flex: 0 0 auto;
+}
+
+.spec-collapse[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+.spec-collapse summary:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
