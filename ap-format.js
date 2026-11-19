@@ -9,6 +9,32 @@ const BAND_GROUPS = [
   { keys: ["6", "6GHz"], gain: "6", beam: "6 GHz" }
 ];
 
+function normalizeForSlug(value) {
+  if (!value) return "";
+  return String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/[\u2010-\u2015\u2212]/g, "-")
+    .replace(/\s+/g, " ");
+}
+
+function safeUrl(value, options = {}) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  const allowRelative = options.allowRelative === true;
+  const hasScheme = /^[a-z][a-z0-9+.-]*:/i.test(raw);
+  if (!hasScheme) {
+    if (!allowRelative || raw.startsWith("//") || raw.includes("\\")) return "";
+    return raw;
+  }
+  try {
+    const parsed = new URL(raw);
+    return parsed.protocol === "http:" || parsed.protocol === "https:" ? parsed.href : "";
+  } catch (err) {
+    return "";
+  }
+}
+
 function antennaTypes(value) {
   const items = Array.isArray(value) ? value : (value == null || value === "" ? [] : [value]);
   const found = [];
@@ -130,4 +156,18 @@ function formatModeRows(modes) {
     }
   });
   return rows.filter(row => row.value);
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    normalizeForSlug,
+    safeUrl,
+    antennaTypes,
+    formatAntennaType,
+    antennaMatches,
+    antennaMatchesAny,
+    formatBandObject,
+    beamwidthModeRows,
+    formatModeRows
+  };
 }

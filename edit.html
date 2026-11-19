@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <title>Edit AP Information &mdash; Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="X-Frame-Options" content="DENY" />
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -193,6 +190,15 @@
     const GITHUB_REPO = 'ap-comparison';
     const DATA_URL = 'ap_data.json';
     let apList = [];
+    let selectedEntry = null;
+
+    function entrySlug(entry) {
+      return `${entry.vendor || ''} ${entry.model || ''}`
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
 
     function buildApObjectFromForm() {
       const vendor = document.getElementById('vendor').value.trim();
@@ -228,7 +234,8 @@
           .filter(s => s.length > 0);
       }
 
-      return {
+      const result = {
+        ...(selectedEntry || {}),
         vendor,
         model,
         wifi_gen_radios,
@@ -252,6 +259,10 @@
         ...(hazloc_certification ? { hazloc_certification } : {}),
         msrp
       };
+      if (!operating_humidity) delete result.operating_humidity;
+      if (!ingress_protection) delete result.ingress_protection;
+      if (!hazloc_certification) delete result.hazloc_certification;
+      return result;
     }
 
     function normalizeString(value) {
@@ -285,6 +296,7 @@
       document.getElementById('hazloc_certification').value = entry.hazloc_certification || '';
       document.getElementById('msrp').value = entry.msrp || '';
       document.getElementById('datasheet_url').value = entry.datasheet_url || '';
+      document.getElementById('image_url').value = entry.image_url || '';
     }
 
     async function loadApList() {
@@ -305,6 +317,13 @@
             opt.textContent = label;
             select.appendChild(opt);
           });
+        const requestedId = new URLSearchParams(window.location.search).get('id') || '';
+        const requestedIndex = data.findIndex(entry => entrySlug(entry) === requestedId);
+        if (requestedIndex >= 0) {
+          select.value = String(requestedIndex);
+          selectedEntry = data[requestedIndex];
+          fillFormWithEntry(selectedEntry);
+        }
       } catch (err) {
         console.error('Failed to load AP list:', err);
       }
@@ -366,7 +385,8 @@
     document.getElementById('open-issue-btn').addEventListener('click', openGithubEditApIssue);
     document.getElementById('existing').addEventListener('change', function () {
       const idx = this.value ? parseInt(this.value, 10) : -1;
-      if (idx >= 0 && apList[idx]) fillFormWithEntry(apList[idx]);
+      selectedEntry = idx >= 0 && apList[idx] ? apList[idx] : null;
+      if (selectedEntry) fillFormWithEntry(selectedEntry);
     });
     document.addEventListener('DOMContentLoaded', loadApList);
   </script>

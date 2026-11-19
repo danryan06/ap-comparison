@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <title>AP Details — Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="X-Frame-Options" content="DENY" />
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -30,7 +27,7 @@
       <!-- Inline actions will be inserted here via JavaScript -->
 
       <div id="image-container" class="ap-image-wrapper" style="display:none;">
-        <img id="ap-image" class="ap-image" alt="" loading="lazy" />
+        <img id="ap-image" class="ap-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" loading="lazy" />
       </div>
 
       <div id="details" class="kv-grid"></div>
@@ -165,6 +162,7 @@
     const CHEVRON_ICON = '<path d="m9 18 6-6-6-6"/>';
     const COPY_ICON = '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>';
     const CHECK_ICON = '<path d="M20 6 9 17l-5-5"/>';
+    const ALERT_ICON = '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>';
 
     function iconSvg(markup, size) {
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -335,9 +333,10 @@
           });
           block.appendChild(list);
         }
-        if (entry.in_box_source) {
+        const sourceUrl = safeUrl(entry.in_box_source);
+        if (sourceUrl) {
           const source = document.createElement('a');
-          source.href = entry.in_box_source;
+          source.href = sourceUrl;
           source.target = '_blank';
           source.rel = 'noopener noreferrer';
           source.className = 'eos-link';
@@ -395,13 +394,16 @@
       const editLinkEl = document.getElementById('edit-link');
 
       try {
-        const [res, mountRes] = await Promise.all([
-          fetch(DATA_URL, { cache: 'no-store' }),
-          fetch('mounts.json', { cache: 'no-store' })
-        ]);
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
-        const mounts = mountRes.ok ? await mountRes.json() : [];
+        let mounts = [];
+        try {
+          const mountRes = await fetch('mounts.json', { cache: 'no-store' });
+          if (mountRes.ok) mounts = await mountRes.json();
+        } catch (mountErr) {
+          console.warn('Orderable mounts could not be loaded:', mountErr);
+        }
         const id = readId();
         const entry = data.find(e => slugify(`${e.vendor} ${e.model}`) === id);
         if (!entry) {
@@ -421,19 +423,50 @@
         if (entry.end_of_sale_announcement_date || entry.end_of_sale_date) {
           const alert = document.createElement('div');
           alert.className = 'eos-alert';
-          alert.innerHTML = `
-            <svg class="eos-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-            <div class="eos-content">
-              <h4>End of Sale Announced</h4>
-              <p>This access point has reached end of sale.${entry.end_of_sale_date ? ` Last order date: <strong>${entry.end_of_sale_date}</strong>` : ''}${entry.end_of_support_date ? ` • Support ends: <strong>${entry.end_of_support_date}</strong>` : ''}</p>
-              ${entry.end_of_sale_url ? `<a href="${entry.end_of_sale_url}" target="_blank" rel="noopener noreferrer" class="eos-link">View official notice →</a>` : ''}
-              ${entry.manufacturer_suggested_replacement && entry.manufacturer_suggested_replacement !== 'None' ? `<p style="margin-top: 0.5rem; font-size: 0.85rem;">Suggested replacement: <strong>${entry.manufacturer_suggested_replacement}</strong></p>` : ''}
-            </div>
-          `;
+          const alertIcon = iconSvg(ALERT_ICON, 24);
+          alertIcon.classList.add('eos-icon');
+          alert.appendChild(alertIcon);
+          const content = document.createElement('div');
+          content.className = 'eos-content';
+          const heading = document.createElement('h4');
+          heading.textContent = 'End of Sale Announced';
+          content.appendChild(heading);
+          const status = document.createElement('p');
+          status.appendChild(document.createTextNode('This access point has reached end of sale.'));
+          if (entry.end_of_sale_date) {
+            status.appendChild(document.createTextNode(' Last order date: '));
+            const date = document.createElement('strong');
+            date.textContent = entry.end_of_sale_date;
+            status.appendChild(date);
+          }
+          if (entry.end_of_support_date) {
+            status.appendChild(document.createTextNode(' • Support ends: '));
+            const date = document.createElement('strong');
+            date.textContent = entry.end_of_support_date;
+            status.appendChild(date);
+          }
+          content.appendChild(status);
+          const noticeUrl = safeUrl(entry.end_of_sale_url);
+          if (noticeUrl) {
+            const notice = document.createElement('a');
+            notice.href = noticeUrl;
+            notice.target = '_blank';
+            notice.rel = 'noopener noreferrer';
+            notice.className = 'eos-link';
+            notice.textContent = 'View official notice →';
+            content.appendChild(notice);
+          }
+          if (entry.manufacturer_suggested_replacement && entry.manufacturer_suggested_replacement !== 'None') {
+            const replacement = document.createElement('p');
+            replacement.style.marginTop = '0.5rem';
+            replacement.style.fontSize = '0.85rem';
+            replacement.appendChild(document.createTextNode('Suggested replacement: '));
+            const model = document.createElement('strong');
+            model.textContent = entry.manufacturer_suggested_replacement;
+            replacement.appendChild(model);
+            content.appendChild(replacement);
+          }
+          alert.appendChild(content);
           
           // Insert after subtitle
           subtitleEl.insertAdjacentElement('afterend', alert);
@@ -445,7 +478,7 @@
         editLinkEl.style.display = 'inline-flex';
 
         // Handle image, if present
-        const imgUrl = entry.image_url || '';
+        const imgUrl = safeUrl(entry.image_url, { allowRelative: true });
         if (imgUrl) {
           imageEl.src = imgUrl;
           imageEl.alt = titleText;
@@ -462,9 +495,10 @@
         actionsDiv.className = 'detail-actions';
         let hasActions = false;
 
-        if (entry.datasheet_url) {
+        const datasheetUrl = safeUrl(entry.datasheet_url);
+        if (datasheetUrl) {
           const datasheetBtn = document.createElement('a');
-          datasheetBtn.href = entry.datasheet_url;
+          datasheetBtn.href = datasheetUrl;
           datasheetBtn.target = '_blank';
           datasheetBtn.rel = 'noopener noreferrer';
           datasheetBtn.className = 'btn-inline-action';
@@ -482,9 +516,10 @@
           hasActions = true;
         }
 
-        if (entry.install_guide_url) {
+        const installGuideUrl = safeUrl(entry.install_guide_url);
+        if (installGuideUrl) {
           const installGuideBtn = document.createElement('a');
-          installGuideBtn.href = entry.install_guide_url;
+          installGuideBtn.href = installGuideUrl;
           installGuideBtn.target = '_blank';
           installGuideBtn.rel = 'noopener noreferrer';
           installGuideBtn.className = 'btn-inline-action';
@@ -557,15 +592,19 @@
           } else if (Array.isArray(v)) {
             valDiv.textContent = v.join(', ');
           } else if (k.endsWith('_url') && v && typeof v === 'string' && v.trim()) {
-            // Make URL fields clickable links
-            const link = document.createElement('a');
-            link.href = v;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.textContent = v;
-            link.style.color = '#60a5fa';
-            link.style.textDecoration = 'underline';
-            valDiv.appendChild(link);
+            const url = safeUrl(v);
+            if (url) {
+              const link = document.createElement('a');
+              link.href = url;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+              link.textContent = v;
+              link.style.color = '#60a5fa';
+              link.style.textDecoration = 'underline';
+              valDiv.appendChild(link);
+            } else {
+              valDiv.textContent = v;
+            }
           } else if (v && typeof v === 'object' && v !== null) {
             // Handle other objects generically
             valDiv.textContent = JSON.stringify(v);

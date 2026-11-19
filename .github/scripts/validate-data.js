@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-
-function normalizeForSlug(s) {
-  if (!s) return '';
-  return String(s).toLowerCase().trim().replace(/[\u2010-\u2015\u2212]/g, '-').replace(/\s+/g, ' ');
-}
+const { normalizeForSlug } = require('../../ap-format.js');
 
 function fail(msg) {
   console.error(msg);
@@ -124,6 +120,10 @@ function checkOptionalStrings(entry, idx) {
       fail(`${entryName(entry, idx)} ${field} must be a non-empty string when present.`);
     }
   });
+}
+
+if (normalizeForSlug('AP-518') === normalizeForSlug('AP-999')) {
+  fail('Slug normalization collapsed distinct model numbers.');
 }
 
 try {

@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <title>Compare APs — Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="X-Frame-Options" content="DENY" />
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -328,8 +325,7 @@
       }
       
       if (key === 'beamwidth' && typeof value === 'object') {
-        const formatted = formatBandObject(value, 'beam');
-        return formatted.replaceAll(', ', '<br>');
+        return formatBandObject(value, 'beam');
       }
       
       if (Array.isArray(value)) {
@@ -384,9 +380,11 @@
       const header = document.createElement('div');
       header.className = 'card-header';
       const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
       removeBtn.className = 'remove-btn';
       removeBtn.textContent = '×';
       removeBtn.title = 'Remove from comparison';
+      removeBtn.setAttribute('aria-label', `Remove ${entry.vendor || ''} ${entry.model || ''} from comparison`.trim());
       removeBtn.onclick = () => {
         const ids = readIds().filter(id => id !== slugify(`${entry.vendor} ${entry.model}`));
         window.location.href = `compare.html?ids=${ids.join(',')}`;
@@ -396,9 +394,10 @@
 
       const imageDiv = document.createElement('div');
       imageDiv.className = 'card-image';
-      if (entry.image_url) {
+      const imageUrl = safeUrl(entry.image_url, { allowRelative: true });
+      if (imageUrl) {
         const img = document.createElement('img');
-        img.src = entry.image_url;
+        img.src = imageUrl;
         img.alt = `${entry.vendor} ${entry.model}`;
         imageDiv.appendChild(img);
       } else {
@@ -423,7 +422,7 @@
 
       const specsDiv = document.createElement('div');
       specsDiv.className = 'card-specs';
-      const appendSpec = (key, label, value, asHtml) => {
+      const appendSpec = (key, label, value) => {
         if (value == null || value === '') return;
         const specRow = document.createElement('div');
         specRow.className = 'spec-row';
@@ -433,8 +432,7 @@
         labelSpan.textContent = label;
         const valueSpan = document.createElement('span');
         valueSpan.className = 'spec-value';
-        if (asHtml) valueSpan.innerHTML = value;
-        else valueSpan.textContent = value;
+        valueSpan.textContent = value;
         specRow.appendChild(labelSpan);
         specRow.appendChild(valueSpan);
         specsDiv.appendChild(specRow);
@@ -450,7 +448,7 @@
           });
         } else {
           const formattedValue = formatValue(key, value);
-          appendSpec(key, label, formattedValue, key === 'beamwidth' && typeof value === 'object');
+          appendSpec(key, label, formattedValue);
         }
         if (key === 'beamwidth' || (key === 'antenna_gain_dbi' && entry.beamwidth == null)) {
           formatModeRows(entry.antenna_modes).forEach((mode, index) => {
@@ -472,9 +470,10 @@
       viewBtn.className = 'btn-secondary';
       viewBtn.textContent = 'View Details';
       actionsDiv.appendChild(viewBtn);
-      if (entry.datasheet_url) {
+      const datasheetUrl = safeUrl(entry.datasheet_url);
+      if (datasheetUrl) {
         const datasheetBtn = document.createElement('a');
-        datasheetBtn.href = entry.datasheet_url;
+        datasheetBtn.href = datasheetUrl;
         datasheetBtn.target = '_blank';
         datasheetBtn.rel = 'noopener noreferrer';
         datasheetBtn.className = 'btn-secondary';
@@ -560,7 +559,11 @@
           const rows = currentSelected.map(e => {
             return keys.map(k => {
               const v = e[k];
-              const s = Array.isArray(v) ? v.join('; ') : formatValue(k, v);
+              const s = Array.isArray(v)
+                ? v.join('; ')
+                : (k === 'beamwidth' && v && typeof v === 'object'
+                  ? formatBandObject(v, 'beam')
+                  : formatValue(k, v));
               const needs = /[",\n]/.test(s);
               return needs ? '"' + s.replace(/"/g, '""') + '"' : s;
             }).join(',');

@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <title>Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="X-Frame-Options" content="DENY" />
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -196,7 +193,7 @@
     </div>
   </div>
 
-  <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button">Compare (0)</button>
+  <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
   <script src="ap-format.js"></script>
   <script>
@@ -207,6 +204,23 @@
     let currentQuery = '';
     const currentFilters = { vendor: '', antenna: '', form: '' };
     let currentSort = { key: 'vendor', dir: 'asc' };
+    const TABLE_COLUMN_KEYS = [
+      'vendor',
+      'model',
+      'wifi_gen_radios',
+      'spatial_streams',
+      'min_poe_class',
+      'recommended_poe',
+      'behavior_min_power',
+      'ethernet_ports_speed',
+      'radios_iot_features',
+      'antenna_type',
+      'form_factor',
+      'dimensions',
+      'weight',
+      'antenna_connectors',
+      'operating_temp_range'
+    ];
     function defaultHiddenColumns() {
       return new Set(['dimensions','weight','antenna_connectors','operating_temp_range','behavior_min_power']);
     }
@@ -244,8 +258,10 @@
       ths.forEach(th => {
         if (th.dataset.key === currentSort.key) {
           th.setAttribute('data-dir', currentSort.dir);
+          th.setAttribute('aria-sort', currentSort.dir === 'asc' ? 'ascending' : 'descending');
         } else {
           th.removeAttribute('data-dir');
+          th.setAttribute('aria-sort', 'none');
         }
       });
     }
@@ -254,7 +270,7 @@
       const ths = Array.from(document.querySelectorAll('thead th'));
       return ths.map((th, idx) => ({
         key: th.dataset.key || `col_${idx+1}`,
-        label: th.innerText.replace(/\\s+/g, ' ').trim(),
+        label: th.innerText.replace(/\s+/g, ' ').trim(),
         index: idx
       }));
     }
@@ -290,13 +306,11 @@
       const columns = getColumnsFromHeader();
       const table = document.querySelector('table');
       const rows = Array.from(table.querySelectorAll('tr'));
-      columns.forEach((col, i) => {
+      columns.forEach(col => {
         const hide = hiddenColumns.has(col.key) && !(col.key === 'vendor' || col.key === 'model');
         rows.forEach(row => {
-          const cells = row.children;
-          if (cells[i]) {
-            cells[i].style.display = hide ? 'none' : '';
-          }
+          const cell = Array.from(row.children).find(item => item.dataset.key === col.key);
+          if (cell) cell.style.display = hide ? 'none' : '';
         });
       });
       updateSortIndicators();
@@ -318,18 +332,33 @@
     function loadLayout() {
       const headerRow = document.querySelector('thead tr');
       if (!headerRow) return;
-      const storedOrder = JSON.parse(localStorage.getItem('apTable.colOrder') || '[]');
-      const storedWidths = JSON.parse(localStorage.getItem('apTable.colWidths') || '{}');
+      let storedOrder = [];
+      let storedWidths = {};
+      try {
+        storedOrder = JSON.parse(localStorage.getItem('apTable.colOrder') || '[]');
+        storedWidths = JSON.parse(localStorage.getItem('apTable.colWidths') || '{}');
+      } catch (err) {
+        localStorage.removeItem('apTable.colOrder');
+        localStorage.removeItem('apTable.colWidths');
+      }
+      if (!storedWidths || typeof storedWidths !== 'object' || Array.isArray(storedWidths)) {
+        storedWidths = {};
+      }
       if (Array.isArray(storedOrder) && storedOrder.length > 0) {
         const map = {};
         Array.from(headerRow.children).forEach(th => { map[th.dataset.key || ''] = th; });
-        storedOrder.forEach(key => {
+        const validOrder = [...new Set(storedOrder)].filter(key => map[key]);
+        Object.keys(map).forEach(key => {
+          if (!validOrder.includes(key)) validOrder.push(key);
+        });
+        validOrder.forEach(key => {
           const th = map[key];
           if (th) headerRow.appendChild(th);
         });
       }
+      applyColumnOrderFromHeader();
       const ths = Array.from(headerRow.children);
-      ths.forEach((th, index) => {
+      ths.forEach(th => {
         const key = th.dataset.key || '';
         const w = storedWidths[key];
         if (w) {
@@ -337,34 +366,26 @@
           const tbody = document.querySelector('tbody');
           if (tbody) {
             Array.from(tbody.rows).forEach(row => {
-              const cell = row.children[index];
+              const cell = Array.from(row.children).find(item => item.dataset.key === key);
               if (cell) cell.style.width = w;
             });
           }
         }
       });
-      applyColumnOrderFromHeader();
     }
 
     function applyColumnOrderFromHeader() {
       const headerRow = document.querySelector('thead tr');
       if (!headerRow) return;
-      const ths = Array.from(headerRow.children);
-      const order = ths.map((th, idx) => idx);
-      // Build mapping from current displayed index to actual index by reading header positions
-      const headerOrder = ths.map((_, newIdx) => {
-        return ths.findIndex(th => th.cellIndex === newIdx);
-      });
-      // If cellIndex doesn't reflect new DOM order in some browsers, fallback to DOM order
-      const actualOrder = ths.map((_, i) => i);
-      const useDomOrder = true;
-      const colOrder = useDomOrder ? actualOrder : headerOrder;
+      const keys = Array.from(headerRow.children).map(th => th.dataset.key || '');
       const tbody = document.querySelector('tbody');
       if (!tbody) return;
       Array.from(tbody.rows).forEach(row => {
-        const cells = Array.from(row.children);
-        const reordered = colOrder.map(i => cells[i]);
-        reordered.forEach(cell => row.appendChild(cell));
+        const cells = new Map(Array.from(row.children).map(cell => [cell.dataset.key || '', cell]));
+        keys.forEach(key => {
+          const cell = cells.get(key);
+          if (cell) row.appendChild(cell);
+        });
       });
     }
 
@@ -533,6 +554,7 @@
         const cb = document.createElement('input');
         cb.type = 'checkbox';
         cb.className = 'row-select';
+        cb.setAttribute('aria-label', `Select ${entry.vendor || ''} ${entry.model || ''} for comparison`.trim());
         cb.checked = selectedIds.has(id);
         cb.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -546,7 +568,12 @@
         const vendorText = document.createTextNode(entry.vendor || '');
         vendorTd.appendChild(vendorText);
         tr.appendChild(vendorTd);
-          const modelTd = textCell(entry.model);
+          const modelTd = document.createElement('td');
+          const modelLink = document.createElement('a');
+          modelLink.href = `ap.html?id=${encodeURIComponent(id)}`;
+          modelLink.textContent = entry.model || '';
+          modelLink.addEventListener('click', event => event.stopPropagation());
+          modelTd.appendChild(modelLink);
           modelTd.style.fontSize = '1rem';
           modelTd.style.fontWeight = '600';
           tr.appendChild(modelTd);
@@ -585,6 +612,9 @@
         tr.appendChild(textCell(entry.weight));
         tr.appendChild(textCell(entry.antenna_connectors));
         tr.appendChild(textCell(entry.operating_temp_range));
+        Array.from(tr.children).forEach((cell, index) => {
+          cell.dataset.key = TABLE_COLUMN_KEYS[index] || '';
+        });
 
         // Navigate to dedicated details page, preserving current table state in URL
         tr.addEventListener('click', () => {
@@ -618,15 +648,21 @@
       }
 
       updateSortIndicators();
+      applyColumnOrderFromHeader();
       applyColumnVisibility();
+      updateCompareFab();
     }
 
     function updateCompareFab() {
       const fab = document.getElementById('compare-fab');
       const n = selectedIds.size;
-      if (n >= 1) {
+      fab.disabled = n < 2;
+      if (n >= 2) {
         fab.style.display = 'inline-flex';
         fab.textContent = `Compare (${n})`;
+      } else if (n === 1) {
+        fab.style.display = 'inline-flex';
+        fab.textContent = 'Select 1 more to compare';
       } else {
         fab.style.display = 'none';
       }
@@ -639,10 +675,6 @@
       return s.length === 0 || s === 'unknown';
     }
 
-    function normalizeForSlug(s) {
-      if (!s) return '';
-      return String(s).toLowerCase().trim().replace(/[\u2010-\u2015\u2212]/g, '-').replace(/\s+/g, ' ');
-    }
     function validateData(data) {
       const keysToCheck = [
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
@@ -957,6 +989,7 @@
 
       // Header sort click handlers
       document.querySelectorAll('th.sortable').forEach(th => {
+        th.tabIndex = 0;
         th.addEventListener('click', () => {
           const key = th.dataset.key;
           if (!key) return;
@@ -969,6 +1002,11 @@
           updateSortIndicators();
           renderTable();
           updateUrl();
+        });
+        th.addEventListener('keydown', event => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          th.click();
         });
       });
 

@@ -73,7 +73,7 @@ We welcome contributions! You can add new access points or update existing entri
 5. Click "Open GitHub Issue with This Entry"
 6. Review the pre-filled GitHub issue and submit it
 
-The submission will be automatically processed via GitHub Actions, which will:
+After a maintainer reviews the issue and adds the `ap-submission` label, GitHub Actions will:
 - Validate the data
 - Download and store any images
 - Create a pull request with the new entry
@@ -88,7 +88,7 @@ The submission will be automatically processed via GitHub Actions, which will:
 6. Click "Open GitHub Issue with This Update"
 7. Review and submit the GitHub issue
 
-The edit will be automatically processed and a pull request will be created.
+After a maintainer reviews the issue and adds the `ap-submission` label, GitHub Actions will create a pull request.
 
 ### Image Guidelines
 

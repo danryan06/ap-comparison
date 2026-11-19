@@ -18,6 +18,10 @@ Thumbs.db
 # Review files
 review files/
 
+# Python cache files
+__pycache__/
+*.py[cod]
+
 # Local mount validator. Not published.
 validate_mounts.py
 
