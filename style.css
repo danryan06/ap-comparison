@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Global styles */
 :root {
   --transition-fast: 150ms;
@@ -2677,7 +2685,16 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .spec-collapse summary:hover,
 .spec-collapse summary:focus {
   color: #bfdbfe;
+}
+
+.spec-collapse summary:focus:not(:focus-visible) {
   outline: none;
+}
+
+.spec-collapse summary:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+  border-radius: 6px;
 }
 
 .spec-collapse .sc-title {
@@ -2734,9 +2751,20 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .mount-nums {
   margin-top: 0.15rem;
-  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 500;
   font-size: 13px;
+  letter-spacing: 0;
+  font-variant-ligatures: none;
   color: #93c5fd;
+}
+
+.pack-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  letter-spacing: normal;
+  font-variant-ligatures: normal;
+  color: #94a3b8;
 }
 
 .box-qty {
@@ -2745,10 +2773,4 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .spec-collapse[open] > summary::after {
   transform: rotate(45deg);
-}
-
-.spec-collapse summary:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
-  border-radius: 6px;
 }

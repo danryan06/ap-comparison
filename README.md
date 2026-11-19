@@ -159,7 +159,7 @@ View the [Data Quality Dashboard](https://apcomparison.com/data_issues.html) to 
 
 ## License
 
-Code is released under the MIT License (see LICENSE). Product images are the property of their respective vendors and are used for identification only. Specifications come from vendor documentation; always verify with the vendor before purchasing.
+Code is released under the MIT License (see LICENSE). Product images are the property of their respective vendors and are used for identification only. Specifications come from vendor documentation; always verify with the vendor before purchasing. Part numbers use JetBrains Mono, licensed under the SIL Open Font License (fonts/OFL.txt).
 
 ## Maintainer
 

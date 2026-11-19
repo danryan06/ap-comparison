@@ -183,9 +183,10 @@
         const next = kept[i + 1];
         const product = next && /^[A-Z0-9]{6}$/.test(next) ? next : '';
         if (product) i += 1;
-        let line = product ? `${sku} (${product})` : sku;
-        if (sku.includes('-MP10-')) line = `10-pack: ${line}`;
-        lines.push(line);
+        lines.push({
+          pack: sku.includes('-MP10-'),
+          text: product ? `${sku} (${product})` : sku
+        });
       }
       return lines;
     }
@@ -272,7 +273,13 @@
         mountPartLines(mount.part_numbers).forEach(line => {
           const parts = document.createElement('div');
           parts.className = 'mount-nums';
-          parts.textContent = line;
+          if (line.pack) {
+            const prefix = document.createElement('span');
+            prefix.className = 'pack-label';
+            prefix.textContent = '10-pack: ';
+            parts.appendChild(prefix);
+          }
+          parts.appendChild(document.createTextNode(line.text));
           row.appendChild(parts);
         });
         list.appendChild(row);
