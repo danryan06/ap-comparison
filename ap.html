@@ -208,6 +208,7 @@
         const box = document.createElement('details');
         box.className = 'spec-collapse';
         const boxHeading = document.createElement('summary');
+        boxHeading.addEventListener('mousedown', e => e.preventDefault());
         fillCollapseSummary(boxHeading, 'In the Box', boxMeta);
         box.appendChild(boxHeading);
         const block = document.createElement('div');
@@ -259,6 +260,7 @@
       const mountsSection = document.createElement('details');
       mountsSection.className = 'spec-collapse';
       const mountsHeading = document.createElement('summary');
+      mountsHeading.addEventListener('mousedown', e => e.preventDefault());
       fillCollapseSummary(mountsHeading, 'Orderable Mounts', `${compatible.length} parts`);
       mountsSection.appendChild(mountsHeading);
       const block = document.createElement('div');

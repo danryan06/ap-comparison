@@ -2673,8 +2673,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   width: fit-content;
   max-width: 100%;
   min-height: 44px;
-  padding: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
   margin: 0;
+  margin-left: -0.5rem;
   cursor: pointer;
   list-style: none;
   color: #93c5fd;
