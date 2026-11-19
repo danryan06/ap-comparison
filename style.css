@@ -2662,17 +2662,22 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
   min-height: 44px;
   padding: 0.25rem 0;
   margin: 0;
   cursor: pointer;
   list-style: none;
   color: #93c5fd;
+  border-radius: 6px;
+  outline: none;
 }
 
 .spec-collapse summary:hover,
 .spec-collapse summary:focus {
   color: #bfdbfe;
+  outline: none;
 }
 
 .spec-collapse .sc-title {
@@ -2734,6 +2739,10 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   color: #93c5fd;
 }
 
+.box-qty {
+  color: #94a3b8;
+}
+
 .spec-collapse[open] > summary::after {
   transform: rotate(45deg);
 }
@@ -2741,4 +2750,5 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .spec-collapse summary:focus-visible {
   outline: 2px solid #60a5fa;
   outline-offset: 2px;
+  border-radius: 6px;
 }

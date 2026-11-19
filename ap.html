@@ -171,14 +171,23 @@
       summary.appendChild(metaEl);
     }
 
-    function mountPartLabel(parts) {
+    function mountPartLines(parts) {
       const numbers = (Array.isArray(parts) ? parts : [])
         .map(part => part && part.part_number)
         .filter(Boolean);
       const spare = new Set(numbers.filter(number => number.endsWith('=')));
-      return numbers
-        .filter(number => number.endsWith('=') || !spare.has(`${number}=`))
-        .join(' · ');
+      const kept = numbers.filter(number => number.endsWith('=') || !spare.has(`${number}=`));
+      const lines = [];
+      for (let i = 0; i < kept.length; i++) {
+        const sku = kept[i];
+        const next = kept[i + 1];
+        const product = next && /^[A-Z0-9]{6}$/.test(next) ? next : '';
+        if (product) i += 1;
+        let line = product ? `${sku} (${product})` : sku;
+        if (sku.includes('-MP10-')) line = `10-pack: ${line}`;
+        lines.push(line);
+      }
+      return lines;
     }
 
     function renderMounting(detailsEl, entry, mounts) {
@@ -209,19 +218,24 @@
           block.appendChild(empty);
         } else {
           const list = document.createElement('ul');
-          list.className = 'box-list';
+          list.className = 'mount-list';
           boxItems.forEach(item => {
             if (!item || typeof item !== 'object') return;
             const row = document.createElement('li');
-            row.textContent = item.item || '';
-            if (item.part_number || item.qty) {
-              const meta = document.createElement('span');
-              meta.className = 'box-part';
-              const bits = [];
-              if (item.part_number) bits.push(item.part_number);
-              if (item.qty) bits.push(`qty ${item.qty}`);
-              meta.textContent = ` (${bits.join(', ')})`;
-              row.appendChild(meta);
+            const name = document.createElement('div');
+            if (item.qty) {
+              const qty = document.createElement('span');
+              qty.className = 'box-qty';
+              qty.textContent = `×${item.qty} `;
+              name.appendChild(qty);
+            }
+            name.appendChild(document.createTextNode(item.item || ''));
+            row.appendChild(name);
+            if (item.part_number) {
+              const part = document.createElement('div');
+              part.className = 'mount-nums';
+              part.textContent = item.part_number;
+              row.appendChild(part);
             }
             list.appendChild(row);
           });
@@ -233,7 +247,7 @@
           source.target = '_blank';
           source.rel = 'noopener noreferrer';
           source.className = 'eos-link';
-          source.textContent = 'Package contents source';
+          source.textContent = 'Source';
           block.appendChild(source);
         }
         box.appendChild(block);
@@ -255,13 +269,12 @@
         const name = document.createElement('div');
         name.textContent = mount.name || mount.id || '';
         row.appendChild(name);
-        const numbers = mountPartLabel(mount.part_numbers);
-        if (numbers) {
+        mountPartLines(mount.part_numbers).forEach(line => {
           const parts = document.createElement('div');
           parts.className = 'mount-nums';
-          parts.textContent = numbers;
+          parts.textContent = line;
           row.appendChild(parts);
-        }
+        });
         list.appendChild(row);
       });
       block.appendChild(list);
