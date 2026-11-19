@@ -160,6 +160,27 @@
       return part.vendor ? `${part.vendor} ${part.part_number}` : part.part_number;
     }
 
+    function fillCollapseSummary(summary, title, meta) {
+      const titleEl = document.createElement('span');
+      titleEl.className = 'sc-title';
+      titleEl.textContent = title;
+      const metaEl = document.createElement('span');
+      metaEl.className = 'sc-meta';
+      metaEl.textContent = meta;
+      summary.appendChild(titleEl);
+      summary.appendChild(metaEl);
+    }
+
+    function mountPartLabel(parts) {
+      const numbers = (Array.isArray(parts) ? parts : [])
+        .map(part => part && part.part_number)
+        .filter(Boolean);
+      const spare = new Set(numbers.filter(number => number.endsWith('=')));
+      return numbers
+        .filter(number => number.endsWith('=') || !spare.has(`${number}=`))
+        .join(' · ');
+    }
+
     function renderMounting(detailsEl, entry, mounts) {
       const slug = slugify(`${entry.vendor} ${entry.model}`);
       const hasBox = Object.prototype.hasOwnProperty.call(entry, 'in_box');
@@ -169,14 +190,15 @@
 
       if (hasBox) {
         const boxItems = Array.isArray(entry.in_box) ? entry.in_box : [];
-        const boxLabel = entry.in_box_condition ? `In the Box, ${entry.in_box_condition}` : 'In the Box';
-        const boxSummary = boxItems.length === 0
-          ? 'In the Box (none listed)'
-          : `${boxLabel} (${boxItems.length} items)`;
+        const boxMeta = boxItems.length === 0
+          ? 'none listed'
+          : (entry.in_box_condition
+            ? `${entry.in_box_condition} · ${boxItems.length} items`
+            : `${boxItems.length} items`);
         const box = document.createElement('details');
         box.className = 'spec-collapse';
         const boxHeading = document.createElement('summary');
-        boxHeading.textContent = boxSummary;
+        fillCollapseSummary(boxHeading, 'In the Box', boxMeta);
         box.appendChild(boxHeading);
         const block = document.createElement('div');
         block.className = 'spec-block';
@@ -222,22 +244,22 @@
       const mountsSection = document.createElement('details');
       mountsSection.className = 'spec-collapse';
       const mountsHeading = document.createElement('summary');
-      mountsHeading.textContent = `Orderable Mounts (${compatible.length})`;
+      fillCollapseSummary(mountsHeading, 'Orderable Mounts', `${compatible.length} parts`);
       mountsSection.appendChild(mountsHeading);
       const block = document.createElement('div');
       block.className = 'spec-block';
       const list = document.createElement('ul');
-      list.className = 'box-list';
+      list.className = 'mount-list';
       compatible.forEach(mount => {
         const row = document.createElement('li');
         const name = document.createElement('div');
         name.textContent = mount.name || mount.id || '';
         row.appendChild(name);
-        const numbers = (mount.part_numbers || []).map(partLine).filter(Boolean);
-        if (numbers.length) {
+        const numbers = mountPartLabel(mount.part_numbers);
+        if (numbers) {
           const parts = document.createElement('div');
-          parts.className = 'box-part';
-          parts.textContent = numbers.join(', ');
+          parts.className = 'mount-nums';
+          parts.textContent = numbers;
           row.appendChild(parts);
         }
         list.appendChild(row);

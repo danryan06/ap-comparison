@@ -2661,18 +2661,34 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .spec-collapse summary {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   box-sizing: border-box;
   min-height: 44px;
-  padding: 8px 0;
+  padding: 0.25rem 0;
   margin: 0;
   cursor: pointer;
   list-style: none;
+  color: #93c5fd;
+}
+
+.spec-collapse summary:hover,
+.spec-collapse summary:focus {
+  color: #bfdbfe;
+}
+
+.spec-collapse .sc-title {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.spec-collapse .sc-meta {
+  margin-left: 0.5rem;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #94a3b8;
 }
 
 .spec-collapse summary::-webkit-details-marker {
@@ -2687,11 +2703,35 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   content: "";
   width: 0.4rem;
   height: 0.4rem;
+  margin-left: 0.5rem;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(-45deg);
   transition: transform 0.15s ease;
   flex: 0 0 auto;
+}
+
+.mount-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.mount-list li {
+  margin: 0 0 10px;
+}
+
+.mount-list li:last-child {
+  margin-bottom: 0;
+}
+
+.mount-nums {
+  margin-top: 0.15rem;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 13px;
+  color: #93c5fd;
 }
 
 .spec-collapse[open] > summary::after {
