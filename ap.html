@@ -160,15 +160,115 @@
       return part.vendor ? `${part.vendor} ${part.part_number}` : part.part_number;
     }
 
-    function fillCollapseSummary(summary, title, meta) {
+    const PACKAGE_ICON = '<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/>';
+    const WRENCH_ICON = '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>';
+    const CHEVRON_ICON = '<path d="m9 18 6-6-6-6"/>';
+    const COPY_ICON = '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>';
+    const CHECK_ICON = '<path d="M20 6 9 17l-5-5"/>';
+
+    function iconSvg(markup, size) {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('width', String(size));
+      svg.setAttribute('height', String(size));
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('stroke', 'currentColor');
+      svg.setAttribute('stroke-width', '2');
+      svg.setAttribute('stroke-linecap', 'round');
+      svg.setAttribute('stroke-linejoin', 'round');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.innerHTML = markup;
+      return svg;
+    }
+
+    function copyAnnouncer() {
+      let live = document.getElementById('copy-status');
+      if (live) return live;
+      live = document.createElement('div');
+      live.id = 'copy-status';
+      live.className = 'visually-hidden';
+      live.setAttribute('aria-live', 'polite');
+      document.body.appendChild(live);
+      return live;
+    }
+
+    function copyPartNumber(text, button) {
+      const clipboard = navigator.clipboard;
+      if (!clipboard || typeof clipboard.writeText !== 'function') return;
+      let pending;
+      try {
+        pending = clipboard.writeText(text);
+      } catch (err) {
+        return;
+      }
+      Promise.resolve(pending).then(() => {
+        const svg = button.querySelector('svg');
+        button.classList.add('is-copied');
+        if (svg) svg.innerHTML = CHECK_ICON;
+        const live = copyAnnouncer();
+        live.textContent = '';
+        window.setTimeout(() => { live.textContent = 'Copied'; }, 30);
+        window.clearTimeout(button._copyTimer);
+        button._copyTimer = window.setTimeout(() => {
+          button.classList.remove('is-copied');
+          if (svg) svg.innerHTML = COPY_ICON;
+        }, 1500);
+      }, () => {});
+    }
+
+    function addPartLine(parent, text, pack) {
+      const parts = document.createElement('div');
+      parts.className = 'mount-nums';
+      const label = document.createElement('span');
+      label.className = 'part-text';
+      if (pack) {
+        const prefix = document.createElement('span');
+        prefix.className = 'pack-label';
+        prefix.textContent = '10-pack: ';
+        label.appendChild(prefix);
+      }
+      label.appendChild(document.createTextNode(text));
+      parts.appendChild(label);
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'copy-part';
+      button.setAttribute('aria-label', `Copy ${text}`);
+      button.title = `Copy ${text}`;
+      button.appendChild(iconSvg(COPY_ICON, 16));
+      button.addEventListener('mousedown', event => event.stopPropagation());
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        copyPartNumber(text, button);
+      });
+      parts.appendChild(button);
+      parent.appendChild(parts);
+    }
+
+    function fillCollapseSummary(summary, icon, title, condition, count) {
+      const lead = document.createElement('span');
+      lead.className = 'sc-lead';
+      const iconEl = iconSvg(icon, 18);
+      iconEl.classList.add('sc-icon');
+      lead.appendChild(iconEl);
       const titleEl = document.createElement('span');
       titleEl.className = 'sc-title';
       titleEl.textContent = title;
-      const metaEl = document.createElement('span');
-      metaEl.className = 'sc-meta';
-      metaEl.textContent = meta;
-      summary.appendChild(titleEl);
-      summary.appendChild(metaEl);
+      lead.appendChild(titleEl);
+      if (condition) {
+        const conditionEl = document.createElement('span');
+        conditionEl.className = 'sc-condition';
+        conditionEl.textContent = condition;
+        lead.appendChild(conditionEl);
+      }
+      summary.appendChild(lead);
+      const badge = document.createElement('span');
+      badge.className = 'sc-count';
+      badge.textContent = count;
+      summary.appendChild(badge);
+      const chevron = iconSvg(CHEVRON_ICON, 16);
+      chevron.classList.add('sc-chevron');
+      summary.appendChild(chevron);
     }
 
     function mountPartLines(parts) {
@@ -200,16 +300,12 @@
 
       if (hasBox) {
         const boxItems = Array.isArray(entry.in_box) ? entry.in_box : [];
-        const boxMeta = boxItems.length === 0
-          ? 'none listed'
-          : (entry.in_box_condition
-            ? `${entry.in_box_condition} · ${boxItems.length} items`
-            : `${boxItems.length} items`);
+        const boxCount = boxItems.length === 0 ? 'none listed' : `${boxItems.length} items`;
         const box = document.createElement('details');
         box.className = 'spec-collapse';
         const boxHeading = document.createElement('summary');
         boxHeading.addEventListener('mousedown', e => e.preventDefault());
-        fillCollapseSummary(boxHeading, 'In the Box', boxMeta);
+        fillCollapseSummary(boxHeading, PACKAGE_ICON, 'In the Box', entry.in_box_condition || '', boxCount);
         box.appendChild(boxHeading);
         const block = document.createElement('div');
         block.className = 'spec-block';
@@ -225,6 +321,7 @@
             if (!item || typeof item !== 'object') return;
             const row = document.createElement('li');
             const name = document.createElement('div');
+            name.className = 'mount-name';
             if (item.qty) {
               const qty = document.createElement('span');
               qty.className = 'box-qty';
@@ -233,12 +330,7 @@
             }
             name.appendChild(document.createTextNode(item.item || ''));
             row.appendChild(name);
-            if (item.part_number) {
-              const part = document.createElement('div');
-              part.className = 'mount-nums';
-              part.textContent = item.part_number;
-              row.appendChild(part);
-            }
+            if (item.part_number) addPartLine(row, item.part_number, false);
             list.appendChild(row);
           });
           block.appendChild(list);
@@ -261,7 +353,7 @@
       mountsSection.className = 'spec-collapse';
       const mountsHeading = document.createElement('summary');
       mountsHeading.addEventListener('mousedown', e => e.preventDefault());
-      fillCollapseSummary(mountsHeading, 'Orderable Mounts', `${compatible.length} parts`);
+      fillCollapseSummary(mountsHeading, WRENCH_ICON, 'Orderable Mounts', '', `${compatible.length} parts`);
       mountsSection.appendChild(mountsHeading);
       const block = document.createElement('div');
       block.className = 'spec-block';
@@ -270,19 +362,11 @@
       compatible.forEach(mount => {
         const row = document.createElement('li');
         const name = document.createElement('div');
+        name.className = 'mount-name';
         name.textContent = mount.name || mount.id || '';
         row.appendChild(name);
         mountPartLines(mount.part_numbers).forEach(line => {
-          const parts = document.createElement('div');
-          parts.className = 'mount-nums';
-          if (line.pack) {
-            const prefix = document.createElement('span');
-            prefix.className = 'pack-label';
-            prefix.textContent = '10-pack: ';
-            parts.appendChild(prefix);
-          }
-          parts.appendChild(document.createTextNode(line.text));
-          row.appendChild(parts);
+          addPartLine(row, line.text, line.pack);
         });
         list.appendChild(row);
       });
