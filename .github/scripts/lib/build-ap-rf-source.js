@@ -5,6 +5,7 @@
  * Curated RF interface authoring for external-capable APs.
  * Facts are transcribed conservatively from reviewed catalog connector text + datasheet URLs.
  * Gender and other unsourced mating details stay null and are listed under completeness.missing.
+ * Completeness flips to complete only when every hard field is evidenced from manufacturer docs.
  * Do not use this module for runtime free-text parsing of antenna_connectors.
  */
 
@@ -224,6 +225,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-rpsma',
               family: 'rp-sma',
+              gender: 'female',
               connector_count: 2,
               rf_path_count: 2,
               path_groups: [pathGroup('dual-band', 2, ['2.4', '5'])],
@@ -245,6 +247,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-rpsma',
               family: 'rp-sma',
+              gender: 'female',
               connector_count: 4,
               rf_path_count: 4,
               path_groups: [
@@ -276,6 +279,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-rpsma',
               family: 'rp-sma',
+              gender: 'female',
               connector_count: 6,
               rf_path_count: 6,
               path_groups: [
@@ -300,6 +304,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-n',
               family: 'n',
+              gender: 'female',
               connector_count: 6,
               rf_path_count: 6,
               path_groups: [
@@ -324,6 +329,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-n',
               family: 'n',
+              gender: 'female',
               connector_count: 4,
               rf_path_count: 4,
               path_groups: [pathGroup('dual-band', 4, ['2.4', '5'])],
@@ -334,6 +340,7 @@ function buildProfiles(aps) {
               purpose: 'iot',
               requirement: 'not_part_of_wifi_antenna_solution',
               family: 'n',
+              gender: 'female',
               connector_count: 1,
               rf_path_count: 1,
               path_groups: [pathGroup('ble-zigbee', 1, ['2.4'])],
@@ -355,6 +362,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-rpsma',
               family: 'rp-sma',
+              gender: 'female',
               connector_count: 4,
               rf_path_count: 4,
               path_groups: [
@@ -379,6 +387,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-rpsma',
               family: 'rp-sma',
+              gender: 'female',
               connector_count: 8,
               rf_path_count: 8,
               path_groups: [
@@ -403,6 +412,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-rpsma',
               family: 'rp-sma',
+              gender: 'female',
               connector_count: 4,
               rf_path_count: 4,
               path_groups: [
@@ -449,6 +459,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-n',
               family: 'n',
+              gender: 'female',
               connector_count: 6,
               rf_path_count: 6,
               path_groups: [
@@ -518,6 +529,7 @@ function buildProfiles(aps) {
         iface({
           interface_id: 'wifi-n',
           family: 'n',
+          gender: 'female',
           connector_count: 8,
           rf_path_count: 8,
           path_groups: [
@@ -539,6 +551,7 @@ function buildProfiles(aps) {
           purpose: 'gnss',
           requirement: 'not_part_of_wifi_antenna_solution',
           family: 'sma',
+          gender: 'female',
           connector_count: 1,
           rf_path_count: 1,
           path_groups: [pathGroup('gnss', 1, [])],
@@ -561,6 +574,7 @@ function buildProfiles(aps) {
         iface({
           interface_id: 'rear-n',
           family: 'n',
+          gender: 'female',
           connector_count: 4,
           rf_path_count: 4,
           path_groups: [
@@ -598,9 +612,13 @@ function buildProfiles(aps) {
         iface({
           interface_id: 'wifi-n',
           family: 'n',
+          gender: 'female',
           connector_count: 4,
           rf_path_count: 4,
-          path_groups: [],
+          path_groups: [
+            pathGroup('dual-band', 2, ['2.4', '5']),
+            pathGroup('six', 2, ['6'])
+          ],
           source_ids: defaultSourceIds(ap)
         }),
         iface({
@@ -608,6 +626,7 @@ function buildProfiles(aps) {
           purpose: 'gnss',
           requirement: 'not_part_of_wifi_antenna_solution',
           family: 'sma',
+          gender: 'female',
           connector_count: 1,
           rf_path_count: 1,
           path_groups: [pathGroup('gnss', 1, [])],
@@ -617,7 +636,7 @@ function buildProfiles(aps) {
     })
   ];
   pushCiscoTwin('Cisco', 'CW9163E', 'external_only', cw9163eConfigs, 'cisco:cw9163e',
-    'Wi-Fi path band map not published in catalog connector text.');
+    'Path groups from CW9163E installation guide port markings (ANT C/D 2.4&5, ANT A/B 6 GHz).');
   pushCiscoTwin('Cisco Meraki', 'CW9163E', 'external_only', cw9163eConfigs, 'cisco:cw9163e');
 
   // Cisco-only
@@ -777,14 +796,16 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-n',
               family: 'n',
+              gender: 'female',
               connector_count: 4,
               rf_path_count: 4,
-              path_groups: [],
+              path_groups: [pathGroup('dual-band', 4, ['2.4', '5'])],
               source_ids: defaultSourceIds(ap)
             })
           ]
         })
-      ]
+      ],
+      notes: 'Install guide: four external N-type female dual-band antenna connectors.'
     }));
   }
 
@@ -834,7 +855,7 @@ function buildProfiles(aps) {
               variant: 'iot-antenna-port',
               connector_count: 1,
               rf_path_count: 1,
-              path_groups: [],
+              path_groups: [pathGroup('iot', 1, [])],
               source_ids: defaultSourceIds(ap)
             })
           ]
@@ -1022,7 +1043,7 @@ function buildProfiles(aps) {
               family: 'n',
               connector_count: 1,
               rf_path_count: 1,
-              path_groups: [],
+              path_groups: [pathGroup('lorawan', 1, [])],
               source_ids: defaultSourceIds(ap)
             }),
             iface({
@@ -1032,7 +1053,7 @@ function buildProfiles(aps) {
               family: 'n',
               connector_count: 1,
               rf_path_count: 1,
-              path_groups: [],
+              path_groups: [pathGroup('lte', 1, [])],
               source_ids: defaultSourceIds(ap)
             }),
             iface({
@@ -1368,23 +1389,26 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-rpsma',
               family: 'rp-sma',
+              gender: 'male',
               connector_count: 4,
               rf_path_count: 4,
-              path_groups: [],
+              path_groups: [pathGroup('dual-band', 4, ['2.4', '5'])],
               source_ids: defaultSourceIds(ap)
             }),
             iface({
               interface_id: 'scan-rpsma',
               purpose: 'scan_radio',
               family: 'rp-sma',
+              gender: 'male',
               connector_count: 1,
               rf_path_count: 1,
-              path_groups: [],
+              path_groups: [pathGroup('scan', 1, ['2.4', '5'])],
               source_ids: defaultSourceIds(ap)
             })
           ]
         })
-      ]
+      ],
+      notes: 'Datasheet: Five RP-SMA male connectors (four Wi-Fi data, one sensor).'
     }));
   }
 
@@ -1395,20 +1419,20 @@ function buildProfiles(aps) {
       antenna_architecture: 'external_only',
       antenna_configurations: [
         config({
-          active_bands: [],
+          active_bands: ['2.4'],
           external_interfaces: [
             iface({
               interface_id: 'wifi-rptnc',
               family: 'rp-tnc',
               connector_count: 2,
               rf_path_count: 2,
-              path_groups: [],
+              path_groups: [pathGroup('two-four', 2, ['2.4'])],
               source_ids: defaultSourceIds(ap)
             })
           ]
         })
       ],
-      notes: 'Legacy 802.11g; supported_bands left empty because wifi_gen_radios has no canonical band tokens.'
+      notes: 'Legacy 802.11g dual RP-TNC; connector gender not stated in the linked datasheet.'
     }));
   }
 
@@ -1424,6 +1448,7 @@ function buildProfiles(aps) {
             iface({
               interface_id: 'wifi-n',
               family: 'n',
+              gender: 'female',
               connector_count: 6,
               rf_path_count: 6,
               path_groups: [
@@ -1478,9 +1503,10 @@ function buildProfiles(aps) {
               interface_id: 'wifi-n',
               requirement: 'optional',
               family: 'n',
+              gender: 'female',
               connector_count: 2,
               rf_path_count: 2,
-              path_groups: [],
+              path_groups: [pathGroup('dual-band', 2, ['2.4', '5'])],
               source_ids: defaultSourceIds(ap)
             })
           ]
@@ -1518,9 +1544,10 @@ function buildProfiles(aps) {
               interface_id: 'wifi-n',
               requirement: 'optional',
               family: 'n',
+              gender: 'female',
               connector_count: 4,
               rf_path_count: 4,
-              path_groups: [],
+              path_groups: [pathGroup('dual-band', 4, ['2.4', '5'])],
               source_ids: defaultSourceIds(ap)
             })
           ]

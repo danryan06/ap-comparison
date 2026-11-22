@@ -1,8 +1,8 @@
 {
   "schema_name": "apcomparison.external-antenna-profiles",
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-22T17:00:10Z",
-  "source_revision": "6a1d06b5f1b80365ca48a2d09b7b871df9972f65",
+  "generated_at": "2026-11-22T19:21:52Z",
+  "source_revision": "123ccbaf2ec3b7101ab2c4e23c2e5538722f183a",
   "profile_count": 48,
   "profiles": [
     {
@@ -38,7 +38,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 6,
@@ -96,10 +96,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
       "notes": null
@@ -424,7 +422,7 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 2,
@@ -460,10 +458,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP500Series.pdf",
       "notes": null
@@ -500,7 +496,7 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
@@ -543,10 +539,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP510Series.pdf",
       "notes": null
@@ -583,7 +577,7 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 6,
@@ -626,10 +620,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.hpe.com/psnow/doc/a00096371enw",
       "notes": null
@@ -666,7 +658,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 6,
@@ -709,10 +701,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.hpe.com/psnow/doc/a00096370enw",
       "notes": null
@@ -749,7 +739,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
@@ -780,7 +770,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 1,
@@ -815,11 +805,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.iot-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.hpe.com/psnow/doc/a00121675enw",
       "notes": null
@@ -857,7 +844,7 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
@@ -901,10 +888,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
       "notes": null
@@ -942,7 +927,7 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 8,
@@ -986,10 +971,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
       "notes": null
@@ -1027,7 +1010,7 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
@@ -1132,8 +1115,7 @@
         "status": "incomplete",
         "missing": [
           "antenna_configurations.default.external_interfaces.gnss-rpsma.connector.gender",
-          "antenna_configurations.default.external_interfaces.iot-rpsma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+          "antenna_configurations.default.external_interfaces.iot-rpsma.connector.gender"
         ]
       },
       "datasheet_url": "https://www.hpe.com/psnow/doc/a00147705enw",
@@ -1172,7 +1154,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 6,
@@ -1247,8 +1229,7 @@
       "completeness": {
         "status": "incomplete",
         "missing": [
-          "antenna_configurations.default.external_interfaces.gps-sma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+          "antenna_configurations.default.external_interfaces.gps-sma.connector.gender"
         ]
       },
       "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/1605ffefa3814519/original/XE3-4TN-Wi-Fi-6-Outdoor-Access-Point-Data-Sheet.pdf",
@@ -1287,12 +1268,30 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
               "rf_path_count": 4,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -1308,7 +1307,7 @@
               "connector": {
                 "family": "sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 1,
@@ -1341,12 +1340,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
       "notes": null
@@ -1453,7 +1448,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 8,
@@ -1499,7 +1494,7 @@
               "connector": {
                 "family": "sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 1,
@@ -1532,11 +1527,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/networking/wireless/access-points/wireless-9177-series-access-points-ds.html",
       "notes": null
@@ -1574,7 +1566,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
@@ -1625,10 +1617,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.front-and-back.external_interfaces.rear-n.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://documentation.meraki.com/Wireless/Product_Information/Overviews_and_Datasheets/CW9179F_Datasheet",
       "notes": null
@@ -1732,12 +1722,22 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
               "rf_path_count": 4,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -1758,14 +1758,11 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR76_Datasheet",
-      "notes": null
+      "notes": "Install guide: four external N-type female dual-band antenna connectors."
     },
     {
       "ap_id": "cisco:9115axe",
@@ -2056,12 +2053,30 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
               "rf_path_count": 4,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -2077,7 +2092,7 @@
               "connector": {
                 "family": "sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 1,
@@ -2110,15 +2125,11 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
-      "notes": "Wi-Fi path band map not published in catalog connector text."
+      "notes": "Path groups from CW9163E installation guide port markings (ANT C/D 2.4&5, ANT A/B 6 GHz)."
     },
     {
       "ap_id": "cisco:cw9174e",
@@ -2222,7 +2233,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 8,
@@ -2268,7 +2279,7 @@
               "connector": {
                 "family": "sma",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 1,
@@ -2301,11 +2312,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/networking/wireless/access-points/wireless-9177-series-access-points-ds.html",
       "notes": null
@@ -2343,7 +2351,7 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
@@ -2394,10 +2402,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.front-and-back.external_interfaces.rear-n.connector.gender"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.cisco.com/c/dam/en/us/products/collateral/wireless/access-points/wireless-9179-series-access-points/wireless-9179f-access-point-ds.pdf",
       "notes": "Directional + external; authored for front-and-back external mode only."
@@ -3103,7 +3109,14 @@
               },
               "connector_count": 1,
               "rf_path_count": 1,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "iot",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -3126,8 +3139,7 @@
       "completeness": {
         "status": "incomplete",
         "missing": [
-          "antenna_configurations.default.external_interfaces.breakout.path_groups.mode-only.bands",
-          "antenna_configurations.default.external_interfaces.iot.path_groups"
+          "antenna_configurations.default.external_interfaces.breakout.path_groups.mode-only.bands"
         ]
       },
       "datasheet_url": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5022",
@@ -3200,7 +3212,14 @@
               },
               "connector_count": 1,
               "rf_path_count": 1,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "lorawan",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -3221,7 +3240,14 @@
               },
               "connector_count": 1,
               "rf_path_count": 1,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "lte",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -3274,9 +3300,7 @@
         "missing": [
           "antenna_configurations.default.external_interfaces.gnss-n.connector.gender",
           "antenna_configurations.default.external_interfaces.lorawan-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.lorawan-n.path_groups",
           "antenna_configurations.default.external_interfaces.lte-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.lte-n.path_groups",
           "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
         ]
       },
@@ -3872,12 +3896,22 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "male",
                 "orientation": null
               },
               "connector_count": 4,
               "rf_path_count": 4,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -3893,12 +3927,22 @@
               "connector": {
                 "family": "rp-sma",
                 "variant": null,
-                "gender": null,
+                "gender": "male",
                 "orientation": null
               },
               "connector_count": 1,
               "rf_path_count": 1,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "scan",
+                  "count": 1,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -3919,16 +3963,11 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.default.external_interfaces.scan-rpsma.connector.gender",
-          "antenna_configurations.default.external_interfaces.scan-rpsma.path_groups",
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.path_groups"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap32.pdf",
-      "notes": null
+      "notes": "Datasheet: Five RP-SMA male connectors (four Wi-Fi data, one sensor)."
     },
     {
       "ap_id": "juniper:ap36m",
@@ -4280,7 +4319,9 @@
           "configuration_id": "default",
           "label": "Default operation",
           "is_default": true,
-          "active_bands": [],
+          "active_bands": [
+            "2.4"
+          ],
           "integrated_antenna_groups": [],
           "external_interfaces": [
             {
@@ -4296,7 +4337,16 @@
               },
               "connector_count": 2,
               "rf_path_count": 2,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "two-four",
+                  "count": 2,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -4319,12 +4369,11 @@
       "completeness": {
         "status": "incomplete",
         "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-rptnc.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-rptnc.path_groups"
+          "antenna_configurations.default.external_interfaces.wifi-rptnc.connector.gender"
         ]
       },
       "datasheet_url": "https://downloads.linksys.com/downloads/datasheet/WRT54GL_V11_DS_NC-WEB,0.pdf",
-      "notes": "Legacy 802.11g; supported_bands left empty because wifi_gen_radios has no canonical band tokens."
+      "notes": "Legacy 802.11g dual RP-TNC; connector gender not stated in the linked datasheet."
     },
     {
       "ap_id": "meter:mw09",
@@ -4462,12 +4511,22 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 2,
               "rf_path_count": 2,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -4488,11 +4547,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.external.external_interfaces.wifi-n.connector.gender",
-          "antenna_configurations.external.external_interfaces.wifi-n.path_groups"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf",
       "notes": null
@@ -4550,12 +4606,22 @@
               "connector": {
                 "family": "n",
                 "variant": null,
-                "gender": null,
+                "gender": "female",
                 "orientation": null
               },
               "connector_count": 4,
               "rf_path_count": 4,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
@@ -4576,11 +4642,8 @@
         }
       ],
       "completeness": {
-        "status": "incomplete",
-        "missing": [
-          "antenna_configurations.external.external_interfaces.wifi-n.connector.gender",
-          "antenna_configurations.external.external_interfaces.wifi-n.path_groups"
-        ]
+        "status": "complete",
+        "missing": []
       },
       "datasheet_url": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db",
       "notes": null
