@@ -1,0 +1,60 @@
+{
+  "schema_name": "apcomparison.external-antenna-profiles",
+  "schema_version": "1.0.0",
+  "bands": ["2.4", "5", "5-lower", "5-upper", "6"],
+  "antenna_architectures": [
+    "integrated_only",
+    "external_only",
+    "selectable",
+    "simultaneous",
+    "mixed_by_band"
+  ],
+  "purposes": [
+    "client_radio",
+    "scan_radio",
+    "iot",
+    "gnss",
+    "lorawan",
+    "lte",
+    "other"
+  ],
+  "requirements": [
+    "required",
+    "optional",
+    "not_part_of_wifi_antenna_solution"
+  ],
+  "attachments": [
+    "bulkhead",
+    "pigtail",
+    "direct",
+    "proprietary_multiport",
+    "breakout"
+  ],
+  "connector_families": [
+    "rp-sma",
+    "sma",
+    "rp-tnc",
+    "tnc",
+    "n",
+    "qn",
+    "dart",
+    "juniper-pin-block",
+    "vendor-proprietary"
+  ],
+  "genders": ["male", "female"],
+  "standard_connector_families": [
+    "rp-sma",
+    "sma",
+    "rp-tnc",
+    "tnc",
+    "n",
+    "qn"
+  ],
+  "proprietary_connector_families": [
+    "dart",
+    "juniper-pin-block",
+    "vendor-proprietary"
+  ],
+  "completeness_statuses": ["complete", "incomplete"],
+  "profile_statuses": ["active", "retired"]
+}

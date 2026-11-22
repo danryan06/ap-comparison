@@ -7,6 +7,8 @@ on:
       - 'mounts.json'
       - 'ap_template.json'
       - 'templates/**'
+      - 'data/antenna-compatibility/**'
+      - 'exports/antenna-compatibility/**'
       - '*.html'
       - '*.js'
       - '*.css'
@@ -19,6 +21,8 @@ on:
       - 'mounts.json'
       - 'ap_template.json'
       - 'templates/**'
+      - 'data/antenna-compatibility/**'
+      - 'exports/antenna-compatibility/**'
       - '*.html'
       - '*.js'
       - '*.css'
@@ -43,5 +47,7 @@ jobs:
         run: node .github/scripts/validate-data.js
       - name: Validate site data and assets
         run: node .github/scripts/validate-site.js
+      - name: Validate AP RF compatibility export
+        run: node .github/scripts/validate-ap-rf-export.js
 
 

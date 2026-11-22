@@ -1,0 +1,499 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apcomparison.com/exports/antenna-compatibility/v1/ap-profiles.schema.json",
+  "title": "APComparison external antenna RF profiles",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_name",
+    "schema_version",
+    "generated_at",
+    "source_revision",
+    "profile_count",
+    "profiles"
+  ],
+  "properties": {
+    "schema_name": {
+      "const": "apcomparison.external-antenna-profiles"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/profile"
+      }
+    }
+  },
+  "$defs": {
+    "band": {
+      "type": "string",
+      "enum": [
+        "2.4",
+        "5",
+        "5-lower",
+        "5-upper",
+        "6"
+      ]
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ap_id",
+        "hardware_profile_id",
+        "vendor",
+        "model",
+        "display_name",
+        "status",
+        "supported_bands",
+        "antenna_architecture",
+        "antenna_configurations",
+        "rf_sources",
+        "completeness"
+      ],
+      "properties": {
+        "ap_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+:[a-z0-9-]+$"
+        },
+        "hardware_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vendor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "retired"
+          ]
+        },
+        "supported_bands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/band"
+          }
+        },
+        "antenna_architecture": {
+          "type": "string",
+          "enum": [
+            "integrated_only",
+            "external_only",
+            "selectable",
+            "simultaneous",
+            "mixed_by_band"
+          ]
+        },
+        "antenna_configurations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/configuration"
+          }
+        },
+        "rf_sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "completeness": {
+          "$ref": "#/$defs/completeness"
+        },
+        "datasheet_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "superseded_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "configuration_id",
+        "label",
+        "is_default",
+        "active_bands",
+        "integrated_antenna_groups",
+        "external_interfaces"
+      ],
+      "properties": {
+        "configuration_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "is_default": {
+          "type": "boolean"
+        },
+        "active_bands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/band"
+          }
+        },
+        "integrated_antenna_groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/integrated_group"
+          }
+        },
+        "external_interfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/external_interface"
+          }
+        }
+      }
+    },
+    "integrated_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "bands",
+        "removable"
+      ],
+      "properties": {
+        "group_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "bands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/band"
+          }
+        },
+        "removable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "external_interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "interface_id",
+        "purpose",
+        "requirement",
+        "attachment",
+        "connector",
+        "connector_count",
+        "rf_path_count",
+        "path_groups",
+        "included_accessory_ids",
+        "capabilities",
+        "restrictions",
+        "source_ids"
+      ],
+      "properties": {
+        "interface_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "client_radio",
+            "scan_radio",
+            "iot",
+            "gnss",
+            "lorawan",
+            "lte",
+            "other"
+          ]
+        },
+        "requirement": {
+          "type": "string",
+          "enum": [
+            "required",
+            "optional",
+            "not_part_of_wifi_antenna_solution"
+          ]
+        },
+        "attachment": {
+          "type": "string",
+          "enum": [
+            "bulkhead",
+            "pigtail",
+            "direct",
+            "proprietary_multiport",
+            "breakout"
+          ]
+        },
+        "connector": {
+          "$ref": "#/$defs/connector"
+        },
+        "connector_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "rf_path_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "path_groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/path_group"
+          }
+        },
+        "included_accessory_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/restriction"
+          }
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "connector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "variant",
+        "gender",
+        "orientation"
+      ],
+      "properties": {
+        "family": {
+          "type": "string",
+          "enum": [
+            "rp-sma",
+            "sma",
+            "rp-tnc",
+            "tnc",
+            "n",
+            "qn",
+            "dart",
+            "juniper-pin-block",
+            "vendor-proprietary"
+          ]
+        },
+        "variant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gender": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "male",
+                "female"
+              ]
+            }
+          ]
+        },
+        "orientation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "path_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path_group_id",
+        "count",
+        "bands",
+        "interchangeable"
+      ],
+      "properties": {
+        "path_group_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "bands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/band"
+          }
+        },
+        "interchangeable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "restriction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "severity",
+        "value",
+        "source_id"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "hard"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "url",
+        "title"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "completeness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "missing"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "incomplete"
+          ]
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
