@@ -125,6 +125,8 @@ After a maintainer reviews the issue and adds the `ap-submission` label, GitHub 
 ├── mounts.json        # Orderable mounting parts
 ├── ap_template.json   # AP entry template
 ├── AP_TEMPLATE_GUIDE.md # Field rules for new entries
+├── data/antenna-compatibility/  # RF profile authoring source + taxonomy
+├── exports/antenna-compatibility/v1/  # Public AP RF profile export + schema
 ├── templates/         # in_box and mount templates
 │   ├── in_box_template.json
 │   └── mount_template.json
@@ -140,6 +142,22 @@ After a maintainer reviews the issue and adds the `ap-submission` label, GitHub 
 ### Data Format
 
 The `ap_data.json` file contains an array of AP objects. The entry template is `ap_template.json`. Field rules are in `AP_TEMPLATE_GUIDE.md`. Orderable mounting parts are in `mounts.json`. What ships with an AP is `in_box` on that AP.
+
+### Antenna compatibility export (v1)
+
+Structured RF interface profiles for external/connectorized APs are published for AntennaComparison to pin:
+
+- `exports/antenna-compatibility/v1/ap-profiles.json`
+- `exports/antenna-compatibility/v1/ap-profiles.schema.json`
+
+Authoring source lives under `data/antenna-compatibility/`. Regenerate and validate with:
+
+```bash
+node .github/scripts/generate-ap-rf-export.js
+node .github/scripts/validate-ap-rf-export.js
+```
+
+Existing browse/detail/compare display fields are unchanged. Profiles mark unsourced mating facts (for example connector gender) under `completeness.missing` so consumers can require review instead of guessing.
 
 ### Browser Support
 

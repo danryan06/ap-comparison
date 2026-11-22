@@ -1,0 +1,4589 @@
+{
+  "schema_name": "apcomparison.external-antenna-profiles",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-11-22T17:00:10Z",
+  "source_revision": "6a1d06b5f1b80365ca48a2d09b7b871df9972f65",
+  "profile_count": 48,
+  "profiles": [
+    {
+      "ap_id": "alcatel-lucent:ap1572",
+      "hardware_profile_id": "alcatel-lucent:ap1572",
+      "vendor": "Alcatel-Lucent",
+      "model": "AP1572",
+      "display_name": "Alcatel-Lucent AP1572",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [
+                {
+                  "path_group_id": "two-four",
+                  "count": 2,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "five",
+                  "count": 2,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six-or-five",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [
+                {
+                  "code": "mode_dependent_bands",
+                  "severity": "warning",
+                  "value": "Two paths may carry 6 GHz or 5 GHz depending on mode",
+                  "source_id": "alcatel-lucent-ap1572-datasheet"
+                }
+              ],
+              "source_ids": [
+                "alcatel-lucent-ap1572-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "alcatel-lucent-ap1572-datasheet",
+          "url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
+          "title": "Alcatel-Lucent AP1572 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.al-enterprise.com/api/media/file/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "allied-telesis:tq6702e-gen2",
+      "hardware_profile_id": "allied-telesis:tq6702e-gen2",
+      "vendor": "Allied Telesis",
+      "model": "TQ6702e GEN2",
+      "display_name": "Allied Telesis TQ6702e GEN2",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 8,
+              "rf_path_count": 8,
+              "path_groups": [
+                {
+                  "path_group_id": "five-ghz",
+                  "count": 4,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "allied-telesis-tq6702e-gen2-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "allied-telesis-tq6702e-gen2-datasheet",
+          "url": "https://www.alliedtelesis.com/sites/default/files/file/2023-09/ati-tq6702e-gen2-ds.pdf",
+          "title": "Allied Telesis TQ6702e GEN2 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.alliedtelesis.com/sites/default/files/file/2023-09/ati-tq6702e-gen2-ds.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "arista:c-460e",
+      "hardware_profile_id": "arista:c-460e",
+      "vendor": "Arista",
+      "model": "C-460E",
+      "display_name": "Arista C-460E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "arista-c-460e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "arista-c-460e-datasheet",
+          "url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-C-460E-Datasheet.pdf",
+          "title": "Arista C-460E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-C-460E-Datasheet.pdf",
+      "notes": "Per-path band mapping not published in catalog connector text; marked incomplete."
+    },
+    {
+      "ap_id": "arista:o-405e",
+      "hardware_profile_id": "arista:o-405e",
+      "vendor": "Arista",
+      "model": "O-405E",
+      "display_name": "Arista O-405E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "arista-o-405e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "arista-o-405e-datasheet",
+          "url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-405E-Datasheet.pdf",
+          "title": "Arista O-405E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-405E-Datasheet.pdf",
+      "notes": "Tri-band AP with 4× N-type; path-to-band map not published in catalog text."
+    },
+    {
+      "ap_id": "arista:o-435e",
+      "hardware_profile_id": "arista:o-435e",
+      "vendor": "Arista",
+      "model": "O-435E",
+      "display_name": "Arista O-435E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "arista-o-435e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "arista-o-435e-datasheet",
+          "url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-435E-Datasheet.pdf",
+          "title": "Arista O-435E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-435E-Datasheet.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-504",
+      "hardware_profile_id": "aruba:ap-504",
+      "vendor": "Aruba",
+      "model": "AP-504",
+      "display_name": "Aruba AP-504",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-504-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-504-datasheet",
+          "url": "https://www.arubanetworks.com/assets/ds/DS_AP500Series.pdf",
+          "title": "Aruba AP-504 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP500Series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-514",
+      "hardware_profile_id": "aruba:ap-514",
+      "vendor": "Aruba",
+      "model": "AP-514",
+      "display_name": "Aruba AP-514",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "shared-dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [
+                {
+                  "code": "shared_paths_partial_radio_use",
+                  "severity": "info",
+                  "value": "2.4 GHz radio uses 2 of the 4 shared paths",
+                  "source_id": "aruba-ap-514-datasheet"
+                }
+              ],
+              "source_ids": [
+                "aruba-ap-514-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-514-datasheet",
+          "url": "https://www.arubanetworks.com/assets/ds/DS_AP510Series.pdf",
+          "title": "Aruba AP-514 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP510Series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-518",
+      "hardware_profile_id": "aruba:ap-518",
+      "vendor": "Aruba",
+      "model": "AP-518",
+      "display_name": "Aruba AP-518",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [
+                {
+                  "path_group_id": "two-four",
+                  "count": 2,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "five",
+                  "count": 4,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-518-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-518-datasheet",
+          "url": "https://www.hpe.com/psnow/doc/a00096371enw",
+          "title": "Aruba AP-518 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.hpe.com/psnow/doc/a00096371enw",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-574",
+      "hardware_profile_id": "aruba:ap-574",
+      "vendor": "Aruba",
+      "model": "AP-574",
+      "display_name": "Aruba AP-574",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [
+                {
+                  "path_group_id": "two-four",
+                  "count": 2,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "five",
+                  "count": 4,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-574-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-574-datasheet",
+          "url": "https://www.hpe.com/psnow/doc/a00096370enw",
+          "title": "Aruba AP-574 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.hpe.com/psnow/doc/a00096370enw",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-584",
+      "hardware_profile_id": "aruba:ap-584",
+      "vendor": "Aruba",
+      "model": "AP-584",
+      "display_name": "Aruba AP-584",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-584-datasheet"
+              ]
+            },
+            {
+              "interface_id": "iot-n",
+              "purpose": "iot",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "ble-zigbee",
+                  "count": 1,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-584-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-584-datasheet",
+          "url": "https://www.hpe.com/psnow/doc/a00121675enw",
+          "title": "Aruba AP-584 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.iot-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.hpe.com/psnow/doc/a00121675enw",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-734",
+      "hardware_profile_id": "aruba:ap-734",
+      "vendor": "Aruba",
+      "model": "AP-734",
+      "display_name": "Aruba AP-734",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-734-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-734-datasheet",
+          "url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
+          "title": "Aruba AP-734 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.arubanetworks.com/assets/ds/DS_AP730Series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-754",
+      "hardware_profile_id": "aruba:ap-754",
+      "vendor": "Aruba",
+      "model": "AP-754",
+      "display_name": "Aruba AP-754",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 8,
+              "rf_path_count": 8,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 4,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-754-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-754-datasheet",
+          "url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
+          "title": "Aruba AP-754 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.hpe.com/psnow/doc/a00140933enw.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "aruba:ap-764",
+      "hardware_profile_id": "aruba:ap-764",
+      "vendor": "Aruba",
+      "model": "AP-764",
+      "display_name": "Aruba AP-764",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-764-datasheet"
+              ]
+            },
+            {
+              "interface_id": "iot-rpsma",
+              "purpose": "iot",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [
+                {
+                  "path_group_id": "ble-zigbee",
+                  "count": 2,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-764-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gnss-rpsma",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gnss",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "aruba-ap-764-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "aruba-ap-764-datasheet",
+          "url": "https://www.hpe.com/psnow/doc/a00147705enw",
+          "title": "Aruba AP-764 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gnss-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.iot-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.hpe.com/psnow/doc/a00147705enw",
+      "notes": null
+    },
+    {
+      "ap_id": "cambium:xe3-4tn",
+      "hardware_profile_id": "cambium:xe3-4tn",
+      "vendor": "Cambium",
+      "model": "XE3-4TN",
+      "display_name": "Cambium XE3-4TN",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [
+                {
+                  "path_group_id": "five-six",
+                  "count": 4,
+                  "bands": [
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cambium-xe3-4tn-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gps-sma",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gps",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cambium-xe3-4tn-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cambium-xe3-4tn-datasheet",
+          "url": "https://brandcentral.cambiumnetworks.com/m/1605ffefa3814519/original/XE3-4TN-Wi-Fi-6-Outdoor-Access-Point-Data-Sheet.pdf",
+          "title": "Cambium XE3-4TN datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gps-sma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://brandcentral.cambiumnetworks.com/m/1605ffefa3814519/original/XE3-4TN-Wi-Fi-6-Outdoor-Access-Point-Data-Sheet.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco-meraki:cw9163e",
+      "hardware_profile_id": "cisco:cw9163e",
+      "vendor": "Cisco Meraki",
+      "model": "CW9163E",
+      "display_name": "Cisco Meraki CW9163E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-meraki-cw9163e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gnss-sma",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gnss",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-meraki-cw9163e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-meraki-cw9163e-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
+          "title": "Cisco Meraki CW9163E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco-meraki:cw9174e",
+      "hardware_profile_id": "cisco:cw9174e",
+      "vendor": "Cisco Meraki",
+      "model": "CW9174E",
+      "display_name": "Cisco Meraki CW9174E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "dart-8",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "dart",
+                "variant": "dart-8",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 8,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [
+                "self_identifying"
+              ],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-meraki-cw9174e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-meraki-cw9174e-datasheet",
+          "url": "https://www.cisco.com/site/us/en/products/collateral/networking/wireless/access-points/wireless-9174-series-access-points-ds.html",
+          "title": "Cisco Meraki CW9174E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.dart-8.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/site/us/en/products/collateral/networking/wireless/access-points/wireless-9174-series-access-points-ds.html",
+      "notes": "Hardware twin of Cisco CW9174E; distinct ap_id and claim provenance."
+    },
+    {
+      "ap_id": "cisco-meraki:cw9177e",
+      "hardware_profile_id": "cisco:cw9177e",
+      "vendor": "Cisco Meraki",
+      "model": "CW9177E",
+      "display_name": "Cisco Meraki CW9177E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default tri-band",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 8,
+              "rf_path_count": 8,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six-or-high-five",
+                  "count": 4,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [
+                {
+                  "code": "mode_dependent_bands",
+                  "severity": "warning",
+                  "value": "Upper 4 paths may carry 5 GHz high band in dual-5 GHz mode",
+                  "source_id": "cisco-meraki-cw9177e-datasheet"
+                }
+              ],
+              "source_ids": [
+                "cisco-meraki-cw9177e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gnss-sma",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gnss",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-meraki-cw9177e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-meraki-cw9177e-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/networking/wireless/access-points/wireless-9177-series-access-points-ds.html",
+          "title": "Cisco Meraki CW9177E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/networking/wireless/access-points/wireless-9177-series-access-points-ds.html",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco-meraki:cw9179f",
+      "hardware_profile_id": "cisco:cw9179f",
+      "vendor": "Cisco Meraki",
+      "model": "CW9179F",
+      "display_name": "Cisco Meraki CW9179F",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "selectable",
+      "antenna_configurations": [
+        {
+          "configuration_id": "front-and-back",
+          "label": "Front-and-back mode (rear N-type active)",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "rear-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "two-four-and-five-lower",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5-lower"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [
+                "sia"
+              ],
+              "restrictions": [
+                {
+                  "code": "sia_capable_port_position",
+                  "severity": "info",
+                  "value": "Left-most rear port is SIA-capable",
+                  "source_id": "cisco-meraki-cw9179f-datasheet"
+                },
+                {
+                  "code": "mode_specific_external_ports",
+                  "severity": "warning",
+                  "value": "External ports used for 2.4 GHz and 5 GHz low band in front-and-back mode",
+                  "source_id": "cisco-meraki-cw9179f-datasheet"
+                }
+              ],
+              "source_ids": [
+                "cisco-meraki-cw9179f-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-meraki-cw9179f-datasheet",
+          "url": "https://documentation.meraki.com/Wireless/Product_Information/Overviews_and_Datasheets/CW9179F_Datasheet",
+          "title": "Cisco Meraki CW9179F datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.front-and-back.external_interfaces.rear-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://documentation.meraki.com/Wireless/Product_Information/Overviews_and_Datasheets/CW9179F_Datasheet",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco-meraki:mr46e",
+      "hardware_profile_id": "cisco-meraki:mr46e",
+      "vendor": "Cisco Meraki",
+      "model": "MR46E",
+      "display_name": "Cisco Meraki MR46E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rptnc",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-tnc",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-meraki-mr46e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-meraki-mr46e-datasheet",
+          "url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46E_Datasheet",
+          "title": "Cisco Meraki MR46E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rptnc.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rptnc.path_groups"
+        ]
+      },
+      "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR46E_Datasheet",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco-meraki:mr76",
+      "hardware_profile_id": "cisco-meraki:mr76",
+      "vendor": "Cisco Meraki",
+      "model": "MR76",
+      "display_name": "Cisco Meraki MR76",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-meraki-mr76-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-meraki-mr76-datasheet",
+          "url": "https://documentation.meraki.com/MR/MR_Datasheets/MR76_Datasheet",
+          "title": "Cisco Meraki MR76 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://documentation.meraki.com/MR/MR_Datasheets/MR76_Datasheet",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco:9115axe",
+      "hardware_profile_id": "cisco:9115axe",
+      "vendor": "Cisco",
+      "model": "9115AXE",
+      "display_name": "Cisco 9115AXE",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rptnc",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-tnc",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-9115axe-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-9115axe-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-741988.html",
+          "title": "Cisco 9115AXE datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rptnc.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-741988.html",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco:9120axe",
+      "hardware_profile_id": "cisco:9120axe",
+      "vendor": "Cisco",
+      "model": "9120AXE",
+      "display_name": "Cisco 9120AXE",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "rp-tnc",
+          "label": "Conventional RP-TNC ports",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rptnc",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-tnc",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-9120axe-datasheet"
+              ]
+            }
+          ]
+        },
+        {
+          "configuration_id": "dart-4",
+          "label": "Optional DART-4 Smart Antenna connector",
+          "is_default": false,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "dart-4",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "dart",
+                "variant": "dart-4",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [
+                "self_identifying"
+              ],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-9120axe-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-9120axe-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9120ax-series-access-points/datasheet-c78-742115.html",
+          "title": "Cisco 9120AXE datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.dart-4.external_interfaces.dart-4.path_groups",
+          "antenna_configurations.rp-tnc.external_interfaces.wifi-rptnc.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9120ax-series-access-points/datasheet-c78-742115.html",
+      "notes": "Two mutually exclusive interface options modeled as configurations; confirm active config before matching."
+    },
+    {
+      "ap_id": "cisco:9130axe",
+      "hardware_profile_id": "cisco:9130axe",
+      "vendor": "Cisco",
+      "model": "9130AXE",
+      "display_name": "Cisco 9130AXE",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "dart-8",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "dart",
+                "variant": "dart-8",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 8,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [
+                "self_identifying"
+              ],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-9130axe-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-9130axe-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/nb-06-cat-9130-ser-ap-ds-cte-en.html",
+          "title": "Cisco 9130AXE datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.dart-8.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/nb-06-cat-9130-ser-ap-ds-cte-en.html",
+      "notes": "DART-8; detailed per-path band topology left incomplete in v1."
+    },
+    {
+      "ap_id": "cisco:cw9163e",
+      "hardware_profile_id": "cisco:cw9163e",
+      "vendor": "Cisco",
+      "model": "CW9163E",
+      "display_name": "Cisco CW9163E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-cw9163e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gnss-sma",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gnss",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-cw9163e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-cw9163e-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
+          "title": "Cisco CW9163E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163-series-access-points/catalyst-9163e-ds.html",
+      "notes": "Wi-Fi path band map not published in catalog connector text."
+    },
+    {
+      "ap_id": "cisco:cw9174e",
+      "hardware_profile_id": "cisco:cw9174e",
+      "vendor": "Cisco",
+      "model": "CW9174E",
+      "display_name": "Cisco CW9174E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "dart-8",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "dart",
+                "variant": "dart-8",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 8,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [
+                "self_identifying"
+              ],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-cw9174e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-cw9174e-datasheet",
+          "url": "https://www.cisco.com/site/us/en/products/collateral/networking/wireless/access-points/wireless-9174-series-access-points-ds.html",
+          "title": "Cisco CW9174E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.dart-8.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/site/us/en/products/collateral/networking/wireless/access-points/wireless-9174-series-access-points-ds.html",
+      "notes": "DART-8 multiport; per-path bands not authored in v1."
+    },
+    {
+      "ap_id": "cisco:cw9177e",
+      "hardware_profile_id": "cisco:cw9177e",
+      "vendor": "Cisco",
+      "model": "CW9177E",
+      "display_name": "Cisco CW9177E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default tri-band",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 8,
+              "rf_path_count": 8,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six-or-high-five",
+                  "count": 4,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [
+                {
+                  "code": "mode_dependent_bands",
+                  "severity": "warning",
+                  "value": "Upper 4 paths may carry 5 GHz high band in dual-5 GHz mode",
+                  "source_id": "cisco-cw9177e-datasheet"
+                }
+              ],
+              "source_ids": [
+                "cisco-cw9177e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gnss-sma",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gnss",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-cw9177e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-cw9177e-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/networking/wireless/access-points/wireless-9177-series-access-points-ds.html",
+          "title": "Cisco CW9177E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gnss-sma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/networking/wireless/access-points/wireless-9177-series-access-points-ds.html",
+      "notes": null
+    },
+    {
+      "ap_id": "cisco:cw9179f",
+      "hardware_profile_id": "cisco:cw9179f",
+      "vendor": "Cisco",
+      "model": "CW9179F",
+      "display_name": "Cisco CW9179F",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "selectable",
+      "antenna_configurations": [
+        {
+          "configuration_id": "front-and-back",
+          "label": "Front-and-back mode (rear N-type active)",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "rear-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "two-four-and-five-lower",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5-lower"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [
+                "sia"
+              ],
+              "restrictions": [
+                {
+                  "code": "sia_capable_port_position",
+                  "severity": "info",
+                  "value": "Left-most rear port is SIA-capable",
+                  "source_id": "cisco-cw9179f-datasheet"
+                },
+                {
+                  "code": "mode_specific_external_ports",
+                  "severity": "warning",
+                  "value": "External ports used for 2.4 GHz and 5 GHz low band in front-and-back mode",
+                  "source_id": "cisco-cw9179f-datasheet"
+                }
+              ],
+              "source_ids": [
+                "cisco-cw9179f-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-cw9179f-datasheet",
+          "url": "https://www.cisco.com/c/dam/en/us/products/collateral/wireless/access-points/wireless-9179-series-access-points/wireless-9179f-access-point-ds.pdf",
+          "title": "Cisco CW9179F datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.front-and-back.external_interfaces.rear-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/dam/en/us/products/collateral/wireless/access-points/wireless-9179-series-access-points/wireless-9179f-access-point-ds.pdf",
+      "notes": "Directional + external; authored for front-and-back external mode only."
+    },
+    {
+      "ap_id": "cisco:iw9167e",
+      "hardware_profile_id": "cisco:iw9167e",
+      "vendor": "Cisco",
+      "model": "IW9167E",
+      "display_name": "Cisco IW9167E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 8,
+              "rf_path_count": 8,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-iw9167e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gnss-tnc",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "tnc",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gnss",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "cisco-iw9167e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "cisco-iw9167e-datasheet",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-iw9167-series/cat-iw9167e-heavy-duty-ap-ds.html",
+          "title": "Cisco IW9167E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gnss-tnc.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-iw9167-series/cat-iw9167e-heavy-duty-ap-ds.html",
+      "notes": "Wi-Fi path band map not published in catalog connector text."
+    },
+    {
+      "ap_id": "extreme:ap3000x",
+      "hardware_profile_id": "extreme:ap3000x",
+      "vendor": "Extreme",
+      "model": "AP3000X",
+      "display_name": "Extreme AP3000X",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "simultaneous",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [
+            {
+              "group_id": "permanent-6ghz",
+              "count": 2,
+              "bands": [
+                "6"
+              ],
+              "removable": false
+            }
+          ],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap3000x-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "extreme-ap3000x-datasheet",
+          "url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/683d99cb0cda4cb0b1c7f35275426fb6?v=f22e6320",
+          "title": "Extreme AP3000X datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/683d99cb0cda4cb0b1c7f35275426fb6?v=f22e6320",
+      "notes": null
+    },
+    {
+      "ap_id": "extreme:ap4020fx",
+      "hardware_profile_id": "extreme:ap4020fx",
+      "vendor": "Extreme",
+      "model": "AP4020FX",
+      "display_name": "Extreme AP4020FX",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [
+                {
+                  "path_group_id": "six",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "iot-or-five",
+                  "count": 1,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "five",
+                  "count": 1,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap4020fx-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "extreme-ap4020fx-datasheet",
+          "url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/overview.shtml",
+          "title": "Extreme AP4020FX datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://documentation.extremenetworks.com/AP4020FX%20Installation%20Guide/Wireless/Wireless_Hardware/ap4020fx_access_point_installation_guide/overview.shtml",
+      "notes": null
+    },
+    {
+      "ap_id": "extreme:ap4020x",
+      "hardware_profile_id": "extreme:ap4020x",
+      "vendor": "Extreme",
+      "model": "AP4020X",
+      "display_name": "Extreme AP4020X",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "simultaneous",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [
+            {
+              "group_id": "permanent-6ghz",
+              "count": 2,
+              "bands": [
+                "6"
+              ],
+              "removable": false
+            }
+          ],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "iot-or-five",
+                  "count": 1,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "five",
+                  "count": 1,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap4020x-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "extreme-ap4020x-datasheet",
+          "url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/overview.shtml",
+          "title": "Extreme AP4020X datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://documentation.extremenetworks.com/AP4020X%20Installation%20Guide/Wireless/Wireless_Hardware/AP4020X/overview.shtml",
+      "notes": "External ports operate with permanently attached 6 GHz antennas simultaneously; IoT/5 GHz role on one path needs review."
+    },
+    {
+      "ap_id": "extreme:ap4060x",
+      "hardware_profile_id": "extreme:ap4060x",
+      "vendor": "Extreme",
+      "model": "AP4060X",
+      "display_name": "Extreme AP4060X",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "five-six",
+                  "count": 2,
+                  "bands": [
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap4060x-datasheet"
+              ]
+            },
+            {
+              "interface_id": "ble-n",
+              "purpose": "iot",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "ble",
+                  "count": 1,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap4060x-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "extreme-ap4060x-datasheet",
+          "url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7d50fe82f75041e1a2876b1c9862b02f?v=b19b8e5b",
+          "title": "Extreme AP4060X datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.ble-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7d50fe82f75041e1a2876b1c9862b02f?v=b19b8e5b",
+      "notes": null
+    },
+    {
+      "ap_id": "extreme:ap410e",
+      "hardware_profile_id": "extreme:ap410e",
+      "vendor": "Extreme",
+      "model": "AP410e",
+      "display_name": "Extreme AP410e",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 6,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap410e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "ble-rpsma",
+              "purpose": "iot",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "ble",
+                  "count": 1,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap410e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "extreme-ap410e-datasheet",
+          "url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8575c683463142ea8e0b9685b38e9a28?v=531b8602",
+          "title": "Extreme AP410e datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.ble-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.path_groups"
+        ]
+      },
+      "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8575c683463142ea8e0b9685b38e9a28?v=531b8602",
+      "notes": null
+    },
+    {
+      "ap_id": "extreme:ap5022fx",
+      "hardware_profile_id": "extreme:ap5022fx",
+      "vendor": "Extreme",
+      "model": "AP5022FX",
+      "display_name": "Extreme AP5022FX",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "breakout",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "breakout",
+              "connector": {
+                "family": "vendor-proprietary",
+                "variant": "acc-cbl-brkout-12rpsma",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 12,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 4,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "mode-only",
+                  "count": 4,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [
+                "extreme:acc-cbl-brkout-12rpsma"
+              ],
+              "capabilities": [],
+              "restrictions": [
+                {
+                  "code": "included_breakout_required",
+                  "severity": "warning",
+                  "value": "Included ACC-CBL-BRKOUT-12RPSMA presents 12× RP-SMA endpoints",
+                  "source_id": "extreme-ap5022fx-datasheet"
+                },
+                {
+                  "code": "mode_only_paths",
+                  "severity": "info",
+                  "value": "4 paths used only in dual-5/dual-6 GHz modes",
+                  "source_id": "extreme-ap5022fx-datasheet"
+                }
+              ],
+              "source_ids": [
+                "extreme-ap5022fx-datasheet"
+              ]
+            },
+            {
+              "interface_id": "iot",
+              "purpose": "iot",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "vendor-proprietary",
+                "variant": "iot-antenna-port",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "extreme-ap5022fx-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "extreme-ap5022fx-datasheet",
+          "url": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5022",
+          "title": "Extreme AP5022FX datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.breakout.path_groups.mode-only.bands",
+          "antenna_configurations.default.external_interfaces.iot.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5022",
+      "notes": "Breakout topology; matching must use included accessory endpoints, not the chassis breakout alone."
+    },
+    {
+      "ap_id": "fortinet:fap-222kl",
+      "hardware_profile_id": "fortinet:fap-222kl",
+      "vendor": "Fortinet",
+      "model": "FAP-222KL",
+      "display_name": "Fortinet FAP-222KL",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-222kl-datasheet"
+              ]
+            },
+            {
+              "interface_id": "lorawan-n",
+              "purpose": "lorawan",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-222kl-datasheet"
+              ]
+            },
+            {
+              "interface_id": "lte-n",
+              "purpose": "lte",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-222kl-datasheet"
+              ]
+            },
+            {
+              "interface_id": "gnss-n",
+              "purpose": "gnss",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "gnss",
+                  "count": 1,
+                  "bands": [],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-222kl-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "fortinet-fap-222kl-datasheet",
+          "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf",
+          "title": "Fortinet FAP-222KL datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.gnss-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.lorawan-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.lorawan-n.path_groups",
+          "antenna_configurations.default.external_interfaces.lte-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.lte-n.path_groups",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "fortinet:fap-243k",
+      "hardware_profile_id": "fortinet:fap-243k",
+      "vendor": "Fortinet",
+      "model": "FAP-243K",
+      "display_name": "Fortinet FAP-243K",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-243k-datasheet"
+              ]
+            },
+            {
+              "interface_id": "scan-rpsma",
+              "purpose": "scan_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [
+                {
+                  "path_group_id": "tri-band-scan",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-243k-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "fortinet-fap-243k-datasheet",
+          "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+          "title": "Fortinet FAP-243K datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.scan-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "fortinet:fap-432g",
+      "hardware_profile_id": "fortinet:fap-432g",
+      "vendor": "Fortinet",
+      "model": "FAP-432G",
+      "display_name": "Fortinet FAP-432G",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-432g-datasheet"
+              ]
+            },
+            {
+              "interface_id": "wifi-scan-n",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "tri-band-plus-scan",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [
+                {
+                  "code": "combined_client_and_scan",
+                  "severity": "warning",
+                  "value": "Paths described as tri-band Wi-Fi + scanning; role split needs review",
+                  "source_id": "fortinet-fap-432g-datasheet"
+                }
+              ],
+              "source_ids": [
+                "fortinet-fap-432g-datasheet"
+              ]
+            },
+            {
+              "interface_id": "iot-n",
+              "purpose": "iot",
+              "requirement": "not_part_of_wifi_antenna_solution",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [
+                {
+                  "path_group_id": "ble-zigbee",
+                  "count": 1,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-432g-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "fortinet-fap-432g-datasheet",
+          "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+          "title": "Fortinet FAP-432G datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.iot-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-scan-n.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "fortinet:fap-433g",
+      "hardware_profile_id": "fortinet:fap-433g",
+      "vendor": "Fortinet",
+      "model": "FAP-433G",
+      "display_name": "Fortinet FAP-433G",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "simultaneous",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [
+            {
+              "group_id": "permanent-tri-band",
+              "count": 4,
+              "bands": [
+                "2.4",
+                "5",
+                "6"
+              ],
+              "removable": false
+            }
+          ],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-433g-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "fortinet-fap-433g-datasheet",
+          "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+          "title": "Fortinet FAP-433G datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "fortinet:fap-443k",
+      "hardware_profile_id": "fortinet:fap-443k",
+      "vendor": "Fortinet",
+      "model": "FAP-443K",
+      "display_name": "Fortinet FAP-443K",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 8,
+              "rf_path_count": 8,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 4,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-443k-datasheet"
+              ]
+            },
+            {
+              "interface_id": "scan-rpsma",
+              "purpose": "scan_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [
+                {
+                  "path_group_id": "tri-band-scan",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "fortinet-fap-443k-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "fortinet-fap-443k-datasheet",
+          "url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+          "title": "Fortinet FAP-443K datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.scan-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-series.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "juniper:ap27e",
+      "hardware_profile_id": "juniper:ap27e",
+      "vendor": "Juniper",
+      "model": "AP27E",
+      "display_name": "Juniper AP27E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 2,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "six",
+                  "count": 2,
+                  "bands": [
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap27e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "juniper-ap27e-datasheet",
+          "url": "https://h20195.www2.hpe.com/v2/getpdf.aspx/a00156795enw.pdf",
+          "title": "Juniper AP27E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
+        ]
+      },
+      "datasheet_url": "https://h20195.www2.hpe.com/v2/getpdf.aspx/a00156795enw.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "juniper:ap32e",
+      "hardware_profile_id": "juniper:ap32e",
+      "vendor": "Juniper",
+      "model": "AP32E",
+      "display_name": "Juniper AP32E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rpsma",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap32e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "scan-rpsma",
+              "purpose": "scan_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-sma",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 1,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap32e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "juniper-ap32e-datasheet",
+          "url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap32.pdf",
+          "title": "Juniper AP32E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.scan-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.scan-rpsma.path_groups",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap32.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "juniper:ap36m",
+      "hardware_profile_id": "juniper:ap36m",
+      "vendor": "Juniper",
+      "model": "AP36M",
+      "display_name": "Juniper AP36M",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "selectable",
+      "antenna_configurations": [
+        {
+          "configuration_id": "integrated-directional",
+          "label": "Internal directional antennas (default)",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [
+            {
+              "group_id": "internal-directional",
+              "count": null,
+              "bands": [
+                "2.4",
+                "5",
+                "6"
+              ],
+              "removable": false
+            }
+          ],
+          "external_interfaces": []
+        },
+        {
+          "configuration_id": "pluggable-blocks",
+          "label": "Optional pluggable external antenna blocks",
+          "is_default": false,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "dual-band-4pin",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "juniper-pin-block",
+                "variant": "4-pin-2.4-5",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap36m-datasheet"
+              ]
+            },
+            {
+              "interface_id": "six-6pin",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "juniper-pin-block",
+                "variant": "6-pin-6",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap36m-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "juniper-ap36m-datasheet",
+          "url": "https://www.hpe.com/psnow/doc/a50014091enw",
+          "title": "Juniper AP36M datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.pluggable-blocks.external_interfaces.dual-band-4pin.path_groups",
+          "antenna_configurations.pluggable-blocks.external_interfaces.six-6pin.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.hpe.com/psnow/doc/a50014091enw",
+      "notes": "Pin-block path counts are approximate from pin naming; path groups left empty until vendor topology is confirmed."
+    },
+    {
+      "ap_id": "juniper:ap45e",
+      "hardware_profile_id": "juniper:ap45e",
+      "vendor": "Juniper",
+      "model": "AP45E",
+      "display_name": "Juniper AP45E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "dual-band-4pin",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "juniper-pin-block",
+                "variant": "4-pin-2.4-5",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "dual-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap45e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "six-scan-6pin",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "juniper-pin-block",
+                "variant": "6-pin-6-scan",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [
+                {
+                  "code": "combined_client_and_scan",
+                  "severity": "warning",
+                  "value": "6-pin block described as 6 GHz + Scan",
+                  "source_id": "juniper-ap45e-datasheet"
+                }
+              ],
+              "source_ids": [
+                "juniper-ap45e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "juniper-ap45e-datasheet",
+          "url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
+          "title": "Juniper AP45E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.six-scan-6pin.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap45-datasheet.pdf",
+      "notes": "Proprietary pin blocks cannot be reduced to N× standard coax; exact RF-path topology incomplete."
+    },
+    {
+      "ap_id": "juniper:ap47e",
+      "hardware_profile_id": "juniper:ap47e",
+      "vendor": "Juniper",
+      "model": "AP47E",
+      "display_name": "Juniper AP47E",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5",
+            "6"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "tri-band-6pin",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "juniper-pin-block",
+                "variant": "6-pin-2.4-5-6",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap47e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "six-scan-6pin",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "juniper-pin-block",
+                "variant": "6-pin-6-scan",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 6,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap47e-datasheet"
+              ]
+            },
+            {
+              "interface_id": "five-4pin",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "proprietary_multiport",
+              "connector": {
+                "family": "juniper-pin-block",
+                "variant": "4-pin-5",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 1,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "five",
+                  "count": 4,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "juniper-ap47e-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "juniper-ap47e-datasheet",
+          "url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
+          "title": "Juniper AP47E datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.six-scan-6pin.path_groups",
+          "antenna_configurations.default.external_interfaces.tri-band-6pin.path_groups"
+        ]
+      },
+      "datasheet_url": "https://www.juniper.net/content/dam/www/assets/datasheets/us/en/access-points/ap47-access-point-datasheet.pdf",
+      "notes": "Three proprietary pin blocks; path-band maps incomplete where not stated."
+    },
+    {
+      "ap_id": "linksys:wrt54g",
+      "hardware_profile_id": "linksys:wrt54g",
+      "vendor": "Linksys",
+      "model": "WRT54G",
+      "display_name": "Linksys WRT54G",
+      "status": "active",
+      "supported_bands": [],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-rptnc",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "rp-tnc",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "linksys-wrt54g-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "linksys-wrt54g-datasheet",
+          "url": "https://downloads.linksys.com/downloads/datasheet/WRT54GL_V11_DS_NC-WEB,0.pdf",
+          "title": "Linksys WRT54G datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-rptnc.connector.gender",
+          "antenna_configurations.default.external_interfaces.wifi-rptnc.path_groups"
+        ]
+      },
+      "datasheet_url": "https://downloads.linksys.com/downloads/datasheet/WRT54GL_V11_DS_NC-WEB,0.pdf",
+      "notes": "Legacy 802.11g; supported_bands left empty because wifi_gen_radios has no canonical band tokens."
+    },
+    {
+      "ap_id": "meter:mw09",
+      "hardware_profile_id": "meter:mw09",
+      "vendor": "Meter",
+      "model": "MW09",
+      "display_name": "Meter MW09",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "external_only",
+      "antenna_configurations": [
+        {
+          "configuration_id": "default",
+          "label": "Default operation",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-unknown",
+              "purpose": "client_radio",
+              "requirement": "required",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "vendor-proprietary",
+                "variant": "unpublished",
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [
+                {
+                  "path_group_id": "two-four",
+                  "count": 2,
+                  "bands": [
+                    "2.4"
+                  ],
+                  "interchangeable": true
+                },
+                {
+                  "path_group_id": "five",
+                  "count": 2,
+                  "bands": [
+                    "5"
+                  ],
+                  "interchangeable": true
+                }
+              ],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "meter-mw09-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "meter-mw09-datasheet",
+          "url": "https://docs.meter.com/hardware/access-points/mw09",
+          "title": "Meter MW09 datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.default.external_interfaces.wifi-unknown.connector.family"
+        ]
+      },
+      "datasheet_url": "https://docs.meter.com/hardware/access-points/mw09",
+      "notes": "Connector family unpublished; consumers must return review_required."
+    },
+    {
+      "ap_id": "ruckus:t350se",
+      "hardware_profile_id": "ruckus:t350se",
+      "vendor": "Ruckus",
+      "model": "T350se",
+      "display_name": "Ruckus T350se",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "selectable",
+      "antenna_configurations": [
+        {
+          "configuration_id": "internal-sector",
+          "label": "Internal 120° sector",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [
+            {
+              "group_id": "internal-sector",
+              "count": null,
+              "bands": [
+                "2.4",
+                "5"
+              ],
+              "removable": false
+            }
+          ],
+          "external_interfaces": []
+        },
+        {
+          "configuration_id": "external",
+          "label": "Optional external antennas",
+          "is_default": false,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "optional",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 2,
+              "rf_path_count": 2,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "ruckus-t350se-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "ruckus-t350se-datasheet",
+          "url": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf",
+          "title": "Ruckus T350se datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.external.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.external.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf",
+      "notes": null
+    },
+    {
+      "ap_id": "ruckus:t750se",
+      "hardware_profile_id": "ruckus:t750se",
+      "vendor": "Ruckus",
+      "model": "T750SE",
+      "display_name": "Ruckus T750SE",
+      "status": "active",
+      "supported_bands": [
+        "2.4",
+        "5",
+        "6"
+      ],
+      "antenna_architecture": "selectable",
+      "antenna_configurations": [
+        {
+          "configuration_id": "internal-sector",
+          "label": "Internal 120° sector",
+          "is_default": true,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [
+            {
+              "group_id": "internal-sector",
+              "count": null,
+              "bands": [
+                "2.4",
+                "5"
+              ],
+              "removable": false
+            }
+          ],
+          "external_interfaces": []
+        },
+        {
+          "configuration_id": "external",
+          "label": "Optional external antennas",
+          "is_default": false,
+          "active_bands": [
+            "2.4",
+            "5"
+          ],
+          "integrated_antenna_groups": [],
+          "external_interfaces": [
+            {
+              "interface_id": "wifi-n",
+              "purpose": "client_radio",
+              "requirement": "optional",
+              "attachment": "bulkhead",
+              "connector": {
+                "family": "n",
+                "variant": null,
+                "gender": null,
+                "orientation": null
+              },
+              "connector_count": 4,
+              "rf_path_count": 4,
+              "path_groups": [],
+              "included_accessory_ids": [],
+              "capabilities": [],
+              "restrictions": [],
+              "source_ids": [
+                "ruckus-t750se-datasheet"
+              ]
+            }
+          ]
+        }
+      ],
+      "rf_sources": [
+        {
+          "source_id": "ruckus-t750se-datasheet",
+          "url": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db",
+          "title": "Ruckus T750SE datasheet",
+          "document_revision": null,
+          "locator": null
+        }
+      ],
+      "completeness": {
+        "status": "incomplete",
+        "missing": [
+          "antenna_configurations.external.external_interfaces.wifi-n.connector.gender",
+          "antenna_configurations.external.external_interfaces.wifi-n.path_groups"
+        ]
+      },
+      "datasheet_url": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db",
+      "notes": null
+    }
+  ]
+}
