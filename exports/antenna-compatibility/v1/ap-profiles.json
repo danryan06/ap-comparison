@@ -1,8 +1,8 @@
 {
   "schema_name": "apcomparison.external-antenna-profiles",
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-22T19:21:10Z",
-  "source_revision": "b4b2fd4842c36b7603d8b125cf2c21095d0059da",
+  "generated_at": "2026-11-22T19:21:52Z",
+  "source_revision": "123ccbaf2ec3b7101ab2c4e23c2e5538722f183a",
   "profile_count": 48,
   "profiles": [
     {
