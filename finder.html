@@ -28,8 +28,8 @@
 
     <div class="card finder-card">
       <div class="finder-grid">
-        <section class="filter-panel">
-          <h2>Filters</h2>
+        <details class="filter-panel" id="filter-panel" open>
+          <summary><h2>Filters</h2><span class="filter-toggle-hint">Tap to show or hide</span></summary>
 
           <div class="filter-group">
             <div class="filter-group-head">
@@ -45,6 +45,21 @@
               <h3>Bands</h3>
             </div>
             <div id="band-options" class="chip-grid"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-head">
+              <h3>PoE Available</h3>
+            </div>
+            <div id="poe-options" class="chip-grid"></div>
+            <p class="filter-hint">APs whose minimum PoE class serves clients on what you tick.</p>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-head">
+              <h3>Fastest Ethernet Port</h3>
+            </div>
+            <div id="uplink-options" class="chip-grid"></div>
           </div>
 
           <div class="filter-group">
@@ -67,7 +82,14 @@
             </div>
             <div id="antenna-options" class="chip-grid"></div>
           </div>
-        </section>
+
+          <div class="filter-group">
+            <div class="filter-group-head">
+              <h3>Environment</h3>
+            </div>
+            <div id="env-options" class="chip-grid"></div>
+          </div>
+        </details>
 
         <section class="results-panel">
           <div class="results-header">
@@ -103,7 +125,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
-  <script src="ap-format.js?v=6"></script>
+  <script src="ap-format.js?v=7"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     // Generations in order, oldest first. "And newer" matching uses this rank.
@@ -114,18 +136,40 @@
     ];
     const wifiModeOptions = [{ id: 'exact', label: 'This generation only' }];
     const bandOptions = [{ id: '6', label: '6 GHz radio' }];
+    // "PoE available": APs whose min_poe_class serves clients on that class or lower.
+    const poeOptions = [
+      { id: 'af', label: '802.3af', level: 1 },
+      { id: 'at', label: '802.3at', level: 2 },
+      { id: 'bt', label: '802.3bt', level: 3 }
+    ];
+    const uplinkOptions = [
+      { id: '2.5', label: '2.5 GbE or faster' },
+      { id: '5', label: '5 GbE or faster' },
+      { id: '10', label: '10 GbE' }
+    ];
+    const envOptions = [
+      { id: 'ip', label: 'IP rating listed' },
+      { id: 'hazloc', label: 'HazLoc certified' },
+      { id: 'hardened', label: 'Hardened' }
+    ];
 
     const state = {
       wifi: new Set(),
       wifimode: new Set(),
       bands: new Set(),
+      poe: new Set(),
+      uplink: new Set(),
+      env: new Set(),
       vendors: new Set(),
       antenna: new Set(),
       form: new Set()
     };
     const CHIP_LABELS = {
       wifimode: () => 'This generation only',
-      bands: () => '6 GHz radio'
+      bands: () => '6 GHz radio',
+      poe: value => `Runs on ${(poeOptions.find(o => o.id === value) || {}).label || value}`,
+      uplink: value => (uplinkOptions.find(o => o.id === value) || {}).label || value,
+      env: value => (envOptions.find(o => o.id === value) || {}).label || value
     };
 
     const selectedIds = new Set(); // For comparison
@@ -191,6 +235,9 @@
       renderCheckboxGroup('wifi-options', wifiOptions, 'wifi');
       renderCheckboxGroup('wifimode-options', wifiModeOptions, 'wifimode');
       renderCheckboxGroup('band-options', bandOptions, 'bands');
+      renderCheckboxGroup('poe-options', poeOptions, 'poe');
+      renderCheckboxGroup('uplink-options', uplinkOptions, 'uplink');
+      renderCheckboxGroup('env-options', envOptions, 'env');
 
       const vendorOptions = collectUniqueValues('vendor').map(label => ({
         id: slugify(label),
@@ -284,6 +331,19 @@
         }
       }
       if (state.bands.has('6') && !entry._has6GHz) return false;
+      if (state.poe.size) {
+        // The highest class ticked is the budget; the AP must serve clients within it.
+        const budget = Math.max(...Array.from(state.poe).map(id => (poeOptions.find(o => o.id === id) || {}).level || 0));
+        const needs = poeLevel(entry.min_poe_class);
+        if (!needs || needs > budget) return false;
+      }
+      if (state.uplink.size) {
+        const floor = Math.min(...Array.from(state.uplink).map(Number));
+        if (fastestPortGbps(entry.ethernet_ports_speed) < floor) return false;
+      }
+      if (state.env.has('ip') && !entry.ingress_protection) return false;
+      if (state.env.has('hazloc') && !entry.hazloc_certification) return false;
+      if (state.env.has('hardened') && entry.hardened !== true) return false;
       if (state.vendors.size && !state.vendors.has(entry.vendor)) return false;
       if (state.form.size && !state.form.has(entry.form_factor)) return false;
       if (!antennaMatchesAny(entry.antenna_type, state.antenna)) return false;
@@ -429,6 +489,9 @@
       });
       pushChips('wifimode', state.wifimode, CHIP_LABELS.wifimode);
       pushChips('bands', state.bands, CHIP_LABELS.bands);
+      pushChips('poe', state.poe, CHIP_LABELS.poe);
+      pushChips('uplink', state.uplink, CHIP_LABELS.uplink);
+      pushChips('env', state.env, CHIP_LABELS.env);
       pushChips('vendors', state.vendors);
       pushChips('antenna', state.antenna);
       pushChips('form', state.form);
@@ -551,6 +614,14 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      // On phones the filter list is long; start it collapsed unless filters are already set.
+      if (window.matchMedia('(max-width: 980px)').matches && !window.location.search) {
+        document.getElementById('filter-panel').removeAttribute('open');
+      }
+      // On wider screens the panel always stays open.
+      document.querySelector('#filter-panel > summary').addEventListener('click', event => {
+        if (!window.matchMedia('(max-width: 980px)').matches) event.preventDefault();
+      });
       document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
       const exportBtn = document.getElementById('export-csv');
       if (exportBtn) {

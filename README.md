@@ -8,7 +8,7 @@ A comprehensive, open-source database for comparing enterprise Wi-Fi access poin
 
 - **Comprehensive Comparison Table**: View all access points in a sortable, filterable table
 - **Advanced Filtering**: Filter by vendor, antenna type (Internal/External/Directional), and form factor (Indoor/Outdoor/Wallplate)
-- **Feature Finder**: Filter by Wi-Fi generation (that generation or newer, or that generation only), 6 GHz radio, vendor, form factor, and antenna type
+- **Feature Finder**: Filter by Wi-Fi generation (that generation or newer, or that generation only), 6 GHz radio, the PoE class your switch provides, fastest Ethernet port, vendor, form factor, antenna type, IP rating, HazLoc certification, and hardened models
 - **Full-Text Search**: Search across all fields including vendor, model, features, and PoE requirements
 - **Side-by-Side Comparison**: Select multiple APs and compare them side-by-side
 - **Detailed AP Pages**: Click any AP to view complete specifications and images
@@ -43,7 +43,7 @@ Each access point entry includes:
 
 1. **Search**: Use the search box to find APs by vendor, model, or features
 2. **Filter**: Use the dropdown filters to narrow by vendor, antenna type, or form factor
-3. **Feature Finder**: Open the [AP Feature Finder](https://apcomparison.com/finder.html) to filter by Wi-Fi generation, 6 GHz radio, vendor, form factor, and antenna type. A generation box matches that generation or newer unless you tick "This generation only". Filters are kept in the URL, so a filtered view can be shared.
+3. **Feature Finder**: Open the [AP Feature Finder](https://apcomparison.com/finder.html) to filter by Wi-Fi generation, 6 GHz radio, PoE available, fastest Ethernet port, vendor, form factor, antenna type, and environment (IP rating, HazLoc, hardened). "PoE available" shows APs whose minimum PoE class serves clients on the class you tick. A generation box matches that generation or newer unless you tick "This generation only". Filters are kept in the URL, so a filtered view can be shared.
 4. **Sort**: Click any column header to sort by that field
 5. **Customize Columns**: Click "Choose Columns" to show/hide specific fields
 6. **View Details**: Click any row to see the full AP details page
@@ -182,7 +182,7 @@ node .github/scripts/validate-site.js            # mounts.json, local file refer
 node .github/scripts/validate-ap-rf-export.js    # antenna-compatibility export matches its schema
 node .github/scripts/test-detail-back.js         # detail-page Back link helpers
 node .github/scripts/test-antenna-finder-link.js # AntennaComparison links match exported ap_ids
-node .github/scripts/test-wifi-filter.js         # Finder Wi-Fi generation and 6 GHz parsing
+node .github/scripts/test-wifi-filter.js         # Finder Wi-Fi, 6 GHz, PoE, and Ethernet speed parsing
 ```
 
 ## License

@@ -30,3 +30,22 @@ if (unknown.length) {
   process.exit(1);
 }
 console.log(`OK: Finder Wi-Fi parsing covers all ${known.size} wifi_gen_radios values`);
+
+// Finder PoE and uplink filters.
+const { poeLevel, fastestPortGbps } = require('../../ap-format.js');
+[
+  ['802.3af (Class 3)', 1], ['802.3at (Class 4)', 2], ['802.3bt (Class 6)', 3],
+  ['PoE++ (802.3bt)', 3], ['N/A', 0]
+].forEach(([text, level]) => assert.strictEqual(poeLevel(text), level, `poeLevel("${text}")`));
+[
+  ['1× 100M/1/2.5/5 GbE (RJ45, PoE in) + 1× 1 GbE (RJ45, PoE out)', 5],
+  ['2× 1 GbE (PoE-in on Eth0)', 1],
+  ['1× 100M/1/2.5 GbE (RJ45, PoE in) + 1× 10 GbE SFP+', 10],
+  ['1× 10/100 WAN 4× 10/100 LAN', 0]
+].forEach(([text, gbps]) => assert.strictEqual(fastestPortGbps(text), gbps, `fastestPortGbps("${text}")`));
+const noSpeed = data.filter(e => fastestPortGbps(e.ethernet_ports_speed) === 0 && poeLevel(e.min_poe_class) !== 0);
+if (noSpeed.length) {
+  console.error(`Uplink filter cannot read ethernet_ports_speed for: ${noSpeed.map(e => `${e.vendor} ${e.model}`).join(', ')}`);
+  process.exit(1);
+}
+console.log('OK: Finder PoE and uplink parsing');
