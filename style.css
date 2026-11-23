@@ -2867,6 +2867,17 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   padding-top: 2.4rem;
 }
 
+@media (max-width: 1024px) {
+  .compare-grid td {
+    position: static !important;
+    left: auto !important;
+    background-color: transparent;
+    box-shadow: none !important;
+    white-space: normal !important;
+    min-width: 0 !important;
+  }
+}
+
 .compare-grid td.compare-empty {
   color: #64748b;
   font-style: italic;
@@ -2944,6 +2955,123 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
   .compare-grid th.compare-label {
     width: 120px;
+  }
+}
+
+/* ================================
+   Browse table on phones: one card per AP
+   ================================ */
+@media (max-width: 640px) {
+  .ap-table {
+    min-width: 0;
+    border: none;
+  }
+
+  .ap-table thead {
+    display: none;
+  }
+
+  .ap-table,
+  .ap-table tbody,
+  .ap-table tr,
+  .ap-table td {
+    display: block;
+    width: auto !important;
+  }
+
+  .ap-table tbody tr {
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 0.85rem;
+    background: rgba(15, 23, 42, 0.45);
+  }
+
+  /* Undo the sticky-column and no-wrap rules the wide table uses on small screens */
+  .ap-table tbody td {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    border: none;
+    font-size: 0.82rem;
+    max-width: none;
+    min-width: 0 !important;
+    position: static !important;
+    background: none !important;
+    box-shadow: none !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    font-family: inherit;
+    letter-spacing: normal;
+  }
+
+  .ap-table tbody td::before,
+  .ap-table tbody td.behavior::before {
+    content: attr(data-label);
+    position: static;
+    border: none;
+    opacity: 1;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #94a3b8;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-top: 0.1rem;
+  }
+
+  /* Vendor and model lead the card without labels */
+  .ap-table tbody td[data-key="vendor"],
+  .ap-table tbody td[data-key="model"] {
+    display: block;
+    padding: 0;
+  }
+
+  .ap-table tbody td[data-key="vendor"]::before,
+  .ap-table tbody td[data-key="model"]::before {
+    content: none;
+  }
+
+  .ap-table tbody td[data-key="vendor"] {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+  }
+
+  .ap-table tbody td[data-key="model"] {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.4rem;
+  }
+
+  .ap-table tbody td[data-key="radios_iot_features"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .ap-table tbody td[data-key="radios_iot_features"]::before {
+    flex: 0 0 7.5rem;
+    margin-right: 0.45rem;
+  }
+
+  .ap-table td.behavior::after {
+    display: none;
+  }
+
+  .ap-table td.behavior .behavior-text {
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+
+  .ap-table td.empty-state-cell {
+    display: block;
+  }
+
+  .ap-table td.empty-state-cell::before {
+    content: none;
   }
 }
 
