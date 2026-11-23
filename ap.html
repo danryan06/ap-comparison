@@ -617,6 +617,35 @@
           hasActions = true;
         }
 
+        // Where the numbers come from, and how to report a problem with them.
+        const sourceNote = document.createElement('p');
+        sourceNote.className = 'source-note';
+        sourceNote.appendChild(document.createTextNode(
+          "Specifications come from the vendor's own datasheet and installation guide. Spot an error? "
+        ));
+        const reportLink = document.createElement('a');
+        const issueTitle = `Data issue: ${entry.vendor || ''} ${entry.model || ''}`.trim();
+        const issueBody = [
+          `AP: ${entry.vendor || ''} ${entry.model || ''}`,
+          `Page: ${window.location.href}`,
+          '',
+          'Field and current value:',
+          '',
+          'Correct value:',
+          '',
+          "Vendor source (datasheet or install guide on the vendor's site):",
+          ''
+        ].join('\n');
+        reportLink.href = 'https://github.com/danryan06/ap-comparison/issues/new?' +
+          new URLSearchParams({ title: issueTitle, body: issueBody }).toString();
+        reportLink.target = '_blank';
+        reportLink.rel = 'noopener noreferrer';
+        reportLink.textContent = 'Report it on GitHub';
+        sourceNote.appendChild(reportLink);
+        sourceNote.appendChild(document.createTextNode('.'));
+        actionsDiv.appendChild(sourceNote);
+        hasActions = true;
+
         // Insert actions before the details grid
         if (hasActions) {
           detailsEl.parentNode.insertBefore(actionsDiv, detailsEl);
