@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Data Quality — Enterprise AP Comparison Database</title>
+  <title>Data Quality | Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fields that are missing or unknown in the Enterprise AP Comparison Database." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AP Comparison" />
+  <meta property="og:title" content="Data Quality" />
+  <meta property="og:description" content="Fields that are missing or unknown in the Enterprise AP Comparison Database." />
+  <meta property="og:url" content="https://apcomparison.com/data_issues.html" />
+  <meta property="og:image" content="https://apcomparison.com/logo.png" />
+  <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
+  <header class="site-header" data-page="data-issues"></header>
+  <script src="site-header.js?v=1"></script>
   <div class="container">
     <div class="actions">
-      <a class="btn-link" href="index.html">&larr; Back to AP Table</a>
       <label class="btn-link" style="display:inline-flex; gap:0.4rem; align-items:center;">
         <input id="include-unknown" type="checkbox" checked />
         Include “unknown”
@@ -21,11 +30,7 @@
 
     <div class="card">
       <span class="badge">Data Quality</span>
-      <div class="header-with-logo">
-        <h1><a href="index.html">Enterprise AP Comparison Database</a></h1>
-        <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
-      </div>
-      <h2>Missing Information</h2>
+      <h1>Missing Information</h1>
       <p class="subtitle" id="summary">Scanning…</p>
 
       <table>
@@ -61,7 +66,7 @@
     </div>
   </div>
 
-  <script src="ap-format.js?v=5"></script>
+  <script src="ap-format.js?v=6"></script>
   <script>
     const DATA_URL = 'ap_data.json';
 
@@ -78,6 +83,9 @@
       return s.length === 0 || s === 'unknown';
     }
 
+    // Fields where an empty array means "none" (a valid answer), not missing data.
+    const EMPTY_MEANS_NONE = new Set(['radios_iot_features']);
+
     function classifyIssues(entry, includeUnknown) {
       const keysToCheck = [
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
@@ -86,6 +94,7 @@
       ];
       const issues = [];
       keysToCheck.forEach(k => {
+        if (EMPTY_MEANS_NONE.has(k) && Array.isArray(entry[k]) && entry[k].length === 0) return;
         if (!(k in entry) || normalizeString(entry[k]).trim() === '') {
           issues.push(`${k}: missing`);
         } else if (includeUnknown && valueIsUnknown(entry[k])) {

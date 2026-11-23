@@ -53,5 +53,7 @@ jobs:
         run: node .github/scripts/test-detail-back.js
       - name: Test AntennaComparison Finder links
         run: node .github/scripts/test-antenna-finder-link.js
+      - name: Test Finder Wi-Fi filters
+        run: node .github/scripts/test-wifi-filter.js
 
 
