@@ -12,6 +12,7 @@ A comprehensive, open-source database for comparing enterprise Wi-Fi access poin
 - **Full-Text Search**: Search across all fields including vendor, model, features, and PoE requirements
 - **Side-by-Side Comparison**: Select multiple APs and compare them side-by-side
 - **Detailed AP Pages**: Click any AP to view complete specifications and images
+- **Antenna Finder Links**: External-antenna APs link to the [AntennaComparison](https://antennacomparison.com) Finder with the AP pre-selected, to see which antennas fit its connectors and radios (detail page and Feature Finder results)
 - **Customizable Columns**: Show/hide columns to focus on what matters to you
 - **Column Management**: Resize and reorder columns to your preference
 - **Data Export**: Export individual AP details or comparison tables to CSV

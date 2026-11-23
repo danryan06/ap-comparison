@@ -13,6 +13,7 @@
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
       <a id="edit-link" class="btn-link" href="#" style="display:none;">Edit AP Information</a>
+      <a id="antenna-finder-link" class="btn-link" href="#" style="display:none;" target="_blank" rel="noopener noreferrer">Find compatible antennas &#8599;</a>
       <button id="export-csv" type="button" class="btn-link">Export CSV</button>
     </div>
 
@@ -36,7 +37,7 @@
     </div>
   </div>
 
-  <script src="ap-format.js?v=3"></script>
+  <script src="ap-format.js?v=4"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentEntry = null;
@@ -550,6 +551,13 @@
         const entrySlug = slugify(`${entry.vendor} ${entry.model}`);
         editLinkEl.href = `edit.html?id=${encodeURIComponent(entrySlug)}`;
         editLinkEl.style.display = 'inline-flex';
+        // External-antenna APs open the AntennaComparison Finder with this AP selected.
+        const antennaFinderUrl = antennaFinderHref(entry);
+        const antennaFinderEl = document.getElementById('antenna-finder-link');
+        if (antennaFinderUrl) {
+          antennaFinderEl.href = antennaFinderUrl;
+          antennaFinderEl.style.display = 'inline-flex';
+        }
 
         // Handle image, if present
         const imgUrl = safeUrl(entry.image_url, { allowRelative: true });
@@ -760,6 +768,18 @@
               const isLast = index === rows.length - 1;
               renderKV(row.key, row.value, isLast);
             });
+          }
+          if (section.title === 'Antenna Specifications' && rows.length > 0 && antennaFinderHref(entry)) {
+            const callout = document.createElement('p');
+            callout.className = 'antenna-finder-callout';
+            callout.appendChild(document.createTextNode('Need antennas for this AP? '));
+            const link = document.createElement('a');
+            link.href = antennaFinderHref(entry);
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = 'See which antennas fit it on AntennaComparison \u2197';
+            callout.appendChild(link);
+            detailsEl.appendChild(callout);
           }
           if (section.title === 'Physical Specifications') {
             renderMounting(detailsEl, entry, mounts);
