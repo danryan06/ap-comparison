@@ -69,7 +69,6 @@
   opacity: 0.8;
 }
 
-.logo-icon,
 .logo-image {
   width: 36px;
   height: auto;
@@ -141,28 +140,6 @@
   flex-shrink: 0;
 }
 
-.icon-button {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  color: rgba(255, 255, 255, 0.6);
-  transition: all 200ms ease;
-  text-decoration: none;
-}
-
-.icon-button svg {
-  width: 20px;
-  height: 20px;
-}
-
-.icon-button:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.9);
-}
-
 /* Header divider between utility icons and action buttons */
 .header-divider {
   width: 1px;
@@ -193,8 +170,7 @@
 }
 
 /* Focus states for accessibility */
-.nav-link:focus-visible,
-.icon-button:focus-visible {
+.nav-link:focus-visible {
   outline: 2px solid #60a5fa;
   outline-offset: 2px;
 }
@@ -257,7 +233,6 @@
 }
 
 @media (max-width: 480px) {
-  .logo-icon,
   .logo-image {
     width: 28px;
     height: 28px;
@@ -271,27 +246,6 @@
     width: 20px;
     height: 20px;
   }
-  
-  .icon-button {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-/* Preview badge */
-.preview-badge-header {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #f59e0b, #ef4444);
-  color: white;
-  padding: 8px 16px;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
-  pointer-events: none;
 }
 
 body {
@@ -703,8 +657,6 @@ th[data-tooltip] {
   position: relative;
 }
 
-/* Tooltips now handled by JavaScript for better positioning */
-
 /* Behavior at Min Power: truncated text + tooltip on hover */
 td.behavior {
   max-width: 160px;          /* controls when ellipsis appears */
@@ -954,8 +906,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   border: none;
   background: transparent;
 }
-
-/* Generic search-input and filter-select rules removed - filter-bar uses specific styles */
 
 /* Columns chooser panel */
 .columns-panel {
@@ -1487,86 +1437,10 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   }
 }
 
-.result-card {
-  border: 1px solid #1f2937;
-  border-radius: 0.85rem;
-  padding: 1rem;
-  background: #020617;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.result-card--hero {
-  background: radial-gradient(circle at top, rgba(30, 64, 175, 0.25), rgba(2, 6, 23, 0.95));
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  box-shadow: 0 25px 45px rgba(15, 23, 42, 0.65);
-}
-.vendor-chip {
-  align-self: flex-start;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(59, 130, 246, 0.2);
-  color: #bfdbfe;
-  border: 1px solid rgba(96, 165, 250, 0.5);
-}
-.result-card-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-.result-card-header h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
 .result-wifi {
   margin: 0.2rem 0 0;
   color: #9ca3af;
   font-size: 0.9rem;
-}
-.result-summary {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #d1d5db;
-}
-
-.result-meta {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.4rem 0.75rem;
-  font-size: 0.8rem;
-}
-.result-meta--wide {
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-}
-.result-meta li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-.result-meta span {
-  color: #94a3b8;
-  font-size: 0.75rem;
-}
-.result-meta strong {
-  font-size: 0.85rem;
-  color: #f3f4f6;
-  font-weight: 600;
-}
-
-.result-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-.tag-highlight {
-  background: rgba(34, 197, 94, 0.2);
-  color: #bbf7d0;
 }
 
 .result-actions {
@@ -1602,139 +1476,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .empty-state-cell {
   padding: 3rem 1rem !important;
-}
-
-/* Compare table specific styles */
-#compare-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#compare-table th,
-#compare-table td {
-  padding: 0.75rem 0.5rem;
-  max-height: 3rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: middle;
-}
-
-#compare-table td {
-  max-height: 3rem;
-  line-height: 1.4;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-/* Wider columns for compare table */
-#compare-table th[data-key="__vendor__"],
-#compare-table td:nth-child(1) {
-  min-width: 100px;
-  width: 100px;
-}
-
-#compare-table th[data-key="model"],
-#compare-table td:nth-child(2) {
-  min-width: 140px;
-  width: 140px;
-}
-
-#compare-table th[data-key="spatial_streams"],
-#compare-table td[data-key="spatial_streams"] {
-  min-width: 140px;
-  width: 140px;
-}
-
-#compare-table th[data-key="radios_iot_features"],
-#compare-table td[data-key="radios_iot_features"] {
-  min-width: 200px;
-  width: 200px;
-}
-
-#compare-table th[data-key="ethernet_ports_speed"],
-#compare-table td[data-key="ethernet_ports_speed"] {
-  min-width: 160px;
-  width: 160px;
-}
-
-#compare-table th[data-key="wifi_gen_radios"],
-#compare-table td[data-key="wifi_gen_radios"] {
-  min-width: 150px;
-  width: 150px;
-}
-
-/* Wizard step indicators */
-.wizard-steps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem 0;
-  gap: 0.5rem;
-}
-
-.step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.step-number {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
-  transition: all var(--transition-slow) var(--ease-out);
-  font-size: 0.875rem;
-}
-
-.step.active .step-number {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  border-color: transparent;
-  color: white;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-}
-
-.step.completed .step-number {
-  background: rgba(34, 197, 94, 0.15);
-  border-color: rgba(34, 197, 94, 0.5);
-  color: #4ade80;
-}
-
-.step-label {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
-  transition: color var(--transition-slow) var(--ease-out);
-  text-align: center;
-}
-
-.step.active .step-label {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.step-connector {
-  width: 40px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0 0.5rem;
-  position: relative;
-  top: -10px;
 }
 
 /* Live results counter */
@@ -1783,14 +1524,8 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
     grid-template-columns: 1fr;
   }
   
-  .wizard-steps {
-    flex-wrap: wrap;
-    gap: 0.25rem;
-  }
   
-  .step-connector {
-    display: none;
-  }
+
   
   .results-counter {
     position: relative;
@@ -2093,9 +1828,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   }
   
   /* Inline action buttons mobile optimization */
-  .inline-actions {
-    gap: 0.5rem;
-  }
   
   .btn-inline-action {
     flex: 1;
@@ -2394,9 +2126,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   }
   
   /* Inline action buttons mobile optimization */
-  .inline-actions {
-    gap: 0.5rem;
-  }
   
   .btn-inline-action {
     flex: 1;
@@ -2529,15 +2258,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   color: #d1d5db;
 }
 
-/* Inline action buttons (for datasheet, install guide, etc.) */
-.inline-actions {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-
 /* Detail actions zone (below image, above specs) - with subtle background */
 .detail-actions {
   display: flex;
@@ -2646,10 +2366,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 
 .box-list li {
   margin: 0.25rem 0;
-}
-
-.box-part {
-  color: #9ca3af;
 }
 
 .spec-block .eos-link {

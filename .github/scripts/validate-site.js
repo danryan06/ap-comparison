@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const { safeUrl } = require('../../ap-format.js');
+const { safeUrl, apSlug } = require('../../ap-format.js');
 
 const root = process.cwd();
 const errors = [];
@@ -17,14 +17,6 @@ function readJson(relativePath) {
     report(`${relativePath}: ${err.message}`);
     return null;
   }
-}
-
-function slugify(value) {
-  return String(value || '')
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
 }
 
 function checkExternalUrl(value, label) {
@@ -68,7 +60,7 @@ if (Array.isArray(aps)) {
     }
     if (typeof entry.vendor !== 'string' || !entry.vendor.trim()) report(`${label}.vendor is required.`);
     if (typeof entry.model !== 'string' || !entry.model.trim()) report(`${label}.model is required.`);
-    const slug = slugify(`${entry.vendor || ''} ${entry.model || ''}`);
+    const slug = apSlug(entry);
     if (apSlugs.has(slug)) report(`${label} duplicates AP slug ${slug}.`);
     apSlugs.add(slug);
     ['datasheet_url', 'install_guide_url', 'end_of_sale_url', 'in_box_source'].forEach(field => {

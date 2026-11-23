@@ -9,6 +9,19 @@ const BAND_GROUPS = [
   { keys: ["6", "6GHz"], gain: "6", beam: "6 GHz" }
 ];
 
+// URL id for an AP: vendor and model, lowercased, non-alphanumerics collapsed to "-".
+function slugify(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function apSlug(entry) {
+  return slugify(`${(entry && entry.vendor) || ""} ${(entry && entry.model) || ""}`);
+}
+
 function normalizeForSlug(value) {
   if (!value) return "";
   return String(value)
@@ -263,6 +276,8 @@ function antennaFinderHref(entry) {
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
+    slugify,
+    apSlug,
     normalizeForSlug,
     safeUrl,
     DETAIL_BACK_STORAGE_KEY,

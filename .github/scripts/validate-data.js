@@ -43,13 +43,6 @@ function checkBandMap(entry, idx, path, obj, valueKind) {
 
 function checkAntennaType(entry, idx) {
   const value = entry.antenna_type;
-  const pendingT350se = entry.vendor === 'Ruckus' && entry.model === 'T350se' && value === 'Directional';
-  if (typeof value === 'string') {
-    if (!pendingT350se) {
-      fail(`${entryName(entry, idx)} antenna_type must be an array of Internal, Directional, and/or External. The only allowed string is Ruckus T350se, pending review.`);
-    }
-    return;
-  }
   if (!Array.isArray(value) || value.length === 0) {
     fail(`${entryName(entry, idx)} antenna_type must be a non-empty array.`);
   }
