@@ -49,5 +49,7 @@ jobs:
         run: node .github/scripts/validate-site.js
       - name: Validate AP RF compatibility export
         run: node .github/scripts/validate-ap-rf-export.js
+      - name: Test detail Back session helpers
+        run: node .github/scripts/test-detail-back.js
 
 
