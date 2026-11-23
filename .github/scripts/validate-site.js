@@ -176,6 +176,25 @@ htmlFiles.forEach(file => {
   }
 });
 
+// Product photos display at most a few hundred pixels tall; keep the repo and page weight down.
+const MAX_IMAGE_BYTES = 600 * 1024;
+const MAX_FAVICON_BYTES = 50 * 1024;
+function walkFiles(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(item => {
+    const full = path.join(dir, item.name);
+    return item.isDirectory() ? walkFiles(full) : [full];
+  });
+}
+walkFiles(path.join(root, 'images')).forEach(file => {
+  const size = fs.statSync(file).size;
+  if (size > MAX_IMAGE_BYTES) {
+    report(`${path.relative(root, file)} is ${Math.round(size / 1024)} KB; resize to 1200 px on the long side (limit ${MAX_IMAGE_BYTES / 1024} KB).`);
+  }
+});
+if (fs.statSync(path.join(root, 'favicon.png')).size > MAX_FAVICON_BYTES) {
+  report(`favicon.png is over ${MAX_FAVICON_BYTES / 1024} KB; use a 64 px icon.`);
+}
+
 if (errors.length) {
   errors.forEach(error => console.error(error));
   process.exit(1);
