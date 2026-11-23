@@ -35,6 +35,79 @@ function safeUrl(value, options = {}) {
   }
 }
 
+/** sessionStorage key for Browse/Finder → Detail Back (filters stay on the list URL). */
+const DETAIL_BACK_STORAGE_KEY = "apComparison.detailBack";
+
+/** Allowed same-origin return targets for detail Back links (no open redirects). */
+const SAFE_RETURN_PAGES = new Set([
+  "index.html",
+  "finder.html",
+  "compare.html",
+  "submit.html",
+  "edit.html"
+]);
+
+/**
+ * Validate a relative return path used across Browse/Finder → Detail → Back.
+ * Accepts only known HTML pages with a safe query string; rejects schemes,
+ * protocol-relative URLs, path traversal, and fragments.
+ */
+function safeReturnPath(value) {
+  const raw = String(value || "").trim();
+  if (!raw || raw.includes("\\") || raw.includes("//") || raw.includes("..")) return "";
+  if (/^[a-z][a-z0-9+.-]*:/i.test(raw) || raw.startsWith("/") || raw.includes("#")) return "";
+  const match = raw.match(/^(index|finder|compare|submit|edit)\.html(\?[^#]*)?$/i);
+  if (!match) return "";
+  const page = `${match[1].toLowerCase()}.html`;
+  if (!SAFE_RETURN_PAGES.has(page)) return "";
+  const qs = match[2] || "";
+  // Allow encoded and raw query characters used by Finder/Browse state.
+  if (qs && !/^\?[a-zA-Z0-9._~&=%+\-|,/* ]*$/.test(qs)) return "";
+  return page + qs;
+}
+
+/** Current list page as a validated relative return path (shareable filter URL). */
+function currentListReturnPath() {
+  if (typeof window === "undefined" || !window.location) return "";
+  const file = String(window.location.pathname || "").split("/").pop() || "index.html";
+  const page = /\.html$/i.test(file) ? file.toLowerCase() : "index.html";
+  const qs = window.location.search || "";
+  return safeReturnPath(page + qs);
+}
+
+/** Stash a validated list path so Detail Back can restore filters without a long URL. */
+function saveDetailBackPath(path) {
+  const safe = safeReturnPath(path);
+  if (!safe) return;
+  try {
+    sessionStorage.setItem(DETAIL_BACK_STORAGE_KEY, safe);
+  } catch (_) {
+    /* private mode / quota — Back falls back to defaults */
+  }
+}
+
+/** Read the stashed Detail Back path, or "" if missing/invalid. */
+function readDetailBackPath() {
+  try {
+    return safeReturnPath(sessionStorage.getItem(DETAIL_BACK_STORAGE_KEY) || "");
+  } catch (_) {
+    return "";
+  }
+}
+
+/** Short detail href: ap.html?id=… only (filters live on the list URL / session back). */
+function buildApDetailHref(slug) {
+  const params = new URLSearchParams();
+  params.set("id", String(slug || ""));
+  return `ap.html?${params.toString()}`;
+}
+
+/** Save list return path, then return a short detail href. */
+function rememberListAndBuildDetailHref(slug, returnPath) {
+  saveDetailBackPath(returnPath || currentListReturnPath());
+  return buildApDetailHref(slug);
+}
+
 function antennaTypes(value) {
   const items = Array.isArray(value) ? value : (value == null || value === "" ? [] : [value]);
   const found = [];
@@ -162,6 +235,14 @@ if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     normalizeForSlug,
     safeUrl,
+    DETAIL_BACK_STORAGE_KEY,
+    SAFE_RETURN_PAGES,
+    safeReturnPath,
+    currentListReturnPath,
+    saveDetailBackPath,
+    readDetailBackPath,
+    buildApDetailHref,
+    rememberListAndBuildDetailHref,
     antennaTypes,
     formatAntennaType,
     antennaMatches,

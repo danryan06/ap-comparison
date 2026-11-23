@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <script src="ap-format.js?v=2"></script>
+  <script src="ap-format.js?v=3"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentEntry = null;
@@ -52,6 +52,78 @@
     function readId() {
       const params = new URLSearchParams(window.location.search);
       return params.get('id') || '';
+    }
+
+    function backLabelForPath(path) {
+      if (path && path.startsWith('finder.html')) return '\u2190 Back to AP Finder';
+      if (path && path.startsWith('compare.html')) return '\u2190 Back to Compare';
+      return '\u2190 Back to AP Table';
+    }
+
+    /** Keep the address bar id-only once Back is configured (drops legacy return=/from=/filters). */
+    function stripLegacyBackParamsFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id') || '';
+      const keys = Array.from(params.keys());
+      if (keys.length === 0 || (keys.length === 1 && keys[0] === 'id')) return;
+      const clean = new URLSearchParams();
+      if (id) clean.set('id', id);
+      const qs = clean.toString();
+      try {
+        history.replaceState(null, '', qs ? `ap.html?${qs}` : 'ap.html');
+      } catch (_) {
+        /* ignore */
+      }
+    }
+
+    /**
+     * Detail Back: sessionStorage first (short detail URLs).
+     * Legacy fallbacks: return=, from=finder + leftover filters, then leftover Browse filters on the detail URL.
+     */
+    function configureBackLink(backEl) {
+      if (!backEl) return;
+
+      const params = new URLSearchParams(window.location.search);
+      const fromSession = readDetailBackPath();
+      const fromReturn = safeReturnPath(params.get('return'));
+      const target = fromSession || fromReturn;
+      if (target) {
+        backEl.setAttribute('href', target);
+        backEl.textContent = backLabelForPath(target);
+        stripLegacyBackParamsFromUrl();
+        return;
+      }
+
+      const fromFinder = params.get('from') === 'finder';
+      params.delete('id');
+      params.delete('from');
+      params.delete('return');
+      const leftover = params.toString();
+
+      if (fromFinder) {
+        const finderPath = leftover ? `finder.html?${leftover}` : 'finder.html';
+        const href = safeReturnPath(finderPath) || 'finder.html';
+        saveDetailBackPath(href);
+        backEl.setAttribute('href', href);
+        backEl.textContent = backLabelForPath(href);
+        stripLegacyBackParamsFromUrl();
+        return;
+      }
+
+      if (leftover) {
+        const browsePath = `index.html?${leftover}`;
+        const safe = safeReturnPath(browsePath);
+        if (safe) {
+          saveDetailBackPath(safe);
+          backEl.setAttribute('href', safe);
+          backEl.textContent = backLabelForPath(safe);
+          stripLegacyBackParamsFromUrl();
+          return;
+        }
+      }
+
+      backEl.setAttribute('href', 'index.html');
+      backEl.textContent = backLabelForPath('index.html');
     }
 
     function normalizeString(value) {
@@ -404,6 +476,8 @@
         } catch (mountErr) {
           console.warn('Orderable mounts could not be loaded:', mountErr);
         }
+        configureBackLink(backEl);
+
         const id = readId();
         const entry = data.find(e => slugify(`${e.vendor} ${e.model}`) === id);
         if (!entry) {
@@ -715,25 +789,11 @@
           });
         }
 
-        // Build back link - check if coming from finder
-        const params = new URLSearchParams(window.location.search);
-        const fromFinder = params.get('from') === 'finder';
-        params.delete('id');
-        params.delete('from');
-        
-        if (fromFinder) {
-          backEl.textContent = '← Back to AP Finder';
-          const filterState = params.toString();
-          backEl.setAttribute('href', 'finder.html' + (filterState ? '?' + filterState : ''));
-        } else {
-          backEl.textContent = '← Back to AP Table';
-          const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
-          backEl.setAttribute('href', backUrl);
-        }
       } catch (err) {
         console.error('Failed to load AP details:', err);
         errorEl.style.display = 'block';
         errorEl.textContent = 'Failed to load AP details.';
+        configureBackLink(backEl);
       }
     }
 

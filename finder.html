@@ -159,7 +159,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
-  <script src="ap-format.js?v=2"></script>
+  <script src="ap-format.js?v=3"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     const wifiOptions = [
@@ -415,8 +415,11 @@
         const model = document.createElement('div');
         model.className = 'result-cell result-model';
         const modelLink = document.createElement('a');
-        modelLink.href = `ap.html?id=${encodeURIComponent(entry._slug)}`;
+        modelLink.href = buildApDetailHref(entry._slug);
         modelLink.textContent = entry.model || '';
+        modelLink.addEventListener('click', () => {
+          saveDetailBackPath(currentListReturnPath());
+        });
         model.appendChild(modelLink);
 
         const wifi = document.createElement('div');
@@ -459,19 +462,11 @@
         row.appendChild(form);
         row.appendChild(actions);
 
-        // Make entire row clickable (except checkbox)
+        // Make entire row clickable (except checkbox); filters stay on Finder URL via sessionStorage Back
         row.style.cursor = 'pointer';
         row.addEventListener('click', (e) => {
           if (e.target.type !== 'checkbox' && e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
-            const filterState = getFilterStateForUrl();
-            const urlParams = new URLSearchParams();
-            urlParams.set('id', entry._slug);
-            urlParams.set('from', 'finder');
-            if (filterState) {
-              const filterParams = new URLSearchParams(filterState);
-              filterParams.forEach((value, key) => urlParams.set(key, value));
-            }
-            window.location.href = `ap.html?${urlParams.toString()}`;
+            window.location.href = rememberListAndBuildDetailHref(entry._slug);
           }
         });
 

@@ -195,7 +195,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
-  <script src="ap-format.js?v=2"></script>
+  <script src="ap-format.js?v=3"></script>
   <script>
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
@@ -570,9 +570,12 @@
         tr.appendChild(vendorTd);
           const modelTd = document.createElement('td');
           const modelLink = document.createElement('a');
-          modelLink.href = `ap.html?id=${encodeURIComponent(id)}`;
+          modelLink.href = buildApDetailHref(id);
           modelLink.textContent = entry.model || '';
-          modelLink.addEventListener('click', event => event.stopPropagation());
+          modelLink.addEventListener('click', event => {
+            event.stopPropagation();
+            saveDetailBackPath(currentListReturnPath());
+          });
           modelTd.appendChild(modelLink);
           modelTd.style.fontSize = '1rem';
           modelTd.style.fontWeight = '600';
@@ -616,12 +619,9 @@
           cell.dataset.key = TABLE_COLUMN_KEYS[index] || '';
         });
 
-        // Navigate to dedicated details page, preserving current table state in URL
+        // Navigate to detail (id only); list filters stay shareable on this URL via sessionStorage Back
         tr.addEventListener('click', () => {
-          const slug = slugFor(entry);
-          const state = window.location.search.replace(/^\?/, '');
-          const url = `ap.html?id=${encodeURIComponent(slug)}${state ? '&' + state : ''}`;
-          window.location.href = url;
+          window.location.href = rememberListAndBuildDetailHref(slugFor(entry));
         });
 
         tbody.appendChild(tr);
