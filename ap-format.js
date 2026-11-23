@@ -231,6 +231,36 @@ function formatModeRows(modes) {
   return rows.filter(row => row.value);
 }
 
+/**
+ * Link to the AntennaComparison Finder with this AP pre-selected.
+ * The ap_id must match the antenna-compatibility export
+ * (makeApId in .github/scripts/lib/ap-rf-common.js): "<vendor>:<model>",
+ * each lowercased, spaces to "-", other punctuation dropped.
+ * test-antenna-finder-link.js keeps the two in step.
+ */
+const ANTENNA_FINDER_URL = "https://antennacomparison.com/finder.html";
+
+function antennaCompatIdPart(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/[\u2010-\u2015\u2212]/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
+
+function antennaCompatApId(vendor, model) {
+  return `${antennaCompatIdPart(vendor)}:${antennaCompatIdPart(model)}`;
+}
+
+/** Finder URL for APs that take external antennas; "" for internal-only APs. */
+function antennaFinderHref(entry) {
+  if (!entry || !antennaTypes(entry.antenna_type).includes("External")) return "";
+  const params = new URLSearchParams();
+  params.set("ap", antennaCompatApId(entry.vendor, entry.model));
+  return `${ANTENNA_FINDER_URL}?${params.toString()}`;
+}
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     normalizeForSlug,
@@ -249,6 +279,9 @@ if (typeof module !== "undefined" && module.exports) {
     antennaMatchesAny,
     formatBandObject,
     beamwidthModeRows,
-    formatModeRows
+    formatModeRows,
+    ANTENNA_FINDER_URL,
+    antennaCompatApId,
+    antennaFinderHref
   };
 }

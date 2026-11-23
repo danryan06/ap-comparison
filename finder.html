@@ -159,7 +159,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
-  <script src="ap-format.js?v=3"></script>
+  <script src="ap-format.js?v=4"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     const wifiOptions = [
@@ -451,6 +451,17 @@
           datasheetLink.className = 'btn-link btn-link-ghost btn-link-small';
           datasheetLink.textContent = 'Datasheet';
           actions.appendChild(datasheetLink);
+        }
+        const antennaUrl = antennaFinderHref(entry);
+        if (antennaUrl) {
+          const antennaLink = document.createElement('a');
+          antennaLink.href = antennaUrl;
+          antennaLink.target = '_blank';
+          antennaLink.rel = 'noopener noreferrer';
+          antennaLink.className = 'btn-link btn-link-ghost btn-link-small';
+          antennaLink.textContent = 'Antennas';
+          antennaLink.setAttribute('aria-label', `Find antennas for ${entry.vendor || ''} ${entry.model || ''} on AntennaComparison`.trim());
+          actions.appendChild(antennaLink);
         }
 
         row.appendChild(checkbox);
