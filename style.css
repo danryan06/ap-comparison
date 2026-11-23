@@ -346,6 +346,7 @@ h2 {
 }
 
 .btn-link {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1210,6 +1211,16 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   box-shadow: none;
 }
 
+.filter-panel .filter-group,
+.filter-panel .filter-group:last-child {
+  display: block;
+  width: auto;
+}
+
+.finder-grid > * {
+  min-width: 0;
+}
+
 .filter-panel .filter-group:last-child {
   border-bottom: none;
 }
@@ -1360,6 +1371,19 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   padding: 0.75rem 1rem;
 }
 
+.result-header .result-cell {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+.result-header .row-select {
+  display: block;
+  width: 13px;
+  margin-left: 3px;
+}
+
 .result-header:hover {
   background: rgba(15, 23, 42, 0.5);
 }
@@ -1429,10 +1453,6 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   }
   .result-spatial,
   .result-antenna {
-    display: none;
-  }
-  .result-header .result-cell:nth-child(6),
-  .result-header .result-cell:nth-child(7) {
     display: none;
   }
 }
@@ -2620,3 +2640,97 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 .antenna-finder-callout a:hover {
   color: #bfdbfe;
 }
+
+/* ================================
+   Phone layout (390px class screens)
+   ================================ */
+@media (max-width: 480px) {
+  .header-content {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .header-nav {
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .header-right {
+    gap: 4px;
+  }
+
+  .header-divider {
+    display: none;
+  }
+
+  .nav-link,
+  .nav-link.active,
+  .nav-link-secondary,
+  .nav-link-accent {
+    padding: 8px;
+    min-width: 40px;
+  }
+
+  .header-with-logo {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Page action buttons: two per row instead of full-width pills */
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .actions .btn-link {
+    flex: 1 1 calc(50% - 4px);
+    width: auto;
+    min-width: 0;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  /* Finder results: stacked rows instead of an 8-column grid */
+  .result-header {
+    display: none;
+  }
+
+  .result-row {
+    grid-template-columns: auto 1fr;
+    gap: 2px 12px;
+    padding: 12px;
+  }
+
+  .result-row .row-select {
+    grid-row: span 6;
+    align-self: start;
+    margin: 3px 0 0;
+  }
+
+  .result-row > .result-cell {
+    grid-column: 2;
+  }
+
+  .result-vendor {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .result-model a {
+    font-size: 1rem;
+  }
+
+  .result-antenna {
+    display: flex;
+  }
+
+  .result-actions {
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}
+
