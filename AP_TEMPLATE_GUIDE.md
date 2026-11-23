@@ -126,7 +126,7 @@ Use this template when submitting new AP entries. The canonical JSON template is
   - A model that ships as one type or the other gets both values, for example `["Directional", "External"]`.
   - Hybrids whose antennas are used simultaneously take their predominant type, not both.
   - Keep descriptive detail (dynamic, 60°, HazLoc, connector family) in `antenna_connectors`, not in `antenna_type`.
-  - A plain string is accepted only for a not-yet-normalized submission. New entries use an array.
+  - Always an array. The validator rejects a plain string.
 
 - **antenna_gain_dbi**: Gain for the AP's default radio and antenna mode. Optional. Omit the field when the datasheet does not state it.
   - Shape: `{"2.4": 4.5, "5": 5.0, "6": 5.5}`
@@ -140,7 +140,7 @@ Use this template when submitting new AP entries. The canonical JSON template is
   - It may be nested by mode name when the vendor presents beamwidth per antenna mode and no single default mode is documented. Keep every mode. Do not move those modes into `antenna_modes`, and do not pick a default mode.
   - Nested example: `{ "wide": { "2.4": "70° x 70°", "5-lower": "35° x 35°", "5-upper": "35° x 35°", "6": "70° x 35°" }, "narrow_boresight": { "...": "..." }, "front_and_back": { "...": "..." } }`.
   - Use `"5-lower"` and `"5-upper"` for a split 5 GHz band. `"5_low"` and `"5_high"` are not keys.
-  - The detail and compare views show a nested beamwidth as one row per mode, labeled by mode name: Wide, Narrow boresight, Front and back.
+  - The detail and compare views show a nested beamwidth as one row per mode, labeled by mode name: Wide beamwidth, Narrow boresight beamwidth, Front and back beamwidth.
 
 - **antenna_modes**: Optional array for any alternate radio or antenna mode whose gain or beamwidth differs from the default. Never drop an alternate mode.
   - Use this for dual 5 GHz, selectable beamwidth, and switchable gain.
@@ -190,7 +190,7 @@ Use this template when submitting new AP entries. The canonical JSON template is
 
 - **radios_iot_features**: Array of IoT and additional radio features
   - Common values: `"BLE"`, `"Zigbee"`, `"GPS/GNSS"`, `"802.15.4 IoT radio"`, `"Scanning radio"`, `"UWB"`
-  - Use an empty array `[]` if none
+  - Use an empty array `[]` if none. The site treats `[]` as "none" and hides the row; it is not reported as missing.
 
 ### References
 
@@ -272,7 +272,7 @@ Form: `articulating`, `enclosure`, `adapter`
 
 - A mount record is created only when a document names at least one AP model. When a document says a mount fits an entire family, list every in-scope model in that family. Add that document as a source with those models in `aps`, and quote the family wording in `notes`. "All C-series APs" and a compatibility list that prints "T350" are family statements.
 - When two places in one document disagree about whether a model fits a mount, leave that model off and quote both places in the to-check list. A summary table that says yes does not override a procedure or table that says no. When two documents disagree, keep the model only on a mount that no document contradicts for it.
-- Cisco and Cisco Meraki listings are separate records for the same hardware. A bracket that fits the hardware is listed on both slugs. The validator warns when only one twin is listed.
+- Cisco and Cisco Meraki listings are separate records for the same hardware. A bracket that fits the hardware is listed on both slugs. The maintainer's local mount check warns when only one twin is listed.
 - When a second document adds compatibility for another AP, add a new entry to `sources` with that AP in its `aps` list.
 
 #### Out of scope

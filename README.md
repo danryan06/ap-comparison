@@ -8,7 +8,7 @@ A comprehensive, open-source database for comparing enterprise Wi-Fi access poin
 
 - **Comprehensive Comparison Table**: View all access points in a sortable, filterable table
 - **Advanced Filtering**: Filter by vendor, antenna type (Internal/External/Directional), and form factor (Indoor/Outdoor/Wallplate)
-- **Feature Finder**: Interactive wizard styled after sizing tools that lets you pick Wi-Fi generations, preferred vendors, and antenna/form-factor requirements to instantly narrow the catalog
+- **Feature Finder**: Filter by Wi-Fi generation (that generation or newer, or that generation only), 6 GHz radio, vendor, form factor, and antenna type
 - **Full-Text Search**: Search across all fields including vendor, model, features, and PoE requirements
 - **Side-by-Side Comparison**: Select multiple APs and compare them side-by-side
 - **Detailed AP Pages**: Click any AP to view complete specifications and images
@@ -43,17 +43,16 @@ Each access point entry includes:
 
 1. **Search**: Use the search box to find APs by vendor, model, or features
 2. **Filter**: Use the dropdown filters to narrow by vendor, antenna type, or form factor
-3. **Feature Finder**: Open the [AP Feature Finder](https://apcomparison.com/finder.html) to filter by Wi-Fi generation, vendors, form factors, and internal vs. external antennas and view only matching APs
+3. **Feature Finder**: Open the [AP Feature Finder](https://apcomparison.com/finder.html) to filter by Wi-Fi generation, 6 GHz radio, vendor, form factor, and antenna type. A generation box matches that generation or newer unless you tick "This generation only". Filters are kept in the URL, so a filtered view can be shared.
 4. **Sort**: Click any column header to sort by that field
 5. **Customize Columns**: Click "Choose Columns" to show/hide specific fields
 6. **View Details**: Click any row to see the full AP details page
 
 ### Comparing APs
 
-1. Select APs using the radio buttons in the table
-2. Click the "Compare" button that appears (shows count of selected APs)
-3. On the comparison page, use "Choose Columns" to customize which fields to compare
-4. Export the comparison to CSV if needed
+1. Tick the checkbox next to two or more APs in the table or the Feature Finder
+2. Click the "Compare" button that appears (it shows how many APs are selected)
+3. Export the comparison to CSV if needed
 
 ### Exporting Data
 
@@ -121,7 +120,8 @@ After a maintainer reviews the issue and adds the `ap-submission` label, GitHub 
 ├── edit.html          # Edit existing AP form
 ├── data_issues.html  # Data quality dashboard
 ├── style.css          # All styling
-├── ap-format.js       # Shared formatting helpers
+├── ap-format.js       # Shared helpers: URL ids, antenna/beamwidth formatting, Finder Wi-Fi parsing
+├── site-header.js     # Shared site header and navigation
 ├── ap_data.json       # Main data file
 ├── mounts.json        # Orderable mounting parts
 ├── ap_template.json   # AP entry template
@@ -166,15 +166,24 @@ Existing browse/detail/compare display fields are unchanged. Profiles mark unsou
 - JavaScript required
 - Responsive design works on mobile devices
 
-## Data Quality
+## Data Sourcing and Quality
 
-The project includes automated data quality checks:
-- Missing required fields
-- Duplicate vendor/model combinations
-- Single-line URL format
-- Data format validation
+Every value traces to the vendor's own datasheet, installation guide, or ordering guide, hosted on the vendor's site. Distributor copies and zip files are not used as sources. Each AP links its datasheet (`datasheet_url`), and in-box contents and mounts record the document they came from (`in_box_source`, `sources` in `mounts.json`). When a vendor document does not state a value, the field is left out rather than estimated. Field rules are in [AP_TEMPLATE_GUIDE.md](AP_TEMPLATE_GUIDE.md).
 
-View the [Data Quality Dashboard](https://apcomparison.com/data_issues.html) to see current issues.
+The [Data Quality page](https://apcomparison.com/data_issues.html) lists fields that are missing or marked unknown, and duplicate vendor and model pairs. An empty `radios_iot_features` list means the AP has no additional radios; it is not counted as missing.
+
+### Checks
+
+GitHub Actions runs these on every push and pull request, and the submission workflows run the data checks before opening their pull requests. Run them locally from the repository root with Node 22:
+
+```bash
+node .github/scripts/validate-data.js            # ap_data.json field rules and duplicates
+node .github/scripts/validate-site.js            # mounts.json, local file references, inline JS, image sizes
+node .github/scripts/validate-ap-rf-export.js    # antenna-compatibility export matches its schema
+node .github/scripts/test-detail-back.js         # detail-page Back link helpers
+node .github/scripts/test-antenna-finder-link.js # AntennaComparison links match exported ap_ids
+node .github/scripts/test-wifi-filter.js         # Finder Wi-Fi generation and 6 GHz parsing
+```
 
 ## License
 
