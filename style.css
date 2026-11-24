@@ -83,6 +83,12 @@
   overflow-x: auto;
   max-width: 100%;
   align-items: flex-end;
+  scrollbar-width: none;
+}
+.navrow::-webkit-scrollbar { display: none; }
+.navrow.more {
+  -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
+  mask-image: linear-gradient(to right, #000 85%, transparent);
 }
 .navrow nav.tabs { display: flex; gap: 4px; }
 .navrow .tab,
@@ -3400,3 +3406,27 @@ td a.model-link,
 
 /* Footer */
 .footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+
+/* Filter bar: stays in place under the page header while the table scrolls.
+   The header is no longer sticky, so the bar sticks at the very top, on an
+   opaque background so rows never show through it. */
+.filter-bar {
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+/* Mid widths: keep search, filters and buttons surfaced in two compact rows
+   (search and buttons, then the three filters) instead of one row per control. */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .filter-bar-content { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .search-wrapper { order: 1; flex: 1 1 260px; width: auto; max-width: none; min-width: 0; }
+  .filter-actions { order: 2; width: auto; margin-left: 0; }
+  .btn-filter-action { flex: none; }
+  .filter-bar .filter-group { order: 3; width: 100%; flex-direction: row; flex-wrap: nowrap; gap: 8px; }
+  .filter-select { flex: 1 1 0; width: auto; min-width: 0; }
+}
+/* Stacked layout (phones): the search box was given a 300px flex basis for the
+   row layout, which became 300px of height once the bar stacks. */
+@media (max-width: 768px) {
+  .search-wrapper { flex: none; }
+}
