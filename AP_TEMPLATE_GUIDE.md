@@ -81,11 +81,16 @@ Use this template when submitting new AP entries. The canonical JSON template is
 
 ### Wi-Fi Specifications
 
-- **wifi_gen_radios**: Wi-Fi generation and supported bands
-  - Format: `"Wi-Fi 6 (2.4/5)"` for dual-band Wi-Fi 6
-  - Format: `"Wi-Fi 6E (2.4/5/6)"` for tri-band Wi-Fi 6E
-  - Format: `"Wi-Fi 7 (2.4/5/6)"` for tri-band Wi-Fi 7
-  - Format: `"Wi-Fi 6/7 (2.4/5/6)"` for mixed generations
+- **wifi_gen_radios**: One Wi-Fi generation (the newest the AP's client radios support), then the bands in parentheses. Formats in use:
+  - `"Wi-Fi 6 (2.4/5)"`: dual-band Wi-Fi 6
+  - `"Wi-Fi 6 (2.4/5/5)"`: Wi-Fi 6 with a second 5 GHz radio
+  - `"Wi-Fi 6E (2.4/5/6)"`: tri-band Wi-Fi 6E
+  - `"Wi-Fi 7 (2.4/5)"`: Wi-Fi 7 with no 6 GHz radio
+  - `"Wi-Fi 7 (2.4/5/6)"`: tri-band Wi-Fi 7
+  - `"Wi-Fi 7 (5/6 Low/6 High)"`: separate 6 GHz low and high radios, as the vendor names them
+  - `"Wi-Fi 7 (2.4/5 or 2.4/6)"`, `"Wi-Fi 7 (2.4/5 or 5/6)"`: two radios where one switches bands; list the band pairs the vendor documents, joined by "or"
+  - Do not combine generations (no `"Wi-Fi 6/7"`). Older standards use the IEEE name, e.g. `"802.11g"`.
+  - The Finder reads the generation and whether a 6 GHz radio is present from this field. A new format makes `test-wifi-filter.js` fail until a test case is added for it.
 
 - **spatial_streams**: MIMO configuration per band
   - Format: `"2x2 / 2x2"` for dual-band (2.4 / 5 GHz)
@@ -159,7 +164,11 @@ Use this template when submitting new AP entries. The canonical JSON template is
 
 - **form_factor**: `"Indoor"`, `"Outdoor"`, or `"Wallplate"`. Do not put hardened, ruggedized, or HazLoc in this field.
 
-- **hardened**: Optional boolean. Set `true` only when the vendor calls that model hardened, including "indoor hardened" or "connectorized hardened", as the model's own description. A series title that says hardened is not enough. Omit the field otherwise. Do not set `false`. The table, detail, and compare views show it as hardened only when it is `true`.
+- **hardened**: Optional boolean. Set `true` when the vendor's datasheet or installation guide, for that model, does either of these:
+  - calls the model itself hardened (for example "hardened" or "indoor hardened" in the model's own description; a series title alone is not enough), or
+  - lists at least one of: a hazardous-location certification (Class I, Division 2 (C1D2), ATEX, or IECEx); a rail certification (EN 50155 or EN 50121); or a named shock or vibration standard (for example IEC 60068, IEC 61373, or MIL-STD-810).
+
+  Words like "ruggedized" or "industrial" without one of those are not enough. A hardened AP keeps its base `form_factor` (for example `"Indoor"`). Omit the field otherwise. Do not set `false`. The table, detail, and compare views show it as hardened only when it is `true`.
 
 - **dimensions**: Metric first. Imperial, when the vendor states it, goes in parentheses.
   - `"200 x 200 x 45 mm (7.9 x 7.9 x 1.8 in)"`
