@@ -179,6 +179,16 @@
           </div>
 
           <div class="form-row">
+            <label for="environmental_certifications">Environmental Certifications</label>
+            <input id="environmental_certifications" name="environmental_certifications" type="text" placeholder="HazLoc, rail, shock/vibration standards, comma-separated, e.g., EN 50155, IEC 61373" />
+          </div>
+
+          <div class="form-row">
+            <label for="environmental_certifications_source">Environmental Certifications Source</label>
+            <input id="environmental_certifications_source" name="environmental_certifications_source" type="url" placeholder="https:// vendor datasheet or install guide that lists them" />
+          </div>
+
+          <div class="form-row">
             <label for="msrp">MSRP (optional, not shown on the site)</label>
             <input id="msrp" name="msrp" type="text" placeholder="Leave blank if unknown" />
           </div>
@@ -245,6 +255,9 @@
       const operating_humidity = document.getElementById('operating_humidity').value.trim();
       const ingress_protection = document.getElementById('ingress_protection').value.trim();
       const hazloc_certification = document.getElementById('hazloc_certification').value.trim();
+      const environmental_certifications = document.getElementById('environmental_certifications').value
+        .split(',').map(s => s.trim()).filter(Boolean);
+      const environmental_certifications_source = document.getElementById('environmental_certifications_source').value.trim();
       const msrp = document.getElementById('msrp').value.trim() || 'unknown';
 
       let radios_iot_features = [];
@@ -278,11 +291,16 @@
         ...(operating_humidity ? { operating_humidity } : {}),
         ...(ingress_protection ? { ingress_protection } : {}),
         ...(hazloc_certification ? { hazloc_certification } : {}),
+        ...(environmental_certifications.length ? { environmental_certifications, environmental_certifications_source } : {}),
         msrp
       };
       if (!operating_humidity) delete result.operating_humidity;
       if (!ingress_protection) delete result.ingress_protection;
       if (!hazloc_certification) delete result.hazloc_certification;
+      if (!environmental_certifications.length) {
+        delete result.environmental_certifications;
+        delete result.environmental_certifications_source;
+      }
       return result;
     }
 
@@ -326,6 +344,8 @@
       document.getElementById('operating_humidity').value = entry.operating_humidity || '';
       document.getElementById('ingress_protection').value = entry.ingress_protection || '';
       document.getElementById('hazloc_certification').value = entry.hazloc_certification || '';
+      document.getElementById('environmental_certifications').value = Array.isArray(entry.environmental_certifications) ? entry.environmental_certifications.join(', ') : '';
+      document.getElementById('environmental_certifications_source').value = entry.environmental_certifications_source || '';
       document.getElementById('msrp').value = entry.msrp || '';
       document.getElementById('datasheet_url').value = entry.datasheet_url || '';
       document.getElementById('image_url').value = entry.image_url || '';

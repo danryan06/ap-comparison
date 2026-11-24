@@ -207,6 +207,7 @@
       antenna_gain_dbi: 'Antenna Gain (dBi)',
       beamwidth: 'Beamwidth',
       hazloc_certification: 'HazLoc Certification',
+      environmental_certifications: 'Environmental Certifications',
       operating_humidity: 'Operating Humidity',
       ingress_protection: 'Ingress Protection',
       form_factor: 'Form Factor',
@@ -682,6 +683,17 @@
           }
           if (k === 'hardened') {
             valDiv.textContent = v === true ? 'Yes' : '';
+          } else if (k === 'environmental_certifications' && Array.isArray(v)) {
+            valDiv.appendChild(document.createTextNode(v.join(', ') + ' '));
+            const sourceUrl = safeUrl(entry.environmental_certifications_source);
+            if (sourceUrl) {
+              const link = document.createElement('a');
+              link.href = sourceUrl;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+              link.textContent = '(source)';
+              valDiv.appendChild(link);
+            }
           } else if (k === 'antenna_type') {
             valDiv.textContent = formatAntennaType(v);
           } else if (k === 'antenna_gain_dbi' && v && typeof v === 'object') {
@@ -747,7 +759,7 @@
           },
           {
             title: 'Physical Specifications',
-            fields: ['form_factor', 'hardened', 'dimensions', 'weight', 'operating_temp_range', 'operating_humidity', 'ingress_protection', 'hazloc_certification']
+            fields: ['form_factor', 'hardened', 'dimensions', 'weight', 'operating_temp_range', 'operating_humidity', 'ingress_protection', 'hazloc_certification', 'environmental_certifications']
           },
           {
             title: 'End of Life Information',
@@ -827,6 +839,7 @@
           k !== 'antenna_modes' &&
           k !== 'in_box' &&
           k !== 'in_box_source' &&
+          k !== 'environmental_certifications_source' &&
           k !== 'in_box_condition' &&
           entry[k] != null &&
           entry[k] !== ''

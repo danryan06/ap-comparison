@@ -124,18 +124,19 @@
       add('Dimensions', plain('dimensions'));
       add('Weight', plain('weight'));
       add('Operating temperature', plain('operating_temp_range'));
-      add('Operating humidity', plain('operating_humidity'));
-      add('Ingress protection', plain('ingress_protection'));
-      add('HazLoc certification', plain('hazloc_certification'));
+      add('Operating humidity', plain('operating_humidity'), { optional: true });
+      add('Ingress protection', plain('ingress_protection'), { optional: true });
+      add('HazLoc certification', plain('hazloc_certification'), { optional: true });
+      add('Environmental certifications', plain('environmental_certifications'), { long: true, optional: true });
 
       section('Mounting');
       add('In the box', inBoxText, { long: true });
       add('Orderable mounts', entry => mountsText(entry, mounts), { long: true });
 
       section('Lifecycle');
-      add('End of sale', plain('end_of_sale_date'));
-      add('End of support', plain('end_of_support_date'));
-      add('Suggested replacement', plain('manufacturer_suggested_replacement'));
+      add('End of sale', plain('end_of_sale_date'), { optional: true });
+      add('End of support', plain('end_of_support_date'), { optional: true });
+      add('Suggested replacement', plain('manufacturer_suggested_replacement'), { optional: true });
 
       // Resolve values; drop rows no selected AP has, then sections left empty.
       const resolved = rows.map(row => row.section ? row : {
@@ -271,6 +272,8 @@
             const td = document.createElement('td');
             if (value) {
               td.textContent = value;
+            } else if (row.optional) {
+              // Optional fields an AP doesn't have stay blank, as on the AP page.
             } else {
               td.className = 'compare-empty';
               td.textContent = 'Not listed';

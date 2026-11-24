@@ -54,6 +54,8 @@ Use this template when submitting new AP entries. The canonical JSON template is
   "operating_humidity": "5% to 95% RH non-condensing (optional)",
   "ingress_protection": "IP67 (optional)",
   "hazloc_certification": "Class I, Division 2, Groups A, B, C, D (optional)",
+  "environmental_certifications": ["EN 50155", "IEC 61373"],
+  "environmental_certifications_source": "https://vendor.example.com/datasheet.pdf",
   "msrp": "unknown",
   "end_of_sale_announcement_date": "February 7, 2025 (optional)",
   "end_of_sale_date": "August 7, 2025 (optional)",
@@ -196,6 +198,10 @@ Use this template when submitting new AP entries. The canonical JSON template is
 
 - **hazloc_certification**: Optional. The vendor's stated certification string, for example `"Class I, Division 2, Groups A, B, C, D"`. Omit the field when the AP has no hazardous-location certification. The detail and compare views show it only when it is present.
 
+- **environmental_certifications**: Optional array. The hazardous-location, rail, and shock or vibration standards the vendor's datasheet or installation guide lists for the model, each written the way the vendor writes it, for example `["EN 50155:2017", "EN 50121-4:2016", "IEC 61373 ed2:2008"]`. Leave out safety, EMC-only, and radio approvals (UL 62368, FCC, CE) and the IP rating, which has its own field. Omit the field when the vendor lists none. These are the certifications that make an AP `hardened` under the certification rule.
+
+- **environmental_certifications_source**: Required with `environmental_certifications`. The https URL of the vendor document the list came from.
+
 ### Features
 
 - **radios_iot_features**: Array of IoT and additional radio features
@@ -294,6 +300,6 @@ See `templates/mount_template.json`. The example values there are illustrative o
 ## Notes
 
 - Strings are the default. Arrays: `antenna_type`, `radios_iot_features`, `antenna_modes`, `in_box`. Objects: `antenna_gain_dbi`, `beamwidth`, and the gain or beamwidth object inside a mode.
-- `hardened`, `operating_humidity`, `ingress_protection`, `hazloc_certification`, `antenna_modes`, `in_box`, `in_box_source`, and `in_box_condition` are omitted when they do not apply. `hardened` is omitted rather than set to `false`. `in_box: []` means the document lists nothing that ships unconditionally. Do not set the other optional fields to empty strings or empty arrays just to hold a place.
+- `hardened`, `operating_humidity`, `ingress_protection`, `hazloc_certification`, `environmental_certifications` (with its source), `antenna_modes`, `in_box`, `in_box_source`, and `in_box_condition` are omitted when they do not apply. `hardened` is omitted rather than set to `false`. `in_box: []` means the document lists nothing that ships unconditionally. Do not set the other optional fields to empty strings or empty arrays just to hold a place.
 - Use `"unknown"` for a missing `msrp`. The site does not display that field.
 - Do not infer a number, temperature, certification class, or antenna type that the vendor documentation does not state.

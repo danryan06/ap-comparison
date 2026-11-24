@@ -762,7 +762,17 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf"
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf",
+    "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155:2017",
+      "EN 50121-1:2017",
+      "EN 50121-3-2",
+      "EN 50121-4:2016",
+      "IEC 61373 ed2:2008",
+      "ETSI 300-19-2-4"
+    ],
+    "environmental_certifications_source": "https://support.hpe.com/hpesc/public/api/document/a00094642enw/a00094642enw.pdf"
   },
   {
     "vendor": "Aruba",
@@ -806,7 +816,17 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf"
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap560/ig/AP-560_Install_Guide_EN.pdf",
+    "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155:2017",
+      "EN 50121-1:2017",
+      "EN 50121-3-2",
+      "EN 50121-4:2016",
+      "IEC 61373 ed2:2008",
+      "ETSI 300-19-2-4"
+    ],
+    "environmental_certifications_source": "https://support.hpe.com/hpesc/public/api/document/a00094642enw/a00094642enw.pdf"
   },
   {
     "vendor": "Aruba",
@@ -850,7 +870,17 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf"
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf",
+    "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155:2017",
+      "EN 50121-1:2017",
+      "EN 50121-3-2",
+      "EN 50121-4:2016",
+      "IEC 61373 ed2:2008",
+      "ETSI 300-19-2-4"
+    ],
+    "environmental_certifications_source": "https://support.hpe.com/hpesc/public/api/document/a00056659enw/a00056659enw.pdf"
   },
   {
     "vendor": "Aruba",
@@ -894,7 +924,17 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf"
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf",
+    "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155:2017",
+      "EN 50121-1:2017",
+      "EN 50121-3-2",
+      "EN 50121-4:2016",
+      "IEC 61373 ed2:2008",
+      "ETSI 300-19-2-4"
+    ],
+    "environmental_certifications_source": "https://support.hpe.com/hpesc/public/api/document/a00056659enw/a00056659enw.pdf"
   },
   {
     "vendor": "Aruba",
@@ -938,7 +978,17 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf"
+    "in_box_source": "https://arubanetworking.hpe.com/techdocs/hardware/aps/ap570/ig/AP-570_Install_Guide_EN.pdf",
+    "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155:2017",
+      "EN 50121-1:2017",
+      "EN 50121-3-2",
+      "EN 50121-4:2016",
+      "IEC 61373 ed2:2008",
+      "ETSI 300-19-2-4"
+    ],
+    "environmental_certifications_source": "https://support.hpe.com/hpesc/public/api/document/a00056659enw/a00056659enw.pdf"
   },
   {
     "vendor": "Aruba",
@@ -966,6 +1016,10 @@
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155"
+    ],
+    "environmental_certifications_source": "https://www.hpe.com/us/en/collaterals/collateral.a50004278enw.html",
     "msrp": "unknown",
     "in_box": [
       {
@@ -1017,6 +1071,10 @@
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155"
+    ],
+    "environmental_certifications_source": "https://www.hpe.com/us/en/collaterals/collateral.a50004278enw.html",
     "msrp": "unknown",
     "in_box": [
       {
@@ -1063,6 +1121,10 @@
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
+    "environmental_certifications": [
+      "EN 50155"
+    ],
+    "environmental_certifications_source": "https://www.hpe.com/us/en/collaterals/collateral.a50004278enw.html",
     "msrp": "unknown",
     "in_box": [
       {
@@ -1442,7 +1504,12 @@
     "antenna_connectors": "None (internal omnidirectional antennas)",
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading; -40°C to +70°C storage",
     "ingress_protection": "IP66/67 rated",
-    "hazloc_certification": "HazLoc certified",
+    "hazloc_certification": "Class 1 Division 2, ATEX Zone 2",
+    "environmental_certifications": [
+      "Class 1 Division 2",
+      "ATEX Zone 2"
+    ],
+    "environmental_certifications_source": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
     "msrp": "unknown",
     "in_box": [
       {
@@ -1534,7 +1601,12 @@
     "antenna_connectors": "None (internal directional antennas)",
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading; -40°C to +70°C storage",
     "ingress_protection": "IP66/67 rated",
-    "hazloc_certification": "HazLoc certified",
+    "hazloc_certification": "Class 1 Division 2, ATEX Zone 2",
+    "environmental_certifications": [
+      "Class 1 Division 2",
+      "ATEX Zone 2"
+    ],
+    "environmental_certifications_source": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
     "msrp": "unknown",
     "in_box": [
       {
@@ -1626,7 +1698,12 @@
     "antenna_connectors": "None (internal dynamic directional antennas)",
     "operating_temp_range": "-40°C to +70°C operating (no solar loading), -40°C to +65°C with solar loading; -40°C to +70°C storage",
     "ingress_protection": "IP66/67 rated",
-    "hazloc_certification": "HazLoc certified",
+    "hazloc_certification": "Class 1 Division 2, ATEX Zone 2",
+    "environmental_certifications": [
+      "Class 1 Division 2",
+      "ATEX Zone 2"
+    ],
+    "environmental_certifications_source": "https://www.hpe.com/us/en/collaterals/collateral.a50009200enw.html",
     "msrp": "unknown",
     "in_box": [
       {
@@ -1823,7 +1900,12 @@
     "antenna_connectors": "None (internal dynamic omnidirectional antennas)",
     "operating_temp_range": "-40°C to +65°C operating with solar cover (-40°C to +55°C without); -40°C to +70°C storage",
     "ingress_protection": "IP66/67",
-    "hazloc_certification": "HazLoc certified",
+    "hazloc_certification": "Class 1 Division 2, ATEX Zone 2",
+    "environmental_certifications": [
+      "Class 1 Division 2",
+      "ATEX Zone 2"
+    ],
+    "environmental_certifications_source": "https://buy.hpe.com/emea_europe/en/p/1014901369",
     "msrp": "unknown",
     "in_box": [
       {
@@ -2023,7 +2105,13 @@
     "weight": "2,920 g (6.44 lb)",
     "antenna_connectors": "6× N-type (4× 5/6 GHz, 2× 2.4/5 GHz), 1× SMA (GPS)",
     "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "EN61373",
+      "EN50121"
+    ],
+    "environmental_certifications_source": "https://brandcentral.cambiumnetworks.com/m/1605ffefa3814519/original/XE3-4TN-Wi-Fi-6-Outdoor-Access-Point-Data-Sheet.pdf"
   },
   {
     "vendor": "Cambium",
@@ -2115,7 +2203,13 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://brandcentral.cambiumnetworks.com/m/a413978b586d0d7/original/XV2-23T-Wi-Fi-6-Outdoor-Access-Point.pdf"
+    "in_box_source": "https://brandcentral.cambiumnetworks.com/m/a413978b586d0d7/original/XV2-23T-Wi-Fi-6-Outdoor-Access-Point.pdf",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "EN50121",
+      "EN61373"
+    ],
+    "environmental_certifications_source": "https://brandcentral.cambiumnetworks.com/m/a413978b586d0d7/original/XV2-23T-Wi-Fi-6-Outdoor-Access-Point.pdf"
   },
   {
     "vendor": "Cambium",
@@ -2140,7 +2234,14 @@
     "weight": "2,700 g (5.95 lb)",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 65°C operating; -40°C to 70°C storage",
-    "msrp": "unknown"
+    "msrp": "unknown",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "IEC 61373",
+      "EN 50121-1",
+      "EN 50121-4"
+    ],
+    "environmental_certifications_source": "https://brandcentral.cambiumnetworks.com/m/7a91d1496e2ab4c3/original/XV2-2T0-Wi-Fi-6-Outdoor-Access-Point.pdf"
   },
   {
     "vendor": "Cambium",
@@ -2831,7 +2932,12 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9163e/install-guide/b-hig-9163e/installation-overview.html"
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/wireless/access_point/cw916x/cw9163e/install-guide/b-hig-9163e/installation-overview.html",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "MIL-STD-810E, Method 514.4 (vibration)"
+    ],
+    "environmental_certifications_source": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163e-access-point/nb-06-cat-9163e-series-access-ds-cte-en.pdf"
   },
   {
     "vendor": "Cisco",
@@ -2991,7 +3097,19 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/IIOT/wireless/iw9167eh/base-hig/b-iw9167eh-hig/m-unpacking-your-access-point.html"
+    "in_box_source": "https://www.cisco.com/c/en/us/td/docs/IIOT/wireless/iw9167eh/base-hig/b-iw9167eh-hig/m-unpacking-your-access-point.html",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "EN 50155 Class TX",
+      "EN 50121-3-2",
+      "EN 50121-4",
+      "EN 61373",
+      "IEC 60068-2-6",
+      "IEC 60068-2-27",
+      "IEC 60068-2-32",
+      "IEC 60068-3-3"
+    ],
+    "environmental_certifications_source": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-iw9167-series/cat-iw9167e-heavy-duty-ap-ds.html"
   },
   {
     "vendor": "Cisco",
@@ -3727,7 +3845,12 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9163E-MR_Installation_Guide"
+    "in_box_source": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9163E-MR_Installation_Guide",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "MIL-STD-810E, Method 514.4 (vibration)"
+    ],
+    "environmental_certifications_source": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9163e-access-point/nb-06-cat-9163e-series-access-ds-cte-en.pdf"
   },
   {
     "vendor": "Cisco Meraki",
@@ -5265,7 +5388,14 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-234g-quickstart-guide"
+    "in_box_source": "https://docs.fortinet.com/document/fortiap/hardware/fortiap-234g-quickstart-guide",
+    "ingress_protection": "IP67",
+    "hazloc_certification": "C1D2/ATEX Certified",
+    "environmental_certifications": [
+      "C1D2",
+      "ATEX"
+    ],
+    "environmental_certifications_source": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf"
   },
   {
     "vendor": "Fortinet",
@@ -7383,7 +7513,13 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf",
+    "ingress_protection": "IP-67",
+    "environmental_certifications": [
+      "EN 50121-1/4",
+      "IEC 61373"
+    ],
+    "environmental_certifications_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
   },
   {
     "vendor": "Ruckus",
@@ -7416,7 +7552,13 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf",
+    "ingress_protection": "IP-67",
+    "environmental_certifications": [
+      "EN 50121-1/4",
+      "IEC 61373"
+    ],
+    "environmental_certifications_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
   },
   {
     "vendor": "Ruckus",
@@ -7447,7 +7589,13 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
+    "in_box_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf",
+    "ingress_protection": "IP-67",
+    "environmental_certifications": [
+      "EN 50121-1/4",
+      "IEC 61373"
+    ],
+    "environmental_certifications_source": "https://webresources.ruckuswireless.com/datasheets/t350/ds-ruckus-t350.pdf"
   },
   {
     "vendor": "Ruckus",
@@ -7480,7 +7628,14 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db"
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db",
+    "ingress_protection": "IP-67",
+    "environmental_certifications": [
+      "IEC 61373",
+      "EN 50121-1",
+      "EN 50121-4"
+    ],
+    "environmental_certifications_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db"
   },
   {
     "vendor": "Ruckus",
@@ -7514,7 +7669,14 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db"
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db",
+    "ingress_protection": "IP-67",
+    "environmental_certifications": [
+      "IEC 61373",
+      "EN 50121-1",
+      "EN 50121-4"
+    ],
+    "environmental_certifications_source": "https://webresources.commscope.com/download/assets/RUCKUS+T750+Data+Sheet/b363d8c63bd511f0b896d2e4a07eb9db"
   },
   {
     "vendor": "Ruckus",
@@ -7568,7 +7730,14 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T670+with+USB+Data+sheet/c2d5143e622f11f0a3004ee8e7262270"
+    "in_box_source": "https://webresources.commscope.com/download/assets/RUCKUS+T670+with+USB+Data+sheet/c2d5143e622f11f0a3004ee8e7262270",
+    "ingress_protection": "IP-67",
+    "environmental_certifications": [
+      "IEC 61373",
+      "EN 50121-1",
+      "EN 50121-4"
+    ],
+    "environmental_certifications_source": "https://webresources.commscope.com/download/assets/RUCKUS+T670+with+USB+Data+sheet/c2d5143e622f11f0a3004ee8e7262270"
   },
   {
     "vendor": "Ruckus",
@@ -7600,7 +7769,14 @@
         "part_number": null
       }
     ],
-    "in_box_source": "https://fr.commscope.com/globalassets/digizuite/1015755-Ruckus-T670SN-DataSheet-PA-119999.pdf"
+    "in_box_source": "https://fr.commscope.com/globalassets/digizuite/1015755-Ruckus-T670SN-DataSheet-PA-119999.pdf",
+    "ingress_protection": "IP-67",
+    "environmental_certifications": [
+      "IEC 61373",
+      "EN 50121-1",
+      "EN 50121-4"
+    ],
+    "environmental_certifications_source": "https://fr.commscope.com/globalassets/digizuite/1015755-Ruckus-T670SN-DataSheet-PA-119999.pdf"
   },
   {
     "vendor": "Juniper",
@@ -7830,7 +8006,15 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/Wireless/Wireless_Hardware/ap4060_access_point_installation_guide/box_contents.shtml"
+    "in_box_source": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/Wireless/Wireless_Hardware/ap4060_access_point_installation_guide/box_contents.shtml",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "IEC 60068-2-27",
+      "IEC 60068-2-6",
+      "IEC 60068-2-64",
+      "ETSI 300 019-2-3"
+    ],
+    "environmental_certifications_source": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7d50fe82f75041e1a2876b1c9862b02f?v=b19b8e5b"
   },
   {
     "vendor": "Extreme",
@@ -7884,7 +8068,15 @@
         "qty": 1
       }
     ],
-    "in_box_source": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/Wireless/Wireless_Hardware/ap4060_access_point_installation_guide/box_contents.shtml"
+    "in_box_source": "https://documentation.extremenetworks.com/AP4060%20AP4060X%20Installation%20Guide/Wireless/Wireless_Hardware/ap4060_access_point_installation_guide/box_contents.shtml",
+    "ingress_protection": "IP67",
+    "environmental_certifications": [
+      "IEC 60068-2-27",
+      "IEC 60068-2-6",
+      "IEC 60068-2-64",
+      "ETSI 300 019-2-3"
+    ],
+    "environmental_certifications_source": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7d50fe82f75041e1a2876b1c9862b02f?v=b19b8e5b"
   },
   {
     "vendor": "Extreme",
