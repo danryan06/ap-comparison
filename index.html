@@ -14,11 +14,14 @@
   <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
   <header class="site-header" data-page="index"></header>
-  <script src="site-header.js?v=1"></script>
+  <script src="site-header.js?v=2"></script>
 
   <div class="filter-bar">
     <div class="filter-bar-content">
@@ -790,18 +793,17 @@
             left: ${rect.left + rect.width / 2}px;
             transform: translate(-50%, -100%);
             padding: 8px 12px;
-            background: rgba(20, 20, 30, 0.95);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: var(--surface-2);
+            border: 1px solid var(--line);
             border-radius: 8px;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.75rem;
+            color: var(--ink);
+            font-size: 13px;
             font-weight: 500;
             z-index: 10000;
             max-width: 300px;
             white-space: normal;
             text-align: left;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
             pointer-events: none;
             opacity: 0;
             transition: opacity 200ms ease;
