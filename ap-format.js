@@ -41,6 +41,29 @@ function has6GHz(value) {
 }
 
 
+// min_poe_class -> 1 (802.3af), 2 (802.3at), 3 (802.3bt), 0 (none or not stated).
+function poeLevel(value) {
+  const match = String(value || "").match(/802\.3(af|at|bt)/i);
+  if (!match) return 0;
+  return { af: 1, at: 2, bt: 3 }[match[1].toLowerCase()];
+}
+
+// Fastest Ethernet speed in Gbps from ethernet_ports_speed, e.g.
+// "1× 100M/1/2.5/5 GbE (RJ45, PoE in) + 1× 1 GbE" -> 5. Megabit-only lists -> 0.
+function fastestPortGbps(value) {
+  let best = 0;
+  const pattern = /((?:[\d.]+M?\/)*[\d.]+)\s*GbE/g;
+  let match;
+  while ((match = pattern.exec(String(value || "")))) {
+    match[1].split("/").forEach(token => {
+      if (/M$/.test(token)) return;
+      const gbps = parseFloat(token);
+      if (Number.isFinite(gbps)) best = Math.max(best, gbps);
+    });
+  }
+  return best;
+}
+
 function normalizeForSlug(value) {
   if (!value) return "";
   return String(value)
@@ -298,6 +321,8 @@ if (typeof module !== "undefined" && module.exports) {
     slugify,
     apSlug,
     wifiGeneration,
+    poeLevel,
+    fastestPortGbps,
     has6GHz,
     normalizeForSlug,
     safeUrl,
