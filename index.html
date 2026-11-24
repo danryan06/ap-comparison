@@ -93,7 +93,7 @@
     <div class="card">
       <span class="badge">Community-maintained</span>
 
-      <table>
+      <table class="ap-table">
         <thead>
           <tr>
             <th class="sortable" data-key="vendor">Vendor</th>
@@ -166,7 +166,7 @@
       'operating_temp_range'
     ];
     function defaultHiddenColumns() {
-      return new Set(['dimensions','weight','antenna_connectors','operating_temp_range','behavior_min_power']);
+      return new Set(['dimensions','weight','antenna_connectors','operating_temp_range']);
     }
     const hiddenColumns = defaultHiddenColumns(); // keys to hide by default
     const selectedIds = new Set(); // slug ids of selected rows
@@ -534,7 +534,10 @@
           const behaviorTd = document.createElement('td');
           behaviorTd.classList.add('behavior');
           const behaviorText = entry.behavior_min_power || '';
-          behaviorTd.textContent = behaviorText;
+          const behaviorDiv = document.createElement('div');
+          behaviorDiv.className = 'behavior-text';
+          behaviorDiv.textContent = behaviorText;
+          behaviorTd.appendChild(behaviorDiv);
           behaviorTd.setAttribute('data-fulltext', behaviorText);
           tr.appendChild(behaviorTd);
 

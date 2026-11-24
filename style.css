@@ -660,12 +660,32 @@ th[data-tooltip] {
 
 /* Behavior at Min Power: truncated text + tooltip on hover */
 td.behavior {
-  max-width: 160px;          /* controls when ellipsis appears */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-width: 260px;
+  max-width: 340px;
+  white-space: normal;
   position: relative;
   cursor: help;
+}
+
+/* First three lines in the table; the full text shows on hover and on the AP page */
+td.behavior .behavior-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Browse table: scroll sideways inside the card instead of squeezing
+   columns until header words break mid-word. */
+.ap-table {
+  min-width: 1500px;
+}
+
+.ap-table th,
+.ap-table td {
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 /* Tooltip bubble */
@@ -2288,6 +2308,17 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+}
+
+.source-note {
+  flex-basis: 100%;
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.source-note a {
+  color: #93c5fd;
 }
 
 /* Mobile optimization for detail-actions */
