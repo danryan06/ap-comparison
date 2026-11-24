@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <header class="site-header" data-page="index"></header>
@@ -80,7 +80,7 @@
   </div>
 
   <div class="container" style="margin-top: 24px;">
-  <p class="subtitle">Explore, filter, and compare enterprise access points.</p>
+  <p class="subtitle">Explore, filter, and compare enterprise access points. <span id="result-count"></span> Tick two or more to compare.</p>
 
     <div id="columns-panel" class="columns-panel">
       <h3>Show/Hide Columns</h3>
@@ -473,10 +473,19 @@
         const sortText = (entry) => key === 'antenna_type'
           ? formatAntennaType(entry.antenna_type)
           : normalizeString(Array.isArray(entry[key]) ? entry[key].join(', ') : entry[key]);
-        const av = sortText(a).toLowerCase();
-        const bv = sortText(b).toLowerCase();
-        return av.localeCompare(bv) * dir;
+        // Numeric-aware, with vendor then model breaking ties, so AP1571 sorts before AP1572.
+        const compare = (x, y) => x.localeCompare(y, undefined, { numeric: true, sensitivity: 'base' });
+        return compare(sortText(a), sortText(b)) * dir ||
+          compare(normalizeString(a.vendor), normalizeString(b.vendor)) ||
+          compare(normalizeString(a.model), normalizeString(b.model));
       });
+
+      const countEl = document.getElementById('result-count');
+      if (countEl) {
+        countEl.textContent = filtered.length === apData.length
+          ? `${apData.length} access points.`
+          : `Showing ${filtered.length} of ${apData.length} access points.`;
+      }
 
       // Clear and render
         tbody.innerHTML = '';
@@ -567,7 +576,7 @@
           cell.dataset.key = key;
           // Phone layout shows each row as a card with the column name beside each value.
           const th = document.querySelector(`thead th[data-key="${key}"]`);
-          if (th) cell.dataset.label = th.textContent.replace(/[\u25b2\u25bc]/g, '').trim();
+          if (th) cell.dataset.label = th.textContent.replace(/[\u25b2\u25bc]/g, '').replace(/\s*\(/, ' (').replace(/\s+/g, ' ').trim();
         });
 
         // Navigate to detail (id only); list filters stay shareable on this URL via sessionStorage Back
