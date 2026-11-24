@@ -313,7 +313,8 @@ function antennaFinderHref(entry) {
   if (!entry || !antennaTypes(entry.antenna_type).includes("External")) return "";
   const params = new URLSearchParams();
   params.set("ap", antennaCompatApId(entry.vendor, entry.model));
-  return `${ANTENNA_FINDER_URL}?${params.toString()}`;
+  // #results lands on the results, past the AP picker the user already answered.
+  return `${ANTENNA_FINDER_URL}?${params.toString()}#results`;
 }
 
 if (typeof module !== "undefined" && module.exports) {

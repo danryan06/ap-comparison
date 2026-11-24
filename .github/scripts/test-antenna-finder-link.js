@@ -28,6 +28,7 @@ aps.forEach(entry => {
   const url = new URL(href);
   assert.strictEqual(`${url.origin}${url.pathname}`, fmt.ANTENNA_FINDER_URL);
   assert.strictEqual(url.searchParams.get('ap'), apId);
+  assert.strictEqual(url.hash, '#results', `${label}: link should land on the Finder results`);
   linked += 1;
 });
 
