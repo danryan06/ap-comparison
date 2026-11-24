@@ -6478,9 +6478,9 @@
     "model": "E7",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 4x4",
-    "min_poe_class": "PoE++ (802.3bt)",
+    "min_poe_class": "802.3bt (class not stated)",
     "recommended_poe": "802.3bt PoE++ for full performance",
-    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 43 W. Ubiquiti documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3bt (class not stated), max power consumption is 43 W. Ubiquiti lists the power method as PoE++ and documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -6507,9 +6507,9 @@
     "model": "E7 Campus",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 4x4",
-    "min_poe_class": "PoE++ (802.3bt)",
+    "min_poe_class": "802.3bt (class not stated)",
     "recommended_poe": "802.3bt PoE++ for full performance",
-    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 44 W. Ubiquiti documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3bt (class not stated), max power consumption is 44 W. Ubiquiti lists the power method as PoE++ and documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE + 1× 1 GbE (RJ45)",
     "antenna_type": [
       "Directional"
@@ -6716,9 +6716,9 @@
     "model": "U7 Pro XGS",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 4x4 / 2x2",
-    "min_poe_class": "PoE++ (802.3bt)",
+    "min_poe_class": "802.3bt (class not stated)",
     "recommended_poe": "802.3bt PoE++ for full performance",
-    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 29 W. Ubiquiti documents no reduced-power mode.",
+    "behavior_min_power": "On 802.3bt (class not stated), max power consumption is 29 W. Ubiquiti lists the power method as PoE++ and documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 1/2.5/5/10 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -6745,9 +6745,9 @@
     "model": "E7 Audience",
     "wifi_gen_radios": "Wi-Fi 7 (5/6 Low/6 High)",
     "spatial_streams": "4x4 / 4x4 / 4x4",
-    "min_poe_class": "PoE++ (802.3bt)",
-    "recommended_poe": "PoE++ (802.3bt)",
-    "behavior_min_power": "On PoE++ (802.3bt), max power consumption is 51 W. Ubiquiti documents no reduced-power mode.",
+    "min_poe_class": "802.3bt (class not stated)",
+    "recommended_poe": "802.3bt PoE++ for full performance",
+    "behavior_min_power": "On 802.3bt (class not stated), max power consumption is 51 W. Ubiquiti lists the power method as PoE++ and documents no reduced-power mode.",
     "ethernet_ports_speed": "1× 10 GbE and 1× 1 GbE RJ45 ports",
     "antenna_type": [
       "Directional"
@@ -8209,9 +8209,9 @@
     "model": "A2",
     "wifi_gen_radios": "Wi-Fi 7 (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
-    "min_poe_class": "802.3bt (Class 6)",
-    "recommended_poe": "802.3bt (Class 6) PoE++ for full performance including PoE-out on LAN port",
-    "behavior_min_power": "On 802.3bt (Class 6), max power draw is 60 W, including 802.3af PoE out (15.4 W). Meter lists no reduced-power mode or per-class behavior.",
+    "min_poe_class": "802.3bt (class not stated)",
+    "recommended_poe": "802.3bt for full performance, including PoE-out on the LAN port",
+    "behavior_min_power": "On 802.3bt (class not stated), max power draw is 60 W, including 802.3af PoE out (15.4 W). Meter lists no reduced-power mode or per-class behavior.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE mGig (RJ45, PoE-PD, uplink) + 4× 10M/100M/1 GbE (RJ45), 802.3af PoE out",
     "antenna_type": [
       "Internal"
