@@ -115,6 +115,38 @@ function checkOptionalStrings(entry, idx) {
   });
 }
 
+function escapeRegex(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// AP_TEMPLATE_GUIDE.md conventions that are checked mechanically.
+function checkConventions(entry, idx) {
+  const name = entryName(entry, idx);
+  const minPoe = String(entry.min_poe_class || '');
+  const behavior = String(entry.behavior_min_power || '');
+  // behavior_min_power opens with the min_poe_class level: "On <class>", "On a single <class>"
+  // (dual-cable APs), "<class> is required" (no lower class serves clients), or, for an AP with
+  // no PoE input, "Not applicable".
+  const level = escapeRegex(minPoe);
+  const opener = new RegExp(`^(On (a single )?${level}(?=[\\s,.;:]|$)|${level}( PoE\\+{1,2})? is required\\b)`);
+  if (minPoe === 'N/A') {
+    if (!behavior.startsWith('Not applicable')) fail(`${name} min_poe_class is N/A, so behavior_min_power must start with "Not applicable".`);
+  } else if (!opener.test(behavior)) {
+    fail(`${name} behavior_min_power must open with "On ${minPoe}" (see AP_TEMPLATE_GUIDE.md).`);
+  }
+  // Each entry stands on its own: no references to other models.
+  const text = JSON.stringify(entry);
+  if (/\b(same as|identical to|refer to the)\b/i.test(text)) {
+    fail(`${name} refers to another entry ("same as", "identical to"). Write the values out.`);
+  }
+  // Internal-only APs: "None (internal ...)" in antenna_connectors.
+  const types = Array.isArray(entry.antenna_type) ? entry.antenna_type : [];
+  if (types.length === 1 && types[0] === 'Internal' && !/^None \(internal\b/.test(String(entry.antenna_connectors || ''))) {
+    fail(`${name} antenna_connectors must start with "None (internal" for an internal-antenna AP.`);
+  }
+  if (/\blbs\b/.test(String(entry.weight || ''))) fail(`${name} weight uses "lbs"; write "lb".`);
+}
+
 if (normalizeForSlug('AP-518') === normalizeForSlug('AP-999')) {
   fail('Slug normalization collapsed distinct model numbers.');
 }
@@ -136,6 +168,7 @@ try {
     checkAntennaModes(entry, idx);
     checkBeamwidth(entry, idx);
     checkOptionalStrings(entry, idx);
+    checkConventions(entry, idx);
   });
 
   const slugToIndexes = new Map();

@@ -742,7 +742,7 @@
     "image_url": "images/aruba/aruba-ap560.png",
     "dimensions": "165 x 165 x 130 mm",
     "weight": "1.03 kg",
-    "antenna_connectors": "None (internal omni-directional antennas)",
+    "antenna_connectors": "None (internal omnidirectional antennas)",
     "operating_temp_range": "-40°C to +55°C operating; -40°C to +70°C storage",
     "msrp": "unknown",
     "in_box": [
@@ -874,7 +874,7 @@
     "image_url": "images/aruba/aruba-ap570.png",
     "dimensions": "267 x 228 x 100 mm",
     "weight": "2.4 kg",
-    "antenna_connectors": "None (internal omni-directional antennas)",
+    "antenna_connectors": "None (internal omnidirectional antennas)",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "msrp": "unknown",
     "in_box": [
@@ -1013,7 +1013,7 @@
     "image_url": "images/aruba/aruba-ap580.png",
     "dimensions": "324 x 313 x 320 mm",
     "weight": "5.24 kg",
-    "antenna_connectors": "None (built-in omnidirectional antennas)",
+    "antenna_connectors": "None (internal omnidirectional antennas)",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
@@ -1059,7 +1059,7 @@
     "image_url": "images/aruba/aruba-ap580.png",
     "dimensions": "302 x 300 x 174 mm",
     "weight": "4.51 kg",
-    "antenna_connectors": "None (built-in 90°H x 90°V directional antennas)",
+    "antenna_connectors": "None (internal directional antennas, 90°H x 90°V)",
     "operating_temp_range": "-40°C to +65°C operating; -40°C to +70°C storage",
     "operating_humidity": "5% to 93% RH non-condensing",
     "ingress_protection": "IP66/67",
@@ -4760,8 +4760,8 @@
     "wifi_gen_radios": "Wi-Fi 6 (2.4/5)",
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
-    "recommended_poe": "802.3at (Class 4) for full performance",
-    "behavior_min_power": "On 802.3af (Class 3) PoE, the AP operates with both radios enabled but may reduce transmit power and disable the USB port; 802.3at is recommended for unrestricted operation.",
+    "recommended_poe": "802.3at (Class 4) for USB power over 500 mA",
+    "behavior_min_power": "On 802.3af (Class 3), both radios run 2x2 at 18 dBm, BLE is enabled, and USB power is limited to 500 mA (9.98 W typical, 11.28 W max without USB). On 802.3at (Class 4), USB power goes up to 900 mA (14.98 W typical, 16.28 W max with USB).",
     "ethernet_ports_speed": "1× 100M/1 GbE (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -4796,8 +4796,8 @@
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
-    "recommended_poe": "802.3at (Class 4) for unrestricted tri-band operation",
-    "behavior_min_power": "On 802.3af (Class 3) PoE, the USB port is disabled and the 6 GHz radio may reduce transmit power; 802.3at enables unrestricted tri-band performance.",
+    "recommended_poe": "802.3at (Class 4) for USB",
+    "behavior_min_power": "On 802.3af (Class 3), both radios run 2x2 at 18 dBm, BLE is on, and USB is off (12.5 W typical, 13.9 W max). On 802.3at (Class 4) or DC, USB is also on (15.3 W typical, 17 W max with USB).",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45, PoE in)",
     "antenna_type": [
       "Internal"
@@ -4844,8 +4844,8 @@
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
     "spatial_streams": "2x2 / 2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
-    "recommended_poe": "802.3at (Class 4) for unrestricted tri-band operation",
-    "behavior_min_power": "On 802.3af (Class 3) PoE, the USB port is disabled and the 6 GHz radio may reduce transmit power; 802.3at enables unrestricted tri-band performance.",
+    "recommended_poe": "802.3at (Class 4) for USB",
+    "behavior_min_power": "On 802.3af (Class 3), both radios run 2x2 at 18 dBm, BLE is on, and USB is off (12.5 W typical, 13.9 W max). On 802.3at (Class 4) or DC, USB is also on (15.3 W typical, 17 W max with USB).",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45, PoE in)",
     "antenna_type": [
       "External"
@@ -4983,10 +4983,10 @@
     "vendor": "Extreme",
     "model": "AP4000",
     "wifi_gen_radios": "Wi-Fi 6E (2.4/5/6)",
-    "spatial_streams": "2x2 / 2x2 / 4x4",
-    "min_poe_class": "802.3at (Class 4)",
-    "recommended_poe": "802.3at (Class 4) required; 802.3bt recommended for maximum 6 GHz performance",
-    "behavior_min_power": "On 802.3at (Class 4) PoE, the AP enables all three radios but may reduce 6 GHz transmit power; 802.3bt provides the full power budget for maximum 4x4 6 GHz operation.",
+    "spatial_streams": "2x2 / 2x2 / 2x2",
+    "min_poe_class": "802.3af (Class 3)",
+    "recommended_poe": "802.3at (Class 4) for full performance",
+    "behavior_min_power": "On 802.3af (Class 3), all three radios run 2x2 at 16 dBm, BLE is on, and USB is off (12.3 W typical, 13.8 W max). On 802.3at (Class 4), all three radios run 2x2 at 18 dBm and USB is on (15 W typical, 16.6 W max with USB).",
     "ethernet_ports_speed": "1× 100M/1/2.5 GbE (RJ45, PoE in) + 1× 100M/1 GbE",
     "antenna_type": [
       "Internal"
@@ -5520,7 +5520,7 @@
     "spatial_streams": "4x4 / 4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3bt (Class 5) PoE++ for full performance",
-    "behavior_min_power": "On 802.3at or 2×802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
+    "behavior_min_power": "On 802.3at (Class 4) or 2× 802.3af, all radios remain active but run at reduced Tx power (~17 dBm) with USB disabled.",
     "ethernet_ports_speed": "1× 10 GbE + 1× 1 GbE",
     "antenna_type": [
       "External"
@@ -7523,7 +7523,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3af (Class 3)",
     "recommended_poe": "48 V DC for full transmit power; 802.3at provides no improvement over 802.3af",
-    "behavior_min_power": "On 802.3af or 802.3at, both radios run 2x2 with transmit power reduced to 14 dBm on 2.4 GHz and 14.5 dBm on 5 GHz, and USB is disabled (12.94 W max); 802.3at provides no improvement over 802.3af. Full functionality, with both radios at 20 dBm and USB enabled, requires 48 V DC power.",
+    "behavior_min_power": "On 802.3af (Class 3), both radios run 2x2 with transmit power reduced to 14 dBm on 2.4 GHz and 14.5 dBm on 5 GHz, and USB is disabled (12.94 W max). 802.3at provides no improvement over 802.3af. Full functionality, with both radios at 20 dBm and USB enabled, requires 48 V DC power.",
     "ethernet_ports_speed": "1× 2.5 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -8236,7 +8236,7 @@
     "spatial_streams": "4x4 / 4x4",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "Meter lists 802.3at, passive 48-54 V PoE (on the 2.5 GbE port) or 12 V DC as power sources. It gives no power draw figure and no per-class behavior.",
+    "behavior_min_power": "On 802.3at (Class 4), Meter gives no power draw figure and no per-class behavior. Meter also lists passive 48-54 V PoE (on the 2.5 GbE port) and 12 V DC as power sources.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (RJ45, PoE-PD) + 1× 10M/100M/1 GbE (RJ45)",
     "antenna_type": [
       "Internal"
@@ -8253,7 +8253,7 @@
     "datasheet_url": "https://docs.meter.com/hardware/access-points/mw08",
     "image_url": "images/meter/meter-mw08.jpg",
     "dimensions": "205 x 205 x 34 mm",
-    "weight": "812.6 g (1.79 lb) without accessories",
+    "weight": "812.6 g without accessories",
     "antenna_connectors": "None (internal antennas)",
     "operating_temp_range": "-40°C to 70°C operating",
     "msrp": "subscription only"
@@ -8265,7 +8265,7 @@
     "spatial_streams": "2x2 / 2x2",
     "min_poe_class": "802.3at (Class 4)",
     "recommended_poe": "802.3at (Class 4) PoE+ for full performance",
-    "behavior_min_power": "Meter lists 802.3at, passive 48-54 V PoE (on the 2.5 GbE port) or 12 V DC as power sources. It gives no power draw figure and no per-class behavior.",
+    "behavior_min_power": "On 802.3at (Class 4), Meter gives no power draw figure and no per-class behavior. Meter also lists passive 48-54 V PoE (on the 2.5 GbE port) and 12 V DC as power sources.",
     "ethernet_ports_speed": "1× 10M/100M/1/2.5 GbE (RJ45, PoE-PD)",
     "antenna_type": [
       "External"
