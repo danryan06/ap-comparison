@@ -15,184 +15,12 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css?v=2" />
-  <style>
-    /* Card-based comparison layout */
-    .comparison-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      padding: 24px 0;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    .comparison-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      transition: all var(--transition-base) var(--ease-out);
-      position: relative;
-    }
-
-    .comparison-card:hover {
-      border-color: rgba(59, 130, 246, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: flex-end;
-      padding: 12px;
-    }
-
-    .remove-btn {
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      border-radius: var(--radius-md);
-      color: #f87171;
-      font-size: 20px;
-      cursor: pointer;
-      transition: all var(--transition-base) var(--ease-out);
-      border: none;
-      font-weight: 600;
-    }
-
-    .remove-btn:hover {
-      background: rgba(239, 68, 68, 0.2);
-      transform: scale(1.1);
-    }
-
-    .card-image {
-      box-sizing: border-box;
-      width: 100%;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.02);
-      padding: 24px;
-    }
-
-    .card-image img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .card-image-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 0.875rem;
-    }
-
-    .card-title {
-      padding: 24px 24px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .card-vendor {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 4px;
-    }
-
-    .card-model {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.95);
-    }
-
-    .card-specs {
-      padding: 8px 0;
-    }
-
-    .spec-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 12px 24px;
-      transition: background var(--transition-base) var(--ease-out);
-      gap: 1rem;
-    }
-
-    .spec-row:nth-child(even) {
-      background: rgba(15, 23, 42, 0.65);
-    }
-
-    .spec-row.spec-different {
-      background: rgba(59, 130, 246, 0.12);
-      border-left: 3px solid rgba(59, 130, 246, 0.5);
-    }
-
-    .spec-label {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.6);
-      flex-shrink: 0;
-      min-width: 140px;
-    }
-
-    .spec-value {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.9);
-      text-align: right;
-      flex: 1;
-      word-wrap: break-word;
-      white-space: normal;
-    }
-
-    .card-actions {
-      padding: 16px 24px;
-      display: flex;
-      flex-direction: row;
-      gap: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      flex-wrap: wrap;
-    }
-
-    .btn-secondary {
-      padding: 8px 16px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-md);
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 500;
-      font-size: 0.875rem;
-      cursor: pointer;
-      transition: all var(--transition-base) var(--ease-out);
-      text-decoration: none;
-      text-align: center;
-      flex: 1;
-      min-width: 120px;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-1px);
-    }
-  </style>
 </head>
 <body>
   <header class="site-header" data-page="compare"></header>
   <script src="site-header.js?v=1"></script>
 
-  <div class="container" style="margin-top: 24px;">
+  <div class="container">
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
       <button id="export-csv" type="button" class="btn-link">Export CSV</button>
@@ -200,257 +28,327 @@
 
     <div class="card">
       <span class="badge">Comparison</span>
-      <h2>Compare Access Points</h2>
-      <p class="subtitle">Side-by-side card-based comparison for selected APs.</p>
+      <h1>Compare Access Points</h1>
+      <div class="compare-toolbar">
+        <p class="subtitle" id="compare-summary">Loading&hellip;</p>
+        <label class="chip-option">
+          <input type="checkbox" id="diff-only" />
+          <span>Show differences only</span>
+        </label>
+      </div>
 
       <div id="error-message" class="error" style="display:none;"></div>
 
-      <div id="comparison-container" class="comparison-container"></div>
+      <div class="compare-scroll">
+        <table id="compare-grid" class="compare-grid"></table>
+      </div>
     </div>
   </div>
 
   <script src="ap-format.js?v=6"></script>
   <script>
     const DATA_URL = 'ap_data.json';
+    const MOUNTS_URL = 'mounts.json';
     let currentSelected = [];
-    const allSpecs = [
-      { key: 'wifi_gen_radios', label: 'Wi‑Fi Gen & Radios' },
-      { key: 'spatial_streams', label: 'Spatial Streams' },
-      { key: 'min_poe_class', label: 'Min PoE Class' },
-      { key: 'recommended_poe', label: 'Recommended PoE' },
-      { key: 'ethernet_ports_speed', label: 'Ethernet Ports & Speed' },
-      { key: 'antenna_type', label: 'Antenna Type' },
-      { key: 'antenna_gain_dbi', label: 'Antenna Gain (dBi)' },
-      { key: 'beamwidth', label: 'Beamwidth' },
-      { key: 'form_factor', label: 'Form Factor' },
-      { key: 'hardened', label: 'Hardened' },
-      { key: 'dimensions', label: 'Dimensions' },
-      { key: 'weight', label: 'Weight' },
-      { key: 'antenna_connectors', label: 'Antenna Connectors' },
-      { key: 'operating_temp_range', label: 'Operating Temp Range' },
-      { key: 'operating_humidity', label: 'Operating Humidity' },
-      { key: 'ingress_protection', label: 'Ingress Protection' },
-      { key: 'hazloc_certification', label: 'HazLoc Certification' },
-      { key: 'radios_iot_features', label: 'Radios & IoT Features' }
-    ];
+    let currentRows = [];
 
+    // Rows in display order. value(entry) returns display text ('' when the AP has no value).
+    function joinList(value) {
+      return Array.isArray(value) ? value.join(', ') : (value == null ? '' : String(value));
+    }
+
+    function plain(key) {
+      return entry => joinList(entry[key]);
+    }
+
+    function inBoxText(entry) {
+      if (!Array.isArray(entry.in_box)) return 'Not checked yet';
+      if (!entry.in_box.length) return 'Nothing listed beyond the AP';
+      const items = entry.in_box.map(line => {
+        const qty = line.qty != null ? `${line.qty}\u00d7 ` : '';
+        const part = line.part_number ? ` (${line.part_number})` : '';
+        return `${qty}${line.item}${part}`;
+      });
+      return items.join('; ') + (entry.in_box_condition ? ` [${entry.in_box_condition}]` : '');
+    }
+
+    function mountsText(entry, mounts) {
+      const slug = apSlug(entry);
+      const list = mounts.filter(m => Array.isArray(m.compatible_aps) && m.compatible_aps.includes(slug));
+      if (!list.length) return '';
+      return list.map(m => {
+        const numbers = (m.part_numbers || []).map(p => p.part_number).filter(n => !/=$/.test(n));
+        return numbers.length ? `${m.name} (${numbers.join(', ')})` : m.name;
+      }).join('; ');
+    }
+
+    function buildRows(selected, mounts) {
+      const rows = [];
+      const section = title => rows.push({ section: title });
+      const add = (label, value, opts = {}) => rows.push({ label, value, ...opts });
+
+      section('Radios');
+      add('Wi-Fi generation & radios', plain('wifi_gen_radios'));
+      add('Spatial streams', plain('spatial_streams'));
+      add('Radios & IoT features', entry => Array.isArray(entry.radios_iot_features) && !entry.radios_iot_features.length ? 'None' : joinList(entry.radios_iot_features));
+
+      section('Power');
+      add('Minimum PoE class', plain('min_poe_class'));
+      add('Recommended PoE', plain('recommended_poe'));
+      add('Behavior at minimum power', plain('behavior_min_power'), { long: true });
+
+      section('Wired');
+      add('Ethernet ports & speed', plain('ethernet_ports_speed'));
+
+      section('Antennas');
+      add('Antenna type', entry => formatAntennaType(entry.antenna_type));
+      add('Antenna gain', entry => formatBandObject(entry.antenna_gain_dbi, 'gain'));
+      // Flat beamwidth is one row; vendor-presented beamwidth modes get one row per mode name.
+      add('Beamwidth', entry => beamwidthModeRows(entry.beamwidth).length ? '' : formatBandObject(entry.beamwidth, 'beam'));
+      const modeLabels = [];
+      selected.forEach(entry => {
+        beamwidthModeRows(entry.beamwidth).concat(formatModeRows(entry.antenna_modes)).forEach(row => {
+          if (!modeLabels.includes(row.label)) modeLabels.push(row.label);
+        });
+      });
+      modeLabels.forEach(label => {
+        add(label, entry => {
+          const row = beamwidthModeRows(entry.beamwidth).concat(formatModeRows(entry.antenna_modes)).find(r => r.label === label);
+          return row ? row.value : '';
+        });
+      });
+      add('Antenna connectors', plain('antenna_connectors'));
+
+      section('Physical');
+      add('Form factor', entry => entry.form_factor ? (entry.hardened ? `${entry.form_factor}, hardened` : entry.form_factor) : '');
+      add('Dimensions', plain('dimensions'));
+      add('Weight', plain('weight'));
+      add('Operating temperature', plain('operating_temp_range'));
+      add('Operating humidity', plain('operating_humidity'));
+      add('Ingress protection', plain('ingress_protection'));
+      add('HazLoc certification', plain('hazloc_certification'));
+
+      section('Mounting');
+      add('In the box', inBoxText, { long: true });
+      add('Orderable mounts', entry => mountsText(entry, mounts), { long: true });
+
+      section('Lifecycle');
+      add('End of sale', plain('end_of_sale_date'));
+      add('End of support', plain('end_of_support_date'));
+      add('Suggested replacement', plain('manufacturer_suggested_replacement'));
+
+      // Resolve values; drop rows no selected AP has, then sections left empty.
+      const resolved = rows.map(row => row.section ? row : {
+        ...row,
+        values: selected.map(entry => String(row.value(entry) || '').trim())
+      }).filter(row => row.section || row.values.some(Boolean));
+      return resolved.filter((row, index) => {
+        if (!row.section) return true;
+        const next = resolved[index + 1];
+        return next && !next.section;
+      }).map(row => row.section ? row : {
+        ...row,
+        differs: new Set(row.values).size > 1
+      });
+    }
 
     function readIds() {
       const params = new URLSearchParams(window.location.search);
-      const ids = (params.get('ids') || '').split(',').map(s => s.trim()).filter(Boolean);
-      return ids;
-    }
-
-    function normalizeString(value) {
-      if (value == null) return '';
-      if (Array.isArray(value)) return value.join(', ');
-      if (typeof value === 'object') {
-        const formatted = formatBandObject(value, 'gain');
-        if (formatted) return formatted;
-        return JSON.stringify(value);
-      }
-      return String(value);
-    }
-
-    function formatValue(key, value) {
-      if (value == null) return '';
-
-      if (key === 'hardened') return value === true ? 'Yes' : '';
-      if (key === 'antenna_type') return formatAntennaType(value);
-      
-      if (key === 'antenna_gain_dbi' && typeof value === 'object') {
-        return formatBandObject(value, 'gain');
-      }
-      
-      if (key === 'beamwidth' && typeof value === 'object') {
-        return formatBandObject(value, 'beam');
-      }
-      
-      if (Array.isArray(value)) {
-        return value.join(', ');
-      }
-      
-      if (typeof value === 'object') {
-        return JSON.stringify(value);
-      }
-      
-      return String(value);
+      return (params.get('ids') || '').split(',').map(s => s.trim()).filter(Boolean);
     }
 
     function buildBackLink() {
       const params = new URLSearchParams(window.location.search);
       params.delete('ids');
-      const backEl = document.getElementById('back-link');
       const backUrl = 'index.html' + (params.toString() ? '?' + params.toString() : '');
-      backEl.setAttribute('href', backUrl);
+      document.getElementById('back-link').setAttribute('href', backUrl);
     }
 
-    function highlightDifferences() {
-      const cards = document.querySelectorAll('.comparison-card');
-      if (cards.length < 2) return;
-
-      const specKeys = new Set(allSpecs.map(spec => spec.key));
-      cards.forEach(card => {
-        card.querySelectorAll('[data-spec-key]').forEach(row => specKeys.add(row.dataset.specKey));
-      });
-      specKeys.forEach(key => {
-        const values = Array.from(cards).map(card => {
-          const specRow = card.querySelector(`[data-spec-key="${key}"]`);
-          if (!specRow) return '';
-          const valueEl = specRow.querySelector('.spec-value');
-          return valueEl ? (valueEl.textContent || valueEl.innerText || '').trim() : '';
-        });
-
-        const allSame = values.every(v => v === values[0] && v !== '');
-        if (!allSame && values.some(v => v !== '')) {
-          cards.forEach(card => {
-            const specRow = card.querySelector(`[data-spec-key="${key}"]`);
-            if (specRow) specRow.classList.add('spec-different');
-          });
-        }
-      });
+    function compareUrlWithout(id) {
+      const params = new URLSearchParams(window.location.search);
+      params.set('ids', readIds().filter(other => other !== id).join(','));
+      return 'compare.html?' + params.toString();
     }
 
-    function createCard(entry) {
-      const card = document.createElement('div');
-      card.className = 'comparison-card';
+    function headerCell(entry) {
+      const th = document.createElement('th');
+      th.scope = 'col';
+      th.className = 'compare-ap';
+      const id = apSlug(entry);
 
-      const header = document.createElement('div');
-      header.className = 'card-header';
-      const removeBtn = document.createElement('button');
-      removeBtn.type = 'button';
-      removeBtn.className = 'remove-btn';
-      removeBtn.textContent = '×';
-      removeBtn.title = 'Remove from comparison';
-      removeBtn.setAttribute('aria-label', `Remove ${entry.vendor || ''} ${entry.model || ''} from comparison`.trim());
-      removeBtn.onclick = () => {
-        const ids = readIds().filter(id => id !== apSlug(entry));
-        window.location.href = `compare.html?ids=${ids.join(',')}`;
-      };
-      header.appendChild(removeBtn);
-      card.appendChild(header);
+      const remove = document.createElement('a');
+      remove.className = 'compare-remove';
+      remove.href = compareUrlWithout(id);
+      remove.setAttribute('aria-label', `Remove ${entry.vendor} ${entry.model} from the comparison`);
+      remove.textContent = '\u00d7';
+      th.appendChild(remove);
 
-      const imageDiv = document.createElement('div');
-      imageDiv.className = 'card-image';
       const imageUrl = safeUrl(entry.image_url, { allowRelative: true });
       if (imageUrl) {
         const img = document.createElement('img');
         img.src = imageUrl;
         img.alt = `${entry.vendor} ${entry.model}`;
-        imageDiv.appendChild(img);
-      } else {
-        const placeholder = document.createElement('div');
-        placeholder.className = 'card-image-placeholder';
-        placeholder.textContent = 'No image available';
-        imageDiv.appendChild(placeholder);
+        img.loading = 'lazy';
+        img.className = 'compare-image';
+        th.appendChild(img);
       }
-      card.appendChild(imageDiv);
 
-      const titleDiv = document.createElement('div');
-      titleDiv.className = 'card-title';
-      const vendor = document.createElement('h3');
-      vendor.className = 'card-vendor';
+      const vendor = document.createElement('div');
+      vendor.className = 'compare-vendor';
       vendor.textContent = entry.vendor || '';
-      const model = document.createElement('h2');
-      model.className = 'card-model';
+      th.appendChild(vendor);
+
+      const model = document.createElement('a');
+      model.className = 'compare-model';
+      model.href = buildApDetailHref(id);
       model.textContent = entry.model || '';
-      titleDiv.appendChild(vendor);
-      titleDiv.appendChild(model);
-      card.appendChild(titleDiv);
+      model.addEventListener('click', () => saveDetailBackPath(window.location.pathname.split('/').pop() + window.location.search));
+      th.appendChild(model);
 
-      const specsDiv = document.createElement('div');
-      specsDiv.className = 'card-specs';
-      const appendSpec = (key, label, value) => {
-        if (value == null || value === '') return;
-        const specRow = document.createElement('div');
-        specRow.className = 'spec-row';
-        specRow.dataset.specKey = key;
-        const labelSpan = document.createElement('span');
-        labelSpan.className = 'spec-label';
-        labelSpan.textContent = label;
-        const valueSpan = document.createElement('span');
-        valueSpan.className = 'spec-value';
-        valueSpan.textContent = value;
-        specRow.appendChild(labelSpan);
-        specRow.appendChild(valueSpan);
-        specsDiv.appendChild(specRow);
-      };
-
-      allSpecs.forEach(({ key, label }) => {
-        const value = entry[key];
-        if (value == null || value === '') return;
-        const nestedBeam = key === 'beamwidth' ? beamwidthModeRows(value) : [];
-        if (nestedBeam.length) {
-          nestedBeam.forEach((mode, index) => {
-            appendSpec(`beamwidth-mode-${index}`, mode.label, mode.value, false);
-          });
-        } else {
-          const formattedValue = formatValue(key, value);
-          appendSpec(key, label, formattedValue);
-        }
-        if (key === 'beamwidth' || (key === 'antenna_gain_dbi' && entry.beamwidth == null)) {
-          formatModeRows(entry.antenna_modes).forEach((mode, index) => {
-            appendSpec(`antenna-mode-${index}`, mode.label, mode.value, false);
-          });
-        }
-      });
-      if (entry.antenna_gain_dbi == null && entry.beamwidth == null) {
-        formatModeRows(entry.antenna_modes).forEach((mode, index) => {
-          appendSpec(`antenna-mode-${index}`, mode.label, mode.value, false);
-        });
-      }
-      card.appendChild(specsDiv);
-
-      const actionsDiv = document.createElement('div');
-      actionsDiv.className = 'card-actions';
-      const viewBtn = document.createElement('a');
-      viewBtn.href = `ap.html?id=${apSlug(entry)}`;
-      viewBtn.className = 'btn-secondary';
-      viewBtn.textContent = 'View Details';
-      actionsDiv.appendChild(viewBtn);
+      const links = document.createElement('div');
+      links.className = 'compare-links';
       const datasheetUrl = safeUrl(entry.datasheet_url);
       if (datasheetUrl) {
-        const datasheetBtn = document.createElement('a');
-        datasheetBtn.href = datasheetUrl;
-        datasheetBtn.target = '_blank';
-        datasheetBtn.rel = 'noopener noreferrer';
-        datasheetBtn.className = 'btn-secondary';
-        datasheetBtn.textContent = 'Datasheet';
-        actionsDiv.appendChild(datasheetBtn);
+        const a = document.createElement('a');
+        a.href = datasheetUrl;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = 'Datasheet';
+        links.appendChild(a);
       }
-      card.appendChild(actionsDiv);
+      const antennaUrl = antennaFinderHref(entry);
+      if (antennaUrl) {
+        const a = document.createElement('a');
+        a.href = antennaUrl;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = 'Antennas';
+        links.appendChild(a);
+      }
+      th.appendChild(links);
+      return th;
+    }
 
-      return card;
+    function render(selected, rows) {
+      const table = document.getElementById('compare-grid');
+      table.innerHTML = '';
+      table.style.setProperty('--compare-cols', selected.length);
+      const thead = document.createElement('thead');
+      const headRow = document.createElement('tr');
+      const corner = document.createElement('th');
+      corner.scope = 'col';
+      corner.className = 'compare-label';
+      corner.textContent = `${selected.length} APs`;
+      headRow.appendChild(corner);
+      selected.forEach(entry => headRow.appendChild(headerCell(entry)));
+      thead.appendChild(headRow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      rows.forEach((row, index) => {
+        const tr = document.createElement('tr');
+        if (row.section) {
+          tr.className = 'compare-section';
+          // A section with no differing rows is hidden by "Show differences only".
+          const end = rows.findIndex((other, j) => j > index && other.section);
+          const body = rows.slice(index + 1, end === -1 ? rows.length : end);
+          if (!body.some(other => other.differs)) tr.classList.add('compare-same');
+          const th = document.createElement('th');
+          th.scope = 'colgroup';
+          th.colSpan = selected.length + 1;
+          th.textContent = row.section;
+          tr.appendChild(th);
+        } else {
+          if (row.differs) tr.classList.add('compare-differs');
+          else tr.classList.add('compare-same');
+          if (row.long) tr.classList.add('compare-long');
+          const th = document.createElement('th');
+          th.scope = 'row';
+          th.className = 'compare-label';
+          th.textContent = row.label;
+          tr.appendChild(th);
+          row.values.forEach(value => {
+            const td = document.createElement('td');
+            if (value) {
+              td.textContent = value;
+            } else {
+              td.className = 'compare-empty';
+              td.textContent = 'Not listed';
+            }
+            tr.appendChild(td);
+          });
+        }
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+
+      const differing = rows.filter(row => !row.section && row.differs).length;
+      const total = rows.filter(row => !row.section).length;
+      document.getElementById('compare-summary').textContent =
+        `${differing} of ${total} rows differ. Rows that differ are marked on the left.`;
+    }
+
+    function applyDiffFilter() {
+      const on = document.getElementById('diff-only').checked;
+      document.getElementById('compare-grid').classList.toggle('diff-only', on);
+      const params = new URLSearchParams(window.location.search);
+      if (on) params.set('diff', '1'); else params.delete('diff');
+      history.replaceState({}, '', 'compare.html?' + params.toString());
+    }
+
+    function csvCell(value) {
+      const s = String(value == null ? '' : value);
+      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    }
+
+    function exportCsv() {
+      if (!currentSelected.length) return;
+      const lines = [];
+      lines.push(['Field', ...currentSelected.map(e => `${e.vendor} ${e.model}`)].map(csvCell).join(','));
+      currentRows.filter(row => !row.section).forEach(row => {
+        lines.push([row.label, ...row.values].map(csvCell).join(','));
+      });
+      const blob = new Blob([lines.join('\n') + '\n'], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ap-comparison.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
 
     async function load() {
       buildBackLink();
       const errorEl = document.getElementById('error-message');
-      const container = document.getElementById('comparison-container');
-
       try {
-        const res = await fetch(DATA_URL, { cache: 'no-store' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
-        const ids = readIds();
-        const selected = data.filter(e => ids.includes(apSlug(e)));
-        
+        const [dataRes, mountsRes] = await Promise.all([
+          fetch(DATA_URL, { cache: 'no-store' }),
+          fetch(MOUNTS_URL, { cache: 'no-store' }).catch(() => null)
+        ]);
+        if (!dataRes.ok) throw new Error('HTTP ' + dataRes.status);
+        const data = await dataRes.json();
+        const mounts = mountsRes && mountsRes.ok ? await mountsRes.json() : [];
+        // Keep the order the APs were picked in.
+        const selected = readIds()
+          .map(id => data.find(entry => apSlug(entry) === id))
+          .filter((entry, index, list) => entry && list.indexOf(entry) === index);
+
         if (selected.length < 2) {
           errorEl.style.display = 'block';
-          errorEl.textContent = 'Select at least two APs to compare. Use the main comparison table or finder to select APs.';
-          container.innerHTML = '';
+          errorEl.textContent = 'Select at least two APs to compare. Use the Browse table or the Finder to pick APs.';
+          document.getElementById('compare-summary').textContent = '';
+          document.querySelector('.compare-scroll').style.display = 'none';
+          document.querySelector('.compare-toolbar').style.display = 'none';
           return;
         }
-
-        container.innerHTML = '';
         currentSelected = selected;
-        selected.forEach(entry => {
-          const card = createCard(entry);
-          container.appendChild(card);
-        });
-
-        // Highlight differences after a short delay to ensure DOM is ready
-        setTimeout(highlightDifferences, 100);
+        currentRows = buildRows(selected, mounts);
+        render(selected, currentRows);
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('diff-only').checked = params.get('diff') === '1';
+        document.getElementById('compare-grid').classList.toggle('diff-only', params.get('diff') === '1');
       } catch (err) {
         console.error('Failed to load comparison:', err);
         errorEl.style.display = 'block';
@@ -459,37 +357,8 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      
-      const exportBtn = document.getElementById('export-csv');
-      if (exportBtn) {
-        exportBtn.addEventListener('click', () => {
-          if (!currentSelected.length) return;
-          const headers = ['Vendor', 'Model', ...allSpecs.map(s => s.label)];
-          const keys = ['vendor', 'model', ...allSpecs.map(s => s.key)];
-          const rows = currentSelected.map(e => {
-            return keys.map(k => {
-              const v = e[k];
-              const s = Array.isArray(v)
-                ? v.join('; ')
-                : (k === 'beamwidth' && v && typeof v === 'object'
-                  ? formatBandObject(v, 'beam')
-                  : formatValue(k, v));
-              const needs = /[",\n]/.test(s);
-              return needs ? '"' + s.replace(/"/g, '""') + '"' : s;
-            }).join(',');
-          });
-          const csv = headers.join(',') + '\n' + rows.join('\n');
-          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'ap-comparison.csv';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        });
-      }
+      document.getElementById('export-csv').addEventListener('click', exportCsv);
+      document.getElementById('diff-only').addEventListener('change', applyDiffFilter);
       load();
     });
   </script>
