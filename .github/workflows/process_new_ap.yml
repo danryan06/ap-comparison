@@ -185,6 +185,34 @@ jobs:
             core.setOutput('model', ap.model);
             core.setOutput('issue_number', issue.number.toString());
 
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+
+      # PRs opened with the default GITHUB_TOKEN do not trigger validate-data.yml,
+      # so run the same checks here. Failures do not block the PR; they are
+      # written into its description so the reviewer sees them.
+      - name: Validate updated data
+        id: checks
+        run: |
+          status=passed
+          : > checks.log
+          for script in validate-data validate-site validate-ap-rf-export test-antenna-finder-link; do
+            if ! node ".github/scripts/${script}.js" >> checks.log 2>&1; then
+              status=failed
+              echo "FAILED: ${script}" >> checks.log
+            fi
+          done
+          cat checks.log
+          {
+            echo "status=${status}"
+            echo "log<<CHECKS_EOF"
+            tail -n 40 checks.log
+            echo "CHECKS_EOF"
+          } >> "$GITHUB_OUTPUT"
+          rm checks.log
+
       - name: Create pull request for new AP
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
@@ -198,5 +226,12 @@ jobs:
             Model: **${{ steps.update-json.outputs.model }}**
 
             Please review the changes to `ap_data.json` (and any new image under `images/`) before merging.
+
+            ### Validation: ${{ steps.checks.outputs.status }}
+
+            ```
+            ${{ steps.checks.outputs.log }}
+            ```
+
           labels: |
             new-ap
