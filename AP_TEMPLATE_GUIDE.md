@@ -164,12 +164,11 @@ Use this template when submitting new AP entries. The canonical JSON template is
 
 - **form_factor**: `"Indoor"`, `"Outdoor"`, or `"Wallplate"`. Do not put hardened, ruggedized, or HazLoc in this field.
 
-- **hardened**: Optional boolean. Set `true` only when the vendor's datasheet or installation guide lists, for that model, at least one of:
-  - a hazardous-location certification: Class I, Division 2 (C1D2), ATEX, or IECEx
-  - a rail certification: EN 50155 or EN 50121
-  - a named shock or vibration standard, for example IEC 60068, IEC 61373, or MIL-STD-810 (vibration)
+- **hardened**: Optional boolean. Set `true` when the vendor's datasheet or installation guide, for that model, does either of these:
+  - calls the model itself hardened (for example "hardened" or "indoor hardened" in the model's own description; a series title alone is not enough), or
+  - lists at least one of: a hazardous-location certification (Class I, Division 2 (C1D2), ATEX, or IECEx); a rail certification (EN 50155 or EN 50121); or a named shock or vibration standard (for example IEC 60068, IEC 61373, or MIL-STD-810).
 
-  Vendor wording such as "hardened", "ruggedized", or "industrial" is not enough on its own, because it is often marketing. A hardened AP keeps its base `form_factor` (for example `"Indoor"`). Omit the field otherwise. Do not set `false`. The table, detail, and compare views show it as hardened only when it is `true`.
+  Words like "ruggedized" or "industrial" without one of those are not enough. A hardened AP keeps its base `form_factor` (for example `"Indoor"`). Omit the field otherwise. Do not set `false`. The table, detail, and compare views show it as hardened only when it is `true`.
 
 - **dimensions**: Metric first. Imperial, when the vendor states it, goes in parentheses.
   - `"200 x 200 x 45 mm (7.9 x 7.9 x 1.8 in)"`
