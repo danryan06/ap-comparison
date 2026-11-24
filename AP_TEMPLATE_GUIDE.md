@@ -97,6 +97,7 @@ Use this template when submitting new AP entries. The canonical JSON template is
 
 - **min_poe_class**: A single value, `"802.3xx (Class N)"`. This is the lowest class that serves clients. Staging-only power is noted in `behavior_min_power`, not here.
   - Examples: `"802.3af (Class 3)"`, `"802.3at (Class 4)"`, `"802.3bt (Class 5)"`
+  - When the vendor names the standard but no class, write `"802.3bt (class not stated)"` (or af/at). Do not work out a class from a wattage. Put the vendor's own term, such as Ubiquiti's "PoE++", in `behavior_min_power`.
 
 - **recommended_poe**: `"802.3xx (Class N)"` plus a qualifier.
   - Example: `"802.3bt (Class 5) PoE++ for full performance"`
