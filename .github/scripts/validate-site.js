@@ -63,7 +63,7 @@ if (Array.isArray(aps)) {
     const slug = apSlug(entry);
     if (apSlugs.has(slug)) report(`${label} duplicates AP slug ${slug}.`);
     apSlugs.add(slug);
-    ['datasheet_url', 'install_guide_url', 'end_of_sale_url', 'in_box_source'].forEach(field => {
+    ['datasheet_url', 'install_guide_url', 'end_of_sale_url', 'in_box_source', 'environmental_certifications_source'].forEach(field => {
       checkExternalUrl(entry[field], `${label}.${field}`);
     });
     checkLocalAsset(entry.image_url, `${label}.image_url`);

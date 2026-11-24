@@ -115,6 +115,25 @@ function checkOptionalStrings(entry, idx) {
   });
 }
 
+// environmental_certifications: standards as the vendor names them, with the vendor URL they came from.
+function checkEnvironmentalCertifications(entry, idx) {
+  const name = entryName(entry, idx);
+  const certs = entry.environmental_certifications;
+  const source = entry.environmental_certifications_source;
+  if (certs == null) {
+    if (source != null) fail(`${name} has environmental_certifications_source without environmental_certifications.`);
+    return;
+  }
+  if (!Array.isArray(certs) || !certs.length || certs.some(c => typeof c !== 'string' || !c.trim())) {
+    fail(`${name} environmental_certifications must be a non-empty array of non-empty strings.`);
+  } else if (new Set(certs).size !== certs.length) {
+    fail(`${name} environmental_certifications lists a standard twice.`);
+  }
+  if (typeof source !== 'string' || !/^https:\/\//.test(source)) {
+    fail(`${name} environmental_certifications_source must be the https URL of the vendor document.`);
+  }
+}
+
 function escapeRegex(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -169,6 +188,7 @@ try {
     checkBeamwidth(entry, idx);
     checkOptionalStrings(entry, idx);
     checkConventions(entry, idx);
+    checkEnvironmentalCertifications(entry, idx);
   });
 
   const slugToIndexes = new Map();
