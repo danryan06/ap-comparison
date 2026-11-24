@@ -37,18 +37,11 @@
     </div>
   </div>
 
-  <script src="ap-format.js?v=4"></script>
+  <script src="ap-format.js?v=5"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentEntry = null;
 
-    function slugify(s) {
-      return String(s || '')
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-    }
 
     function readId() {
       const params = new URLSearchParams(window.location.search);
@@ -363,7 +356,7 @@
     }
 
     function renderMounting(detailsEl, entry, mounts) {
-      const slug = slugify(`${entry.vendor} ${entry.model}`);
+      const slug = apSlug(entry);
       const hasBox = Object.prototype.hasOwnProperty.call(entry, 'in_box');
       const compatible = (Array.isArray(mounts) ? mounts : []).filter(mount =>
         mount && Array.isArray(mount.compatible_aps) && mount.compatible_aps.includes(slug)
@@ -480,7 +473,7 @@
         configureBackLink(backEl);
 
         const id = readId();
-        const entry = data.find(e => slugify(`${e.vendor} ${e.model}`) === id);
+        const entry = data.find(e => apSlug(e) === id);
         if (!entry) {
           errorEl.style.display = 'block';
           errorEl.textContent = 'AP not found.';
@@ -548,7 +541,7 @@
         }
 
         // Set up edit link
-        const entrySlug = slugify(`${entry.vendor} ${entry.model}`);
+        const entrySlug = apSlug(entry);
         editLinkEl.href = `edit.html?id=${encodeURIComponent(entrySlug)}`;
         editLinkEl.style.display = 'inline-flex';
         // External-antenna APs open the AntennaComparison Finder with this AP selected.

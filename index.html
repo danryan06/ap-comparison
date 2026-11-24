@@ -195,7 +195,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
-  <script src="ap-format.js?v=4"></script>
+  <script src="ap-format.js?v=5"></script>
   <script>
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
@@ -550,7 +550,7 @@
         // Vendor cell with selection checkbox
         const vendorTd = document.createElement('td');
         vendorTd.classList.add('vendor');
-        const id = slugFor(entry);
+        const id = apSlug(entry);
         const cb = document.createElement('input');
         cb.type = 'checkbox';
         cb.className = 'row-select';
@@ -621,7 +621,7 @@
 
         // Navigate to detail (id only); list filters stay shareable on this URL via sessionStorage Back
         tr.addEventListener('click', () => {
-          window.location.href = rememberListAndBuildDetailHref(slugFor(entry));
+          window.location.href = rememberListAndBuildDetailHref(apSlug(entry));
         });
 
         tbody.appendChild(tr);
@@ -716,17 +716,7 @@
       return problems.length;
     }
 
-    function slugify(s) {
-      return String(s || '')
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-    }
 
-    function slugFor(entry) {
-      return slugify(`${entry.vendor} ${entry.model}`);
-    }
 
     function openDetails(entry) {
       const overlay = document.getElementById('modal');

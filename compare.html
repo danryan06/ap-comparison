@@ -264,7 +264,7 @@
     </div>
   </div>
 
-  <script src="ap-format.js?v=4"></script>
+  <script src="ap-format.js?v=5"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentSelected = [];
@@ -289,13 +289,6 @@
       { key: 'radios_iot_features', label: 'Radios & IoT Features' }
     ];
 
-    function slugify(s) {
-      return String(s || '')
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-    }
 
     function readIds() {
       const params = new URLSearchParams(window.location.search);
@@ -386,7 +379,7 @@
       removeBtn.title = 'Remove from comparison';
       removeBtn.setAttribute('aria-label', `Remove ${entry.vendor || ''} ${entry.model || ''} from comparison`.trim());
       removeBtn.onclick = () => {
-        const ids = readIds().filter(id => id !== slugify(`${entry.vendor} ${entry.model}`));
+        const ids = readIds().filter(id => id !== apSlug(entry));
         window.location.href = `compare.html?ids=${ids.join(',')}`;
       };
       header.appendChild(removeBtn);
@@ -466,7 +459,7 @@
       const actionsDiv = document.createElement('div');
       actionsDiv.className = 'card-actions';
       const viewBtn = document.createElement('a');
-      viewBtn.href = `ap.html?id=${slugify(`${entry.vendor} ${entry.model}`)}`;
+      viewBtn.href = `ap.html?id=${apSlug(entry)}`;
       viewBtn.className = 'btn-secondary';
       viewBtn.textContent = 'View Details';
       actionsDiv.appendChild(viewBtn);
@@ -495,7 +488,7 @@
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
         const ids = readIds();
-        const selected = data.filter(e => ids.includes(slugify(`${e.vendor} ${e.model}`)));
+        const selected = data.filter(e => ids.includes(apSlug(e)));
         
         if (selected.length < 2) {
           errorEl.style.display = 'block';
