@@ -1017,7 +1017,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 /* Generic key-value grid (used on details page) */
 .kv-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(150px, 240px) 1fr;
   gap: 0.5rem 0.75rem;
 }
 .kv-grid .key {
@@ -1453,8 +1453,8 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 }
 
 .result-vendor {
-  font-weight: 600;
-  color: #bfdbfe;
+  font-weight: 500;
+  color: #94a3b8;
 }
 
 /* Model links in the Browse table */
@@ -1470,9 +1470,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 }
 
 .result-model a {
-  color: #e5e7eb;
+  color: #93c5fd;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .result-model a:hover {
@@ -1514,7 +1514,7 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
 }
 
 .result-wifi {
-  margin: 0.2rem 0 0;
+  margin: 0;
   color: #9ca3af;
   font-size: 0.9rem;
 }
@@ -3075,3 +3075,114 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   }
 }
 
+/* ================================
+   UI cleanup pass
+   ================================ */
+html {
+  background-color: #020617;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Short spec values stay on one line instead of wrapping into 3-line cells */
+.result-spatial {
+  white-space: nowrap;
+}
+
+/* Desktop table only; the phone layout turns rows into cards */
+@media (min-width: 641px) {
+  .ap-table td[data-key="spatial_streams"],
+  .ap-table td[data-key="min_poe_class"] {
+    white-space: nowrap;
+  }
+
+  .ap-table th[data-key="spatial_streams"],
+  .ap-table td[data-key="spatial_streams"] {
+    width: 130px;
+    max-width: 130px;
+  }
+
+  .ap-table th[data-key="min_poe_class"],
+  .ap-table td[data-key="min_poe_class"] {
+    width: 140px;
+    max-width: 140px;
+  }
+}
+
+/* Links inside AP detail values (for example a "(source)" link) */
+.kv-grid .val a,
+.source-note a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.kv-grid .val a:hover,
+.source-note a:hover {
+  text-decoration: underline;
+}
+
+/* Compare: every AP column looks the same (the Browse table bolds its 2nd column) */
+.compare-grid td {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #e5e7eb;
+}
+
+.compare-links a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.compare-links a:hover {
+  text-decoration: underline;
+}
+
+/* Forms: placeholders and text areas use the page font; group labels match field labels */
+.form-row textarea {
+  font-family: inherit;
+}
+
+.form-row > span {
+  display: block;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.required-mark {
+  color: #fca5a5;
+  margin-left: 0.15rem;
+}
+
+.form-required-note {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0 0 1rem;
+}
+
+@media (max-width: 640px) {
+  .ap-table tbody td:not([data-key="vendor"]):not([data-key="model"]) {
+    font-size: 0.875rem !important;
+  }
+
+  .ap-table tbody td:not([data-key="vendor"]):not([data-key="model"]) * {
+    font-size: inherit;
+  }
+
+  .ap-table tbody td[data-key="model"] a {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Vendor is plain text; the model is the link */
+.ap-table td[data-key="vendor"] {
+  color: #cbd5e1;
+}
+
+@media (max-width: 640px) {
+  .kv-grid {
+    grid-template-columns: minmax(110px, 38%) 1fr;
+  }
+}
