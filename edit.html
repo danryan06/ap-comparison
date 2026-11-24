@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Edit AP Information &mdash; Enterprise AP Comparison Database</title>
+  <title>Edit AP Information | Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Suggest a correction to an access point in the Enterprise AP Comparison Database." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AP Comparison" />
+  <meta property="og:title" content="Edit AP Information" />
+  <meta property="og:description" content="Suggest a correction to an access point in the Enterprise AP Comparison Database." />
+  <meta property="og:url" content="https://apcomparison.com/edit.html" />
+  <meta property="og:image" content="https://apcomparison.com/logo.png" />
+  <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
+  <header class="site-header" data-page="edit"></header>
+  <script src="site-header.js?v=1"></script>
   <div class="container">
-    <div class="header-with-logo">
-      <h1><a href="index.html">Enterprise AP Comparison Database</a></h1>
-      <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
-    </div>
-    <h2>Edit Existing AP Information</h2>
+    <h1>Edit Existing AP Information</h1>
     <p class="subtitle">
       Use this form to generate an updated JSON entry for an existing AP. After generating the JSON,
       click “Open GitHub Issue with This Update” to open a prefilled GitHub issue and submit it.
     </p>
-
-    <div class="actions">
-      <a class="btn-link" href="index.html">&larr; Back to AP Table</a>
-    </div>
 
     <div class="card">
       <span class="badge">Edit AP</span>
@@ -184,7 +186,7 @@
     </div>
   </div>
 
-  <script src="ap-format.js?v=5"></script>
+  <script src="ap-format.js?v=6"></script>
   <script>
     const GITHUB_USER = 'danryan06';
     const GITHUB_REPO = 'ap-comparison';

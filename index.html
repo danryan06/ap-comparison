@@ -4,77 +4,21 @@
   <meta charset="UTF-8" />
   <title>Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Compare enterprise Wi-Fi access points side by side: PoE class and behavior at minimum power, radios, antennas, mounts and more, sourced from vendor datasheets." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AP Comparison" />
+  <meta property="og:title" content="Enterprise AP Comparison Database" />
+  <meta property="og:description" content="Compare enterprise Wi-Fi access points side by side: PoE class and behavior at minimum power, radios, antennas, mounts and more, sourced from vendor datasheets." />
+  <meta property="og:url" content="https://apcomparison.com/" />
+  <meta property="og:image" content="https://apcomparison.com/logo.png" />
+  <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-content">
-      <!-- Logo Section -->
-      <div class="header-left">
-        <a href="index.html" class="site-logo-link">
-          <img src="logo.png" alt="AP Comparison" class="logo-image" />
-          <span class="logo-text">AP Comparison</span>
-        </a>
-      </div>
-      
-      <!-- Navigation Section -->
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link active" data-page="index">
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="8" y1="6" x2="21" y2="6"/>
-            <line x1="8" y1="12" x2="21" y2="12"/>
-            <line x1="8" y1="18" x2="21" y2="18"/>
-            <line x1="3" y1="6" x2="3.01" y2="6"/>
-            <line x1="3" y1="12" x2="3.01" y2="12"/>
-            <line x1="3" y1="18" x2="3.01" y2="18"/>
-          </svg>
-          <span class="nav-text">Browse</span>
-        </a>
-        
-        <a href="finder.html" class="nav-link" data-page="finder">
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
-          </svg>
-          <span class="nav-text">Finder</span>
-        </a>
-        
-        <a href="compare.html" class="nav-link" data-page="compare">
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 20V10"/>
-            <path d="M12 20V4"/>
-            <path d="M6 20v-6"/>
-          </svg>
-          <span class="nav-text">Compare</span>
-        </a>
-      </nav>
-      
-      <!-- Utility Icons Section -->
-      <div class="header-right">
-        <!-- Button Divider -->
-        <div class="header-divider"></div>
-        
-        <!-- Action Buttons -->
-        <a href="edit.html" class="nav-link nav-link-secondary">
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-          </svg>
-          <span class="nav-text">Edit AP</span>
-        </a>
-        
-        <a href="submit.html" class="nav-link nav-link-accent">
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="5" x2="12" y2="19"/>
-            <line x1="5" y1="12" x2="19" y2="12"/>
-          </svg>
-          <span class="nav-text">Submit AP</span>
-        </a>
-      </div>
-    </div>
-  </header>
+  <header class="site-header" data-page="index"></header>
+  <script src="site-header.js?v=1"></script>
 
   <div class="filter-bar">
     <div class="filter-bar-content">
@@ -195,7 +139,7 @@
 
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
-  <script src="ap-format.js?v=5"></script>
+  <script src="ap-format.js?v=6"></script>
   <script>
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
@@ -668,56 +612,6 @@
       }
     }
 
-    function valueIsUnknown(val) {
-      if (val == null) return true;
-      if (Array.isArray(val)) return val.length === 0 || val.some(v => valueIsUnknown(v));
-      const s = String(val).trim().toLowerCase();
-      return s.length === 0 || s === 'unknown';
-    }
-
-    function validateData(data) {
-      const keysToCheck = [
-        'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class','recommended_poe',
-        'behavior_min_power','ethernet_ports_speed','radios_iot_features','antenna_type','form_factor',
-        'dimensions','weight','antenna_connectors','operating_temp_range','datasheet_url'
-      ];
-      const problems = [];
-      const slugToIndexes = new Map();
-      data.forEach((entry, index) => {
-        const issues = [];
-        keysToCheck.forEach(k => {
-          if (!(k in entry) || valueIsUnknown(entry[k])) {
-            issues.push(`${k} is missing or unknown`);
-          }
-        });
-        if (issues.length) problems.push({ index, vendor: entry.vendor, model: entry.model, issues });
-        // track duplicates by vendor+model
-        const slug = `${normalizeForSlug(entry.vendor)}|${normalizeForSlug(entry.model)}`;
-        const arr = slugToIndexes.get(slug) || [];
-        arr.push(index);
-        slugToIndexes.set(slug, arr);
-      });
-      if (problems.length) {
-        console.groupCollapsed(`[ap_data.json] ${problems.length} issue(s) detected (click to expand)`);
-        problems.forEach(p => {
-          console.group(`Entry #${p.index} — ${p.vendor || '?'} ${p.model || '?'}`);
-          p.issues.forEach(i => console.warn(i));
-          console.groupEnd();
-        });
-        console.groupEnd();
-      }
-      // Duplicate report
-      const dups = Array.from(slugToIndexes.entries()).filter(([, idxs]) => idxs.length > 1);
-      if (dups.length) {
-        console.groupCollapsed(`[ap_data.json] ${dups.length} duplicate vendor+model slug(s) detected`);
-        dups.forEach(([slug, idxs]) => console.warn(`Duplicate: ${slug} at entries ${idxs.join(', ')}`));
-        console.groupEnd();
-      }
-      return problems.length;
-    }
-
-
-
     function openDetails(entry) {
       const overlay = document.getElementById('modal');
       const body = document.getElementById('modal-body');
@@ -841,7 +735,6 @@
         if (formEl) formEl.value = currentFilters.form || '';
         buildColumnsPanel();
         // Validate data (console only; no banner here to avoid alarming users)
-        validateData(apData);
         renderTable();
         // Ensure error hidden after successful load
         errorEl.style.display = 'none';
@@ -858,34 +751,6 @@
 
     // Wire up search + filters + sorting + URL state + columns + modal
     document.addEventListener('DOMContentLoaded', () => {
-      // Set active navigation link based on current page
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      const navLinks = document.querySelectorAll('.nav-link');
-      
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute('data-page');
-        if (linkPage === 'index' && (currentPage === 'index.html' || currentPage === '')) {
-          link.classList.add('active');
-        } else if (linkPage && currentPage.includes(linkPage + '.html')) {
-          link.classList.add('active');
-        }
-      });
-      
-      // Add shadow to header on scroll
-      const header = document.querySelector('.site-header');
-      let lastScroll = 0;
-      
-      window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 10) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-        
-        lastScroll = currentScroll;
-      });
       
       // Fix tooltip positioning to account for sticky header
       document.querySelectorAll('th[data-tooltip]').forEach(th => {
@@ -899,6 +764,7 @@
           tooltipEl.textContent = tooltipText;
           
           // Calculate position above the header, ensuring it's visible
+          const header = document.querySelector('.site-header');
           const headerHeight = header ? header.getBoundingClientRect().height : 0;
           const tooltipTop = Math.max(headerHeight + 10, rect.top - 10);
           

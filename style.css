@@ -549,7 +549,7 @@ td:nth-child(9) {
 /* Ethernet Ports & Speed (col 8) */
 th:nth-child(8),
 td:nth-child(8) {
-  width: 110px;
+  width: 180px;
   white-space: normal;
   word-break: break-word;
 }
@@ -1233,6 +1233,12 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+.filter-hint {
+  margin: 0.6rem 0 0.5rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
 .filter-panel .filter-group-head p {
   margin: 0.25rem 0 0;
   font-size: 0.8rem;
@@ -1413,6 +1419,18 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   color: #bfdbfe;
 }
 
+/* Model links in the Browse table */
+#ap-table-body td a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+#ap-table-body td a:hover,
+#ap-table-body td a:focus-visible {
+  color: #bfdbfe;
+  text-decoration: underline;
+}
+
 .result-model a {
   color: #e5e7eb;
   text-decoration: none;
@@ -1498,60 +1516,9 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   padding: 3rem 1rem !important;
 }
 
-/* Live results counter */
-.results-counter {
-  position: sticky;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: fit-content;
-  margin: 2rem auto 0;
-  z-index: 10;
-}
-
-.counter-content {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: rgba(20, 20, 30, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: var(--radius-full);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(59, 130, 246, 0.1);
-}
-
-.counter-number {
-  font-size: 1.75rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: transform var(--transition-base) var(--ease-out);
-}
-
-.counter-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-}
-
 @media (max-width: 980px) {
   .finder-grid {
     grid-template-columns: 1fr;
-  }
-  
-  
-
-  
-  .results-counter {
-    position: relative;
-    transform: none;
-    left: auto;
-    margin: 1rem auto 0;
   }
 }
 

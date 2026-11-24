@@ -22,6 +22,25 @@ function apSlug(entry) {
   return slugify(`${(entry && entry.vendor) || ""} ${(entry && entry.model) || ""}`);
 }
 
+// "Wi-Fi 7 (2.4/5/6)" -> "wifi7"; anything else (802.11g) -> "".
+function wifiGeneration(value) {
+  const text = String(value || '').toLowerCase();
+  if (text.includes('wi-fi 7')) return 'wifi7';
+  if (text.includes('wi-fi 6e')) return 'wifi6e';
+  if (text.includes('wi-fi 6')) return 'wifi6';
+  return '';
+}
+
+// True when the band list in parentheses includes 6 GHz, e.g. "(2.4/5/6)",
+// "(2.4/5 or 2.4/6)" or "(5/6 Low/6 High)". Wi-Fi 6E always has it.
+function has6GHz(value) {
+  const text = String(value || '');
+  if (/wi-fi 6e/i.test(text)) return true;
+  const bands = (text.match(/\(([^)]*)\)/) || [])[1] || '';
+  return bands.split(/[\/,]|\bor\b/).some(part => /^6\b/.test(part.trim()));
+}
+
+
 function normalizeForSlug(value) {
   if (!value) return "";
   return String(value)
@@ -95,7 +114,7 @@ function saveDetailBackPath(path) {
   try {
     sessionStorage.setItem(DETAIL_BACK_STORAGE_KEY, safe);
   } catch (_) {
-    /* private mode / quota — Back falls back to defaults */
+    /* private mode or quota: Back falls back to defaults */
   }
 }
 
@@ -217,7 +236,7 @@ function beamwidthModeRows(beamwidth) {
   const values = Object.values(beamwidth);
   if (!values.length || !values.every(item => item && typeof item === "object" && !Array.isArray(item))) return [];
   return Object.entries(beamwidth).map(([name, bands]) => ({
-    label: beamModeLabel(name),
+    label: `${beamModeLabel(name)} beamwidth`,
     value: formatBandObject(bands, "beam")
   })).filter(row => row.value);
 }
@@ -278,6 +297,8 @@ if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     slugify,
     apSlug,
+    wifiGeneration,
+    has6GHz,
     normalizeForSlug,
     safeUrl,
     DETAIL_BACK_STORAGE_KEY,

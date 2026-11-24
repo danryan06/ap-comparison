@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AP Details — Enterprise AP Comparison Database</title>
+  <title>AP Details | Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Access point specifications from the vendor datasheet: PoE, behavior at minimum power, radios, antennas, mounts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AP Comparison" />
+  <meta property="og:title" content="AP Details" />
+  <meta property="og:description" content="Access point specifications from the vendor datasheet: PoE, behavior at minimum power, radios, antennas, mounts." />
+  <meta property="og:url" content="https://apcomparison.com/ap.html" />
+  <meta property="og:image" content="https://apcomparison.com/logo.png" />
+  <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
+  <header class="site-header" data-page="detail"></header>
+  <script src="site-header.js?v=1"></script>
   <div class="container">
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
@@ -20,10 +30,7 @@
     <div class="card">
       <span class="badge">AP Details</span>
 
-      <div class="header-with-logo">
-        <h1 id="title-header">AP Details</h1>
-        <img src="logo.png" alt="Enterprise AP Comparison Database" class="site-logo" />
-      </div>
+      <h1 id="title-header">AP Details</h1>
       <p class="subtitle" id="subtitle"></p>
       <!-- Inline actions will be inserted here via JavaScript -->
 
@@ -37,7 +44,7 @@
     </div>
   </div>
 
-  <script src="ap-format.js?v=5"></script>
+  <script src="ap-format.js?v=6"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentEntry = null;
@@ -364,7 +371,7 @@
 
       if (hasBox) {
         const boxItems = Array.isArray(entry.in_box) ? entry.in_box : [];
-        const boxCount = boxItems.length === 0 ? 'none listed' : `${boxItems.length} items`;
+        const boxCount = boxItems.length === 0 ? 'none listed' : `${boxItems.length} ${boxItems.length === 1 ? 'item' : 'items'}`;
         const box = document.createElement('details');
         box.className = 'spec-collapse';
         const boxHeading = document.createElement('summary');
@@ -418,7 +425,7 @@
       mountsSection.className = 'spec-collapse';
       const mountsHeading = document.createElement('summary');
       mountsHeading.addEventListener('mousedown', e => e.preventDefault());
-      fillCollapseSummary(mountsHeading, WRENCH_ICON, 'Orderable Mounts', '', `${compatible.length} parts`);
+      fillCollapseSummary(mountsHeading, WRENCH_ICON, 'Orderable Mounts', '', `${compatible.length} ${compatible.length === 1 ? 'part' : 'parts'}`);
       mountsSection.appendChild(mountsHeading);
       const block = document.createElement('div');
       block.className = 'spec-block';
@@ -485,6 +492,7 @@
 
         const titleText = `${entry.vendor || ''} ${entry.model || ''}`.trim() || 'AP Details';
         titleHeaderEl.textContent = titleText;
+        document.title = `${titleText} | Enterprise AP Comparison Database`;
         subtitleEl.textContent = normalizeString(entry.wifi_gen_radios);
 
         // Add End of Sale alert banner if applicable
@@ -724,8 +732,9 @@
 
         // Render sections
         sections.forEach(section => {
-          const fieldsToRender = section.fields.filter(field => 
-            entry.hasOwnProperty(field) && entry[field] != null && entry[field] !== ''
+          const fieldsToRender = section.fields.filter(field =>
+            entry.hasOwnProperty(field) && entry[field] != null && entry[field] !== '' &&
+            !(Array.isArray(entry[field]) && entry[field].length === 0)
           );
           const rows = [];
           fieldsToRender.forEach(field => {
