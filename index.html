@@ -563,7 +563,11 @@
         tr.appendChild(textCell(entry.antenna_connectors));
         tr.appendChild(textCell(entry.operating_temp_range));
         Array.from(tr.children).forEach((cell, index) => {
-          cell.dataset.key = TABLE_COLUMN_KEYS[index] || '';
+          const key = TABLE_COLUMN_KEYS[index] || '';
+          cell.dataset.key = key;
+          // Phone layout shows each row as a card with the column name beside each value.
+          const th = document.querySelector(`thead th[data-key="${key}"]`);
+          if (th) cell.dataset.label = th.textContent.replace(/[\u25b2\u25bc]/g, '').trim();
         });
 
         // Navigate to detail (id only); list filters stay shareable on this URL via sessionStorage Back
