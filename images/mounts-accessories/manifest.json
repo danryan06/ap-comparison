@@ -131,7 +131,8 @@
       "image_type": "drawing",
       "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
       "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide : Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
-      "retrieved": "2026-11-25"
+      "retrieved": "2026-11-25",
+      "caption_note": "Drawing shows Type B"
     },
     {
       "mount_id": "aruba-ap-mnt-b",
@@ -149,7 +150,8 @@
       "image_type": "drawing",
       "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
       "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide : Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
-      "retrieved": "2026-11-25"
+      "retrieved": "2026-11-25",
+      "caption_note": "Drawing shows Type B"
     },
     {
       "mount_id": "aruba-ap-mnt-d",
