@@ -2559,6 +2559,15 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   max-width: 220px;
 }
 
+.mount-image a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mount-image a:hover img {
+  opacity: 0.92;
+}
+
 .mount-image img {
   display: block;
   width: 100%;

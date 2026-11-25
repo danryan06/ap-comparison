@@ -450,7 +450,17 @@
           img.src = imgMeta.file;
           img.alt = mount.name || mount.id || 'Mount';
           img.loading = 'lazy';
-          figure.appendChild(img);
+          const sourceUrl = safeUrl(imgMeta.source_page_url);
+          if (sourceUrl) {
+            const link = document.createElement('a');
+            link.href = sourceUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.appendChild(img);
+            figure.appendChild(link);
+          } else {
+            figure.appendChild(img);
+          }
           if (imgMeta.image_type === 'drawing') {
             const caption = document.createElement('figcaption');
             caption.className = 'mount-image-caption';
