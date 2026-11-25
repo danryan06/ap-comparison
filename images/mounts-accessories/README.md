@@ -1,23 +1,30 @@
-# Mount & accessory product photos
+# Mount & accessory images
 
-Product photos for entries in `mounts.json`, stored by vendor slug and mount `id`.
+Images for entries in `mounts.json`, stored by vendor slug and mount `id`.
 
 ## Layout
 
 ```
-images/mounts-accessories/<vendor>/<mount-id>.{jpg,png,webp}
+images/mounts-accessories/<vendor>/<mount-id>.{jpg,png}
 ```
 
-Example: `images/mounts-accessories/cisco/cisco-air-ap-bracket-1.jpg`
+## Sourcing rule
 
-## Inventory
+Every image comes from the **vendor's own site**: a product page, datasheet, install guide, or ordering guide on the vendor domain (including official docs/CDN subdomains). Distributor, reseller, marketplace, and image-search sources are not used.
 
-See `manifest.json` for the full list of mounts with photos, missing IDs, and source notes.
+## Manifest
 
-These files are assets only — they are **not** wired into the UI or `mounts.json` in this change.
+See `manifest.json` for one entry per image:
+
+- `mount_id`, `vendor`, `file`
+- `image_type`: `photo` or `drawing`
+- `source_page_url`: vendor-hosted page or PDF
+- `source_detail`: figure/page notes
+- `retrieved`: ISO date
 
 ## Format
 
-- Prefer JPEG product photos, typically max ~1200px on the long edge
-- Ubiquiti Store assets retained as official PNG product renders
-- Sources include vendor stores, CDW, distributor listings, and official accessory datasheet PDFs
+- Photos: JPEG, ~1200px max edge (Ubiquiti official PNGs kept as PNG)
+- Drawings: PNG, ~1200px max edge (crop/resize only)
+
+These assets are optional in the AP detail UI (Drawing caption under line drawings — see PR for Dan's OK).
