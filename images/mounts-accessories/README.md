@@ -27,4 +27,4 @@ See `manifest.json` for one entry per image:
 - Photos: JPEG, ~1200px max edge (Ubiquiti official PNGs kept as PNG)
 - Drawings: PNG, ~1200px max edge (crop/resize only)
 
-These assets are optional in the AP detail UI (Drawing caption under line drawings — see PR for Dan's OK).
+These assets are optional in the AP detail UI. Line drawings show a Drawing caption under the image.
