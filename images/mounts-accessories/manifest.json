@@ -1,0 +1,2014 @@
+{
+  "total_mounts": 132,
+  "with_photos": 48,
+  "missing_photos": 84,
+  "layout": "images/mounts-accessories/<vendor-slug>/<mount-id>.{jpg,png,webp}",
+  "source_notes_by_vendor": {
+    "ubiquiti": "Official Ubiquiti Store CDN (cdn.ecomm.ui.com)",
+    "cisco": "CDW product photos and distributor listings (NetworkTigers, YourITDelivered, Hummingbird/RFwel-class CDNs)",
+    "aruba": "CDW / NetworkTigers product photos",
+    "juniper": "Official Mist AP Mounting Brackets datasheet PDF (mist.com)",
+    "fortinet": "Official Fortinet Wireless Accessories Portfolio PDF",
+    "ruckus": "Distributor product photos (RFwel / Retia Global)",
+    "extreme": "Distributor product photo",
+    "arista": "Distributor product photo (packaged MNT-AP-FLAT-14CM)",
+    "allied-telesis": "Official / distributor product photo"
+  },
+  "format_notes": "Mostly JPEG product photos resized to max ~1200px on the long edge. Ubiquiti assets kept as official PNG renders. No mounts.json / UI wiring changes.",
+  "photos": [
+    {
+      "id": "cisco-air-ap-bracket-1",
+      "name": "Low-profile bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-BRACKET-1"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-BRACKET-1="
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-air-ap-bracket-1.jpg"
+    },
+    {
+      "id": "cisco-air-ap-bracket-2",
+      "name": "Universal bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-BRACKET-2"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-BRACKET-2="
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-air-ap-bracket-2.jpg"
+    },
+    {
+      "id": "cisco-air-ap-t-rail-r",
+      "name": "Ceiling grid clip, recessed",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-T-RAIL-R"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-T-RAIL-R="
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-air-ap-t-rail-r.jpg"
+    },
+    {
+      "id": "cisco-air-ap-t-rail-f",
+      "name": "Ceiling grid clip, flush",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-T-RAIL-F"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-T-RAIL-F="
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-air-ap-t-rail-f.jpg"
+    },
+    {
+      "id": "cisco-air-chnl-adapter",
+      "name": "Channel-rail adapter",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-CHNL-ADAPTER"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-CHNL-ADAPTER="
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-air-chnl-adapter.jpg"
+    },
+    {
+      "id": "cisco-cw-mnt-art2-00",
+      "name": "Articulating arm",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-ART2-00"
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-cw-mnt-art2-00.jpg"
+    },
+    {
+      "id": "cisco-meraki-ma-mnt-mr-h1a",
+      "name": "Meraki wall mount bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco Meraki",
+          "part_number": "MA-MNT-MR-H1A"
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-meraki-ma-mnt-mr-h1a.webp"
+    },
+    {
+      "id": "cisco-meraki-ma-mnt-mr-16",
+      "name": "Vertical mount plate",
+      "part_numbers": [
+        {
+          "vendor": "Cisco Meraki",
+          "part_number": "MA-MNT-MR-16"
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-meraki-ma-mnt-mr-16.jpg"
+    },
+    {
+      "id": "cisco-meraki-ma-mnt-mr-h2",
+      "name": "Meraki Surface Mounting Kit",
+      "part_numbers": [
+        {
+          "vendor": "Cisco Meraki",
+          "part_number": "MA-MNT-MR-H2"
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-meraki-ma-mnt-mr-h2.jpg"
+    },
+    {
+      "id": "cisco-meraki-ma-umnt-mr-a2",
+      "name": "Universal mounting adapter",
+      "part_numbers": [
+        {
+          "vendor": "Cisco Meraki",
+          "part_number": "MA-UMNT-MR-A2"
+        }
+      ],
+      "path": "images/mounts-accessories/cisco/cisco-meraki-ma-umnt-mr-a2.jpg"
+    },
+    {
+      "id": "aruba-ap-mnt-u",
+      "name": "Campus AP universal mount bracket kit Type U",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-U"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "S4K79A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-U"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "S0J40A"
+        }
+      ],
+      "path": "images/mounts-accessories/aruba/aruba-ap-mnt-u.jpg"
+    },
+    {
+      "id": "aruba-ap-270-mnt-v2",
+      "name": "Outdoor AP short arm pole/wall mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-270-MNT-V2"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "JW053A"
+        }
+      ],
+      "path": "images/mounts-accessories/aruba/aruba-ap-270-mnt-v2.jpg"
+    },
+    {
+      "id": "aruba-ap-270-mnt-h1",
+      "name": "Outdoor AP hanging one-way tilt pole/wall mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-270-MNT-H1"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "JW054A"
+        }
+      ],
+      "path": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h1.jpg"
+    },
+    {
+      "id": "aruba-ap-270-mnt-h2",
+      "name": "Outdoor AP flush wall mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-270-MNT-H2"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "JW055A"
+        }
+      ],
+      "path": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h2.webp"
+    },
+    {
+      "id": "aruba-ap-270-mnt-h3",
+      "name": "Outdoor AP hanging dual-tilt pole/wall mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-270-MNT-H3"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R6W11A"
+        }
+      ],
+      "path": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h3.jpg"
+    },
+    {
+      "id": "ruckus-902-0120-0000",
+      "name": "Accessory mounting bracket (secure)",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0120-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0120-0000.jpg"
+    },
+    {
+      "id": "ruckus-902-0195-0000",
+      "name": "T-bar ceiling mount kit, flush frame",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0195-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0195-0000.jpg"
+    },
+    {
+      "id": "ruckus-902-0196-0000",
+      "name": "T-bar bracket, flush frame",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0196-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0196-0000.jpg"
+    },
+    {
+      "id": "ruckus-902-0700-0000",
+      "name": "Stadium Enclosure, under-the-seat",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0700-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0700-0000.jpg"
+    },
+    {
+      "id": "ruckus-902-0136-0000",
+      "name": "Wall plate AP surface mount bracket",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0136-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0136-0000.jpg"
+    },
+    {
+      "id": "ruckus-902-0125-0000",
+      "name": "Secure articulating mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0125-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0125-0000.jpg"
+    },
+    {
+      "id": "ruckus-902-0134-0000",
+      "name": "Outdoor articulating mounting bracket, weatherized aluminum",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0134-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0134-0000.jpg"
+    },
+    {
+      "id": "ruckus-902-0707-0000",
+      "name": "T670 omni under-seat flush mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0707-0000"
+        }
+      ],
+      "path": "images/mounts-accessories/ruckus/ruckus-902-0707-0000.jpg"
+    },
+    {
+      "id": "extreme-mbo-art02",
+      "name": "Outdoor two-axis wall bracket (end of sale)",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "MBO-ART02"
+        }
+      ],
+      "path": "images/mounts-accessories/extreme/extreme-mbo-art02.jpg"
+    },
+    {
+      "id": "juniper-apbr-u",
+      "name": "Universal AP bracket",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-U"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apbr-u.jpg"
+    },
+    {
+      "id": "juniper-apbr-adp-t12",
+      "name": "Threaded rod adapter, 1/2 in",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-ADP-T12"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apbr-adp-t12.jpg"
+    },
+    {
+      "id": "juniper-apbr-adp-cr9",
+      "name": "Recessed 9/16 in T-bar and channel rail adapter",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-ADP-CR9"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apbr-adp-cr9.jpg"
+    },
+    {
+      "id": "juniper-apbr-adp-rt15",
+      "name": "Recessed 15/16 in T-bar adapter",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-ADP-RT15"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apbr-adp-rt15.jpg"
+    },
+    {
+      "id": "juniper-apbr-adp-ws15",
+      "name": "Recessed 1.5 in T-bar adapter",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-ADP-WS15"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apbr-adp-ws15.jpg"
+    },
+    {
+      "id": "juniper-apoutbr-fm2",
+      "name": "Outdoor flush mount bracket",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APOUTBR-FM2"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apoutbr-fm2.jpg"
+    },
+    {
+      "id": "juniper-apoutbr-art2",
+      "name": "Outdoor articulating mount",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APOUTBR-ART2"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apoutbr-art2.jpg"
+    },
+    {
+      "id": "juniper-apbr-t58",
+      "name": "5/8-inch threaded rod bracket",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-T58"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apbr-t58.jpg"
+    },
+    {
+      "id": "juniper-apbr-m16",
+      "name": "16mm threaded rod bracket",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-M16"
+        }
+      ],
+      "path": "images/mounts-accessories/juniper/juniper-apbr-m16.jpg"
+    },
+    {
+      "id": "arista-mnt-ap-flat-14cm",
+      "name": "Flat surface mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Arista",
+          "part_number": "MNT-AP-FLAT-14CM"
+        }
+      ],
+      "path": "images/mounts-accessories/arista/arista-mnt-ap-flat-14cm.jpg"
+    },
+    {
+      "id": "fortinet-fap-400-mnt-10",
+      "name": "Wall and T-rail mount kit (10 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-400-MNT-10"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-400-mnt-10.jpg"
+    },
+    {
+      "id": "fortinet-fap-400-smnt-20",
+      "name": "Standard wall or ceiling brackets (20 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-400-SMNT-20"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-400-smnt-20.jpg"
+    },
+    {
+      "id": "fortinet-fap-400-rmnt-20",
+      "name": "Recessed T-rail brackets (20 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-400-RMNT-20"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-400-rmnt-20.jpg"
+    },
+    {
+      "id": "fortinet-fap-all-mtl-5",
+      "name": "Metal T-rail, wall, or ceiling brackets (5 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-ALL-MTL-5"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-all-mtl-5.jpg"
+    },
+    {
+      "id": "fortinet-fap-smnt-mtl-20",
+      "name": "Metal standoff brackets (20 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-SMNT-MTL-20"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-smnt-mtl-20.jpg"
+    },
+    {
+      "id": "fortinet-fap-mnt-gbox-10pk",
+      "name": "15/16 in T-bar adapter for outlet box, conduit, or all-thread",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-MNT-Gbox-10pk"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-mnt-gbox-10pk.jpg"
+    },
+    {
+      "id": "fortinet-fap-enc-43x",
+      "name": "Under-seat wedge or wall enclosure",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-ENC-43X"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-enc-43x.jpg"
+    },
+    {
+      "id": "fortinet-fap-enc-12x10",
+      "name": "NEMA 4X polycarbonate enclosure",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-ENC-12X10"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-enc-12x10.jpg"
+    },
+    {
+      "id": "fortinet-fap-brkt-mnt-5",
+      "name": "Articulating wall or mast mount (5 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-BRKT-MNT-5"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-brkt-mnt-5.jpg"
+    },
+    {
+      "id": "fortinet-fap-mnt-odr-5pk",
+      "name": "Universal articulating pole and wall bracket (5 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-MNT-ODR-5PK"
+        }
+      ],
+      "path": "images/mounts-accessories/fortinet/fortinet-fap-mnt-odr-5pk.jpg"
+    },
+    {
+      "id": "ubiquiti-uacc-ap-am",
+      "name": "AP Arm Mount",
+      "part_numbers": [
+        {
+          "vendor": "Ubiquiti",
+          "part_number": "UACC-AP-AM"
+        }
+      ],
+      "path": "images/mounts-accessories/ubiquiti/ubiquiti-uacc-ap-am.png"
+    },
+    {
+      "id": "ubiquiti-uacc-u7-pro-wall-ts",
+      "name": "U7 Pro Wall Table Stand",
+      "part_numbers": [
+        {
+          "vendor": "Ubiquiti",
+          "part_number": "UACC-U7-Pro-Wall-TS"
+        }
+      ],
+      "path": "images/mounts-accessories/ubiquiti/ubiquiti-uacc-u7-pro-wall-ts.png"
+    },
+    {
+      "id": "ubiquiti-uacc-u7-pro-wall-fm",
+      "name": "U7 Pro Wall Paintable Flush Mount",
+      "part_numbers": [
+        {
+          "vendor": "Ubiquiti",
+          "part_number": "UACC-U7-Pro-Wall-FM"
+        }
+      ],
+      "path": "images/mounts-accessories/ubiquiti/ubiquiti-uacc-u7-pro-wall-fm.png"
+    },
+    {
+      "id": "allied-telesis-at-brkt-conv-ap1",
+      "name": "Access point bracket converter",
+      "part_numbers": [
+        {
+          "vendor": "Allied Telesis",
+          "part_number": "AT-BRKT-CONV-AP1"
+        }
+      ],
+      "path": "images/mounts-accessories/allied-telesis/allied-telesis-at-brkt-conv-ap1.jpg"
+    }
+  ],
+  "missing": [
+    {
+      "id": "cisco-cw-mnt-9",
+      "name": "Integrated AP and antenna mount",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-9"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-mnt-h1",
+      "name": "Wall plate bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-H1"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-H1-00"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-air-ap-bracket-w4",
+      "name": "Catalyst wall mount bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-BRACKET-W4"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-acc-spacer1-00",
+      "name": "Wall spacer kit",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-ACC-SPACER1-00"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-air-mnt-art1",
+      "name": "Pivot articulating mount",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-MNT-ART1="
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "pole",
+        "articulating"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-mnt-art4",
+      "name": "1 or 2 pivot articulating mount",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-ART4"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling",
+        "pole",
+        "articulating"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-mnt-art3",
+      "name": "Articulating wall/pole mount bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-ART3"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling",
+        "pole",
+        "articulating"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-mnt-vert3",
+      "name": "Vertical mount with DC adapter",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-VERT3"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "pole"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-mnt-horz2",
+      "name": "Horizontal mount",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-HORZ2"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling",
+        "pole"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-air-mnt-vert1",
+      "name": "Vertical wall/pole mount",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-MNT-VERT1"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-MNT-VERT1="
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "pole"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-air-accpmk3700",
+      "name": "Pole mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-ACCPMK3700="
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "pole"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-air-accpmk3700-2",
+      "name": "Pole mounting bracket, large",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-ACCPMK3700-2="
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "pole"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-air-ap-bracket-8",
+      "name": "Low-profile bracket (9105AXI)",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-BRACKET-8"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-AP-BRACKET-8="
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-c9105axw-kit",
+      "name": "Wall-mount spacer kit",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "C9105AXW-KIT"
+        },
+        {
+          "vendor": "Cisco",
+          "part_number": "C9105AXW-KIT="
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-acc-desk1-00",
+      "name": "Desk mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-ACC-DESK1-00"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "desk"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-cw-mnt-strand1a",
+      "name": "Cable strand horizontal mount",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "CW-MNT-STRAND1A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "strand"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cisco-air-accdmk3700",
+      "name": "DIN Rail mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cisco",
+          "part_number": "AIR-ACCDMK3700="
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "din_rail"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-mnt-a",
+      "name": "Campus AP mount bracket kit Type A, suspended ceiling rail, flat 9/16",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R3J15A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "JZ370A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-mnt-b",
+      "name": "Campus AP mount bracket kit Type B, suspended ceiling rail, flat 15/16",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-B"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R3J16A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-B"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "Q9G69A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-mnt-c",
+      "name": "Campus AP mount bracket kit Type C, suspended ceiling rail, profile 9/16",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-C"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R3J17A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-C"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "Q9G70A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-mnt-mp10-b1",
+      "name": "Campus AP 10-pack 15/16 adjustable flat ceiling rail mount bracket kit",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-B1"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R6T34A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-mnt-d",
+      "name": "Campus AP mount bracket kit Type D, solid surface",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-D"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R3J18A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-D"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "Q9G71A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-mnt-e",
+      "name": "Campus AP mount bracket kit Type E, wall-box",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-E"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R3J19A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-E"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R1C72A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-mnt-mp10-x",
+      "name": "Campus AP 10-pack mount adapter kit for existing W2/W3 mounts",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-MNT-MP10-X"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R3T20A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-270-mnt-adp",
+      "name": "AP-228 to AP-270-MNT-XX outdoor mount adapter",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-270-MNT-ADP"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "JW056A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-270-mnt-v1",
+      "name": "AP-270 series outdoor pole/wall long mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-270-MNT-V1"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "JW052A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "pole",
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "aruba-ap-out-mnt-v1a",
+      "name": "Outdoor AP long arm pole/wall mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Aruba",
+          "part_number": "AP-OUT-MNT-V1A"
+        },
+        {
+          "vendor": "Aruba",
+          "part_number": "R9H97A"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "pole",
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "ruckus-902-0123-0000",
+      "name": "Flush-frame acoustic ceiling bracket",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0123-0000"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "ruckus-902-0703-0000",
+      "name": "T750 strand mount bracket",
+      "part_numbers": [
+        {
+          "vendor": "Ruckus",
+          "part_number": "902-0703-0000"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "strand"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ah-acc-bkt-ax-tb",
+      "name": "Flat T-bar and wall bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "AH-ACC-BKT-AX-TB"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar",
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ah-acc-bkt-ax-il",
+      "name": "Interlude ceiling bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "AH-ACC-BKT-AX-IL"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ah-acc-bkt-ax-sl",
+      "name": "Silhouette ceiling bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "AH-ACC-BKT-AX-SL"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ah-acc-bkt-ax-wl",
+      "name": "Direct-to-wall bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "AH-ACC-BKT-AX-WL"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-ax-jb",
+      "name": "Junction box or wall bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-AX-JB"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-ax-wngadapt",
+      "name": "Adapter for WiNG mounting plate 37201",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-AX-WNGADAPT"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-tb-nf",
+      "name": "15/16 in T-bar adapter for sculpted tiles",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-TB-NF"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ah-acc-bkt-916-kit",
+      "name": "9/16 in T-bar kit for sculpted tiles",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "AH-ACC-BKT-916-KIT"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-ax-tbw",
+      "name": "1.5 in wide T-bar bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-AX-TBW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-ax-wp-spare",
+      "name": "AP302W wall plate bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-AX-WP-SPARE"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-ax-wp-ext",
+      "name": "Wall plate housing extension",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-AX-WP-EXT"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-ax-wp-dskstd",
+      "name": "AP302W desk stand",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-AX-WP-DSKSTD"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "desk"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-wp-ap3020w",
+      "name": "AP3020W wall plate bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-WP-AP3020W"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-deskstd-ap3020w",
+      "name": "AP3020W desk stand",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-DESKSTD-AP3020W"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "desk"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-37201",
+      "name": "Main mounting bracket (WiNG mounting plate)",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "37201"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-kt-135628-01",
+      "name": "Main bracket accessory for wall or protruded ceiling",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "KT-135628-01"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar",
+        "wall",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ws-mbi-dcmtr01",
+      "name": "Protruded ceiling bracket, varying widths",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "WS-MBI-DCMTR01"
+        },
+        {
+          "vendor": "Extreme",
+          "part_number": "30518"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ws-mbi-wall04",
+      "name": "Wall and junction box bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "WS-MBI-WALL04"
+        },
+        {
+          "vendor": "Extreme",
+          "part_number": "30516"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-37210",
+      "name": "Flat metal easy-attach adapter",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "37210"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ws-mbi-dcflush",
+      "name": "Protruded ceiling bracket, varying widths",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "WS-MBI-DCFLUSH"
+        },
+        {
+          "vendor": "Extreme",
+          "part_number": "37211"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ah-acc-strp-mrn",
+      "name": "Stainless steel pole strap, 3 to 7 in",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "AH-ACC-STRP-MRN"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "pole"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ah-acc-bkt-asm",
+      "name": "Outdoor stainless steel wall bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "AH-ACC-BKT-ASM"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-kt-147407-02",
+      "name": "Outdoor tilt mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "KT-147407-02"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "pole",
+        "articulating"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-kt-150173-01",
+      "name": "Outdoor 12 in extension arm",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "KT-150173-01"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "pole",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-mbo-art03",
+      "name": "Outdoor two-axis articulating bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "MBO-ART03"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "articulating"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-ws-mbo-pole01",
+      "name": "Pole bracket for MBO-ART02 (end of sale)",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "WS-MBO-POLE01"
+        },
+        {
+          "vendor": "Extreme",
+          "part_number": "30520"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "pole",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-eio-04",
+      "name": "Under-seat mounting kit",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "EIO-04"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "enclosure"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-acc-bkt-ax-beam",
+      "name": "Beam mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "ACC-BKT-AX-BEAM"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "beam"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "extreme-brkt-000147a-01",
+      "name": "Beam clip",
+      "part_numbers": [
+        {
+          "vendor": "Extreme",
+          "part_number": "BRKT-000147A-01"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "beam",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "juniper-apbr-adp-t58",
+      "name": "Threaded rod adapter, 5/8 in",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-ADP-T58"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "threaded_rod",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "juniper-apbr-adp-m16",
+      "name": "Threaded rod adapter, 16 mm",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-ADP-M16"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "threaded_rod",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "juniper-apbr-wp2",
+      "name": "AP17 wall plate bracket",
+      "part_numbers": [
+        {
+          "vendor": "Juniper",
+          "part_number": "APBR-WP2"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "arista-mnt-ap-24mm",
+      "name": "Prelude 15/16 in (24 mm) T-grid mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Arista",
+          "part_number": "MNT-AP-24MM"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "arista-mnt-ap-15mm",
+      "name": "Suprafine 9/16 in (15 mm) T-grid mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Arista",
+          "part_number": "MNT-AP-15MM"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "arista-mnt-ap-15mm-adapter",
+      "name": "Recessed-tile adapter kit, 9/16 in (15 mm) T-grid",
+      "part_numbers": [
+        {
+          "vendor": "Arista",
+          "part_number": "MNT-AP-15MM-ADAPTER"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "arista-mnt-ap-24mm-adapter",
+      "name": "Recessed-tile adapter kit, 15/16 in (24 mm) T-grid",
+      "part_numbers": [
+        {
+          "vendor": "Arista",
+          "part_number": "MNT-AP-24MM-ADAPTER"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "arista-mnt-ap-intsil",
+      "name": "Interlude and Silhouette T-grid mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Arista",
+          "part_number": "MNT-AP-INTSIL"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "arista-mnt-ap-u-adapter-1",
+      "name": "Adapter bracket for Cisco mounts",
+      "part_numbers": [
+        {
+          "vendor": "Arista",
+          "part_number": "MNT-AP-U-ADAPTER-1"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "fortinet-fap-desk-jk-10pk",
+      "name": "23JK desktop stand (10 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Fortinet",
+          "part_number": "FAP-DESK-JK-10pk"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "desk"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-ax-x7-1brkt-ww",
+      "name": "X7 series mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "AX-X7-1BRKT-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar",
+        "hard_ceiling",
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-ax-x7-dbrkt-ww",
+      "name": "X7 series adjustable angle mounting bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "AX-X7-DBRKT-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "pole",
+        "articulating"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-ax-wallbrkt-ww",
+      "name": "Wall mount L-bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "AX-WALLBRKT-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-ax-e510rbkt-ww",
+      "name": "Shock mount bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "AX-E510RBKT-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-ax-21x-brkt-ww",
+      "name": "XV2-21X junction box bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "AX-21X-BRKT-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-xa-droptile15",
+      "name": "Recessed ceiling tile kit, 15mm T-bar (5 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "XA-DROPTILE15"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-xa-droptile24",
+      "name": "Recessed ceiling tile kit, 24mm T-bar (5 pack)",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "XA-DROPTILE24"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-pl-dtstandb-ww",
+      "name": "Desktop stand",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "PL-DTSTANDB-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "desk"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-pl-wallmntb-ww",
+      "name": "Flush surface mounting adapter",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "PL-WALLMNTB-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "adapter"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-pl-snwlgngb-ww",
+      "name": "Single gang junction box wall bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "PL-SNWLGNGB-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "cambium-ax-o-wl1bkt-ww",
+      "name": "Outdoor wall or ceiling bracket",
+      "part_numbers": [
+        {
+          "vendor": "Cambium",
+          "part_number": "AX-O-WL1BKT-WW"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "alcatel-lucent-ap-mnt-in-be",
+      "name": "Indoor T-rail mounting kit, Type B1/B2",
+      "part_numbers": [
+        {
+          "vendor": "Alcatel-Lucent",
+          "part_number": "AP-MNT-IN-BE"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "alcatel-lucent-ap-mnt-in-ce",
+      "name": "Indoor ceiling rail mounting kit, Type C1/C2",
+      "part_numbers": [
+        {
+          "vendor": "Alcatel-Lucent",
+          "part_number": "AP-MNT-IN-CE"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "ceiling_tbar"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "alcatel-lucent-ap-mnt-in-we",
+      "name": "Indoor metal flat surface mounting kit, Type WE",
+      "part_numbers": [
+        {
+          "vendor": "Alcatel-Lucent",
+          "part_number": "AP-MNT-IN-WE"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "wall",
+        "hard_ceiling"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "alcatel-lucent-ap-mnt-out",
+      "name": "Outdoor pole/wall mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Alcatel-Lucent",
+          "part_number": "AP-MNT-OUT"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "pole",
+        "wall"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    },
+    {
+      "id": "alcatel-lucent-ap-mnt-out-h",
+      "name": "Outdoor hanging down-tilt mount kit",
+      "part_numbers": [
+        {
+          "vendor": "Alcatel-Lucent",
+          "part_number": "AP-MNT-OUT-H"
+        }
+      ],
+      "path": null,
+      "mount_type": [
+        "articulating"
+      ],
+      "reason": "No verified product photo found after vendor store, CDW, distributor, and official PDF searches; many listings only show logos/placeholders or line drawings."
+    }
+  ]
+}
