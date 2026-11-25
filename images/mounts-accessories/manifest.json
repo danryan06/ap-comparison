@@ -1,9 +1,9 @@
 {
   "total_mounts": 132,
-  "with_images": 79,
+  "with_images": 87,
   "photos": 46,
-  "drawings": 33,
-  "missing": 53,
+  "drawings": 41,
+  "missing": 45,
   "retrieved": "2026-11-25",
   "sourcing_rule": "Vendor-hosted product pages, datasheets, install guides, or ordering guides only (vendor domains/CDNs).",
   "images": [
@@ -71,6 +71,60 @@
       "retrieved": "2026-11-25"
     },
     {
+      "mount_id": "aruba-ap-270-mnt-adp",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-adp.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-ADP/AP-270-MNT-ADP_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-ADP Adapter Installation Guide \u2014 Figure 1, attaching adapter to AP",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-h1",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h1.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-H1/AP-270-MNT-H1_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-H1 Mount Kit Installation Guide \u2014 Figure 1, attaching mounting bracket to ceiling/wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-h2",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h2.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-H2/AP-270-MNT-H2_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-H2 Mount Kit Installation Guide \u2014 Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-h3",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h3.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-H3/AP-270-MNT-H3_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-H3 Mount Kit Installation Guide \u2014 Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-v1",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-v1.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-V1/AP-270-MNT-V1_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-V1 Vertical Mounting Kit Installation Guide \u2014 Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-v2",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-v2.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-V2/AP-270-MNT-V2_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-V2 Mount Kit Installation Guide \u2014 Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
       "mount_id": "aruba-ap-mnt-a",
       "vendor": "Aruba",
       "file": "images/mounts-accessories/aruba/aruba-ap-mnt-a.png",
@@ -116,12 +170,30 @@
       "retrieved": "2026-11-25"
     },
     {
+      "mount_id": "aruba-ap-mnt-mp10-b1",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-mp10-b1.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
+      "source_detail": "Shared with aruba-ap-mnt-b (AP-MNT-B): AP-MNT-MP10-B1 is the 10-pack related to Type B flat 15/16 ceiling rail kit; same vendor figure from AP-MNT-A/B/C Mount Kit Installation Guide \u2014 Figure 1 (shows AP-MNT-B)",
+      "retrieved": "2026-11-25"
+    },
+    {
       "mount_id": "aruba-ap-mnt-u",
       "vendor": "Aruba",
       "file": "images/mounts-accessories/aruba/aruba-ap-mnt-u.png",
       "image_type": "drawing",
       "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/ap-mnt-u/AP-MNT-U_Install_Guide.pdf",
       "source_detail": "AP-MNT-U Mount Kit Installation Guide \u2014 Figure 1, Mount Kit Overview",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-out-mnt-v1a",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-out-mnt-v1a.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-OUT-MNT-V1A/AP-OUT-MNT-V1A_Install_Guide.pdf",
+      "source_detail": "AP-OUT-MNT-V1A Mount Kit Installation Guide \u2014 Figure 1, attaching mounting bracket to wall",
       "retrieved": "2026-11-25"
     },
     {
@@ -738,15 +810,7 @@
     "cisco-meraki-ma-umnt-mr-a2",
     "cisco-cw-mnt-strand1a",
     "cisco-air-accdmk3700",
-    "aruba-ap-mnt-mp10-b1",
     "aruba-ap-mnt-mp10-x",
-    "aruba-ap-270-mnt-adp",
-    "aruba-ap-270-mnt-v1",
-    "aruba-ap-out-mnt-v1a",
-    "aruba-ap-270-mnt-v2",
-    "aruba-ap-270-mnt-h1",
-    "aruba-ap-270-mnt-h2",
-    "aruba-ap-270-mnt-h3",
     "ruckus-902-0703-0000",
     "ruckus-902-0707-0000",
     "extreme-ah-acc-bkt-ax-wl",
