@@ -2554,6 +2554,162 @@ tbody tr:nth-child(5) { animation-delay: 120ms; }
   overflow-wrap: anywhere;
 }
 
+.mount-image {
+  margin: 8px 0 0;
+  max-width: 220px;
+}
+
+.mount-image-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 220px;
+  height: 140px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: #0f172a;
+  cursor: zoom-in;
+}
+
+.mount-image-frame:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.mount-image-frame img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.mount-image-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.mount-image-caption-sep {
+  opacity: 0.55;
+}
+
+.mount-image-source {
+  color: #93c5fd;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.mount-image-source:hover {
+  color: #bfdbfe;
+  text-decoration: underline;
+}
+
+.mount-image-dialog {
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  max-width: min(96vw, 1100px);
+  max-height: 96vh;
+}
+
+.mount-image-dialog::backdrop {
+  background: rgba(2, 6, 23, 0.78);
+}
+
+.mount-image-dialog-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: min(90vw, 1100px);
+  max-height: 90vh;
+  padding: 16px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.mount-image-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mount-image-dialog-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #f8fafc;
+}
+
+.mount-image-dialog-close {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e2e8f0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mount-image-dialog-close:hover,
+.mount-image-dialog-close:focus-visible {
+  border-color: #93c5fd;
+  color: #fff;
+}
+
+.mount-image-dialog-img {
+  display: block;
+  max-width: min(90vw, 1068px);
+  max-height: calc(90vh - 72px);
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .mount-image {
+    max-width: 100%;
+  }
+
+  .mount-image-frame {
+    max-width: 100%;
+  }
+
+  .mount-image-dialog-panel {
+    padding: 12px;
+    max-width: 94vw;
+    max-height: 92vh;
+  }
+
+  .mount-image-dialog-img {
+    max-width: 90vw;
+    max-height: calc(92vh - 76px);
+  }
+}
+
 .mount-nums {
   display: flex;
   align-items: center;

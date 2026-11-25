@@ -1,0 +1,843 @@
+{
+  "total_mounts": 132,
+  "with_images": 87,
+  "photos": 37,
+  "drawings": 50,
+  "missing": 45,
+  "retrieved": "2026-11-25",
+  "sourcing_rule": "Vendor-hosted product pages, datasheets, install guides, or ordering guides only (vendor domains/CDNs).",
+  "images": [
+    {
+      "mount_id": "arista-mnt-ap-15mm",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-15mm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet : MNT-AP-15MM product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-15mm-adapter",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-15mm-adapter.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet : MNT-AP-15MM-ADAPTER product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-24mm",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-24mm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet : MNT-AP-24MM product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-24mm-adapter",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-24mm-adapter.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet : MNT-AP-24MM-ADAPTER product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-flat-14cm",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-flat-14cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet : MNT-AP-FLAT-14CM product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-intsil",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-intsil.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet : MNT-AP-INTSIL product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-u-adapter-1",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-u-adapter-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet : MNT-AP-U-ADAPTER-1 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-adp",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-adp.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-ADP/AP-270-MNT-ADP_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-ADP Adapter Installation Guide : Figure 1, attaching adapter to AP",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-h1",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h1.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-H1/AP-270-MNT-H1_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-H1 Mount Kit Installation Guide, Figure 1: Attaching the Mounting Bracket to a Ceiling; 300 dpi page render crop",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-h2",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h2.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-H2/AP-270-MNT-H2_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-H2 Mount Kit Installation Guide : Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-h3",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-h3.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-H3/AP-270-MNT-H3_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-H3 Mount Kit Installation Guide : Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-v1",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-v1.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-V1/AP-270-MNT-V1_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-V1 Vertical Mounting Kit Installation Guide : Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-270-mnt-v2",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-270-mnt-v2.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-270-MNT-V2/AP-270-MNT-V2_Install_Guide.pdf",
+      "source_detail": "AP-270-MNT-V2 Mount Kit Installation Guide, Figure 1: Attaching the Mounting Bracket to a Wall; 300 dpi page render crop",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-a",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-a.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
+      "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide : Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
+      "retrieved": "2026-11-25",
+      "caption_note": "Drawing shows Type B"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-b",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-b.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
+      "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide : Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-c",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-c.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
+      "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide : Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
+      "retrieved": "2026-11-25",
+      "caption_note": "Drawing shows Type B"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-d",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-d.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-D/AP-MNT-D_Install_Guide.pdf",
+      "source_detail": "AP-MNT-D Mount Kit Installation Guide : Figure 1, attach mount to wall or ceiling",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-e",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-e.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-E/AP-MNT-E_Install_Guide.pdf",
+      "source_detail": "AP-MNT-E Mount Kit Installation Guide : Figure 1, wall-box plate installation",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-mp10-x",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-mp10-x.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-MP10-X/AP-MNT-MP10-X_Install_Guide.pdf",
+      "source_detail": "AP-MNT-MP10-X Mount Kit Installation Guide : Figure 1, Route Ethernet Cables (mount plate)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-u",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-u.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/ap-mnt-u/AP-MNT-U_Install_Guide.pdf",
+      "source_detail": "AP-MNT-U Mount Kit Installation Guide : Figure 1, Mount Kit Overview",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-out-mnt-v1a",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-out-mnt-v1a.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-OUT-MNT-V1A/AP-OUT-MNT-V1A_Install_Guide.pdf",
+      "source_detail": "AP-OUT-MNT-V1A Mount Kit Installation Guide : Figure 1, attaching mounting bracket to wall",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cambium-ax-21x-brkt-ww",
+      "vendor": "Cambium",
+      "file": "images/mounts-accessories/cambium/cambium-ax-21x-brkt-ww.png",
+      "image_type": "drawing",
+      "source_page_url": "https://brandcentral.cambiumnetworks.com/asset/a4d2e6b8-f662-425e-9b46-7753dae5d4af/Enterprise-Wi-Fi-6-and-7-A",
+      "source_detail": "Enterprise Wi-Fi 6 and 7 AP Installation Guide : Figure 28 / junction box bracket AX-21X-BRKT-WW",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cambium-ax-o-wl1bkt-ww",
+      "vendor": "Cambium",
+      "file": "images/mounts-accessories/cambium/cambium-ax-o-wl1bkt-ww.png",
+      "image_type": "drawing",
+      "source_page_url": "https://brandcentral.cambiumnetworks.com/asset/a4d2e6b8-f662-425e-9b46-7753dae5d4af/Enterprise-Wi-Fi-6-and-7-A",
+      "source_detail": "Enterprise Wi-Fi 6 and 7 AP Installation Guide : optional bracket AX-O-WL1BKT-WW",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cambium-ax-x7-dbrkt-ww",
+      "vendor": "Cambium",
+      "file": "images/mounts-accessories/cambium/cambium-ax-x7-dbrkt-ww.png",
+      "image_type": "drawing",
+      "source_page_url": "https://brandcentral.cambiumnetworks.com/asset/a4d2e6b8-f662-425e-9b46-7753dae5d4af/Enterprise-Wi-Fi-6-and-7-A",
+      "source_detail": "Enterprise Wi-Fi 6 and 7 AP Installation Guide : articulated bracket AX-X7-DBRKT-WW",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-air-ap-bracket-1",
+      "vendor": "Cisco",
+      "file": "images/mounts-accessories/cisco/cisco-air-ap-bracket-1.jpg",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176I_Installation_Guide",
+      "source_detail": "CW9176I Installation Guide : AIR-AP-BRACKET-1 figure",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-air-ap-bracket-2",
+      "vendor": "Cisco",
+      "file": "images/mounts-accessories/cisco/cisco-air-ap-bracket-2.jpg",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176I_Installation_Guide",
+      "source_detail": "CW9176I Installation Guide : AIR-AP-BRACKET-2 figure",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-air-ap-t-rail-r",
+      "vendor": "Cisco",
+      "file": "images/mounts-accessories/cisco/cisco-air-ap-t-rail-r.jpg",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176I_Installation_Guide",
+      "source_detail": "CW9176I Installation Guide : AIR-AP-T-RAIL-R figure",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-cw-acc-desk1-00",
+      "vendor": "Cisco",
+      "file": "images/mounts-accessories/cisco/cisco-cw-acc-desk1-00.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+      "source_detail": "CW9172H Installation Guide, Desktop Cover Removal From Base figure: desk stand cropped as subject (not AP body)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-cw-acc-spacer1-00",
+      "vendor": "Cisco",
+      "file": "images/mounts-accessories/cisco/cisco-cw-acc-spacer1-00.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+      "source_detail": "CW9172H Installation Guide, Screw usage to wall mount spacer figure: spacer cropped as subject",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-cw-mnt-art2-00",
+      "vendor": "Cisco",
+      "file": "images/mounts-accessories/cisco/cisco-cw-mnt-art2-00.jpg",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9176D1_Installation_Guide",
+      "source_detail": "CW9176D1 Installation Guide : CW-MNT-ART2-00 articulating arm figure",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-cw-mnt-h1",
+      "vendor": "Cisco",
+      "file": "images/mounts-accessories/cisco/cisco-cw-mnt-h1.jpg",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/CW9172H_Installation_Guide",
+      "source_detail": "CW9172H Installation Guide : Wall Mount Cradle (CW-MNT-H1)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-meraki-ma-mnt-mr-16",
+      "vendor": "Cisco Meraki",
+      "file": "images/mounts-accessories/cisco/cisco-meraki-ma-mnt-mr-16.jpg",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR86_Installation_Guide",
+      "source_detail": "MR86 Installation Guide : MR86 Mount Plate (MA-MNT-MR-16)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "cisco-meraki-ma-mnt-mr-h1a",
+      "vendor": "Cisco Meraki",
+      "file": "images/mounts-accessories/cisco/cisco-meraki-ma-mnt-mr-h1a.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.meraki.com/Wireless/Install_and_Get_Started/Installation_Guides/MR36H_Installation_Guide",
+      "source_detail": "MR36H Installation Guide, mount plate drawing (MA-MNT-MR-H1A); composited from vendor PNG onto white",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-37201",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-37201.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+      "source_detail": "AP410ie Installation Guide, Figure 2: Main mounting bracket (#37201); 300 dpi page render crop",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-37210",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-37210.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+      "source_detail": "AP410ie Installation Guide, Figure 4: Flat metal easy-attach adapter (#37210) on main bracket; 300 dpi page render crop",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-ax-beam",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-ax-beam.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+      "source_detail": "AP4020 Installation Guide : Figure 33 / beam bracket",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-ax-jb",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-ax-jb.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+      "source_detail": "AP4020 Installation Guide, Figure 32: ACC-BKT-AX-JB Accessory Bracket Metal Part; 300 dpi page render crop",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-ax-tbw",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-ax-tbw.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+      "source_detail": "AP4020 Installation Guide, Figure 30: ACC-BKT-AX-TBW bracket T-bar side; 300 dpi page render crop",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-ax-wngadapt",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-ax-wngadapt.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP5020%20Installation%20Guide/downloads/ExtremeWireless_AP5020_Installation_Guide.pdf",
+      "source_detail": "AP5020 Installation Guide : ACC-BKT-AX-WNGADAPT",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-ax-wp-dskstd",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-ax-wp-dskstd.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP302W%20Installation%20Guide/downloads/AP302W_Installation_Guide.pdf",
+      "source_detail": "AP302W Installation Guide : ACC-BKT-AX-WP-DSKSTD desk stand",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-ax-wp-ext",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-ax-wp-ext.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP302W%20Installation%20Guide/downloads/AP302W_Installation_Guide.pdf",
+      "source_detail": "AP302W Installation Guide : ACC-BKT-AX-WP-EXT housing extension",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-ax-wp-spare",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-ax-wp-spare.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP302W%20Installation%20Guide/downloads/AP302W_Installation_Guide.pdf",
+      "source_detail": "AP302W Installation Guide : Figure 10, wall plate bracket components (ACC-BKT-AX-WP-SPARE)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-acc-bkt-tb-nf",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-acc-bkt-tb-nf.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+      "source_detail": "AP4020 Installation Guide : ACC-BKT-TB-NF adapter",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-ah-acc-bkt-916-kit",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-ah-acc-bkt-916-kit.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP5020%20Installation%20Guide/downloads/ExtremeWireless_AP5020_Installation_Guide.pdf",
+      "source_detail": "AP5020 Installation Guide : AH-ACC-BKT-916-KIT",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-ah-acc-bkt-ax-il",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-ah-acc-bkt-ax-il.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+      "source_detail": "AP4020 Installation Guide : AH-ACC-BKT-AX-IL figure",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-ah-acc-bkt-ax-sl",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-ah-acc-bkt-ax-sl.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+      "source_detail": "AP4020 Installation Guide : Figure 23 AH-ACC-BKT-AX-SL",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-ah-acc-bkt-ax-tb",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-ah-acc-bkt-ax-tb.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/AP4020%20Installation%20Guide/downloads/AP4020_Installation_Guide.pdf",
+      "source_detail": "AP4020 Installation Guide : Figure 22 AH-ACC-BKT-AX-TB",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-brkt-000147a-01",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-brkt-000147a-01.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+      "source_detail": "AP410ie Installation Guide : Figure 10, beam clip BRKT-000147A-01",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-kt-135628-01",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-kt-135628-01.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+      "source_detail": "AP410ie Installation Guide : KT-135628-01 main bracket",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-kt-147407-02",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-kt-147407-02.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+      "source_detail": "AP5050D Installation Guide : KT-147407-02 outdoor tilt mount",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-kt-150173-01",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-kt-150173-01.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+      "source_detail": "AP5050D Installation Guide : KT-150173-01 extension arm",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-mbo-art02",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-mbo-art02.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+      "source_detail": "AP5050D Installation Guide : MBO-ART02",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-mbo-art03",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-mbo-art03.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+      "source_detail": "AP5050D Installation Guide : MBO-ART03",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-ws-mbi-dcflush",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-ws-mbi-dcflush.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+      "source_detail": "AP410ie Installation Guide : WS-MBI-DCFLUSH",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-ws-mbi-dcmtr01",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-ws-mbi-dcmtr01.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP410ie/downloads/AP410ie%20Installation%20Guide.pdf",
+      "source_detail": "AP410ie Installation Guide : WS-MBI-DCMTR01",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "extreme-ws-mbo-pole01",
+      "vendor": "Extreme",
+      "file": "images/mounts-accessories/extreme/extreme-ws-mbo-pole01.png",
+      "image_type": "drawing",
+      "source_page_url": "https://documentation.extremenetworks.com/wireless/AP_Guides/AP5050D/downloads/AP5050D_Installation_Guide.pdf",
+      "source_detail": "AP5050D Installation Guide : WS-MBO-POLE01 with MBO-ART02",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-400-mnt-10",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-400-mnt-10.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-400-rmnt-20",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-400-rmnt-20.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-400-smnt-20",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-400-smnt-20.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-all-mtl-5",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-all-mtl-5.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-brkt-mnt-5",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-brkt-mnt-5.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-desk-jk-10pk",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-desk-jk-10pk.png",
+      "image_type": "drawing",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet, page 7 : FAP-DESK-JK-10pk assembly drawing",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-enc-12x10",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-enc-12x10.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-enc-43x",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-enc-43x.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-mnt-gbox-10pk",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-mnt-gbox-10pk.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-mnt-odr-5pk",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-mnt-odr-5pk.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "fortinet-fap-smnt-mtl-20",
+      "vendor": "Fortinet",
+      "file": "images/mounts-accessories/fortinet/fortinet-fap-smnt-mtl-20.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/fortiap-accessories.pdf",
+      "source_detail": "FortiAP Accessories Portfolio datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apbr-adp-cr9",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apbr-adp-cr9.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apbr-adp-rt15",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apbr-adp-rt15.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apbr-adp-t12",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apbr-adp-t12.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apbr-adp-ws15",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apbr-adp-ws15.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apbr-m16",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apbr-m16.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apbr-t58",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apbr-t58.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apbr-u",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apbr-u.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apoutbr-art2",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apoutbr-art2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "juniper-apoutbr-fm2",
+      "vendor": "Juniper",
+      "file": "images/mounts-accessories/juniper/juniper-apoutbr-fm2.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.mist.com/wp-content/uploads/mist-ap-bracket-guide.pdf",
+      "source_detail": "Mist AP Mounting Brackets datasheet : product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0120-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0120-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0120-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0123-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0123-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0123-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0125-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0125-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0125-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0134-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0134-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0134-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0136-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0136-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0136-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0195-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0195-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0195-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0196-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0196-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0196-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ruckus-902-0700-0000",
+      "vendor": "Ruckus",
+      "file": "images/mounts-accessories/ruckus/ruckus-902-0700-0000.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://webresources.vistancenetworks.com/download/assets/RUCKUS+Accessory+Guide/bbcc8a52d7ad11f0a98566254722ed67",
+      "source_detail": "RUCKUS Accessory Guide : 902-0700-0000 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ubiquiti-uacc-ap-am",
+      "vendor": "Ubiquiti",
+      "file": "images/mounts-accessories/ubiquiti/ubiquiti-uacc-ap-am.png",
+      "image_type": "photo",
+      "source_page_url": "https://store.ui.com/us/en/products/uacc-ap-am",
+      "source_detail": "Ubiquiti Store product page : official PNG render",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ubiquiti-uacc-u7-pro-wall-fm",
+      "vendor": "Ubiquiti",
+      "file": "images/mounts-accessories/ubiquiti/ubiquiti-uacc-u7-pro-wall-fm.png",
+      "image_type": "photo",
+      "source_page_url": "https://store.ui.com/us/en/products/uacc-u7-pro-wall-fm",
+      "source_detail": "Ubiquiti Store product page : official PNG render",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "ubiquiti-uacc-u7-pro-wall-ts",
+      "vendor": "Ubiquiti",
+      "file": "images/mounts-accessories/ubiquiti/ubiquiti-uacc-u7-pro-wall-ts.png",
+      "image_type": "photo",
+      "source_page_url": "https://store.ui.com/us/en/products/uacc-u7-pro-wall-ts",
+      "source_detail": "Ubiquiti Store product page : official PNG render",
+      "retrieved": "2026-11-25"
+    }
+  ],
+  "missing_ids": [
+    "alcatel-lucent-ap-mnt-in-be",
+    "alcatel-lucent-ap-mnt-in-ce",
+    "alcatel-lucent-ap-mnt-in-we",
+    "alcatel-lucent-ap-mnt-out",
+    "alcatel-lucent-ap-mnt-out-h",
+    "allied-telesis-at-brkt-conv-ap1",
+    "aruba-ap-mnt-mp10-b1",
+    "cambium-ax-e510rbkt-ww",
+    "cambium-ax-wallbrkt-ww",
+    "cambium-ax-x7-1brkt-ww",
+    "cambium-pl-dtstandb-ww",
+    "cambium-pl-snwlgngb-ww",
+    "cambium-pl-wallmntb-ww",
+    "cambium-xa-droptile15",
+    "cambium-xa-droptile24",
+    "cisco-air-accdmk3700",
+    "cisco-air-accpmk3700",
+    "cisco-air-accpmk3700-2",
+    "cisco-air-ap-bracket-8",
+    "cisco-air-ap-bracket-w4",
+    "cisco-air-ap-t-rail-f",
+    "cisco-air-chnl-adapter",
+    "cisco-air-mnt-art1",
+    "cisco-air-mnt-vert1",
+    "cisco-c9105axw-kit",
+    "cisco-cw-mnt-9",
+    "cisco-cw-mnt-art3",
+    "cisco-cw-mnt-art4",
+    "cisco-cw-mnt-horz2",
+    "cisco-cw-mnt-strand1a",
+    "cisco-cw-mnt-vert3",
+    "cisco-meraki-ma-mnt-mr-h2",
+    "cisco-meraki-ma-umnt-mr-a2",
+    "extreme-acc-bkt-deskstd-ap3020w",
+    "extreme-acc-bkt-wp-ap3020w",
+    "extreme-ah-acc-bkt-asm",
+    "extreme-ah-acc-bkt-ax-wl",
+    "extreme-ah-acc-strp-mrn",
+    "extreme-eio-04",
+    "extreme-ws-mbi-wall04",
+    "juniper-apbr-adp-m16",
+    "juniper-apbr-adp-t58",
+    "juniper-apbr-wp2",
+    "ruckus-902-0703-0000",
+    "ruckus-902-0707-0000"
+  ]
+}
