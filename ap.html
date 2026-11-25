@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
   <header class="site-header" data-page="detail"></header>
@@ -363,12 +363,13 @@
       return lines;
     }
 
-    function renderMounting(detailsEl, entry, mounts) {
+    function renderMounting(detailsEl, entry, mounts, mountImages) {
       const slug = apSlug(entry);
       const hasBox = Object.prototype.hasOwnProperty.call(entry, 'in_box');
       const compatible = (Array.isArray(mounts) ? mounts : []).filter(mount =>
         mount && Array.isArray(mount.compatible_aps) && mount.compatible_aps.includes(slug)
       );
+      const imageById = mountImages && typeof mountImages === 'object' ? mountImages : {};
 
       if (hasBox) {
         const boxItems = Array.isArray(entry.in_box) ? entry.in_box : [];
@@ -441,6 +442,23 @@
         mountPartLines(mount.part_numbers).forEach(line => {
           addPartLine(row, line.text, line.pack);
         });
+        const imgMeta = mount.id ? imageById[mount.id] : null;
+        if (imgMeta && imgMeta.file) {
+          const figure = document.createElement('figure');
+          figure.className = 'mount-image';
+          const img = document.createElement('img');
+          img.src = imgMeta.file;
+          img.alt = mount.name || mount.id || 'Mount';
+          img.loading = 'lazy';
+          figure.appendChild(img);
+          if (imgMeta.image_type === 'drawing') {
+            const caption = document.createElement('figcaption');
+            caption.className = 'mount-image-caption';
+            caption.textContent = 'Drawing';
+            figure.appendChild(caption);
+          }
+          row.appendChild(figure);
+        }
         list.appendChild(row);
       });
       block.appendChild(list);
@@ -472,11 +490,25 @@
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
         let mounts = [];
+        let mountImages = {};
         try {
           const mountRes = await fetch('mounts.json', { cache: 'no-store' });
           if (mountRes.ok) mounts = await mountRes.json();
         } catch (mountErr) {
           console.warn('Orderable mounts could not be loaded:', mountErr);
+        }
+        try {
+          const imgRes = await fetch('images/mounts-accessories/manifest.json', { cache: 'no-store' });
+          if (imgRes.ok) {
+            const imgManifest = await imgRes.json();
+            (imgManifest.images || []).forEach(entry => {
+              if (entry && entry.mount_id && entry.file) {
+                mountImages[entry.mount_id] = entry;
+              }
+            });
+          }
+        } catch (imgErr) {
+          console.warn('Mount accessory images could not be loaded:', imgErr);
         }
         configureBackLink(backEl);
 
@@ -825,7 +857,7 @@
             detailsEl.appendChild(callout);
           }
           if (section.title === 'Physical Specifications') {
-            renderMounting(detailsEl, entry, mounts);
+            renderMounting(detailsEl, entry, mounts, mountImages);
           }
         });
 
