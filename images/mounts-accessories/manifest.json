@@ -1,12 +1,129 @@
 {
   "total_mounts": 132,
-  "with_images": 66,
-  "photos": 39,
-  "drawings": 27,
-  "missing": 66,
+  "with_images": 79,
+  "photos": 46,
+  "drawings": 33,
+  "missing": 53,
   "retrieved": "2026-11-25",
   "sourcing_rule": "Vendor-hosted product pages, datasheets, install guides, or ordering guides only (vendor domains/CDNs).",
   "images": [
+    {
+      "mount_id": "arista-mnt-ap-15mm",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-15mm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet \u2014 MNT-AP-15MM product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-15mm-adapter",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-15mm-adapter.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet \u2014 MNT-AP-15MM-ADAPTER product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-24mm",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-24mm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet \u2014 MNT-AP-24MM product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-24mm-adapter",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-24mm-adapter.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet \u2014 MNT-AP-24MM-ADAPTER product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-flat-14cm",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-flat-14cm.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet \u2014 MNT-AP-FLAT-14CM product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-intsil",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-intsil.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet \u2014 MNT-AP-INTSIL product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "arista-mnt-ap-u-adapter-1",
+      "vendor": "Arista",
+      "file": "images/mounts-accessories/arista/arista-mnt-ap-u-adapter-1.jpg",
+      "image_type": "photo",
+      "source_page_url": "https://www.arista.com/assets/data/pdf/Datasheets/AP-Mounting-Brackets-Datasheet.pdf",
+      "source_detail": "Access Point Mounting Brackets Datasheet \u2014 MNT-AP-U-ADAPTER-1 product photo",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-a",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-a.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
+      "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide \u2014 Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-b",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-b.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
+      "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide \u2014 Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-c",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-c.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
+      "source_detail": "AP-MNT-A/B/C Mount Kit Installation Guide \u2014 Figure 1 (guide states images show AP-MNT-B; shared for A/B/C)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-d",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-d.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-D/AP-MNT-D_Install_Guide.pdf",
+      "source_detail": "AP-MNT-D Mount Kit Installation Guide \u2014 Figure 1, attach mount to wall or ceiling",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-e",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-e.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-E/AP-MNT-E_Install_Guide.pdf",
+      "source_detail": "AP-MNT-E Mount Kit Installation Guide \u2014 Figure 1, wall-box plate installation",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-u",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-u.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/ap-mnt-u/AP-MNT-U_Install_Guide.pdf",
+      "source_detail": "AP-MNT-U Mount Kit Installation Guide \u2014 Figure 1, Mount Kit Overview",
+      "retrieved": "2026-11-25"
+    },
     {
       "mount_id": "cambium-ax-21x-brkt-ww",
       "vendor": "Cambium",
@@ -621,13 +738,7 @@
     "cisco-meraki-ma-umnt-mr-a2",
     "cisco-cw-mnt-strand1a",
     "cisco-air-accdmk3700",
-    "aruba-ap-mnt-a",
-    "aruba-ap-mnt-b",
-    "aruba-ap-mnt-c",
     "aruba-ap-mnt-mp10-b1",
-    "aruba-ap-mnt-d",
-    "aruba-ap-mnt-e",
-    "aruba-ap-mnt-u",
     "aruba-ap-mnt-mp10-x",
     "aruba-ap-270-mnt-adp",
     "aruba-ap-270-mnt-v1",
@@ -648,13 +759,6 @@
     "juniper-apbr-adp-t58",
     "juniper-apbr-adp-m16",
     "juniper-apbr-wp2",
-    "arista-mnt-ap-24mm",
-    "arista-mnt-ap-flat-14cm",
-    "arista-mnt-ap-15mm",
-    "arista-mnt-ap-15mm-adapter",
-    "arista-mnt-ap-24mm-adapter",
-    "arista-mnt-ap-intsil",
-    "arista-mnt-ap-u-adapter-1",
     "cambium-ax-x7-1brkt-ww",
     "cambium-ax-wallbrkt-ww",
     "cambium-ax-e510rbkt-ww",
