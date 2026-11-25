@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
   <header class="site-header" data-page="detail"></header>
@@ -44,11 +44,49 @@
     </div>
   </div>
 
+  <dialog id="mount-image-dialog" class="mount-image-dialog" aria-labelledby="mount-image-dialog-title">
+    <div class="mount-image-dialog-panel">
+      <div class="mount-image-dialog-header">
+        <h2 id="mount-image-dialog-title" class="mount-image-dialog-title"></h2>
+        <button type="button" class="mount-image-dialog-close" id="mount-image-dialog-close" aria-label="Close">Close</button>
+      </div>
+      <img id="mount-image-dialog-img" class="mount-image-dialog-img" alt="" />
+    </div>
+  </dialog>
+
   <script src="ap-format.js?v=8"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentEntry = null;
 
+    function openMountImageDialog(src, title) {
+      const dialog = document.getElementById('mount-image-dialog');
+      const titleEl = document.getElementById('mount-image-dialog-title');
+      const imgEl = document.getElementById('mount-image-dialog-img');
+      if (!dialog || !titleEl || !imgEl) return;
+      titleEl.textContent = title || 'Mount';
+      imgEl.src = src;
+      imgEl.alt = title || 'Mount';
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', '');
+    }
+
+    function closeMountImageDialog() {
+      const dialog = document.getElementById('mount-image-dialog');
+      if (!dialog) return;
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    }
+
+    (function initMountImageDialog() {
+      const dialog = document.getElementById('mount-image-dialog');
+      const closeBtn = document.getElementById('mount-image-dialog-close');
+      if (!dialog) return;
+      if (closeBtn) closeBtn.addEventListener('click', () => closeMountImageDialog());
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) closeMountImageDialog();
+      });
+    })();
 
     function readId() {
       const params = new URLSearchParams(window.location.search);
@@ -446,27 +484,52 @@
         if (imgMeta && imgMeta.file) {
           const figure = document.createElement('figure');
           figure.className = 'mount-image';
+          const frame = document.createElement('button');
+          frame.type = 'button';
+          frame.className = 'mount-image-frame';
+          frame.setAttribute('aria-label', `Enlarge image: ${mount.name || mount.id || 'Mount'}`);
           const img = document.createElement('img');
           img.src = imgMeta.file;
           img.alt = mount.name || mount.id || 'Mount';
           img.loading = 'lazy';
+          frame.appendChild(img);
+          frame.addEventListener('click', () => openMountImageDialog(imgMeta.file, mount.name || mount.id || 'Mount'));
+          figure.appendChild(frame);
+
+          const caption = document.createElement('figcaption');
+          caption.className = 'mount-image-caption';
+          const captionBits = [];
+          if (imgMeta.image_type === 'drawing') {
+            captionBits.push('Drawing');
+            if (imgMeta.caption_note) {
+              const note = String(imgMeta.caption_note).replace(/^Drawing\s+/i, '').trim();
+              if (note) captionBits.push(note);
+            }
+          }
+          if (captionBits.length) {
+            const label = document.createElement('span');
+            label.className = 'mount-image-caption-label';
+            label.textContent = captionBits.join(' · ');
+            caption.appendChild(label);
+          }
           const sourceUrl = safeUrl(imgMeta.source_page_url);
           if (sourceUrl) {
-            const link = document.createElement('a');
-            link.href = sourceUrl;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.appendChild(img);
-            figure.appendChild(link);
-          } else {
-            figure.appendChild(img);
+            if (captionBits.length) {
+              const sep = document.createElement('span');
+              sep.className = 'mount-image-caption-sep';
+              sep.setAttribute('aria-hidden', 'true');
+              sep.textContent = '·';
+              caption.appendChild(sep);
+            }
+            const source = document.createElement('a');
+            source.href = sourceUrl;
+            source.target = '_blank';
+            source.rel = 'noopener noreferrer';
+            source.className = 'mount-image-source';
+            source.textContent = 'Source \u2197';
+            caption.appendChild(source);
           }
-          if (imgMeta.image_type === 'drawing') {
-            const caption = document.createElement('figcaption');
-            caption.className = 'mount-image-caption';
-            caption.textContent = 'Drawing';
-            figure.appendChild(caption);
-          }
+          if (caption.childNodes.length) figure.appendChild(caption);
           row.appendChild(figure);
         }
         list.appendChild(row);
