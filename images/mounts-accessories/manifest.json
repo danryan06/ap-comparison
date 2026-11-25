@@ -1,9 +1,9 @@
 {
   "total_mounts": 132,
-  "with_images": 87,
+  "with_images": 88,
   "photos": 46,
-  "drawings": 41,
-  "missing": 45,
+  "drawings": 42,
+  "missing": 44,
   "retrieved": "2026-11-25",
   "sourcing_rule": "Vendor-hosted product pages, datasheets, install guides, or ordering guides only (vendor domains/CDNs).",
   "images": [
@@ -176,6 +176,15 @@
       "image_type": "drawing",
       "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-ABC/AP-MNT-ABC_Install_Guide.pdf",
       "source_detail": "Shared with aruba-ap-mnt-b (AP-MNT-B): AP-MNT-MP10-B1 is the 10-pack related to Type B flat 15/16 ceiling rail kit; same vendor figure from AP-MNT-A/B/C Mount Kit Installation Guide \u2014 Figure 1 (shows AP-MNT-B)",
+      "retrieved": "2026-11-25"
+    },
+    {
+      "mount_id": "aruba-ap-mnt-mp10-x",
+      "vendor": "Aruba",
+      "file": "images/mounts-accessories/aruba/aruba-ap-mnt-mp10-x.png",
+      "image_type": "drawing",
+      "source_page_url": "https://arubanetworking.hpe.com/techdocs/hardware/accessories/AP-MNT-MP10-X/AP-MNT-MP10-X_Install_Guide.pdf",
+      "source_detail": "AP-MNT-MP10-X Mount Kit Installation Guide \u2014 Figure 1, Route Ethernet Cables (mount plate)",
       "retrieved": "2026-11-25"
     },
     {
@@ -810,7 +819,6 @@
     "cisco-meraki-ma-umnt-mr-a2",
     "cisco-cw-mnt-strand1a",
     "cisco-air-accdmk3700",
-    "aruba-ap-mnt-mp10-x",
     "ruckus-902-0703-0000",
     "ruckus-902-0707-0000",
     "extreme-ah-acc-bkt-ax-wl",
