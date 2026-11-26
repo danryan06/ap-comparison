@@ -401,6 +401,73 @@
       return lines;
     }
 
+    // Photo or drawing of a mount/accessory with its enlarge dialog and source link.
+    // Shared by In the Box and Orderable Mounts; returns null when there is no image.
+    function mountFigure(imgMeta, label) {
+      if (!imgMeta || !imgMeta.file) return null;
+      const figure = document.createElement('figure');
+      figure.className = 'mount-image';
+      const frame = document.createElement('button');
+      frame.type = 'button';
+      frame.className = 'mount-image-frame';
+      frame.setAttribute('aria-label', `Enlarge image: ${label}`);
+      const img = document.createElement('img');
+      img.src = imgMeta.file;
+      img.alt = label;
+      img.loading = 'lazy';
+      frame.appendChild(img);
+      frame.addEventListener('click', () => openMountImageDialog(imgMeta.file, label));
+      figure.appendChild(frame);
+
+      const caption = document.createElement('figcaption');
+      caption.className = 'mount-image-caption';
+      const captionBits = [];
+      if (imgMeta.image_type === 'drawing') {
+        captionBits.push('Drawing');
+        if (imgMeta.caption_note) {
+          const note = String(imgMeta.caption_note).replace(/^Drawing\s+/i, '').trim();
+          if (note) captionBits.push(note);
+        }
+      }
+      if (captionBits.length) {
+        const captionLabel = document.createElement('span');
+        captionLabel.className = 'mount-image-caption-label';
+        captionLabel.textContent = captionBits.join(' · ');
+        caption.appendChild(captionLabel);
+      }
+      const sourceUrl = safeUrl(imgMeta.source_page_url);
+      if (sourceUrl) {
+        if (captionBits.length) {
+          const sep = document.createElement('span');
+          sep.className = 'mount-image-caption-sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '·';
+          caption.appendChild(sep);
+        }
+        const source = document.createElement('a');
+        source.href = sourceUrl;
+        source.target = '_blank';
+        source.rel = 'noopener noreferrer';
+        source.className = 'mount-image-source';
+        source.textContent = 'Source \u2197';
+        caption.appendChild(source);
+      }
+      if (caption.childNodes.length) figure.appendChild(caption);
+      return figure;
+    }
+
+    // In-box lines name a part number; find the mount record that carries it
+    // (part_numbers or part_number_aliases, with or without the trailing "=").
+    function mountByPartNumber(mounts, partNumber) {
+      const norm = v => String(v || '').trim().toUpperCase().replace(/=$/, '');
+      const want = norm(partNumber);
+      if (!want) return null;
+      return (Array.isArray(mounts) ? mounts : []).find(mount =>
+        [...(mount.part_numbers || []), ...(mount.part_number_aliases || [])]
+          .some(p => norm(p && p.part_number) === want)
+      ) || null;
+    }
+
     function renderMounting(detailsEl, entry, mounts, mountImages) {
       const slug = apSlug(entry);
       const hasBox = Object.prototype.hasOwnProperty.call(entry, 'in_box');
@@ -442,6 +509,9 @@
             name.appendChild(document.createTextNode(item.item || ''));
             row.appendChild(name);
             if (item.part_number) addPartLine(row, item.part_number, false);
+            const boxMount = mountByPartNumber(mounts, item.part_number);
+            const boxFigure = boxMount ? mountFigure(imageById[boxMount.id], item.item || boxMount.name || 'Included part') : null;
+            if (boxFigure) row.appendChild(boxFigure);
             list.appendChild(row);
           });
           block.appendChild(list);
@@ -481,55 +551,8 @@
           addPartLine(row, line.text, line.pack);
         });
         const imgMeta = mount.id ? imageById[mount.id] : null;
-        if (imgMeta && imgMeta.file) {
-          const figure = document.createElement('figure');
-          figure.className = 'mount-image';
-          const frame = document.createElement('button');
-          frame.type = 'button';
-          frame.className = 'mount-image-frame';
-          frame.setAttribute('aria-label', `Enlarge image: ${mount.name || mount.id || 'Mount'}`);
-          const img = document.createElement('img');
-          img.src = imgMeta.file;
-          img.alt = mount.name || mount.id || 'Mount';
-          img.loading = 'lazy';
-          frame.appendChild(img);
-          frame.addEventListener('click', () => openMountImageDialog(imgMeta.file, mount.name || mount.id || 'Mount'));
-          figure.appendChild(frame);
-
-          const caption = document.createElement('figcaption');
-          caption.className = 'mount-image-caption';
-          const captionBits = [];
-          if (imgMeta.image_type === 'drawing') {
-            captionBits.push('Drawing');
-            if (imgMeta.caption_note) {
-              const note = String(imgMeta.caption_note).replace(/^Drawing\s+/i, '').trim();
-              if (note) captionBits.push(note);
-            }
-          }
-          if (captionBits.length) {
-            const label = document.createElement('span');
-            label.className = 'mount-image-caption-label';
-            label.textContent = captionBits.join(' · ');
-            caption.appendChild(label);
-          }
-          const sourceUrl = safeUrl(imgMeta.source_page_url);
-          if (sourceUrl) {
-            if (captionBits.length) {
-              const sep = document.createElement('span');
-              sep.className = 'mount-image-caption-sep';
-              sep.setAttribute('aria-hidden', 'true');
-              sep.textContent = '·';
-              caption.appendChild(sep);
-            }
-            const source = document.createElement('a');
-            source.href = sourceUrl;
-            source.target = '_blank';
-            source.rel = 'noopener noreferrer';
-            source.className = 'mount-image-source';
-            source.textContent = 'Source \u2197';
-            caption.appendChild(source);
-          }
-          if (caption.childNodes.length) figure.appendChild(caption);
+        const figure = mountFigure(imgMeta, mount.name || mount.id || 'Mount');
+        if (figure) {
           row.appendChild(figure);
         }
         list.appendChild(row);
