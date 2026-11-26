@@ -14,11 +14,14 @@
   <meta name="twitter:card" content="summary" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <header class="site-header" data-page="detail"></header>
-  <script src="site-header.js?v=1"></script>
+  <script src="site-header.js?v=2"></script>
   <div class="container">
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
@@ -769,7 +772,7 @@
           new URLSearchParams({ title: issueTitle, body: issueBody }).toString();
         reportLink.target = '_blank';
         reportLink.rel = 'noopener noreferrer';
-        reportLink.textContent = 'Report it on GitHub';
+        reportLink.textContent = 'Report a correction here';
         sourceNote.appendChild(reportLink);
         sourceNote.appendChild(document.createTextNode('.'));
         actionsDiv.appendChild(sourceNote);
@@ -851,7 +854,7 @@
               link.target = '_blank';
               link.rel = 'noopener noreferrer';
               link.textContent = v;
-              link.style.color = '#60a5fa';
+              link.style.color = 'var(--accent)';
               link.style.textDecoration = 'underline';
               valDiv.appendChild(link);
             } else {
