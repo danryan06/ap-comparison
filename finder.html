@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <title>Feature Finder | Enterprise AP Comparison Database</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Filter enterprise Wi-Fi access points by generation, 6 GHz, vendor, form factor and antenna type." />
+  <meta name="description" content="Filter enterprise Wi-Fi access points by vendor, antenna type, form factor, Wi-Fi generation, environment, PoE and uplink speed." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AP Comparison" />
   <meta property="og:title" content="AP Feature Finder" />
-  <meta property="og:description" content="Filter enterprise Wi-Fi access points by generation, 6 GHz, vendor, form factor and antenna type." />
+  <meta property="og:description" content="Filter enterprise Wi-Fi access points by vendor, antenna type, form factor, Wi-Fi generation, environment, PoE and uplink speed." />
   <meta property="og:url" content="https://apcomparison.com/finder.html" />
   <meta property="og:image" content="https://apcomparison.com/logo.png" />
   <meta name="twitter:card" content="summary" />
@@ -17,112 +17,98 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=13" />
 </head>
 <body>
   <header class="site-header" data-page="finder"></header>
-  <script src="site-header.js?v=2"></script>
+  <script src="site-header.js?v=3"></script>
 
-  <div class="container" style="margin-top: 24px;">
-    <div class="actions">
-      <button id="clear-filters" type="button" class="btn-link">Reset Filters</button>
-      <button id="export-csv" type="button" class="btn-link">Export CSV</button>
+  <div class="container finder-page">
+    <div class="finder-intro">
+      <h1>Finder</h1>
+      <p>Tick what your design needs. Results show every AP that meets all of it.</p>
     </div>
 
-    <div class="card finder-card">
-      <div class="finder-grid">
-        <details class="filter-panel" id="filter-panel" open>
-          <summary><h2>Filters</h2><span class="filter-toggle-hint">Tap to show or hide</span></summary>
+    <div class="finder">
+      <aside class="finder-filters" id="filter-panel" aria-label="Requirements">
+        <div class="ff-head">
+          <h2>Requirements</h2>
+          <button id="clear-filters" type="button" class="link-btn">Reset</button>
+          <button id="filters-close" type="button" class="link-btn ff-close">Close</button>
+        </div>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Wi-Fi Generation</h3>
-            </div>
-            <div id="wifi-options" class="chip-grid"></div>
-            <p class="filter-hint">Includes newer generations unless you tick the box below.</p>
-            <div id="wifimode-options" class="chip-grid"></div>
-          </div>
+        <fieldset class="ff-group">
+          <legend>Vendor</legend>
+          <div id="vendor-options" class="opt-list opt-cols"></div>
+        </fieldset>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Bands</h3>
-            </div>
-            <div id="band-options" class="chip-grid"></div>
-          </div>
+        <fieldset class="ff-group">
+          <legend>Antenna type</legend>
+          <div id="antenna-options" class="opt-list opt-row"></div>
+        </fieldset>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>PoE Available</h3>
-            </div>
-            <div id="poe-options" class="chip-grid"></div>
-            <p class="filter-hint">APs whose minimum PoE class serves clients on what you tick.</p>
-          </div>
+        <fieldset class="ff-group">
+          <legend>Form factor</legend>
+          <div id="form-options" class="opt-list opt-row"></div>
+        </fieldset>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Fastest Ethernet Port</h3>
-            </div>
-            <div id="uplink-options" class="chip-grid"></div>
-          </div>
+        <fieldset class="ff-group">
+          <legend>Wi-Fi generation</legend>
+          <div id="wifi-options" class="opt-list opt-row"></div>
+          <p class="ff-hint">Tick each generation you will accept.</p>
+        </fieldset>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Vendor</h3>
-            </div>
-            <div id="vendor-options" class="chip-grid"></div>
-          </div>
+        <fieldset class="ff-group">
+          <legend>Environment</legend>
+          <div id="env-options" class="opt-list"></div>
+        </fieldset>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Form Factor</h3>
-            </div>
-            <div id="form-options" class="chip-grid"></div>
-          </div>
+        <fieldset class="ff-group">
+          <legend>PoE available</legend>
+          <div id="poe-options" class="opt-list opt-row"></div>
+          <p class="ff-hint">APs whose minimum PoE class serves clients on what you tick.</p>
+        </fieldset>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Antenna Type</h3>
-            </div>
-            <div id="antenna-options" class="chip-grid"></div>
-          </div>
+        <fieldset class="ff-group">
+          <legend>Fastest Ethernet port</legend>
+          <div id="uplink-options" class="opt-list"></div>
+        </fieldset>
 
-          <div class="filter-group">
-            <div class="filter-group-head">
-              <h3>Environment</h3>
-            </div>
-            <div id="env-options" class="chip-grid"></div>
-          </div>
-        </details>
+        <div class="ff-done">
+          <button id="filters-done" type="button" class="btn-primary">Show results</button>
+        </div>
+      </aside>
 
-        <section class="results-panel">
-          <div class="results-header">
-            <div>
-              <h2>Results</h2>
-              <p class="results-note" id="results-note">Loading data…</p>
-            </div>
-            <div class="match-count" id="match-count"></div>
-          </div>
+      <section class="finder-results" aria-live="polite">
+        <div class="fr-bar">
+          <button id="filters-open" type="button" class="btn-link ff-open">Filters</button>
+          <p class="fr-count" id="match-count">Loading data&hellip;</p>
+          <button id="export-csv" type="button" class="link-btn fr-export">Export CSV</button>
+        </div>
+        <div id="active-filters" class="fr-active" hidden></div>
 
-          <div id="active-filters" class="active-filters" style="display:none;"></div>
-
-          <div id="results" class="results-table">
-            <div class="result-row result-header">
-              <span class="row-select" aria-hidden="true"></span>
-              <div class="result-cell result-vendor">Vendor</div>
-              <div class="result-cell result-model">Model</div>
-              <div class="result-cell result-wifi">Wi-Fi Generation</div>
-              <div class="result-cell result-spatial">Spatial Streams</div>
-              <div class="result-cell result-antenna">Antenna</div>
-              <div class="result-cell result-form">Form Factor</div>
-              <div class="result-cell result-actions"></div>
-            </div>
-          </div>
-          <div id="empty-state" class="empty-state" style="display:none;">
-            <p>No APs match every selected requirement.</p>
-            <p>Try removing one filter at a time to widen the results.</p>
-          </div>
-        </section>
-      </div>
+        <table class="fr-table" id="results-table">
+          <thead>
+            <tr>
+              <th class="c-sel"><span class="sr-only">Select to compare</span></th>
+              <th>Vendor</th>
+              <th>Model</th>
+              <th>Wi-Fi</th>
+              <th>Spatial streams</th>
+              <th>Min PoE class</th>
+              <th>Fastest port</th>
+              <th>Antenna</th>
+              <th>Form factor</th>
+              <th class="c-links"><span class="sr-only">Links</span></th>
+            </tr>
+          </thead>
+          <tbody id="results"></tbody>
+        </table>
+        <div id="empty-state" class="fr-empty" hidden>
+          <p><strong>No APs meet every requirement.</strong></p>
+          <p>Remove one requirement at a time above to widen the results.</p>
+        </div>
+      </section>
     </div>
   </div>
 
@@ -131,14 +117,12 @@
   <script src="ap-format.js?v=8"></script>
   <script>
     const DATA_URL = 'ap_data.json';
-    // Generations in order, oldest first. "And newer" matching uses this rank.
+    // Generations, newest first. A ticked generation matches that generation only.
     const wifiOptions = [
-      { id: 'wifi7', label: 'Wi-Fi 7', rank: 3 },
-      { id: 'wifi6e', label: 'Wi-Fi 6E', rank: 2 },
-      { id: 'wifi6', label: 'Wi-Fi 6', rank: 1 }
+      { id: 'wifi7', label: 'Wi-Fi 7' },
+      { id: 'wifi6e', label: 'Wi-Fi 6E' },
+      { id: 'wifi6', label: 'Wi-Fi 6' }
     ];
-    const wifiModeOptions = [{ id: 'exact', label: 'This generation only' }];
-    const bandOptions = [{ id: '6', label: '6 GHz radio' }];
     // "PoE available": APs whose min_poe_class serves clients on that class or lower.
     const poeOptions = [
       { id: 'af', label: '802.3af', level: 1 },
@@ -158,8 +142,6 @@
 
     const state = {
       wifi: new Set(),
-      wifimode: new Set(),
-      bands: new Set(),
       poe: new Set(),
       uplink: new Set(),
       env: new Set(),
@@ -168,8 +150,6 @@
       form: new Set()
     };
     const CHIP_LABELS = {
-      wifimode: () => 'This generation only',
-      bands: () => '6 GHz radio',
       poe: value => `Runs on ${(poeOptions.find(o => o.id === value) || {}).label || value}`,
       uplink: value => (uplinkOptions.find(o => o.id === value) || {}).label || value,
       env: value => (envOptions.find(o => o.id === value) || {}).label || value
@@ -207,7 +187,7 @@
         applyFilters();
       } catch (err) {
         console.error('Failed to load data', err);
-        document.getElementById('results-note').textContent = 'Unable to load AP data.';
+        document.getElementById('match-count').textContent = 'Unable to load AP data.';
       }
     }
 
@@ -215,17 +195,9 @@
       return Object.assign({}, entry, {
         _slug: apSlug(entry),
         _wifiGen: wifiGeneration(entry.wifi_gen_radios),
-        _has6GHz: has6GHz(entry.wifi_gen_radios),
         _antennaTypes: antennaTypes(entry.antenna_type)
       });
     }
-
-    function wifiRank(id) {
-      const option = wifiOptions.find(opt => opt.id === id);
-      return option ? option.rank : 0;
-    }
-
-
 
     function escapeAttrValue(value) {
       if (window.CSS && typeof window.CSS.escape === 'function') {
@@ -236,8 +208,6 @@
 
     function buildFilterOptions() {
       renderCheckboxGroup('wifi-options', wifiOptions, 'wifi');
-      renderCheckboxGroup('wifimode-options', wifiModeOptions, 'wifimode');
-      renderCheckboxGroup('band-options', bandOptions, 'bands');
       renderCheckboxGroup('poe-options', poeOptions, 'poe');
       renderCheckboxGroup('uplink-options', uplinkOptions, 'uplink');
       renderCheckboxGroup('env-options', envOptions, 'env');
@@ -266,7 +236,6 @@
       }));
       renderCheckboxGroup('antenna-options', antennaOptions, 'antenna');
 
-      document.getElementById('results-note').textContent = 'Add filters to see matching APs.';
     }
 
     function collectUniqueValues(key) {
@@ -284,7 +253,7 @@
       options.forEach(option => {
         const id = `${type}-${option.id || slugify(option.value || option.label)}`;
         const label = document.createElement('label');
-        label.className = 'chip-option';
+        label.className = 'opt';
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.id = id;
@@ -313,9 +282,6 @@
       renderActiveFilters();
       renderResults(matches);
       updateMatchCount(matches.length);
-      document.getElementById('results-note').textContent = matches.length
-        ? 'Showing APs that meet every selected requirement.'
-        : 'No matches yet. Try removing a filter.';
     }
 
     const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
@@ -324,16 +290,7 @@
     }
 
     function matchesFilters(entry) {
-      if (state.wifi.size) {
-        if (state.wifimode.has('exact')) {
-          if (!state.wifi.has(entry._wifiGen)) return false;
-        } else {
-          // Selected generation or newer. With several boxes ticked, the oldest one sets the floor.
-          const floor = Math.min(...Array.from(state.wifi).map(wifiRank));
-          if (wifiRank(entry._wifiGen) < floor) return false;
-        }
-      }
-      if (state.bands.has('6') && !entry._has6GHz) return false;
+      if (state.wifi.size && !state.wifi.has(entry._wifiGen)) return false;
       if (state.poe.size) {
         // The highest class ticked is the budget; the AP must serve clients within it.
         const budget = Math.max(...Array.from(state.poe).map(id => (poeOptions.find(o => o.id === id) || {}).level || 0));
@@ -353,114 +310,93 @@
       return true;
     }
 
-    function renderResults(matches) {
-      const container = document.getElementById('results');
-      const emptyState = document.getElementById('empty-state');
-      
-      // Keep the header row, remove only data rows
-      const header = container.querySelector('.result-header');
-      container.innerHTML = '';
-      if (header) container.appendChild(header);
+    function cell(text, className) {
+      const td = document.createElement('td');
+      if (className) td.className = className;
+      td.textContent = text || '\u2014';
+      return td;
+    }
 
-      if (matches.length === 0) {
-        emptyState.style.display = 'block';
-        updateCompareFab();
-        return;
-      }
-      emptyState.style.display = 'none';
+    function portLabel(entry) {
+      const gbps = fastestPortGbps(entry.ethernet_ports_speed);
+      return gbps ? `${gbps} GbE` : '';
+    }
+
+    function textLink(href, text, label) {
+      const a = document.createElement('a');
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = text;
+      if (label) a.setAttribute('aria-label', label);
+      return a;
+    }
+
+    function renderResults(matches) {
+      const body = document.getElementById('results');
+      const table = document.getElementById('results-table');
+      const emptyState = document.getElementById('empty-state');
+      body.innerHTML = '';
+      table.hidden = matches.length === 0;
+      emptyState.hidden = matches.length !== 0;
 
       matches.forEach(entry => {
-        const row = document.createElement('div');
-        row.className = 'result-row';
+        const name = `${entry.vendor || ''} ${entry.model || ''}`.trim();
+        const tr = document.createElement('tr');
 
+        const sel = document.createElement('td');
+        sel.className = 'c-sel';
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.className = 'row-select';
-        checkbox.setAttribute('aria-label', `Select ${entry.vendor || ''} ${entry.model || ''} for comparison`.trim());
+        checkbox.setAttribute('aria-label', `Select ${name} for comparison`);
         checkbox.checked = selectedIds.has(entry._slug);
-        checkbox.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
+        checkbox.addEventListener('click', e => e.stopPropagation());
         checkbox.addEventListener('change', () => {
           if (checkbox.checked) selectedIds.add(entry._slug);
           else selectedIds.delete(entry._slug);
           updateCompareFab();
         });
+        sel.appendChild(checkbox);
+        tr.appendChild(sel);
 
-        const vendor = document.createElement('div');
-        vendor.className = 'result-cell result-vendor';
-        vendor.textContent = entry.vendor || '';
-
-        const model = document.createElement('div');
-        model.className = 'result-cell result-model';
+        tr.appendChild(cell(entry.vendor, 'c-vendor'));
+        const model = document.createElement('td');
+        model.className = 'c-model';
         const modelLink = document.createElement('a');
         modelLink.href = buildApDetailHref(entry._slug);
         modelLink.textContent = entry.model || '';
-        modelLink.addEventListener('click', () => {
-          saveDetailBackPath(currentListReturnPath());
-        });
+        modelLink.addEventListener('click', () => saveDetailBackPath(currentListReturnPath()));
         model.appendChild(modelLink);
+        tr.appendChild(model);
 
-        const wifi = document.createElement('div');
-        wifi.className = 'result-cell result-wifi';
-        wifi.textContent = entry.wifi_gen_radios || '';
+        tr.appendChild(cell(entry.wifi_gen_radios, 'c-wifi'));
+        tr.appendChild(cell(entry.spatial_streams, 'c-ss'));
+        tr.appendChild(cell(entry.min_poe_class, 'c-poe'));
+        tr.appendChild(cell(portLabel(entry), 'c-port'));
+        tr.appendChild(cell(formatAntennaType(entry.antenna_type), 'c-ant'));
+        tr.appendChild(cell(entry.form_factor ? (entry.hardened ? `${entry.form_factor}, hardened` : entry.form_factor) : '', 'c-form'));
 
-        const spatial = document.createElement('div');
-        spatial.className = 'result-cell result-spatial';
-        spatial.textContent = entry.spatial_streams || '—';
+        // Phones show one wrapped line of facts instead of the separate columns
+        const facts = [entry.wifi_gen_radios, entry.min_poe_class, portLabel(entry), formatAntennaType(entry.antenna_type),
+          entry.form_factor ? (entry.hardened ? `${entry.form_factor}, hardened` : entry.form_factor) : '']
+          .filter(Boolean).join(' \u00b7 ');
+        tr.appendChild(cell(facts, 'c-facts'));
 
-        const antenna = document.createElement('div');
-        antenna.className = 'result-cell result-antenna';
-        antenna.textContent = formatAntennaType(entry.antenna_type) || '—';
-
-        const form = document.createElement('div');
-        form.className = 'result-cell result-form';
-        form.textContent = entry.form_factor
-          ? (entry.hardened ? `${entry.form_factor}, hardened` : entry.form_factor)
-          : '—';
-
-        const actions = document.createElement('div');
-        actions.className = 'result-cell result-actions';
-        const datasheetLink = document.createElement('a');
+        const links = document.createElement('td');
+        links.className = 'c-links';
         const datasheetUrl = safeUrl(entry.datasheet_url);
-        if (datasheetUrl) {
-          datasheetLink.href = datasheetUrl;
-          datasheetLink.target = '_blank';
-          datasheetLink.rel = 'noopener noreferrer';
-          datasheetLink.className = 'btn-link btn-link-ghost btn-link-small';
-          datasheetLink.textContent = 'Datasheet';
-          actions.appendChild(datasheetLink);
-        }
+        if (datasheetUrl) links.appendChild(textLink(datasheetUrl, 'Datasheet', `${name} datasheet`));
         const antennaUrl = antennaFinderHref(entry);
-        if (antennaUrl) {
-          const antennaLink = document.createElement('a');
-          antennaLink.href = antennaUrl;
-          antennaLink.target = '_blank';
-          antennaLink.rel = 'noopener noreferrer';
-          antennaLink.className = 'btn-link btn-link-ghost btn-link-small';
-          antennaLink.textContent = 'Antennas';
-          antennaLink.setAttribute('aria-label', `Find antennas for ${entry.vendor || ''} ${entry.model || ''} on AntennaComparison`.trim());
-          actions.appendChild(antennaLink);
-        }
+        if (antennaUrl) links.appendChild(textLink(antennaUrl, 'Antennas', `Find antennas for ${name} on AntennaComparison`));
+        tr.appendChild(links);
 
-        row.appendChild(checkbox);
-        row.appendChild(vendor);
-        row.appendChild(model);
-        row.appendChild(wifi);
-        row.appendChild(spatial);
-        row.appendChild(antenna);
-        row.appendChild(form);
-        row.appendChild(actions);
-
-        // Make entire row clickable (except checkbox); filters stay on Finder URL via sessionStorage Back
-        row.style.cursor = 'pointer';
-        row.addEventListener('click', (e) => {
-          if (e.target.type !== 'checkbox' && e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
-            window.location.href = rememberListAndBuildDetailHref(entry._slug);
-          }
+        // Whole row opens the AP; filters stay on the Finder URL via sessionStorage Back
+        tr.addEventListener('click', e => {
+          if (e.target.closest('a, input, button')) return;
+          window.location.href = rememberListAndBuildDetailHref(entry._slug);
         });
-
-        container.appendChild(row);
+        body.appendChild(tr);
       });
 
       updateCompareFab();
@@ -468,7 +404,19 @@
 
     function updateMatchCount(count) {
       const el = document.getElementById('match-count');
-      el.textContent = count === 0 ? '0 matches' : `${count} match${count === 1 ? '' : 'es'}`;
+      const total = enrichedData.length;
+      el.textContent = '';
+      const strong = document.createElement('strong');
+      strong.textContent = String(count);
+      el.appendChild(strong);
+      el.appendChild(document.createTextNode(count === total ? ' access points' : ` of ${total} access points`));
+      const n = activeFilterCount();
+      document.getElementById('filters-open').textContent = n ? `Filters (${n})` : 'Filters';
+      document.getElementById('filters-done').textContent = `Show ${count} AP${count === 1 ? '' : 's'}`;
+    }
+
+    function activeFilterCount() {
+      return Object.keys(state).reduce((sum, key) => sum + state[key].size, 0);
     }
 
     function renderActiveFilters() {
@@ -486,33 +434,44 @@
         });
       }
 
+      pushChips('vendors', state.vendors);
+      pushChips('antenna', state.antenna);
+      pushChips('form', state.form);
       pushChips('wifi', state.wifi, value => {
         const option = wifiOptions.find(opt => opt.id === value);
         return option ? option.label : value;
       });
-      pushChips('wifimode', state.wifimode, CHIP_LABELS.wifimode);
-      pushChips('bands', state.bands, CHIP_LABELS.bands);
+      pushChips('env', state.env, CHIP_LABELS.env);
       pushChips('poe', state.poe, CHIP_LABELS.poe);
       pushChips('uplink', state.uplink, CHIP_LABELS.uplink);
-      pushChips('env', state.env, CHIP_LABELS.env);
-      pushChips('vendors', state.vendors);
-      pushChips('antenna', state.antenna);
-      pushChips('form', state.form);
 
       if (!chips.length) {
-        container.style.display = 'none';
+        container.hidden = true;
         return;
       }
 
-      container.style.display = 'flex';
+      container.hidden = false;
       chips.forEach(chip => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'active-filter-chip';
-        btn.textContent = chip.label;
+        btn.className = 'req';
+        btn.setAttribute('aria-label', `Remove requirement: ${chip.label}`);
+        btn.appendChild(document.createTextNode(chip.label));
+        const x = document.createElement('span');
+        x.setAttribute('aria-hidden', 'true');
+        x.textContent = '\u00d7';
+        btn.appendChild(x);
         btn.addEventListener('click', () => removeFilter(chip.type, chip.value));
         container.appendChild(btn);
       });
+      if (chips.length > 1) {
+        const clear = document.createElement('button');
+        clear.type = 'button';
+        clear.className = 'link-btn';
+        clear.textContent = 'Clear all';
+        clear.addEventListener('click', clearAllFilters);
+        container.appendChild(clear);
+      }
     }
 
     function removeFilter(type, value) {
@@ -545,10 +504,7 @@
     function exportToCsv() {
       if (!enrichedData.length) return;
       const matches = enrichedData.filter(entry => matchesFilters(entry));
-      if (matches.length === 0) {
-        alert('No APs to export. Please adjust your filters.');
-        return;
-      }
+      if (matches.length === 0) return;
 
       const primaryKeys = [
         'vendor','model','wifi_gen_radios','spatial_streams','min_poe_class',
@@ -617,13 +573,20 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // On phones the filter list is long; start it collapsed unless filters are already set.
-      if (window.matchMedia('(max-width: 980px)').matches && !window.location.search) {
-        document.getElementById('filter-panel').removeAttribute('open');
-      }
-      // On wider screens the panel always stays open.
-      document.querySelector('#filter-panel > summary').addEventListener('click', event => {
-        if (!window.matchMedia('(max-width: 980px)').matches) event.preventDefault();
+      // Phones: requirements open as a full-screen panel from the Filters button.
+      const panel = document.getElementById('filter-panel');
+      const openBtn = document.getElementById('filters-open');
+      const setPanel = open => {
+        panel.classList.toggle('is-open', open);
+        document.body.classList.toggle('ff-locked', open);
+        if (open) panel.querySelector('input')?.focus();
+        else openBtn.focus();
+      };
+      openBtn.addEventListener('click', () => setPanel(true));
+      document.getElementById('filters-close').addEventListener('click', () => setPanel(false));
+      document.getElementById('filters-done').addEventListener('click', () => setPanel(false));
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && panel.classList.contains('is-open')) setPanel(false);
       });
       document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
       const exportBtn = document.getElementById('export-csv');

@@ -17,11 +17,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=13" />
 </head>
 <body>
   <header class="site-header" data-page="detail"></header>
-  <script src="site-header.js?v=2"></script>
+  <script src="site-header.js?v=3"></script>
   <div class="container">
     <div class="actions">
       <a id="back-link" class="btn-link" href="index.html">&larr; Back to AP Table</a>
@@ -30,9 +30,7 @@
       <button id="export-csv" type="button" class="btn-link">Export CSV</button>
     </div>
 
-    <div class="card">
-      <span class="badge">AP Details</span>
-
+    <div class="card sheet">
       <h1 id="title-header">AP Details</h1>
       <p class="subtitle" id="subtitle"></p>
       <!-- Inline actions will be inserted here via JavaScript -->
@@ -58,6 +56,7 @@
   </dialog>
 
   <script src="ap-format.js?v=8"></script>
+  <script src="fresh.js?v=3"></script>
   <script>
     const DATA_URL = 'ap_data.json';
     let currentEntry = null;
@@ -983,6 +982,8 @@
             renderKV(k, entry[k], isLast);
           });
         }
+
+        if (window.Fresh) Fresh.decorateDetail(entry, detailsEl, subtitleEl, entrySlug);
 
       } catch (err) {
         console.error('Failed to load AP details:', err);
