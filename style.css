@@ -3432,3 +3432,10 @@ td a.model-link,
 @media (max-width: 768px) {
   .search-wrapper { flex: none; }
 }
+
+/* Model names stay on one line: a hyphen (AP-504, FAP-231K) is otherwise a break point */
+.ap-table td[data-key="model"],
+.ap-table td[data-key="model"] a,
+.model-link,
+.compare-model,
+.fr-table .c-model a { white-space: nowrap; }
