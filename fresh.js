@@ -47,43 +47,27 @@
 
   }
 
+  // Recent changes, newest first, for changes.html. Merged pull requests link to
+  // the PR; direct branch merges link to the merge commit.
   async function renderChanges(target) {
     const m = await meta();
-    if (!m || !m.changes || !m.changes.length) return;
-    const box = el('section', 'changes');
-    box.setAttribute('aria-labelledby', 'changes-title');
-    const h = el('h2', null, 'Recent changes');
-    h.id = 'changes-title';
-    box.appendChild(h);
+    if (!m || !m.changes || !m.changes.length) {
+      target.appendChild(el('p', 'changes-empty', 'No changes listed yet.'));
+      return;
+    }
     const list = el('ol', 'changes-list');
-    m.changes.slice(0, 6).forEach(c => {
+    m.changes.forEach(c => {
       const li = el('li');
       li.appendChild(el('time', null, fmtDate(c.date)));
       const a = el('a', null, c.title);
-      a.href = 'https://github.com/danryan06/ap-comparison/pull/' + c.pr;
+      a.href = c.pr
+        ? 'https://github.com/danryan06/ap-comparison/pull/' + c.pr
+        : 'https://github.com/danryan06/ap-comparison/commit/' + c.sha;
       a.target = '_blank'; a.rel = 'noopener noreferrer';
       li.appendChild(a);
       list.appendChild(li);
     });
-    box.appendChild(list);
-    target.appendChild(box);
-
-    // One line near the top, so the latest change is visible without scrolling 200 rows
-    const intro = document.querySelector('.container > .subtitle');
-    if (intro) {
-      const c = m.changes[0];
-      const line = el('p', 'latest');
-      line.appendChild(el('span', 'latest-label', 'Latest change'));
-      line.appendChild(el('time', null, fmtDate(c.date)));
-      const a = el('a', null, c.title);
-      a.href = 'https://github.com/danryan06/ap-comparison/pull/' + c.pr;
-      a.target = '_blank'; a.rel = 'noopener noreferrer';
-      line.appendChild(a);
-      const all = el('a', 'latest-all', 'All recent changes');
-      all.href = '#changes-title';
-      line.appendChild(all);
-      intro.insertAdjacentElement('afterend', line);
-    }
+    target.appendChild(list);
   }
 
   window.Fresh = { decorateDetail, renderChanges };
