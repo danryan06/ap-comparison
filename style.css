@@ -3460,8 +3460,6 @@ td a.model-link,
 /* Browse: intro and recent changes */
 .container > .subtitle { max-width: 80ch; color: var(--muted); }
 #result-count { color: var(--ink); font-weight: 500; }
-.changes { margin: 28px 0 8px; max-width: 760px; }
-.changes h2 { font-size: 20px; margin: 0 0 8px; }
 .changes-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .changes-list li { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
 .changes-list time { color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -3492,11 +3490,6 @@ td a.model-link,
   .card.sheet .kv-grid .val { border-top: 0; padding-top: 0; }
 }
 
-.latest { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: -4px 0 18px; font-size: 14px; color: var(--muted); }
-.latest-label { color: var(--ink); font-weight: 500; }
-.latest time { font-variant-numeric: tabular-nums; }
-.latest a { color: var(--ink); }
-.latest a.latest-all { color: var(--accent); }
 /* Compare: differences marked in the margin, not by tinting every cell */
 .compare-grid tr.compare-differs td { background: transparent; }
 .compare-grid tr.compare-differs th.compare-label { border-left-color: var(--warn); }
@@ -3620,3 +3613,18 @@ td a.model-link,
 .model-link,
 .compare-model,
 .fr-table .c-model a { white-space: nowrap; }
+
+/* Radios & IoT features in Browse: a plain comma list, not pills, so rows stay compact */
+.ap-table td .tag {
+  display: inline; padding: 0; margin: 0; border: 0; border-radius: 0;
+  background: none; font-size: 14px; color: var(--ink); white-space: normal;
+}
+.ap-table td .tag:not(:last-child)::after { content: ", "; }
+
+/* Recent changes page */
+.changes-page { margin-top: 22px; }
+.changes-page > * { max-width: 820px; }
+.changes-page h1 { margin: 0 0 4px; font-size: 34px; }
+.changes-page .lede { margin: 0 0 18px; color: var(--muted); }
+/* Min PoE class can be long ("802.3bt (class not stated)"); let it wrap instead of overrunning the next column */
+.ap-table td[data-key="min_poe_class"] { white-space: normal; }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Builds site-meta.json from the repo's own git history:
 //  - entries: for each AP, the date its block in ap_data.json was last edited (git blame)
-//  - changes: the most recent merged pull requests, for the "Recent changes" list
+//  - changes: the most recent merges into main (pull requests and branch merges), for changes.html
 // Run from the repo root after merging: node .github/scripts/generate-site-meta.js
 // Needs full history (a shallow clone gives wrong dates).
 'use strict';
@@ -34,18 +34,25 @@ lines.forEach((text, i) => {
   }
 });
 
-// 2. Recent merged pull requests (title from the PR, not the branch name)
-const log = git('log', '--merges', '--first-parent', '-40', '--format=%cs%x1f%s%x1f%b%x1e');
+// 2. Recent merges into main: pull requests, and direct "Merge branch 'x': title" merges
+const log = git('log', '--merges', '--first-parent', '-80', '--format=%cs%x1f%h%x1f%s%x1f%b%x1e');
 const changes = [];
 for (const rec of log.split('\x1e')) {
-  const [date, subject, body] = rec.trim().split('\x1f');
+  const [date, sha, subject, body] = rec.trim().split('\x1f');
   if (!date || !subject) continue;
-  const pr = (subject.match(/#(\d+)/) || [])[1];
-  if (!pr) continue;
-  const afterColon = subject.includes(': ') ? subject.split(': ').slice(1).join(': ') : '';
-  const title = (afterColon || (body || '').split('\n')[0] || '').trim();
-  if (title) changes.push({ date, pr: Number(pr), title });
-  if (changes.length >= 8) break;
+  const pr = (subject.match(/^Merge pull request #(\d+)/) || [])[1];
+  const branch = subject.match(/^Merge branch '[^']+': (.+)$/);
+  let title = '';
+  if (pr) {
+    const afterColon = subject.includes(': ') ? subject.split(': ').slice(1).join(': ') : '';
+    title = (afterColon || (body || '').split('\n')[0] || '').trim();
+  } else if (branch) {
+    title = branch[1].trim();
+  } else {
+    continue;
+  }
+  if (title) changes.push(pr ? { date, pr: Number(pr), title } : { date, sha, title });
+  if (changes.length >= 30) break;
 }
 
 const out = { generated: new Date().toISOString().slice(0, 10), entries, changes };

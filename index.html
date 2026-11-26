@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=13" />
+  <link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
   <header class="site-header" data-page="index"></header>
@@ -83,7 +83,7 @@
   </div>
 
   <div class="container" style="margin-top: 24px;">
-  <p class="subtitle"><span id="result-count"></span> Every value comes from the vendor&rsquo;s own datasheet or install guide, and each AP links to its source. Tick two or more to compare.</p>
+  <p class="subtitle">Explore, filter, and compare enterprise access points. <span id="result-count"></span> Tick two or more to compare.</p>
 
     <div id="columns-panel" class="columns-panel">
       <h3>Show/Hide Columns</h3>
@@ -124,10 +124,9 @@
 
       <div class="footer">
         Maintained by Dan Ryan, CWNE #351, with corrections and additions from the community. To add an AP or fix a value, use Submit an AP or Edit an AP above.
-        <a href="data_issues.html" class="footer-link footer-right" title="Data Quality">Data Quality</a>
+        <span class="footer-right"><a href="changes.html" class="footer-link">Recent changes</a> &middot; <a href="data_issues.html" class="footer-link" title="Data Quality">Data Quality</a></span>
       </div>
     </div>
-    <div id="changes-slot"></div>
   </div>
 
   <div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -143,7 +142,6 @@
   <button id="compare-fab" class="btn-primary floating-compare" style="display:none;" type="button" disabled>Compare (0)</button>
 
   <script src="ap-format.js?v=8"></script>
-  <script src="fresh.js?v=3"></script>
   <script>
     // Path to the data file in your repo root
     const DATA_URL = 'ap_data.json';
@@ -946,7 +944,6 @@
     });
 
     loadApData();
-    if (window.Fresh) Fresh.renderChanges(document.getElementById('changes-slot'));
   </script>
 </body>
 </html>

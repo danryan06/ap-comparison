@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recent Changes | Enterprise AP Comparison Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Recent changes to the Enterprise AP Comparison Database and site, newest first." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AP Comparison" />
+  <meta property="og:title" content="Recent Changes" />
+  <meta property="og:description" content="Recent changes to the Enterprise AP Comparison Database and site, newest first." />
+  <meta property="og:url" content="https://apcomparison.com/changes.html" />
+  <meta property="og:image" content="https://apcomparison.com/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=14" />
+</head>
+<body>
+  <header class="site-header" data-page="changes"></header>
+  <script src="site-header.js?v=3"></script>
+  <div class="container changes-page">
+    <h1>Recent changes</h1>
+    <p class="lede">Data and site updates merged into the database, newest first. Each links to its change on GitHub.</p>
+    <div id="changes-list"></div>
+  </div>
+
+  <script src="fresh.js?v=4"></script>
+  <script>
+    Fresh.renderChanges(document.getElementById('changes-list'));
+  </script>
+</body>
+</html>
