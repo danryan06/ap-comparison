@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26",
+ "generated": "2026-11-27",
  "entries": {
   "allied-telesis-tq6403-gen2": "2026-11-18",
   "allied-telesis-tq6702e-gen2": "2026-11-18",
@@ -204,6 +204,11 @@
  },
  "changes": [
   {
+   "date": "2026-11-27",
+   "pr": 124,
+   "title": "RF export: per-path band groups for Arista C-460E, O-405E, O-435E"
+  },
+  {
    "date": "2026-11-26",
    "sha": "e0549da",
    "title": "Original Browse intro, changes page, plain radio lists"
@@ -347,11 +352,6 @@
    "date": "2025-11-24",
    "pr": 81,
    "title": "Add new AP from issue #80: Ubiquiti E7 Audience"
-  },
-  {
-   "date": "2025-11-21",
-   "pr": 79,
-   "title": "Edit AP from issue #78: Extreme AP4020"
   }
  ]
 }
