@@ -84,7 +84,7 @@ function sourceFromAp(ap, suffix = 'datasheet') {
 function baseProfile(ap, overrides) {
   const ap_id = makeApId(ap.vendor, ap.model);
   const supported_bands = bandsFromWifiGen(ap.wifi_gen_radios);
-  const rf_sources = [sourceFromAp(ap)];
+  const rf_sources = [sourceFromAp(ap), ...(overrides.extra_sources || [])];
   return finalizeProfile({
     ap_id,
     hardware_profile_id: overrides.hardware_profile_id || ap_id,
@@ -110,6 +110,16 @@ function baseProfile(ap, overrides) {
 function defaultSourceIds(ap) {
   return [sourceFromAp(ap).source_id];
 }
+
+// Arista's Antenna Selection Guide lists which antennas each AP supports.
+// It is the evidence for the Arista per-path band requirements below.
+const ARISTA_ANTENNA_GUIDE = {
+  source_id: 'arista-antenna-selection-guide',
+  url: 'https://www.arista.com/assets/data/pdf/Datasheets/Antenna-Selection-Guide.pdf',
+  title: 'Arista Antenna Selection Guide',
+  document_revision: 'June 17, 2026',
+  locator: null
+};
 
 function findAp(aps, vendor, model) {
   const hit = aps.find(ap => ap.vendor === vendor && ap.model === model);
@@ -160,13 +170,16 @@ function buildProfiles(aps) {
               family: 'rp-sma',
               connector_count: 6,
               rf_path_count: 6,
-              path_groups: [],
-              source_ids: defaultSourceIds(ap)
+              path_groups: [pathGroup('tri-band', 6, ['2.4', '5', '6'])],
+              source_ids: [...defaultSourceIds(ap), ARISTA_ANTENNA_GUIDE.source_id]
             })
           ]
         })
       ],
-      notes: 'Per-path band mapping not published in catalog connector text; marked incomplete.'
+      extra_sources: [ARISTA_ANTENNA_GUIDE],
+      notes: 'Datasheet: 6 RP-SMA connectors for 4x4 2.4/5/6 GHz plus a 2x2 tri-band scan radio. ' +
+        'The Antenna Selection Guide lists only 6-lead tri-band antennas for the C-460E, so every path ' +
+        'is treated as needing 2.4/5/6 GHz. The per-connector map itself is not published.'
     }));
   }
   {
@@ -182,13 +195,16 @@ function buildProfiles(aps) {
               family: 'n',
               connector_count: 4,
               rf_path_count: 4,
-              path_groups: [],
-              source_ids: defaultSourceIds(ap)
+              path_groups: [pathGroup('tri-band', 4, ['2.4', '5', '6'])],
+              source_ids: [...defaultSourceIds(ap), ARISTA_ANTENNA_GUIDE.source_id]
             })
           ]
         })
       ],
-      notes: 'Tri-band AP with 4× N-type; path-to-band map not published in catalog text.'
+      extra_sources: [ARISTA_ANTENNA_GUIDE],
+      notes: 'Datasheet: 4 N-type connectors for 2x2 2.4/5/6 GHz radios. The Antenna Selection Guide ' +
+        'lists only 4-lead tri-band antennas for the O-405E, so every path is treated as needing ' +
+        '2.4/5/6 GHz. The per-connector map itself is not published.'
     }));
   }
   {
@@ -204,12 +220,16 @@ function buildProfiles(aps) {
               family: 'n',
               connector_count: 6,
               rf_path_count: 6,
-              path_groups: [],
-              source_ids: defaultSourceIds(ap)
+              path_groups: [pathGroup('tri-band', 6, ['2.4', '5', '6'])],
+              source_ids: [...defaultSourceIds(ap), ARISTA_ANTENNA_GUIDE.source_id]
             })
           ]
         })
-      ]
+      ],
+      extra_sources: [ARISTA_ANTENNA_GUIDE],
+      notes: 'Datasheet: 6 N-type connectors for 2x2 2.4/5/6 GHz access radios plus a 2x2 tri-band ' +
+        'multi-function radio. The Antenna Selection Guide lists only 6-lead tri-band antennas for the ' +
+        'O-435E, so every path is treated as needing 2.4/5/6 GHz. The per-connector map is not published.'
     }));
   }
 
@@ -981,7 +1001,10 @@ function buildProfiles(aps) {
             })
           ]
         })
-      ]
+      ],
+      notes: 'Datasheet: 6 RP-SMA connectors for 4x4 5 GHz + 2x2 2.4 GHz radios. The per-connector ' +
+        'band map is not published, and Extreme lists both dual-band dipoles and quad-feed antennas ' +
+        'for this AP, so the 6 ports are likely not one uniform group. Left without path groups.'
     }));
   }
   {

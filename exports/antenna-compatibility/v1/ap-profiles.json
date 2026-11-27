@@ -1,8 +1,8 @@
 {
   "schema_name": "apcomparison.external-antenna-profiles",
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-22T19:21:52Z",
-  "source_revision": "123ccbaf2ec3b7101ab2c4e23c2e5538722f183a",
+  "generated_at": "2026-11-27T16:39:48Z",
+  "source_revision": "aa613dcd23d41edc9bb9bf009fd3612e04774262",
   "profile_count": 48,
   "profiles": [
     {
@@ -224,12 +224,24 @@
               },
               "connector_count": 6,
               "rf_path_count": 6,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "tri-band",
+                  "count": 6,
+                  "bands": [
+                    "2.4",
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
               "source_ids": [
-                "arista-c-460e-datasheet"
+                "arista-c-460e-datasheet",
+                "arista-antenna-selection-guide"
               ]
             }
           ]
@@ -242,17 +254,23 @@
           "title": "Arista C-460E datasheet",
           "document_revision": null,
           "locator": null
+        },
+        {
+          "source_id": "arista-antenna-selection-guide",
+          "url": "https://www.arista.com/assets/data/pdf/Datasheets/Antenna-Selection-Guide.pdf",
+          "title": "Arista Antenna Selection Guide",
+          "document_revision": "June 17, 2026",
+          "locator": null
         }
       ],
       "completeness": {
         "status": "incomplete",
         "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-rpsma.path_groups"
+          "antenna_configurations.default.external_interfaces.wifi-rpsma.connector.gender"
         ]
       },
       "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-C-460E-Datasheet.pdf",
-      "notes": "Per-path band mapping not published in catalog connector text; marked incomplete."
+      "notes": "Datasheet: 6 RP-SMA connectors for 4x4 2.4/5/6 GHz plus a 2x2 tri-band scan radio. The Antenna Selection Guide lists only 6-lead tri-band antennas for the C-460E, so every path is treated as needing 2.4/5/6 GHz. The per-connector map itself is not published."
     },
     {
       "ap_id": "arista:o-405e",
@@ -292,12 +310,24 @@
               },
               "connector_count": 4,
               "rf_path_count": 4,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "tri-band",
+                  "count": 4,
+                  "bands": [
+                    "2.4",
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
               "source_ids": [
-                "arista-o-405e-datasheet"
+                "arista-o-405e-datasheet",
+                "arista-antenna-selection-guide"
               ]
             }
           ]
@@ -310,17 +340,23 @@
           "title": "Arista O-405E datasheet",
           "document_revision": null,
           "locator": null
+        },
+        {
+          "source_id": "arista-antenna-selection-guide",
+          "url": "https://www.arista.com/assets/data/pdf/Datasheets/Antenna-Selection-Guide.pdf",
+          "title": "Arista Antenna Selection Guide",
+          "document_revision": "June 17, 2026",
+          "locator": null
         }
       ],
       "completeness": {
         "status": "incomplete",
         "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
         ]
       },
       "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-405E-Datasheet.pdf",
-      "notes": "Tri-band AP with 4× N-type; path-to-band map not published in catalog text."
+      "notes": "Datasheet: 4 N-type connectors for 2x2 2.4/5/6 GHz radios. The Antenna Selection Guide lists only 4-lead tri-band antennas for the O-405E, so every path is treated as needing 2.4/5/6 GHz. The per-connector map itself is not published."
     },
     {
       "ap_id": "arista:o-435e",
@@ -360,12 +396,24 @@
               },
               "connector_count": 6,
               "rf_path_count": 6,
-              "path_groups": [],
+              "path_groups": [
+                {
+                  "path_group_id": "tri-band",
+                  "count": 6,
+                  "bands": [
+                    "2.4",
+                    "5",
+                    "6"
+                  ],
+                  "interchangeable": true
+                }
+              ],
               "included_accessory_ids": [],
               "capabilities": [],
               "restrictions": [],
               "source_ids": [
-                "arista-o-435e-datasheet"
+                "arista-o-435e-datasheet",
+                "arista-antenna-selection-guide"
               ]
             }
           ]
@@ -378,17 +426,23 @@
           "title": "Arista O-435E datasheet",
           "document_revision": null,
           "locator": null
+        },
+        {
+          "source_id": "arista-antenna-selection-guide",
+          "url": "https://www.arista.com/assets/data/pdf/Datasheets/Antenna-Selection-Guide.pdf",
+          "title": "Arista Antenna Selection Guide",
+          "document_revision": "June 17, 2026",
+          "locator": null
         }
       ],
       "completeness": {
         "status": "incomplete",
         "missing": [
-          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender",
-          "antenna_configurations.default.external_interfaces.wifi-n.path_groups"
+          "antenna_configurations.default.external_interfaces.wifi-n.connector.gender"
         ]
       },
       "datasheet_url": "https://www.arista.com/assets/data/pdf/Datasheets/Arista-O-435E-Datasheet.pdf",
-      "notes": null
+      "notes": "Datasheet: 6 N-type connectors for 2x2 2.4/5/6 GHz access radios plus a 2x2 tri-band multi-function radio. The Antenna Selection Guide lists only 6-lead tri-band antennas for the O-435E, so every path is treated as needing 2.4/5/6 GHz. The per-connector map is not published."
     },
     {
       "ap_id": "aruba:ap-504",
@@ -3009,7 +3063,7 @@
         ]
       },
       "datasheet_url": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8575c683463142ea8e0b9685b38e9a28?v=531b8602",
-      "notes": null
+      "notes": "Datasheet: 6 RP-SMA connectors for 4x4 5 GHz + 2x2 2.4 GHz radios. The per-connector band map is not published, and Extreme lists both dual-band dipoles and quad-feed antennas for this AP, so the 6 ports are likely not one uniform group. Left without path groups."
     },
     {
       "ap_id": "extreme:ap5022fx",
